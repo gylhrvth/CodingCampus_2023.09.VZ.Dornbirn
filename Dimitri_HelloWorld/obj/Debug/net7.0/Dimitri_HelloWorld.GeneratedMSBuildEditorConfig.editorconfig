@@ -7,5 +7,5 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = Week01
-build_property.ProjectDir = /Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Week01/
+build_property.RootNamespace = Dimitri_HelloWorld
+build_property.ProjectDir = /Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Dimitri_HelloWorld/

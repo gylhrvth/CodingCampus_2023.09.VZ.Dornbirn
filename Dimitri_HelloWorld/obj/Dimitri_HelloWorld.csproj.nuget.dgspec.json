@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Week01/Dimitri_HelloWorld.csproj": {}
+    "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Dimitri_HelloWorld/Dimitri_HelloWorld.csproj": {}
   },
   "projects": {
-    "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Week01/Dimitri_HelloWorld.csproj": {
+    "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Dimitri_HelloWorld/Dimitri_HelloWorld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Week01/Dimitri_HelloWorld.csproj",
+        "projectUniqueName": "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Dimitri_HelloWorld/Dimitri_HelloWorld.csproj",
         "projectName": "Dimitri_HelloWorld",
-        "projectPath": "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Week01/Dimitri_HelloWorld.csproj",
+        "projectPath": "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Dimitri_HelloWorld/Dimitri_HelloWorld.csproj",
         "packagesPath": "/Users/gyula.horvath/.nuget/packages/",
-        "outputPath": "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Week01/obj/",
+        "outputPath": "/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Dimitri_HelloWorld/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/gyula.horvath/.nuget/NuGet/NuGet.Config"
