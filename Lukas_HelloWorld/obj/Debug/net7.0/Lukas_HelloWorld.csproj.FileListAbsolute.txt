@@ -1,0 +1,15 @@
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/bin/Debug/net7.0/Lukas_HelloWorld
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/bin/Debug/net7.0/Lukas_HelloWorld.deps.json
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/bin/Debug/net7.0/Lukas_HelloWorld.runtimeconfig.json
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/bin/Debug/net7.0/Lukas_HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/bin/Debug/net7.0/Lukas_HelloWorld.pdb
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.csproj.AssemblyReference.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.AssemblyInfoInputs.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.AssemblyInfo.cs
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.csproj.CoreCompileInputs.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/refint/Lukas_HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.pdb
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/Lukas_HelloWorld.genruntimeconfig.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Lukas_HelloWorld/obj/Debug/net7.0/ref/Lukas_HelloWorld.dll

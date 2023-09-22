@@ -1,0 +1,15 @@
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/bin/Debug/net7.0/Kerem_HelloWorld
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/bin/Debug/net7.0/Kerem_HelloWorld.deps.json
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/bin/Debug/net7.0/Kerem_HelloWorld.runtimeconfig.json
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/bin/Debug/net7.0/Kerem_HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/bin/Debug/net7.0/Kerem_HelloWorld.pdb
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.csproj.AssemblyReference.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.AssemblyInfoInputs.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.AssemblyInfo.cs
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.csproj.CoreCompileInputs.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/refint/Kerem_HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.pdb
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/Kerem_HelloWorld.genruntimeconfig.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/Kerem_HelloWorld/obj/Debug/net7.0/ref/Kerem_HelloWorld.dll

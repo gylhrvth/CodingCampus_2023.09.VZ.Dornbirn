@@ -1,0 +1,15 @@
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/bin/Debug/net7.0/HelloWorld
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/bin/Debug/net7.0/HelloWorld.deps.json
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/bin/Debug/net7.0/HelloWorld.runtimeconfig.json
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/bin/Debug/net7.0/HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/bin/Debug/net7.0/HelloWorld.pdb
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.csproj.AssemblyReference.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.GeneratedMSBuildEditorConfig.editorconfig
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.AssemblyInfoInputs.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.AssemblyInfo.cs
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.csproj.CoreCompileInputs.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/refint/HelloWorld.dll
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.pdb
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/HelloWorld.genruntimeconfig.cache
+/Users/gyula.horvath/Projects/SoftwareDeveloper.2023.09/HelloWorld/obj/Debug/net7.0/ref/HelloWorld.dll

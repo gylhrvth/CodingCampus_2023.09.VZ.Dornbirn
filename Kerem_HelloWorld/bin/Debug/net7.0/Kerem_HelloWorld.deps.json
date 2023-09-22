@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Kerem_HelloWorld/1.0.0": {
+        "runtime": {
+          "Kerem_HelloWorld.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Kerem_HelloWorld/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
