@@ -171,7 +171,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Week01", "Week01", "{749951
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dimitri_HelloWorld", "Dimitri_HelloWorld\Dimitri_HelloWorld.csproj", "{0C249040-AA54-48B6-B9B9-651BE6A13D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loops", "Print function\Loops.csproj", "{03E39189-2387-4B28-8991-B50AFCD4DAEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandro_Loops", "Print function\Sandro_Loops.csproj", "{03E39189-2387-4B28-8991-B50AFCD4DAEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
