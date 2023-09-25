@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gyula", "Gyula", "{557032E0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gyula", "Gyula\Gyula.csproj", "{6753DE90-84CF-438D-9E72-97DAEF0076AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lukas", "Lukas", "{5C161990-1570-43E9-B602-383FFDFB50A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lukas", "Lukas\Lukas.csproj", "{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{6753DE90-84CF-438D-9E72-97DAEF0076AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6753DE90-84CF-438D-9E72-97DAEF0076AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6753DE90-84CF-438D-9E72-97DAEF0076AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6753DE90-84CF-438D-9E72-97DAEF0076AA} = {557032E0-30BF-4E39-B105-DF54404C7D6B}
+		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC} = {5C161990-1570-43E9-B602-383FFDFB50A4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B07BC454-1B73-476D-91CF-CC509D14D195}
