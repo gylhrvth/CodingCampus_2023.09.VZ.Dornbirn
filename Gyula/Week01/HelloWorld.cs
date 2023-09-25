@@ -5,7 +5,7 @@ namespace Gyula.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Hello World 2!");
 		}
 	}
 }
