@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lukas", "Lukas", "{5C161990
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lukas", "Lukas\Lukas.csproj", "{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ali", "Ali", "{C03975C9-0506-4274-B045-09219BBB5903}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ali", "Ali\Ali.csproj", "{6A8A1985-9B39-4D26-926C-4147BAAB9240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8A1985-9B39-4D26-926C-4147BAAB9240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8A1985-9B39-4D26-926C-4147BAAB9240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8A1985-9B39-4D26-926C-4147BAAB9240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8A1985-9B39-4D26-926C-4147BAAB9240}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6753DE90-84CF-438D-9E72-97DAEF0076AA} = {557032E0-30BF-4E39-B105-DF54404C7D6B}
 		{DBBC083F-FDA5-4123-B8B6-B79FCDD4B1DC} = {5C161990-1570-43E9-B602-383FFDFB50A4}
+		{6A8A1985-9B39-4D26-926C-4147BAAB9240} = {C03975C9-0506-4274-B045-09219BBB5903}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B07BC454-1B73-476D-91CF-CC509D14D195}
