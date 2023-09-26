@@ -5,8 +5,11 @@ namespace Patrick.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
-		}
+			Console.WriteLine("Hello Patrick!\r\n\r\n     /--\\\r\n    / /\\ \\\r\n   / /  \\ \\\r\n  / /    \\ \\\r\n /  ======  \\\r\n/_/        \\_\\");
+
+			
+            
+        }
 	}
 }
 
