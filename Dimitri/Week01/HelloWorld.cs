@@ -5,7 +5,7 @@ namespace Dimitri.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello Dimitri!");
+			Console.WriteLine("Hello DimitriNew!");
 		}
 	}
 }
