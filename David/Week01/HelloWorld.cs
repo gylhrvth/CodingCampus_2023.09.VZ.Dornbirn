@@ -17,3 +17,9 @@ namespace David.Week01
 	}
 }
 
+int i;
+
+for (i = 0; i < 5; i++)
+{
+    printf("Zahl %d\n", i + 1);
+}
