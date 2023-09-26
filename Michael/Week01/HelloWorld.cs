@@ -5,7 +5,7 @@ namespace Michael.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello MWorld!");
+			Console.WriteLine("Hello World!");
 		}
 	}
 }
