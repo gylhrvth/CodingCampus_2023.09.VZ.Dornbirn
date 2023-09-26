@@ -5,7 +5,7 @@ namespace Ali.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello Ali!");
+			Console.WriteLine("Hello AliAsuk!");
 		}
 	}
 }
