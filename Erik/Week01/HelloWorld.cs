@@ -5,7 +5,7 @@ namespace Erik.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello erik34446");
+			Console.WriteLine("Hello World! Name: Erik");
 		}
 	}
 }
