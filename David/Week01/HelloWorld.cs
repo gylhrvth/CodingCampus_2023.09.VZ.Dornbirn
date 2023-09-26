@@ -7,12 +7,12 @@ namespace David.Week01
 		{
 			Console.WriteLine("Hello David der GROßE und seine Freunde!");
          
-            Console.WriteLine("     /--\\");
-            Console.WriteLine("    / /\\ \\");
-            Console.WriteLine("   / /  \\ \\");
-            Console.WriteLine("  / /    \\ \\");
-            Console.WriteLine(" / /======\\ \\");
-            Console.WriteLine("/_/        \\_\\");
+            Console.WriteLine("II==       /--\\   X          X  II  II==");
+            Console.WriteLine("II  =     / /\\ \\   X        X   II  II  =");
+            Console.WriteLine("II   =   / /  \\ \\   X      X    II  II   =");
+            Console.WriteLine("II   =  / /    \\ \\   X    X     II  II   =");
+            Console.WriteLine("II  =  / /======\\ \\   X  X      II  II  =");
+            Console.WriteLine("II==  /_/        \\_\\   X        II  II==");
         }
 	}
 }
