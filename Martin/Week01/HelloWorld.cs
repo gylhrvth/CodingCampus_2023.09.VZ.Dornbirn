@@ -5,7 +5,9 @@ namespace Martin.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
+			Console.ForegroundColor = ConsoleColor.Green;
+
+			Console.WriteLine("Wie gehts dir!");
 		}
 	}
 }
