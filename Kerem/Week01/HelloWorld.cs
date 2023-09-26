@@ -8,10 +8,10 @@ namespace Kerem.Week01
 			Console.WriteLine("Hello Kerem");
 			Console.WriteLine(/ - - \
 							 /   /\  \
-						    /   /  \  \
+							/   /  \  \
 						   /   /    \  \
 						  /    ======   \
-						 /  _/       \_  \)
+						 / _ /       \_  \);
 		}
 	}
 }
