@@ -5,7 +5,7 @@ namespace David.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello David der GROßE!");
+			Console.WriteLine("Hello David der GROßE und seine Freunde!");
 		}
 	}
 }
