@@ -6,12 +6,9 @@ namespace Kerem.Week01
 		public static void Start()
 		{
 			Console.WriteLine("Hello Kerem");
-			Console.WriteLine(/ - - \
-							 /   /\  \
-							/   /  \  \
-						   /   /    \  \
-						  /    ======   \
-						 / _ /       \_  \);
+			Console.WriteLine("/ - - \\");
+					
+
 		}
 	}
 }
