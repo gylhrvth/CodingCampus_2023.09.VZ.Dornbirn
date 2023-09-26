@@ -5,7 +5,7 @@ namespace Fabian.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Hello Fabian!");
 		}
 	}
 }
