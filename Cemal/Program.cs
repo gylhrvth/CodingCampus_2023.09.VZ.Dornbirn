@@ -1,1 +1,1 @@
-﻿Cemal.Week01.HelloWorld.Start();
+﻿Cemal.Week01.Day02.Aufgabe1();
