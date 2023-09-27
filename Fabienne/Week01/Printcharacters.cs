@@ -18,6 +18,7 @@ namespace Fabienne.Week01
             Console.WriteLine();
             PrintTriangleTopRight('x', 5);
             Console.WriteLine();
+            PrintTriangleBottomRight('x', 5);
 
         }
 
@@ -87,7 +88,15 @@ namespace Fabienne.Week01
 
         public static void PrintTriangleTopLeft(char x, int anzahl)
         {
-            
+            for (int j = 0; j < anzahl; j++)
+            {
+                for (int i = anzahl - 1; i > j; i--)
+                {
+
+                    Console.Write(x);
+                }
+                Console.WriteLine(x);
+            }
         }
 
         //print triangle 3
@@ -102,5 +111,19 @@ namespace Fabienne.Week01
                
             }
         }
+
+        //print triangle 4
+
+        public static void PrintTriangleBottomRight(char x, int anzahl)
+        {
+
+            for (int i = 0; i < anzahl; i++)
+            {
+                PrintChars(' ', anzahl - i - 1, false);
+                PrintChars(x, i + 1, true);
+            }
+        }
+
+
     }
 }

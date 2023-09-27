@@ -7,6 +7,7 @@ namespace Selina.Week01
 		{
 			Console.WriteLine("");
             Console.WriteLine(" ");
+            Console.WriteLine("Hallo Welt!");
         }
 	}
 }
