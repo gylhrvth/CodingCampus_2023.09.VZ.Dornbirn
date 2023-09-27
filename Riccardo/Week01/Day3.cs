@@ -30,6 +30,10 @@ namespace Riccardo.Week01
                 {
                     Console.WriteLine("Ist gerade!!! " + x);
                 }
+                else
+                {
+                    Console.WriteLine("Ist ungerade!!!" + x);
+                }
             }
 
             int l = 10;
