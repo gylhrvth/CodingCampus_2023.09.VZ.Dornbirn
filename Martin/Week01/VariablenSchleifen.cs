@@ -30,7 +30,7 @@ namespace Martin.Week01
             for(int M = 0; M <= 10; M++) // zählt von 0 bis 10
             {
                 Console.WriteLine(M); 
-            }
+            }  
 
             /////// Aufgabe: Zählen mit trick
 
