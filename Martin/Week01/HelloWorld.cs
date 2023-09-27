@@ -5,8 +5,62 @@ namespace Martin.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
-		}
+			Console.ForegroundColor = ConsoleColor.Green;
+
+			Console.WriteLine("|-|-\\_/|-|");
+            Console.WriteLine("|-|-   |-|");
+            Console.WriteLine("|-| \\_/|-|");
+            Console.WriteLine("|-|--- |-|");
+            Console.WriteLine("|-|--- |-|");
+
+            Console.WriteLine();
+
+            Console.WriteLine("     /--\\ ");
+            Console.WriteLine("    / /\\ \\");
+            Console.WriteLine("   / /  \\ \\");
+            Console.WriteLine("  / /    \\ \\");
+            Console.WriteLine(" / /======\\ \\");
+            Console.WriteLine("/_/        \\_\\");
+
+            Console.WriteLine();
+
+            Console.WriteLine("/-------\\");
+            Console.WriteLine("|--  ---|");
+            Console.WriteLine("|--  ---|");
+            Console.WriteLine("|--__--\\");
+            Console.WriteLine("|-|  \\--\\");
+            Console.WriteLine("|_|   \\__\\");
+
+            Console.WriteLine();
+
+            Console.WriteLine("||-------||");
+            Console.WriteLine("__--| |- __");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    |_|");
+
+            Console.WriteLine();
+
+            Console.WriteLine("    |-|");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    | |");
+            Console.WriteLine("    |_|");
+
+            Console.WriteLine();
+
+            Console.WriteLine("    |-\\     |-|");
+            Console.WriteLine("    |  \\    |-|");
+            Console.WriteLine("    |   \\   |-|");
+            Console.WriteLine("    | |\\ \\  |-|");
+            Console.WriteLine("    | | \\ \\_| |");
+            Console.WriteLine("    |_|  \\__| |");
+
+
+        }
 	}
 }
 

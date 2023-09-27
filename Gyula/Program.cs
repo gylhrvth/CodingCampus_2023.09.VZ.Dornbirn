@@ -1,1 +1,1 @@
-﻿Gyula.Week01.HelloWorld.Start();
+﻿Gyula.Week01.Variablen.MyVariablen();
