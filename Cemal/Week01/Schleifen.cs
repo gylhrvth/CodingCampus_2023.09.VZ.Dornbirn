@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.InteropServices;
+
 namespace Cemal.Week01
 {
 
-	public class Day02
+	public class Schleifen
 	{
 		public static void Aufgabe1()
 		{
@@ -46,8 +48,6 @@ namespace Cemal.Week01
 			{
 				Console.WriteLine(e);
 			}
-
-
 		}
 	}
 

@@ -1,1 +1,1 @@
-﻿Cemal.Week01.Day02.Aufgabe1();
+﻿Cemal.Week01.Methoden_Schleifen.Start();
