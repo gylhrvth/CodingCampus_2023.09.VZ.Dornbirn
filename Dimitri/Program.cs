@@ -1,1 +1,1 @@
-﻿Dimitri.Week01.HelloWorld.Start();
+﻿Dimitri.Week01.PrintChar02.Main();

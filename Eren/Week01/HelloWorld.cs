@@ -5,7 +5,7 @@ namespace Eren.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello Eren!");
+			Console.WriteLine("Hello Eren and his friends!");
 		}
 	}
 }
