@@ -110,8 +110,7 @@ namespace Erik.Week01
 
             Console.WriteLine("");
 
-            bool online1 = false; 
-            bool loginPassword1 = false;
+            String rootPassword = "rootpassword";
             String userOnlineInput;
             String userPasswordInput;
             int loginTrys1 = 3;
@@ -126,10 +125,10 @@ namespace Erik.Week01
                 userOnlineInput = Console.ReadLine();   
             }
 
-            Console.Write(" \n Geben Sie das Password ein! \n Password:");
+            Console.Write(" \n Geben Sie das Passwort ein! \n Password:");
             userPasswordInput = Console.ReadLine(); 
 
-            while (userPasswordInput != "dasistmeinpasswort")
+            while (userPasswordInput != rootPassword)
             {
                 if (loginTrys1 > 0)
                 {
@@ -146,18 +145,15 @@ namespace Erik.Week01
                     break;
                 }
 
-                Console.WriteLine("Login erfolgreich!");
 
 
             }
 
-         
-            
-
-
-
-
-
+            if (userPasswordInput == rootPassword)
+            {
+                Console.WriteLine("\nLogin erfolgreich!");
+                Console.WriteLine("\n __      ___ _ _ _                            _ \r\n \\ \\    / (_) | | |_____ _ __  _ __  ___ _ _ | |\r\n  \\ \\/\\/ /| | | | / / _ \\ '  \\| '  \\/ -_) ' \\|_|\r\n   \\_/\\_/ |_|_|_|_\\_\\___/_|_|_|_|_|_\\___|_||_(_)\r\n                                                ");
+            }
 
 
         }
