@@ -1,7 +1,7 @@
 ﻿using System;
 namespace DarioLuis.Week01
 {
-	public class HelloWorld
+	public class For_While
 	{
 		public static void Start()
 		{
