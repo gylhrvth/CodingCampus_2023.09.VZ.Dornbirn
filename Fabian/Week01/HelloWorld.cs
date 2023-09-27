@@ -6,6 +6,13 @@ namespace Fabian.Week01
 		public static void Start()
 		{
 			Console.WriteLine("Hello Fabian!");
+
+			Console.WriteLine("| |=====     /--\\                |-|         /--\\         |    \\     | |");
+			Console.WriteLine("| |         / /\\ \\      |---     | |        / /\\ \\        | | \\ \\    | |");
+			Console.WriteLine("| |=====   / /  \\ \\     |   )    | |       / /  \\ \\       | |  \\ \\   | |");
+			Console.WriteLine("| |       / /    \\ \\    |---     | |      / /    \\ \\      | |   \\ \\  | |");
+			Console.WriteLine("| |      /  ======  \\   |   )    | |     /  ======  \\     | |    \\ \\ | |");
+			Console.WriteLine("| |     /_/        \\_\\  |---     |_|    /_/        \\_\\    |_|     \\ __ |");
 		}
 	}
 }
