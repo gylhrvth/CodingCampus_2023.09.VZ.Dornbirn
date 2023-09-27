@@ -5,7 +5,7 @@ namespace Lukas.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Hello World!\n\n     /--\\\n    / /\\ \\\n   / /  \\ \\\n  / /    \\ \\\n /  ======  \\\n/_/        \\_\\\n");
 		}
 	}
 }
