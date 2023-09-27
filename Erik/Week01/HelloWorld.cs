@@ -74,6 +74,88 @@ namespace Erik.Week01
             }
 
 
+            Console.WriteLine("");
+
+
+
+
+
+            bool online = true;
+            bool loginPassword = false;
+            int loginTrys = 4;
+            
+
+            while (loginTrys > 0)
+            {
+
+                if (online && loginPassword)
+                {
+
+
+                    Console.WriteLine("Login erfolgreich!");
+                    break;
+
+                } else if (!online)
+                {
+                    Console.WriteLine("Du musst online sein um dich an zu melden!");
+                    break; 
+                } else
+                {
+                    loginTrys--;
+                    Console.WriteLine("Passwort falsche versuche es erneut \n Du hast noch " + loginTrys + " Versuche übrig! \n");
+                    
+
+                }
+            }
+
+            Console.WriteLine("");
+
+            bool online1 = false; 
+            bool loginPassword1 = false;
+            String userOnlineInput;
+            String userPasswordInput;
+            int loginTrys1 = 3;
+
+            Console.Write("Geben Sie den Online Status ein! \n Status:");
+            userOnlineInput = Console.ReadLine();
+
+            while (userOnlineInput != "Online") {
+
+                Console.WriteLine("\n Du musst Online sein um fort zu fahren! \n");
+                Console.Write("Geben Sie den Online Status ein! \n Status:");
+                userOnlineInput = Console.ReadLine();   
+            }
+
+            Console.Write(" \n Geben Sie das Password ein! \n Password:");
+            userPasswordInput = Console.ReadLine(); 
+
+            while (userPasswordInput != "dasistmeinpasswort")
+            {
+                if (loginTrys1 > 0)
+                {
+
+
+                    Console.Write("Falsches Passwort!\n \nDu hast noch " + loginTrys1 + " Versuche übrig!\n" + " Versuche es erneut: ");
+                    loginTrys1--;
+                    userPasswordInput = Console.ReadLine();
+
+                } else if (loginTrys1 == 0)
+                {
+
+                    Console.WriteLine("Dein Account wurde gesperrt!");
+                    break;
+                }
+
+                Console.WriteLine("Login erfolgreich!");
+
+
+            }
+
+         
+            
+
+
+
 
 
 
