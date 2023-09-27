@@ -1,1 +1,1 @@
-﻿Fabian.Week01.Variablen.Start();
+﻿Fabian.Week01.Methoden.Start();
