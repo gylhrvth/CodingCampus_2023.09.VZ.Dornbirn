@@ -2,7 +2,7 @@
 
 namespace Fabienne.Week01
 {
-    public class Variablen
+    public class VariablenSchleifen
     {
         public static void Start()
         {
