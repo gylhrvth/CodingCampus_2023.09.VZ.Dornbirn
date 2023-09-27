@@ -114,7 +114,7 @@ namespace Simon.Week01
                 PrintChars(symbol, characters);
                 Console.WriteLine();
             }
-            
+             
         }
 
     }
