@@ -91,8 +91,7 @@ namespace Timo.Week01
         {
             int x = zahl;
             
-            int a = 0;
-            //int z = a;
+            int a = 0; 
             while (x > 0)
             {
                 int z = a;
@@ -101,7 +100,6 @@ namespace Timo.Week01
                 {
                     Console.Write(" ");
                     z--;
-                    //y++;
                 }
                 while (y < x)
                 {
