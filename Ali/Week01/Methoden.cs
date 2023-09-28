@@ -36,6 +36,14 @@ namespace Ali.Week01
             printTrianglebottomleft("x", 4);
             Console.WriteLine();
 
+            Console.WriteLine("printTriangleTopLeft");
+            printTriangleTopLeft("x", 5);
+            Console.WriteLine();
+
+            Console.WriteLine("printTriangleTopRight");
+            printTriangleTopRight("x", 5);
+            Console.WriteLine();
+
         }
 
         public static void printChars(string symbol, int count)
@@ -88,22 +96,87 @@ namespace Ali.Week01
         {
             for (int i = 0; i < line; i++)
             {
-                for(int j=0; j <count; j++)
+                for (int j = 0; j < count; j++)
                 {
                     Console.Write(symbol);
                 }
                 Console.WriteLine();
 
-                
+
             }
 
         }
-        public static void printTrianglebottomleft(string symbol, int count)
+        public static void printTrianglebottomleft(string symbol, int row)
         {
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
 
+                    Console.Write(symbol);
+                }
+
+                Console.WriteLine(symbol);
+
+            }
+        }
+        public static void printTriangleTopLeft(string symbol, int row)
+        {
+            for (int i = 0; i < row; i++)
+            {
+
+                for (int j = row - 1; j > i; j--)
+
+                {
+                    Console.Write(symbol);
+
+                }
+                Console.WriteLine(symbol);
+            }
+
+        }
+
+        public static void printTriangleTopRight(string symbol, int row)
+        {
+           for (int i = 0; i < row; i++)
+            {
+            
+             for(int j = row -1; j> i; j--)
+                {
+                    Console.Write(symbol);
+                    
+                }
+                
+            }  
         }
     }
 }
+
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
