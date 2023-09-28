@@ -30,6 +30,17 @@ namespace Simon.Week01
             PrintTriangleTopRight('x', 5);
 
             Console.WriteLine("\nPrint Triangle 4");
+            PrintTriangleBottomRight('x', 5);
+
+            Console.WriteLine("\nPrint Empty Square");
+            PrintEmptySquare('x', 10);
+
+            Console.WriteLine("\nPrint Empty Square");
+            PrintEmptySquare('A', 3);
+            
+            Console.WriteLine("\nPrint Slash");
+            PrintSlash('x', 3, false);
+
             
 
 
@@ -47,7 +58,7 @@ namespace Simon.Week01
         //Aufgabe Print Square
         public static void Printsquare(char symbol, int zahl)
         {
-            for(int i = 0;i < zahl; i++)
+            for (int i = 0; i < zahl; i++)
             {
                 PrintChars(symbol, zahl);
                 Console.Write("\n");
@@ -56,7 +67,7 @@ namespace Simon.Week01
         //Aufgabe Print Rectangle
         public static void PrintRect(char symbol, int zahl, int zahl1)
         {
-            for(int i = 0; i < zahl1; i++)
+            for (int i = 0; i < zahl1; i++)
             {
                 PrintChars(symbol, zahl);
                 Console.Write("\n");
@@ -114,8 +125,77 @@ namespace Simon.Week01
                 PrintChars(symbol, characters);
                 Console.WriteLine();
             }
-             
         }
+
+        //Aufgabe Print Triangle (4)
+
+        public static void PrintTriangleBottomRight(char symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                int spaces = zahl - i - 1;
+                int characters = i + 1;
+                PrintChars(' ', spaces);
+                PrintChars(symbol, characters);
+                Console.WriteLine();
+            }
+        }
+
+        //Aufgabe Print Empty Square
+             
+        public static void PrintEmptySquare(char symbol, int number)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                int row = i;
+
+
+                if (row == 0 || row == number - 1)
+                {
+                    PrintChars(symbol, number);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    Console.Write(symbol);
+                    PrintChars(' ', number - 2);
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        //Aufgabe Print Slash
+
+        public static void PrintSlash(char symbol, int number, bool backslash)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                if (backslash == true)
+                {
+                    int spaces = i;
+                    PrintChars(' ', spaces);
+                    PrintChars(symbol, 1);
+                    Console.WriteLine();
+                }
+                else
+                {
+
+                    PrintTriangleBottomRight(symbol, number);
+        }
+
+
+
+            }
+
+
+        }
+
+
+
+
+
+
 
     }
 }
