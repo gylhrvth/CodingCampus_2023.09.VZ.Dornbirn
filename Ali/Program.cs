@@ -1,1 +1,1 @@
-﻿Ali.Week01.Schleifen03.Start();
+﻿Ali.Week01.Methoden.Start();

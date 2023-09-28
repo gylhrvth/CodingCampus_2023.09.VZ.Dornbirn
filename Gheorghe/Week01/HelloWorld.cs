@@ -5,8 +5,15 @@ namespace Gheorghe.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello Gheorghe!");
-		}
-	}
-}
+			Console.WriteLine("Helloo Gheorghe!");
+			Console.WriteLine("      /--\\  ");
+			Console.WriteLine("     / /\\ \\");
+			Console.WriteLine("    / /  \\ \\");
+			Console.WriteLine("   / /    \\ \\");
+			Console.WriteLine("  /   ======  \\");
+			Console.WriteLine(" /_/        \\_\\");
+			}
+
+        }
+    }
 
