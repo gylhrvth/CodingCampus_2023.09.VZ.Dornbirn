@@ -3,7 +3,7 @@ namespace Timo.Week01
 {
     public class MethodenUndSchleifen
     {
-      
+
         public static void Start()
         {
             Console.WriteLine("\n1.Aufgabe:");
@@ -26,6 +26,21 @@ namespace Timo.Week01
 
             Console.WriteLine("\n7.Aufgabe");
             PrintTriangleBottomRight('x', 5);
+
+            Console.WriteLine("\n8.Aufgabe");
+            PrintEmptySquare('x', 6);
+
+            Console.WriteLine("\n9.Aufgabe - true");
+            PrintSlash('x', 5, true);
+
+            Console.WriteLine("\n9.Aufgabe - false");
+            PrintSlash('x', 5, false);
+
+            Console.WriteLine("\n10.Aufgabe - 1x");
+            PrintTriangle('x', 1);
+
+            Console.WriteLine("\n10.Aufgabe - mehr x");
+            PrintTriangle('x', 5); 
         }
 
         //Aufgabe1
@@ -40,9 +55,9 @@ namespace Timo.Week01
         //Aufgabe2
         public static void PrintSquare(char symbol, int zahl)
         {
-            for (int y = 0;  y < zahl; y++)
+            for (int y = 0; y < zahl; y++)
             {
-                PrintChars( symbol, zahl);
+                PrintChars(symbol, zahl);
                 Console.Write("\n");
             }
             return;
@@ -61,10 +76,10 @@ namespace Timo.Week01
         public static void PrintTriangleBottomLeft(char symbol, int zahl)
         {
             int x = 0;
-            while (x < zahl) 
+            while (x < zahl)
             {
                 int y = 0;
-                while ((y-1) < x) 
+                while ((y - 1) < x)
                 {
                     Console.Write(symbol);
                     y++;
@@ -126,15 +141,77 @@ namespace Timo.Week01
             }
 
         }
-        public static void PrintTriangleBottomRight(char symbol, int zahl) 
+        //Aufgabe7
+        public static void PrintTriangleBottomRight(char symbol, int zahl)
         {
-            for (int i = zahl; i > 0; i--)
+
+            for (int i = 0; i < zahl; i++)
             {
                 int spaces = i;
                 int characters = zahl - i;
-                PrintChars(' ', spaces);
-                PrintChars(symbol, characters);
+                PrintChars(' ', characters - 1);
+                PrintChars(symbol, i + 1);
                 Console.WriteLine();
+            }
+        }
+        //Aufgabe8
+        public static void PrintEmptySquare(char symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                if (i == 0 || i == zahl - 1)
+                {
+                    PrintChars(symbol, zahl);
+                    Console.Write("\n");
+                }
+                else
+                {
+                    {
+                        Console.Write(symbol);
+                        PrintChars(' ', zahl - 2);
+                        Console.Write(symbol);
+                        Console.WriteLine();
+
+                    }
+                }
+            }
+        }
+        //Aufgabe9
+        public static void PrintSlash(char symbol, int zahl, bool backslash)
+        {
+            if (backslash)
+            {
+                for (int i = 0; i < zahl; i++)
+                {
+                    int spaces = i;
+                    int characters = zahl - i;
+                    PrintChars(' ', spaces);
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                for (int i = 0; i < zahl; i++)
+                {
+                    int spaces = i;
+                    int characters = zahl - i;
+                    PrintChars(' ', characters - 1);
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+            }
+        }
+        //Aufgabe10
+        public static void PrintTriangle(char symbol, int zahl) 
+        {
+            if (zahl== 1) 
+            { 
+            PrintChars(symbol, zahl);
+            }
+            else
+            {
+                PrintChars(symbol, (zahl*2)-1);
             }
         }
     }

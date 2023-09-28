@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 namespace Simon.Week01
 {
     public class Methoden___Schleifen
-    {                
+    {
         public static void Start()
         {
             Console.WriteLine("\nPrint Characters");
@@ -37,11 +38,21 @@ namespace Simon.Week01
 
             Console.WriteLine("\nPrint Empty Square");
             PrintEmptySquare('A', 3);
-            
-            Console.WriteLine("\nPrint Slash");
-            PrintSlash('x', 3, false);
 
-            
+            Console.WriteLine("\nPrint Slash");
+            PrintSlash('x', 3, true);
+
+            Console.WriteLine("\nPrint Triangle");
+            PrintTriangle('x', 3);
+
+            Console.WriteLine("\nPrint Triangle v2");
+            PrintTriangle('x', 5);
+
+            Console.WriteLine("\nPrint Triangle v3");
+            PrintTriangle('x', 1);
+
+            Console.WriteLine("\nPrint Rhombus");
+            PrintRhombus('x', 7);
 
 
         }
@@ -72,7 +83,7 @@ namespace Simon.Week01
                 PrintChars(symbol, zahl);
                 Console.Write("\n");
             }
-            
+
         }
 
         //Aufgabe Print Triangle (1)
@@ -93,23 +104,23 @@ namespace Simon.Week01
             }
 
         }
-            
+
         //Aufgabe Print Trianble (2)
 
         public static void PrintTriangleTopLeft(char symbol, int zahl)
         {
-             int i = 0;
-             while (i < zahl)
-             {
-                    int x = zahl;
-                    while (x > i)
-                    {
-                        Console.Write(symbol);
-                        x--;
-                    }
-                    Console.Write("\n");
-                    i++;
-             }
+            int i = 0;
+            while (i < zahl)
+            {
+                int x = zahl;
+                while (x > i)
+                {
+                    Console.Write(symbol);
+                    x--;
+                }
+                Console.Write("\n");
+                i++;
+            }
 
         }
 
@@ -142,7 +153,7 @@ namespace Simon.Week01
         }
 
         //Aufgabe Print Empty Square
-             
+
         public static void PrintEmptySquare(char symbol, int number)
         {
             for (int i = 0; i < number; i++)
@@ -180,21 +191,86 @@ namespace Simon.Week01
                 }
                 else
                 {
-
-                    PrintTriangleBottomRight(symbol, number);
+                    int spaces = number - i + 1;
+                    PrintChars(' ', spaces - 2);
+                    PrintChars(symbol, 1);
+                    Console.WriteLine();
+                }
+            }
         }
 
+        //Aufgabe Print Triangle
 
+        public static void PrintTriangle(char symbol, int number)
+        {
+            int a = 1;
+            for (int i = 0; i < number; i++)
+            {
+                int row = i;
+                int space = number - 1;
+                if (row == number - 1)
+                {
+                    PrintChars(symbol, number * 2 - 1);
+                    Console.WriteLine();
+                }
+                else if(row == 0 && number == 1)
+                {
+                    Console.WriteLine(symbol);
+                }
+                else if (row == 0)
+                {
+                    PrintChars(' ', space);
+                    Console.Write(symbol);
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                
+                else
+                {
+                    int space1 = number - i - 1;
+                    int space2 = a;
+                    PrintChars(' ', space1);
+                    Console.Write(symbol);
+                    PrintChars(' ', space2);
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                    a = a + 2;
+                }
+            }
+        }
+        
+        //Aufgabe Print Rhombus
 
+        public static void PrintRhombus(char symbol, int number)
+        {
+
+            int a = 1;
+            for (int i = 0; i < number; i++)
+            {
+                int row = i;
+                int space = number - 1;
+                if (row == 0 || row == number-1)
+                {
+                    PrintChars(' ', space);
+                    Console.Write(symbol);
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                
+                else
+                {
+                    int space1 = number - i - 1;
+                    int space2 = a;
+                    PrintChars(' ', space1);
+                    Console.Write(symbol);
+                    PrintChars(' ', space2);
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                    a = a + 2;
+                }
             }
 
-
         }
-
-
-
-
-
 
 
     }
