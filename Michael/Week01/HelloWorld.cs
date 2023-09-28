@@ -1,10 +1,10 @@
 ﻿using System;
 namespace Michael.Week01
 {
-	public class HelloWorld
-	{
-		public static void Start()
-		{
+    public class HelloWorld
+    {
+        public static void Start()
+        {
 			Console.WriteLine("Hello World!");
             Console.WriteLine(" ___    ___");
             Console.WriteLine("|   \\  /   |");
@@ -14,7 +14,7 @@ namespace Michael.Week01
             Console.WriteLine("| |      | |");
             Console.WriteLine("|_|      |_|");
 
-            Console.WriteLine("    ")
+            Console.WriteLine("    ");
             Console.WriteLine("     |-|	");
             Console.WriteLine("     | |	");
             Console.WriteLine("     | |	");
@@ -31,35 +31,9 @@ namespace Michael.Week01
  /  ======  \
 /_/        \_\");
 
-            for (int i = 0; i <= 10; i++)
-            {
-                Console.WriteLine(i);
-            }
-
-            int counter = 0;
-
-            while (counter <= 10)
-            {
-                Console.WriteLine(counter);
-                counter++;
-            }
-
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(i);
-            }
-
-            counter = 0;
-
-            while (counter < 10)
-            {
-                Console.WriteLine(counter);
-                counter++;
-            }
-
 
 
 
         }
-}
+    }
 }
