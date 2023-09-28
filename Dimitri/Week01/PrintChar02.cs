@@ -10,7 +10,7 @@ namespace Dimitri.Week01
     {
         public static void Main()
         {
-            PrintEmptySquare("x", 10);
+            PrintEmptySquare("x", 1);
         }
 
         public static void PrintTriangleBottomLeft(string symbol, int row)
@@ -80,6 +80,9 @@ namespace Dimitri.Week01
                     }
                     Console.WriteLine();
                 }
+                /*
+                 * SCHOEN!!!
+                 */
                 else if (i == row)
                 {
                     for (int j = row; j > 0; j--)
@@ -89,18 +92,14 @@ namespace Dimitri.Week01
                     Console.WriteLine();
                 } else
                 {
-                    for (int j = row; j > 0; j--)
+                    Console.Write(symbol);
+
+                    for (int k= row - 2; k > 0; k--)
                     {
-                        for () 
-                        {
-                        }
-                        for () 
-                        {
-                        }
-                        for ()
-                        {
-                        }
+                        Console.Write(" ");
                     }
+
+                    Console.Write(symbol);
                     Console.WriteLine();
                 }
             }
