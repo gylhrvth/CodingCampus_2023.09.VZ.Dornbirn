@@ -20,16 +20,20 @@ namespace Ali.Week01
             printSquare("x", 10);
             Console.WriteLine();
 
-            Console.WriteLine("PrintTriangleAufgabe2");
-            printTriangle2("x", 10);
+            Console.WriteLine("PrintTriangleAufgabe1");
+            printTriangle1("x", 10);
             Console.WriteLine();
 
             Console.WriteLine("PrintAufgabe2.1");
             printSquare2("x", 10);
             Console.WriteLine();
 
-            Console.WriteLine("PrintTriangle1");
-            printTriangle1("x", 10);
+            Console.WriteLine("PrintRectangle");
+            printRectangle("x", 10, 3);
+            Console.WriteLine();
+
+            Console.WriteLine("PrintTrianglebottomleft");
+            printTrianglebottomleft("x", 4);
             Console.WriteLine();
 
         }
@@ -54,24 +58,24 @@ namespace Ali.Week01
             }
         }
 
-        public static void printTriangle2(string symbol, int count)
+        public static void printTriangle1(string symbol, int count)
         {
             for (int i = 1; i <= 4; i++)
             {
-                Console.WriteLine((new string('*', i)));
+                Console.WriteLine(new string('x', i));
             }
             {
-                
+
                 {
-                    Console.Write(symbol);
+
                 }
-                
+
             }
         }
 
         public static void printSquare2(string symbol, int count)
         {
-            for(int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
                 for (int j = 0; j < count; j++)
                 {
@@ -79,17 +83,28 @@ namespace Ali.Week01
                 }
                 Console.WriteLine();
             }
-            
-               
-
-            
-
-
-
-        public static void printTriangle1(string symbol, int count) { }
+        }
+        public static void printRectangle(string symbol, int count, int line)
+        {
+            for (int i = 0; i < line; i++)
+            {
+                for(int j=0; j <count; j++)
+                {
+                    Console.Write(symbol);
                 }
+                Console.WriteLine();
+
+                
+            }
+
+        }
+        public static void printTrianglebottomleft(string symbol, int count)
+        {
+
+        }
     }
-    
-   
 }
+
+
+
 
