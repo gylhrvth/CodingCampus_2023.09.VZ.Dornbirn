@@ -264,7 +264,7 @@ namespace Timo.Week01
             {
                 int spaces = i;
                 int characters = zahl / 2 + 1;
-                PrintChars(' ', characters );
+                PrintChars(' ', characters);
                 Console.Write(symbol);
                 for (int a = spacedifferent; a > zahl; a--)
                 {

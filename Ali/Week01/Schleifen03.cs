@@ -25,13 +25,16 @@ namespace Ali.Week01
             }
              
             for (int x = 0; x<= 10; x++)
-            {
+            
                 if (x % 2 == 0)
                 {
                     Console.WriteLine("ist gerade " + x);
                 }
-                
-            }
+                for (int b = 10; b >= -10; b--)
+                {
+                    Console.WriteLine("Der Zähler ist " + b);
+                }
+            
             
            
             

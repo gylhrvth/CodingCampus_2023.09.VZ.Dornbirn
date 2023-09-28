@@ -1,1 +1,1 @@
-﻿Kerem.Week01.Schleifen.Start();
+﻿Kerem.Week01.Methoden.Start();
