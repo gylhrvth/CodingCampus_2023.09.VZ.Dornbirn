@@ -44,6 +44,12 @@ namespace Ali.Week01
             printTriangleTopRight("x", 5);
             Console.WriteLine();
 
+            Console.WriteLine("printTriangleBottomRigh");
+            printTriangleBottomRight("x", 5);
+            Console.WriteLine();
+
+
+
         }
 
         public static void printChars(string symbol, int count)
@@ -138,16 +144,38 @@ namespace Ali.Week01
 
         public static void printTriangleTopRight(string symbol, int row)
         {
-           for (int i = 0; i < row; i++)
+            for (int i = 0; i < row; i++)
             {
-            
-             for(int j = row -1; j> i; j--)
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (int k = 0; k < row - i; k++)
+
+                    Console.Write(symbol);
+
+                {
+                }
+                Console.WriteLine(" ");
+                {
+
+                }
+            }
+        }
+        public static void printTriangleBottomRight(string symbol, int row)
+        {
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < i; j--)
+
+                    { Console.Write(" ");
+                
+                }
+                for (int k = 0; k > row + i; k++)
                 {
                     Console.Write(symbol);
-                    
                 }
-                
-            }  
+            }       Console.WriteLine(" ");
         }
     }
 }
