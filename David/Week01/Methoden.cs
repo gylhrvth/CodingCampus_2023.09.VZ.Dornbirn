@@ -32,7 +32,7 @@ namespace David.Week01
             }
 
 
-            Console.WriteLine("\nPrint Rectangele");
+            Console.WriteLine("\nPrint Rectangele(2)");
             for (int q = 0; q < 3; q++)
             {
                 for (int p = 0; p < count; p++)
@@ -45,7 +45,7 @@ namespace David.Week01
 
             }
 
-            Console.WriteLine("\nPrint Triangle");
+            Console.WriteLine("\nPrint Triangle(3)");
             for (int q = 0; q < 4; q++)
             {
                 for (int p = 0; p < count; p++)
@@ -57,7 +57,7 @@ namespace David.Week01
 
 
             }
-
+            Console.WriteLine("\nPrint Triangle(4)")
 
         }
 
