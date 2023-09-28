@@ -137,8 +137,8 @@ namespace Erik.Week01
                 Console.WriteLine("\n __      ___ _ _ _                            _ \r\n \\ \\    / (_) | | |_____ _ __  _ __  ___ _ _ | |\r\n  \\ \\/\\/ /| | | | / / _ \\ '  \\| '  \\/ -_) ' \\|_|\r\n   \\_/\\_/ |_|_|_|_\\_\\___/_|_|_|_|_|_\\___|_||_(_)\r\n                                                ");
                 Console.WriteLine("Das Fenster schließt sich automatisch in 3 Sekunden!\n");
                 Thread.Sleep(3000);
-                Environment.Exit(0);
-
+                System.Environment.Exit(0);
+                
             }
         }
 
