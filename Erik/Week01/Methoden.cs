@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -17,24 +18,35 @@ namespace Erik.Week01
             Console.WriteLine("Printing line:");
             PrintTheChars("x", 10);
             Console.WriteLine("\n");
+
             Console.WriteLine("Printing square:");
             PrintSquare("x", 10);
             Console.WriteLine("\n");
+
             Console.WriteLine("Printing rectangle:");
             PrintRectangle("x", 10, 3);
             Console.WriteLine("\n");
+
             Console.WriteLine("Printing Triangle bottom left:");
-            PrintTriangleBottomLeft("x", 4);
+            PrintTriangleBottomLeft("x", 5);
             Console.WriteLine("\n");
+
             Console.WriteLine("Printing Triangle top left:");
             PrintTriangleTopLeft("x", 5);
             Console.WriteLine("\n");
+
             Console.WriteLine("Printing Triangle top right:");
             PrintTrianlgeTopRight("x", 5);
             Console.WriteLine("\n");
+
             Console.WriteLine("Printing Triangle Bottom Right:");
-            PrintTriangleBottomRight("x", 5);
+            PrintTriangleBottomRight("x", 10);
             Console.WriteLine("\n");
+
+            Console.WriteLine("Printing Empty Square");
+            PrintEmptySquare("x", 10);
+            Console.WriteLine("\n");
+
 
         }
 
@@ -99,8 +111,8 @@ namespace Erik.Week01
         }
         public static void PrintTrianlgeTopRight(String letter, int length)
         {
-            
-            
+
+
             for (int k = 0; k < length; k++)
             {
 
@@ -114,24 +126,32 @@ namespace Erik.Week01
 
         public static void PrintTriangleBottomRight(String letter, int length)
         {
-
-            for (int k = 0; k < length; k++)
+            for (int i = 0; i < length; i = i + 1)
             {
 
+                //  int letterCount = i + 1;
+                //  int spaceCount = length - i - 1;
 
-                PrintTheChars(" ", k);
-                PrintTheChars(letter, length - k );
-                Console.WriteLine("");
-               
+                PrintTheChars(" ", length - i - 1);
+                PrintTheChars(letter, i + 1);
+                Console.WriteLine();
+            }
+        }
 
+        public static void PrintEmptySquare(String letter, int length)
+        {
+            int squareHeight = length;
+
+            
+            
+            for (int i = 0; i < length; i++)
+            {
+
+                Console.WriteLine(letter , length , squareHeight);
 
 
 
             }
-
-
-
-
         }
     }
 }
