@@ -31,9 +31,62 @@ namespace Fabian.Week01
 
             Console.WriteLine("\n print empty square");
             PrintEmptySquare("x", 10);
+            Console.WriteLine();
+            PrintEmptySquare("A", 3);
 
+            Console.WriteLine("\n print slash");
+            PrintSlash("x", 3, true);
+            Console.WriteLine();
+            PrintSlash("y", 4, false);
 
-        }
+            Console.WriteLine("\n print triangle");
+            PrintTriangle("x", 2);
+            Console.WriteLine();
+            Console.WriteLine();
+            PrintTriangle("x", 4);
+            Console.WriteLine();
+            Console.WriteLine();
+            PrintTriangle("x", 1);
+
+            Console.WriteLine("print rhombus");
+            PrintRhombus("x", 4);
+
+            Console.WriteLine("print x");
+            PrintX("x", 5);
+
+            Console.WriteLine("print christmas tree");
+            PrintChristmasTree(9);
+
+            Console.WriteLine("print circle pythagoras");
+            PrintCirclePythagoras(10);
+            /*
+            bool toggle = true;
+            int i = 0;
+            Console.Write("\u001b[31m");
+            while (true)
+            {
+                if(toggle)
+                {
+                    i++;
+                }
+                else
+                {
+                    i--;
+                }
+
+                if (i== 30|| i == 0)
+                {
+                    toggle = !toggle;
+                }
+
+                PrintTriangle("x", i);
+                Thread.Sleep(1);
+                Console.Clear();
+            }
+
+            Console.Write("\u001b[31m");
+           */
+        } 
 
 
         //print characters
@@ -63,7 +116,7 @@ namespace Fabian.Week01
         //print rectangle
         static void PrintRectangle(String  character, int columns, int rows)
         {
-            for (int i = 0;i < rows; i++)
+            for (int i = 0; i < rows; i++)
             {
                 Methoden.PrintChars(character, columns);
                 Console.WriteLine();
@@ -73,10 +126,9 @@ namespace Fabian.Week01
         //´print triangle 1
         static void PrintTriangleBottomLeft(String character, int rows)
         {
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i <= rows; i++)
             {
-                Methoden.PrintChars(character, i);
-                Console.WriteLine(character);
+                Methoden.PrintChars(character, i, true);
             }
         }
 
@@ -85,11 +137,11 @@ namespace Fabian.Week01
         {
             for(int i = 0; i < rows; i++)
             {
-                for(int j = rows-1; j > i; j--)
+                for(int j = rows; j > i; j--)
                 {
                     Console.Write(character);
                 }
-                Console.WriteLine(character);
+                Console.WriteLine();
             }
         } 
 
@@ -112,10 +164,10 @@ namespace Fabian.Week01
         public static void PrintTriangleBottomRight(String x, int anzahl)
         {
 
-            for (int i = 0; i < anzahl; i++)
+            for (int i = 0; i <= anzahl; i++)
             {
-                PrintChars(" ", anzahl - i - 1);
-                PrintChars(x, i + 1, true);
+                PrintChars(" ", anzahl - i );
+                PrintChars(x, i , true);
             }
         }
 
@@ -131,18 +183,152 @@ namespace Fabian.Week01
             {
                 return;
             }
-            PrintChars(character, width, true);
 
+            PrintChars(character, width, true);
             for(int i = 0;i < width-2;i++)
             {
                 Console.Write(character);
                 PrintChars(" ", width - 2);
                 Console.WriteLine(character);
             }
-
             PrintChars(character, width, true);
         }
 
+        //print slash
+        public static void PrintSlash(String character, int count, bool backSlash)
+        {
+            if(backSlash)
+            {
+                for(int i = 0; i < count; i++)
+                {
+                    PrintChars(" ", i);
+                    Console.WriteLine(character);
+                }
+            }
+            else
+            {
+                for(int i = 0; i < count; i++)
+                {
+                    PrintChars(" ", count - i);
+                    Console.WriteLine(character);
+                }
+            }
+        }
 
+        //print triangle
+        public static void PrintTriangle(String character, int height)
+        {
+            if(height == 1)
+            {
+                Console.WriteLine(character);
+                return;
+            }else if (height <= 0)
+            {
+                return;
+            }
+
+            PrintChars(" ", height);
+            Console.WriteLine(character);
+            for (int i = 1; i < height; i++)
+            {
+                PrintChars(" ", height - i);
+                Console.Write(character);
+    
+                PrintChars(" ", i * 2 - 1);
+                Console.WriteLine(character);
+            }
+            PrintChars(character, height * 2 + 1);
+        }
+
+        //print rhombus
+
+        public static void PrintRhombus(String character, int height)
+        {
+            PrintChars(" ", height);
+            Console.WriteLine(character);
+            for (int i = 1; i < height-1; i++)
+            {
+                PrintChars(" ", height - i);
+                Console.Write(character);
+
+                PrintChars(" ", i * 2 - 1);
+                Console.WriteLine(character);
+            }
+            for (int j = 1; j < height; j++)
+            {
+                PrintChars(" ", j);
+                Console.Write(character);
+
+                PrintChars(" ", ((height - j) * 2) - 1);
+                Console.WriteLine(character);
+            }
+            PrintChars(" ", height);
+            Console.WriteLine(character);
+        }
+
+        //print x
+
+        public static void PrintX(String character, int height)
+        {
+            for (int j = 3; j < height; j++)
+            {
+                PrintChars(" ", j);
+                Console.Write(character);
+
+                PrintChars(" ", ((height - j) * 2) - 1);
+                Console.WriteLine(character);
+            }
+            PrintChars(" ", height);
+            Console.WriteLine(character);
+            for (int i = 1; i < height - 2; i++)
+            {
+                PrintChars(" ", height - i);
+                Console.Write(character);
+
+                PrintChars(" ", i * 2 - 1);
+                Console.WriteLine(character);
+            }
+
+        }
+
+        //print christmas tree
+        public static void PrintChristmasTree(int width)
+        {
+            if (width == 1)
+            {
+                Console.WriteLine("*");
+                return;
+            }
+            else if (width <= 0)
+            {
+                return;
+            }
+
+            PrintChars(" ", width);
+            Console.WriteLine("*");
+            for (int i = 1; i < width; i++)
+            {
+                PrintChars(" ", width - i);
+                Console.Write("*");
+
+                PrintChars("*", i * 2 - 1);
+                Console.WriteLine("*");
+            }
+            PrintChars("*", width * 2 + 1, true);
+            PrintChars("O ", width + 1, true);
+
+            
+            for (int i = 0; i < 2; i++) {
+                PrintChars(" ", width - 2);
+                PrintChars("+", width - 4);
+                Console.WriteLine();
+            }
+        }
+
+        //print circle pythagoras
+        public static void PrintCirclePythagoras(int radius)
+        {
+
+        }
     }
 }
