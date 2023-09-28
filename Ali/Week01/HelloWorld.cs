@@ -5,8 +5,18 @@ namespace Ali.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
-		}
+			Console.WriteLine("Hello AliAsuk!"); 	
+			Console.WriteLine("     /--\\		|-|		|--|");	
+			Console.WriteLine("    / /\\ \\		| |		|  |");
+			Console.WriteLine("   / /  \\ \\		| |		|  |");
+			Console.WriteLine("  / /    \\ \\		| |		|  |");
+			Console.WriteLine(" /  ======  \\		| -----|	|  |");
+			Console.WriteLine("/_/        \\_\\		|------|	|--|");
+
+
+            
+        }
 	}
 }
+
 

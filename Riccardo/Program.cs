@@ -1,1 +1,2 @@
-﻿Riccardo.Week01.HelloWorld.Start();
+﻿Riccardo.Week01.Day3Methode.Start();
+    

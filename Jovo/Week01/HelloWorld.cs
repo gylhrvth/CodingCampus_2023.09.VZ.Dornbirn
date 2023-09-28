@@ -5,8 +5,41 @@ namespace Jovo.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
-		}
+			Console.WriteLine("Hello Jovo!");
+            Console.WriteLine("! ! ! ! ! ! !");
+            Console.WriteLine("! ! ! ! ! ! !");
+            Console.WriteLine("        ! ! ! ");
+            Console.WriteLine("        ! ! !");
+            Console.WriteLine("        ! ! !");
+            Console.WriteLine("        ! ! !");
+            Console.WriteLine("! !     ! ! !");
+            Console.WriteLine("! ! ! ! ! ! !");
+            Console.WriteLine("! ! ! ! ! ! !             ");
+            Console.WriteLine("    ####   ");
+            Console.WriteLine("  ##    ## ");
+            Console.WriteLine(" ##      ##");
+            Console.WriteLine("##        ##");
+            Console.WriteLine(" ##      ##");
+            Console.WriteLine("  ##    ##");
+            Console.WriteLine("     ###   ");
+            Console.WriteLine("\\        /");
+            Console.WriteLine(" \\      /");
+            Console.WriteLine("  \\    /");
+            Console.WriteLine("   \\  / ");
+            Console.WriteLine("    \\/  ");
+            Console.WriteLine("    ####   ");
+            Console.WriteLine("  ##    ## ");
+            Console.WriteLine(" ##      ##");
+            Console.WriteLine("##        ##");
+            Console.WriteLine(" ##      ##");
+            Console.WriteLine("  ##    ##");
+            Console.WriteLine("    ####   ");
+
+
+
+
+
+        }
 	}
 }
 
