@@ -23,6 +23,9 @@ namespace Timo.Week01
 
             Console.WriteLine("\n6.Aufgabe");
             PrintTriangleTopRight('x', 5);
+
+            Console.WriteLine("\n7.Aufgabe");
+            PrintTriangleBottomRight('x', 5);
         }
 
         //Aufgabe1
@@ -86,11 +89,10 @@ namespace Timo.Week01
                 x--;
             }
         }
-        //Aufgabe6
+        /*//Aufgabe6
         public static void PrintTriangleTopRight(char symbol, int zahl)
         {
             int x = zahl;
-            
             int a = 0; 
             while (x > 0)
             {
@@ -109,6 +111,30 @@ namespace Timo.Week01
                 Console.Write("\n");
                 a++;
                 x--;
+            }
+        }*/
+        //Aufgabe6.2
+        public static void PrintTriangleTopRight(char symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                int spaces = i;
+                int characters = zahl - i;
+                PrintChars(' ', spaces);
+                PrintChars(symbol, characters);
+                Console.WriteLine();
+            }
+
+        }
+        public static void PrintTriangleBottomRight(char symbol, int zahl) 
+        {
+            for (int i = zahl; i > 0; i--)
+            {
+                int spaces = i;
+                int characters = zahl - i;
+                PrintChars(' ', spaces);
+                PrintChars(symbol, characters);
+                Console.WriteLine();
             }
         }
     }
