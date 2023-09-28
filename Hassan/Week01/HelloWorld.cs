@@ -6,7 +6,14 @@ namespace Hassan.Week01
 		public static void Start()
 		{
 			Console.WriteLine("Hello Hassan!!!");
-		}
+            Console.WriteLine("     /--\\");
+            Console.WriteLine("    / /\\ \\");
+            Console.WriteLine("   / /  \\ \\");
+            Console.WriteLine("  / /    \\ \\");
+            Console.WriteLine(" /  ======  \\");
+            Console.WriteLine("/_/        \\_\\");
+
+        }
 	}
 }
 

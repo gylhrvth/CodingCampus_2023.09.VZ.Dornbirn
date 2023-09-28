@@ -1,1 +1,1 @@
-﻿Hassan.Week01.HelloWorld.Start();
+﻿Hassan.Week01.Excs.Start();
