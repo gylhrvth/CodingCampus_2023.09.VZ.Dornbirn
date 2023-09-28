@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -44,9 +45,20 @@ namespace Erik.Week01
             Console.WriteLine("\n");
 
             Console.WriteLine("Printing Empty Square");
-            PrintEmptySquare("x", 10);
+            PrintEmptySquare("A", 3);
             Console.WriteLine("\n");
 
+            Console.WriteLine("Printing the Slash");
+            PrintSlash("y", 5, false);
+            Console.WriteLine();
+
+            Console.WriteLine("Printing the Triangle");
+            PrintTriangle("x", 5);
+            Console.WriteLine();
+
+            Console.WriteLine("Printing the Rhombus");
+            PrintRhombus("x", 7);
+            Console.WriteLine();
 
         }
 
@@ -57,6 +69,7 @@ namespace Erik.Week01
             {
                 Console.Write(letter);
             }
+
         }
 
         public static void PrintSquare(String letter, int length)
@@ -140,18 +153,95 @@ namespace Erik.Week01
 
         public static void PrintEmptySquare(String letter, int length)
         {
-            int squareHeight = length;
+            int squareHeight = length - 2;
 
-            
-            
-            for (int i = 0; i < length; i++)
+
+            PrintTheChars(letter, length);
+            Console.WriteLine();
+
+            for (int i = 0; i < squareHeight; i++)
+            {
+                Console.Write(letter);
+                PrintTheChars(" ", squareHeight);
+                Console.WriteLine(letter);
+            }
+
+            PrintTheChars(letter, length);
+        }
+
+        public static void PrintSlash(String letter, int length, bool isActiv)
+        {
+
+            if (isActiv)
+            {
+                for (int i = 0; i < length; i++)
+                {
+
+                    PrintTheChars(" ", i);
+                    Console.Write(letter);
+                    Console.WriteLine();
+
+                }
+            }
+
+            else
             {
 
-                Console.WriteLine(letter , length , squareHeight);
+                for (int i = 0; i < length; i++)
+                {
+
+                    PrintTheChars(" ", length - i - 1);
+                    Console.WriteLine(letter);
 
 
+                }
 
             }
+        }
+
+        public static void PrintTriangle(String letter, int length)
+        {
+
+            PrintTheChars(" ", length - 1);
+            PrintTheChars(letter, 1);
+            Console.WriteLine();
+
+
+
+
+            for (int i = 1; i < length - 1; i++)
+            {
+                PrintTheChars(" ", length - i - 1);
+                PrintTheChars(letter, 1);
+                PrintTheChars(" ", 2 * i - 1);
+                PrintTheChars(letter, 1);
+                Console.WriteLine();
+
+            }
+
+            PrintTheChars(letter, length * 2 - 1);
+
+
+
+
+        }
+       
+
+        public static void PrintRhombus(String letter, int lenght)
+
+
+
+        {
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
