@@ -43,16 +43,26 @@ namespace Timo.Week01
             PrintTriangle('x', 30);
 
             Console.WriteLine("\n11.Aufgabe");
-            PrintRhombus('x', 7);
+            PrintRhombus('x', 51);
 
+            Console.WriteLine("\n12.Aufgabe");
+            PrintX('x', 51);
 
-
-            int h = 7;
-            Console.WriteLine((h / 2));
+            Console.WriteLine("\n13.Aufgabe");
+            PrintChristmasTree(23);
         }
 
         //Aufgabe1
         public static void PrintChars(char symbol, int zahl)
+        {
+            for (int x = 0; x < zahl; x++)
+            {
+                Console.Write(symbol);
+            }
+            return;
+        }
+
+        public static void PrintString(string symbol, int zahl)
         {
             for (int x = 0; x < zahl; x++)
             {
@@ -242,41 +252,110 @@ namespace Timo.Week01
         //Aufgabe11.1
         public static void PrintRhombus(char symbol, int zahl)
         {
-            PrintChars(' ', zahl / 2);
+            PrintChars('.', zahl / 2);
             Console.WriteLine(symbol);
             int spacedifferent = 1;
             for (int i = 1; i < ((zahl / 2) + 1); i++)
             {
                 int spaces = i;
                 int characters = zahl / 2 + 1 - i;
-                PrintChars(' ', characters - 1);
+                PrintChars('.', characters - 1);
                 Console.Write(symbol);
                 for (int a = spacedifferent; a > 0; a--)
                 {
-                    Console.Write(' ');
+                    Console.Write('.');
                 }
                 Console.Write(symbol);
                 spacedifferent = spacedifferent + 2;
                 Console.WriteLine();
-
             }
-            for (int i = (zahl / 2) + 1; i > 1; i--)
+            int space2 = spacedifferent - 4;
+            for (int i = 1; i < ((zahl - 1) / 2); i++)
             {
                 int spaces = i;
-                int characters = zahl / 2 + 1;
-                PrintChars(' ', characters );
+                int characters = zahl / 2 + 1 - i;
+                PrintChars('.', i);
                 Console.Write(symbol);
-                for (int a = spacedifferent; a > zahl; a--)
+                for (int a = space2; a > 0; a--)
                 {
-                    Console.Write(' ');
+                    Console.Write('.');
                 }
                 Console.Write(symbol);
+                space2 = space2 - 2;
+                Console.WriteLine();
+            }
+            PrintChars('.', zahl / 2);
+            Console.WriteLine(symbol);
+        }
+        //Aufgabe12
+        public static void PrintX(char symbol, int zahl)
+        {
+            int spacedifferent = zahl;
+            int space2 = spacedifferent - 2;
+            for (int i = 0; i < (zahl / 2); i++)
+            {
+                int spaces = i;
+                int characters = zahl / 2 + 1 - i;
+                PrintChars('.', i);
+                Console.Write(symbol);
+                for (int a = space2; a > 0; a--)
+                {
+                    Console.Write('.');
+                }
+                Console.Write(symbol);
+                space2 = space2 - 2;
+                Console.WriteLine();
+            }
+            PrintChars('.', zahl / 2);
+            Console.WriteLine(symbol);
+            int b = 1;
+            for (int i = 1; i < ((zahl / 2) + 1); i++)
+            {
+                int spaces = i;
+                int characters = zahl / 2 + 1 - i;
+                PrintChars('.', characters - 1);
+                Console.Write(symbol);
+                for (int a = b; a > 0; a--)
+                {
+                    Console.Write('.');
+                }
+                Console.Write(symbol);
+                b = b + 2;
+                Console.WriteLine();
+            }
+        }
+        public static void PrintChristmasTree(int zahl)
+        {
+            PrintChars(' ', zahl - 1);
+            Console.WriteLine('*');
+            int spacedifferent = 1;
+            for (int i = 1; i < zahl - 1; i++)
+            {
+                int spaces = i;
+                int characters = zahl - i;
+                PrintChars(' ', characters - 1);
+                Console.Write('*');
+                for (int a = spacedifferent; a > 0; a--)
+                {
+                    Console.Write('*');
+                }
+                Console.Write('*');
                 spacedifferent = spacedifferent + 2;
                 Console.WriteLine();
+            }
+            PrintChars('*', (zahl * 2) - 1);
+            Console.WriteLine();
+            PrintString("0 ", zahl);
+            Console.WriteLine();
+            int b = 0;
+            while (b < 2)
+            {
+                PrintChars('.', (zahl * 2) / 3);
+                PrintChars('+', (zahl * 2) / 3);
+                Console.WriteLine();
+                b++;
 
             }
-            PrintChars(' ', zahl - 1);
-            Console.WriteLine(symbol);
         }
     }
 }

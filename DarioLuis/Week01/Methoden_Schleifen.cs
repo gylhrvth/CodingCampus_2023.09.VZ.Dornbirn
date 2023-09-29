@@ -1,217 +1,142 @@
-﻿using System;
-namespace Timo.Week01
-{
-    public class MethodenUndSchleifen
-    {
+﻿using System.Runtime.InteropServices;
 
+namespace DarioLuis.Week01
+{
+    public class Methoden
+    {
         public static void Start()
         {
-            Console.WriteLine("\n1.Aufgabe:");
-            PrintChars('x', 5);
+            Console.WriteLine("\nPrintChars");
+            PrintChars("x", 10);
 
-            Console.WriteLine("\n2.Aufgabe:");
-            PrintSquare('x', 5);
+            PrintSquare("x", 10);
 
-            Console.WriteLine("\n3.Aufgabe:");
-            PrintRectangle('x', 5, 8);
+            PrintRect("x", 3, 10);
 
-            Console.WriteLine("\n4.Aufgabe:");
-            PrintTriangleBottomLeft('x', 5);
+            PrintTriangleBottomLeft("x", 4);
 
-            Console.WriteLine("\n5.Aufgabe");
-            PrintTriangleTopLeft('x', 5);
+            PrintTriangleTopLeft("x", 4);
 
-            Console.WriteLine("\n6.Aufgabe");
-            PrintTriangleTopRight('x', 5);
+            PrintTriangleTopRight("x", 4);
 
-            Console.WriteLine("\n7.Aufgabe");
-            PrintTriangleBottomRight('x', 5);
+            Console.WriteLine("\nPrintEmptySquare");
+            PrintEmptySquare("x", 10);
 
-            Console.WriteLine("\n8.Aufgabe");
-            PrintEmptySquare('x', 6);
+            Console.WriteLine("\nPrintEmptySquare");
+            PrintEmptySquare2("A", 2);
 
-            Console.WriteLine("\n9.Aufgabe - true");
-            PrintSlash('x', 5, true);
-
-            Console.WriteLine("\n9.Aufgabe - false");
-            PrintSlash('x', 5, false);
-
-            Console.WriteLine("\n10.Aufgabe - 1x");
-            PrintTriangle('x', 1);
-
-            Console.WriteLine("\n10.Aufgabe - mehr x");
-            PrintTriangle('x', 30);
-
-            Console.WriteLine("\n11.Aufgabe");
-            PrintRhombus('x', 7);
-
-
-
-            int h = 7;
-            Console.WriteLine((h / 2));
+            Console.WriteLine("\nPrintSlash");
+            PrintSlash("x", 3, true);
+            PrintSlash("x", 4, false);
+            PrintTriangle("x", 3);
         }
 
-        //Aufgabe1
-        public static void PrintChars(char symbol, int zahl)
+        public static void PrintChars(string character, int rows)
         {
-            for (int x = 0; x < zahl; x++)
+            for (int i = 0; i <= rows; i++)
             {
-                Console.Write(symbol);
+                Console.Write(character);
             }
-            return;
         }
-        //Aufgabe2
-        public static void PrintSquare(char symbol, int zahl)
+        public static void PrintSquare(string character, int rows)
         {
-            for (int y = 0; y < zahl; y++)
+            for (int i = 0; i <= rows; i++)
             {
-                PrintChars(symbol, zahl);
-                Console.Write("\n");
+                PrintChars(character, rows);
+                Console.WriteLine(character);
             }
-            return;
         }
-        //Aufgabe3
-        public static void PrintRectangle(char symbol, int zahl, int hoehe)
+        public static void PrintRect(string character, int rows, int columns)
         {
-            for (int y = 0; y < hoehe; y++)
+            for (int i = 0; i < rows; i++)
             {
-                PrintChars(symbol, zahl);
-                Console.Write("\n");
+                PrintChars(character, columns);
+                Console.WriteLine(character);
             }
-            return;
         }
-        //Aufgabe4
-        public static void PrintTriangleBottomLeft(char symbol, int zahl)
+        public static void PrintTriangleBottomLeft(string character, int rows)
         {
-            int x = 0;
-            while (x < zahl)
+            for (int i = 0; i < rows; i++)
             {
-                int y = 0;
-                while ((y - 1) < x)
+                for (int j = 0; j < i; j++)
                 {
-                    Console.Write(symbol);
-                    y++;
+                    Console.Write(character);
                 }
-                Console.Write("\n");
-                x++;
+                Console.WriteLine(character);
             }
+
         }
-        //Aufgabe5
-        public static void PrintTriangleTopLeft(char symbol, int zahl)
+        public static void PrintTriangleTopLeft(string character, int rows)
         {
-            int x = zahl;
-            while (x > 0)
+            for (int i = 0; i < rows; i++)
             {
-                int y = 0;
-                while (y < x)
+                for (int j = rows - 1; j > i; j--)
                 {
-                    Console.Write(symbol);
-                    y++;
+                    Console.Write(character);
                 }
-                Console.Write("\n");
-                x--;
+                Console.WriteLine(character);
             }
         }
-        /*//Aufgabe6
-        public static void PrintTriangleTopRight(char symbol, int zahl)
+        public static void PrintTriangleTopRight(string character, int rows)
         {
-            int x = zahl;
-            int a = 0; 
-            while (x > 0)
+            for (int i = 0; i < rows; i++)
             {
-                int z = a;
-                int y = 0;
-                while (zahl-z < (zahl)) 
+                for (int j = 0; j < i; j++)
                 {
                     Console.Write(" ");
-                    z--;
                 }
-                while (y < x)
+                for (int k = 0; k < rows - i; k++)
                 {
-                    Console.Write(symbol);
-                    y++;
+                    Console.Write(character);
                 }
-                Console.Write("\n");
-                a++;
-                x--;
-            }
-        }*/
-        //Aufgabe6.2
-        public static void PrintTriangleTopRight(char symbol, int zahl)
-        {
-            for (int i = 0; i < zahl; i++)
-            {
-                int spaces = i;
-                int characters = zahl - i;
-                PrintChars(' ', spaces);
-                PrintChars(symbol, characters);
-                Console.WriteLine();
-            }
-
-        }
-        //Aufgabe7
-        public static void PrintTriangleBottomRight(char symbol, int zahl)
-        {
-
-            for (int i = 0; i < zahl; i++)
-            {
-                int spaces = i;
-                int characters = zahl - i;
-                PrintChars(' ', characters - 1);
-                PrintChars(symbol, i + 1);
                 Console.WriteLine();
             }
         }
-        //Aufgabe8
-        public static void PrintEmptySquare(char symbol, int zahl)
+        public static void PrintEmptySquare(string character, int size)
         {
-            for (int i = 0; i < zahl; i++)
+            PrintChars(character, size);
+            Console.WriteLine("");
+            for (int j = 0; j < size - 2; j++)
             {
-                if (i == 0 || i == zahl - 1)
-                {
-                    PrintChars(symbol, zahl);
-                    Console.Write("\n");
-                }
-                else
-                {
-                    {
-                        Console.Write(symbol);
-                        PrintChars(' ', zahl - 2);
-                        Console.Write(symbol);
-                        Console.WriteLine();
-
-                    }
-                }
+                Console.Write(character);
+                PrintChars(" ", size - 2);
+                Console.WriteLine(character);
             }
+            PrintChars(character, size);
         }
-        //Aufgabe9
-        public static void PrintSlash(char symbol, int zahl, bool backslash)
+        public static void PrintEmptySquare2(string character, int size)
+        {
+            PrintChars(character, size);
+            Console.WriteLine("");
+            for (int j = 0; j <= size - 2; j++)
+            {
+                Console.Write(character);
+                PrintChars(" ", size - 2);
+                Console.WriteLine(character);
+                }
+            PrintChars(character, size);
+        }
+        public static void PrintSlash(string character, int rows, bool backslash)
         {
             if (backslash)
             {
-                for (int i = 0; i < zahl; i++)
+                for (int k = 0; k < rows - 2; k++)
                 {
-                    int spaces = i;
-                    int characters = zahl - i;
-                    PrintChars(' ', spaces);
-                    Console.Write(symbol);
-                    Console.WriteLine();
+                    Console.WriteLine(character);
+                    Console.WriteLine(" " + character);
+                    Console.WriteLine("  " + character);
                 }
             }
-            else
+            Console.WriteLine("");
+            if (backslash)
             {
-                for (int i = 0; i < zahl; i++)
-                {
-                    int spaces = i;
-                    int characters = zahl - i;
-                    PrintChars(' ', characters - 1);
-                    Console.Write(symbol);
-                    Console.WriteLine();
-                }
+                Console.WriteLine("   " + "y");
+                Console.WriteLine("  " + "y");
+                Console.WriteLine(" " + "y");
+                Console.WriteLine("y");
             }
         }
-        //Aufgabe10
-        public static void PrintTriangle(char symbol, int zahl)
+        public static void PrintTriangle(string symbol, int zahl)
         {
             if (zahl == 1)
             {
@@ -219,64 +144,25 @@ namespace Timo.Week01
             }
             else
             {
-                PrintChars(' ', zahl - 1);
+                PrintChars(" ", zahl - 2);
                 Console.WriteLine(symbol);
                 int spacedifferent = 1;
                 for (int i = 1; i < zahl - 1; i++)
                 {
                     int spaces = i;
                     int characters = zahl - i;
-                    PrintChars(' ', characters - 1);
+                    PrintChars(" ", characters - 2);
                     Console.Write(symbol);
                     for (int a = spacedifferent; a > 0; a--)
                     {
                         Console.Write(' ');
                     }
                     Console.Write(symbol);
-                    spacedifferent = spacedifferent + 2;
+                    spacedifferent = spacedifferent + 1;
                     Console.WriteLine();
                 }
-                PrintChars(symbol, (zahl * 2) - 1);
+                PrintChars(symbol, (zahl * 2) - 2);
             }
-        }
-        //Aufgabe11.1
-        public static void PrintRhombus(char symbol, int zahl)
-        {
-            PrintChars(' ', zahl / 2);
-            Console.WriteLine(symbol);
-            int spacedifferent = 1;
-            for (int i = 1; i < ((zahl / 2) + 1); i++)
-            {
-                int spaces = i;
-                int characters = zahl / 2 + 1 - i;
-                PrintChars(' ', characters - 1);
-                Console.Write(symbol);
-                for (int a = spacedifferent; a > 0; a--)
-                {
-                    Console.Write(' ');
-                }
-                Console.Write(symbol);
-                spacedifferent = spacedifferent + 2;
-                Console.WriteLine();
-
-            }
-            for (int i = (zahl / 2) + 1; i > 1; i--)
-            {
-                int spaces = i;
-                int characters = zahl / 2 + 1;
-                PrintChars(' ', characters);
-                Console.Write(symbol);
-                for (int a = spacedifferent; a > zahl; a--)
-                {
-                    Console.Write(' ');
-                }
-                Console.Write(symbol);
-                spacedifferent = spacedifferent + 2;
-                Console.WriteLine();
-
-            }
-            PrintChars(' ', zahl - 1);
-            Console.WriteLine(symbol);
         }
     }
 }
