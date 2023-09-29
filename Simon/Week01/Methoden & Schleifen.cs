@@ -59,7 +59,10 @@ namespace Simon.Week01
             PrintX('x', 5);
 
             Console.WriteLine("\nPrint Christmastree");
-            PrintChristmasTree(14);
+            PrintChristmasTree(2);
+
+            Console.WriteLine("\nPrint circle Pythagoras");
+            PrintCirclePythagoras(10);
 
 
 
@@ -349,6 +352,10 @@ namespace Simon.Week01
 
         public static void PrintChristmasTree(int number)
         {
+            //if (number % 3 == 0)
+            //{
+
+
             int a = 1;
             for (int i = 0; i < number; i++)
             {
@@ -385,29 +392,27 @@ namespace Simon.Week01
             Console.WriteLine();
             for (int i = 0; i < 2; i++)
             {
-                int space = number/3*2;
+                int space = (number * 2) / 3;
                 PrintChars(' ', space);
-                PrintChars('+', number / 3 * 2-1);
+                PrintChars('+', (number * 2) / 3 - 1);
                 Console.WriteLine();
             }
+            //}
+            /*else
+            {
+                Console.WriteLine("Bitte gib nur eine Nummer ein die teil der 3er Reihe ist.");
+            }*/
+        }
+
+        // Bonusaufgabe: Print circle Pythagoras
+
+        public static void PrintCirclePythagoras(double number)
+        {
+           
+                
 
 
         }
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
