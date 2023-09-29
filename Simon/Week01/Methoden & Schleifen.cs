@@ -59,7 +59,7 @@ namespace Simon.Week01
             PrintX('x', 5);
 
             Console.WriteLine("\nPrint Christmastree");
-            PrintChristmasTree(14);
+            PrintChristmasTree(12);
 
 
 
@@ -229,7 +229,6 @@ namespace Simon.Week01
                 {
                     PrintChars(' ', space);
                     Console.Write(symbol);
-                    PrintChars(' ', space);
                     Console.WriteLine();
                 }
 
@@ -385,9 +384,9 @@ namespace Simon.Week01
             Console.WriteLine();
             for (int i = 0; i < 2; i++)
             {
-                int space = number/3*2;
+                int space = number / 3 * 2;
                 PrintChars(' ', space);
-                PrintChars('+', number / 3 * 2-1);
+                PrintChars('+', number / 3 * 2 - 1);
                 Console.WriteLine();
             }
 
