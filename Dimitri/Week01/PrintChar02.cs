@@ -11,7 +11,7 @@ namespace Dimitri.Week01
     {
         public static void Main()
         {
-            PrintRhombus("x", 5);
+            PrintX("x", 9);
         }
 
         public static void PrintTriangleBottomLeft(string symbol, int row)
@@ -263,7 +263,57 @@ namespace Dimitri.Week01
                         Console.Write(" ");
                     }
                     Console.Write(symbol);
-                    for (int j = lowerHalf * 2 - i - 1;  j > i; j--)
+                    for (int j = lowerHalf * 2 - i - 1; j > i; j--)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+            }
+        }
+
+        public static void PrintX(string symbol, int row)
+        {
+            for (int i = 1; i <= row; i++)
+            {
+                if (i == (row + 1) / 2)
+                {
+                    for (int j = (row - 1) / 2; j > 0; j--)
+                    {
+                        Console.Write(" ");
+                    }
+
+                    Console.Write(symbol);
+
+                    for (int j = (row - 1) / 2; j > 0; j--)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.WriteLine();
+                }
+                else if (i < (row + 1) / 2)
+                {
+                    for (int j = i - 1; j > 0; j--)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    for (int j = row - i; j > i; j--)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+                else if (i > (row + 1) / 2)
+                {
+                    for (int j = row - i; j > 0; j--)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    for (int j = ((row - 1 / 2) - i) + 2; j < i; j++)
                     {
                         Console.Write(" ");
                     }
