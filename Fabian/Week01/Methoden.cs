@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Fabian.Week01
 {
     public class Methoden
@@ -40,16 +41,14 @@ namespace Fabian.Week01
             PrintSlash("y", 4, false);
 
             Console.WriteLine("\n print triangle");
-            PrintTriangle("x", 2);
+            PrintPyramid("x", 3);
             Console.WriteLine();
+            PrintPyramid("x", 5);
             Console.WriteLine();
-            PrintTriangle("x", 4);
-            Console.WriteLine();
-            Console.WriteLine();
-            PrintTriangle("x", 1);
+            PrintPyramid("x", 1);
 
             Console.WriteLine("print rhombus");
-            PrintRhombus("x", 4);
+            PrintRhombus("x", 7);
 
             Console.WriteLine("print x");
             PrintX("x", 5);
@@ -57,8 +56,6 @@ namespace Fabian.Week01
             Console.WriteLine("print christmas tree");
             PrintChristmasTree(9);
 
-            Console.WriteLine("print circle pythagoras");
-            PrintCirclePythagoras(10);
             /*
             bool toggle = true;
             int i = 0;
@@ -209,35 +206,36 @@ namespace Fabian.Week01
             {
                 for(int i = 0; i < count; i++)
                 {
-                    PrintChars(" ", count - i);
+                    PrintChars(" ", count - i - 1);
                     Console.WriteLine(character);
                 }
             }
         }
 
         //print triangle
-        public static void PrintTriangle(String character, int height)
+        public static void PrintPyramid(String character, int height)
         {
             if(height == 1)
             {
                 Console.WriteLine(character);
                 return;
-            }else if (height <= 0)
+            }
+            else if (height <= 0)
             {
                 return;
             }
 
-            PrintChars(" ", height);
+            PrintChars(" ", height - 1);
             Console.WriteLine(character);
-            for (int i = 1; i < height; i++)
+            for (int i = 1; i < height - 1; i++)
             {
-                PrintChars(" ", height - i);
+                PrintChars(" ", height - i - 1);
                 Console.Write(character);
     
                 PrintChars(" ", i * 2 - 1);
                 Console.WriteLine(character);
             }
-            PrintChars(character, height * 2 + 1);
+            PrintChars(character, height * 2 - 1);
         }
 
         //print rhombus
@@ -246,7 +244,7 @@ namespace Fabian.Week01
         {
             PrintChars(" ", height);
             Console.WriteLine(character);
-            for (int i = 1; i < height-1; i++)
+            for (int i = 1; i < height - 1; i++)
             {
                 PrintChars(" ", height - i);
                 Console.Write(character);
@@ -325,10 +323,5 @@ namespace Fabian.Week01
             }
         }
 
-        //print circle pythagoras
-        public static void PrintCirclePythagoras(int radius)
-        {
-
-        }
     }
 }
