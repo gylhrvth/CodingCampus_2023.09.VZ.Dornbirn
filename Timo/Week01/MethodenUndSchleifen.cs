@@ -49,7 +49,7 @@ namespace Timo.Week01
             PrintX('x', 51);
 
             Console.WriteLine("\n13.Aufgabe");
-            PrintChristmasTree(9);
+            PrintChristmasTree(4);
         }
 
         //Aufgabe1
@@ -269,8 +269,8 @@ namespace Timo.Week01
                 spacedifferent = spacedifferent + 2;
                 Console.WriteLine();
             }
-            int space2 = spacedifferent-4;
-            for (int i = 1; i < ((zahl -1)/ 2); i++)
+            int space2 = spacedifferent - 4;
+            for (int i = 1; i < ((zahl - 1) / 2); i++)
             {
                 int spaces = i;
                 int characters = zahl / 2 + 1 - i;
@@ -284,7 +284,7 @@ namespace Timo.Week01
                 space2 = space2 - 2;
                 Console.WriteLine();
             }
-            PrintChars('.', zahl/2);
+            PrintChars('.', zahl / 2);
             Console.WriteLine(symbol);
         }
         //Aufgabe12
@@ -346,6 +346,21 @@ namespace Timo.Week01
             PrintChars('*', (zahl * 2) - 1);
             Console.WriteLine();
             PrintString("0 ", zahl);
+            Console.WriteLine();
+            int b = 0;
+            while (b < 2)
+            {
+                for (int i = (zahl * 2) / 3; i > 0; i--)
+                {
+                    Console.Write('.');
+                }
+                for (int i = (zahl * 2) / 3; i > 1; i--)
+                {
+                    Console.Write('+');
+                }
+                Console.WriteLine();
+                b++;
+            }
         }
     }
 }
