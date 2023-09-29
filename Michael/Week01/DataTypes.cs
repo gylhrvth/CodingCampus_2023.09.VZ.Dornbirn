@@ -11,8 +11,7 @@ namespace Michael.Week01
     public class DataTypes
     {
 
-
-
+        
         public static void DataType()
         {
 
@@ -40,12 +39,8 @@ namespace Michael.Week01
             for (int i = 1; i <= 20; i++)
             {
                 product *= i;
+                Console.WriteLine("{0,2}! = {1,20}",i,product);
             }
-
-
-            Console.WriteLine("3 Dezimalstellen: {0:N3}", 3.14156);
-
-            Console.WriteLine($"{product,30}");
 
 
             for (double count = 0; count <= 100; count += 0.1)
