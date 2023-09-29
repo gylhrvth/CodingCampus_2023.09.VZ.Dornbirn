@@ -296,7 +296,7 @@ namespace Erik.Week01
                 {
                     if (j == i || j == length - 1 - i)
                     {
-                        PrintTheChars(letter, 1);
+                        Console.Write(letter);
                     }
                     else
                     {
@@ -308,32 +308,32 @@ namespace Erik.Week01
 
 
 
-            //for (int m = 0; m < length; m++)
-            //{
+        //for (int m = 0; m < length; m++)
+        //{
 
-            //    if (m < length)
-            //    {
-            //        PrintTheChars(letter, 1);
-            //        PrintTheChars(".", (length + 1) / 2);
-            //        PrintTheChars(letter, 1);
-            //        Console.WriteLine();
+        //    if (m < length)
+        //    {
+        //        PrintTheChars(letter, 1);
+        //        PrintTheChars(".", (length + 1) / 2);
+        //        PrintTheChars(letter, 1);
+        //        Console.WriteLine();
 
-            //    }
-            //    else
-            //    {
-
-
-            //        PrintTheChars(letter, 1);
-            //        PrintTheChars(".", (length + 1) / 2);
-            //        PrintTheChars(letter, 1);
-            //        Console.WriteLine();
-
-            //    }
+        //    }
+        //    else
+        //    {
 
 
+        //        PrintTheChars(letter, 1);
+        //        PrintTheChars(".", (length + 1) / 2);
+        //        PrintTheChars(letter, 1);
+        //        Console.WriteLine();
+
+        //    }
 
 
-        }
+
+
+    }
 
 
     }
