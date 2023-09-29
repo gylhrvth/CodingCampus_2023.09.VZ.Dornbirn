@@ -1,1 +1,1 @@
-﻿Niklas.Week01.HelloWorld.Start();
+﻿Niklas.Week01.Methoden.Start();
