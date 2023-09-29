@@ -49,7 +49,7 @@ namespace Timo.Week01
             PrintX('x', 51);
 
             Console.WriteLine("\n13.Aufgabe");
-            PrintChristmasTree(4);
+            PrintChristmasTree(23);
         }
 
         //Aufgabe1
@@ -350,16 +350,11 @@ namespace Timo.Week01
             int b = 0;
             while (b < 2)
             {
-                for (int i = (zahl * 2) / 3; i > 0; i--)
-                {
-                    Console.Write('.');
-                }
-                for (int i = (zahl * 2) / 3; i > 1; i--)
-                {
-                    Console.Write('+');
-                }
+                PrintChars('.', (zahl * 2) / 3);
+                PrintChars('+', (zahl * 2) / 3);
                 Console.WriteLine();
                 b++;
+
             }
         }
     }
