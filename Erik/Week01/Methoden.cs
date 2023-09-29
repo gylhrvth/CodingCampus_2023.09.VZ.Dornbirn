@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -61,8 +62,10 @@ namespace Erik.Week01
             Console.WriteLine();
 
             Console.WriteLine("Printing the X");
-            PrintX("x", 10);
+            PrintX("x", 5);
             Console.WriteLine();
+
+
 
         }
 
@@ -285,38 +288,63 @@ namespace Erik.Week01
         public static void PrintX(String letter, int length)
         {
 
-            for (int m = 0; m < length; m++)
+
+
+            for (int i = 0; i < length; i++)
             {
-
-                if (m < length)
+                for (int j = 0; j < length; j++)
                 {
-                    PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
-                    PrintTheChars(letter, 1);
-                    Console.WriteLine();
-
+                    if (j == i || j == length - 1 - i)
+                    {
+                        PrintTheChars(letter, 1);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
-                else
-                {
-
-
-                    PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
-                    PrintTheChars(letter, 1);
-                    Console.WriteLine();
-
-                }
-
-
-
-
+                Console.WriteLine();
             }
+
+
+
+            //for (int m = 0; m < length; m++)
+            //{
+
+            //    if (m < length)
+            //    {
+            //        PrintTheChars(letter, 1);
+            //        PrintTheChars(".", (length + 1) / 2);
+            //        PrintTheChars(letter, 1);
+            //        Console.WriteLine();
+
+            //    }
+            //    else
+            //    {
+
+
+            //        PrintTheChars(letter, 1);
+            //        PrintTheChars(".", (length + 1) / 2);
+            //        PrintTheChars(letter, 1);
+            //        Console.WriteLine();
+
+            //    }
+
+
 
 
         }
 
+
     }
+
 }
+
+
+
+
+
+
 
 
 
