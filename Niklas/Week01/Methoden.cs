@@ -48,7 +48,13 @@ namespace Niklas.Week01
             PrintTriangle("x", 5);
             Console.WriteLine();
 
+            Console.WriteLine("\n print Rhombus: ");
+            PrintRhombus("x", 7);
+            Console.WriteLine();
 
+            Console.WriteLine("\n print Christmastree: ");
+            PrintTree(9);
+            Console.WriteLine();
 
 
         }
