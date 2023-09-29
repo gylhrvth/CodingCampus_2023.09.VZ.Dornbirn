@@ -48,6 +48,10 @@ namespace David.Week01
             PrintEmptySquare3("x", 10);
             Console.WriteLine();
 
+            Console.WriteLine("\nPrintEmptySquare");
+            PrintEmptySquare("A", 3);
+            Console.WriteLine();
+
 
 
         }
@@ -223,6 +227,36 @@ namespace David.Week01
                
 
 
+            }
+        }
+        public static void PrintEmptySquare(String symbol, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if (j == 0)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (i == 0)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (j == count-1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if(i == count-1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
             }
         }
 
