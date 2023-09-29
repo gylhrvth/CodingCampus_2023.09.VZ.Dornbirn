@@ -196,16 +196,16 @@ namespace Niklas.Week01
 
         static void PrintTriangle(String character, int times)
         {
-            int i, j, n = times;
+            int i, f, n = times;
             for (i = 0; i < n; i++)
             {
 
-                for (j = n - i; j > 0; j--)
+                for (f = n - i; f > 0; f--)
                     Console.Write(" ");
 
-                for (j = 0; j <= 2 * i; j++)
+                for (f = 0; f <= 2 * i; f++)
                 {
-                    if (j < 2 * i && j > 0 && i != (n - 1))
+                    if (f < 2 * i && f > 0 && i != (n - 1))
                         Console.Write(" ");
                     else
                         Console.Write(character);
