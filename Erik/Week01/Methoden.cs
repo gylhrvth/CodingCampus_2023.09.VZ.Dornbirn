@@ -60,6 +60,10 @@ namespace Erik.Week01
             PrintRhombus("x", 7);
             Console.WriteLine();
 
+            Console.WriteLine("Printing the X");
+            PrintX("x", 10);
+            Console.WriteLine();
+
         }
 
 
@@ -231,7 +235,9 @@ namespace Erik.Week01
         public static void PrintRhombus(String letter, int length)
         {
 
-            for (int i = 0; i < length ; i++)
+            length = length / 2;
+
+            for (int i = 0; i < length; i++)
             {
                 if (i == 0)
                 {
@@ -252,16 +258,60 @@ namespace Erik.Week01
                 }
             }
 
-            for (int k = 1; k < length - 1; k++)
+            for (int k = 1; k <= length - 1; k++)
             {
-                PrintTheChars("*", k );
-                PrintTheChars(letter, 1);
+                if (k == length - 1)
+                {
+                    PrintTheChars(".", length - 1);
+                    PrintTheChars(letter, 1);   //erster letter
+                    Console.WriteLine();
 
-                PrintTheChars("*", length - 2 * k );                         //PrintTheChars("*", length - 2 * k + 2);
-                PrintTheChars(letter, 1);
-                Console.WriteLine();
+                }
+                else
+                {
+                    PrintTheChars("*", k);
+                    PrintTheChars(letter, 1);
+
+                    PrintTheChars("*", 2 * length - 2 * k - 3);                        //PrintTheChars("*", length - 2 * k + 2);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
+
+                }
 
             }
+
+        }
+
+        public static void PrintX(String letter, int length)
+        {
+
+            for (int m = 0; m < length; m++)
+            {
+
+                if (m < length)
+                {
+                    PrintTheChars(letter, 1);
+                    PrintTheChars(".", (length + 1) / 2);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
+
+                }
+                else
+                {
+
+
+                    PrintTheChars(letter, 1);
+                    PrintTheChars(".", (length + 1) / 2);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
+
+                }
+
+
+
+
+            }
+
 
         }
 
