@@ -43,12 +43,10 @@ namespace Timo.Week01
             PrintTriangle('x', 30);
 
             Console.WriteLine("\n11.Aufgabe");
-            PrintRhombus('x', 7);
+            PrintRhombus('x', 51);
 
-
-
-            int h = 7;
-            Console.WriteLine((h / 2));
+            Console.WriteLine("\n12.Aufgabe");
+            PrintX('x', 51);
         }
 
         //Aufgabe1
@@ -219,18 +217,18 @@ namespace Timo.Week01
             }
             else
             {
-                PrintChars('.', zahl - 1);
+                PrintChars(' ', zahl - 1);
                 Console.WriteLine(symbol);
                 int spacedifferent = 1;
                 for (int i = 1; i < zahl - 1; i++)
                 {
                     int spaces = i;
                     int characters = zahl - i;
-                    PrintChars('.', characters - 1);
+                    PrintChars(' ', characters - 1);
                     Console.Write(symbol);
                     for (int a = spacedifferent; a > 0; a--)
                     {
-                        Console.Write('.');
+                        Console.Write(' ');
                     }
                     Console.Write(symbol);
                     spacedifferent = spacedifferent + 2;
@@ -277,5 +275,11 @@ namespace Timo.Week01
             PrintChars('.', zahl/2);
             Console.WriteLine(symbol);
         }
+        //Aufgabe12
+        public static void PrintX(char symbol, int zahl)
+        {
+
+        }
+
     }
 }
