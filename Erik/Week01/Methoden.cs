@@ -54,7 +54,7 @@ namespace Erik.Week01
 
             Console.WriteLine("Printing the Triangle");
             PrintTriangle("x", 5);
-            Console.WriteLine();
+            Console.WriteLine("");
 
             Console.WriteLine("Printing the Rhombus");
             PrintRhombus("x", 7);
@@ -139,14 +139,14 @@ namespace Erik.Week01
 
         public static void PrintTriangleBottomRight(String letter, int length)
         {
-            for (int i = 0; i < length; i = i + 1)
+            for (int i = 1; i <= length; i = i + 1)
             {
 
                 //  int letterCount = i + 1;
                 //  int spaceCount = length - i - 1;
 
-                PrintTheChars(" ", length - i - 1);
-                PrintTheChars(letter, i + 1);
+                PrintTheChars(" ", length - i);
+                PrintTheChars(letter, i);
                 Console.WriteLine();
             }
         }
@@ -155,7 +155,7 @@ namespace Erik.Week01
         {
             int squareHeight = length - 2;
 
-
+            
             PrintTheChars(letter, length);
             Console.WriteLine();
 
@@ -220,21 +220,38 @@ namespace Erik.Week01
             }
 
             PrintTheChars(letter, length * 2 - 1);
+            Console.WriteLine();
 
 
 
 
         }
-       
+
 
         public static void PrintRhombus(String letter, int lenght)
-
-
-
         {
 
+            for (int i = 0; i < lenght; i++)
+            {
+
+                PrintTheChars("." , i * lenght / 2);
+                PrintTheChars(letter, 1);   //erster letter
 
 
+                PrintTheChars(".", i * 2 + 1);  //Abstand Mitte
+                PrintTheChars(letter, 1);       //zweiter letter    
+
+                Console.WriteLine();
+
+
+
+
+
+                //PrintTheChars(".",i * 2 + 1);   
+
+            }
+
+            
 
 
 
@@ -243,8 +260,143 @@ namespace Erik.Week01
 
 
         }
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

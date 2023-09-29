@@ -2,7 +2,7 @@
 using System;
 namespace Fabienne.Week01
 {
-    public class Printcharacters
+    public class Methoden
     {
         public static void Start()
         {
