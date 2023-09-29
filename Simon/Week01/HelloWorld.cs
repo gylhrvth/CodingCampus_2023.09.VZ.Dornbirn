@@ -31,20 +31,6 @@ namespace Simon.Week01
 
             int c= 0; 
 
-                {
-                    
-                }
-            {
-                
-            }
-
-
-
-
-
-            {
-                
-            }
 
 
 
