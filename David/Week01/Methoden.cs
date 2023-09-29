@@ -40,29 +40,22 @@ namespace David.Week01
             PrintTriangleTopRight("x", 5);
             Console.WriteLine();
 
-            Console.WriteLine("\nPrintTriangleBottomRight");
-            PrintTriangleBottomRight("x", 5);
+            Console.WriteLine("\nPrintTriangleBottomRight5");
+            PrintTriangleBottomRight5("x", 5);
+            Console.WriteLine();
+
+            Console.WriteLine("\nprintEmptySquare3");
+            PrintEmptySquare3("x", 10);
+            Console.WriteLine();
+
+            Console.WriteLine("\nPrintEmptySquare");
+            PrintEmptySquare("A", 3);
             Console.WriteLine();
 
 
 
-            for(int y = 0; y < 10; y++)
-            {
-                for(int x = 0; x < 10; x++)
-                {
-                    if(x >= y)
-                    {
-                        Console.Write("X");
-                    } else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
         }
-
+        // Ü1
 
 
         public static void PrintChars(String symbol, int count)
@@ -118,6 +111,7 @@ namespace David.Week01
         }
 
 
+        //Sandro Erklärung "X und Y Achse"
 
         public static void PrintTriangleBottomLeft2(String symbol, int count)
         {
@@ -130,7 +124,25 @@ namespace David.Week01
         }
 
 
-
+        //Lukas Erklärung "Mathe"
+        public static void PrintTriangleBottomRight5(String symbol, int count)
+        {
+            for (int y = 0; y < 10; y++)
+            {
+                for (int x = 0; x < 10; x++)
+                {
+                    if (x >= y)
+                    {
+                        Console.Write("X");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
 
 
 
@@ -169,15 +181,86 @@ namespace David.Week01
             }
 
         }
-        public static void PrintTriangleBottomRight(String symbol, int count)
+        //public static void PrintTriangleBottomRight(String symbol, int count)
+        //{
+        //  for (int i = 0; i < count; i++)
+        //{
+        //  for (int j = count; j > i; j--)
+        //{
+        //     Console.Write("5");
+        //}
+        //
+        //
+        //  }
+        //Console.WriteLine("7");
+        //}
+
+        public static void PrintEmptySquare3(String symbol, int count)
         {
             for (int i = 0; i < count; i++)
             {
-                    Console.Write(symbol);
-            }
-            
+                for (int j = 0; j < count; j++)
+                {
+                    if (i == 0)
+                    {
+                        Console.Write("a");
+                    }
+                    else if (j == 0)
+                    {
+                        Console.Write("b");
+                    }
+                    else if (i == count - 1)
+                    {
+                        Console.Write("c");
+                    }
+                    else if (j == count - 1)
+                    {
+                        Console.Write("d");
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
+                    
+                }
+                Console.WriteLine();
+               
 
+
+            }
         }
+        public static void PrintEmptySquare(String symbol, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if (j == 0)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (i == 0)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (j == count-1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if(i == count-1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+
 
     }
 
