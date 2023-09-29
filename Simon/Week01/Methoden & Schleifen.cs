@@ -413,6 +413,8 @@ namespace Simon.Week01
                 double PI = 3.1415;
                 PrintChars('X', number*4);
                 Console.WriteLine();
+                double radius = number * PI;
+                if()
                 
             }
         }
