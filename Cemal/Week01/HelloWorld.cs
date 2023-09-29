@@ -5,8 +5,17 @@ namespace Cemal.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
-		}
-	}
+			Console.WriteLine("Hello Cemal!");
+            Console.WriteLine("     /--\\          | |          | |");
+            Console.WriteLine("    / /\\ \\         | |          | |");
+            Console.WriteLine("   / /  \\ \\        | |          | |");
+            Console.WriteLine("  / /    \\ \\       | |          | |");
+            Console.WriteLine(" / /======\\ \\      | |______    | |");
+            Console.WriteLine("/_/        \\_\\     |________|   |-|");
+
+
+
+        }
+    }
 }
 

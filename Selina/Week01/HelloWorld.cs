@@ -5,8 +5,10 @@ namespace Selina.Week01
 	{
 		public static void Start()
 		{
-			Console.WriteLine("Hello World!");
-		}
+			Console.WriteLine("");
+            Console.WriteLine(" ");
+            Console.WriteLine("Hallo Welt!");
+        }
 	}
 }
 
