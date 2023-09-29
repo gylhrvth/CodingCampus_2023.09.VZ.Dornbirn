@@ -9,6 +9,8 @@ namespace Fabian.Week01
        
         public static void Start()
         {
+            Console.ForegroundColor = ConsoleColor.White;
+
             Console.WriteLine("\nprint chars: ");
             PrintChars("x", 10, true);
 
@@ -242,17 +244,20 @@ namespace Fabian.Week01
 
         public static void PrintRhombus(String character, int height)
         {
+            height /= 2;
+
             PrintChars(" ", height);
             Console.WriteLine(character);
-            for (int i = 1; i < height - 1; i++)
+            for (int i = 1; i < height; i++)
             {
+
                 PrintChars(" ", height - i);
                 Console.Write(character);
 
                 PrintChars(" ", i * 2 - 1);
                 Console.WriteLine(character);
             }
-            for (int j = 1; j < height; j++)
+            for (int j = 0; j < height; j++)
             {
                 PrintChars(" ", j);
                 Console.Write(character);
@@ -264,11 +269,10 @@ namespace Fabian.Week01
             Console.WriteLine(character);
         }
 
-        //print x
-
         public static void PrintX(String character, int height)
         {
-            for (int j = 3; j < height; j++)
+            height = height / 2 + 1;
+            for (int j = 1; j < height; j++)
             {
                 PrintChars(" ", j);
                 Console.Write(character);
@@ -278,7 +282,7 @@ namespace Fabian.Week01
             }
             PrintChars(" ", height);
             Console.WriteLine(character);
-            for (int i = 1; i < height - 2; i++)
+            for (int i = 1; i < height; i++)
             {
                 PrintChars(" ", height - i);
                 Console.Write(character);
@@ -292,6 +296,7 @@ namespace Fabian.Week01
         //print christmas tree
         public static void PrintChristmasTree(int width)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             if (width == 1)
             {
                 Console.WriteLine("*");
@@ -313,14 +318,16 @@ namespace Fabian.Week01
                 Console.WriteLine("*");
             }
             PrintChars("*", width * 2 + 1, true);
+            Console.ForegroundColor = ConsoleColor.Yellow;
             PrintChars("O ", width + 1, true);
+            Console.ForegroundColor = ConsoleColor.Magenta;
 
-            
             for (int i = 0; i < 2; i++) {
-                PrintChars(" ", width - 2);
-                PrintChars("+", width - 4);
-                Console.WriteLine();
+
+                PrintChars(" ", width - ((width - 1)/4));
+                PrintChars("+", width - ((width - 1)/2), true);
             }
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
     }

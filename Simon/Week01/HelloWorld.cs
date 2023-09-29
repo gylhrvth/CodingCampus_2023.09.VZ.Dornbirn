@@ -29,7 +29,7 @@ namespace Simon.Week01
             for (int i = 0; i <= 10; i++)
 			Console.Write(i.ToString());
 
-            int c= 0; 
+       
 
 
 

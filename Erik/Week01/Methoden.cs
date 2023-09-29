@@ -60,6 +60,10 @@ namespace Erik.Week01
             PrintRhombus("x", 7);
             Console.WriteLine();
 
+            Console.WriteLine("Printing the X");
+            PrintX("x", 10);
+            Console.WriteLine();
+
         }
 
 
@@ -155,7 +159,7 @@ namespace Erik.Week01
         {
             int squareHeight = length - 2;
 
-            
+
             PrintTheChars(letter, length);
             Console.WriteLine();
 
@@ -228,35 +232,85 @@ namespace Erik.Week01
         }
 
 
-        public static void PrintRhombus(String letter, int lenght)
+        public static void PrintRhombus(String letter, int length)
         {
 
-            for (int i = 0; i < lenght; i++)
+            length = length / 2;
+
+            for (int i = 0; i < length; i++)
             {
+                if (i == 0)
+                {
+                    PrintTheChars(".", i + length - 1);
+                    PrintTheChars(letter, 1);   //erster letter
+                    Console.WriteLine();
 
-                PrintTheChars("." , i * lenght / 2);
-                PrintTheChars(letter, 1);   //erster letter
+                }
+                else if (i < length)                 //obere hälfte 
+                {
+                    PrintTheChars(".", length - i - 1);
+                    PrintTheChars(letter, 1);
 
+                    PrintTheChars(".", 2 * i - 1);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
 
-                PrintTheChars(".", i * 2 + 1);  //Abstand Mitte
-                PrintTheChars(letter, 1);       //zweiter letter    
+                }
+            }
 
-                Console.WriteLine();
+            for (int k = 1; k <= length - 1; k++)
+            {
+                if (k == length - 1)
+                {
+                    PrintTheChars(".", length - 1);
+                    PrintTheChars(letter, 1);   //erster letter
+                    Console.WriteLine();
 
+                }
+                else
+                {
+                    PrintTheChars("*", k);
+                    PrintTheChars(letter, 1);
 
+                    PrintTheChars("*", 2 * length - 2 * k - 3);                        //PrintTheChars("*", length - 2 * k + 2);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
 
-
-
-                //PrintTheChars(".",i * 2 + 1);   
+                }
 
             }
 
-            
+        }
+
+        public static void PrintX(String letter, int length)
+        {
+
+            for (int m = 0; m < length; m++)
+            {
+
+                if (m < length)
+                {
+                    PrintTheChars(letter, 1);
+                    PrintTheChars(".", (length + 1) / 2);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
+
+                }
+                else
+                {
+
+
+                    PrintTheChars(letter, 1);
+                    PrintTheChars(".", (length + 1) / 2);
+                    PrintTheChars(letter, 1);
+                    Console.WriteLine();
+
+                }
 
 
 
 
-
+            }
 
 
         }
