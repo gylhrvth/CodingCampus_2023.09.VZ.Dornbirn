@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -53,6 +54,16 @@ namespace Simon.Week01
 
             Console.WriteLine("\nPrint Rhombus");
             PrintRhombus('x', 7);
+
+            Console.WriteLine("\nPrintX");
+            PrintX('x', 5);
+
+            Console.WriteLine("\nPrint Christmastree");
+            PrintChristmasTree(2);
+
+            Console.WriteLine("\nPrint circle Pythagoras");
+            PrintCirclePythagoras(10);
+
 
 
         }
@@ -213,7 +224,7 @@ namespace Simon.Week01
                     PrintChars(symbol, number * 2 - 1);
                     Console.WriteLine();
                 }
-                else if(row == 0 && number == 1)
+                else if (row == 0 && number == 1)
                 {
                     Console.WriteLine(symbol);
                 }
@@ -224,7 +235,7 @@ namespace Simon.Week01
                     PrintChars(' ', space);
                     Console.WriteLine();
                 }
-                
+
                 else
                 {
                     int space1 = number - i - 1;
@@ -238,28 +249,29 @@ namespace Simon.Week01
                 }
             }
         }
-        
+
         //Aufgabe Print Rhombus
 
         public static void PrintRhombus(char symbol, int number)
         {
 
             int a = 1;
-            for (int i = 0; i < number; i++)
+            for (int i = 0; i < (number - 1) / 2; i++)
             {
                 int row = i;
-                int space = number - 1;
-                if (row == 0 || row == number-1)
+                int space = number / 2;
+
+                if (row == 0)
                 {
                     PrintChars(' ', space);
                     Console.Write(symbol);
                     PrintChars(' ', space);
                     Console.WriteLine();
                 }
-                
+
                 else
                 {
-                    int space1 = number - i - 1;
+                    int space1 = number / 2 - i;
                     int space2 = a;
                     PrintChars(' ', space1);
                     Console.Write(symbol);
@@ -269,9 +281,138 @@ namespace Simon.Week01
                     a = a + 2;
                 }
             }
-
+            int b = 0;
+            for (int i = 0; i < (number + 1) / 2; i++)
+            {
+                int row = i;
+                int space = (number - 1) / 2;
+                if (row == (number - 1) / 2)
+                {
+                    PrintChars(' ', space);
+                    Console.Write(symbol);
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    int space1 = i;
+                    int space2 = b + number - 2;
+                    PrintChars(' ', space1);
+                    Console.Write(symbol);
+                    PrintChars(' ', space2);
+                    Console.WriteLine(symbol);
+                    b = b - 2;
+                }
+            }
         }
 
+        //Aufgabe Print X
 
+        public static void PrintX(char symbol, int number)
+        {
+            int b = 0;
+            for (int i = 0; i < (number + 1) / 2; i++)
+            {
+                int row = i;
+                int space = (number - 1) / 2;
+                if (row == (number - 1) / 2)
+                {
+                    PrintChars(' ', space);
+                    Console.Write(symbol);
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    int space1 = i;
+                    int space2 = b + number - 2;
+                    PrintChars(' ', space1);
+                    Console.Write(symbol);
+                    PrintChars(' ', space2);
+                    Console.WriteLine(symbol);
+                    b = b - 2;
+                }
+            }
+            int a = 1;
+            for (int i = 0; i < (number - 1) / 2; i++)
+            {
+
+                int space1 = number / 2 - i - 1;
+                int space2 = a;
+                PrintChars(' ', space1);
+                Console.Write(symbol);
+                PrintChars(' ', space2);
+                Console.Write(symbol);
+                Console.WriteLine();
+                a = a + 2;
+            }
+        }
+
+        //Aufgabe Print Christmastree
+
+        public static void PrintChristmasTree(int number)
+        {
+            //if (number % 3 == 0)
+            //{
+
+
+            int a = 1;
+            for (int i = 0; i < number; i++)
+            {
+                int row = i;
+                int space = number - 1;
+                if (row == number - 1)
+                {
+                    PrintChars('*', number * 2 - 1);
+                    Console.WriteLine();
+                }
+                else if (row == 0)
+                {
+                    PrintChars(' ', space);
+                    Console.Write('*');
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    int space1 = number - i - 1;
+                    int space2 = a;
+                    PrintChars(' ', space1);
+                    Console.Write('*');
+                    PrintChars('*', space2);
+                    Console.Write('*');
+                    Console.WriteLine();
+                    a = a + 2;
+                }
+            }
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write("O ");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 2; i++)
+            {
+                int space = (number * 2) / 3;
+                PrintChars(' ', space);
+                PrintChars('+', (number * 2) / 3 - 1);
+                Console.WriteLine();
+            }
+            //}
+            /*else
+            {
+                Console.WriteLine("Bitte gib nur eine Nummer ein die teil der 3er Reihe ist.");
+            }*/
+        }
+
+        // Bonusaufgabe: Print circle Pythagoras
+
+        public static void PrintCirclePythagoras(double number)
+        {
+           
+                
+
+
+        }
     }
+
 }
