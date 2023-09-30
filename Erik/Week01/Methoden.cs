@@ -65,6 +65,10 @@ namespace Erik.Week01
             PrintX("x", 5);
             Console.WriteLine();
 
+            Console.WriteLine("Printing the Christmas Tree");
+            PrintChristmasTree(9);
+            Console.WriteLine();
+
 
 
         }
@@ -308,177 +312,58 @@ namespace Erik.Week01
 
 
 
-        //for (int m = 0; m < length; m++)
-        //{
+            //for (int m = 0; m < length; m++)
+            //{
 
-        //    if (m < length)
-        //    {
-        //        PrintTheChars(letter, 1);
-        //        PrintTheChars(".", (length + 1) / 2);
-        //        PrintTheChars(letter, 1);
-        //        Console.WriteLine();
+            //    if (m < length)
+            //    {
+            //        PrintTheChars(letter, 1);
+            //        PrintTheChars(".", (length + 1) / 2);
+            //        PrintTheChars(letter, 1);
+            //        Console.WriteLine();
 
-        //    }
-        //    else
-        //    {
-
-
-        //        PrintTheChars(letter, 1);
-        //        PrintTheChars(".", (length + 1) / 2);
-        //        PrintTheChars(letter, 1);
-        //        Console.WriteLine();
-
-        //    }
+            //    }
+            //    else
+            //    {
 
 
+            //        PrintTheChars(letter, 1);
+            //        PrintTheChars(".", (length + 1) / 2);
+            //        PrintTheChars(letter, 1);
+            //        Console.WriteLine();
+
+            //    }
 
 
-    }
+
+
+        }
+        public static void PrintChristmasTree (int starLength)
+        {
+
+            starLength = starLength / 2;
+
+            for (int i = 0; i < starLength; i++)
+            {
+
+                PrintTheChars("."  , starLength - i - 1);
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+        }
 
 
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
