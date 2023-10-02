@@ -86,10 +86,10 @@ namespace Simon.Week01
             PrintPyramid('x', 1);
 
             Console.WriteLine("\nPrint Rhombus");
-            PrintRhombus('x', 9);
+            PrintRhombus('x', 7);
 
             Console.WriteLine("\nPrintX");
-            //PrintX('x', 5);
+            PrintX('x', 10);
 
 
         }
@@ -218,8 +218,45 @@ namespace Simon.Week01
         //Aufgabe Print Rhombus
         public static void PrintRhombus(char symbol, int number)
         {
+            PrintChars(' ', number - 1);
+            Console.WriteLine(symbol);
+            for (int i = 0; i < (number-1)/2; i++)
+            {
+                PrintChars(' ', number - i - 2);
+                Console.Write(symbol);
+                PrintChars(' ', (i * 2) + 1);
+                Console.WriteLine(symbol);
+            }
+            
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Aufgabe Print X
+        public static void PrintX(char symbol, int number)
+        {
             int hnumber = number / 2;
-            PrintChars(' ', hnumber);
+            for (int i = 0; i < hnumber; i++)
+            {
+                PrintChars(' ', i);
+                Console.Write(symbol);
+                PrintChars(' ', hnumber + 1 - (i * 2));
+                Console.WriteLine(symbol);
+            }
+            PrintChars(' ', number / 2);
             Console.WriteLine(symbol);
             for (int i = 0; i < hnumber; i++)
             {
@@ -228,20 +265,6 @@ namespace Simon.Week01
                 PrintChars(' ', (i * 2) + 1);
                 Console.WriteLine(symbol);
             }
-            for (int i = 0; i < hnumber-1; i++)
-            {
-                PrintChars(' ', i+1);
-                Console.Write(symbol);
-                PrintChars('+', hnumber+1-(i*2));
-                Console.WriteLine(symbol);
-            }
-            PrintChars(' ', number / 2);
-            Console.WriteLine(symbol);
-        }
-        //Aufgabe Print X
-        public static void PrintX(char symbol, int number)
-        {
-
         }
 
     }
