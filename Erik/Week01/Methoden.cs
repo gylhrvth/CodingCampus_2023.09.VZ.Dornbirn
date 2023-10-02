@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.Design;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
@@ -61,8 +62,14 @@ namespace Erik.Week01
             Console.WriteLine();
 
             Console.WriteLine("Printing the X");
-            PrintX("x", 10);
+            PrintX("x", 5);
             Console.WriteLine();
+
+            Console.WriteLine("Printing the Christmas Tree");
+            PrintChristmasTree(9);
+            Console.WriteLine();
+
+
 
         }
 
@@ -285,27 +292,63 @@ namespace Erik.Week01
         public static void PrintX(String letter, int length)
         {
 
-            for (int m = 0; m < length; m++)
+
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
+                {
+                    if (j == i || j == length - 1 - i)
+                    {
+                        Console.Write(letter);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+
+
+
+            //for (int m = 0; m < length; m++)
+            //{
+
+            //    if (m < length)
+            //    {
+            //        PrintTheChars(letter, 1);
+            //        PrintTheChars(".", (length + 1) / 2);
+            //        PrintTheChars(letter, 1);
+            //        Console.WriteLine();
+
+            //    }
+            //    else
+            //    {
+
+
+            //        PrintTheChars(letter, 1);
+            //        PrintTheChars(".", (length + 1) / 2);
+            //        PrintTheChars(letter, 1);
+            //        Console.WriteLine();
+
+            //    }
+
+
+
+
+        }
+        public static void PrintChristmasTree (int starLength)
+        {
+
+            starLength = starLength / 2;
+
+            for (int i = 0; i < starLength; i++)
             {
 
-                if (m < length)
-                {
-                    PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
-                    PrintTheChars(letter, 1);
-                    Console.WriteLine();
-
-                }
-                else
-                {
+                PrintTheChars("."  , starLength - i - 1);
 
 
-                    PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
-                    PrintTheChars(letter, 1);
-                    Console.WriteLine();
-
-                }
 
 
 
@@ -313,144 +356,14 @@ namespace Erik.Week01
             }
 
 
+
+
+
+
+
         }
 
+
     }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

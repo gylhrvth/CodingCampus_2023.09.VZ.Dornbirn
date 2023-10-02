@@ -52,6 +52,10 @@ namespace David.Week01
             PrintEmptySquare("A", 3);
             Console.WriteLine();
 
+            Console.WriteLine("\nPrintSlash");
+            PrintSlash("x", 3);
+            Console.WriteLine();
+
 
 
         }
@@ -259,7 +263,30 @@ namespace David.Week01
                 Console.WriteLine();
             }
         }
-
+        public static void PrintSlash(String symbol, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j= 0; j < count; j++)
+                {
+                    if ( j < i)
+                    {
+                        Console.Write(" ");
+                    }
+                    else if (i < j)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(symbol);
+                    }
+                    
+                }
+                Console.WriteLine();
+            }
+            
+        }
 
 
     }

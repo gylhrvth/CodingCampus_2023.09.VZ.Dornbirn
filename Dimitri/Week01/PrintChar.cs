@@ -8,12 +8,12 @@ namespace Dimitri.Week01
 {
     internal class PrintChar
     {
-        public static void main()
+        public static void Main()
         {
-            PrintChars("x", 10, 3);
+            PrintRectangle("x", 10, 3);
         }
 
-        public static void PrintChars(string symbol, int count, int row)
+        public static void PrintRectangle(string symbol, int count, int row)
         {
             for (int k = 0; k <= row; k++)
             {
