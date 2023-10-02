@@ -61,8 +61,8 @@ namespace Simon.Week01
             Console.WriteLine("\nPrint Christmastree");
             PrintChristmasTree(2);
 
-            Console.WriteLine("\nPrint circle Pythagoras");
-            PrintCirclePythagoras(10);
+            Console.WriteLine("\nPrint Triangle V2");
+            PrintTrinagle2('x', 10);
 
 
 
@@ -406,11 +406,29 @@ namespace Simon.Week01
 
         // Bonusaufgabe: Print circle Pythagoras
 
-        public static void PrintCirclePythagoras(double number)
+        public static void PrintCirclePythagoras(int number)
         {
-           
                 
+        }
 
+        public static void PrintTrinagle2(int character, int number)
+        {
+            int i, f, n = number;
+            for (i = 0; i < n; i++)
+            {
+
+                for (f = n - i; f > 0; f--)
+                    Console.Write(" ");
+
+                for (f = 0; f <= 2 * i; f++)
+                {
+                    if (f < 2 * i && f > 0 && i != (n - 1))
+                        Console.Write(" ");
+                    else
+                        Console.Write(character);
+                }
+                Console.WriteLine();
+            }
 
         }
     }
