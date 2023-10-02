@@ -9,54 +9,54 @@ namespace Timo.Week01
         public static void Start()
         {
             Console.WriteLine("\n1.Aufgabe:");
-            //PrintChars('x', 5);
+            PrintChars('x', 5);
 
             Console.WriteLine("\n2.Aufgabe:");
-            //PrintSquare('x', 5);
+            PrintSquare('x', 5);
 
             Console.WriteLine("\n3.Aufgabe:");
-            //PrintRectangle('x', 5, 8);
+            PrintRectangle('x', 21, 10);
 
             Console.WriteLine("\n4.Aufgabe:");
-            //PrintTriangleBottomLeft('x', 5);
+            PrintTriangleBottomLeft('x', 15);
 
             Console.WriteLine("\n5.Aufgabe:");
-            //PrintTriangleTopLeft('x', 5);
+            PrintTriangleTopLeft('x', 15);
 
             Console.WriteLine("\n6.Aufgabe:");
-            //PrintTriangleTopRight('x', 5);
+            PrintTriangleTopRight('x', 15);
 
             Console.WriteLine("\n7.Aufgabe:");
-            //PrintTriangleBottomRight('x', 5);
+            PrintTriangleBottomRight('x', 15);
 
             Console.WriteLine("\n8.Aufgabe:");
-            //PrintEmptySquare('x', 15);
+            PrintEmptySquare('x', 15);
 
             Console.WriteLine("\n9.Aufgabe - true:");
-            //PrintSlash('x', 5, true);
+            PrintSlash('x', 15, true);
 
             Console.WriteLine("\n9.Aufgabe - false:");
-            //PrintSlash('x', 5, false);
+            PrintSlash('x', 15, false);
 
             Console.WriteLine("\n10.Aufgabe - 1x:");
-            //PrintPyramid('x', 1);
+            PrintPyramid('x', 1);
 
             Console.WriteLine("\n10.Aufgabe - mehr x:");
-            //PrintPyramid('x', 30);
+            PrintPyramid('x', 15);
 
             Console.WriteLine("\n11.Aufgabe:");
-            //PrintRhombus('x', 51);
+            PrintRhombus('x', 25);
 
             Console.WriteLine("\n12.Aufgabe:");
-            //PrintX('x', 51);
+            PrintX('x', 25);
 
             Console.WriteLine("\n13.Aufgabe:");
-            //PrintChristmasTree(23);
+            PrintChristmasTree(15);
 
             Console.WriteLine("\n14.Aufgabe:");
             PrintCirclePythagoras(10);
 
-            Console.WriteLine("\n14.Aufgabe:");
+            Console.WriteLine("\n15.Aufgabe:");
             PrintCircleSinCos(10);
         }
 
@@ -277,18 +277,17 @@ namespace Timo.Week01
         //Aufgabe11.1
         public static void PrintRhombus(char symbol, int zahl)
         {
-            PrintChars('.', zahl / 2);
+            PrintChars(' ', zahl / 2);
             Console.WriteLine(symbol);
             int spacedifferent = 1;
             for (int i = 1; i < ((zahl / 2) + 1); i++)
             {
-                int spaces = i;
                 int characters = zahl / 2 + 1 - i;
-                PrintChars('.', characters - 1);
+                PrintChars(' ', characters - 1);
                 Console.Write(symbol);
                 for (int a = spacedifferent; a > 0; a--)
                 {
-                    Console.Write('.');
+                    Console.Write(' ');
                 }
                 Console.Write(symbol);
                 spacedifferent = spacedifferent + 2;
@@ -297,19 +296,18 @@ namespace Timo.Week01
             int space2 = spacedifferent - 4;
             for (int i = 1; i < ((zahl - 1) / 2); i++)
             {
-                int spaces = i;
                 int characters = zahl / 2 + 1 - i;
-                PrintChars('.', i);
+                PrintChars(' ', i);
                 Console.Write(symbol);
                 for (int a = space2; a > 0; a--)
                 {
-                    Console.Write('.');
+                    Console.Write(' ');
                 }
                 Console.Write(symbol);
                 space2 = space2 - 2;
                 Console.WriteLine();
             }
-            PrintChars('.', zahl / 2);
+            PrintChars(' ', zahl / 2);
             Console.WriteLine(symbol);
         }
 
@@ -322,27 +320,27 @@ namespace Timo.Week01
             for (int i = 0; i < (zahl / 2); i++)
             {
                 int characters = zahl / 2 + 1 - i;
-                PrintChars('.', i);
+                PrintChars(' ', i);
                 Console.Write(symbol);
                 for (int a = space2; a > 0; a--)
                 {
-                    Console.Write('.');
+                    Console.Write(' ');
                 }
                 Console.Write(symbol);
                 space2 = space2 - 2;
                 Console.WriteLine();
             }
-            PrintChars('.', zahl / 2);
+            PrintChars(' ', zahl / 2);
             Console.WriteLine(symbol);
             int b = 1;
             for (int i = 1; i < ((zahl / 2) + 1); i++)
             {
                 int characters = zahl / 2 + 1 - i;
-                PrintChars('.', characters - 1);
+                PrintChars(' ', characters - 1);
                 Console.Write(symbol);
                 for (int a = b; a > 0; a--)
                 {
-                    Console.Write('.');
+                    Console.Write(' ');
                 }
                 Console.Write(symbol);
                 b = b + 2;
@@ -389,16 +387,17 @@ namespace Timo.Week01
         //Aufgabe14
         public static void PrintCirclePythagoras(int radius)
         {
-            for (int i = 1; i < radius*2; i++) {  
-                for (int j = 1; j < radius*2; j++)
+            for (int i = 1; i < radius * 2; i++)
+            {
+                for (int j = 1; j < radius * 2; j++)
                 {
-                    if ((j - radius)* (j - radius) + (i - radius) * (i - radius) <= radius* radius)
+                    if ((j - radius) * (j - radius) + (i - radius) * (i - radius) <= radius * radius)
                     {
-                        Console.Write("X");
+                        Console.Write("i");
                     }
-                    else 
-                    { 
-                        Console.Write(" "); 
+                    else
+                    {
+                        Console.Write(" ");
                     }
                 }
                 Console.WriteLine();
@@ -407,13 +406,17 @@ namespace Timo.Week01
 
 
         //Aufgabe15
+        //TOdO ssf
         public static void PrintCircleSinCos(int radius)
         {
-        for (int alpha=0; alpha <= 360; alpha++) 
+            for (int i = radius; i > -radius * 2; radius--)
             {
-                double y= Math.Sin(alpha) * radius;
-                Console.WriteLine(y);
-            }            
+                for (int j = radius; j > -radius * 2; radius--)
+                {
+                    
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
