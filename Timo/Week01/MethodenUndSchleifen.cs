@@ -242,6 +242,7 @@ namespace Timo.Week01
 
 
         //Aufgabe10
+        //TODO Code vereinfachen und kürzer machen
         public static void PrintPyramid(char symbol, int zahl)
         {
             if (zahl == 1)
@@ -275,6 +276,8 @@ namespace Timo.Week01
 
 
         //Aufgabe11.1
+        //TODO Code vereinfachen und kürzer machen
+
         public static void PrintRhombus(char symbol, int zahl)
         {
             PrintChars(' ', zahl / 2);
@@ -313,6 +316,8 @@ namespace Timo.Week01
 
 
         //Aufgabe12
+        //TODO Code vereinfachen und kürzer machen
+
         public static void PrintX(char symbol, int zahl)
         {
             int spacedifferent = zahl;
@@ -406,7 +411,7 @@ namespace Timo.Week01
 
 
         //Aufgabe15
-        //TOdO ssf
+        //TODO Sinus und Cosinus
         public static void PrintCircleSinCos(int radius)
         {
             for (int i = radius; i > -radius * 2; radius--)
