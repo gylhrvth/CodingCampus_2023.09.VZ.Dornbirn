@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+
 namespace Timo.Week01
 {
     public class MethodenUndSchleifen
@@ -40,7 +42,7 @@ namespace Timo.Week01
             //PrintPyramid('x', 1);
 
             Console.WriteLine("\n10.Aufgabe - mehr x:");
-            PrintPyramid('x', 30);
+            //PrintPyramid('x', 30);
 
             Console.WriteLine("\n11.Aufgabe:");
             //PrintRhombus('x', 51);
@@ -50,6 +52,12 @@ namespace Timo.Week01
 
             Console.WriteLine("\n13.Aufgabe:");
             //PrintChristmasTree(23);
+
+            Console.WriteLine("\n14.Aufgabe:");
+            PrintCirclePythagoras(10);
+
+            Console.WriteLine("\n14.Aufgabe:");
+            PrintCircleSinCos(10);
         }
 
 
@@ -231,6 +239,8 @@ namespace Timo.Week01
                 }
             }
         }
+
+
         //Aufgabe10
         public static void PrintPyramid(char symbol, int zahl)
         {
@@ -262,6 +272,8 @@ namespace Timo.Week01
                 Console.WriteLine();
             }
         }
+
+
         //Aufgabe11.1
         public static void PrintRhombus(char symbol, int zahl)
         {
@@ -300,6 +312,8 @@ namespace Timo.Week01
             PrintChars('.', zahl / 2);
             Console.WriteLine(symbol);
         }
+
+
         //Aufgabe12
         public static void PrintX(char symbol, int zahl)
         {
@@ -335,6 +349,9 @@ namespace Timo.Week01
                 Console.WriteLine();
             }
         }
+
+
+        //Aufgabe13
         public static void PrintChristmasTree(int zahl)
         {
             PrintChars(' ', zahl - 1);
@@ -360,12 +377,43 @@ namespace Timo.Week01
             int b = 0;
             while (b < 2)
             {
-                PrintChars('.', (zahl * 2) / 3);
+                PrintChars(' ', (zahl * 2) / 3);
                 PrintChars('+', (zahl * 2) / 3);
                 Console.WriteLine();
                 b++;
 
             }
+        }
+
+
+        //Aufgabe14
+        public static void PrintCirclePythagoras(int radius)
+        {
+            for (int i = 1; i < radius*2; i++) {  
+                for (int j = 1; j < radius*2; j++)
+                {
+                    if ((j - radius)* (j - radius) + (i - radius) * (i - radius) <= radius* radius)
+                    {
+                        Console.Write("X");
+                    }
+                    else 
+                    { 
+                        Console.Write(" "); 
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+        //Aufgabe15
+        public static void PrintCircleSinCos(int radius)
+        {
+        for (int alpha=0; alpha <= 360; alpha++) 
+            {
+                double y= Math.Sin(alpha) * radius;
+                Console.WriteLine(y);
+            }            
         }
     }
 }
