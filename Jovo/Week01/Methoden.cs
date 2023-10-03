@@ -421,14 +421,10 @@ namespace Jovo.Week01
                     if (row == col - 2 || row == size - 1 || row == col)
                     {
                         Console.Write(symbol);
-                    }
-                    else if (row = 0  || col = 0)
-                    {
-                        Console.Write(" ");
-                    }
+                    }        
                     else
                     {
-
+                        Console.Write(" ");
                     }
                 }
                 Console.WriteLine();
