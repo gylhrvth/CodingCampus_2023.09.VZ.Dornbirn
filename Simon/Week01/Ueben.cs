@@ -86,10 +86,10 @@ namespace Simon.Week01
             PrintPyramid('x', 1);
 
             Console.WriteLine("\nPrint Rhombus");
-            PrintRhombus('x', 7);
+            PrintRhombus('x', 10);
 
             Console.WriteLine("\nPrintX");
-            PrintX('x', 10);
+            PrintX('x', 5);
 
 
         }
@@ -218,33 +218,42 @@ namespace Simon.Week01
         //Aufgabe Print Rhombus
         public static void PrintRhombus(char symbol, int number)
         {
-            PrintChars(' ', number - 1);
+
+            PrintChars(' ', number/2);
             Console.WriteLine(symbol);
-            for (int i = 0; i < (number-1)/2; i++)
+            for (int i = 0; i < (number/2)-1; i++)
             {
-                PrintChars(' ', number - i - 2);
+                PrintChars(' ', (number/2) - i - 1);
                 Console.Write(symbol);
                 PrintChars(' ', (i * 2) + 1);
                 Console.WriteLine(symbol);
             }
             
+
+            int b = 0;
+            for (int i = 0; i < (number + 1) / 2; i++)
+            {
+                int row = i;
+                int space = (number - 1) / 2;
+                if (row == (number - 1) / 2)
+                {
+                    PrintChars(' ', space);
+                    Console.Write(symbol);
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    int space1 = i;
+                    int space2 = b + number - 2;
+                    PrintChars(' ', space1);
+                    Console.Write(symbol);
+                    PrintChars(' ', space2);
+                    Console.WriteLine(symbol);
+                    b = b - 2;
+                }
+            }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         //Aufgabe Print X
         public static void PrintX(char symbol, int number)
         {
