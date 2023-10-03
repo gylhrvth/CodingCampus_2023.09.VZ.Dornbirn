@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.IO.IsolatedStorage;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -85,7 +88,11 @@ namespace Niklas.Week02
             Console.WriteLine();
 
             Console.WriteLine("\nPrint Rhombus: ");
-            Rhombus("x", 7);
+            Rhombus("x", 13);
+            Console.WriteLine();
+
+            Console.WriteLine("\nPrint Rhombus neu: ");
+            RhombusNeu("x", 13);
             Console.WriteLine();
 
             Console.WriteLine("\nPrint X: ");
@@ -95,8 +102,12 @@ namespace Niklas.Week02
             Console.WriteLine("\nPrint ChistmasTree: ");
             ChristmasTree(7);
             Console.WriteLine();
-        }
 
+            Console.WriteLine("\nPrint CirclePythagoras: ");
+            CirclePythagoras(20);
+            Console.WriteLine();
+
+        }
 
         static void Chars(String number, int size)
         {
@@ -313,6 +324,29 @@ namespace Niklas.Week02
             }
             Console.WriteLine();
         }
+
+        static void RhombusNeu(string number, int size)
+        {
+            int n = size / 2;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    if (i + j == n || i - n == j || i + n == j || i + j == n * 3)
+                    {
+                        Console.Write("X ");
+                    }
+
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+
         static void X(String number, int size)
         {
             int i, j, n = size / 2;
@@ -357,7 +391,8 @@ namespace Niklas.Week02
             if (size % 2 == 0)
             {
                 size++;
-            }else { }
+            }
+            else { }
 
             int i, f, n = size;
 
@@ -381,9 +416,9 @@ namespace Niklas.Week02
                 Console.Write("O ");
             }
             Console.WriteLine();
-            for (int b = 0; b <= size/4; b++)
+            for (int b = 0; b <= size / 4; b++)
             {
-                for (int j = 1; j <= size/2; j++)
+                for (int j = 1; j <= size / 2; j++)
                 {
                     Console.Write(" ");
                 }
@@ -395,6 +430,27 @@ namespace Niklas.Week02
             }
             Console.WriteLine();
         }
+
+        static void CirclePythagoras(int size)
+        {
+            int n = size / 2;
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 1; j < size; j++)
+                {
+                    if (i + j == size / 4 || i - j == n || i + size / 4 == j)
+                    {
+                        Console.Write("X  ");
+                    }
+                    else
+                    {
+                        Console.Write(".  ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
     }
 
 }
