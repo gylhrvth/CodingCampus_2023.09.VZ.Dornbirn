@@ -9,14 +9,19 @@ namespace DarioLuis.Week01
             Console.WriteLine("\nPrintChars");
             PrintChars("x", 10);
 
+            Console.WriteLine("\nPrint Square");
             PrintSquare("x", 10);
 
+            Console.WriteLine("\nPrint Rect");
             PrintRect("x", 3, 10);
 
+            Console.WriteLine("\nPrintTriangleBottomLeft");
             PrintTriangleBottomLeft("x", 4);
 
+            Console.WriteLine("\nPrintTriangleTopLeft");
             PrintTriangleTopLeft("x", 4);
 
+            Console.WriteLine("\nPrintTriangleTopRight");
             PrintTriangleTopRight("x", 4);
 
             Console.WriteLine("\nPrintEmptySquare");
@@ -28,7 +33,17 @@ namespace DarioLuis.Week01
             Console.WriteLine("\nPrintSlash");
             PrintSlash("x", 3, true);
             PrintSlash("x", 4, false);
+
+            Console.WriteLine("\nPrintTriangle");
             PrintTriangle("x", 3);
+
+            Console.WriteLine("\nPrintBigTRiangle");
+            PrintBigTriangle("x", 5);
+
+            Console.WriteLine("\nPrintRhombus");
+            PrintRhombus("x", 4);
+            PrintRhombusDown("x", 5);
+
         }
 
         public static void PrintChars(string character, int rows)
@@ -113,7 +128,7 @@ namespace DarioLuis.Week01
                 Console.Write(character);
                 PrintChars(" ", size - 2);
                 Console.WriteLine(character);
-                }
+            }
             PrintChars(character, size);
         }
         public static void PrintSlash(string character, int rows, bool backslash)
@@ -162,6 +177,93 @@ namespace DarioLuis.Week01
                     Console.WriteLine();
                 }
                 PrintChars(symbol, (zahl * 2) - 2);
+            }
+        }
+        public static void PrintBigTriangle(string symbol, int zahl)
+        {
+            if (zahl == 1)
+            {
+                PrintChars(symbol, zahl);
+            }
+            else
+            {
+                PrintChars(" ", zahl - 2);
+                Console.WriteLine(symbol);
+                int spacedifferent = 1;
+                for (int i = 1; i < zahl - 1; i++)
+                {
+                    int spaces = i;
+                    int characters = zahl - i;
+                    PrintChars(" ", characters - 2);
+                    Console.Write(symbol);
+                    for (int a = spacedifferent; a > 0; a--)
+                    {
+                        Console.Write(' ');
+                    }
+                    Console.Write(symbol);
+                    spacedifferent = spacedifferent + 2;
+                    Console.WriteLine();
+                }
+                PrintChars(symbol, (zahl * 2) - 2);
+            }
+        }
+        public static void PrintRhombus(string symbol, int zahl)
+        {
+            if (zahl == 1)
+            {
+                PrintChars(symbol, zahl);
+            }
+            else
+            {
+                PrintChars(" ", zahl - 2);
+                Console.WriteLine(symbol);
+                int spacedifferent = 1;
+                for (int i = 1; i < zahl - 1; i++)
+                {
+                    int spaces = i;
+                    int characters = zahl - i;
+                    PrintChars(" ", characters - 2);
+                    Console.Write(symbol);
+                    for (int a = spacedifferent; a > 0; a--)
+                    {
+                        Console.Write(' ');
+                    }
+                    spacedifferent = spacedifferent + 2;
+                    Console.Write(symbol);
+
+                    Console.WriteLine();
+
+                }
+            }
+        }
+        public static void PrintRhombusDown(string symbol, int zahl)
+        {
+            if (zahl == 1)
+            {
+                PrintChars(symbol, zahl);
+            }
+            else
+            {
+
+                int spacedifferent = 1;
+                for (int i = 1; i < zahl - 2; i++)
+                {
+
+                    for (int a = spacedifferent; a > 0; a--)
+                    {
+                        Console.Write(' ');
+                    }
+                    Console.Write(symbol);
+                    spacedifferent = spacedifferent + 2;
+                    Console.WriteLine();
+
+                    int spaces = i;
+                    int characters = zahl - i;
+                    PrintChars(" ", characters + 2);
+                    Console.Write(symbol);
+                }
+                PrintChars(" ", zahl - 2);
+                Console.WriteLine(symbol);
             }
         }
     }

@@ -1,1 +1,1 @@
-﻿Niklas.Week01.Methoden.Start();
+﻿Niklas.Week02.PrimitiveDatentypen.Start();

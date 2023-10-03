@@ -12,332 +12,391 @@ namespace Selina.Week01
 
         public static void Start()
         {
-
+            //Aufgabe 1:
             //PrintSquare();
+
+            //Aufgabe 2:
             //PrintRectangle();
+
+            //Aufgabe 3:
             //PrintTrinangel();
+
+            //Aufgabe 4:
             //PrintTrinangel2();
+
+            //Aufgabe 5:
             //PrintTrinangel3();
+
+            //Aufgabe 6:
             //PrintTrinangel4();
+
             //PrintEmptySquare1();
+
+            //Aufagbe 7:
             //PrintEmptySquare2();
+
+            //Aufgabe 8:
             //PrintSlash();
+
+            //Aufgabe 9:
             //PrintTriangle();
-            PrintRhombus();
+
+            //PrintRhombus();
             PrintX();
-            PrintChristmastree();
+           // PrintChristmastree();
         }
 
-        //public static void PrintSquare()
-        //{
-        //    Console.WriteLine("\nWie viel Zeilen möchtest du ausgeben?");
-        //    int chars = Convert.ToInt32(Console.ReadLine());
 
-        //    Console.WriteLine("\nWie viel Spalten möchtest du ausgeben?");
-        //    int square = Convert.ToInt32(Console.ReadLine());
+        // PrintSquare gibt in der Console x in einer Form von einem Rechteck aus --> funktioniert
+        public static void PrintSquare()
+        {
+            Console.WriteLine("\nWie viel Zeilen möchtest du ausgeben?");
+            int chars = Convert.ToInt32(Console.ReadLine());
 
-        //    for (int i = 1; i <= square; i++)
-        //    {
-        //        for (int y = 1; y < chars; y++)
-        //        {
-        //            Console.Write("x");
-        //        }
+            Console.WriteLine("\nWie viel Spalten möchtest du ausgeben?");
+            int square = Convert.ToInt32(Console.ReadLine());
 
-        //        Console.WriteLine("x");
-        //    }
-        //}
-        //public static void PrintRectangle()
-        //{
-        //    Console.WriteLine("\nWelche Breite und Länge soll Ihr Viereck haben?");
-        //    string test = Console.ReadLine();
-        //    String[] eingabe = test.Split(' ');
+            for (int i = 1; i <= square; i++)
+            {
+                for (int y = 1; y < chars; y++)
+                {
+                    Console.Write("x");
+                }
 
-        //    int width = Convert.ToInt32(eingabe[0]);
-        //    int length = Convert.ToInt32(eingabe[1]);
+                Console.WriteLine("x");
+            }
+        }
 
-        //    for (int i = 1; i <= width; i++)
-        //    {
-        //        for (int y = 1; y < length; y++)
-        //        {
-        //            Console.Write("x");
-        //        }
+        //PrintRectangle gibt in der Console x in einer Form von einem Viereck aus --> funktioniert
+        public static void PrintRectangle()
+        {
+            Console.WriteLine("\nWelche Breite und Länge soll Ihr Viereck haben?");
+            string test = Console.ReadLine();
+            string[] eingabe = test.Split(' ');
 
-        //        Console.WriteLine("x");
-        //    }
-        //}
-        //public static void PrintTrinangel()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
-        //    int trinangel = Convert.ToInt32(Console.ReadLine());
-        //    int number = 0;
+            int width = Convert.ToInt32(eingabe[0]);
+            int length = Convert.ToInt32(eingabe[1]);
 
-        //    for (int i = 1; i <= trinangel; i++)
-        //    {
-        //        if (i <= trinangel)
-        //        {
-        //            for (int y = 1; y <= number; y++)
-        //            {
-        //                Console.Write("x");
-        //            }
-        //            ++number;
+            for (int i = 1; i <= width; i++)
+            {
+                for (int y = 1; y < length; y++)
+                {
+                    Console.Write("x");
+                }
 
-        //        }
+                Console.WriteLine("x");
+            }
+        }
 
-        //        Console.WriteLine("x");
-        //    }
-        //}
-        //public static void PrintTrinangel2()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
-        //    int trinangel = Convert.ToInt32(Console.ReadLine());
+        // PrintTrinangel gibt in der Console x in einer Form von einem Dreick aus --> funktioniert
+        public static void PrintTrinangel()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
+            int trinangel = Convert.ToInt32(Console.ReadLine());
+            int number = 0;
 
-        //    for (int j = 0; j < trinangel; j++)
-        //    {
-        //        for (int i = trinangel - 1; i > j; i--)
-        //        {
-        //            Console.Write("x");
-        //        }
+            for (int i = 1; i <= trinangel; i++)
+            {
+                if (i <= trinangel)
+                {
+                    for (int y = 1; y <= number; y++)
+                    {
+                        Console.Write("x");
+                    }
+                    ++number;
 
-        //        Console.WriteLine("x");
-        //    }
-        //}
-        //public static void PrintTrinangel4()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
-        //    int trinangel = Convert.ToInt32(Console.ReadLine());
+                }
 
-        //    for (int i = 0; i <= trinangel; i++)
-        //    {
-        //        for (int y = 0; y < i; y++)
-        //        {
-        //            Console.Write("x");
+                Console.WriteLine("x");
+            }
+        }
 
-        //        }
-        //        Console.WriteLine();
-        //        for (int y = trinangel; y > i; y--)
-        //        {
-        //            Console.Write(" ");
+        //PrintTrinangel2 gibt in der Console x in einer Form von einem Dreick aus --> funktioniert
+        public static void PrintTrinangel2()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
+            int trinangel = Convert.ToInt32(Console.ReadLine());
 
-        //        }
-        //    }
-        //}
-        //public static void PrintTrinangel3()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
-        //    int trinangel = Convert.ToInt32(Console.ReadLine());
+            for (int j = 0; j < trinangel; j++)
+            {
+                for (int i = trinangel - 1; i > j; i--)
+                {
+                    Console.Write("x");
+                }
 
-        //    for (int i = 0; i <= trinangel; i++)
-        //    {
-        //        for (int y = trinangel; y > i; y--)
-        //        {
-        //            Console.Write("x");
+                Console.WriteLine("x");
+            }
+        }
 
-        //        }
-        //        Console.WriteLine();
-        //        for (int y = 0; y <= i; y++)
-        //        {
-        //            Console.Write(" ");
+        //PrintTrinangel4 gibt in der Console x in einer Form von einem Dreick aus --> ein Lehrzeichen zu viel!
+        public static void PrintTrinangel4()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Dreieck sein????");
+            int trinangel = Convert.ToInt32(Console.ReadLine());
 
-        //        }
-        //    }
-        //}
-        //public static void PrintEmptySquare1()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihr Quadar sein?");
-        //    int square = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i <= trinangel; i++)
+            {
+                for (int y = 0; y < i; y++)
+                {
+                    Console.Write("x");
+                }
+                Console.WriteLine();
+                for (int y = trinangel; y > i; y--)
+                {
+                    Console.Write("!");
 
+                }
+            }
+        }
 
-        //    for (int y = 1; y <= square; y++)
-        //    {
-        //        Console.Write("x");
-        //    }
+        //PrintTrinangel3 gibt in der Console x in einer Form von einem Dreick aus --> funktioniert
+        public static void PrintTrinangel3()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
+            int trinangel = Convert.ToInt32(Console.ReadLine());
 
-        //    Console.WriteLine();
+            for (int i = 0; i < trinangel; i++)
+            {
+                for (int y = 0; y < i; y++)
+                {
+                    Console.Write("!");
+                }
+                for (int y = trinangel; y > i; y--)
+                {
+                    Console.Write("x");
 
-        //    for (int y = 1; y <= square - 2; y++)
-        //    {
-        //        Console.Write("x");
+                }
+                Console.WriteLine();
+            }
+        }
 
-        //        for (int i = 1; i <= square - 2; i++)
-        //        {
-        //            Console.Write(" ");
-        //        }
-
-        //        Console.WriteLine("x");
-        //    }
-
-        //    for (int i = 1; i <= square; i++)
-        //    {
-        //        Console.Write("x");
-        //    }
-        //}
-        //public static void PrintEmptySquare2()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihr Quadar sein?");
-        //    int square = Convert.ToInt32(Console.ReadLine());
+        //PrintEmptySquare1 gibt in der Console x in einer Form von einem Quader aus --> funktioniert
+        public static void PrintEmptySquare1()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Quader sein?");
+            int square = Convert.ToInt32(Console.ReadLine());
 
 
-        //    for (int y = 1; y <= square; y++)
-        //    {
-        //        Console.Write("A");
-        //    }
+            for (int y = 1; y <= square; y++)
+            {
+                Console.Write("x");
+            }
 
-        //    Console.WriteLine();
+            Console.WriteLine();
 
-        //    for (int y = 1; y <= square - 2; y++)
-        //    {
-        //        Console.Write("A");
+            for (int y = 1; y <= square - 2; y++)
+            {
+                Console.Write("x");
 
-        //        for (int i = 1; i <= square - 2; i++)
-        //        {
-        //            Console.Write(" ");
-        //        }
+                for (int i = 1; i <= square - 2; i++)
+                {
+                    Console.Write(" ");
+                }
 
-        //        Console.WriteLine("A");
-        //    }
+                Console.WriteLine("x");
+            }
 
-        //    for (int i = 1; i <= square; i++)
-        //    {
-        //        Console.Write("A");
-        //    }
-        //}
-        //public static void PrintSlash()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihre Diadonale sein?");
-        //    int printSlash = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= square; i++)
+            {
+                Console.Write("x");
+            }
 
-        //    Console.WriteLine("Diagonale links oder rechts ausgeben?"); 
-        //    string slashPrint =Convert.ToString(Console.ReadLine());
+            Console.WriteLine();
+        }
 
-        //    int number = 0;
+        //PrintEmptySquare2 gibt in der Console A in einer Form von einem Quader aus --> funktioniert
+        public static void PrintEmptySquare2()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Quader sein?");
+            int square = Convert.ToInt32(Console.ReadLine());
 
-        //    if (slashPrint == "rechts")
-        //    {
-        //        bool slash = true;
 
-        //        for (int i = 1; i <= printSlash; i++)
-        //        {
-        //            for (int y = 1; y <= number; y++)
-        //            {
-        //                Console.Write(" ");
-        //            }
-        //            number++;
+            for (int y = 1; y <= square; y++)
+            {
+                Console.Write("A");
+            }
 
-        //            Console.WriteLine("x");
-        //        }
-        //    }
-        //    else if(slashPrint == "links")
-        //    {
-        //        bool slash = false;
+            Console.WriteLine();
 
-        //        for (int j = 0; j < printSlash; j++)
-        //        {
-        //            for (int i = printSlash - 1; i > j; i--)
-        //            {
-        //                Console.Write(" ");
-        //            }
+            for (int y = 1; y <= square - 2; y++)
+            {
+                Console.Write("A");
 
-        //            Console.WriteLine("x");
-        //        }
-        //    }
-        //}
+                for (int i = 1; i <= square - 2; i++)
+                {
+                    Console.Write(" ");
+                }
 
-        //public static void PrintTriangle()
-        //{
-        //    Console.WriteLine("\nWie Groß soll Ihre Diadonale sein?");
-        //    int triangel = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("A");
+            }
 
-        //    Console.WriteLine("");
+            for (int i = 1; i <= square; i++)
+            {
+                Console.Write("A");
+            }
 
-        //    int  i, j;
+            Console.WriteLine();
+        }
 
-        //    for (i = 1; i <= triangel; i++)
-        //    {
-        //        for (j = 1; j <= triangel - i; j++)
-        //        {
-        //            Console.Write(" ");
-        //        }
-        //        for (j = 1; j <= (2 * i - 1); j++)
-        //        {
-        //            if (i < triangel)
-        //            {
-        //                if (j == 1 || j == (2 * i - 1))
-        //                {
-        //                    Console.Write("x");
-        //                }
-        //                else
-        //                {
-        //                    Console.Write(" ");
-        //                }
-        //            }
+        //PrintSlash gibt in der Consol x in einer Form von einer Diagonale aus --> funktioniert
+        public static void PrintSlash()
+        {
+            Console.WriteLine("\nWie Groß soll Ihre Diagonale sein?");
+            int printSlash = Convert.ToInt32(Console.ReadLine());
 
-        //            else
-        //            {
-        //                Console.Write("x");
-        //            }
-        //        }
+            Console.WriteLine("\nDiagonale links oder rechts ausgeben?");
+            string slashPrint = Convert.ToString(Console.ReadLine());
 
-        //        Console.WriteLine("");
-        //    }
-        //}
+            int number = 0;
+
+            if (slashPrint == "rechts")
+            {
+                bool slash = true;
+
+                for (int i = 1; i <= printSlash; i++)
+                {
+                    for (int y = 1; y <= number; y++)
+                    {
+                        Console.Write(" ");
+                    }
+                    number++;
+
+                    Console.WriteLine("x");
+                }
+            }
+            else if (slashPrint == "links")
+            {
+                bool slash = false;
+
+                for (int j = 0; j < printSlash; j++)
+                {
+                    for (int i = printSlash - 1; i > j; i--)
+                    {
+                        Console.Write(" ");
+                    }
+
+                    Console.WriteLine("x");
+                }
+            }
+        }
+
+ 
+        public static void PrintTriangle()
+        {
+            Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
+            int triangel = Convert.ToInt32(Console.ReadLine());
+
+
+            int i, j;
+
+            for (i = 1; i <= triangel; i++)
+            {
+                for (j = 1; j <= triangel - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (j = 1; j <= (2 * i - 1); j++)
+                {
+                    if (i < triangel)
+                    {
+                        if (j == 1 || j == (2 * i - 1))
+                        {
+                            Console.Write("x");
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+
+                    else
+                    {
+                        Console.Write("x");
+                    }
+                }
+
+                Console.WriteLine("");
+            }
+        }
 
 
         public static void PrintRhombus()
         {
             Console.WriteLine("\nWie Groß soll Ihr Rhombus sein sein?");
-            int triangel = Convert.ToInt32(Console.ReadLine());
+            int rhombus = Convert.ToInt32(Console.ReadLine());
 
-            int count;
-        
-            count = triangel - 1;
-            for (int k = 1; k <= triangel; k++)
+
+            int i, j, n = rhombus / 2;
+
+            for (i = 0; i < n; i++)
             {
-                for (int i = 1; i <= count; i++)
+                for (j = n - i; j > 0; j--)
                 {
                     Console.Write(" ");
                 }
-                count--;
-                for (int i = 1; i <= 2 * k - 1; i++)
+                for (j = 0; j <= 2 * i; j++)
                 {
-                    Console.Write("x");
-                    
+                    if (j < 2 * i && j > 0)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                        Console.Write("x");
+
                 }
                 Console.WriteLine();
             }
-            count = 1;
-            for (int k = 1; k <= triangel - 1; k++)
+            for (i = n; i >= 0; i--)
             {
-                for (int i = 1; i <= count; i++)
+                for (j = n - i; j > 0; j--)
                 {
                     Console.Write(" ");
                 }
-                count++;
-                for (int i = 1; i <= 2 * (triangel - k) - 1; i++)
+                for (j = 0; j <= 2 * i - 1; j++)
                 {
-                    Console.Write("x");
+                    if (j < 2 * i && j > 0)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                        Console.Write("x");
                 }
-
-                Console.WriteLine();
+                Console.WriteLine("x");
             }
+            Console.WriteLine();
         }
-
 
         public static void PrintX()
         {
-            
+            Console.WriteLine("\nWie Groß soll Ihr X sein sein?");
+            int X = Convert.ToInt32(Console.ReadLine());
 
+            for (int i = 1; i <= X; i++)
+            {
+                for (int j = 1; j <= X; j++)
+                {
+                    if (j == i || j == X - i + 1)
+                    {
+                        Console.Write("x");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
 
+            }
 
         }
-
         public static void PrintChristmastree()
         {
             Console.WriteLine("\nWie Groß soll Ihr Christmastree sein sein?");
-            int triangel = Convert.ToInt32(Console.ReadLine());
+            int tree = Convert.ToInt32(Console.ReadLine());
 
             int count = 0;
-            count = triangel - 1;
-            for (int k = 1; k <= triangel; k++)
+            count = tree - 1;
+            for (int k = 1; k <= tree; k++)
             {
                 for (int i = 1; i <= count; i++)
                 {
@@ -351,25 +410,25 @@ namespace Selina.Week01
                 }
                 Console.WriteLine();
             }
-            for (int i=0; i< triangel; i++)
+            for (int i = 0; i < tree; i++)
             {
                 Console.Write("O ");
             }
             Console.WriteLine();
-            for (int i = 0; i < (triangel/2); i++)
+            for (int i = 0; i <= (tree / 2); i++)
             {
                 Console.Write(" ");
             }
-            for (int i = 0; i < triangel; i++)
+            for (int i = 0; i <= tree / 2; i++)
             {
                 Console.Write("+");
             }
-            Console.WriteLine() ;
-            for (int i = 0; i < (triangel / 2); i++)
+            Console.WriteLine();
+            for (int i = 0; i <= (tree / 2); i++)
             {
                 Console.Write(" ");
             }
-            for (int i = 0; i < triangel; i++)
+            for (int i = 0; i <= tree / 2; i++)
             {
                 Console.Write("+");
             }
