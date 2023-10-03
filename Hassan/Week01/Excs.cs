@@ -11,9 +11,10 @@ namespace Hassan.Week01
         public static void Start()
         {
             // PrintTriangleBottomLeft("*", 10);
-             PrintTriangleTopRight("*", 5);
+            // PrintTriangleTopRight("*", 5);
             // PrintSquare("*", 10);
             //PrintEmptySquare("*", 10);
+            PrintTriangle("*", 5);
 
            
         }
@@ -73,6 +74,33 @@ namespace Hassan.Week01
                         Console.Write(" ");
                     }
                 }
+                Console.WriteLine();
+            }
+        }
+        static void PrintTriangle(string symbol, int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                int numberOfSymbols = 2 * i + 1;
+                int numberOfSpaces = size - i - 1;
+
+                for (int j = 0; j < numberOfSpaces; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int k = 0; k < numberOfSymbols; k++)
+                {
+                    if (k == 0 || k == numberOfSymbols - 1 || i == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+
                 Console.WriteLine();
             }
         }

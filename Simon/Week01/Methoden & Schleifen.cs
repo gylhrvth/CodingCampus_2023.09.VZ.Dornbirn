@@ -356,84 +356,59 @@ namespace Simon.Week01
             //{
 
 
-                int a = 1;
-                for (int i = 0; i < number; i++)
+            int a = 1;
+            for (int i = 0; i < number; i++)
+            {
+                int row = i;
+                int space = number - 1;
+                if (row == number - 1)
                 {
-                    int row = i;
-                    int space = number - 1;
-                    if (row == number - 1)
-                    {
-                        PrintChars('*', number * 2 - 1);
-                        Console.WriteLine();
-                    }
-                    else if (row == 0)
-                    {
-                        PrintChars(' ', space);
-                        Console.Write('*');
-                        PrintChars(' ', space);
-                        Console.WriteLine();
-                    }
-                    else
-                    {
-                        int space1 = number - i - 1;
-                        int space2 = a;
-                        PrintChars(' ', space1);
-                        Console.Write('*');
-                        PrintChars('*', space2);
-                        Console.Write('*');
-                        Console.WriteLine();
-                        a = a + 2;
-                    }
-                }
-                for (int i = 0; i < number; i++)
-                {
-                    Console.Write("O ");
-                }
-                Console.WriteLine();
-                for (int i = 0; i < 2; i++)
-                {
-                    int space = (number * 2)/3;
-                    PrintChars(' ', space);
-                    PrintChars('+', (number *2)/3 - 1);
+                    PrintChars('*', number * 2 - 1);
                     Console.WriteLine();
                 }
+                else if (row == 0)
+                {
+                    PrintChars(' ', space);
+                    Console.Write('*');
+                    PrintChars(' ', space);
+                    Console.WriteLine();
+                }
+                else
+                {
+                    int space1 = number - i - 1;
+                    int space2 = a;
+                    PrintChars(' ', space1);
+                    Console.Write('*');
+                    PrintChars('*', space2);
+                    Console.Write('*');
+                    Console.WriteLine();
+                    a = a + 2;
+                }
+            }
+            for (int i = 0; i < number; i++)
+            {
+                Console.Write("O ");
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 2; i++)
+            {
+                int space = (number * 2) / 3;
+                PrintChars(' ', space);
+                PrintChars('+', (number * 2) / 3 - 1);
+                Console.WriteLine();
+            }
             //}
             /*else
             {
                 Console.WriteLine("Bitte gib nur eine Nummer ein die teil der 3er Reihe ist.");
             }*/
         }
-
         // Bonusaufgabe: Print circle Pythagoras
 
         public static void PrintCirclePythagoras(int number)
         {
-            for (int i = 0;i < number*2;i++)
-            {
-                double PI = 3.1415;
-                PrintChars('X', number*4);
-                Console.WriteLine();
-                double radius = number * PI;
-                if()
-                
-            }
+
         }
-
-
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
