@@ -53,7 +53,7 @@ namespace Simon.Week01
             PrintRect('x', 10, 3);
 
             Console.WriteLine("\nPrint Triangle Bottom Left");
-            PrintTriangleBottomLeft('x', 4);
+            PrintTriangleBottomLeft('x', 5);
 
             Console.WriteLine("\nPrint Triangle Top Left");
             PrintTriangleTopLeft('x', 5);

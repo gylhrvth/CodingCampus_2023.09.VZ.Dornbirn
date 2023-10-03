@@ -1,1 +1,1 @@
-﻿Gyula.Week01.Variablen.MyVariablen();
+﻿Gyula.Week02.BooleanExamples.StartBooleanExamples();
