@@ -1,1 +1,1 @@
-﻿Fabian.Week01.Methoden.Start();
+﻿Fabian.Week01.PrimitiveDatentypen.Start();

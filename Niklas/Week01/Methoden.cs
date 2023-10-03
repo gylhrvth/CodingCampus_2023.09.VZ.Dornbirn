@@ -43,7 +43,7 @@ namespace Niklas.Week01
             Console.WriteLine();
 
             Console.WriteLine("\nprint Slash: ");
-            PrintSlash("x", 5, false);
+            PrintSlash("x", 5, true);
             Console.WriteLine();
 
             Console.WriteLine("\n print Triangle: ");
@@ -59,7 +59,7 @@ namespace Niklas.Week01
             Console.WriteLine();
 
             Console.WriteLine("\n print Christmastree: ");
-            PrintTree(9);
+            PrintTree(4);
             Console.WriteLine();
         }
 
@@ -206,16 +206,16 @@ namespace Niklas.Week01
 
         static void PrintTriangle(String character, int times)
         {
-            int i, j, n = times;
+            int i, f, n = times;
             for (i = 0; i < n; i++)
             {
 
-                for (j = n - i; j > 1; j--)
+                for (f = n - i; f > 1; f--)
                     Console.Write(" ");
 
-                for (j = 0; j <= 2 * i; j++)
+                for (f = 0; f <= 2 * i; f++)
                 {
-                    if (j < 2 * i && j > 0 && i != (n - 1))
+                    if (f < 2 * i && f > 0 && i != (n - 1))
                         Console.Write(" ");
                     else
                         Console.Write(character);
@@ -267,7 +267,7 @@ namespace Niklas.Week01
 
         static void PrintX(String character, int times)
         {
-            int i, j, n = times/2 / 2;
+            int i, j, n = times / 2 / 2;
             for (i = n; i >= 1; i--)
             {
 
@@ -336,7 +336,7 @@ namespace Niklas.Week01
                 Console.Write("O ");
             }
             Console.WriteLine();
-            for (int t = 0; t < 2; t++)
+            for (int t = 0; t < times / 4; t++)
             {
                 for (int a = 0; a < times / 2; a++)
                 {
@@ -349,6 +349,5 @@ namespace Niklas.Week01
                 Console.WriteLine();
             }
         }
-
     }
 }
