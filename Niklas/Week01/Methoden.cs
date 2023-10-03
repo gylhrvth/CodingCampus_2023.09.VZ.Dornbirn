@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.Design;
 using System.Data.SqlTypes;
+using System.Threading.Channels;
 
 namespace Niklas.Week01
 {
@@ -41,16 +43,24 @@ namespace Niklas.Week01
             Console.WriteLine();
 
             Console.WriteLine("\nprint Slash: ");
-            PrintSlash("x", 5, false);
+            PrintSlash("x", 5, true);
             Console.WriteLine();
 
             Console.WriteLine("\n print Triangle: ");
             PrintTriangle("x", 5);
             Console.WriteLine();
 
+            Console.WriteLine("\n print Rhombus: ");
+            PrintRhombus("x", 10);
+            Console.WriteLine();
 
+            Console.WriteLine("\n print X: ");
+            PrintX("x", 10);
+            Console.WriteLine();
 
-
+            Console.WriteLine("\n print Christmastree: ");
+            PrintTree(4);
+            Console.WriteLine();
         }
 
         static void PrintChars(String character, int times)
@@ -139,7 +149,7 @@ namespace Niklas.Week01
                 }
                 Console.WriteLine();
 
-                for (int o = times; o > n; o--)
+                for (int o = times; o > n + 1; o--)
                 {
                     Console.Write(" ");
                 }
@@ -174,7 +184,7 @@ namespace Niklas.Week01
             {
                 for (int n = 0; n < times; n++)
                 {
-                    for (int o = 0; o < n; o++)
+                    for (int o = 0; o < n + 1; o++)
                     {
                         Console.Write(" ");
                     }
@@ -185,7 +195,7 @@ namespace Niklas.Week01
             {
                 for (int n = 0; n < times; n++)
                 {
-                    for (int o = 0; o < times - n; o++)
+                    for (int o = 0; o < times - n - 1; o++)
                     {
                         Console.Write(" ");
                     }
@@ -200,7 +210,7 @@ namespace Niklas.Week01
             for (i = 0; i < n; i++)
             {
 
-                for (f = n - i; f > 0; f--)
+                for (f = n - i; f > 1; f--)
                     Console.Write(" ");
 
                 for (f = 0; f <= 2 * i; f++)
@@ -215,12 +225,129 @@ namespace Niklas.Week01
 
         }
 
+        static void PrintRhombus(String character, int times)
+        {
+            int i, j, n = times / 2;
+            for (i = 0; i < n; i++)
+            {
+
+                for (j = n - i; j > 0; j--)
+                    Console.Write(" ");
+
+
+                for (j = 0; j <= 2 * i; j++)
+                {
+                    if (j < 2 * i && j > 0)
+                        Console.Write(" ");
+                    else
+                        Console.Write(character);
+                }
+                Console.WriteLine();
+            }
+
+            for (i = n; i >= 0; i--)
+            {
+
+                for (j = n - i; j > 0; j--)
+                    Console.Write(" ");
+
+
+                for (j = 0; j <= 2 * i; j++)
+                {
+                    if (j < 2 * i && j > 0)
+                        Console.Write(" ");
+                    else
+                        Console.Write(character);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+
+        static void PrintX(String character, int times)
+        {
+            int i, j, n = times / 2 / 2;
+            for (i = n; i >= 1; i--)
+            {
+
+                for (j = n - i; j > 0; j--)
+                    Console.Write(" ");
+
+
+                for (j = 0; j <= 2 * i; j++)
+                {
+                    if (j < 2 * i && j > 0)
+                        Console.Write(" ");
+                    else
+                        Console.Write(character);
+                }
+                Console.WriteLine();
+            }
+
+
+            for (i = 0; i <= n; i++)
+            {
+
+                for (j = n - i; j > 0; j--)
+                    Console.Write(" ");
+
+
+                for (j = 0; j <= 2 * i; j++)
+                {
+                    if (j < 2 * i && j > 0)
+                        Console.Write(" ");
+                    else
+                        Console.Write(character);
+                }
+                Console.WriteLine();
+            }
+        }
 
 
 
 
 
+        static void PrintTree(int times)
+        {
+            if (times % 2 == 0)
+            {
+                times++;
+            }
+            else { }
+            int i, j, n = times;
 
 
+            for (i = 0; i < n; i++)
+            {
+
+                for (j = n - i; j > 1; j--)
+                    Console.Write(" ");
+
+                for (j = 0; j <= 2 * i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+
+            }
+            for (int a = 0; a < times; a++)
+            {
+                Console.Write("O ");
+            }
+            Console.WriteLine();
+            for (int t = 0; t < times / 4; t++)
+            {
+                for (int a = 0; a < times / 2; a++)
+                {
+                    Console.Write(" ");
+                }
+                for (int a = 0; a < times; a++)
+                {
+                    Console.Write("+");
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
