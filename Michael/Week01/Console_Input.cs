@@ -13,8 +13,13 @@ namespace Michael.Week01
     public class ConsoleInputs
     {
 
-        public static string StringInput()
+        public static string StringInput(String text = "")
         {
+            if (text != "")
+            {
+                Console.WriteLine(text);
+            }
+
             Console.WriteLine("enter a string");
             String userInput = Console.ReadLine();
             Console.WriteLine($"Thank you! \nYour input was: {userInput}");
@@ -296,6 +301,9 @@ namespace Michael.Week01
                     }
                 }
 
+                if (!repeat)
+                    break;
+
                 while (true)
                 {
                     char again = CharInput("Do you want to continue with this result? y/n");
@@ -317,6 +325,80 @@ namespace Michael.Week01
                     }
                 }
 
+            }
+
+        }
+
+
+        public static void BusinessCard()
+        {
+            int cardWidth = 34;
+
+
+            string name = StringInput("\nhi, what's your name");
+            string number = StringInput("\nand what's your telephone number?");
+            string mail = StringInput("\nand last but not least, your mail adress?");
+
+            for (int y = 0; y < 11; y++)
+            {
+                if (y == 0 || y==10)
+                {
+                    Methods.printChars('*', cardWidth, true);
+                }
+                else if (y == 4)
+                {
+                    Methods.printChars('*', 1);
+                    Methods.printChars(' ', (cardWidth - 2 - name.Length) / 2);
+                    Console.Write(name);
+                    Methods.printChars(' ', (cardWidth - 2 - name.Length) / 2);
+
+                    //fixes rounding down 
+                    if (name.Length % 2 == 1)
+                    {
+                        Methods.printChars(' ', 1);
+                    }
+
+                    Methods.printChars('*', 1, true);
+
+                }
+                else if (y == 5)
+                {
+                    Methods.printChars('*', 1);
+                    Methods.printChars(' ', (cardWidth - 2 - number.Length) / 2);
+                    Console.Write(number);
+                    Methods.printChars(' ', (cardWidth - 2 - number.Length) / 2);
+
+                    //fixes rounding down 
+                    if (number.Length % 2 == 1)
+                    {
+                        Methods.printChars(' ', 1);
+                    }
+
+                    Methods.printChars('*', 1, true);
+
+                }
+                else if (y == 6)
+                {
+                    Methods.printChars('*', 1);
+                    Methods.printChars(' ', (cardWidth - 2 - mail.Length) / 2);
+                    Console.Write(mail);
+                    Methods.printChars(' ', (cardWidth - 2 - mail.Length) / 2);
+
+                    //fixes rounding down 
+                    if (mail.Length % 2 == 1)
+                    {
+                        Methods.printChars(' ', 1);
+                    }
+
+                    Methods.printChars('*', 1, true);
+
+                }
+                else
+                {
+                    Methods.printChars('*', 1);
+                    Methods.printChars(' ', cardWidth - 2);
+                    Methods.printChars('*', 1, true);
+                }
             }
 
         }
@@ -402,7 +484,7 @@ namespace Michael.Week01
         public static void ConsoleInput()
         {
 
-            TheGame();
+            BusinessCard();
 
         }
 
