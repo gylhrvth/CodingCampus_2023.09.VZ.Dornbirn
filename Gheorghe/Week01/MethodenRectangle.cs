@@ -19,9 +19,9 @@ namespace Gheorghe.Week01
             // Sandbox("x", 5);
             // PrintTriangleTopLeft("y", 10);
             // PrintTriangleTopRight("x", 5); v
-            // PrintTriangleBottomRight("o", 5);
+            //PrintTriangleBottomRight("x", 5);
             //PrintEmptySqure("x", 7);
-            PrintemptySquare("A", 5);
+           // PrintemptySquare("A", 5);
         }
 
         public static void PrintChars(string symbol, int count)
@@ -101,8 +101,8 @@ namespace Gheorghe.Week01
         {
             for (int i = 0; i < count; i++)
             {
-                PrintChars(" ", count - i);
-                PrintChars(symbol, i);
+                PrintChars(" ", count - i); // eines zuviel
+                PrintChars(symbol, i); // eines zu wenig
                 Console.WriteLine(symbol);
             }
 
@@ -136,7 +136,8 @@ namespace Gheorghe.Week01
 
         public static void PrintemptySquare(string symbol, int count)
         {
-            for (int zeile = 0; zeile < count; zeile++) { 
+            for (int zeile = 0; zeile < count; zeile++)
+            {
                 for (int spalte = 0; spalte < count; spalte++)
                 {
                     if (zeile == 0)
@@ -147,9 +148,9 @@ namespace Gheorghe.Week01
                     {
                         Console.Write(symbol);
                     }
-                    else if (zeile < count -1) 
+                    else if (zeile < count - 1)
                     {
-                        Console.Write(" ");
+                        Console.Write("o");
                     }
                     else if (spalte < count - 1)
                     {
