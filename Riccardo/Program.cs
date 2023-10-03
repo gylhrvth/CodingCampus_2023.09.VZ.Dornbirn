@@ -1,2 +1,2 @@
-﻿Riccardo.Week01.Day3Methode.Start();
+﻿Riccardo.Week02.PrimitiveDatentypen.Start();
     

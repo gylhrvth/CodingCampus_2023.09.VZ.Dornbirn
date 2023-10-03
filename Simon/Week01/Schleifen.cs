@@ -3,13 +3,13 @@ using System.Runtime.InteropServices;
 
 namespace Simon.Week01
 {
-	public class Schleifen
-	{
-		public static void Start()
-		{
+    public class Schleifen
+    {
+        public static void Start()
+        {
             Console.WriteLine("for-schleife");
             for (int i = 0; i <= 10; i++)
-			{
+            {
                 Console.Write(i.ToString());
             }
 
@@ -40,7 +40,7 @@ namespace Simon.Week01
 
             Console.WriteLine("\nrewind");
 
-            for (int d = 10; d >=-10 ; d--)
+            for (int d = 10; d >= -10; d--)
             {
                 Console.Write(d + " ");
             }
@@ -48,7 +48,7 @@ namespace Simon.Week01
 
 
         }
-	}
+    }
 }
 
 

@@ -52,6 +52,15 @@ namespace David.Week01
             PrintEmptySquare("A", 3);
             Console.WriteLine();
 
+            Console.WriteLine("\nPrintSlash");
+            PrintSlash("x", 3);
+            Console.WriteLine();
+
+            Console.WriteLine("\nPrintTriangle");
+            PrintTriangle("x", 5);
+            Console.WriteLine();
+
+
 
 
         }
@@ -181,19 +190,19 @@ namespace David.Week01
             }
 
         }
-        //public static void PrintTriangleBottomRight(String symbol, int count)
-        //{
-        //  for (int i = 0; i < count; i++)
-        //{
-        //  for (int j = count; j > i; j--)
-        //{
-        //     Console.Write("5");
-        //}
-        //
-        //
-        //  }
-        //Console.WriteLine("7");
-        //}
+        public static void PrintTriangleBottomRight(String symbol, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = count; j > i; j--)
+                {
+                    Console.Write("5");
+                }
+
+
+            }
+            Console.WriteLine("7");
+        }
 
         public static void PrintEmptySquare3(String symbol, int count)
         {
@@ -221,10 +230,10 @@ namespace David.Week01
                     {
                         Console.Write(".");
                     }
-                    
+
                 }
                 Console.WriteLine();
-               
+
 
 
             }
@@ -243,11 +252,11 @@ namespace David.Week01
                     {
                         Console.Write(symbol);
                     }
-                    else if (j == count-1)
+                    else if (j == count - 1)
                     {
                         Console.Write(symbol);
                     }
-                    else if(i == count-1)
+                    else if (i == count - 1)
                     {
                         Console.Write(symbol);
                     }
@@ -260,8 +269,85 @@ namespace David.Week01
             }
         }
 
+        public static void PrintSlash(String symbol, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    if (j < i)
+                    {
+                        Console.Write(" ");
+                    }
+                    else if (i < j)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(symbol);
+                    }
+
+                }
+                Console.WriteLine();
+            }
+
+        }
+        public static void PrintTriangle(string symbol, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                // Print spaces
+                for (int j = 0; j < count - i - 1; j++)
+                {
+                    Console.Write("'");
+                }
+
+                // Print the symbol
+                for (int j = 0; j < 2 * i + 1; j++)
+                {
+                    Console.Write(symbol);
+                }
+
+                // Print a newline character
+                Console.WriteLine(".");
+            }
+        }
+
+        //{
+        //    for (int i = 1; i <= count; i++)
+        //    {
+        //        for (int j = 1 * 2 - 1; j < 5; j++)
+        //        {
+
+        //            if (i == 5)
+        //            {
+        //                Console.Write("/");
+        //            }
+        //            else if (j < i)
+        //            {
+        //                Console.Write("W");
+        //            }
+        //           else if (j < count)
+        //            {
+
+        //                Console.Write(" ");
+        //            }
+
+        //            Console.Write(" ");
+        //        }
+        //        Console.WriteLine();
+        //    }
+
+
 
 
     }
 
+    
 }
+
+
+
+
+
