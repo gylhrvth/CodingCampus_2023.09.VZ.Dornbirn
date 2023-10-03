@@ -143,7 +143,7 @@ namespace Selina.Week01
                 Console.WriteLine();
                 for (int y = trinangel; y > i; y--)
                 {
-                    Console.Write("!");
+                    Console.Write(" ");
 
                 }
             }
