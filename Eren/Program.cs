@@ -1,1 +1,1 @@
-﻿Eren.Week01.HelloWorld.Start();
+﻿Eren.Week01.MethodsLoops.Start();
