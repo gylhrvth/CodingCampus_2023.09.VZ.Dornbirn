@@ -17,6 +17,10 @@ namespace Fabienne.Week01
 
             PrintTriangleBottomLeft('x', 4);
             Console.WriteLine();
+
+            Triangle("x", 7);
+
+            HalfTriangle("x", 7);
         }
 
         public static void PrintChars(char x, int anzahl, bool newline)
@@ -79,6 +83,49 @@ namespace Fabienne.Week01
             }
         }
 
+        public static void Triangle(String symbol, int size)
+        {
+            Console.WriteLine("Triangle (\'" + symbol + "\', " + size + ")");
 
+            for (int row = 0; row < size; row++)
+            {
+
+                for (int col  = 0; col < size * 2 - 1; col++)
+                {
+                    
+                    if (row + size == col + 1 || row == size - col - 1 || row == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        public static void HalfTriangle (String symbol, int size)
+        {
+            for (int row = 0; row < size; row++)
+            {
+                for(int col = 0; col < size * 2 - 1; col++)
+                {
+                    if (row == col || col == size - 1 || row == col - 1 )
+                    {
+                        Console.Write(symbol);
+                    }
+                    
+                    else
+                    {
+                        Console.Write("-");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }
