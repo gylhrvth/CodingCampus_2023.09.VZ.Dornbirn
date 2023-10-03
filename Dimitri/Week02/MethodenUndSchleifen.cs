@@ -199,6 +199,11 @@ namespace Dimitri.Week02
 
         }
 
+        public static void PrintRhombus(string symbol, int height)
+        {
+
+        }
+
 
     }
 }
