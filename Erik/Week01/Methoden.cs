@@ -294,89 +294,30 @@ namespace Erik.Week01
 
         public static void PrintX(String letter, int length)
         {
-
-
-                if (m == 0)
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length; j++)
                 {
-
-                    PrintTheChars(letter, 1);
-                    PrintTheChars("*", length - 2);
-                    PrintTheChars(letter, 1);
-                    Console.WriteLine();
-
+                    if (j == i || j == length - 1 - i)
+                    {
+                        Console.Write(letter);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
-                else
-                {
-
-
-                    PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
-                    PrintTheChars(letter, 1);
-                    Console.WriteLine();
-
-                }
-
-
-
-
+                Console.WriteLine();
             }
-
-
         }
-
-    }
-}
-
-
-            //for (int m = 0; m < length; m++)
-            //{
-
-            //    if (m < length)
-            //    {
-            //        PrintTheChars(letter, 1);
-            //        PrintTheChars(".", (length + 1) / 2);
-            //        PrintTheChars(letter, 1);
-            //        Console.WriteLine();
-
-            //    }
-            //    else
-            //    {
-
-
-            //        PrintTheChars(letter, 1);
-            //        PrintTheChars(".", (length + 1) / 2);
-            //        PrintTheChars(letter, 1);
-            //        Console.WriteLine();
-
-            //    }
-
-
-
-
-        }
+        
         public static void PrintChristmasTree (int starLength)
         {
-
             starLength = starLength / 2;
-
             for (int i = 0; i < starLength; i++)
             {
-
                 PrintTheChars("."  , starLength - i - 1);
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
         }
 
 
