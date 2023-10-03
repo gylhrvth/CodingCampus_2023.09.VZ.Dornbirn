@@ -368,6 +368,11 @@ namespace Dimitri.Week01
             //print stem
 
             int widthStem = widthTree / 3;
+            // make sure widthStem is always odd
+            if (widthStem % 2 == 0)
+            {
+                widthStem--;
+            }
             int heightStem = widthStem / 2;
             string stemSymbol = "+";
 
