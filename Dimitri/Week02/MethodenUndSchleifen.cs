@@ -24,6 +24,7 @@ namespace Dimitri.Week02
             PrintPyramid("x", 5);
             PrintRhombus("x", 7);
             PrintX("x", 13);
+            PrintChristmasTree(18);
         }
 
         public static void PrintChars(string symbol, int width)
@@ -215,27 +216,12 @@ namespace Dimitri.Week02
             {
                 for (int j = 0; j < height; j++)
                 {
-                    // bottom left
-                    if (i - j == middle)
+                    // print symbol
+                    if (i - j == middle || j - i == middle || j + i == middle || j + i == middle * 3)
                     {
                         Console.Write(symbol);
                     }
-                    // top right
-                    else if (j - i == middle)
-                    {
-                        Console.Write(symbol);
-                    }
-                    // top left
-                    else if (j + i == middle && i < middle && i != 0)
-                    {
-                        Console.Write(symbol);
-                    }
-                    // bottom right
-                    else if (j + i == middle * 3 && i > middle && i != height - 1)
-                    {
-                        Console.Write(symbol);
-                    }
-                    // spaces
+                    // print spaces
                     else
                     {
                         Console.Write(" ");
@@ -274,6 +260,64 @@ namespace Dimitri.Week02
                 Console.WriteLine();
             }
 
+
+        }
+        public static void PrintChristmasTree(int triangleHeight)
+        {
+            //print crown
+            int widthTree = triangleHeight * 2 - 1;
+
+            for (int i = 0; i < triangleHeight; i++)
+            {
+                for (int j = i; j < triangleHeight - 1; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = widthTree - ((triangleHeight - 1) * 2) + i; j > 0; j--)
+                {
+                    Console.Write("x");
+                }
+
+                for (int j = widthTree - ((triangleHeight - 1) * 2) + i - 1; j > 0; j--)
+                {
+                    Console.Write("x");
+                }
+                Console.WriteLine();
+            }
+
+            //print line above the stem
+            for (int i = 0; i < triangleHeight - 1; i++)
+            {
+                Console.Write("O ");
+            }
+            Console.Write("O");
+            Console.WriteLine();
+
+            //print stem
+
+            int widthStem = widthTree / 3;
+            // make sure widthStem is always odd
+            if(widthStem % 2 == 0)
+            {
+                widthStem--;
+            }
+            int heightStem = widthStem / 2;
+            string stemSymbol = "+";
+
+            for (int j = 0; j < heightStem; j++)
+            {
+                for (int i = 0; i < (widthTree - widthStem) / 2; i++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int i = 0; i < widthStem; i++)
+                {
+                    Console.Write(stemSymbol);
+                }
+                Console.WriteLine();
+            }
 
         }
     }
