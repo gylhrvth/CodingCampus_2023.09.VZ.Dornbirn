@@ -1,3 +1,2 @@
-﻿Gheorghe.Week01.Methoden01.Start();
+﻿Gheorghe.Week01.MethodenRectangle.Start();
 
-Console.ReadLine();

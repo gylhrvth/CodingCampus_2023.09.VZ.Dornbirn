@@ -1,0 +1,4 @@
+﻿[*.{cs,vb}]
+
+# IDE0048: Zur besseren Unterscheidung Klammern hinzufügen
+dotnet_diagnostic.IDE0048.severity = none
