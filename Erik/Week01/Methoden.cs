@@ -61,7 +61,7 @@ namespace Erik.Week01
             Console.WriteLine();
 
             Console.WriteLine("Printing the X");
-            PrintX("x", 10);
+            PrintX("x", 5);
             Console.WriteLine();
 
         }
@@ -84,7 +84,7 @@ namespace Erik.Week01
                 PrintTheChars(letter, length);
                 Console.WriteLine();
                 counter++;
-            } while (counter < 10);
+            } while (counter <= length);
 
         }
 
@@ -172,6 +172,9 @@ namespace Erik.Week01
 
             PrintTheChars(letter, length);
         }
+
+
+
 
         public static void PrintSlash(String letter, int length, bool isActiv)
         {
@@ -288,33 +291,27 @@ namespace Erik.Week01
             for (int m = 0; m < length; m++)
             {
 
-                if (m < length)
+                if (m == 0)
                 {
+
                     PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
+                    PrintTheChars("*", length - 2);
                     PrintTheChars(letter, 1);
                     Console.WriteLine();
+
 
                 }
                 else
                 {
 
-
-                    PrintTheChars(letter, 1);
-                    PrintTheChars(".", (length + 1) / 2);
+                    
+                    PrintTheChars(".", (length / 4) - 1 );
                     PrintTheChars(letter, 1);
                     Console.WriteLine();
 
                 }
-
-
-
-
             }
-
-
         }
-
     }
 }
 
