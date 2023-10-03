@@ -41,9 +41,9 @@ namespace Selina.Week01
             //Aufgabe 9:
             //PrintTriangle();
 
-            PrintRhombus();
-            //PrintX();
-            //PrintChristmastree();
+            //PrintRhombus();
+            PrintX();
+           // PrintChristmastree();
         }
 
 
@@ -143,7 +143,7 @@ namespace Selina.Week01
                 Console.WriteLine();
                 for (int y = trinangel; y > i; y--)
                 {
-                    Console.Write("!");
+                    Console.Write(" ");
 
                 }
             }
@@ -326,39 +326,45 @@ namespace Selina.Week01
             int rhombus = Convert.ToInt32(Console.ReadLine());
 
 
-            int count;
-            count = rhombus - 1;
-            for (int k = 1; k <= rhombus; k++)
+            int i, j, n = rhombus / 2;
+
+            for (i = 0; i < n; i++)
             {
-                for (int i = 1; i <= count; i++)
+                for (j = n - i; j > 0; j--)
                 {
                     Console.Write(" ");
                 }
-                count--;
-                for (int i = 1; i <= 2 * k - 1; i++)
+                for (j = 0; j <= 2 * i; j++)
                 {
-                    Console.Write("!");
+                    if (j < 2 * i && j > 0)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                        Console.Write("x");
 
                 }
                 Console.WriteLine();
             }
-            count = 1;
-            for (int k = 1; k <= rhombus - 1; k++)
+            for (i = n; i >= 0; i--)
             {
-                for (int i = 1; i <= count; i++)
+                for (j = n - i; j > 0; j--)
                 {
                     Console.Write(" ");
                 }
-                count++;
-                for (int i = 1; i <= 2 * (rhombus - k) - 1; i++)
+                for (j = 0; j <= 2 * i - 1; j++)
                 {
-                    Console.Write("#");
+                    if (j < 2 * i && j > 0)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                        Console.Write("x");
                 }
-
-                Console.WriteLine();
+                Console.WriteLine("x");
             }
+            Console.WriteLine();
         }
-
 
         public static void PrintX()
         {

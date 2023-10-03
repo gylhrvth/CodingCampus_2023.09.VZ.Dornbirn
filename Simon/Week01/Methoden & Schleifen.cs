@@ -59,6 +59,7 @@ namespace Simon.Week01
             PrintX('x', 5);
 
             Console.WriteLine("\nPrint Christmastree");
+            PrintChristmasTree(12);
             PrintChristmasTree(2);
 
             Console.WriteLine("\nPrint circle Pythagoras");
@@ -188,7 +189,6 @@ namespace Simon.Week01
         }
 
         //Aufgabe Print Slash
-
         public static void PrintSlash(char symbol, int number, bool backslash)
         {
             for (int i = 0; i < number; i++)
@@ -232,7 +232,6 @@ namespace Simon.Week01
                 {
                     PrintChars(' ', space);
                     Console.Write(symbol);
-                    PrintChars(' ', space);
                     Console.WriteLine();
                 }
 
