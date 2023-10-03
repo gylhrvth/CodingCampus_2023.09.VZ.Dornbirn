@@ -452,5 +452,4 @@ namespace Niklas.Week02
         }
 
     }
-
 }
