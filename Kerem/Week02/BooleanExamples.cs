@@ -61,9 +61,17 @@ namespace Kerem.Week02
         {
             for(int rows = 0; rows<size; rows++)
             {
-                for(int cols = 0; cols< size * 2 - 1 ; cols++)
+                for(int cols = 0; cols< size* 2 - 1; cols++)
                 {
-                    if (rows == 0 ||  cols== 0 || rows - cols == size  || cols - size == rows - 2)
+                    if (rows == 0)
+                    {
+                        Console.Write(".");
+                    }
+                    else if( cols == size - rows )
+                    {
+                        Console.Write(".");
+                    }
+                    else if (rows == size * cols)
                     {
                         Console.Write(".");
                     }
