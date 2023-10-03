@@ -16,6 +16,7 @@ namespace Cemal.Week02
 
             Console.WriteLine("Aufgabe Print Pyramid");
             PrintPyramid("x", 3);
+
         }
 
         public static void PrintSlash(String symbol, int count, bool cas)
@@ -57,5 +58,7 @@ namespace Cemal.Week02
 
             }
         }
+
+        
     }
 }

@@ -54,6 +54,10 @@ namespace Kerem.Week01
             printSlash("x", 3, true);
             Console.WriteLine();
 
+            Console.WriteLine("printSlash2");
+            printSlash2("y", 4, false);
+            Console.WriteLine();
+
 
         }
         public static void printChars(string symbol, int count)
@@ -184,7 +188,7 @@ namespace Kerem.Week01
                 Console.WriteLine();
 
             }
-                        
+
             printChars(symbol, height);
         }
 
@@ -210,11 +214,11 @@ namespace Kerem.Week01
         //BSP
         public static void printEmptySquare3(string symbol, int size)
         {
-            for(int row = 0; row < size; row++)
+            for (int row = 0; row < size; row++)
             {
-                for(int col = 0; col< size; col++)
+                for (int col = 0; col < size; col++)
                 {
-                    if (row == 0 || col == 0 || row == size -1 || col == size -1)
+                    if (row == 0 || col == 0 || row == size - 1 || col == size - 1)
                     {
                         Console.Write(symbol);
                     }
@@ -223,21 +227,44 @@ namespace Kerem.Week01
                         Console.Write(" ");
                     }
                 }
-                Console.WriteLine(); 
+                Console.WriteLine();
             }
         }
-        public static void printSlash(string symbol, int size, bool newline)
+        public static void printSlash(string symbol, int size, bool Slash)
         {
-            for(int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++)
             {
-                printChars(" ", i false);
-                printChars(symbol, size - 2, true);
+                for (int j = 0; j < size; j++)
+                {
+                    if (i == j)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {  
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
             }
         }
-
+        public static void printSlash2(string symbol, int size, bool BackSlash)
+        {
+            if(BackSlash == false)
+            {
+                for(int i = 0; i < size; i++)
+                {
+                    for(int j = i; j < size; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+            }
+        }
     }
 }
-
 
 
 
