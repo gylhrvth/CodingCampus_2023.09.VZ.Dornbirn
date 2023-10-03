@@ -7,11 +7,11 @@ namespace Martin.Week01
 		{
 			Console.ForegroundColor = ConsoleColor.Green;
 
-			Console.WriteLine("|-|-\\_/|-|");
-            Console.WriteLine("|-|-   |-|");
-            Console.WriteLine("|-| \\_/|-|");
-            Console.WriteLine("|-|--- |-|");
-            Console.WriteLine("|-|--- |-|");
+			Console.WriteLine("|-|\\_/|-|");
+            Console.WriteLine("|-|    |-|");
+            Console.WriteLine("|-|\\_/|-|");
+            Console.WriteLine("|-|----|-|");
+            Console.WriteLine("|-|----|-|");
 
             Console.WriteLine();
 
@@ -59,8 +59,6 @@ namespace Martin.Week01
             Console.WriteLine("    | |\\ \\  |-|");
             Console.WriteLine("    | | \\ \\_| |");
             Console.WriteLine("    |_|  \\__| |");
-
-
         }
 	}
 }

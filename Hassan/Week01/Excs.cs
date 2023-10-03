@@ -10,10 +10,10 @@ namespace Hassan.Week01
     {
         public static void Start()
         {
-            // PrintTriangleBottomLeft("*", 10);
-            // PrintTriangleTopRight("*", 5);
-            // PrintSquare("*", 10);
-            //PrintEmptySquare("*", 10);
+             PrintTriangleBottomLeft("*", 10);
+             PrintTriangleTopRight("*", 5);
+             PrintSquare("*", 10);
+            PrintEmptySquare("*", 10);
             PrintTriangle("*", 5);
 
            
