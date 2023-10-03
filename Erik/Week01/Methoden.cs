@@ -91,7 +91,7 @@ namespace Erik.Week01
                 PrintTheChars(letter, length);
                 Console.WriteLine();
                 counter++;
-            } while (counter < 10);
+            } while (counter <= length);
 
         }
 
@@ -179,6 +179,9 @@ namespace Erik.Week01
 
             PrintTheChars(letter, length);
         }
+
+
+
 
         public static void PrintSlash(String letter, int length, bool isActiv)
         {
@@ -291,9 +294,6 @@ namespace Erik.Week01
 
         public static void PrintX(String letter, int length)
         {
-
-
-
             for (int i = 0; i < length; i++)
             {
                 for (int j = 0; j < length; j++)
@@ -309,58 +309,15 @@ namespace Erik.Week01
                 }
                 Console.WriteLine();
             }
-
-
-
-            //for (int m = 0; m < length; m++)
-            //{
-
-            //    if (m < length)
-            //    {
-            //        PrintTheChars(letter, 1);
-            //        PrintTheChars(".", (length + 1) / 2);
-            //        PrintTheChars(letter, 1);
-            //        Console.WriteLine();
-
-            //    }
-            //    else
-            //    {
-
-
-            //        PrintTheChars(letter, 1);
-            //        PrintTheChars(".", (length + 1) / 2);
-            //        PrintTheChars(letter, 1);
-            //        Console.WriteLine();
-
-            //    }
-
-
-
-
         }
+        
         public static void PrintChristmasTree (int starLength)
         {
-
             starLength = starLength / 2;
-
             for (int i = 0; i < starLength; i++)
             {
-
                 PrintTheChars("."  , starLength - i - 1);
-
-
-
-
-
-
             }
-
-
-
-
-
-
-
         }
 
 

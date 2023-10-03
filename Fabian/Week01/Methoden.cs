@@ -53,7 +53,7 @@ namespace Fabian.Week01
             PrintRhombus("x", 7);
 
             Console.WriteLine("print x");
-            PrintX("x", 5);
+            PrintX("x", 11);
 
             Console.WriteLine("print christmas tree");
             PrintChristmasTree(9);
@@ -117,7 +117,7 @@ namespace Fabian.Week01
         {
             for (int i = 0; i < rows; i++)
             {
-                Methoden.PrintChars(character, columns);
+                PrintChars(character, columns);
                 Console.WriteLine();
             }
         }
@@ -127,7 +127,7 @@ namespace Fabian.Week01
         {
             for (int i = 0; i <= rows; i++)
             {
-                Methoden.PrintChars(character, i, true);
+                PrintChars(character, i, true);
             }
         }
 

@@ -1,1 +1,1 @@
-﻿Selina.Week01.Methoden.Start();
+﻿Selina.Week02.Datentypen.Start();

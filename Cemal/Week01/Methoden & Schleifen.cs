@@ -32,7 +32,7 @@ namespace Cemal.Week01
             PrintEmptySquare("A", 3);
 
             Console.WriteLine("\nAufgabe Print Pyramid");
-            PrintPyramid("x", 3);
+            //PrintPyramid("x", 3);
         }
 
         public static void PrintChars(String symbol, int count)
@@ -158,19 +158,5 @@ namespace Cemal.Week01
             }
             PrintChars(symbol1, count1);
         }
-
-        public static void PrintSlash()
-        {
-
-        }
-
-
-        //public static void PrintPyramid(String symbol1, int count1)
-        //{
-        //    for (int i = 0; i < length; i++)
-        //    {
-
-        //    }
-        //}
     }
 }
