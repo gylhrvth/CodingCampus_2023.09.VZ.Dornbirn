@@ -16,6 +16,7 @@ namespace Erik.Week02
             SumOfNumbers();
 
 
+
         }
 
         public static void SumOfNumbers()
