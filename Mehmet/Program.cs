@@ -1,1 +1,1 @@
-﻿Mehmet.Week01.HelloWorld.Start();
+﻿Mehmet.Week02.BooleanExamples.Start();

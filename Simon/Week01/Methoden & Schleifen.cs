@@ -403,14 +403,10 @@ namespace Simon.Week01
                 Console.WriteLine("Bitte gib nur eine Nummer ein die teil der 3er Reihe ist.");
             }*/
         }
-
         // Bonusaufgabe: Print circle Pythagoras
 
-        public static void PrintCirclePythagoras(double number)
+        public static void PrintCirclePythagoras(int number)
         {
-           
-                
-
 
         }
     }

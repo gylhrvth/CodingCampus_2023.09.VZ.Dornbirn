@@ -27,10 +27,10 @@ namespace Selina.Week02
             //}
 
             //Aufgabe 2:
-            int result = 0;
+            int result = 2;
             
             Calculate(result);
-            Console.WriteLine($"{result}");
+            Console.WriteLine($" = {result}");
 
             //Aufgabe 3:
         }
@@ -41,7 +41,7 @@ namespace Selina.Week02
             {
                 if (number % 2 == 0)
                 {
-                    result= result+ number;
+                    result=  result +number;
                     Console.Write($"{number} + ");
                 }
             }

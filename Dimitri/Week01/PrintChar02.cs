@@ -16,9 +16,9 @@ namespace Dimitri.Week01
 
         public static void PrintTriangleBottomLeft(string symbol, int row)
         {
-            for (int i = 0; i <= row; i++)
+            for (int i = 1; i <= row; i++)
             {
-                for (int numrow = 0; numrow <= i; numrow++)
+                for (int numrow = 1; numrow <= i; numrow++)
                 {
                     Console.Write(symbol);
                 }
@@ -30,7 +30,7 @@ namespace Dimitri.Week01
         {
             for (int i = row; i > 0; i--)
             {
-                for (int numrow = 0; numrow < i; numrow++)
+                for (int j = 0; j < i; j++)
                 {
                     Console.Write(symbol);
                 }
@@ -71,11 +71,11 @@ namespace Dimitri.Week01
         }
         public static void PrintEmptySquare(string symbol, int row)
         {
-            for (int i = row; i > 0; i--)
+            for (int i = 0; i < row; i++)
             {
-                if (i == 1)
+                if (i == 0)
                 {
-                    for (int j = row; j > 0; j--)
+                    for (int j = 0; j < row; j++)
                     {
                         Console.Write(symbol);
                     }
@@ -84,9 +84,9 @@ namespace Dimitri.Week01
                 /*
                  * SCHOEN!!!
                  */
-                else if (i == row)
+                else if (i == row - 1)
                 {
-                    for (int j = row; j > 0; j--)
+                    for (int j = 0; j < row; j++)
                     {
                         Console.Write(symbol);
                     }
@@ -96,7 +96,7 @@ namespace Dimitri.Week01
                 {
                     Console.Write(symbol);
 
-                    for (int k = row - 2; k > 0; k--)
+                    for (int k = 0; k < row - 2; k++)
                     {
                         Console.Write(" ");
                     }
@@ -204,14 +204,14 @@ namespace Dimitri.Week01
                 {
                     for (int j = (upperHalf - 1); j > 0; j--)
                     {
-                        Console.Write(" ");
+                        Console.Write("0");
                     }
 
                     Console.Write(symbol);
 
                     for (int j = (upperHalf - 1); j > 0; j--)
                     {
-                        Console.Write(" ");
+                        Console.Write("0");
                     }
                     Console.WriteLine();
                 }
@@ -219,18 +219,22 @@ namespace Dimitri.Week01
                 {
                     for (int j = i; j < upperHalf; j++)
                     {
-                        Console.Write(" ");
+                        Console.Write("0");
                     }
                     Console.Write(symbol);
                     for (int j = i - 1; j > 0; j--)
                     {
-                        Console.Write(" ");
+                        Console.Write("0");
                     }
                     for (int j = 1; j < i - 1; j++)
                     {
-                        Console.Write(" ");
+                        Console.Write("0");
                     }
                     Console.Write(symbol);
+                    for (int j = i; j < upperHalf; j++)
+                    {
+                        Console.Write("0");
+                    }
                     Console.WriteLine();
 
                 }
@@ -250,9 +254,9 @@ namespace Dimitri.Week01
 
                     Console.Write(symbol);
 
-                    for (int j = (lowerHalf - 1); j > 0; j--)
+                    for (int j = (lowerHalf); j > 0; j--)
                     {
-                        Console.Write(" ");
+                        Console.Write("0");
                     }
                     Console.WriteLine();
                 }
@@ -274,7 +278,13 @@ namespace Dimitri.Week01
         }
 
         public static void PrintX(string symbol, int row)
+
         {
+            if (row % 2 == 0)
+            {
+                Console.WriteLine("Bitte eine ungerade Zahl angeben.");
+                return;
+            }
             for (int i = 1; i <= row; i++)
             {
                 if (i == (row + 1) / 2)
@@ -321,6 +331,60 @@ namespace Dimitri.Week01
                     Console.WriteLine();
                 }
             }
+        }
+
+        public static void PrintChristmasTree(int triangleHeight)
+        {
+            //print crown
+            int widthTree = triangleHeight * 2 - 1;
+
+            for (int i = 0; i < triangleHeight; i++)
+            {
+                for (int j = i; j < triangleHeight - 1; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int j = widthTree - ((triangleHeight - 1) * 2) + i; j > 0; j--)
+                {
+                    Console.Write("x");
+                }
+
+                for (int j = widthTree - ((triangleHeight - 1) * 2) + i - 1; j > 0; j--)
+                {
+                    Console.Write("x");
+                }
+                Console.WriteLine();
+            }
+
+            //print line above the stem
+            for (int i = 0; i < triangleHeight - 1; i++)
+            {
+                Console.Write("O ");
+            }
+            Console.Write("O");
+            Console.WriteLine();
+
+            //print stem
+
+            int widthStem = widthTree / 3;
+            int heightStem = widthStem / 2;
+            string stemSymbol = "+";
+
+            for (int j = 0; j < heightStem; j++)
+            {
+                for (int i = 0; i < (widthTree - widthStem) / 2; i++)
+                {
+                    Console.Write(" ");
+                }
+
+                for (int i = 0; i < widthStem; i++)
+                {
+                    Console.Write(stemSymbol);
+                }
+                Console.WriteLine();
+            }
+
         }
     }
 }

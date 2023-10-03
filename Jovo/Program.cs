@@ -1,1 +1,1 @@
-﻿Jovo.Week01.HelloWorld.Start();
+﻿Jovo.Week02.Boolean.Start();
