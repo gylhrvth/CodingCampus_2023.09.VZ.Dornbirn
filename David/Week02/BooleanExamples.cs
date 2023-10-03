@@ -52,6 +52,10 @@ namespace David.Week02
             Console.WriteLine("Aufgabe Print Pyramid");
             printPyramid("x", 10);
 
+            Console.WriteLine("------");
+
+            Console.WriteLine("printRhombus");
+            printRhombus("x", 7);
         }
 
         public static void printSlash(String symbol, int count, bool cas)
@@ -121,12 +125,38 @@ namespace David.Week02
                     {
                         Console.Write(symbol);
                     }
-                    else {
+                    else
+                    {
                         Console.Write(".");
                     }
                     
                 }
                 Console.WriteLine();
+            }
+        }
+
+        public static void printRhombus(String symbol, int count)
+        {
+            for (int row = 0; row < count; row++)
+            {
+                for (int col = 0; col < count - 1; col++)
+                {
+                    if (col == row + count/2-1)
+                    {
+                        Console.Write("o");
+                    }
+                    else if (col == row + count)
+                    {
+                        Console.Write("u");
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
+                    
+                }
+
+                Console.WriteLine(".");
             }
         }
     }
