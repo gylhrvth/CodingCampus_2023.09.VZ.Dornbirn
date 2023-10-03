@@ -8,12 +8,15 @@
             Console.WriteLine();
             PrintFactorial(1, 20);
             Console.WriteLine();
-            PrintDecimalNums(0, 100);
+            //PrintDecimalNums(0, 100);
             Console.WriteLine();
             PrintDivideAndConquer();
             Console.WriteLine();
             PrintCalculatePiLeibniz();
             Console.WriteLine();
+            //PrintCalculatePiNilakantha();
+            Console.WriteLine();
+            //PrintSecretRow();
         }
 
         public static void PrintSum(int minNum, int maxNum)
@@ -48,41 +51,61 @@
 
         public static void PrintDivideAndConquer()
         {
-            for (int x = 0; x <= 20; x++)
+            for (double x = 0; x <= 20; x++)
             {
-                Console.WriteLine($"{x} / 5 = {x / 5,3}");
-                Console.WriteLine($"{x} / 5.0 = {x / 5.0,0}");
+                Console.WriteLine($"{x,2} / 5 = {x / 5, 5}");
+                Console.WriteLine($"{x,2} / 5.0 = {x / 5.0, 3}");
             }
-            Console.WriteLine("if you divide by a 5.0 it converts the int to a double");
         }
+
 
         public static void PrintCalculatePiLeibniz()
         {
-            double pi = 1;
+            double pi = 0;
 
-            for (int k = 0; k <= 20; k++)
+            for (double i = 1; i <= 1000000; i += 4)
             {
-
-                for (double i = 1; i <= 20; i += 2)
-                {
-                    pi = pi + (4 / i);
-                    Console.WriteLine($"𝜋 = {pi}");
-                }
-
-                for (int j = 3;  j <= 20; j++)
-                {
-                    pi = pi - (4 / j);
-                    Console.WriteLine($"\u03A0r^2 = {pi}");
-                }
-
+                pi += 4 / i;
+                Console.WriteLine($"pi = {pi}");
             }
+
+            for (double j = 3; j <= 1000000; j += 4)
+            {
+                pi -= 4 / j;
+                Console.WriteLine($"pi = {pi}");
+            }
+
+
         }
 
         public static void PrintCalculatePiNilakantha()
         {
-            double pi;
+            double pi = 3;
 
+            for (double i = 2; i <= 100; i += 4)
+            {
+                pi += 4 / (i * (i + 1) * (i + 2));
+                Console.WriteLine($"pi = {pi}");
+            }
+
+            for (double j = 4; j <= 100; j += 4)
+            {
+                pi -= 4 / (j * (j + 1) * (j + 2));
+                Console.WriteLine($"pi = {pi}");
+            }
+        }
+
+        public static void PrintSecretRow()
+        {
+            double value = 1;
+
+            for(double i = 0; i < 10000; i++)
+            {
+                value = value / 2 + 1 / value;
+                Console.WriteLine($"{value}");
+            }
 
         }
+
     }
 }
