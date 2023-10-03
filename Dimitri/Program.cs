@@ -1,1 +1,3 @@
-﻿Dimitri.Week01.MethodenUndSchleifen.Main();
+﻿using Dimitri.Week02;
+
+MethodenUndSchleifen.Main();
