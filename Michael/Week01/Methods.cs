@@ -277,6 +277,13 @@ namespace Michael.Week01
 
 
 
+        public static void printTriangleBool(char character, int length)
+        {
+
+        }
+
+
+
         public static void printInvertedTriangle(char character, int length, bool solidLine = true, bool top = true)
         {
             for (int i = length - 1; i >= 0; i--)
@@ -385,6 +392,27 @@ namespace Michael.Week01
         {
             printInvertedTriangle(character, (length + 1) / 2, false, true);
             printTriangle(character, (length + 1) / 2, false, false);
+        }
+
+
+
+        public static void printXBool(char character, int length)
+        {
+            for (int y = 0; y < length; y++)
+            {
+                for (int x = 0; x < length; x++)
+                {
+                    if (x == y)
+                    {
+                        Console.Write(character);
+                    }
+                    else
+                    {
+                        Console.Write(' ');
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
 
@@ -510,8 +538,7 @@ namespace Michael.Week01
 
         public static void Method()
         {
-            printRhombusLoop('X', 20);
-
+            printXBool('X', 20);
         }
     }
 }
