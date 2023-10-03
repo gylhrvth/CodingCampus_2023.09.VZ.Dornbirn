@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dimitri.Week02
@@ -20,7 +21,9 @@ namespace Dimitri.Week02
             PrintTriangleBottomRight("x", 5);
             PrintEmptySquare("A", 5);
             PrintSlash("x", 7, true);
-            PrintPyramid("x", 1);
+            PrintPyramid("x", 5);
+            PrintRhombus("x", 7);
+            PrintX("x", 13);
         }
 
         public static void PrintChars(string symbol, int width)
@@ -201,9 +204,77 @@ namespace Dimitri.Week02
 
         public static void PrintRhombus(string symbol, int height)
         {
+            if (height % 2 == 0)
+            {
+                Console.WriteLine($"{height} ist gerade. Bitte eine ungerade Zahl eingeben");
+            }
+
+            int middle = (height - 1) / 2;
+
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    // bottom left
+                    if (i - j == middle)
+                    {
+                        Console.Write(symbol);
+                    }
+                    // top right
+                    else if (j - i == middle)
+                    {
+                        Console.Write(symbol);
+                    }
+                    // top left
+                    else if (j + i == middle && i < middle && i != 0)
+                    {
+                        Console.Write(symbol);
+                    }
+                    // bottom right
+                    else if (j + i == middle * 3 && i > middle && i != height - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    // spaces
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
+                }
+
+                Console.WriteLine();
+            }
 
         }
 
+        public static void PrintX(string symbol, int height)
+        {
+            if (height % 2 == 0)
+            {
+                Console.WriteLine($"{height} ist gerade. Bitte eine ungerade Zahl eingeben");
+            }
 
+            int middle = (height - 1) / 2;
+
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    if (i == j || j + i == height - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
+                }
+                Console.WriteLine();
+            }
+
+
+        }
     }
 }
