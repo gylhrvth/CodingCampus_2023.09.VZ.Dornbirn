@@ -8,6 +8,22 @@ namespace Hassan.Week02
 {
     public class Examples
     {
+        public static void PrintTriangle(string symbol, int rows)
+        {
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write(symbol);
+                }
+
+                Console.WriteLine(symbol);
+            }
+
+        }
+
+        
         public static void BerechneFakultaeten()
         {
             for (int i = 1; i <= 20; i++)
@@ -71,7 +87,7 @@ namespace Hassan.Week02
                 Console.WriteLine();
             }
         }
-
-
+        
+        
     }
 }
