@@ -5,7 +5,10 @@ namespace David.Week02
 	{
 		public BooleanExamples()
 		{
-		}
+            Console.WriteLine("Print Slash");
+			printSlah("x", 3, true) ;
+            Console.WriteLine();
+        }
 	}
 }
 
