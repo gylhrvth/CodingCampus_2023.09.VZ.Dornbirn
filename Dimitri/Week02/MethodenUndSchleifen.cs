@@ -5,13 +5,22 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dimitri.Week01
+namespace Dimitri.Week02
 {
     internal class MethodenUndSchleifen
     {
         public static void Main()
         {
+            PrintChars("x", 5);
+            PrintSquare("x", 5);
+            PrintRect("x", 5, 3);
+            PrintTriangleBottomLeft("x", 5);
+            PrintTriangleTopLeft("x", 5);
+            PrintTriangleTopRight("x", 5);
             PrintTriangleBottomRight("x", 5);
+            PrintEmptySquare("A", 5);
+            PrintSlash("x", 7, true);
+            PrintPyramid("x", 1);
         }
 
         public static void PrintChars(string symbol, int width)
@@ -83,7 +92,8 @@ namespace Dimitri.Week01
                     if (j >= i)
                     {
                         Console.Write(symbol);
-                    } else
+                    }
+                    else
                     {
                         Console.Write(" ");
                     }
@@ -101,7 +111,30 @@ namespace Dimitri.Week01
             {
                 for (int j = 0; j < width; j++)
                 {
-                    if (j <= i)
+                    if (j + i > width - 2)
+                    {
+                        Console.Write(symbol);
+
+
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+
+                Console.WriteLine();
+            }
+
+        }
+
+        public static void PrintEmptySquare(string symbol, int width)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    if (i == 0 || i == width - 1 || j == 0 || j == width - 1)
                     {
                         Console.Write(symbol);
                     }
@@ -109,6 +142,56 @@ namespace Dimitri.Week01
                     {
                         Console.Write(" ");
                     }
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+        public static void PrintSlash(string symbol, int width, bool back)
+        {
+            for (int i = 0; i < width; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    if ((j == i && back) || (j + i == width - 1 && !back))
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
+                }
+
+                Console.WriteLine();
+            }
+
+        }
+
+        public static void PrintPyramid(string symbol, int height)
+        {
+            if (height % 2 == 0)
+            {
+                Console.WriteLine($"{height} ist gerade. Bitte eine ungerade Zahl eingeben");
+            }
+
+            int width = height * 2 - 1;
+
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    if ((i == 0 && j == height - 1) || i == height - 1 || ((i + j == height - 1) || (j - i == height - 1)))
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
                 }
 
                 Console.WriteLine();
