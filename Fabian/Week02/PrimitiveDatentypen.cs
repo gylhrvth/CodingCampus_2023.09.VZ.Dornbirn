@@ -5,14 +5,14 @@
         public static void Start()
         {
             //PrintSum(20, 50);
-            PrintFactorial(1, 20);
+            //PrintFactorial(1, 20);
             //PrintDecimalNums(0, 100);
             //PrintDivideAndConquer();
 
             //Console.WriteLine("Pi ist ca. {0}", CalculatePiLeibniz());
             //Console.WriteLine("Pi ist ca. {0}", PrintCalculatePiNilakantha());
             //PrintSecretRow();
-            //PrintRootApproximation();
+            //Console.WriteLine("Wurzel ist ca. {0}", CalcRootApproximation()); 
             //PrintRootApproximationBonus();
 
         }
@@ -32,7 +32,6 @@
         {
             for (int i = minNum; i <= maxNum; i++)
             {
-                Console.WriteLine($"{i,2}! = {CalcFactorial(i),20}");
                 Console.WriteLine("{0,2}! = {1,20}", i, CalcFactorial(i));
             }
         }
@@ -106,13 +105,12 @@
             return value;
         }
 
-        public static double PrintRootApproximation()
+        public static double CalcRootApproximation()
         {
-            double result = 0;
             double random = new Random().Next(10000) + 1;
             double max = random;
             double min = 0;
-            double average;
+            double average = 0;
 
             for (int i = 0; i < 100; i++)
             {
@@ -131,9 +129,10 @@
                 }
                 Console.WriteLine(average);
             }
-            return result;
-
+            return average;
         }
+
+ 
 
         public static double PrintRootApproximationBonus()
         {
