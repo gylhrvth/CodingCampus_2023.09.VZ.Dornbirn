@@ -1,13 +1,13 @@
 ﻿using System;
 namespace David.Week02
 {
-	public class DataTypes
-	{
-		public static void StartDataTypes()
+    public class DataTypes
+    {
+        public static void StartDataTypes()
 
-		{
+        {
             //True,False abfrage. +1 und -1 ist nicht das Selbe. 
-            int e= 1;
+            int e = 1;
             int f = -1;
             Console.WriteLine("ist gleiich: " + (e == f));
 
@@ -37,13 +37,13 @@ namespace David.Week02
             }
 
             // Um diese Fehler der Nachnkommastellen zu vermeiden.
-            // Rechnen wir mit großen Zahlen:
+            // Rechnen wir mit großen Zahlen UM ein genaues Ergebnis zu erhalen.
 
-            int h2 = 500;
-            for (int i = 0; i < 20; i++);
+            int h2 = 500; //500 statt 5
+            for (int i = 0; i < 20; i++) ; // 
             {
-                h2 = h2 + 10;
-                Console.WriteLine("h2 = ");
+                h2 = h2 + 10; // 10 statt 0,1
+                Console.WriteLine("h2 = " + (h2 / 100.0));
             }
 
 
@@ -119,7 +119,7 @@ namespace David.Week02
             // "Erstelle eine Funktion, die von 20 bis 50 alle Ganzzahlen nimmt und deren Summe ausrechnet."
 
             int sum = 0;
-            for (a=20; a<=50; a++)
+            for (a = 20; a <= 50; a++)
             {
                 sum += a;
             }
@@ -138,9 +138,50 @@ namespace David.Week02
             Console.WriteLine(".........");
 
             int summe = 0;
-            for (a=20; a<=50; a++)
+            for (a = 20; a <= 50; a++)
             {
                 Console.WriteLine(summe += a);
+            }
+
+            Console.WriteLine("--------");
+
+            long fak = 1;
+
+            for (a = 1; a <= 20; a++)
+            {
+                fak *= a;
+            }
+            Console.WriteLine(fak);
+
+            Console.WriteLine("--------");
+
+            long fakto = 1;
+
+            for (a = 1; a <= 20; a++)
+            {
+                fakto *= a;
+                Console.Write($"{a,2}");
+                Console.Write(" ! = ");
+                Console.Write($"{fakto,20}");
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("--------");
+
+            int d3 = 0;
+            for (int i = 0; i < 200; i++)
+            {
+                d3 = d3 + 100;
+                Console.WriteLine(d3 / 1000.0);
+            }
+
+            Console.WriteLine("--------");
+
+            for (double i = 0; i <= 15; i += 0.1)
+            {
+
+                Console.WriteLine(Math.Round(i, 2));
             }
         }
     }
