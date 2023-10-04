@@ -1,2 +1,2 @@
-﻿Erik.Week02.MyBoolean.Start();
+﻿Erik.Week02.PrimitiveDatentypen2.Start();
 
