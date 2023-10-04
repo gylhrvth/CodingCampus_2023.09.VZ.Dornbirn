@@ -6,6 +6,50 @@ namespace David.Week02
 		public static void StartDataTypes()
 
 		{
+            //True,False abfrage. +1 und -1 ist nicht das Selbe. 
+            int e= 1;
+            int f = -1;
+            Console.WriteLine("ist gleiich: " + (e == f));
+
+
+            // geht bis max. 127,
+            // dann trifft es sich in der Mitte,
+            // wie ein Kreis und beginnt rückwerts zu zählen.
+
+            sbyte tes = 120;
+            for (int g = 0; g < 20; g++)
+            {
+                Console.WriteLine("tes2 = " + tes);
+                ++tes;
+            }
+
+            // mit Komma (US= "." nicht ",")
+            // ACHTUNG! Es kann nicht "Wirtschaftlich" gerechnet werden,
+            // aufgund der Oben veranschaulichten "Schleife" wird nur das Warscheinlichste Ergebnis angezeigt
+            // viele Kommastellen. Je komplezer die Rechnungen, desto größer die Fehler.
+
+            double h = 5.0;
+            Console.WriteLine("double = " + h);
+            for (int i = 0; i < 20; i++)
+            {
+                h = h + 0.1;
+                Console.WriteLine("double = " + h);
+            }
+
+            // Um diese Fehler der Nachnkommastellen zu vermeiden.
+            // Rechnen wir mit großen Zahlen:
+
+            int h2 = 500;
+            for (int i = 0; i < 20; i++);
+            {
+                h2 = h2 + 10;
+                Console.WriteLine("h2 = ");
+            }
+
+
+
+            Console.WriteLine("-----------");
+
             int a = 1;
             int b = -1;
 
@@ -90,6 +134,8 @@ namespace David.Week02
             //{
             //    Console.WriteLine(k + (k + 1))=l;l <= 50;
             //}
+
+            Console.WriteLine(".........");
 
             int summe = 0;
             for (a=20; a<=50; a++)
