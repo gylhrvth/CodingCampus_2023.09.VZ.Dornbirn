@@ -398,7 +398,7 @@ namespace Simon.Week02
                     else
                     {
                         Console.Write(".");
-                    }
+                    } 
                 }
                 Console.WriteLine();
             }

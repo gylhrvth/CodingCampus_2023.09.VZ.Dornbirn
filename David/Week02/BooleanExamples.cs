@@ -139,16 +139,13 @@ namespace David.Week02
         {
             for (int row = 0; row < count; row++)
             {
-                for (int col = 0; col < count - 1; col++)
+                for (int col = 0; col < count; col++)
                 {
-                    if (col == row + count/2-1)
+                    if (col == row + count)
                     {
                         Console.Write("o");
                     }
-                    else if (col == row + count)
-                    {
-                        Console.Write("u");
-                    }
+                
                     else
                     {
                         Console.Write(".");
@@ -156,7 +153,7 @@ namespace David.Week02
                     
                 }
 
-                Console.WriteLine(".");
+                Console.WriteLine();
             }
         }
     }
