@@ -1,1 +1,1 @@
-﻿Gyula.Week02.DataTypes.StartDataTypes();
+﻿Gyula.Week02.BooleanExamples.StartBooleanExamples();
