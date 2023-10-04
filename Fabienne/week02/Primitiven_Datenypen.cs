@@ -7,9 +7,8 @@ namespace Fabienne.week02
     {
         public static void StartPrimitivenDatentypen()
         {
-            PrintSum();
-
             Faktorial();
+            PrintSum();
         }
 
         public static void PrintSum()
