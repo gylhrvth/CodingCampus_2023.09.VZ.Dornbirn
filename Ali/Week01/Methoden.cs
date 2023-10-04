@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Data.SqlTypes;
+using System.Drawing;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Cryptography.X509Certificates;
@@ -283,29 +284,31 @@ namespace Ali.Week01
                 }
             }
         }
-        public static void printPyramid(string symbol, int row)
+        public static void printPyramid(string symbol, int size)
         {
-            for(int i = 0; i <row; i++)
+            for (int row = 0; row < size * 2 + 1; row++)
             {
-                for(int j = 0; j<row; j++)
+                for (int cols = 0; cols < size * 2 - 1; cols++)
                 {
-                    if (j == i)
+                    if (size == 0 || cols == 0 || size - cols == size || cols - size == size - 2)
                     {
-                        Console.WriteLine(symbol);
-                        
+                        Console.Write(".");
                     }
                     else
                     {
-                        Console.Write(" ");
-                        
-                    } 
-                    
-                    
-                    
-                        
-                    
+                        Console.Write(symbol);
+                    }
+
                 }
+                Console.WriteLine();
+
+
             }
+
+
+
+
+
         }
     }
 }
