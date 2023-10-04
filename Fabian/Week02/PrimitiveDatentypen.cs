@@ -140,5 +140,30 @@
 
         }
 
+        public static void PrintRootApproximationBonus()
+        {
+            double random = new Random().Next(10000) + 1;
+            double max = random;
+            double min = 0;
+            double average;
+
+            for (int i = 0; i < 1000; i++)
+            {
+                average = (max + min) / 2;
+                if (Math.Pow(average, 2) > random)
+                {
+                    max = average;
+                }
+                else if (Math.Pow(average, 2) == random)
+                {
+                    break;
+                }
+                else
+                {
+                    min = average;
+                }
+                Console.WriteLine(average);
+            }
+        }
     }
 }
