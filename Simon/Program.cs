@@ -1,1 +1,1 @@
-﻿Simon.Week02.Triangle_V2.Start();
+﻿Simon.Week02.UebenPrimitiveDatentypen.Start();
