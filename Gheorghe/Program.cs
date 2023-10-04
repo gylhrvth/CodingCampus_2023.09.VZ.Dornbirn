@@ -1,1 +1,1 @@
-﻿Gheorghe.Week02.DataTypes.StartDataTypes();
+﻿Gheorghe.Week02.FaktorialAufgabe.Start();
