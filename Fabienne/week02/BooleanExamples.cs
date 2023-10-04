@@ -2,7 +2,7 @@
 
 namespace Fabienne.week02
 {
-    public class Boolean_Examples
+    public class BooleanExamples
     {
         public static void StartBooleanExamples()
         {

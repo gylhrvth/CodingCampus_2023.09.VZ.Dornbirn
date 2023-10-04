@@ -114,6 +114,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lukas", "Lukas", "{22961130-81A3-4870-849F-FC34411C5EF3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lukas", "Lukas\Lukas\Lukas.csproj", "{1C3078E6-1FC3-4B0F-847B-2BAA69D9C39F}"
+<<<<<<< HEAD
+=======
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07614DEC-9E73-499C-B360-79ED388E7A8C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+>>>>>>> 30887457e17e71e0cbc8b7f083afe453d9071f19
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
