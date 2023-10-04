@@ -19,7 +19,11 @@ namespace Kerem.Week02
             Console.WriteLine();
 
             Console.WriteLine("printpyramid");
-            printPyramid("x", 3);
+            printPyramid("x", 5);
+            Console.WriteLine();
+
+            Console.WriteLine("printX");
+            printX("x", 5);
             Console.WriteLine();
         }
     
@@ -61,29 +65,60 @@ namespace Kerem.Week02
         {
             for(int rows = 0; rows<size; rows++)
             {
-                for(int cols = 0; cols< size* 2 - 1; cols++)
+                for(int cols = 0; cols< size * 2 - 1 ; cols++)
                 {
-                    if (rows == 0)
+                    if (rows == cols-size*2)
                     {
                         Console.Write(".");
                     }
-                    else if( cols == size - rows )
+                    else if( rows + cols == 4 )
                     {
-                        Console.Write(".");
+                        Console.Write("x");
                     }
-                    else if (rows == size * cols)
+                    else if (rows == cols )
                     {
-                        Console.Write(".");
+                        Console.Write("x");
                     }
                     else
                     {
-                        Console.Write(symbol);
+                        Console.Write(".");
                     }
                    
                 }
                 Console.WriteLine();
             }
         }
+        public static void printX(string symbol, int size)
+        {
+            for (int rows = 0; rows < size; rows++)
+            {
+
+                for (int cols = 0; cols < size; cols++)
+                {
+                    if (rows == cols - size * 2)
+                    {
+                        Console.Write(".");
+                    }
+                    else if (rows + cols == 4)
+                    {
+                        Console.Write("x");
+                    }
+                    else if (rows == cols)
+                    {
+                        Console.Write("x");
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+              
+                }
+                Console.WriteLine();
+
+            }
+                          
+        }
+
 
     }
 }
