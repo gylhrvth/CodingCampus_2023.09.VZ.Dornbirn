@@ -22,10 +22,10 @@ namespace Dimitri.Week02
             PrintTriangleBottomRight("x", 5);
             PrintEmptySquare("A", 5);
             PrintSlash("x", 7, true);
-            PrintPyramid("x", 5);
+            PrintPyramid("x", 7);
             PrintRhombus("x", 7);
             PrintX("x", 7);
-            PrintChristmasTree(18);
+            PrintChristmasTree(7);
         }
 
         public static void PrintChars(string symbol, int width)
@@ -286,10 +286,6 @@ namespace Dimitri.Week02
                     else if(i == triangleHeight && j % 2 == 0)           
                     {
                         Console.Write("O");
-                    }
-                    else if (i == triangleHeight && j % 2 != 0)
-                    {
-                        Console.Write(" ");
                     }
                     else if (i < triangleHeight && i + j >= triangleHeight - 1 && j - i <= triangleHeight - 1)
                     {

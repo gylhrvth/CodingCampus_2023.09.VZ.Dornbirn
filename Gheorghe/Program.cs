@@ -1,1 +1,1 @@
-﻿Gheorghe.Week02.BooleanExamples.StartBooleanExamples();
+﻿Gheorghe.Week02.DataTypes.StartDataTypes();

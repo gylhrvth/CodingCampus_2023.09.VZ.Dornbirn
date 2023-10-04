@@ -1,1 +1,1 @@
-﻿Gyula.Week02.BooleanExamples.StartBooleanExamples();
+﻿Gyula.Week02.FunctionWithReturn.Start();

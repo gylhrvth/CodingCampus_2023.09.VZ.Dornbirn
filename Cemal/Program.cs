@@ -1,1 +1,1 @@
-﻿Cemal.Week02.BooleanExamples.StartBooleanExamples();
+﻿Cemal.Week02.Booleanexamples.StartBooleanExamples();

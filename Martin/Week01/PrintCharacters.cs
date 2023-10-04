@@ -40,7 +40,7 @@ namespace Martin.Week01
             PrintSlash('y',4,false);
             Console.WriteLine();
 
-            PrintTriangle('x', 1);
+            PrintTriangle('x', 8);
             Console.WriteLine();
 
             PrintRhombus('x', 11);
