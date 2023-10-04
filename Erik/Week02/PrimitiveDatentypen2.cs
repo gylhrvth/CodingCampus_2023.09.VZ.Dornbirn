@@ -10,7 +10,10 @@ namespace Erik.Week02
     {
         public static void Start()
         {
-            PrintingTheSumOfNumbers(20, 50);
+            PrintingTheSumOfNumbers(2, 30);
+            int result = SumOfNumbersButBetter(20, 50);
+            Console.WriteLine("Die Summe der Zahlen ist: " + result);
+
         }
 
 
@@ -42,8 +45,24 @@ namespace Erik.Week02
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Die Summer der Zahlen ist: " + numberFinal);
 
-            
+
         }
+
+
+        public static int SumOfNumbersButBetter(int from, int to)
+        {
+            int result = 0;
+            for (int i = from; i <= to; i++)
+            {
+                result = result + i; //das selbe wie resault += i
+            }
+            return result;
+        }
+
+
+
+
+
         public static void CalculateTheFactorial()
         {
 
@@ -51,7 +70,7 @@ namespace Erik.Week02
 
 
         }
-        
+
     }
 }
 
