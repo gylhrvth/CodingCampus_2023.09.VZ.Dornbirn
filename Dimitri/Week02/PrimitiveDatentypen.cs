@@ -16,13 +16,10 @@ namespace Dimitri.Week02
 
         public static void Summe(int start, int end)
         {
-            int sum;
-            int solution = start;
-            for (int i = start + 1; i <= end; i++)
+            int solution = 0;
+            for (int i = start; i <= end; i++)
             {
-                sum = i;
-                solution = sum + solution;
-
+                solution += i;
             }
 
             Console.WriteLine(solution);
