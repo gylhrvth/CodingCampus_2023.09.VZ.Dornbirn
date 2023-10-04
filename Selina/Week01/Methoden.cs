@@ -43,7 +43,7 @@ namespace Selina.Week01
 
             //PrintRhombus();
             PrintX();
-           // PrintChristmastree();
+           PrintChristmastree();
         }
 
 
@@ -109,6 +109,23 @@ namespace Selina.Week01
 
                 Console.WriteLine("x");
             }
+            // mit if
+
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i >= j)
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
         //PrintTrinangel2 gibt in der Console x in einer Form von einem Dreick aus --> funktioniert
@@ -126,6 +143,22 @@ namespace Selina.Week01
 
                 Console.WriteLine("x");
             }
+
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i + j <= trinangel - 1)
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
         //PrintTrinangel4 gibt in der Console x in einer Form von einem Dreick aus --> ein Lehrzeichen zu viel!
@@ -147,6 +180,21 @@ namespace Selina.Week01
 
                 }
             }
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i + j >= trinangel - 1)
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
         //PrintTrinangel3 gibt in der Console x in einer Form von einem Dreick aus --> funktioniert
@@ -168,6 +216,21 @@ namespace Selina.Week01
                 }
                 Console.WriteLine();
             }
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i <= j)
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
         //PrintEmptySquare1 gibt in der Console x in einer Form von einem Quader aus --> funktioniert
@@ -200,6 +263,23 @@ namespace Selina.Week01
             {
                 Console.Write("x");
             }
+
+
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i == 0 || i == trinangel - 1 || j == 0 || j == trinangel - 1)
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
 
             Console.WriteLine();
         }
@@ -235,6 +315,7 @@ namespace Selina.Week01
                 Console.Write("A");
             }
 
+          
             Console.WriteLine();
         }
 
@@ -278,9 +359,24 @@ namespace Selina.Week01
                     Console.WriteLine("x");
                 }
             }
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i == j)
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
- 
+
         public static void PrintTriangle()
         {
             Console.WriteLine("\nWie Groß soll Ihr Dreieck sein?");
@@ -317,6 +413,22 @@ namespace Selina.Week01
 
                 Console.WriteLine("");
             }
+
+            //for (int i = 0; i < trinangel; i++)
+            //{
+            //    for (int j = 0; j < trinangel; j++)
+            //    {
+            //        if (i + j < trinangel - 1 || i + j > trinangel - 1)
+            //        {
+            //            Console.Write(". ");
+            //        }
+            //        else
+            //        {
+            //            Console.Write("X ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
 
 
@@ -364,6 +476,23 @@ namespace Selina.Week01
                 Console.WriteLine("x");
             }
             Console.WriteLine();
+
+            //for (int row = 0; row < trinangel; row++)
+            //{
+            //    for (int cul = 0; cul < trinangel * 2 - 1; cul++)
+            //    {
+            //        if (row + trinangel == cul + 1 || row == trinangel - cul - 1 || row == trinangel - 1)
+            //        {
+            //            Console.Write("X");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(" ");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine();
         }
 
         public static void PrintX()
@@ -387,7 +516,21 @@ namespace Selina.Week01
                 Console.WriteLine();
 
             }
-
+            //for (int row = 0; row < trinangel * 2 - 1; row++)
+            //{
+            //    for (int cul = 0; cul < trinangel * 2 - 1; cul++)
+            //    {
+            //        if (row + trinangel == cul + 1 || row == trinangel - cul - 1 || cul + trinangel == row +1 || row + trinangel == cul + 1)
+            //        {
+            //            Console.Write("X");
+            //        }
+            //        else
+            //        {
+            //            Console.Write(".");
+            //        }
+            //    }
+            //    Console.WriteLine();
+            //}
         }
         public static void PrintChristmastree()
         {

@@ -1,36 +1,65 @@
 ﻿using System;
-using System.Threading.Channels;
+using System.Net.Sockets;
 
 namespace Fabienne.week02
 {
-    public class Primitiven_Datentypen  
+
+
+    public class Primitiven_Datentypen
     {
         public static void StartPrimitivenDatentypen()
         {
+            
             PrintSum();
-
-            Faktorial();
+            Console.WriteLine();
+            Faktorial(20);
         }
 
         public static void PrintSum()
         {
-            for (int i = 20;  i <= 50; i++) 
-            { 
-                Console.WriteLine(i + i);
+            int result = 0;
+
+            for (int i = 20; i <= 50; i++)
+            {
+                result += i;
+                Console.WriteLine(result);
             }
 
             Console.WriteLine();
         }
 
-        public static void Faktorial()
+        public static void Faktorial(long number)
         {
-            for (int i = 1; i <= 20; i++) 
-            { 
-                Console.WriteLine(i + i);
+            long result = 1;
+
+            for (int i = 1; i <= number; i++)
+            {
+                result = result * i;
+
+                Console.WriteLine("{0, -2}! = {1, 20} ",i,result) ;
             }
         }
 
-       
+        public class funktionWithReturn //was gyula vorgezeigt hat
+        {
+            public static void Start()
+            {
+                Console.WriteLine(Add(3, 22));
+
+                int c = Add(5, 4);
+
+                Console.WriteLine(c);
+            }
+
+            public static int Add(int a, int b)
+            {
+                int result = a + b;
+
+                return result;
+            }
+        }
     }
+
+    
 }
 

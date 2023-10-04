@@ -18,7 +18,7 @@ namespace Erik.Week02
             Console.WriteLine();
             TriangleBottomLeftIf(5);
             Console.WriteLine();
-            PrintPyramidFinal("x", 5);
+            PrintPyramidFinal("x", 7);
             Console.WriteLine();
         }
 
@@ -122,7 +122,7 @@ namespace Erik.Week02
                     }
                 }
                 Console.WriteLine();
-            }
+             }
 
 
         }

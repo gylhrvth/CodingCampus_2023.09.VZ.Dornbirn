@@ -145,7 +145,7 @@ namespace David.Week02
                     {
                         Console.Write("o");
                     }
-                    if (row + col == count)
+                    if (row + col == count - count +1)
                     {
                         Console.Write("c");
                     }
