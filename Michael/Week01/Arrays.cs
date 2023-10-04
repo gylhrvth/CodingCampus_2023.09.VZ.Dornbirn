@@ -22,6 +22,8 @@ namespace Michael.Week01
                 myArrayReversed[i] = size - i;
             }
 
+            Console.WriteLine("test");
+
             Console.WriteLine("normal array:");
 
             writeIntArray(myArray);
