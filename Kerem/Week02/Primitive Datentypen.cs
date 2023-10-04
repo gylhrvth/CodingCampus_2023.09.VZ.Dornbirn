@@ -10,7 +10,22 @@ namespace Kerem.Week02
     {
         public static void Start()
         {
-
+            Console.WriteLine("Sum");
+            printSum(20, 50);
+            Console.WriteLine();
         }
+        public static void printSum(int minNum, int maxNum)
+        {
+             int sum = 0;
+            
+             for(int i = minNum; i <= maxNum; i++)
+             {
+                 sum = sum + i;
+             }
+                
+            
+            Console.Write(sum);
+        }
+        public static void printFactorial(int)
     }
 }
