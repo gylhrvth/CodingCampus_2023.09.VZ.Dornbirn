@@ -92,7 +92,7 @@ namespace Niklas.Week02
             Console.WriteLine();
 
             Console.WriteLine("\nPrint Rhombus neu: ");
-            RhombusNeu("x", 13);
+            RhombusNeu("X", 13);
             Console.WriteLine();
 
             Console.WriteLine("\nPrint X: ");
@@ -334,7 +334,7 @@ namespace Niklas.Week02
                 {
                     if (i + j == n || i - n == j || i + n == j || i + j == n * 3)
                     {
-                        Console.Write("X ");
+                        Console.Write(number + " ");
                     }
 
                     else

@@ -371,7 +371,6 @@ namespace Fabienne.Week01
             {
                 return;
             }
-           
             
             PrintChars(' ', anzahl, false);
             Console.WriteLine("*");

@@ -6,11 +6,21 @@ namespace Jovo.Week02
     {
         public static void Start()
         {
+            Console.WriteLine("Printing Pyramid");
+            PrintPyramid("x", 5);
+            Console.WriteLine();
+
+
+
+
+
+
+
 
             int number = 50;
-            
-            for (int i = 20 - 1; i < number; i++)
-            { 
+
+            for (int i = 20 - 1; i <= number; i++)
+            {
                 if (i < number)
                 {
                     Console.WriteLine(i + 1);
@@ -26,22 +36,46 @@ namespace Jovo.Week02
 
 
 
-        //Aufgabe 2
-        public static void Faktorial()
+
+
+        public static void PrintPyramid(string symbol, int size)
         {
-            int number = 20;
-
-
-            for(int i = 0; i < number; i++)
+            for (int row = 0; row < size; row++)
             {
-                if (i < number)
+                for (int col = 0; col < size; col++)
                 {
-                    Console.WriteLine(number);
+                    if (row + col == 5)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
+                Console.WriteLine();
+
 
             }
 
+
+
+
+
+
+
+
+
         }
+
+
+
+
+
+
+
+
+
     }
-    
+
 }
