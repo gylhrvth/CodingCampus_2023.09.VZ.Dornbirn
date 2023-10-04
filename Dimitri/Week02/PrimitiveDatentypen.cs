@@ -14,7 +14,7 @@ namespace Dimitri.Week02
             
         }
 
-        public static int Summe(int start, int end)
+        public static int Summe(int start, int end) //void hat keinen rückgabewert und int/bool/float hat genau einen Rückgabewert
         {
             int solution = 0;
             for (int i = start; i <= end; i++)
