@@ -4,21 +4,15 @@
     {
         public static void Start()
         {
-            PrintSum(20, 50);
-            Console.WriteLine();
-            PrintFactorial(1, 20);
-            Console.WriteLine();
+            //PrintSum(20, 50);
+            //PrintFactorial(1, 20);
             //PrintDecimalNums(0, 100);
-            Console.WriteLine();
-            PrintDivideAndConquer();
-            Console.WriteLine();
+            //PrintDivideAndConquer();
             //PrintCalculatePiLeibniz();
-            Console.WriteLine();
             //PrintCalculatePiNilakantha();
-            Console.WriteLine();
             //PrintSecretRow();
-            Console.WriteLine();
-            PrintRootApproximation();
+            //PrintRootApproximation();
+            //PrintRootApproximationBonus();
         }
 
         public static void PrintSum(int minNum, int maxNum)
@@ -27,9 +21,9 @@
             for (int i = minNum; i <= maxNum; i++)
             {
                 sum += i;
-
+                Console.WriteLine(sum);
             }
-            Console.WriteLine(sum);
+
         }
 
         public static void PrintFactorial(int minNum, int maxNum)
@@ -40,7 +34,6 @@
                 fac *= i;
 
                 Console.WriteLine($"{i,2}! = {fac,20}");
-
             }
         }
 
@@ -119,7 +112,7 @@
             double min = 0;
             double average;
 
-            for (int i = 0; i < 1000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 average = (max + min) / 2;
                 if (Math.Pow(average, 2) > random)
@@ -140,5 +133,31 @@
 
         }
 
+        public static void PrintRootApproximationBonus()
+        {
+            double num = 1297419;
+            double max = num;
+            double min = 0;
+            double average;
+            double error = 1;
+            int tries = 0;
+
+            for (int i = 0; error > 0.1; i++)
+            {
+                average = (max + min) / 2;
+                error = Math.Abs(average / num * 100);
+                if (Math.Pow(average, 2) > num)
+                {
+                    max = average;
+                }
+                else
+                {
+                    min = average;
+                }
+                tries++;
+                Console.WriteLine($"{average,-20} error percentage = {error:N4}%");
+            }
+            Console.WriteLine($"it took {tries} tries");
+        }
     }
 }

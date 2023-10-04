@@ -11,182 +11,81 @@ namespace Selina.Week02
     {
         public static void Start()
         {
+            long result;
 
-
-
-            //Aufgabe 1:
-            int trinangel = 5;
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i >= j)
-                    {
-                        Console.Write("X ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            //Aufagbe 2:
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i + j <= trinangel - 1)
-                    {
-                        Console.Write("X ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            //Aufgabe 3:
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i <= j)
-                    {
-                        Console.Write("X ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            // Aufagbe 4:
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i + j >= trinangel - 1)
-                    {
-                        Console.Write("X ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            //Aufgabe 5:
-
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i == 0 || i == trinangel - 1 || j == 0 || j == trinangel - 1)
-                    {
-                        Console.Write("X ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-            //Aufgabe 6:
-
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i == j)
-                    {
-                        Console.Write("X ");
-                    }
-                    else
-                    {
-                        Console.Write(". ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-
-            Console.WriteLine();
-
-            //Aufgabe 7:
-
-            for (int i = 0; i < trinangel; i++)
-            {
-                for (int j = 0; j < trinangel; j++)
-                {
-                    if (i + j < trinangel - 1 || i + j > trinangel - 1)
-                    {
-                        Console.Write(". ");
-                    }
-                    else
-                    {
-                        Console.Write("X ");
-                    }
-                }
-                Console.WriteLine();
-            }
-
-            Console.WriteLine();
-
-            //Aufgabe 8:
-
-            for (int row = 0; row < trinangel; row++)
-            {
-                for (int cul = 0; cul < trinangel * 2 -1; cul++)
-                {
-                    if(row + trinangel == cul +1 || row == trinangel - cul -1 || row == trinangel -1)
-                    {
-                        Console.Write("X");
-                    }
-                    else
-                    {
-                        Console.Write(" ");
-                    }
-                }
-                Console.WriteLine();
-            }
-                    Console.WriteLine();
-            //Aufgabe 2:
+            Console.WriteLine("\nAufagabe 1:\n");
             Calculate();
 
-            //Aufgabe 3:
-            
+            Console.WriteLine("\nAufagabe 2:\n");
+            Factorial();
+
+            Console.WriteLine("\nAufagabe 3:\n");
+            Zählen();
+
+            Console.WriteLine("\nAufagabe 3:\n");
+            Teilen();
+
         }
 
-       
-        static void Calculate()
+        private static void Teilen()
+        {
+            int number1 = 5;
+            char x = '?';
+            for (int number = 0; number <= 20; number++)
+            {
+                Console.WriteLine($"{number,3} / {number1} = {x,5}");
+                Console.WriteLine($"{number,3} / {number1:f1} = {x,3}");
+            }
+        }
+        private static void Zählen()
+        {
+           
+            for(int number = 0; number <= 1000; number++)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Result 1 ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("digit ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine($"= {number/10.0,9:N1} ");
+
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("Result 2 ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("digit ");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine($"= {number / 10.0:N2} ");
+
+            }
+        }
+        private static void Factorial()
+        {
+            long number;
+            long factorial = 1;
+            for (number = 1; number <= 20; number++)
+            {
+                factorial = factorial * number;
+                Console.WriteLine($"{number,5}! =  {factorial,20}");
+            }
+
+        }
+
+        private static void Calculate()
         {
             int result = 0;
             for (int number = 20; number <= 50; number++)
             {
-                if (number % 2 == 0)
-                {
-                    Console.Write($"{number} + ");
-                    result = result + number;
-                }
+                    if (number == 20)
+                    {
+                        Console.Write($"{number}");
+                    }
+                    else if(number > 20)
+                    {
+                        Console.Write($" + {number}");
+                    }
+                    
+                    result = result+ number;
+                
             }
             Console.WriteLine($" = {result}");
         }

@@ -127,16 +127,7 @@ namespace Cemal.Week01
                 {
                     Console.Write(symbol1);
                 }
-                Console.WriteLine();
             }
-                //for (int i = 0; i<count1 - z - 1; i++)
-                //{
-                //    Console.Write(" ");
-                //}
-                //for (int i = 0; i <= z* 2; i++)
-                //{
-                //    Console.Write(symbol1);
-                //}
         }
 
         public static void PrintEmptySquare(String symbol1, int count1)
