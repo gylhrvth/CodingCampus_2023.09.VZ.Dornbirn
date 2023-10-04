@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Cemal.Week02
 {
-    internal class BooleanExamples
+    internal class Booleanexamples
     {
         public static void StartBooleanExamples()
         {

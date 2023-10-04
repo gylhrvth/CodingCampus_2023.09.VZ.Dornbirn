@@ -84,12 +84,16 @@ namespace Kerem.Week01
         {
             for (int i = 0; i < count; i++)
             {
+
+
                 for (int j = 0; j < count; j++)
                 {
                     Console.Write(symbol);
                 }
 
                 Console.WriteLine();
+
+
 
             }
 
@@ -241,7 +245,7 @@ namespace Kerem.Week01
                         Console.Write(symbol);
                     }
                     else
-                    {  
+                    {
                         Console.Write(" ");
                     }
                 }
@@ -250,11 +254,11 @@ namespace Kerem.Week01
         }
         public static void printSlash2(string symbol, int size, bool BackSlash)
         {
-            if(BackSlash == false)
+            if (BackSlash == false)
             {
-                for(int i = 0; i < size; i++)
+                for (int i = 0; i < size; i++)
                 {
-                    for(int j = i; j < size; j++)
+                    for (int j = i; j < size; j++)
                     {
                         Console.Write(" ");
                     }

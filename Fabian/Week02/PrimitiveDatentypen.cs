@@ -12,19 +12,24 @@
             Console.WriteLine();
             PrintDivideAndConquer();
             Console.WriteLine();
-            PrintCalculatePiLeibniz();
+            //PrintCalculatePiLeibniz();
             Console.WriteLine();
             //PrintCalculatePiNilakantha();
             Console.WriteLine();
             //PrintSecretRow();
+            Console.WriteLine();
+            PrintRootApproximation();
         }
 
         public static void PrintSum(int minNum, int maxNum)
         {
+            int sum = 0;
             for (int i = minNum; i <= maxNum; i++)
             {
-                Console.WriteLine($" {i} + {i} = {i + i}");
+                sum += i;
+
             }
+            Console.WriteLine(sum);
         }
 
         public static void PrintFactorial(int minNum, int maxNum)
@@ -63,13 +68,13 @@
         {
             double pi = 0;
 
-            for (double i = 1; i <= 1000000; i += 4)
+            for (double i = 1; i <= 30000; i += 4)
             {
                 pi += 4 / i;
                 Console.WriteLine($"pi = {pi}");
             }
 
-            for (double j = 3; j <= 1000000; j += 4)
+            for (double j = 3; j <= 30000; j += 4)
             {
                 pi -= 4 / j;
                 Console.WriteLine($"pi = {pi}");
@@ -99,10 +104,38 @@
         {
             double value = 1;
 
-            for(double i = 0; i < 10000; i++)
+            for(double i = 0; i < 10; i++)
             {
                 value = value / 2 + 1 / value;
                 Console.WriteLine($"{value}");
+            }
+
+        }
+
+        public static void PrintRootApproximation()
+        {
+            double random = new Random().Next(10000) + 1;
+            double max = random;
+            double min = 0;
+            double average;
+
+            for (int i = 0; i < 1000; i++)
+            {
+                average = (max + min) / 2;
+                if (Math.Pow(average, 2) > random)
+                {
+                    max = average;
+                }
+                else if (Math.Pow(average, 2) == random)
+                {
+                    break;
+                }
+                else
+                {
+                    min = average;
+                }
+                Console.WriteLine(average);
+
             }
 
         }
