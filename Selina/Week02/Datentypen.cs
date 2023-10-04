@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -11,54 +12,87 @@ namespace Selina.Week02
     {
         public static void Start()
         {
-            long result;
+            double result = 0;
 
-            Console.WriteLine("\nAufagabe 1:\n");
-            Calculate();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nßnAufagabe 1:\n");
+            Calculate(result);
 
-            Console.WriteLine("\nAufagabe 2:\n");
-            Factorial();
+            Console.ForegroundColor= ConsoleColor.Red;
+            Console.WriteLine("\n\nAufagabe 2:\n");
+            Factorial(result);
 
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine("\nAufagabe 3:\n");
-            Zählen();
+            Count(result);
 
-            Console.WriteLine("\nAufagabe 3:\n");
-            Teilen();
+            Console.ForegroundColor =ConsoleColor.Yellow;
+            Console.WriteLine("\n\nAufagabe 4:\n");
+            DivideAndConquer(result);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("\n\nAufagabe 5:\n");
+            CalculatePiLeibniz(result);
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("\n\nAufagabe 6:\n");
 
         }
 
-        private static void Teilen()
+
+        static double CalculatePiLeibniz(double result)
         {
-            int number1 = 5;
-            char x = '?';
-            for (int number = 0; number <= 20; number++)
+            double pi = 0.0;
+            double n = 1000000;
+
+            for (int i = 0; i < n; i++)
             {
-                Console.WriteLine($"{number,3} / {number1} = {x,5}");
-                Console.WriteLine($"{number,3} / {number1:f1} = {x,3}");
+                double term = (i % 2 == 0) ? 1.0 : -1.0;
+                double denominator = 2.0 * i + 1.0;
+
+                pi += term / denominator;
             }
+
+            result = 4 * pi;
+            Console.WriteLine(result);
+            return result;
         }
-        private static void Zählen()
+        private static double DivideAndConquer(double result)
+        {
+            double number1 = 5;
+            for (double number = 0; number <= 20; number++)
+            {
+                result = number / number1;
+                Console.WriteLine($"{number,3} / {number1} = {result,7:f2}");
+                Console.WriteLine($"{number,3} / {number1:N1} = {result,5:f2}");
+
+                
+            }
+            return result;
+        }
+        private static double Count(double result)
         {
            
-            for(int number = 0; number <= 1000; number++)
+            for(double number = 0; number <= 1000; number++)
             {
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.Write("Result 1 ");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write("digit ");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"= {number/10.0,9:N1} ");
 
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.Write("Result 2 ");
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write("digit ");
-                Console.ForegroundColor = ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"= {number / 10.0:N2} ");
-
             }
+            return result;
         }
-        private static void Factorial()
+        private static double Factorial(double result)
         {
             long number;
             long factorial = 1;
@@ -67,12 +101,10 @@ namespace Selina.Week02
                 factorial = factorial * number;
                 Console.WriteLine($"{number,5}! =  {factorial,20}");
             }
-
+            return result;
         }
-
-        private static void Calculate()
+        private static double Calculate(double result)
         {
-            int result = 0;
             for (int number = 20; number <= 50; number++)
             {
                     if (number == 20)
@@ -88,6 +120,7 @@ namespace Selina.Week02
                 
             }
             Console.WriteLine($" = {result}");
+            return result;
         }
     }
 }
