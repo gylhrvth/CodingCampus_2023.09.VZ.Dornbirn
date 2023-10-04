@@ -10,11 +10,11 @@ namespace Dimitri.Week02
     {
         public static void Main()
         {
-            Summe(20, 50);
+            Console.WriteLine(Summe(20, 50));
             
         }
 
-        public static void Summe(int start, int end)
+        public static int Summe(int start, int end)
         {
             int solution = 0;
             for (int i = start; i <= end; i++)
@@ -22,7 +22,7 @@ namespace Dimitri.Week02
                 solution += i;
             }
 
-            Console.WriteLine(solution);
+            return solution;
         }
     }
 }
