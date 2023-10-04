@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace Michael.Week01
         {
             for (int i = 0; i < length; i++)
             {
-                Console.Write(character);
+                Console.Write(character + " ");
             }
             if (newLine)
             {
@@ -245,10 +246,12 @@ namespace Michael.Week01
 
 
 
-        public static void printTriangle(char character, int length, bool solidLine = true, bool top = true)
+        public static void printTriangle(char character, int length, int offset = 0, bool solidLine = true, bool top = true)
         {
             for (int i = 0; i < length; i++)
             {
+                printChars(' ', offset);
+
                 if (i == 0)
                 {
                     if (top)
@@ -277,10 +280,13 @@ namespace Michael.Week01
 
 
 
-        public static void printInvertedTriangle(char character, int length, bool solidLine = true, bool top = true)
+
+        public static void printInvertedTriangle(char character, int length, int offset = 0, bool solidLine = true, bool top = true)
         {
             for (int i = length - 1; i >= 0; i--)
             {
+                printChars(' ', offset);
+
                 if (i == 0)
                 {
                     if (top)
@@ -311,8 +317,14 @@ namespace Michael.Week01
 
         public static void printRhombus(char character, int length)
         {
-            printTriangle(character, (length + 1) / 2, false, true);
-            printInvertedTriangle(character, (length - 1) / 2, false, true);
+            if (length % 2 == 0)
+            {
+                Console.WriteLine("only works with odd numbers. length got extended by 1\n");
+                length += 1;
+            }
+
+            printTriangle(character, (length + 1) / 2, 0, false, true);
+            printInvertedTriangle(character, (length - 1) / 2, 1, false, true);
         }
 
 
@@ -323,8 +335,8 @@ namespace Michael.Week01
         {
             if (length % 2 == 0)
             {
-                Console.WriteLine("please enter an odd number. length got reduced by 1");
-                length -= 1;
+                Console.WriteLine("only works with odd numbers. length got extended by 1\n");
+                length += 1;
             }
 
             for (int i = 0; i < length; i++)
@@ -354,9 +366,7 @@ namespace Michael.Week01
                     }
 
                     Console.WriteLine(character);
-
                 }
-
                 else
                 {
                     for (int j = 0; j < i - (length + 1) / 2 + 1; j++)
@@ -383,8 +393,41 @@ namespace Michael.Week01
 
         public static void printX(char character, int length)
         {
-            printInvertedTriangle(character, (length + 1) / 2, false, true);
-            printTriangle(character, (length + 1) / 2, false, false);
+            if (length % 2 == 0)
+            {
+                Console.WriteLine("only works with odd numbers. length got extended by 1\n");
+                length += 1;
+            }
+
+            printInvertedTriangle(character, (length + 1) / 2, 0, false, true);
+            printTriangle(character, (length + 1) / 2, 0, false, false);
+        }
+
+
+
+        public static void printXBool(char character, int length)
+        {
+            if (length % 2 == 0)
+            {
+                Console.WriteLine("only works with odd numbers. length got extended by 1\n");
+                length += 1;
+            }
+
+            for (int y = 0; y < length; y++)
+            {
+                for (int x = 0; x < length; x++)
+                {
+                    if (Math.Abs(x-length/2) == Math.Abs(y-length/2))
+                    {
+                        Console.Write(character);
+                    }
+                    else
+                    {
+                        Console.Write(' ');
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
 
@@ -424,7 +467,6 @@ namespace Michael.Week01
                 printChars('+', 5, true);
             }
         }
-
 
 
 
@@ -472,7 +514,11 @@ namespace Michael.Week01
             {
                 for (int x = Convert.ToInt32(-radius * 2); x <= Convert.ToInt32(radius * 2); x++)
                 {
-                    if (Math.Round(Math.Pow(x / 2, 2) + Math.Pow(y, 2)) < Math.Pow(radius, 2) && Math.Round(Math.Pow(x / 2, 2) + Math.Pow(y, 2)) > Math.Pow(radius - width, 2))
+                    double distanceFromCenter = Math.Pow(x / 2, 2) + Math.Pow(y, 2);
+                    double innerEdge = Math.Pow(radius - width, 2);
+                    double outerEdge = Math.Pow(radius, 2);
+
+                    if (innerEdge < distanceFromCenter && distanceFromCenter < outerEdge)
                     {
                         printChars(character, 1, false);
                     }
@@ -489,11 +535,20 @@ namespace Michael.Week01
 
         public static void drawCondition()
         {
-            for (int y = 0; y < 50; y++)
+            int range = 50;
+            int yCoord = 0;
+            int xCoord = 0;
+
+            for (int y = 0; y < range; y++)
             {
+                yCoord = y - range / 2;
+
                 for (int x = 0; x < 50; x++)
                 {
-                    if (Math.Pow(x, 2) + Math.Pow(y, 2) == 900)
+
+                    xCoord = x - range / 2;
+
+                    if (Math.Pow(xCoord, 2) + Math.Pow(yCoord, 2) == 900)
                     {
                         Console.Write("X");
                     }
@@ -508,10 +563,201 @@ namespace Michael.Week01
 
 
 
+        public static void drawCube(char characterOut, char characterIn, int length)
+        {
+            for (int y = 0; y < length + length/2 - 1; y++)
+            {
+                if (y == 0 || y == length - 1)
+                {
+                    printChars(characterOut, length);
+
+                    
+                    if (y == length - 1)
+                    {
+                        printChars(' ', length / 2 - 2);
+                        printChars(characterOut, 1);
+                    }
+                    
+                    Console.WriteLine();
+                }
+                else if (y < length / 2 - 1)
+                {
+                    printChars(characterOut, 1);
+                    printChars(' ', y - 1);
+                    printChars(characterIn, 1);
+                    printChars(' ', length - y - 2);
+                    printChars(characterOut, 1);
+                    printChars(' ', y - 1);
+                    printChars(characterOut, 1, true);
+                }
+                else if (y == length/2 - 1)
+                {
+                    printChars(characterOut, 1);
+                    printChars(' ', y - 1);
+                    printChars(characterIn, length / 2 + length%2);
+                    printChars(characterOut, 1);
+                    printChars(characterIn, y - 1);
+                    printChars(characterOut, 1, true);
+
+                }
+                else if (y < length - 1)
+                {
+                    printChars(characterOut, 1);
+                    printChars(' ', length / 2 - 2);
+                    printChars(characterIn, 1);
+                    printChars(' ', length / 2 - 1 + length%2);
+                    printChars(characterOut, 1);
+                    printChars(' ', length / 2 - 2);
+                    printChars(characterOut, 1, true);
+                }
+                else if (y < length + length/2 - 2)
+                {
+                    printChars(' ', y - length + 1);
+                    printChars(characterOut, 1);
+                    printChars(' ', length + length / 2 - y - 3);
+                    printChars(characterIn, 1);
+                    printChars(' ', length/2 + y - length + length%2);
+                    printChars(characterOut, 1);
+                    printChars(' ', -y + length + length/2 - 3);
+                    printChars(characterOut, 1, true);
+                }
+                else
+                {
+                    printChars(' ', y - length + 1);
+                    printChars(characterOut, length);
+                }
+            }
+        }
+
+
+        public static void drawCubeConditionTip(char characterOut, char characterIn, int length)
+        {
+            for (int y = 0; y < length + length / 2 - 1; y++)
+            {
+                for (int x = 0; x < length + length / 2 - 1; x++)
+                {   
+                    
+                    //solid lines                                                           *** conditions for: ***
+                    if (                                                                
+                        (x == 0 && y <= length - 1) ||                                  //solid straight top line
+                        (y == 0 && x <= length - 1) ||                                  //solid straight bottom/middle line
+                        (x == length - 1 && y <= length - 1) ||                         //solid straight right/middle line
+                        (y == length - 1 && x <= length - 1) ||                         //solid straight left line
+                        (y == x - (length - 1)) ||                                      //solid diagonal top right line
+                        (x == y - (length - 1)) ||                                      //solid diagonal bottom left line
+                        (x == y && y > length - 1) ||                                   //solid diagonal bottom right line
+                        (x == length + length / 2 - 2 && y > length / 2 - 1) ||         //solid straight right line
+                        (y == length + length / 2 - 2 && x > length / 2 - 1)            //solid straight bottom line
+                       )
+                    {
+                        Console.Write(characterOut + " ");
+                    }
+
+                    //dotted lines
+                    else if (
+                        (x == y && y < length / 2 - 1) ||                               //dotted diagonal top right line
+                        (x == length / 2 - 1 && y > length / 2 - 2) ||                  //dotted straight left line
+                        (y == length / 2 - 1 && x > length / 2 - 2)                     //doted straight top line
+                            )
+                    {
+                        Console.Write(characterIn + " ");
+                    }
+
+                    //whitespace
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+
+
+        public static void drawCubeCondition(int length)
+        {
+            //array initialization
+            char[,] toDraw = new char[3 * length + 2, 3 * length + 2];
+
+
+            //test condition for print
+            for (int x = - length; x<=length; x++)
+            {
+                for (int y = -length; y <= length; y++)
+                {
+                    for (int z = -length; z <= length; z++)
+                    {
+                        if(Math.Max(Math.Max(x,y),z) == length)
+                        {
+                            toDraw[x + ((z + length) / 2) + length, y + ((z + length) / 2) + length] = 'X';
+                        }
+                        else
+                        {
+                            toDraw[x + ((z + length) / 2) + length, y + ((z + length) / 2) + length] = ' ';
+                        }
+                    }
+                }
+            }
+
+            //print the whole thing
+            for (int j = 0; j <= 3 * length + 1; j++)
+            {
+                for (int i = 0; i <= 3 * length + 1; i++)
+                {
+                    Console.Write(toDraw[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+
+        public static void drawPyramid(char characterOut, char characterIn, int diagonal)
+        {
+            for (int y = 0; y <= diagonal - diagonal / 4; y++)
+            {
+                for (int x = 0; x <= diagonal; x++)
+                {
+
+                    //solid lines                                                           *** conditions for: ***
+                    if (
+                        (x == diagonal / 2) ||                                              //solid vertical middle line
+                        (diagonal / 2 - x == y && y < diagonal) ||                          //solid top left line
+                        (x - diagonal / 2 == y && y < diagonal) ||                          //solid top right line
+                        (y - diagonal / 2 == (x + 1) / 2) ||                                //solid bottom left line
+                        (3 * diagonal / 4 - y == (x - diagonal / 2) / 2)                    //solid bottom right line
+                       )
+                    {
+                        Console.Write(characterOut + " ");
+                    }
+
+                    //dotted lines
+                    else if (
+                        (diagonal / 2 - y == (x + 1) / 2 && x < diagonal / 2) ||            //doted left line
+                        (y - diagonal / 4 == ((x - diagonal / 2)) / 2 && x > diagonal / 2)  //doted right line
+                            )
+                    {
+                        Console.Write(characterIn + " ");
+                    }
+
+                    //whitespace
+                    else
+                    {
+                        Console.Write("  ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+
+
         public static void Method()
         {
-            printRhombusLoop('X', 20);
-
+            drawPyramid('x', '.', 40);
         }
     }
 }

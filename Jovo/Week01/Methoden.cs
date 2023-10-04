@@ -14,7 +14,8 @@ namespace Jovo.Week01
 
 
         public static void Start()
-        {
+{
+            
             Console.WriteLine("Printing characters horizontally:");
             PrintChars("x", 10);
             Console.WriteLine();
@@ -80,7 +81,7 @@ namespace Jovo.Week01
             Console.WriteLine();
 
             Console.WriteLine("Prinitng TestLehrer2");
-            PrintTestLehrer2("x", 3);
+            PrintTestLehrer2("x", 10);
             Console.WriteLine();
 
             Console.WriteLine("Printing MeinTest");
@@ -106,9 +107,23 @@ namespace Jovo.Week01
             Console.WriteLine("Printing MeinTest6");
             PrintMeinTest6("x", 5);
             Console.WriteLine();
+            
+            Console.WriteLine("Printing MeinRhombus");
+            Methoden2.PrintMeinRhombus("x", 10);
+            Console.WriteLine();
+            
+            
+            Console.WriteLine("Printing Christmastree");
+            PrintChristmastree(9);
+            Console.WriteLine();
 
+            Console.WriteLine("Printing Christmastree2");
+            PrintChristmastree2(9);
+            Console.WriteLine();
 
-
+            Console.WriteLine("Printing the Final Pyramid");
+            Methoden2.PrintTheFinalPyramid("x", 5);
+            Console.WriteLine();
 
 
         }
@@ -416,9 +431,9 @@ namespace Jovo.Week01
         {
             for (int row = 0; row < size; row++)
             {
-                for (int col = 0; col < size + 2; col++)
+                for (int col = 0; col < size *2-1 ; col++)
                 {
-                    if (row == col - 2 || row == size - 1 || row == col)
+                    if (col == size - 1 - row || col == size - 1 + row || row == size - 1)
                     {
                         Console.Write(symbol);
                     }        
@@ -462,7 +477,7 @@ namespace Jovo.Week01
             {
                 for (int col = 0; col < size; col++)
                 {
-                    if (row == col || row <= size)
+                    if (row == col || row == size - 1 || row == col-2)
                     {
                         Console.Write(symbol);
                     }
@@ -550,6 +565,71 @@ namespace Jovo.Week01
                 Console.WriteLine();
             }
         }
+
+
+
+        public static void PrintChristmastree(int size)
+        {
+            for(int row = 0; row < size * 2 -1 ; row++)
+            {
+                for (int col = 0; col < size * 2 -1 ; col++)
+                {
+                    
+
+                    if (row + size -1  == col )
+                    {
+                        Console.Write("a");
+                    }else if (row + col == size -1  )
+                    {
+                        Console.Write("s");
+                    }else if ( row == size/ 2)
+                    {
+                        Console.Write("f");
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
+
+
+                }
+                Console.WriteLine();
+
+
+
+
+            }
+            
+
+
+        }
+        public static void PrintChristmastree2(int size)
+        {
+            for ( int row = 0; row < size * 2 -1; row++)
+            {
+                for (int col = 0; col < size * 2 - 1; col++)
+                {
+                    if (row >= size -col  )
+                    {
+                        Console.Write("a");
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+
+        
+        
+
+
+
+        
 
     }
 

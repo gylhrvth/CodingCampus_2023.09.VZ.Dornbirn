@@ -10,13 +10,15 @@ namespace Hassan.Week01
     {
         public static void Start()
         {
-            // PrintTriangleBottomLeft("*", 10);
-            // PrintTriangleTopRight("*", 5);
-            // PrintSquare("*", 10);
+            //PrintTriangleBottomLeft("*", 10);
+            //PrintTriangleTopRight("*", 5);
+            //PrintSquare("*", 10);
             //PrintEmptySquare("*", 10);
-            PrintTriangle("*", 5);
+            //PrintPyramid("*", 6);
+            PrintMeinRhombus("x", 10);
+            //PrintTest("x", 7);
 
-           
+
         }
 
         static void PrintTriangleBottomLeft(string symbol, int size)
@@ -37,7 +39,7 @@ namespace Hassan.Week01
             {
                 for (int j = 0; j < i; j++)
                 {
-                     Console.Write(" ");
+                    Console.Write(" ");
                 }
                 for (int k = 0; k < size - i; k++)
                 {
@@ -77,21 +79,32 @@ namespace Hassan.Week01
                 Console.WriteLine();
             }
         }
-        static void PrintTriangle(string symbol, int size)
+        public static void PrintPyramid(string symbol, int size)
         {
-            for (int i = 0; i < size; i++)
+            for (int row = 0; row < size; row++)
             {
-                int numberOfSymbols = 2 * i + 1;
-                int numberOfSpaces = size - i - 1;
-
-                for (int j = 0; j < numberOfSpaces; j++)
+                for (int col = 0; col < size * 2 - 1; col++)
                 {
-                    Console.Write(" ");
+                    if (col == size - 1 - row || col == size - 1 + row || row == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+
+                    }
                 }
-
-                for (int k = 0; k < numberOfSymbols; k++)
+                Console.WriteLine();
+            }
+        }
+        public static void PrintMeinRhombus(string symbol, int size)
+        {
+            for (int row = 0; row < size; row++)
+            {
+                for (int col = 0; col < size; col++)
                 {
-                    if (k == 0 || k == numberOfSymbols - 1 || i == size - 1)
+                    if (row == col - 3 || row == col + 3 || row + col == size + 2 || row + col == 3)
                     {
                         Console.Write(symbol);
                     }
@@ -100,13 +113,52 @@ namespace Hassan.Week01
                         Console.Write(" ");
                     }
                 }
-
                 Console.WriteLine();
             }
+
+
         }
+
+        public static void PrintTest(String symbol, int size)
+        {
+           for(int row = 0;row < size; row++)
+            {
+                for(int col = 0;col < size * 2 - 1 ; col++)
+                {
+                    if(row + size - 1 == col )
+                    {
+                        Console.Write(symbol);
+                    }else if (row + col == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }else if (row == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
+                    
+
+                }
+                Console.WriteLine();
+            }
+
+        }
+
+
+
+
+
+
+
+
 
 
 
 
     }
 }
+
+

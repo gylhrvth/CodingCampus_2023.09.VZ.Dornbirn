@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace DarioLuis.Week01
+﻿namespace DarioLuis.Week01
 {
     public class Methoden
     {
@@ -42,7 +40,6 @@ namespace DarioLuis.Week01
 
             Console.WriteLine("\nPrintRhombus");
             PrintRhombus("x", 4);
-            PrintRhombusDown("x", 5);
 
         }
 
@@ -209,61 +206,44 @@ namespace DarioLuis.Week01
         }
         public static void PrintRhombus(string symbol, int zahl)
         {
-            if (zahl == 1)
+            //obere Hälfte
+            for (int i = 0; i < zahl; i++)
             {
-                PrintChars(symbol, zahl);
-            }
-            else
-            {
-                PrintChars(" ", zahl - 2);
-                Console.WriteLine(symbol);
-                int spacedifferent = 1;
-                for (int i = 1; i < zahl - 1; i++)
+                for (int j = 0; j < zahl - i - 1; j++)
                 {
-                    int spaces = i;
-                    int characters = zahl - i;
-                    PrintChars(" ", characters - 2);
-                    Console.Write(symbol);
-                    for (int a = spacedifferent; a > 0; a--)
-                    {
-                        Console.Write(' ');
-                    }
-                    spacedifferent = spacedifferent + 2;
-                    Console.Write(symbol);
-
-                    Console.WriteLine();
-
+                    Console.Write(" ");
                 }
-            }
-        }
-        public static void PrintRhombusDown(string symbol, int zahl)
-        {
-            if (zahl == 1)
-            {
-                PrintChars(symbol, zahl);
-            }
-            else
-            {
 
-                int spacedifferent = 1;
-                for (int i = 1; i < zahl - 2; i++)
+                Console.Write(symbol);
+                if (i > 0)
                 {
-
-                    for (int a = spacedifferent; a > 0; a--)
+                    for (int k = 0; k < 2 * i - 1; k++)
                     {
-                        Console.Write(' ');
+                        Console.Write(" ");
                     }
                     Console.Write(symbol);
-                    spacedifferent = spacedifferent + 2;
-                    Console.WriteLine();
+                }
+                Console.WriteLine();
+            }
 
-                    int spaces = i;
-                    int characters = zahl - i;
-                    PrintChars(" ", characters + 2);
+            //untere Hälfte
+            for (int i = zahl - 2; i >= 0; i--)
+            {
+                for (int j = 0; j < zahl - i - 1; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write(symbol);
+                if (i > 0)
+                {
+                    for (int k = 0; k < 2 * i - 1; k++)
+                    {
+                        Console.Write(" ");
+                    }
                     Console.Write(symbol);
                 }
-                PrintChars(" ", zahl - 2);
-                Console.WriteLine(symbol);
+                Console.WriteLine();
+
             }
         }
     }

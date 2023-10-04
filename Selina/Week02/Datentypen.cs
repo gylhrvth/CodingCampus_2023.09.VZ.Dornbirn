@@ -11,41 +11,45 @@ namespace Selina.Week02
     {
         public static void Start()
         {
-            //Aufgabe 1:
 
-            //int h = 5;
-            //for (int i = 0; i < h; i++)
-            //{
-            //    if (i <= h)
-            //    {
-            //        for (int y = 1; y <= i; y++)
-            //        {
-            //            Console.Write("x");
+            Console.WriteLine("\nAufagabe 1:\n");
+            Calculate();
+            Console.WriteLine("\nAufagabe 2:\n");
+            Factorial();
 
-            //    }
-            //    Console.WriteLine("x");
-            //}
-
-            //Aufgabe 2:
-            int result = 2;
-            
-            Calculate(result);
-            Console.WriteLine($" = {result}");
-
-            //Aufgabe 3:
         }
 
-        static int Calculate(int result)
+        static void Factorial()
         {
-            for (int number=20; number <= 50; number++)
+            long number;
+            long factorial = 1;
+            for (number = 1; number <= 20; number++)
             {
-                if (number % 2 == 0)
-                {
-                    result=  result +number;
-                    Console.Write($"{number} + ");
-                }
+                factorial = factorial * number;
+                Console.WriteLine($"{number,5}! =  {factorial,20}");
             }
-            return result;
+        }
+
+        static void Calculate()
+        {
+            int result = 0;
+            for (int number = 20; number <= 50; number++)
+            {
+                    if (number == 20)
+                    {
+                        Console.Write($"{number}");
+                    }
+                    else if(number > 20)
+                    {
+                        Console.Write($" + {number}");
+                    }
+                    
+                    result = result+ number;
+                
+            }
+            Console.WriteLine($" = {result}");
         }
     }
 }
+    
+
