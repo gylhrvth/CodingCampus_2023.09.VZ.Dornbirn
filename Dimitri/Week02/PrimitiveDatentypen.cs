@@ -10,15 +10,15 @@ namespace Dimitri.Week02
     {
         public static void Main()
         {
-            Summe();
+            Summe(20, 50);
             
         }
 
-        public static void Summe()
+        public static void Summe(int start, int end)
         {
             int sum;
-            int solution = 20;
-            for (int i = 21; i <= 50; i++)
+            int solution = start;
+            for (int i = start + 1; i <= end; i++)
             {
                 sum = i;
                 solution = sum + solution;
