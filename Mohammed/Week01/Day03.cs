@@ -73,13 +73,13 @@ namespace Mohammed.Week01
 
             //printTriangle2
             Console.WriteLine("die gleche würde aber als test durch gefüht");
-            printTriangle2("x", 5);
+            printTriangle2("s", 6);
             Console.WriteLine();
 
             //printRhombus
-            Console.WriteLine("Die Größe solldabei die Höhe des Rhombus sein!");
-            printRhombus("i", 7);
-            Console.WriteLine();
+            //Console.WriteLine("Die Größe solldabei die Höhe des Rhombus sein!");
+            //printRhombus("i", 7);
+            //Console.WriteLine();
 
         }
 
@@ -253,60 +253,37 @@ namespace Mohammed.Week01
             }
         }
 
-        public static void printTriangle2(string letter, int count)
+        public static void printTriangle2(string letter, int size)
         {
-            for (int m = 0; m < count; m++)
-
+            for (int row = 0; row < size; row++)
             {
-                for (int d = 0; d < count - m - 1; d++)
+                for (int col = 0; col < size * 2 - 1; col++)
                 {
-                    printChars(" ", count - d);
-                    Console.Write(" ");
+                    if (row + size - 1 == col || row + col == size - 1 || row == size - 1) 
+                    {
+                        Console.Write(letter);
+
+                    }
+                    else
+                    {
+                        Console.Write(". ");
+                    }
+                    
+
 
                 }
-
-                for (int z = 0; z < 2 * m + 1; z++)
-                {
-                    printChars(" ", count - m);
-                    Console.Write(letter);
-                }
-
                 Console.WriteLine();
             }
-        }
-
-        public static void printRhombus(string text, int row)
-        {
-            int spaces = row / 2;
-            int stars = 1;
-
-            for (int i = 0; i < row; i++)
-            {
-                for (int j = 0; j < spaces; j++)
-                {
-                    Console.Write(" ");
-                }
-
-                for (int k = 0; k < stars; k++)
-                {
-                    Console.WriteLine(row);
-                }
-
-                Console.WriteLine();
-            }
-
             
-
-
-
-
-
-
-
-
-
-
-
         }
+
+
+
+
+
+
+
+
+        //printRhombus in week02!!
     }
 }
