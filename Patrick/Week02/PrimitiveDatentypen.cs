@@ -78,6 +78,18 @@ namespace Patrick.Week02
             }
             Console.WriteLine("----------");
             Console.WriteLine("----------");
+
+
+            int z = 1;
+
+            while ( z <= fakt)
+            {
+                Console.WriteLine(z / 10.0);
+                z++;
+            }
+            Console.WriteLine("----------");
+            Console.WriteLine("----------");
+
         }
 
         public static void zaehlenDezimalSchrittenErweitert(int num)
