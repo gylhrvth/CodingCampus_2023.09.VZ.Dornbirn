@@ -77,13 +77,24 @@ namespace David.Week02
             int sum = 0;
             for (a=20; a<=50; a++)
             {
-                Console.WriteLine(sum += a);
+                sum += a;
             }
-            Console.WriteLine("...");
 
-            int k = 20;
+            Console.WriteLine(sum);
+
+            //    //Console.WriteLine(sum += a);
+            //}
+            //Console.WriteLine("...");
+
+            //int k = 20;
+            //{
+            //    Console.WriteLine(k + (k + 1))=l;l <= 50;
+            //}
+
+            int summe = 0;
+            for (a=20; a<=50; a++)
             {
-                Console.WriteLine(k + (k + 1)*30) ;
+                Console.WriteLine(summe += a);
             }
         }
     }
