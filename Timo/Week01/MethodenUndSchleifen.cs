@@ -18,16 +18,17 @@ namespace Timo.Week01
             PrintRectangle('x', 21, 10);
 
             Console.WriteLine("\n4.Aufgabe:");
-            PrintTriangleBottomLeft('x', 15);
+            PrintTriangleBottomLeft('x', 5);
 
             Console.WriteLine("\n5.Aufgabe:");
-            PrintTriangleTopLeft('x', 15);
+            PrintTriangleTopLeft('x', 5);
 
             Console.WriteLine("\n6.Aufgabe:");
-            PrintTriangleTopRight('x', 15);
+            PrintTriangleTopRight('x', 5);
 
             Console.WriteLine("\n7.Aufgabe:");
-            PrintTriangleBottomRight('x', 15);
+            PrintTriangleBottomRight('x', 5);
+
 
             Console.WriteLine("\n8.Aufgabe:");
             PrintEmptySquare('x', 15);
@@ -42,14 +43,14 @@ namespace Timo.Week01
             PrintPyramid('x', 1);
 
             Console.WriteLine("\n10.Aufgabe - mehr x:");
-            PrintPyramid('x', 15);
-
+            PrintPyramid('x', 10);
+            
             Console.WriteLine("\n11.Aufgabe:");
-            PrintRhombus('x', 25);
-
+            PrintRhombus('x', 7);
+            
             Console.WriteLine("\n12.Aufgabe:");
-            PrintX('x', 25);
-
+            PrintX('x', 7);
+            /*
             Console.WriteLine("\n13.Aufgabe:");
             PrintChristmasTree(15);
 
@@ -58,6 +59,7 @@ namespace Timo.Week01
 
             Console.WriteLine("\n15.Aufgabe:");
             PrintCircleSinCos(10);
+            */
         }
 
 
@@ -102,40 +104,48 @@ namespace Timo.Week01
         }
 
 
-        //Aufgabe4
+        //Aufgabe 4 Version 2
         public static void PrintTriangleBottomLeft(char symbol, int zahl)
         {
-            int x = 0;
-            while (x < zahl)
+            for (int i = 0; i < zahl; i++)
             {
-                int y = 0;
-                while ((y - 1) < x)
+                for (int j = 0; j < zahl; j++)
                 {
-                    Console.Write(symbol);
-                    y++;
+                    if (j <= i)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
-                Console.Write("\n");
-                x++;
+                Console.WriteLine();
             }
         }
 
-
-        //Aufgabe5
+        
+        //Aufgabe5 Version 2
         public static void PrintTriangleTopLeft(char symbol, int zahl)
         {
-            int x = zahl;
-            while (x > 0)
+            for (int i = 0; i < zahl; i++)
             {
-                int y = 0;
-                while (y < x)
+                for (int j = 0; j < zahl; j++)
                 {
-                    Console.Write(symbol);
-                    y++;
+                    if (j <= zahl - 1 - i)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
                 }
-                Console.Write("\n");
-                x--;
+                Console.WriteLine();
             }
         }
+
+
         /*//Aufgabe6
         public static void PrintTriangleTopRight(char symbol, int zahl)
         {
@@ -161,7 +171,7 @@ namespace Timo.Week01
             }
         }*/
 
-        //Aufgabe6.2
+        /*//Aufgabe6.2
         public static void PrintTriangleTopRight(char symbol, int zahl)
         {
             for (int i = 0; i < zahl; i++)
@@ -172,10 +182,31 @@ namespace Timo.Week01
                 PrintChars(symbol, characters);
                 Console.WriteLine();
             }
+        }*/
+
+
+        //Aufgabe6 Version 3
+        public static void PrintTriangleTopRight(char symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                for (int j = 0; j < zahl; j++)
+                {
+                    if (j >= i)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
 
-        //Aufgabe7
+        /*//Aufgabe7 Version 1
         public static void PrintTriangleBottomRight(char symbol, int zahl)
         {
 
@@ -187,8 +218,27 @@ namespace Timo.Week01
                 PrintChars(symbol, i + 1);
                 Console.WriteLine();
             }
-        }
+        }*/
 
+        //Aufgabe7 Version2
+        public static void PrintTriangleBottomRight(char symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                for (int j = 0; j < zahl; j++)
+                {
+                    if (j >= zahl - 1 - i)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
 
         //Aufgabe8
         public static void PrintEmptySquare(char symbol, int zahl)
@@ -241,7 +291,7 @@ namespace Timo.Week01
         }
 
 
-        //Aufgabe10
+        /*//Aufgabe10
         //TODO Code vereinfachen und kürzer machen
         public static void PrintPyramid(char symbol, int zahl)
         {
@@ -272,10 +322,30 @@ namespace Timo.Week01
                 PrintChars(symbol, (zahl * 2) - 1);
                 Console.WriteLine();
             }
+        }*/
+
+        //Aufgabe 10 Version2
+        public static void PrintPyramid(char symbol, int zahl)
+        {
+            for (int height = 0; height < zahl; height++)
+            {
+                for (int with = 0; with < zahl * 2 - 1; with++)
+                {
+                    if (with == height + zahl - 1 || with == zahl - height - 1 || height == zahl - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
 
 
-        //Aufgabe11.1
+        /*//Aufgabe11.1
         //TODO Code vereinfachen und kürzer machen
 
         public static void PrintRhombus(char symbol, int zahl)
@@ -313,9 +383,32 @@ namespace Timo.Week01
             PrintChars(' ', zahl / 2);
             Console.WriteLine(symbol);
         }
+        */
+
+        //Aufgabe11 Version 2
+        public static void PrintRhombus(char symbol, int zahl)
+        {
+            for (int height = 0; height<zahl; height++)
+            {
+                for(int with = 0;with < zahl; with++)
+                {
+                    if(with == height + zahl/2 || with == zahl / 2 - height|| with + zahl - 1 == height + zahl / 2|| with - zahl + 1 == zahl / 2 - height)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else 
+                    { 
+                        Console.Write(" "); 
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
 
 
-        //Aufgabe12
+
+
+        /*//Aufgabe12
         //TODO Code vereinfachen und kürzer machen
 
         public static void PrintX(char symbol, int zahl)
@@ -352,7 +445,29 @@ namespace Timo.Week01
                 Console.WriteLine();
             }
         }
+        */
 
+
+        //Aufgabe 12 Version 2
+        public static void PrintX(char symbol, int zahl)
+        {
+            for (int height = 0; height < zahl; height++)
+            {
+                for (int with = 0; with < zahl; with++)
+                {
+                    if (with == height    ||with  == zahl - height -1 )
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        
+        }
 
         //Aufgabe13
         public static void PrintChristmasTree(int zahl)
@@ -418,10 +533,44 @@ namespace Timo.Week01
             {
                 for (int j = radius; j > -radius * 2; radius--)
                 {
-                    
+
                 }
                 Console.WriteLine();
             }
         }
+
+
+        /*//Aufgabe4 Version 1
+        public static void PrintTriangleBottomLeft(char symbol, int zahl)
+        {
+            int x = 0;
+            while (x < zahl)
+            {
+                int y = 0;
+                while ((y - 1) < x)
+                {
+                    Console.Write(symbol);
+                    y++;
+                }
+                Console.Write("\n");
+                x++;cvcvyxc
+            }
+        }*/
+        /*//Aufgabe5 Version 1
+        public static void PrintTriangleTopLeft(char symbol, int zahl)
+        {
+            int x = zahl;
+            while (x > 0)
+            {
+                int y = 0;
+                while (y < x)
+                {
+                    Console.Write(symbol);
+                    y++;
+                }
+                Console.Write("\n");
+                x--;
+            }
+        }*/
     }
 }
