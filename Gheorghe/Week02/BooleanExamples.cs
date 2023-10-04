@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,8 +9,13 @@ namespace Gheorghe.Week02
 {
     public class BooleanExamples
     {
+
         public static void StartBooleanExamples()
         {
+
+            printRohmbus("*", 7);
+
+
             bool isNumber = true;
             Console.WriteLine(isNumber);
 
@@ -17,7 +23,7 @@ namespace Gheorghe.Week02
             Console.WriteLine(isBig);
 
 
-              Console.WriteLine("!false:" + !false);
+            Console.WriteLine("!false:" + !false);
             Console.WriteLine("!true:" + !true);
 
             Console.WriteLine("true and true :" + (true && true));
@@ -39,26 +45,51 @@ namespace Gheorghe.Week02
             Console.WriteLine("i >= 7:" + (iX >= 7));
 
 
-            int size = 7;
-            for (int i = 0; i < size; i++)
+
+            int input = 7;
+            for (int zeile = 0; zeile < input; zeile++)
             {
-                for (int j = 0; j < size; j++)
+                for (int col = 0; col < input; col++)
                 {
-                 if (i == j)
+                    if (zeile == col)
                     {
-                        Console.Write("X ");
+                        Console.Write(" * ");
 
                     }
                     else
                     {
-                        Console.Write(".");
+                        Console.Write(" . ");
                     }
                 }
-                        Console.WriteLine();
+                Console.WriteLine();
             }
 
         }
-    }
 
-}
+        public static void printRohmbus(string symbol, int size)
+        {
+            for (int zeile = 0;zeile < size ;zeile++)
+            {
+                for(int col = 0;col < size -1 - zeile  ;col++)
+                {
+                    if (zeile > 0 )
+                    {
+                        Console.Write(".");
+
+                    }
+                    else
+                    {
+                        Console.Write("$");
+                    }
+                   
+                }
+                Console.WriteLine();
+            }
+        }
+
+    }
+}          
+
+
+
 

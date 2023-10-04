@@ -1,1 +1,1 @@
-﻿Fabian.Week01.PrimitiveDatentypen.Start();
+﻿Fabian.Week02.PrimitiveDatentypen.Start();

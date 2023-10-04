@@ -189,7 +189,6 @@ namespace Simon.Week01
         }
 
         //Aufgabe Print Slash
-
         public static void PrintSlash(char symbol, int number, bool backslash)
         {
             for (int i = 0; i < number; i++)
