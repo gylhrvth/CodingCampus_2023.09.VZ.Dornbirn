@@ -166,6 +166,23 @@ namespace David.Week02
                 Console.WriteLine();
             }
             Console.WriteLine();
+
+            Console.WriteLine("--------");
+
+            int d3 = 0;
+            for (int i = 0; i < 200; i++)
+            {
+                d3 = d3 + 100;
+                Console.WriteLine(d3 / 1000.0);
+            }
+
+            Console.WriteLine("--------");
+
+            for (double i = 0; i <= 15; i += 0.1)
+            {
+
+                Console.WriteLine(Math.Round(i, 2));
+            }
         }
     }
 }
