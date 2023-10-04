@@ -1,1 +1,1 @@
-﻿Martin.Week02.BooleanExamples.StartBooleanExamples();
+﻿Martin.Week02.PrimitiveDatenTypen.Start();

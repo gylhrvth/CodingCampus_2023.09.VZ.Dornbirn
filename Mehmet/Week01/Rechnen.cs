@@ -63,9 +63,7 @@ namespace Mehmet.Week01
             PrintSlash2("y", 4, true);
             Console.WriteLine();
 
-            Console.WriteLine("PrintTriangle");
-            PrintTriangle("x", 12);
-            Console.WriteLine();
+            
 
 
 
@@ -232,38 +230,6 @@ namespace Mehmet.Week01
                 }
             }
         }
-
-        public static void PrintTriangle(string symbol, int row)
-        {
-            for (int x = 0; x < row; x++)
-            {
-
-
-
-
-
-                for (int z = x + 1; z < row; z++)
-                {
-                    Console.Write(" ");
-                }
-                Console.Write(symbol);
-
-
-
-
-                for (int y = 0; y < x; y++)
-                {
-                    Console.Write("O");
-                }
-                for (int i = 0; i < row; i++)
-                {
-                    Console.Write(symbol);
-                }
-
-                Console.WriteLine();
-            }
-        }
-
     }
 }
 

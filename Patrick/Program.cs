@@ -1,1 +1,3 @@
-﻿Patrick.Week01.MethodeSchleifen.Start();
+﻿using Patrick.Week02;
+
+PrimitiveDatentypen.start();

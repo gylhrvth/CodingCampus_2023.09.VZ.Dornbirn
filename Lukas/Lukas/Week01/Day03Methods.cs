@@ -43,7 +43,7 @@ namespace Lukas.Week01
 
 		public static void printSquare(String text, int width)
 		{
-			for(int row = 10; row < width; row++)
+			for(int row = 0; row < width; row++)
 			{
 				Console.Write(row);
 				Console.Write($"\u001B[{row}m");
@@ -55,6 +55,8 @@ namespace Lukas.Week01
             }
 			
 		}
+
+		
 	}
 }
 

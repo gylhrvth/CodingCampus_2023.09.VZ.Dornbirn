@@ -1,1 +1,1 @@
-﻿Fabian.Week02.BooleanExamples.StartBooleanExamples();
+﻿Fabian.Week02.PrimitiveDatentypen.Start();

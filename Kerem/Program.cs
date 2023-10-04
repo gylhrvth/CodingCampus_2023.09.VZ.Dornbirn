@@ -1,1 +1,1 @@
-﻿Kerem.Week02.BooleanExamples.StartBooleanExamples();
+﻿Kerem.Week02.Primitive_Datentypen.Start();
