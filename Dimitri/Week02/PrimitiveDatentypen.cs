@@ -18,9 +18,9 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //FaktorialExtended(40);
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
-            //NullBisHundertv1(0.0, 100.0);
+            NullBisHundertv2(0.0, 100.0);
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
-            TeilenUndHerrschen();
+            //TeilenUndHerrschen();
 
 
         }
@@ -70,12 +70,30 @@ namespace Dimitri.Week02
             for (double i = start * 100; i <= end*100; i+=10)
             {
                 solution = i / 100.0;
+                Console.Write("Result 1 digit = ");
+                Console.WriteLine("{0,-3:0.0}", solution);
+                Console.Write("Result 2 digit = ");
+                Console.WriteLine("{0,7:0.00}", solution);
+            }
+        }
+
+        public static void NullBisHundertv2(double start, double end)
+        {
+            double solution;
+            double i = start * 100;
+
+            while ( i <= end * 100)
+            {
+                solution = i / 100.0;
                 Console.Write("Result 1 digit =");
                 Console.WriteLine("{0,-3:0.0}", solution);
                 Console.Write("Result 2 digit =");
                 Console.WriteLine("{0,7:0.00}", solution);
+                i += 10;
             }
         }
+
+
 
         public static void TeilenUndHerrschen()
         {
