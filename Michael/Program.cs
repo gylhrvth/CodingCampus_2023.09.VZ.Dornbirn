@@ -1,1 +1,1 @@
-﻿Michael.Week01.Methods.Method();
+﻿Michael.Week01.DataTypes.DataType();
