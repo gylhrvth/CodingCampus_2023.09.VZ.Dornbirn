@@ -19,7 +19,9 @@ namespace Lukas.Week02
             Console.WriteLine(c);
 
             Recursion(100000);
-            Console.WriteLine("Fertig");
+            Console.WriteLine("Fertig!!!");
+
+
         }
 
         public static void Recursion(int repeat)
