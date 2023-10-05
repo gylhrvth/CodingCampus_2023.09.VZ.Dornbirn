@@ -67,13 +67,22 @@ namespace Simon.Week02
             PrintFaktorial(1, 20);
 
             Console.WriteLine("Aufgabe count");
-            PrintCount(0, 5);
+            PrintCount(0, 2);
 
             Console.WriteLine("\nAufgabe count v2");
             PrintCountv2(9, 10);
 
             Console.WriteLine("\nAufgabe Teilen und Herrschen");
-            Printdevide(0, 20);
+            Printdevide(0, 20); //der Grund des unterschiedes ist die gegebene Formatierung in der {} klammer das mit 5.0 ist halt genauer wegen der extra stelle
+
+            Console.WriteLine("\nBerechnung von Pi");
+            double pi = CalculatePi(1, 100000000);
+            Console.WriteLine(pi);
+            Console.WriteLine("PI ==");
+            Console.WriteLine(Math.PI);
+            Console.WriteLine("\nPI (Nilakantha Reihe)");
+            double piv2 = CalculatePiv2(1, 1000);
+            Console.WriteLine(piv2);
         }
         //Aufgabe Summe
         public static int PrintSummeGanzzahlen(int number1, int number2)
@@ -157,7 +166,48 @@ namespace Simon.Week02
             return result;
 
         }
-        //Aufgabe 
+        //Aufgabe Berechnung von Pi(Leibniz Reihe)
+        public static double CalculatePi(double devidor, double decimales)
+        {
+            double pi = 0;
+            double piresult = 0;
+            for (int i = 0; i < decimales; i++)
+            {
+                pi = (4 / devidor);
+                devidor += 2;
+                if (i % 2 == 0)
+                {
+                    piresult = piresult + pi;
+                }
+                else
+                {
+                    piresult = piresult - pi;
+                }
+            }
+            return piresult;
+        }
+        //Aufgabe Berechnung von PI (Nilakantha Reihe)
+        public static double CalculatePiv2(double devidor, double decimales)
+        {
+            double pi = 0;
+            double piresult = 3;
+            for (int i = 0; i < decimales; i++)
+            {
+                pi = (4 / devidor);
+                devidor += 2;
+                if (i % 2 == 0)
+                {
+                    piresult = piresult + pi;
+                }
+                else
+                {
+                    piresult = piresult - pi;
+                }
+            }
+            return piresult;
+
+            
+        }
     }
 }
 

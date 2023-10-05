@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gheorghe.Week02
 {
-    internal class FaktorialAufgabe
+    internal class Zählen_in_0
     {
         public static void Start()
         {

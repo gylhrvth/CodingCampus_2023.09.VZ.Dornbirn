@@ -115,7 +115,7 @@ namespace Mehmet.Week02
             for (int y = 0; y < 100000000; y++)
             {
 
-                double g = 4.0 / (x * (x + 1) * (x + 2L));
+                double g = 4.0 / (x * (x + 1) * (x + 2));
                 if (y % 1000000 == 0)
                 {
                     Console.WriteLine(x * (x + 1) * (x + 2));
@@ -134,6 +134,6 @@ namespace Mehmet.Week02
 
         }
 
-
+        
     }
 }
