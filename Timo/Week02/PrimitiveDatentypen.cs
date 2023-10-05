@@ -9,6 +9,7 @@ namespace Timo.Week02
         {
             Console.WriteLine("\nAufgabe1: Summe");
             int sum= Summe(20, 21);
+            Console.WriteLine(sum);
 
 
             Console.WriteLine("\nAufgabe2: Faktorial");
@@ -37,7 +38,7 @@ namespace Timo.Week02
             {
                 sum = sum + i;
             }
-            Console.WriteLine(sum);
+            //Console.WriteLine(sum);
             return sum;
         }
 
