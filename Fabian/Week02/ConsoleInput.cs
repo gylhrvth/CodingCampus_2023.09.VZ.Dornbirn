@@ -11,7 +11,9 @@ namespace Fabian.Week02
             //PrintGuessGame();
             //PrintMenu();
             //PrintCalculator();
-            PrintCalculatorBonus();
+            //PrintCalculatorBonus();
+            PrintBusinessCard();
+            //TheGameBegins();
         }
 
         public static void PrintReadString()
@@ -138,7 +140,7 @@ namespace Fabian.Week02
                     float num1 = Convert.ToInt32(Console.ReadLine());
 
                     Console.WriteLine("What would you like to do?");
-                    Console.WriteLine("+, -, *, ^, /, =");
+                    Console.WriteLine("+, -, *, ^, /");
 
                     String option = Console.ReadLine();
 
@@ -186,9 +188,9 @@ namespace Fabian.Week02
 
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    Console.WriteLine("Something went wrong");
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
@@ -198,6 +200,8 @@ namespace Fabian.Week02
             bool playAgain = true;
             double totalResult = 0;
             String option = "";
+            double exponent = 0;
+
             Console.WriteLine("Welcome to my calculator! :)");
 
             while (playAgain)
@@ -207,15 +211,44 @@ namespace Fabian.Week02
                     Console.WriteLine("Enter a number: ");
                     double num = Convert.ToDouble(Console.ReadLine());
                     totalResult += num;
-                    while (option != "=")
+
+                    while (true)
                     {
+                        while (option == "")
+                        {
+                            Console.WriteLine("What would you like to do?");
+                            Console.WriteLine("+, -, *, ^, /, =");
+                            option = Console.ReadLine();
+                        }
 
-                        Console.WriteLine("What would you like to do?");
-                        Console.WriteLine("+, -, *, ^, /, =");
-                        option = Console.ReadLine();
+                        if (option == "=")
+                        {
+                            Console.WriteLine("total result: " + totalResult);
 
-                        Console.WriteLine("Enter a number: ");
-                        num = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("Do you want to play again? (Y/N)");
+                            String restart = Console.ReadLine();
+                            restart = restart.ToUpper();
+
+                            if (restart == "N" || restart == "")
+                            {
+                                Console.WriteLine("Bye, have a nice day! :)");
+                                playAgain = false;
+                            }
+                            else
+                            {
+                                PrintCalculatorBonus();
+                            }
+                        }
+                        else if (option == "^")
+                        {
+                            Console.WriteLine("Enter the exponent: ");
+                            exponent = Convert.ToDouble(Console.ReadLine());
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter a number: ");
+                            num = Convert.ToDouble(Console.ReadLine());
+                        }
 
                         switch (option)
                         {
@@ -232,7 +265,7 @@ namespace Fabian.Week02
                                 Console.WriteLine(totalResult);
                                 break;
                             case "^":
-                                double pow = Math.Pow(num, 2);
+                                double pow = Math.Pow(num, exponent);
                                 totalResult += pow;
                                 Console.WriteLine(totalResult);
                                 break;
@@ -245,19 +278,101 @@ namespace Fabian.Week02
                                 totalResult /= num;
                                 Console.WriteLine(totalResult);
                                 break;
-                            case "=":
-                                Console.WriteLine("total result: " + totalResult);
-                                break;
                         }
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
             }
+        }
 
-           
+        public static void PrintBusinessCard()
+        {
+            String firstName = "";
+            String lastName = "";
+            String email = "";
+            String phoneNumber = "";
+            int test = 5;
+
+
+            while (firstName == "")
+            {
+                Console.WriteLine("Enter your first name: ");
+                firstName = Console.ReadLine();
+            }
+            while (lastName == "")
+            {
+                Console.WriteLine("Enter your last name: ");
+                lastName = Console.ReadLine();
+            }
+            while (phoneNumber == "")
+            {
+                Console.WriteLine("Enter your phone number: ");
+                phoneNumber = Console.ReadLine();
+            }
+            while (email == "")
+            {
+                Console.WriteLine("Enter your email: ");
+                email = Console.ReadLine();
+            }
+
+            for (int i = 0; i < 44; i++)
+            {
+                Console.Write("*");
+            }
+            Console.WriteLine();
+            for (int j = 0; j < 15; j++)
+            {
+                Console.WriteLine("*");
+                if (j == 4)
+                {
+                    Console.WriteLine($"* {firstName,20} {lastName} {"*",19}");
+                }
+                else if (j == 6)
+                {
+                    Console.WriteLine($"* {phoneNumber,27} {"*",14}");
+                }
+                else if (j == 7)
+                {
+                    Console.WriteLine($"* {email,30} {"*",11}");
+                }
+                else
+                {
+                    Console.Write($"{"*",-43}");
+                }
+            }
+            Console.WriteLine();
+            for (int i = 0; i < 44; i++)
+            {
+                Console.Write("*");
+            }
+        }
+
+        public static void TheGameBegins()
+        {
+            
+            bool playAgain = true;
+            while (playAgain)
+            {
+                int tries = 0; ;
+                int value = new Random().Next(10000);
+                int tmp = value;
+
+                int firstNumber = value / 1000;
+                tmp -= firstNumber * 1000;
+                int secondNumber = tmp / 100;
+                tmp -= secondNumber * 100;
+                int thirdNumber = tmp / 10;
+                tmp -= thirdNumber * 10;
+                int fourthNumber = tmp;
+
+
+                Console.WriteLine("Enter a number between 0 and 9999: ");
+                int guess = Convert.ToInt32(Console.ReadLine());
+
+            }
         }
     }
 }

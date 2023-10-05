@@ -15,12 +15,18 @@ namespace Cemal.Week02
             Console.WriteLine("Summe: " + sum);
             Console.WriteLine();
 
+
             Console.WriteLine("Aufgabe Faktorial");
             for (int i = 1; i < 20; i++)
             {
                 Console.WriteLine("{0, 2}! = {1, 20}", i, Faktorial(i));
             }
-            
+            Console.WriteLine();
+
+
+            Console.WriteLine("Aufgabe Zähler");
+            Zähler1();
+            Console.WriteLine();
         }
 
         public static int Summe(int first, int second)
@@ -41,6 +47,19 @@ namespace Cemal.Week02
                 result *= i;                
             }
             return result;
+        }
+
+        public static void Zähler1()
+        {
+            double first = 0;
+            double second = 100;
+            double step = 0.1;
+
+            for (double i = first; i <= second; i += step)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine();
         }
     }
 }
