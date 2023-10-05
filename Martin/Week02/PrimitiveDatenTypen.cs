@@ -66,7 +66,7 @@ namespace Martin.Week02
             for(int i = 0; i < 100; i++)
             {
                 number += 0.1;
-                Console.WriteLine(number);
+                Console.WriteLine(Math.Round(number,1));
             }
         }
     }
