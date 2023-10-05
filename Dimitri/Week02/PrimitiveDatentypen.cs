@@ -27,7 +27,8 @@ namespace Dimitri.Week02
             //Console.WriteLine(PiNilakanthaReihe(100000));
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //GeheimeReihe();
-            Console.WriteLine(WurzelAnnaeherung(500));
+            //Console.WriteLine(WurzelAnnaeherung(500));
+            Console.WriteLine(WurzelAnnaeherungBonus(1297419));
         }
 
         public static int Summe(int start, int end) //void hat keinen rückgabewert und int/bool/float hat genau einen Rückgabewert
@@ -169,24 +170,76 @@ namespace Dimitri.Week02
             double min = 0;
             double max = random;
 
-            for(int i=0; i<1000;i++)
+            for (int i = 0; i < 1000; i++)
             {
                 double quadr = mitte * mitte;
 
-                if(quadr > random)
+                if (quadr > random)
                 {
                     max = mitte;
-                } else if(quadr < random)
+                }
+                else if (quadr < random)
                 {
                     min = mitte;
-                } else
+                }
+                else
                 {
                     break;
                 }
-                mitte = (max + min)/2;
+                mitte = (max + min) / 2;
                 Console.WriteLine("Mitte: " + mitte);
             }
 
+
+
+
+            return awurzel;
+
+        }
+
+        public static double WurzelAnnaeherungBonus(double random)
+        {
+            double awurzel = random;
+            double mitte = awurzel / 2;
+            double min = 0;
+            double max = random;
+            int count = 0;
+
+            for (int i = 0; i < 1000; i++)
+            {
+                double quadr = mitte * mitte;
+
+                if (quadr > random)
+                {
+                    max = mitte;
+                }
+                else if (quadr < random)
+                {
+                    min = mitte;
+                }
+                else
+                {
+                    break;
+                }
+                mitte = (max + min) / 2;
+
+                Console.WriteLine();
+
+                Console.WriteLine("Mitte: " + mitte);
+                double differenz = Math.Abs(mitte - Math.Sqrt(random));
+
+                double fehlerInProzent = differenz / Math.Sqrt(random);
+
+                Console.WriteLine(fehlerInProzent + "%");
+
+                if (fehlerInProzent >= 0.1)
+                {
+                    count++;
+                }
+            }
+
+
+            Console.WriteLine(count);
 
 
 
