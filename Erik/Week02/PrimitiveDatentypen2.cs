@@ -13,12 +13,13 @@ namespace Erik.Week02
             //PrintingTheSumOfNumbers(2, 30);
             //int result = SumOfNumbersButBetter(20, 50);
             //Console.WriteLine("Die Summe der Zahlen ist: " + result);
-            CalculateTheFactorial(20);
-            Console.WriteLine();
-            //CountFromZeroToHundred();
+            //CalculateTheFactorial(20);
+            //Console.WriteLine(CountFromZeroToHundred());
             //CountFromZeroToHundred2();
             //CountFromZeroToHundred3();
-            CountFromZeroToHundredExtended();
+            //CountFromZeroToHundredExtended();
+            //DivideTheNumbers();
+            CalculationOfPi();
         }
 
 
@@ -58,6 +59,7 @@ namespace Erik.Week02
             for (int i = from; i <= to; i++)
             {
                 result = result + i; //das selbe wie resault += i
+
             }
             return result;
         }
@@ -73,12 +75,14 @@ namespace Erik.Week02
             return number;
         }
 
-        public static void CountFromZeroToHundred()
+        public static double CountFromZeroToHundred()
         {
+            double number = 0;
             for (double i = 0; i <= 100; i += 0.1)
             {
-                Console.WriteLine(i);
+                number = i;
             }
+            return number;
         }
 
         public static void CountFromZeroToHundred2()
@@ -100,15 +104,66 @@ namespace Erik.Week02
 
         public static void CountFromZeroToHundredExtended()
         {
-
             float number;
-
             for (int i = 0; i <= 100; i++)
             {
                 number = (float)i / 10;
-                Console.WriteLine(number);
+                Console.WriteLine("Result 1  digit = {0:N1}", number); //eine Nachkommastelle :D
+                Console.WriteLine("Result 2  digit = {0,9:N2}", number); //zwei Nachkommastelle :D
+            }
+        }
+
+        public static void DivideTheNumbers()
+        {
+            for (int x = 0; x <= 20; x++)
+            {
+                Console.WriteLine(x + " / " + 5 + " = " + x / 5);
+                Console.WriteLine(x + " / " + 0.5 + " = " + x / 0.5);
+            }
+        }
+
+        public static void CalculationOfPi()
+        {
+
+            double numberPi;
+            double number01;
+            double number02;
+            bool numberChange = true;
+            bool charChange = true;
+
+            for (int i = 1; i < 30000; i += 2)
+            {
+
+                if (numberChange)
+                {
+                    number01 = (double)4 / i;
+
+                    numberChange = false;
+                    Console.WriteLine(number01);
+                }
+                else
+                {
+                    number02 = (double)4 / i;
+                    numberChange = true;
+                    Console.WriteLine(number02);
+                }
+
+                if (charChange)
+                {
+
+                    numberPi = number01 - number02;
+                    charChange = false;
+
+                }
+                else
+                {
+                    numberPi = number01 + number02;
+                    numberChange = true;
+                }
 
             }
+
+
         }
     }
 }
