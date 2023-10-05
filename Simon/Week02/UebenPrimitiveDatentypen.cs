@@ -154,7 +154,9 @@ namespace Simon.Week02
                 Console.WriteLine(i / 5);
             }
             return 0;
+
         }
+        //Aufgabe 
     }
 }
 
