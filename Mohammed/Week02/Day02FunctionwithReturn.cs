@@ -9,7 +9,7 @@ namespace Mohammed.Week02
             //ADD
             //Console.WriteLine(Add(3, 2));
             int c = Add();
-            Console.WriteLine(c);
+            //Console.WriteLine(c);
 
             //LONG
             for (int i = 1; i <= 20; i++)
@@ -17,8 +17,9 @@ namespace Mohammed.Week02
                 Console.WriteLine("{0,2}! = {1,20}", i, Factorialcalculus(i));
             }
 
-            long a = Factorialcalculus2();
+            //long a = Factorialcalculus2();
             //Console.WriteLine(a);
+            Factorialcalculus2();
 
             
         }
@@ -50,22 +51,42 @@ namespace Mohammed.Week02
 
         }
 
-        public static long Factorialcalculus2()
+        public static void Factorialcalculus2()
         {
-            long solution = 1;
+            decimal sum = 0.0m;
 
-            for (int a = 1; a <= 20; a++)
+            for(int i=0; i <= 100; i++)
             {
-                solution *= a;
+                sum += 0.1m;
+                Console.WriteLine(String.Format("{0:0.00}", sum));
+                Console.WriteLine(String.Format("{0:0.0}", sum));
             }
-            return solution;
+            string[,] matrix = new string[17, 10];
+            for(int i=0; i<10;i++)
+            {
+                for(int j=0;j<17;j++)
+                {
+                    if (j == 9 && i == 0)
+                    {
+                        matrix[i, j] = "*";
+                    } else
+                    {
+
+                    }
+                }
+            }
+
+            var x = 0;
+
+            if (x == 1)
+            {
+                Console.WriteLine("nicht 0");
+            } else
+            {
+                Console.WriteLine("0");
+            }
+ 
         }
-
-
-        
-        
-
-
     }
 }
 

@@ -262,19 +262,13 @@ namespace Mohammed.Week01
                     if (row + size - 1 == col || row + col == size - 1 || row == size - 1) 
                     {
                         Console.Write(letter);
-
                     }
                     else
                     {
                         Console.Write(". ");
                     }
-                    
-
-
                 }
-                Console.WriteLine();
             }
-            
         }
 
 
