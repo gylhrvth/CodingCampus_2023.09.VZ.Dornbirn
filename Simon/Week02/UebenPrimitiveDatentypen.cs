@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Channels;
@@ -87,7 +88,7 @@ namespace Simon.Week02
             return summ;
         }
         //Aufgabe Produkt
-        public static long PrintFaktor(long number2)
+        public static long CalculatetFaktor(long number2)
         {
             long summ = 1;
             for (long i = 1; i <= number2; i++)
@@ -99,14 +100,13 @@ namespace Simon.Week02
         //Aufgabe Faktorial
         public static long PrintFaktorial(long number1, long number2)
         {
-            //int faktorial = 0;
+            //faktorial = 0;
             for (long i = number1; i <= number2; i++)
             {
                 //for(int j = 0; j < i; j++) 
                 //{
-
                 //Console.Write($"{i,2} ! = {0,20}");
-                Console.WriteLine("{0, 2}! = {1, 20}", i, PrintFaktor(i));
+                Console.WriteLine("{0, 2}! = {1, 20}", i, CalculatetFaktor(i));
                 //}
             }
             return 0;
@@ -120,7 +120,7 @@ namespace Simon.Week02
                 summ = summ * i;
                 Console.WriteLine($"{i,2} ! ={summ,20}");
             }
-            return summ;
+            return 0;
         }
         //Aufgabe Von 0 bis 100 Zählen in 0.1er Schritten
         public static double PrintCount(double number1, double number2)
@@ -130,7 +130,7 @@ namespace Simon.Week02
                 Console.WriteLine("Result 1 digit = {0:N1}", i);
                 Console.WriteLine($"Result 2 digit = {i:0.00}");
             }
-            return number2;
+            return 0;
         }
         //Aufgabe Von 0 bis 100 Zählen in 0.1er Schritten v2
         public static double PrintCountv2(int number1, int number2)
@@ -141,11 +141,12 @@ namespace Simon.Week02
                 start = start + 10;
                 Console.WriteLine("Result 1 digitv2 = {0:N2}", start / 100.0);
             }
-            return number2;
+            return start;
         }
         //Aufgabe Teilen und Herrschen
         public static double Printdevide(int number1, int number2)
         {
+            double result = 0;
             for (int i = number1; i <= number2; i++)
             {
                 Console.Write("{0, 3} / {1:0.0} =", i, 5);
@@ -153,7 +154,7 @@ namespace Simon.Week02
                 Console.Write("{0, 3} / {1, -3} =", i, 5);
                 Console.WriteLine(i / 5);
             }
-            return 0;
+            return result;
 
         }
         //Aufgabe 
