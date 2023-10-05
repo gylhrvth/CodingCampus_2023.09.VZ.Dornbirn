@@ -205,6 +205,8 @@ namespace Simon.Week02
                 }
             }
             return piresult;
+
+            test
         }
     }
 }
