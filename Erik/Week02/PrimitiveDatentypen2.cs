@@ -19,8 +19,9 @@ namespace Erik.Week02
             //CountFromZeroToHundred3();
             //CountFromZeroToHundredExtended();
             //DivideTheNumbers();
-            Console.WriteLine(CalculationOfPi());
-            Console.WriteLine(Math.PI);
+            //Console.WriteLine(CalculationOfPiLeibniz());
+            //Console.WriteLine(Math.PI);
+            Console.WriteLine(CalculationOfPiNilakantha());
 
         }
 
@@ -124,27 +125,43 @@ namespace Erik.Week02
             }
         }
 
-        public static double CalculationOfPi()
+        public static double CalculationOfPiLeibniz()
         {
 
             double numberPi = 0;
             double number01 = 0;
             double number02 = 0;
-           
-            for (int i = 1; i < 3000000; i += 4)
+
+            for (int i = 1; i < 99999999; i += 4)
             {
+                number01 = (double)4 / i;
+                number02 = (double)4 / (i + 2);
 
-
-                    number01 = (double) 4 / i;                        
-                    number02 = (double) 4 / (i + 2);
-                   
-                    numberPi = numberPi + (number01 - number02);                  
+                numberPi = numberPi + (number01 - number02);
             }
             return numberPi;
 
         }
+
+        public static double CalculationOfPiNilakantha()
+        {
+
+            double numberPi = 0;
+            double number01 = 0;
+            double number02 = 0;
+
+            for (int i = 1; i < 99999999; i += 4)
+            {
+                number01 = (double)4 / i;
+                number02 = (double)4 / (i + 2);
+
+                numberPi = numberPi + (number01 - number02);
+            }
+            return numberPi;
+        }
     }
 }
+
 
 
 
