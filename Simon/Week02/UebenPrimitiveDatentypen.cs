@@ -76,11 +76,13 @@ namespace Simon.Week02
             Printdevide(0, 20); //der Grund des unterschiedes ist die gegebene Formatierung in der {} klammer das mit 5.0 ist halt genauer wegen der extra stelle
 
             Console.WriteLine("\nBerechnung von Pi");
-            double pi = CalculatePi(1, 10);
+            double pi = CalculatePi(1, 100000000);
             Console.WriteLine(pi);
             Console.WriteLine("PI ==");
-            //double piresult = PrintPi(10);
-            //Console.WriteLine(piresult);
+            Console.WriteLine(Math.PI);
+            Console.WriteLine("\nPI (Nilakantha Reihe)");
+            double piv2 = CalculatePiv2(1, 1000);
+            Console.WriteLine(piv2);
         }
         //Aufgabe Summe
         public static int PrintSummeGanzzahlen(int number1, int number2)
@@ -164,34 +166,46 @@ namespace Simon.Week02
             return result;
 
         }
-        //Aufgabe Berechnung von Pi
-        public static double CalculatePi(double devidor, int decimales)
+        //Aufgabe Berechnung von Pi(Leibniz Reihe)
+        public static double CalculatePi(double devidor, double decimales)
         {
             double pi = 0;
-            for (int i = 1; i < decimales; i++)
-            {
-                pi = (4 / devidor);
-                Console.WriteLine(pi);
-                devidor += 2;
-            }
-            return pi;
-        }
-        /*
-        public static double PrintPi(int decimales)
-        {
             double piresult = 0;
             for (int i = 0; i < decimales; i++)
             {
+                pi = (4 / devidor);
+                devidor += 2;
                 if (i % 2 == 0)
                 {
-                    piresult = piresult + CalculatePi(decimales);
+                    piresult = piresult + pi;
                 }
                 else
-                    piresult = piresult - CalculatePi(decimales);
+                {
+                    piresult = piresult - pi;
+                }
             }
             return piresult;
         }
-        */
+        //Aufgabe Berechnung von PI (Nilakantha Reihe)
+        public static double CalculatePiv2(double devidor, double decimales)
+        {
+            double pi = 0;
+            double piresult = 3;
+            for (int i = 0; i < decimales; i++)
+            {
+                pi = (4 / devidor);
+                devidor += 2;
+                if (i % 2 == 0)
+                {
+                    piresult = piresult + pi;
+                }
+                else
+                {
+                    piresult = piresult - pi;
+                }
+            }
+            return piresult;
+        }
     }
 }
 
