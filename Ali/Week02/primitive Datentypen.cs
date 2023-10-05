@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,7 +20,19 @@ namespace Ali.Week02
             PrintFactorial(20);
             Console.WriteLine();
 
-          
+            Console.WriteLine("Aufgabe 3v1");
+            double dezi = printDezi(1000);
+
+
+            //Console.WriteLine("Test1");
+            //double test1 = printtest1(1000);
+            //Console.WriteLine();
+
+            Console.WriteLine("Aufgabe 3 erweit.");
+            double x = printX(100);
+            Console.WriteLine();
+
+
         }
         public static int printSum(int min, int max)
         {
@@ -28,7 +42,7 @@ namespace Ali.Week02
             {
                 sum = sum + i;
             }
-                return  sum;
+            return sum;
 
 
         }
@@ -48,17 +62,44 @@ namespace Ali.Week02
             for (int i = 1; i <= max; i++)
             {
                 sum = sum * i;
-                
+
             }
-            
+
             return sum;
-            
+
         }
+        public static double printDezi(int maxNum)
+        {
+            double dezi = 0;
+
+            for (int i = 0; i <= maxNum; i++)
+
+
+            {
+                dezi = i;
+
+                Console.WriteLine(dezi / 10.0);
+
+            }
+
+            return dezi;
+        }
+        public static double printX(int max)
+        {
+            double x = 0.0;
+
+            for (double i = 0.0; i <= max; i+=+0.1)
+            {
+                x = 0.1;
+
+                Console.WriteLine($"Result 1 digit ={i,3:N1}");
+                Console.WriteLine($"Result 2 digit ={i,7:N7}");
 
 
 
-    }   
-    
-
-    
+            }
+            return x;
+        }
+    }
 }
+
