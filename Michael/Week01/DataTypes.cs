@@ -11,19 +11,91 @@ namespace Michael.Week01
     public class DataTypes
     {
 
+        static int MAXLEIB = 100000000;
+        static int MAXNILA = 100000000;
+        static int MAXEULE = 100000000;
+        static int MAXSECRET = 10000;
+        static int MAXSQRT = 100;
+
         
+        public static int piLeibniz(int accuracy)
+        {
+            double piLeib = 0;
+            double difference = 10;
+            double targetAccuracy = Math.Pow(10, -accuracy);
+            double positiveTerm = 0;
+            double negativeTerm = 0;
+            int i = 0;
+
+            while (difference > targetAccuracy)
+                {
+                positiveTerm = 4 / (2 * i + 1.0);
+                negativeTerm = 4 / (2 * i + 3.0);
+
+                piLeib = piLeib + positiveTerm - negativeTerm;
+
+                difference = (positiveTerm + negativeTerm)/2;
+
+                i += 2;
+            }
+
+            //Console.WriteLine($"target accuracy: {accuracy} \npi Leib: {piLeib} \npi Real: {Math.PI} \ndifference: {Math.Abs(piLeib - Math.PI)} \nrelative difference: {Math.Abs(piLeib - Math.PI)/Math.PI * 100}% \niterations: {i}\n\n");
+
+            //return piLeib;
+
+            return i;
+        }
+
+
+        public static int piNilakantha(int accuracy)
+        {
+            double piNila = 3;
+            double difference = 10;
+            double targetAccuracy = Math.Pow(10, -accuracy);
+            double positiveTerm = 0;
+            double negativeTerm = 0;
+            int i = 0;
+
+            while (difference > targetAccuracy)
+            {
+                positiveTerm = 4 / ((2 * i + 2.0) * (2 * i + 3) * (2 * i + 4));
+                negativeTerm = 4 / ((2 * i + 3.0) * (2 * i + 4) * (2 * i + 5));
+
+                piNila = piNila + positiveTerm - negativeTerm;
+
+                difference = (positiveTerm + negativeTerm) / 2;
+
+                i += 2;
+            }
+
+            //Console.WriteLine($"target accuracy: {accuracy} \npi Leib: {piNila} \npi Real: {Math.PI} \ndifference: {Math.Abs(piNila - Math.PI)} \nrelative difference: {Math.Abs(piNila - Math.PI) / Math.PI * 100}% \niterations: {i}\n\n");
+
+            //return piNila;
+
+            return i;
+        }
+
+
         public static void DataType()
         {
 
+
+
             Random rnd = new Random();
 
+            Console.WriteLine($"Leibniz                                       Nikalantha");
 
-            int maxLeib = 10000;
-            int maxNila = 10000;
-            int maxSecret = 10000;
-            int maxSqrt = 100;
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"{piLeibniz(i)}" + "    " + $"{Math.Pow(piLeibniz(i),1.0/3) / 1.5:N5}" + $"{piNilakantha(i),20 }");
+            }
 
 
+
+
+
+
+            /*
 
             //sum from 20 to 50
             Console.WriteLine(" sum from 20 to 50 \n");
@@ -42,12 +114,17 @@ namespace Michael.Week01
             Console.WriteLine("\n\n\n product from 1 to 20 \n");
 
             long product = 1;
+            string returnString = "";
 
             for (int i = 1; i <= 20; i++)
             {
                 product *= i;
-                Console.WriteLine("{0,2}! = {1,20}",i,product);
+                returnString += $"{i,2}! = {product,20}\n";
             }
+
+            Console.WriteLine(returnString);
+
+
 
 
 
@@ -98,12 +175,20 @@ namespace Michael.Week01
 
             double piLeib = 0;
 
-            for (int i = 0; i < maxLeib; i++)
+            for (int i = 0; i < MAXLEIB; i+=2)
             {
-                piLeib += Math.Pow(-1, i) * 4 / (2 * i + 1);
+                piLeib += Math.Pow(-1, i) * 4 / (2 * i + 1 );
+                //piLeib -= 
+
+                
+                if (i % 100 == 0)
+                {
+                    //Console.WriteLine($"relative error: {Math.Abs((piLeib - Math.PI)) / Math.PI * 100}%");
+                }
             }
 
             Console.WriteLine($"Pi with Leibniz: {piLeib}");
+            Console.WriteLine($"relative error: {Math.Abs((piLeib - Math.PI))/Math.PI * 100}%");
 
 
             Console.WriteLine("\n");
@@ -115,15 +200,47 @@ namespace Michael.Week01
 
             double piNila = 3;
 
-            for (int i = 0; i < maxNila; i++)
+            for (int i = 0; i < MAXNILA; i++)
             {
-                piNila += Math.Pow(-1, i) * 4 / ((2 * i + 2) * (2 * i + 3) * (2 * i + 4));
+                piNila += Math.Pow(-1, i) * 4 / ((2 * i + 2.0) * (2 * i + 3) * (2 * i + 4));
+
+                /*
+                if (i % 100 == 0)
+                {
+                    Console.WriteLine($"relative error: {Math.Abs((piNila - Math.PI)) / Math.PI * 100}%");
+                }
+                
+
             }
 
             Console.WriteLine($"Pi with Nilakantha: {piNila}");
+            Console.WriteLine($"relative error: {Math.Abs((piNila - Math.PI)) / Math.PI * 100}%");
 
 
             Console.WriteLine("\n");
+
+
+
+            //different pi approx
+            Console.WriteLine("\n\n\n different pi approx \n");
+
+            double piEuler = 0;
+
+            for (int i = 0; i < MAXEULE; i++)
+            {
+                piEuler += 1 / ((i + 1.0) * (i + 1.0));
+
+                /*
+                if (i % 100 == 0)
+                {
+                    Console.WriteLine($"relative error: {Math.Abs(((Math.Sqrt(6 * piEuler) - Math.PI)) / Math.PI * 100}%");
+                }
+                
+            }
+
+            Console.WriteLine($"Pi with Euler: {Math.Sqrt(6*piEuler)}");
+            Console.WriteLine($"relative error: {Math.Abs((Math.Sqrt(6 * piEuler) - Math.PI)) / Math.PI * 100}%");
+
 
 
 
@@ -133,7 +250,7 @@ namespace Michael.Week01
 
             double secretSum = 1.0;
 
-            for (int i = 0; i < maxSecret; i++)
+            for (int i = 0; i < MAXSECRET; i++)
             {
                 secretSum = (secretSum / 2) + (1 / secretSum);
             }
@@ -154,7 +271,7 @@ namespace Michael.Week01
             double average = (max + min) / 2;
             double square = 0;
 
-            for (int i = 0; i < maxSqrt; i++)
+            for (int i = 0; i < MAXSQRT; i++)
             {
                 average = (max + min) / 2;
                 square = Math.Pow(average, 2);
@@ -205,6 +322,15 @@ namespace Michael.Week01
             }
 
             Console.WriteLine($"current value: {average,18:N5} \ncorrect value: {Math.Sqrt(root),18:N5} \nerror in %: {Math.Abs(((average - Math.Sqrt(root)) / Math.Sqrt(root)) * 100),20:N5}% \nnach {j} Durchläufen");
+            
+            */
+
         }
-    }
+
+
+
+
+}
+
+
 }
