@@ -12,22 +12,22 @@ namespace Patrick.Week02
 {
     internal class MethodeSchleifen
     {
-        public static void Start()
+        public static void start()
         {
-            printChars("x", 10);
-            printSquare("x", 10);
-            printRect("x", 20, 8);
-            printTriangleBottomLeft("x", 5);
-            printTriangleTopLeft("x", 5);
-            printTriangleTopRight("x", 5);
-            printTriangleBottomRight("x", 5);
-            printEmptySquare("x", 10);
-            printEmptySquare1("A", 3);
-            printSlash("x", 3, false);
-            printPyramid("x", 5);
-            printRhombus("x", 7);
-            PrintX("x", 5);
-            printChristmasTree("*", 9);
+            //printChars("x", 10);
+            //printSquare("x", 10);
+            //printRect("x", 20, 8);
+            //printTriangleBottomLeft("x", 5);
+            //printTriangleTopLeft("x", 5);
+            //printTriangleTopRight("x", 5);
+            //printTriangleBottomRight("x", 5);
+            //printEmptySquare("x", 10);
+            //printEmptySquare1("A", 3);
+            //printSlash("x", 3, false);
+            //printPyramid("x", 5);
+            //printRhombus("x", 7);
+            //PrintX("x", 5);
+            printChristmasTree("*",10);
         }
 
 
@@ -205,7 +205,7 @@ namespace Patrick.Week02
         public static void printSlash(string symbol, int count, bool yes)
         {
 
-            if (yes == true)
+            if (yes == false)
             {
 
                 for (int x = 0; x < count; x++)
@@ -356,18 +356,19 @@ namespace Patrick.Week02
 
         public static void printChristmasTree(string symbol, int count)
         {
+            //Baum mit Spitze
             for (int x = 0; x < count; x++)
             {
                 for (int y = 0; y < count * 2 - 1; y++)
                 {
                     if (y < count - 1 - x)
                     {
-                        Console.Write("0");
+                        Console.Write(" ");
                     }
-                    //else if (y)
-                    //{
-                    //    console.write("1");
-                    //}
+                    else if (y >= count + x)
+                    {
+                        Console.Write(" ");
+                    }
                     else
                     {
                         Console.Write(symbol);
@@ -376,7 +377,37 @@ namespace Patrick.Week02
                 Console.WriteLine();
             }
 
+            //untere Reihe
+            for (int y = 0; y < count * 2 - 1; y++)
+            {
+                if (y % 2 == 0)
+                {
+                    Console.Write("0");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
+            }
+            Console.WriteLine();
 
+            //Stamm
+            for (int x = 0; x < count - 7; x++)
+            {
+                for (int y = 0; y < count * 2 - 1; y++)
+                {
+                    if(y <= count - 4 || y >= count + 2)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write("+");
+                    }
+
+                }
+                Console.WriteLine();
+            }
         }
 
     }
