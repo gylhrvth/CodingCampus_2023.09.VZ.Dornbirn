@@ -1,4 +1,5 @@
 ﻿using Fabian.Week01;
+using System.Xml;
 
 namespace Fabian.Week02
 {
@@ -287,14 +288,13 @@ namespace Fabian.Week02
                 }
             }
         }
-
         public static void PrintBusinessCard()
         {
             String firstName = "";
             String lastName = "";
             String email = "";
             String phoneNumber = "";
-            int test = 5;
+            int width = 43;
 
 
             while (firstName == "")
@@ -318,37 +318,41 @@ namespace Fabian.Week02
                 email = Console.ReadLine();
             }
 
-            for (int i = 0; i < 44; i++)
+            int name = (firstName.Length + lastName.Length)/2 - 1;
+
+            Methoden.PrintChars(" ", 10);
+            for (int i = 0; i < width / 2; i++)
             {
-                Console.Write("*");
+                Console.Write("* ");
             }
-            Console.WriteLine();
+            Console.WriteLine("*");
             for (int j = 0; j < 15; j++)
             {
-                Console.WriteLine("*");
-                if (j == 4)
+                if (j == 5)
                 {
-                    Console.WriteLine($"* {firstName,20} {lastName} {"*",19}");
-                }
-                else if (j == 6)
-                {
-                    Console.WriteLine($"* {phoneNumber,27} {"*",14}");
-                }
-                else if (j == 7)
-                {
-                    Console.WriteLine($"* {email,30} {"*",11}");
+                    Methoden.PrintChars(" ", 10);
+                    Console.Write("*");
+                    Methoden.PrintChars(" ", ((width - 2 - name) / 2) - 4);
+                    Console.Write($"{firstName} {lastName}");
+                    Methoden.PrintChars(" ", ((width - 2 - name) / 2) - 4);
+                    Console.WriteLine("*");
                 }
                 else
                 {
-                    Console.Write($"{"*",-43}");
+                    Methoden.PrintChars(" ", 10);
+                    Console.Write("*");
+                    Methoden.PrintChars(" ", width - 2);
+                    Console.WriteLine("*");
                 }
             }
-            Console.WriteLine();
-            for (int i = 0; i < 44; i++)
+            Methoden.PrintChars(" ", 10);
+            for (int i = 0; i < width / 2; i++)
             {
-                Console.Write("*");
+                Console.Write("* ");
             }
+            Console.WriteLine("*");
         }
+
 
         public static void TheGameBegins()
         {
@@ -356,7 +360,7 @@ namespace Fabian.Week02
             bool playAgain = true;
             while (playAgain)
             {
-                int tries = 0; ;
+                int tries = 0;
                 int value = new Random().Next(10000);
                 int tmp = value;
 
@@ -368,10 +372,46 @@ namespace Fabian.Week02
                 tmp -= thirdNumber * 10;
                 int fourthNumber = tmp;
 
+                
 
-                Console.WriteLine("Enter a number between 0 and 9999: ");
-                int guess = Convert.ToInt32(Console.ReadLine());
+                while(true) {
+                    Console.WriteLine("Enter a number between 0 and 9999: ");
+                    int guess = Convert.ToInt32(Console.ReadLine());
+                    tries++;
+                    
+                    int tmp2 = guess;
+                    int firstNumber2 = tmp2 / 1000;
+                    tmp2 -= firstNumber2 * 1000;
+                    int secondNumber2 = tmp2 / 100;
+                    tmp2 -= secondNumber2 * 100;
+                    int thirdNumber2 = tmp2 / 10;
+                    tmp2 -= thirdNumber2 * 10;
+                    int fourthNumber2 = tmp2;
 
+                    if (guess == value)
+                    {
+                        Console.WriteLine("You won!");
+                        Console.WriteLine($"you needede {tries} tries");
+                        break;
+                    }
+                    if (firstNumber == firstNumber2)
+                    {
+                        Console.WriteLine("the first digit is right!");
+                    }
+                    if (secondNumber == secondNumber2)
+                    {
+                        Console.WriteLine("the second digit is right!");
+                    }
+                    if (thirdNumber == thirdNumber2)
+                    {
+                        Console.WriteLine("the third digit is right!");
+                    }
+                    if (fourthNumber == fourthNumber2)
+                    {
+                        Console.WriteLine("the fourth digit is right!");
+                    }
+
+                }             
             }
         }
     }
