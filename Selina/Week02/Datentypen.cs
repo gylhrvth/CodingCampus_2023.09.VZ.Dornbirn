@@ -41,7 +41,45 @@
             Console.WriteLine("\n\nAufagabe 7:\n");
             Row(result);
 
+            // Aufgabe 8 / Wurzel --> Gray
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("\n\nAufagabe 8:\n");
+            Wurzel(result);
         }
+
+        private static double Wurzel(double result)
+        {
+            double random = new Random().Next(1000) + 1;
+            double max = 0;
+            double min = 0;
+            double number;
+
+            max = random;
+            number = random / 2;
+
+            do
+            {
+                if (Math.Pow(number, 2) > max)
+                {
+                    max = Math.Pow(number, 2);
+                }
+                else if (Math.Pow(number, 2) < max)
+                {
+                    min = Math.Pow(number, 2);
+                }
+
+            } while (min == max);
+
+            result = min;
+
+            Console.WriteLine(max);
+            Console.WriteLine(min);
+
+
+            return result;
+        }
+
+
 
         /// <summary>
         /// Aufgabe : Starte eine neue Reihe mit dem Wert 0,1 --> WERTN + 1 = WERTN/2 + 1/WERTN
