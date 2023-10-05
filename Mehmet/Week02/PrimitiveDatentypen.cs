@@ -33,6 +33,11 @@ namespace Mehmet.Week02
             double result6 = Add6();
             Console.WriteLine("--------------------------");
 
+            double result7 = Add7();
+            Console.WriteLine("--------------------------");
+
+            double result8 = Add8();
+            Console.WriteLine("--------------------------");
 
         }
 
@@ -109,31 +114,76 @@ namespace Mehmet.Week02
             //double: 3,1415926535895253
             //        3.14159265358979323846
             //long:   3,1415926535977925
-
             double x = 2;
             double z = 3;
             for (int y = 0; y < 100000000; y++)
             {
-
-                double g = 4.0 / (x * (x + 1) * (x + 2));
                 if (y % 1000000 == 0)
                 {
                     Console.WriteLine(x * (x + 1) * (x + 2));
                 }
+
+
+                double g = 4.0 / (x * (x + 1) * (x + 2));              
                 x++;
                 x++;
+
                 double h = 4.0 / (x * (x + 1) * (x + 2));
                 x++;
                 x++;
 
                 z = z + (g - h);
             }
-
             Console.WriteLine(z);
             return z;
-
         }
 
+        public static double Add7()
+        {
+
+            double n = 2.0;
+
+
+            for (int y = 0; y < 15; y++)
+            {
+                n = (n / 2.0) + (1.0 / n);
+                Console.WriteLine(n);
+            }
+            
+            return n;
         
+        }
+
+
+        public static double Add8()
+        {
+            double random = new Random().Next(10000) + 1;
+            Console.WriteLine(random);
+
+            double expectedSquareRoot = random;
+            double half = expectedSquareRoot / 2;
+            double min = 0;
+            double max = random;
+
+            for (int y = 0; y < 10000; y++)
+            {
+                double quadr = half * half;
+                if(quadr > random)
+                {
+                    max = half;
+                } else
+                {
+                    min = half;
+                }
+                half = ((max - min) / 2) + min;
+            }
+            Console.WriteLine(half);
+            return half;
+        }
+
+
+
+
+
     }
 }
