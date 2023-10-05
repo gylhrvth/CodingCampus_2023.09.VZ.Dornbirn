@@ -16,17 +16,15 @@
                 Console.Write("Gib deine erste Zahl ein: ");
                 double num1 = Convert.ToDouble(Console.ReadLine());
 
+                //+,-,*,/
+                Console.WriteLine("Was magst du mit den Zahlen machen?(+, -, *, /)?");
+                char eingabe = Convert.ToChar(Console.ReadLine());
 
                 //num2
                 Console.Write("Gib deine zweite Zahl ein: ");
                 double num2 = Convert.ToDouble(Console.ReadLine());
 
-                //+,-,*,/
-                Console.WriteLine("Was magst du mit den Zahlen machen?(+, -, *, /)?");
-                char eingabe = Convert.ToChar(Console.ReadLine());
-
-
-
+                //Rechenmöglichkeiten
                 switch (eingabe)
                 {
                     //Addieren
