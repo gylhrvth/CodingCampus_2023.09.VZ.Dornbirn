@@ -16,7 +16,9 @@ namespace Erik.Week02
             CalculateTheFactorial(20);
             Console.WriteLine();
             //CountFromZeroToHundred();
-            CountFromZeroToHundred2();
+            //CountFromZeroToHundred2();
+            //CountFromZeroToHundred3();
+            CountFromZeroToHundredExtended();
         }
 
 
@@ -47,8 +49,6 @@ namespace Erik.Week02
             Console.WriteLine();
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Die Summer der Zahlen ist: " + numberFinal);
-
-
         }
 
 
@@ -62,20 +62,13 @@ namespace Erik.Week02
             return result;
         }
 
-
-
-
-
         public static long CalculateTheFactorial(long number2)
         {
             long number = 1;
-
-
             for (long i = 1; i <= number2; i++)
             {
                 number = number * i;
                 Console.WriteLine("{0,-2} != {1,20}", i, number);
-
             }
             return number;
         }
@@ -90,9 +83,31 @@ namespace Erik.Week02
 
         public static void CountFromZeroToHundred2()
         {
-            for (double i = 0; i <= 100 * 10; i++)
+            for (double i = 0; i <= 100; i++)
             {
-                Console.WriteLine(i/10);
+                Console.WriteLine(i);
+                i += 0.1;
+            }
+        }
+
+        public static void CountFromZeroToHundred3()
+        {
+            for (float i = 0; i <= 100 * 10; i++)
+            {
+                Console.WriteLine(i / 10);
+            }
+        }
+
+        public static void CountFromZeroToHundredExtended()
+        {
+
+            float number;
+
+            for (int i = 0; i <= 100; i++)
+            {
+                number = (float)i / 10;
+                Console.WriteLine(number);
+
             }
         }
     }
