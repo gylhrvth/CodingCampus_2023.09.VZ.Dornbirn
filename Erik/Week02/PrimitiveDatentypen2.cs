@@ -13,8 +13,12 @@ namespace Erik.Week02
             //PrintingTheSumOfNumbers(2, 30);
             //int result = SumOfNumbersButBetter(20, 50);
             //Console.WriteLine("Die Summe der Zahlen ist: " + result);
-            CalculateTheFactorial(20);
-
+            //CalculateTheFactorial(20);
+            //CountFromZeroToHundred();
+            //CountFromZeroToHundred2();
+            //CountFromZeroToHundred3();
+            //CountFromZeroToHundredExtended();
+            divideTheNumbers();
         }
 
 
@@ -45,8 +49,6 @@ namespace Erik.Week02
             Console.WriteLine();
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine("Die Summer der Zahlen ist: " + numberFinal);
-
-
         }
 
 
@@ -60,27 +62,64 @@ namespace Erik.Week02
             return result;
         }
 
-
-
-
-
         public static long CalculateTheFactorial(long number2)
         {
             long number = 1;
-            
-
             for (long i = 1; i <= number2; i++)
             {
                 number = number * i;
-                Console.WriteLine("{0,-2} != {1,20}",i,number);
-
+                Console.WriteLine("{0,-2} != {1,20}", i, number);
             }
             return number;
         }
 
-        
+        public static void CountFromZeroToHundred()
+        {
+            for (double i = 0; i <= 100; i += 0.1)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void CountFromZeroToHundred2()
+        {
+            for (double i = 0; i <= 100; i++)
+            {
+                Console.WriteLine(i);
+                i += 0.1;
+            }
+        }
+
+        public static void CountFromZeroToHundred3()
+        {
+            for (float i = 0; i <= 100 * 10; i++)
+            {
+                Console.WriteLine(i / 10);
+            }
+        }
+
+        public static void CountFromZeroToHundredExtended()
+        {
+            float number;
+            for (int i = 0; i <= 100; i++)
+            {
+                number = (float)i / 10;
+                Console.WriteLine("Result 1  digit = {0:N1}", number); //eine Nachkommastelle :D
+                Console.WriteLine("Result 2  digit = {0,9:N2}", number); //zwei Nachkommastelle :D
+            }
+        }
+
+        public static void divideTheNumbers()
+        {          
+            for (int x = 0; x <= 20; x++)
+            {
+                Console.WriteLine(x + " / " + 5 + " = " + x / 5 );
+                Console.WriteLine(x + " / " + 0.5 + " = " + x / 0.5 );
+            }
+        }
     }
 }
+
 
 
 
