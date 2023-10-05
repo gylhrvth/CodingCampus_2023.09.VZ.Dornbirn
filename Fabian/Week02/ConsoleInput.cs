@@ -10,7 +10,8 @@ namespace Fabian.Week02
             //PrintReadInt();
             //PrintGuessGame();
             //PrintMenu();
-            PrintCalculator();
+            //PrintCalculator();
+            PrintCalculatorBonus();
         }
 
         public static void PrintReadString()
@@ -53,7 +54,11 @@ namespace Fabian.Week02
                 guess = Convert.ToInt32(Console.ReadLine());
                 tries++;
 
-                if (guess == num)
+                if (guess > 100 || guess < 1)
+                {
+                    Console.WriteLine("You can only guess between 1 and 100!");
+                }
+                else if (guess == num)
                 {
                     Console.WriteLine("Nice!! You won! :)");
                 }
@@ -121,18 +126,20 @@ namespace Fabian.Week02
         public static void PrintCalculator()
         {
             bool playAgain = true;
+
             Console.WriteLine("Welcome to my calculator! :)");
 
             while (playAgain)
             {
                 try
                 {
+
                     Console.WriteLine("Enter number 1: ");
                     float num1 = Convert.ToInt32(Console.ReadLine());
 
                     Console.WriteLine("What would you like to do?");
-                    Console.WriteLine("+, -, *, ^, /");
- 
+                    Console.WriteLine("+, -, *, ^, /, =");
+
                     String option = Console.ReadLine();
 
                     Console.WriteLine("Enter number 2: ");
@@ -141,24 +148,29 @@ namespace Fabian.Week02
                     switch (option)
                     {
                         case "+":
-                            Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+                            float sum = num1 + num2;
+                            Console.WriteLine($"{num1} + {num2} = {sum}");
                             break;
                         case "-":
-                            Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+                            float difference = num1 - num2;
+                            Console.WriteLine($"{num1} - {num2} = {difference}");
                             break;
                         case "*":
-                            Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+                            float product = num1 + num2;
+                            Console.WriteLine($"{num1} * {num2} = {product}");
                             break;
                         case "^":
-                            Console.WriteLine($"{num1} ^ {num2} = {Math.Pow(num1, num2)}");
+                            float pow = (float)(Math.Pow(num1, num2));
+                            Console.WriteLine($"{num1} ^ {num2} = {pow}");
                             break;
                         case "/":
-                            if(num2 == 0)
+                            float quotient = num1 / num2;
+                            if (num2 == 0)
                             {
                                 Console.WriteLine("cant divide by 0!");
                                 break;
                             }
-                            Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
+                            Console.WriteLine($"{num1} / {num2} = {quotient}");
                             break;
                     }
 
@@ -172,12 +184,80 @@ namespace Fabian.Week02
                         playAgain = false;
                     }
 
+
                 }
                 catch
                 {
                     Console.WriteLine("Something went wrong");
                 }
             }
+        }
+
+        public static void PrintCalculatorBonus()
+        {
+            bool playAgain = true;
+            double totalResult = 0;
+            String option = "";
+            Console.WriteLine("Welcome to my calculator! :)");
+
+            while (playAgain)
+            {
+                try
+                {
+                    Console.WriteLine("Enter a number: ");
+                    double num = Convert.ToDouble(Console.ReadLine());
+                    totalResult += num;
+                    while (option != "=")
+                    {
+
+                        Console.WriteLine("What would you like to do?");
+                        Console.WriteLine("+, -, *, ^, /, =");
+                        option = Console.ReadLine();
+
+                        Console.WriteLine("Enter a number: ");
+                        num = Convert.ToInt32(Console.ReadLine());
+
+                        switch (option)
+                        {
+                            case "+":
+                                totalResult += num;
+                                Console.WriteLine(totalResult);
+                                break;
+                            case "-":
+                                totalResult -= num;
+                                Console.WriteLine(totalResult);
+                                break;
+                            case "*":
+                                totalResult *= num;
+                                Console.WriteLine(totalResult);
+                                break;
+                            case "^":
+                                double pow = Math.Pow(num, 2);
+                                totalResult += pow;
+                                Console.WriteLine(totalResult);
+                                break;
+                            case "/":
+                                if (num == 0 || totalResult == 0)
+                                {
+                                    Console.WriteLine("cant divide by 0!");
+                                    break;
+                                }
+                                totalResult /= num;
+                                Console.WriteLine(totalResult);
+                                break;
+                            case "=":
+                                Console.WriteLine("total result: " + totalResult);
+                                break;
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+           
         }
     }
 }
