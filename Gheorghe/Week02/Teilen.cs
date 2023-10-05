@@ -10,7 +10,8 @@ namespace Gheorghe.Week02
     {
         public static void Start()
         {
-            teilenUndHerrschen(20);
+            // teilenUndHerrschen(20);
+            BerechnungvonLeibniz(100000000);
         }
 
 
@@ -19,7 +20,7 @@ namespace Gheorghe.Week02
             int five = 5;
             double fived = 5.0;
 
-            for (int i = 0; i <=count ; i++)  
+            for (int i = 0; i <= count; i++)
             {
                 Console.Write(i + " / " + five + " = ");
                 Console.Write(i / five);
@@ -28,6 +29,17 @@ namespace Gheorghe.Week02
                 Console.Write(i / fived);
                 Console.WriteLine();
             }
+        }
+        public static void BerechnungvonLeibniz(int input)
+        {
+            double pi = 0;
+            for (int i = 1; i < input; i = i + 4)
+            {
+                pi = pi + (4.0 / i);
+                pi = pi - (4.0 / (i + 2));
+
+            }
+            Console.WriteLine(pi);
         }
     }
 }
