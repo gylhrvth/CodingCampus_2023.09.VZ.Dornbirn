@@ -41,13 +41,52 @@
             Console.WriteLine("\n\nAufagabe 7:\n");
             Row(result);
 
+            // Aufgabe 8 / Wurzel --> Gray
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("\n\nAufagabe 8:\n");
+            Wurzel(result);
         }
+
+
+
+        private static double Wurzel(double result)
+        {
+            double random = new Random().Next(1000) + 1;
+            double max = 0;
+            double min = 0;
+            double number;
+
+            max = random;
+            number = random / 2;
+
+            do
+            {
+                if (Math.Pow(number, 2) > max)
+                {
+                    max = Math.Pow(number, 2);
+                }
+                else if (Math.Pow(number, 2) < max)
+                {
+                    min = Math.Pow(number, 2);
+                }
+
+            } while (min == max);
+
+            result = min;
+
+            Console.WriteLine(max);
+            Console.WriteLine(min);
+
+
+            return result;
+        }
+
 
         /// <summary>
         /// Aufgabe : Starte eine neue Reihe mit dem Wert 0,1 --> WERTN + 1 = WERTN/2 + 1/WERTN
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double Row(double result)
         {
             /* WertN/2 erhöt sich mit 0,5 Schritten!
@@ -69,7 +108,7 @@
         /// Aufgabe : Rechne die Annäherung von Pi mit der Formel π = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14)
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double CalculatePiNilakantha(double result)
         {
             double pi = 3;
@@ -99,7 +138,7 @@
         /// Aufgabe : Rechne die Annäherung von Pi mit der Formel π = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14)
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double CalculatePiLeibniz(double result)
         {
             double pi = 0.0;
@@ -128,7 +167,7 @@
         /// Aufgabe : Erstelle eine Funktion, die von 0 bis 20 zählt und die folgende Daten ausdruckt.
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double DivideAndConquer(double result)
         {
             double number1 = 5;
@@ -148,7 +187,7 @@
         /// Aufagbe : Erstelle eine Funktion, die von 0 bis 100 in 0.1er Schritten zählt, und alle werte ausgibt. 
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double Count(double result)
         {
 
@@ -176,7 +215,7 @@
         /// Aufagbe : Erstelle eine Funktion, die von 1 bis 20 alle Faktorial ausrechnet und ausgibt.
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double Factorial(double result)
         {
             long number;
@@ -194,7 +233,7 @@
         /// Aufgabe : Erstelle eine Funktion, die von 20 bis 50 alle Ganzzahlen nimmt und deren Summe ausrechnet.
         /// </summary>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>result</returns>
         private static double Calculate(double result)
         {
             for (int number = 20; number <= 50; number++)

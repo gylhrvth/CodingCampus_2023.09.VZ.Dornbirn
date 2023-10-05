@@ -1,4 +1,6 @@
 ﻿using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace David.Week02
 {
     public class DataTypes
@@ -6,6 +8,10 @@ namespace David.Week02
         public static void StartDataTypes()
 
         {
+
+            //Beispiele von Gyula nochmals selbst wiederholt.
+
+
             //True,False abfrage. +1 und -1 ist nicht das Selbe. 
             int e = 1;
             int f = -1;
@@ -49,6 +55,7 @@ namespace David.Week02
 
 
             Console.WriteLine("-----------");
+            // Kopie von Gyula, Erklärung am Board
 
             int a = 1;
             int b = -1;
@@ -112,6 +119,10 @@ namespace David.Week02
             a /= 5; // a = a / 5
             Console.WriteLine("a = " + a);
 
+
+            // Ab hier Lösung der Beispiele von ccwiki
+
+
             Console.WriteLine("----------------");
             Console.WriteLine("Beispiele:");
             Console.WriteLine();
@@ -135,7 +146,10 @@ namespace David.Week02
             //    Console.WriteLine(k + (k + 1))=l;l <= 50;
             //}
 
-            Console.WriteLine(".........");
+            Console.WriteLine(".........1");
+
+            //Aufgabe Summe / Ausgabe untereinander
+            // Funktion, die von 20 bis 50 alle Ganzzahlen nimmt und deren Summe ausrechnet.
 
             int summe = 0;
             for (a = 20; a <= 50; a++)
@@ -143,7 +157,9 @@ namespace David.Week02
                 Console.WriteLine(summe += a);
             }
 
-            Console.WriteLine("--------");
+            Console.WriteLine("--------2");
+
+            //Fraktorial / Nur Ausgabe vom Ergebnis 
 
             long fak = 1;
 
@@ -153,24 +169,29 @@ namespace David.Week02
             }
             Console.WriteLine(fak);
 
-            Console.WriteLine("--------");
+            Console.WriteLine("--------3");
 
-            long fakto = 1;
+            //Aufgabe Fraktorial (mit Formatierung)
+            // 1*2*3*4*5*6.....
+
+            long zz = 1;
 
             for (a = 1; a <= 20; a++)
             {
-                fakto *= a;
+                zz *= a;
                 Console.Write($"{a,2}");
                 Console.Write(" ! = ");
-                Console.Write($"{fakto,20}");
+                Console.Write($"{zz,20}");
                 Console.WriteLine();
             }
             Console.WriteLine();
 
             Console.WriteLine("--------");
+            //Aufgabe: Zählen von 0-100(bis zwei, weil kein platz in ausgabe)
+            //variante 1
 
             int d3 = 0;
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < 20; i++)
             {
                 d3 = d3 + 100;
                 Console.WriteLine(d3 / 1000.0);
@@ -178,12 +199,46 @@ namespace David.Week02
 
             Console.WriteLine("--------");
 
-            for (double i = 0; i <= 15; i += 0.1)
+            //Aufgabe: Zählen von 0-100(bis zwei, weil kein platz in ausgabe)
+            //variante 2
+            for (double i = 0; i <= 2; i += 0.1)
             {
 
                 Console.WriteLine(Math.Round(i, 2));
             }
+
+
+
+            PrintFactorial();
+
+            Console.WriteLine("Factorial of 10 is " + CalcFactorial(10));
+
+            CalcFactorial(20);
+
+
+        }
+
+        public static void PrintFactorial()
+        {
+            long fuck = 1;
+            for (int a = 1; a <= 20; a++)
+            {
+                fuck = fuck * a;
+                Console.WriteLine("{0, 20}", fuck);
+            }
+
+        }
+
+        public static long CalcFactorial(int calc)
+        {
+            long fuck = 1;
+            for (int a = 1; a <=  calc; a++)
+            {
+                fuck = fuck * a;
+                Console.WriteLine("{0, 20}", fuck);
+                
+            }
+            return fuck;
         }
     }
 }
-

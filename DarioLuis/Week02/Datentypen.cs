@@ -23,7 +23,7 @@ namespace DarioLuis.Week02
             //Console.WriteLine("Print01v2");
             //Console.WriteLine();
             //Print01v2();
-            
+
             //Console.WriteLine("Print01v3");
             //Console.WriteLine();
             //Print01v3();
@@ -31,6 +31,10 @@ namespace DarioLuis.Week02
             //Console.WriteLine("Print02");
             //Console.WriteLine();
             //Print02();
+
+            Console.WriteLine("Pi Leibniz Reihe");
+            Console.WriteLine();
+            CalculatePiLeibniz();
         }
         
 
@@ -85,6 +89,22 @@ namespace DarioLuis.Week02
                 Console.Write($" Result  digit = ");
                 Console.WriteLine(Math.Round(i, 2));
             }
+        }
+
+        public static double CalculatePiLeibniz()
+        {
+            double pi = 0;
+            for (double i = 1; i <= 30000000; i += 4)
+            {
+                pi += 4 / i;
+                pi *= -1;
+                if((i-1) % 100000 == 0)
+                {
+                    Console.WriteLine($"pi = {pi}");
+                }
+            }
+            Console.WriteLine($"pi = {pi}");
+            return pi;
         }
 
     }
