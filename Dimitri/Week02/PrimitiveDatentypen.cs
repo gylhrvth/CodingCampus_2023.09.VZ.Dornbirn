@@ -22,9 +22,12 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //TeilenUndHerrschen();
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
-            Console.WriteLine(PiLeibnizReihe(100000));
-
-
+            //Console.WriteLine(PiLeibnizReihe(100000));
+            //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
+            //Console.WriteLine(PiNilakanthaReihe(100000));
+            //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
+            //GeheimeReihe();
+            Console.WriteLine(WurzelAnnaeherung(500));
         }
 
         public static int Summe(int start, int end) //void hat keinen rückgabewert und int/bool/float hat genau einen Rückgabewert
@@ -111,22 +114,84 @@ namespace Dimitri.Week02
         }
 
         public static double PiLeibnizReihe(int precision)
-        { 
-            double positive = 0;
-            double negative = 0;
-            for(double i = 1; i < precision; i= i + 4)
+        {
+            double positiveSum = 0;
+            double negativeSum = 0;
+            for (double i = 1; i < precision; i = i + 4)
             {
-                positive += 4 / i;
+                positiveSum += 4 / i;
             }
 
             for (double i = 3; i < precision; i = i + 4)
             {
-                negative -= 4 / i;
+                negativeSum -= 4 / i;
             }
 
-            double pi = positive + negative;
+            double pi = positiveSum + negativeSum;
 
             return pi;
+        }
+
+        public static double PiNilakanthaReihe(int precision)
+        {
+            double positiveSum = 0;
+            double negativeSum = 0;
+            for (double i = 2; i < precision; i = i + 4)
+            {
+                positiveSum += 4 / (i * (i + 1) * (i + 2));
+            }
+
+            for (double i = 4; i < precision; i = i + 4)
+            {
+                negativeSum -= 4 / (i * (i + 1) * (i + 2));
+            }
+
+            double pi = 3 + positiveSum + negativeSum;
+
+            return pi;
+        }
+
+        public static void GeheimeReihe()
+        {
+            double result = 1;
+            for (int i = 0; i < 10; i++)
+            {
+                result = result / 2 + 1 / result;
+                Console.WriteLine(result);
+            }
+            //return result;
+        }
+
+        public static double WurzelAnnaeherung(double random)
+        {
+            double awurzel = random;
+            double mitte = awurzel / 2;
+            double min = 0;
+            double max = random;
+
+            for(int i=0; i<1000;i++)
+            {
+                double quadr = mitte * mitte;
+
+                if(quadr > random)
+                {
+                    max = mitte;
+                } else if(quadr < random)
+                {
+                    min = mitte;
+                } else
+                {
+                    break;
+                }
+                mitte = (max + min)/2;
+                Console.WriteLine("Mitte: " + mitte);
+            }
+
+
+
+
+            return awurzel;
+
         }
     }
 }

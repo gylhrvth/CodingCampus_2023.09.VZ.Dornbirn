@@ -7,26 +7,45 @@ namespace Timo.Week02
     {
         public static void Start()
         {
+            /*
             Console.WriteLine("\nAufgabe1: Summe");
             int sum= Summe(20, 21);
             Console.WriteLine(sum);
-
-
-            Console.WriteLine("\nAufgabe2: Faktorial");
-            long fakt= Faktorial(20);
             
 
-            Console.WriteLine("\nAufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten \nVariante1");
-            CountPlus01Var1(100);
+            Console.WriteLine("\nAufgabe2: Faktorial");
+            for (int i = 1; i < 20; i++)    //i < x! (x faktoriell)
+            {
+                long fakt = Faktorial(i);
+                Console.WriteLine("{0,2} ! = {1,20}", i, fakt);
+            }
 
+
+            Console.WriteLine("\nAufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten \nVariante1");
+            Console.WriteLine("0");
+            for (int j = 0; j < 100*10; j++)    //j < x * 10 (x = Ende)
+            {
+                double result = CountPlus01Var1(j);
+                Console.WriteLine(Math.Round(result, 2));
+            }
             Console.WriteLine("\nAufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten \nVariante2");
-            CountPlus01Var2(100);
-            /*
+            for (int j = 0; j <= 100*10; j++)   //j < x * 10 (x = Ende)
+            {
+                int d = CountPlus01Var2(j);
+                Console.WriteLine(d / 100.0);
+            }
+            
             Console.WriteLine("\nAufgabe4: Von 0 bis 100 Zählen in 0.1er Schritten erweitert");
-            CountPlus01Extended(3);
+            for (int j = 0; j <= 100 * 10; j++)   //j < x * 10 (x = Ende)
+            {
+                double result = CountPlus01Extended(j);
+                Console.WriteLine("Result 1 digit = {0:0.0}", result);
+                Console.WriteLine("result 2 digit = {0,9:N2}", result);
+            }
             */
             Console.WriteLine("\nAufgabe5: Teilen und Herrschen");
             Divide(0, 20);
+            
         }
 
 
@@ -50,35 +69,34 @@ namespace Timo.Week02
             for (int i = 1; i <= number; i++)
             {
                 fakt = fakt * i;
-                Console.WriteLine($"{i,2} ! = {fakt,20}");
-                
             }
             return fakt;
         }
+        //ToDo 
 
 
         //Aufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten
         //Variante 1
-        public static float CountPlus01Var1(int stop) 
+        public static double CountPlus01Var1(int j)
         {
-            for (float i = 0; i <= stop; i = (float)(i + 0.1))
+            double result = 0;
+            for (int i = 0; i <= j; i++)
             {
-                Console.WriteLine(Math.Round(i, 2));
+                //Console.WriteLine(Math.Round(result, 2));
+                result = result + 0.1;
             }
-            return 0;
+            return result;
         }
 
 
         //Aufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten
         //Variante 2
-        public static double CountPlus01Var2(int stop)
+        public static int CountPlus01Var2(int j)
         {
             int d = 0;
-            Console.WriteLine(d);
-            for (int i = 0; i < stop*10; i++)
+            for (int i = 0; i < j; i++)
             {
-                d = d + 10; 
-                Console.WriteLine(d / 100.0);
+                d = d + 10;
             }
             return d;
         }
@@ -86,24 +104,26 @@ namespace Timo.Week02
 
         //Aufgabe4: Von 0 bis 100 Zählen in 0.1er Schritten erweitert
         //TODO fertigstellen!
-        public static double CountPlus01Extended(int stop)
+        public static double CountPlus01Extended(int j)
         {
-            for (double i = 0; i <= stop; i = i+0.1)
+            double result = 0;
+            int a = 0;
+            for (double i = 0; i <= j; i++)
             {
-                Console.WriteLine($"Result 1 digit = {i:0.0}");
-                Console.WriteLine($"Result 2 digit =    {i:0.00}");
+                a = (a + 10);
+                result = ((a -10) / 100.0);
             }
-            return 0;
+            return result;
         }
 
 
         //Aufgabe5: Teilen und Herrschen
         public static double Divide(int start, int stop)
         {
-            for(int i = start; i <= stop; ++i)
+            for (int i = start; i <= stop; ++i)
             {
-                int a=i/5;
-                double b=i/5.0;
+                int a = i / 5;
+                double b = i / 5.0;
                 Console.WriteLine(i + " / 5 = " + a);
                 Console.WriteLine(i + " / 5.0 = " + b);
             }
