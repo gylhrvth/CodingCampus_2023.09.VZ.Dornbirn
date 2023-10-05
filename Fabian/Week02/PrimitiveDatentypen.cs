@@ -4,20 +4,20 @@
     {
         public static void Start()
         {
-            //PrintSum(20, 50);
-            //PrintFactorial(1, 20);
+            //Console.WriteLine("The sum is = " + CalcSum(20, 50));
+            //PrintFactorial(20);
             //PrintDecimalNums(0, 100);
             //PrintDivideAndConquer();
 
-            //Console.WriteLine("Pi ist ca. {0}", CalculatePiLeibniz());
-            //Console.WriteLine("Pi ist ca. {0}", PrintCalculatePiNilakantha());
-            //PrintSecretRow();
-            //Console.WriteLine("Wurzel ist ca. {0}", CalcRootApproximation()); 
-            //PrintRootApproximationBonus();
+            //Console.WriteLine("Pi is around {0}", CalculatePiLeibniz());
+            //Console.WriteLine("Pi is around {0}", CalculatePiNilakantha());
+            //Console.WriteLine(CalcSecretRow());
+            //Console.WriteLine("Root i around {0}", CalcRootApproximation()); 
+            //Console.WriteLine("Root is around {0}", CalcRootApproximationBonus()); 
 
         }
 
-        public static int PrintSum(int minNum, int maxNum)
+        public static int CalcSum(int minNum, int maxNum)
         {
             int sum = 0;
             for (int i = minNum; i <= maxNum; i++)
@@ -28,9 +28,9 @@
 
         }
 
-        public static void PrintFactorial(int minNum, int maxNum)
+        public static void PrintFactorial(int maxNum)
         {
-            for (int i = minNum; i <= maxNum; i++)
+            for (int i = 1; i <= maxNum; i++)
             {
                 Console.WriteLine("{0,2}! = {1,20}", i, CalcFactorial(i));
             }
@@ -80,7 +80,7 @@
             return pi;
         }
 
-        public static double PrintCalculatePiNilakantha()
+        public static double CalculatePiNilakantha()
         {
             double pi = 3;
 
@@ -93,7 +93,7 @@
             return pi;
         }
 
-        public static double PrintSecretRow()
+        public static double CalcSecretRow()
         {
             double value = 1;
 
@@ -126,21 +126,18 @@
                 else
                 {
                     min = average;
+                    Console.WriteLine(average);
                 }
-                Console.WriteLine(average);
             }
             return average;
         }
 
- 
-
-        public static double PrintRootApproximationBonus()
+        public static double CalcRootApproximationBonus()
         {
-            double result = 0;
             double num = 1297419;
             double max = num;
             double min = 0;
-            double average;
+            double average = 0 ;
             double error = 1;
             int tries = 0;
 
@@ -160,7 +157,7 @@
                 Console.WriteLine($"{average,-20} error percentage = {error:N4}%");
             }
             Console.WriteLine($"it took {tries} tries");
-            return result;
+            return average;
         }
     }
 }
