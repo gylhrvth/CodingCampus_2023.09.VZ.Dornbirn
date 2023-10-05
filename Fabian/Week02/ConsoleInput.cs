@@ -196,9 +196,8 @@ namespace Fabian.Week02
         public static void PrintCalculatorBonus()
         {
             bool playAgain = true;
-            float totalResult = 0;
+            double totalResult = 0;
             String option = "";
-
             Console.WriteLine("Welcome to my calculator! :)");
 
             while (playAgain)
@@ -206,9 +205,9 @@ namespace Fabian.Week02
                 try
                 {
                     Console.WriteLine("Enter a number: ");
-                    float num = Convert.ToInt32(Console.ReadLine());
+                    double num = Convert.ToDouble(Console.ReadLine());
                     totalResult += num;
-                    do
+                    while (option != "=")
                     {
 
                         Console.WriteLine("What would you like to do?");
@@ -233,12 +232,12 @@ namespace Fabian.Week02
                                 Console.WriteLine(totalResult);
                                 break;
                             case "^":
-                                float pow = (float)Math.Pow(num, 2);
+                                double pow = Math.Pow(num, 2);
                                 totalResult += pow;
                                 Console.WriteLine(totalResult);
                                 break;
                             case "/":
-                                if (num == 0)
+                                if (num == 0 || totalResult == 0)
                                 {
                                     Console.WriteLine("cant divide by 0!");
                                     break;
@@ -247,27 +246,18 @@ namespace Fabian.Week02
                                 Console.WriteLine(totalResult);
                                 break;
                             case "=":
-                                Console.WriteLine(totalResult);
+                                Console.WriteLine("total result: " + totalResult);
                                 break;
                         }
-
-                        /*Console.WriteLine("Do you want to play again? (Y/N)");
-                        String restart = Console.ReadLine();
-                        restart = restart.ToUpper();
-
-                        if (restart == "N")
-                        {
-                            Console.WriteLine("Bye, have a nice day! :)");
-                            playAgain = false;
-                        }*/
-
-                    }while (option != "=");
+                    }
                 }
-                catch
+                catch(Exception ex)
                 {
-                    Console.WriteLine("Something went wrong");
+                    Console.WriteLine(ex.Message);
                 }
             }
+
+           
         }
     }
 }

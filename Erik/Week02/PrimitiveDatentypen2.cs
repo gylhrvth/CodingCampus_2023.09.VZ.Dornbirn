@@ -14,7 +14,9 @@ namespace Erik.Week02
             //int result = SumOfNumbersButBetter(20, 50);
             //Console.WriteLine("Die Summe der Zahlen ist: " + result);
             CalculateTheFactorial(20);
-
+            Console.WriteLine();
+            //CountFromZeroToHundred();
+            CountFromZeroToHundred2();
         }
 
 
@@ -67,20 +69,35 @@ namespace Erik.Week02
         public static long CalculateTheFactorial(long number2)
         {
             long number = 1;
-            
+
 
             for (long i = 1; i <= number2; i++)
             {
                 number = number * i;
-                Console.WriteLine("{0,-2} != {1,20}",i,number);
+                Console.WriteLine("{0,-2} != {1,20}", i, number);
 
             }
             return number;
         }
 
-        
+        public static void CountFromZeroToHundred()
+        {
+            for (double i = 0; i <= 100; i += 0.1)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void CountFromZeroToHundred2()
+        {
+            for (double i = 0; i <= 100 * 10; i++)
+            {
+                Console.WriteLine(i/10);
+            }
+        }
     }
 }
+
 
 
 
