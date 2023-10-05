@@ -11,7 +11,7 @@ namespace Niklas.Week02
     public class PrimitiveDatentypen
     {
         public static void Start()
-        {
+        { /*
             PrintSumme(20);
             Console.WriteLine();
 
@@ -33,12 +33,12 @@ namespace Niklas.Week02
 
             Console.WriteLine("\nPi: ");
             Pi();
-            Console.WriteLine();
+            Console.WriteLine(); 
 
             Console.WriteLine("\nPi2: ");
             Pi2();
             Console.WriteLine();
-
+            */
             Console.WriteLine("\nGeheime Reihe: ");
             GeheimeReihe();
             Console.WriteLine();
@@ -90,7 +90,6 @@ namespace Niklas.Week02
                     rows++;
                 }
             }
-
         }
         static void Count()
         {
@@ -106,7 +105,6 @@ namespace Niklas.Week02
         static void Count2(double times, double times2)
         {
             Console.WriteLine($"result 1 digit = {times / 10.0:N1} ");
-
             Console.WriteLine($"result 2 digit = {times2 / 100.0,10:N1}0");
 
             for (int i = 0; i < 1000; i++)
@@ -121,7 +119,6 @@ namespace Niklas.Week02
 
         static void Teilen(double times)
         {
-
             for (int rows = 0; rows <= 20; rows++)
             {
                 Console.Write($"{rows,2} / 5   = {times / 5,1:N1}");
@@ -142,37 +139,29 @@ namespace Niklas.Week02
                 result -= (4.0 / (index + 2));
 
             }
-
             Console.WriteLine(result);
-
         }
         static void Pi2()
         {
-            int i = 2, j = 3, k = 4;
             double result = 3;
-            for (long index = i * j * k; index < 50000000; index += 4)
+            for (long index = 2; index < 50000000; index += 2)
             {
 
-                result += (4.0 / index);
-                result -= (4.0 / (index + 2));
-                i += 2;
-                j += 2;
-                k += 2;
-
+                result += (4.0 / (index * (index + 1) * (index + 2)));
+                index += 2;
+                result -= (4.0 / (index * (index + 1) * (index + 2)));
             }
-
             Console.WriteLine(result);
-
         }
 
         static void GeheimeReihe()
         {
-            for (double index = 1.0; index < 1000; index++)
+            for (double wert = 1.0; wert < 1000; wert++)
             {
-                Console.WriteLine((index / 2) + (index / 1));
-                index++;
-            }
+                Console.WriteLine((wert + 1 / 2) + (1 / wert));
+                wert++;
 
+            }
 
         }
 
@@ -181,6 +170,7 @@ namespace Niklas.Week02
             double random = new Random().Next(10000) + 1;
             Console.WriteLine($"Wurzel aus {random} ist: {Math.Sqrt(random)}");
             double ergebnis = Math.Sqrt(random);
+            Console.WriteLine();
             double ergebnis2 = ergebnis / 2;
             Console.WriteLine("neues ergebnis: " + ergebnis2);
             Console.WriteLine("nach quadrieren: " + (ergebnis2 *= ergebnis2));
@@ -190,8 +180,7 @@ namespace Niklas.Week02
             {
 
             }
+
         }
-
-
     }
 }
