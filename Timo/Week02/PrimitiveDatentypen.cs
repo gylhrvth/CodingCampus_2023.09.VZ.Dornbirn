@@ -122,7 +122,7 @@ namespace Timo.Week02
         {
             for (int i = start; i <= stop; ++i)
             {
-                int a = i / 5;
+                int a = i / 50;
                 double b = i / 5.0;
                 Console.WriteLine(i + " / 5 = " + a);
                 Console.WriteLine(i + " / 5.0 = " + b);
