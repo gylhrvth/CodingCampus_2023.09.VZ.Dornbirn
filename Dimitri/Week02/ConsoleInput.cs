@@ -13,27 +13,57 @@ namespace Dimitri.Week02
         public static void Main()
         {
 
-            Console.Write("Your string is: " + ReadString());
+            //Console.Write("Your string is: " + ReadString());
+            Console.Write("Your int is: " + ReadInt());
+
         }
 
         public static string ReadString()
         {
-            string UserInput = "";
-            while (UserInput == String.Empty || UserInput == null)
+
+            Console.WriteLine("Enter a string and confirm your input with enter:");
+
+            string UserInput = Console.ReadLine();
+
+
+            return UserInput;
+        }
+
+        public static int ReadInt()
+        {
+            int UserInput;
+
+            Console.WriteLine("Enter a int and confirm your input with enter:");
+
+            string intTmp = Console.ReadLine();
+
+            bool IsAllDigits = false;
+
+            while (IsAllDigits)
             {
-                Console.WriteLine("Enter a string and confirm your input with enter:");
-
-                UserInput = Console.ReadLine();
-
-                if (UserInput == String.Empty || UserInput == null)
+                foreach (char c in intTmp)
                 {
-                    UserInput = "You have entered an empty string";
+                    if (!char.IsDigit(c))
+                    {
+                        IsAllDigits = false;
+                    }
                 }
 
-                Console.WriteLine("Enter a new string:");
-            }
 
-                return UserInput;
+            Console.WriteLine("Enter a int and confirm your input with enter:");
+
+            intTmp = Console.ReadLine();
+
+            }
+            IsAllDigits = true;
+
+
+            while (!IsAllDigits)
+
+
+            UserInput = Convert.ToInt32(intTmp);
+
+            return UserInput;
         }
     }
 }
