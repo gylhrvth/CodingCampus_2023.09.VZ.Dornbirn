@@ -26,8 +26,7 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //Console.WriteLine(PiNilakanthaReihe(100000));
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
-            GeheimeReihe();
-            //WurzelAnnäherung();
+            //GeheimeReihe();
             Console.WriteLine(WurzelAnnaeherung(500));
         }
 
@@ -194,32 +193,5 @@ namespace Dimitri.Week02
             return awurzel;
 
         }
-
-        //public static void WurzelAnnäherung()
-        //{
-        //    double random = new Random().Next(10000) + 1;
-
-        //    Console.WriteLine(random);
-
-        //    double minimum = random / 2;
-
-        //    for(double i = minimum; i < random; ())
-        //    {
-        //        minimum = random * random;
-        //        if(minimum > random)
-        //        {
-        //            minimum
-        //        }
-
-
-        //    }
-
-
-        //    double squareEz = Math.Sqrt(random);
-
-        //    Console.WriteLine(squareEz);
-
-
-        //}
     }
 }
