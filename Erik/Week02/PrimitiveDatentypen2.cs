@@ -13,12 +13,12 @@ namespace Erik.Week02
             //PrintingTheSumOfNumbers(2, 30);
             //int result = SumOfNumbersButBetter(20, 50);
             //Console.WriteLine("Die Summe der Zahlen ist: " + result);
-            CalculateTheFactorial(20);
-            Console.WriteLine();
+            //CalculateTheFactorial(20);
             //CountFromZeroToHundred();
             //CountFromZeroToHundred2();
             //CountFromZeroToHundred3();
-            CountFromZeroToHundredExtended();
+            //CountFromZeroToHundredExtended();
+            divideTheNumbers();
         }
 
 
@@ -100,14 +100,21 @@ namespace Erik.Week02
 
         public static void CountFromZeroToHundredExtended()
         {
-
             float number;
-
             for (int i = 0; i <= 100; i++)
             {
                 number = (float)i / 10;
-                Console.WriteLine(number);
+                Console.WriteLine("Result 1  digit = {0:N1}", number); //eine Nachkommastelle :D
+                Console.WriteLine("Result 2  digit = {0,9:N2}", number); //zwei Nachkommastelle :D
+            }
+        }
 
+        public static void divideTheNumbers()
+        {          
+            for (int x = 0; x <= 20; x++)
+            {
+                Console.WriteLine(x + " / " + 5 + " = " + x / 5 );
+                Console.WriteLine(x + " / " + 0.5 + " = " + x / 0.5 );
             }
         }
     }
