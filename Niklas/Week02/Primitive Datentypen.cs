@@ -10,7 +10,7 @@ namespace Niklas.Week02
     public class PrimitiveDatentypen
     {
         public static void Start()
-        {
+        {/*
             PrintSumme(20);
             Console.WriteLine();
 
@@ -27,9 +27,16 @@ namespace Niklas.Week02
             Console.WriteLine();
 
             Console.WriteLine("\nTeilen und Herrschen: ");
-            Teilen(0, 0);
+            Teilen(0);
+            Console.WriteLine(); */
+
+            Console.WriteLine("\nPi: ");
+            Pi();
             Console.WriteLine();
 
+            Console.WriteLine("\nPi2: ");
+            Pi2();
+            Console.WriteLine();
 
         }
 
@@ -106,22 +113,48 @@ namespace Niklas.Week02
             }
         }
 
-        static void Teilen(double times, double times2)
+        static void Teilen(double times)
         {
 
             for (int rows = 0; rows <= 20; rows++)
             {
-                Console.Write(rows + " / 5 = ");
+                Console.Write($"{rows,2} / 5   = {times / 5,1:N1}");
                 Console.WriteLine();
-                Console.Write(rows + " / 5.0 = ");
+                Console.Write($"{rows,2} / 5.0 = {times / 5:N2} ");
                 Console.WriteLine();
+                times++;
+            }
+        }
+
+        static void Pi()
+        {
+            double result = 0;
+            for (long index = 1; index < 500000000; index += 4)
+            {
+
+                result += (4.0 / index);
+                result -= (4.0 / (index + 2));
+
             }
 
+            Console.WriteLine(result);
 
+        }
+        static void Pi2()
+        {
+            double result = 3;
+            for (double index = 2 * 3 * 4; index < 500000000;index += 1)
+            {
+
+                result += (4.0 / index);
+                result -= (4.0 / (index + 1));
+
+            }
+
+            Console.WriteLine(result);
 
         }
 
-
-
     }
 }
+
