@@ -1,1 +1,1 @@
-﻿Kerem.Week02.Primitive_Datentypen.Start();
+﻿Kerem.Week02.DataTypes.Start();
