@@ -67,13 +67,20 @@ namespace Simon.Week02
             PrintFaktorial(1, 20);
 
             Console.WriteLine("Aufgabe count");
-            PrintCount(0, 5);
+            PrintCount(0, 2);
 
             Console.WriteLine("\nAufgabe count v2");
             PrintCountv2(9, 10);
 
             Console.WriteLine("\nAufgabe Teilen und Herrschen");
-            Printdevide(0, 20);
+            Printdevide(0, 20); //der Grund des unterschiedes ist die gegebene Formatierung in der {} klammer das mit 5.0 ist halt genauer wegen der extra stelle
+
+            Console.WriteLine("\nBerechnung von Pi");
+            double pi = CalculatePi(1, 10);
+            Console.WriteLine(pi);
+            Console.WriteLine("PI ==");
+            //double piresult = PrintPi(10);
+            //Console.WriteLine(piresult);
         }
         //Aufgabe Summe
         public static int PrintSummeGanzzahlen(int number1, int number2)
@@ -157,7 +164,34 @@ namespace Simon.Week02
             return result;
 
         }
-        //Aufgabe 
+        //Aufgabe Berechnung von Pi
+        public static double CalculatePi(double devidor, int decimales)
+        {
+            double pi = 0;
+            for (int i = 1; i < decimales; i++)
+            {
+                pi = (4 / devidor);
+                Console.WriteLine(pi);
+                devidor += 2;
+            }
+            return pi;
+        }
+        /*
+        public static double PrintPi(int decimales)
+        {
+            double piresult = 0;
+            for (int i = 0; i < decimales; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    piresult = piresult + CalculatePi(decimales);
+                }
+                else
+                    piresult = piresult - CalculatePi(decimales);
+            }
+            return piresult;
+        }
+        */
     }
 }
 
