@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Net.Sockets;
 
 namespace Fabienne.week02
@@ -10,12 +11,18 @@ namespace Fabienne.week02
         public static void StartPrimitivenDatentypen()
         {
             
-            PrintSum();
+           // PrintSum();
             Console.WriteLine();
-            Faktorial(20);
+           // Faktorial(20);
+            Console.WriteLine();
+            //VonNullBisHundert();
+            Console.WriteLine();
+            //VonNullBisHundert2();
+            //TeilenUndHerrschen("x", 5);
+            CalculationPi();
         }
 
-        public static void PrintSum()
+       /* public static void PrintSum()
         {
             int result = 0;
 
@@ -58,6 +65,59 @@ namespace Fabienne.week02
                 return result;
             }
         }
+
+        public static void VonNullBisHundert()
+        {
+            Console.WriteLine("Variante 1:");
+            for (double number = 0; number <= 1000; number++)
+            {
+                Console.Write("Digit ");
+                Console.WriteLine($"= {number / 10.0:N1} ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Variante 2:");
+            for (double number = 0; number <= 1000; number++)
+            {
+                Console.Write("Digit ");
+                Console.WriteLine($"= {number / 10.0:N2} ");
+            }
+        }
+
+        public static void VonNullBisHundert2()
+        {
+            for (double number = 0; number <= 1000; number++)
+            {
+                
+                Console.WriteLine($"Result 1 Digit = {number / 10.0:N1} ");
+               
+                Console.WriteLine($"Result 2 Digit = {number / 10.0,9:N2} ");
+            }
+            Console.WriteLine();
+        }
+
+        public static void TeilenUndHerrschen(string symbol, int number)
+        {
+            for (int digit = 0; digit <= 20; digit++)
+            {
+                Console.WriteLine("5= " + digit/5);
+                Console.WriteLine("5.0= " + digit/5.0);
+            }
+        } */
+
+        public static void CalculationPi()
+        {
+            for (int number = 1; number <= 10000; number = number + 2)
+            {
+                double digit =4 / number;
+
+                digit = digit * -1;
+                Console.WriteLine(digit);
+            }
+
+        }
+
+        
     }
 
     
