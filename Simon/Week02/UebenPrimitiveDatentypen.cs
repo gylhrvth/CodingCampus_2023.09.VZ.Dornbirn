@@ -81,8 +81,11 @@ namespace Simon.Week02
             Console.WriteLine("PI ==");
             Console.WriteLine(Math.PI);
             Console.WriteLine("\nPI (Nilakantha Reihe)");
-            double piv2 = CalculatePiv2(1, 1000);
+            double piv2 = CalculatePiv2(100000);
             Console.WriteLine(piv2);
+            Console.WriteLine("\nPSSSSSSSSSSSSSST");
+            double secret = Calculatesecret(100);
+            Console.WriteLine(secret);
         }
         //Aufgabe Summe
         public static int PrintSummeGanzzahlen(int number1, int number2)
@@ -167,11 +170,11 @@ namespace Simon.Week02
 
         }
         //Aufgabe Berechnung von Pi(Leibniz Reihe)
-        public static double CalculatePi(double devidor, double decimales)
+        public static double CalculatePi(double devidor, double iterations)
         {
             double pi = 0;
             double piresult = 0;
-            for (int i = 0; i < decimales; i++)
+            for (int i = 0; i < iterations; i++)
             {
                 pi = (4 / devidor);
                 devidor += 2;
@@ -187,14 +190,14 @@ namespace Simon.Week02
             return piresult;
         }
         //Aufgabe Berechnung von PI (Nilakantha Reihe)
-        public static double CalculatePiv2(double devidor, double decimales)
+        public static double CalculatePiv2(double iterations)
         {
             double pi = 0;
             double piresult = 3;
-            for (int i = 0; i < decimales; i++)
+            int devidor = 2;
+            for (int i = 0; i < iterations; i++)
             {
-                pi = (4 / devidor);
-                devidor += 2;
+                pi = 4.0 / (devidor * (devidor +1) * (devidor + 2));
                 if (i % 2 == 0)
                 {
                     piresult = piresult + pi;
@@ -203,10 +206,20 @@ namespace Simon.Week02
                 {
                     piresult = piresult - pi;
                 }
+                devidor += 2;
             }
             return piresult;
-
-            
+        }
+        //Aufgabe Geheime Reihe
+        public static double Calculatesecret(double iterations)
+        {
+            double secret = 1.0;
+            for (int i = 0; i < iterations; i++)
+            {
+                secret = (secret+i)/2+1/(secret+i);
+                
+            }
+            return secret;
         }
     }
 }
