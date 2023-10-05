@@ -1,1 +1,1 @@
-﻿Sandro.Week01.HelloWorld.Start();
+﻿Sandro.Week01.Test.Start();
