@@ -18,9 +18,11 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //FaktorialExtended(40);
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
-            NullBisHundertv2(0.0, 100.0);
+            //NullBisHundertv2(0.0, 100.0);
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //TeilenUndHerrschen();
+            //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
+            Console.WriteLine(PiLeibnizReihe(100000));
 
 
         }
@@ -49,7 +51,7 @@ namespace Dimitri.Week02
 
         public static void FaktorialExtended(long input)
         {
-            if(input > 20)
+            if (input > 20)
             {
                 input = 20;
             }
@@ -67,7 +69,7 @@ namespace Dimitri.Week02
         {
             double solution;
 
-            for (double i = start * 100; i <= end*100; i+=10)
+            for (double i = start * 100; i <= end * 100; i += 10)
             {
                 solution = i / 100.0;
                 Console.Write("Result 1 digit = ");
@@ -82,7 +84,7 @@ namespace Dimitri.Week02
             double solution;
             double i = start * 100;
 
-            while ( i <= end * 100)
+            while (i <= end * 100)
             {
                 solution = i / 100.0;
                 Console.Write("Result 1 digit =");
@@ -106,6 +108,25 @@ namespace Dimitri.Week02
                 Console.WriteLine(i + " / 5.0 = " + solution);
             }
 
+        }
+
+        public static double PiLeibnizReihe(int precision)
+        { 
+            double positive = 0;
+            double negative = 0;
+            for(double i = 1; i < precision; i= i + 4)
+            {
+                positive += 4 / i;
+            }
+
+            for (double i = 3; i < precision; i = i + 4)
+            {
+                negative -= 4 / i;
+            }
+
+            double pi = positive + negative;
+
+            return pi;
         }
     }
 }

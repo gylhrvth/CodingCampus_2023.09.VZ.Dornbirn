@@ -23,7 +23,7 @@ namespace Timo.Week02
             CountPlus01Var2(100);
             /*
             Console.WriteLine("\nAufgabe4: Von 0 bis 100 Zählen in 0.1er Schritten erweitert");
-            CountPlus01Extended(5);
+            CountPlus01Extended(3);
             */
             Console.WriteLine("\nAufgabe5: Teilen und Herrschen");
             Divide(0, 20);
