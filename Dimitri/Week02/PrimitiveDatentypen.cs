@@ -112,19 +112,19 @@ namespace Dimitri.Week02
 
         public static double PiLeibnizReihe(int precision)
         { 
-            double positive = 0;
-            double negative = 0;
+            double positiveSum = 0;
+            double negativeSum = 0;
             for(double i = 1; i < precision; i= i + 4)
             {
-                positive += 4 / i;
+                positiveSum += 4 / i;
             }
 
             for (double i = 3; i < precision; i = i + 4)
             {
-                negative -= 4 / i;
+                negativeSum -= 4 / i;
             }
 
-            double pi = positive + negative;
+            double pi = positiveSum + negativeSum;
 
             return pi;
         }
