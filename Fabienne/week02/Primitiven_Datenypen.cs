@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Net.Sockets;
+using System.Xml.XPath;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Fabienne.week02
 {
@@ -20,6 +23,9 @@ namespace Fabienne.week02
             //VonNullBisHundert2();
             //TeilenUndHerrschen("x", 5);
             CalculationPi();
+            Console.WriteLine();
+           // CalculationPiGyula();
+            CalculationPi2();
         }
 
        /* public static void PrintSum()
@@ -107,19 +113,117 @@ namespace Fabienne.week02
 
         public static void CalculationPi()
         {
-            for (int number = 1; number <= 10000; number = number + 2)
+            //2: 3,141392653591791
+            //1: 3,141392653591791
+            double digit = 0;
+
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
+            bool toggle = true;
+
+            for (double number = 1; number <= 10000000000; number = number + 4)
             {
-                double digit =4 / number;
+                /*
+                if (toggle)
+                {
+                    digit += 4 / number;
+                }
+                else
+                {
+                    digit -= 4 / number;
+                }
+                toggle = !toggle;
+                */
 
-                digit = digit * -1;
-                Console.WriteLine(digit);
+                digit += 4 / number;
+                digit -= 4 / (number + 2);
+
+
+                //digit += 4 / number;
+                //digit = digit * -1;
             }
+            stopWatch.Stop();
+            Console.WriteLine($"Took {stopWatch.ElapsedMilliseconds:0.00}ms");
 
+            Console.WriteLine(digit);
         }
 
-        
+       /* public static void CalculationPiGyula()
+        {
+            double digitMax = 4;
+            double digitMin = 0;
+
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+
+            long number = 1;
+            while (digitMax - digitMin > 0.0000000001)
+            {
+                digitMax = digitMin + 4.0 / number;
+                number += 2;
+                digitMin = digitMax - 4.0 / number;
+                number += 2;
+                if (number % 100000 < 4)
+                {
+                    Console.WriteLine("Pi ist zwischen {0} und {1}", digitMin, digitMax);
+                }
+            }
+            stopWatch.Stop();
+            Console.WriteLine($"Took {stopWatch.ElapsedMilliseconds:0.00}ms");
+
+            Console.WriteLine("Pi ist zwischen {0} und {1}", digitMin, digitMax);
+        } */
+
+        public static void CalculationPi2()
+        {
+            double n1 = 1;
+            double n2 = 2;
+            double n3 = 3;
+
+            double abc = 0;
+
+            double result = 0;
+            double result1 = 0;
+            double endresult = 0;
+
+            while (abc > 1000000)
+            {
+                ++n1;
+                ++n2;
+                ++n3;
+
+                result = 4.0 / (n1 * n2 * n3);
+
+                ++n1;
+                ++n2;
+                
+
+                result1 = (4.0 / (n1 * n2 * n3)) * -1.0;
+            }
+
+            endresult = result + result1;    
+
+            Console.WriteLine(endresult + 3.0);
+        }
+
+       /* public static double CalculatePiNilakantha()
+        {
+            double pi = 3;
+
+            for (double i = 2; i <= 100; i += 2)
+            {
+                pi += 4 / (i * (i + 1) * (i + 2));
+                Console.WriteLine($"pi = {pi}");
+                pi *= -1;
+            }
+            return pi;
+        }*/
+
+
     }
 
     
+
 }
 
