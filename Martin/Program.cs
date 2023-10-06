@@ -1,1 +1,1 @@
-﻿Martin.Week02.PrimitiveDatenTypen.Start();
+﻿Martin.Week02.PrimitiveDatenTypen.StartDatenTypen();

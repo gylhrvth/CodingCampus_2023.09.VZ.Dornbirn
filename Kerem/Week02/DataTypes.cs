@@ -22,6 +22,8 @@ namespace Kerem.Week02
             printDecimalNumsV2(1000);
             Console.WriteLine("PRINTDECIMALNUMSEXTEND");
             double d3 = printDecimalNumsextend(0, 100);
+            Console.WriteLine("PRINTSHARECONQUER");
+            
 
 
 
@@ -95,7 +97,25 @@ namespace Kerem.Week02
             }
             return d3;
         }
+        public static double printShareConquer()
+        {
 
 
+            int a = 0;
+            double maxNum = 20;
+            
+            
+            for(int i = 0; i <= maxNum; i++)
+            {
+                Console.WriteLine($"Result w int  {i}/ 5 = {i / 5}" );
+                Console.WriteLine($"Result w double  {i}/ 5.0 = {i / 5.0}");
+            }
+            return a;
+
+
+        }
+
+
+       
     }
 }
