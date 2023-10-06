@@ -76,12 +76,12 @@ namespace Simon.Week02
             Printdevide(0, 20); //der Grund des unterschiedes ist die gegebene Formatierung in der {} klammer das mit 5.0 ist halt genauer wegen der extra stelle
 
             Console.WriteLine("\nBerechnung von Pi");
-            double pi = CalculatePi(1, 100000000);
+            double pi = CalculatePi(1, 1000000000);
             Console.WriteLine(pi);
             Console.WriteLine("PI ==");
             Console.WriteLine(Math.PI);
             Console.WriteLine("\nPI (Nilakantha Reihe)");
-            double piv2 = CalculatePiv2(100000);
+            double piv2 = CalculatePiv2(1000000000);
             Console.WriteLine(piv2);
             Console.WriteLine("\nPSSSSSSSSSSSSSST");
             double secret = Calculatesecret(100);
@@ -118,7 +118,7 @@ namespace Simon.Week02
                 //for(int j = 0; j < i; j++) 
                 //{
                 //Console.Write($"{i,2} ! = {0,20}");
-                Console.WriteLine("{0, 2}! = {1, 20}", i, CalculatetFaktor(i));
+                Console.WriteLine("{0, 2}! = {1, 20} test", i, CalculatetFaktor(i));
                 //}
             }
             return 0;
@@ -163,7 +163,7 @@ namespace Simon.Week02
             {
                 Console.Write("{0, 3} / {1:0.0} =", i, 5);
                 Console.WriteLine(i / 5.0);
-                Console.Write("{0, 3} / {1, -3} =", i, 5);
+                Console.Write("{0, 3} / {1, 0} =", i, 5);
                 Console.WriteLine(i / 5);
             }
             return result;
@@ -194,7 +194,7 @@ namespace Simon.Week02
         {
             double pi = 0;
             double piresult = 3;
-            int devidor = 2;
+            double devidor = 2;
             for (int i = 0; i < iterations; i++)
             {
                 pi = 4.0 / (devidor * (devidor +1) * (devidor + 2));
