@@ -11,7 +11,9 @@ namespace David.Week02
             ArrayListe2();
             Console.WriteLine("-----");
 
-            ArrayListe3();
+            int[] arr = CreateArrayListe3(15);
+            int[] arr2 = CreateArrayListe3(2);
+            PrintArray(arr);
 
 
         }
@@ -55,17 +57,28 @@ namespace David.Week02
             }
             
         }
-        public static void ArrayListe3()
+
+
+
+        public static int[] CreateArrayListe3(int size)
         {
-            int[] numbers = new int[10];
+            int[] numbers = new int[size];
 
             for (int i = 0; i < numbers.Length; i++)
             {
                 numbers[i] = i + 1;
-
-                Console.WriteLine("{0}. = {1}", i, numbers[i]);
             }
 
+            return numbers;
+        }
+
+
+        public static void PrintArray(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                Console.WriteLine("{0}. = {1}", i, numbers[i]);
+            }
         }
 
     }
