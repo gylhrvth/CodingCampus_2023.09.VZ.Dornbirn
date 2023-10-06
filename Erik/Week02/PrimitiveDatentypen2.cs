@@ -19,7 +19,10 @@ namespace Erik.Week02
             //CountFromZeroToHundred3();
             //CountFromZeroToHundredExtended();
             //DivideTheNumbers();
-            CalculationOfPi();
+            //Console.WriteLine(CalculationOfPiLeibniz());
+            //Console.WriteLine(Math.PI);
+            Console.WriteLine(CalculationOfPiNilakantha());
+
         }
 
 
@@ -122,51 +125,43 @@ namespace Erik.Week02
             }
         }
 
-        public static void CalculationOfPi()
+        public static double CalculationOfPiLeibniz()
         {
 
-            double numberPi;
-            double number01;
-            double number02;
-            bool numberChange = true;
-            bool charChange = true;
+            double numberPi = 0;
+            double number01 = 0;
+            double number02 = 0;
 
-            for (int i = 1; i < 30000; i += 2)
+            for (int i = 1; i < 99999999; i += 4)
             {
+                number01 = (double)4 / i;
+                number02 = (double)4 / (i + 2);
 
-                if (numberChange)
-                {
-                    number01 = (double)4 / i;
-
-                    numberChange = false;
-                    Console.WriteLine(number01);
-                }
-                else
-                {
-                    number02 = (double)4 / i;
-                    numberChange = true;
-                    Console.WriteLine(number02);
-                }
-
-                if (charChange)
-                {
-
-                    numberPi = number01 - number02;
-                    charChange = false;
-
-                }
-                else
-                {
-                    numberPi = number01 + number02;
-                    numberChange = true;
-                }
-
+                numberPi = numberPi + (number01 - number02);
             }
+            return numberPi;
 
+        }
 
+        public static double CalculationOfPiNilakantha()
+        {
+
+            double numberPi = 0;
+            double number01 = 0;
+            double number02 = 0;
+
+            for (int i = 1; i < 99999999; i += 4)
+            {
+                number01 = (double)4 / i;
+                number02 = (double)4 / (i + 2);
+
+                numberPi = numberPi + (number01 - number02);
+            }
+            return numberPi;
         }
     }
 }
+
 
 
 
