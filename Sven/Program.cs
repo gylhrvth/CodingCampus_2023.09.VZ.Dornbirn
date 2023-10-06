@@ -1,1 +1,1 @@
-﻿Sven.Week01.HelloWorld.Start();
+﻿Sven.Week02.DatentypenÜbungen.StartDatentypenÜbungen();

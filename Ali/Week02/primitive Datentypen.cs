@@ -32,6 +32,10 @@ namespace Ali.Week02
             double x = printX(100);
             Console.WriteLine();
 
+            Console.WriteLine("Aufgabe Teilen und Herrschen");
+            double y = printY(20);
+            
+
 
         }
         public static int printSum(int min, int max)
@@ -88,18 +92,29 @@ namespace Ali.Week02
         {
             double x = 0.0;
 
-            for (double i = 0.0; i <= max; i+=+0.1)
+            for (double i = 0.0; i <= max; i+=0.1)
             {
-                x = 0.1;
+                x += 0.1;
 
-                Console.WriteLine($"Result 1 digit ={i,3:N1}");
-                Console.WriteLine($"Result 2 digit ={i,7:N7}");
+                Console.WriteLine($"Result 1 digit ={i,3:0.0}");
+                Console.WriteLine($"Result 2 digit ={i,7:0.00}");
 
 
 
             }
             return x;
         }
+        public static double printY(int max)
+        {
+            
+            double x = 5.0;
+            for(double i = 0.0;i <=max; i++)
+            {
+                Console.WriteLine($"Ergebnis={x}");
+            }
+            return max;
+        }
+        
     }
 }
 
