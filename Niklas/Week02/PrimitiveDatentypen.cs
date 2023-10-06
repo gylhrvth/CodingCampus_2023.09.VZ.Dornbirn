@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Niklas.Week02
     public class PrimitiveDatentypen
     {
         public static void Start()
-        { /*
+        {/*
             PrintSumme(20);
             Console.WriteLine();
 
@@ -33,7 +34,7 @@ namespace Niklas.Week02
 
             Console.WriteLine("\nPi: ");
             Pi();
-            Console.WriteLine(); 
+            Console.WriteLine();
 
             Console.WriteLine("\nPi2: ");
             Pi2();
@@ -156,11 +157,11 @@ namespace Niklas.Week02
 
         static void GeheimeReihe()
         {
-            for (double wert = 1.0; wert < 1000; wert++)
+            double wert = 1.0;
+            for (int i = 1; i < 100; i++)
             {
-                Console.WriteLine((wert + 1 / 2) + (1 / wert));
-                wert++;
-
+                Console.WriteLine($"Wert = {wert,20} / 2 + 1 / {wert}");
+                wert = wert / 2 + 1 / wert;
             }
 
         }
@@ -168,18 +169,23 @@ namespace Niklas.Week02
         static void Wurzel()
         {
             double random = new Random().Next(10000) + 1;
-            Console.WriteLine($"Wurzel aus {random} ist: {Math.Sqrt(random)}");
+            Console.WriteLine($"Die zufällige Zahl ist: {random}");
             double ergebnis = Math.Sqrt(random);
-            Console.WriteLine();
-            double ergebnis2 = ergebnis / 2;
-            Console.WriteLine("neues ergebnis: " + ergebnis2);
-            Console.WriteLine("nach quadrieren: " + (ergebnis2 *= ergebnis2));
-            double ergebnisneu = ergebnis2 *= ergebnis2;
+            
 
-            if (ergebnisneu > ergebnis2)
+            double mitte = random - ergebnis;
+
+            if (ergebnis < )
             {
 
             }
+
+
+
+            Console.WriteLine();
+
+
+
 
         }
     }
