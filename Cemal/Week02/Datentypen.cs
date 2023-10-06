@@ -39,6 +39,10 @@ namespace Cemal.Week02
             Console.WriteLine("Alt version");
             Alt();
             Console.WriteLine();
+
+            Console.WriteLine("Leibniz PI");
+            LeibnizPI();
+            Console.WriteLine();
         }
 
         public static int Summe(int first, int second)
@@ -87,14 +91,14 @@ namespace Cemal.Week02
             }
             return dif;
         }
-        
+
         public static void Alt()
         {
             double result = 0;
             string eins = "Result 1 digit = ";
             string zwei = "Result 2 digit = ";
 
-            for (int i = 0; i <= 100; i++) 
+            for (int i = 0; i <= 100; i++)
             {
                 result += 0.1;
                 Console.WriteLine($"{eins}{result:0.0}");
@@ -109,12 +113,31 @@ namespace Cemal.Week02
             {
                 string erste = " = ";
                 string zweite = " = ";
-                
-                Console.WriteLine("{0,2} / 5 {1,5}" + i / 5 ,i,erste);
-                Console.WriteLine("{0,2} / 5.0{1,4}" + i / 5.0,i,zweite);
+
+                Console.WriteLine("{0,2} / 5 {1,5}" + i / 5, i, erste);
+                Console.WriteLine("{0,2} / 5.0{1,4}" + i / 5.0, i, zweite);
                 Console.WriteLine("---------------");
 
 
+            }
+        }
+
+        public static void LeibnizPI()
+        {
+            double result = 0;
+
+            for (int i = 1; i <= 20; i += 2)
+            {
+                if (i % 4 == 1)
+                {
+                    result += 4.0 / i;
+                }
+                else if (i % 4 == 3)
+                {
+                    result -= 4.0 / i;
+                }
+
+                Console.WriteLine(result);
             }
         }
 
