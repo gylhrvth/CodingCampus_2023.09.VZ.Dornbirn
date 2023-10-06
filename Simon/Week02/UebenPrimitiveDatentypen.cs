@@ -81,11 +81,18 @@ namespace Simon.Week02
             Console.WriteLine("PI ==");
             Console.WriteLine(Math.PI);
             Console.WriteLine("\nPI (Nilakantha Reihe)");
-            double piv2 = CalculatePiv2(100000);
+            double piv2 = CalculatePiv2(100000000);
             Console.WriteLine(piv2);
             Console.WriteLine("\nPSSSSSSSSSSSSSST");
-            double secret = Calculatesecret(100);
+            double secret = Calculatesecret(4);
             Console.WriteLine(secret);
+            double secret1 = Calculatesecret(100000);
+            Console.WriteLine(secret1);
+            double secret2 = Calculatesecret(100000000);
+            Console.WriteLine(secret2);
+            // führt richtung 1.4
+            Console.WriteLine("\nI'm ROOTED");
+            double root = CalcRoot(1, 10000);
         }
         //Aufgabe Summe
         public static int PrintSummeGanzzahlen(int number1, int number2)
@@ -118,7 +125,7 @@ namespace Simon.Week02
                 //for(int j = 0; j < i; j++) 
                 //{
                 //Console.Write($"{i,2} ! = {0,20}");
-                Console.WriteLine("{0, 2}! = {1, 20}", i, CalculatetFaktor(i));
+                Console.WriteLine("{0, 2}! = {1, 20} test", i, CalculatetFaktor(i));
                 //}
             }
             return 0;
@@ -163,7 +170,7 @@ namespace Simon.Week02
             {
                 Console.Write("{0, 3} / {1:0.0} =", i, 5);
                 Console.WriteLine(i / 5.0);
-                Console.Write("{0, 3} / {1, -3} =", i, 5);
+                Console.Write("{0, 3} / {1, 0} =", i, 5);
                 Console.WriteLine(i / 5);
             }
             return result;
@@ -194,10 +201,10 @@ namespace Simon.Week02
         {
             double pi = 0;
             double piresult = 3;
-            int devidor = 2;
+            double devidor = 2;
             for (int i = 0; i < iterations; i++)
             {
-                pi = 4.0 / (devidor * (devidor +1) * (devidor + 2));
+                pi = 4.0 / (devidor * (devidor + 1) * (devidor + 2));
                 if (i % 2 == 0)
                 {
                     piresult = piresult + pi;
@@ -216,10 +223,35 @@ namespace Simon.Week02
             double secret = 1.0;
             for (int i = 0; i < iterations; i++)
             {
-                secret = (secret+i)/2+1/(secret+i);
-                
+                secret = (secret) / 2 + 1 / (secret);
             }
             return secret;
+        }
+        //Aufgabe Wurzelannäherung
+        public static double CalcRoot(int number1, int number2)
+        {
+            double random = new Random().Next(number2) + number1;
+            Console.WriteLine(random);
+            double min = 0;
+            double max = random;
+            double middle = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                middle = (min + max) / 2;
+                double middlesquared= middle * middle;
+                if (middlesquared > random)
+                {
+                    middle = max;
+                }
+                else
+                {
+                    middle = min;
+                }
+                middle = (min + max) / 2;
+            }
+            Console.WriteLine(random);
+
+            return middle;
         }
     }
 }

@@ -34,6 +34,10 @@ namespace Ali.Week02
 
             Console.WriteLine("Aufgabe Teilen und Herrschen");
             double y = printY(20);
+            Console.WriteLine();
+           
+            Console.WriteLine("LeibnizReihe");
+            LeibnizRow();
             
 
 
@@ -96,8 +100,8 @@ namespace Ali.Week02
             {
                 x += 0.1;
 
-                Console.WriteLine($"Result 1 digit ={i,3:0.0}");
-                Console.WriteLine($"Result 2 digit ={i,7:0.00}");
+                Console.WriteLine($"Result 1 digit ={i,0:0.0}");
+                Console.WriteLine($"Result 2 digit ={i,2:0.00}");
 
 
 
@@ -106,13 +110,44 @@ namespace Ali.Week02
         }
         public static double printY(int max)
         {
-            double y = 0.0;
+            int y = 5;
             double x = 5.0;
-            for(double i = 0.0;i <=max; i++)
+
+            for(int i = 0;i <=max; i++)
+
             {
-                Console.WriteLine($"Ergebnis={x}");
+                Console.WriteLine($"{i,2} / 5 ={i/y,4:0}");
+                Console.WriteLine($"{i,2} / 5.0 ={i/x,4:0.0}");
             }
             return max;
+        }
+        public static double LeibnizRow()
+        {
+            double num1 = 1;
+            double num2 = 0;
+            double num3 = 0;
+            
+            {
+                for(int i = 0; i <= num1; i++)
+                {
+                    num2 = 4 / (num1);
+                    //Console.WriteLine(num2);
+                }
+                num1 += 2;
+                for(int j = 0; j <= num2; j++)
+                {
+                    num3 = 4 / (num1);
+                    //Console.WriteLine(num3);
+                }
+                num1 += 2;
+                num1 = num2 - num3;
+                Console.WriteLine(num1);
+
+            }
+
+
+
+            return num1;
         }
         
     }
