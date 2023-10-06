@@ -1,1 +1,1 @@
-﻿Riccardo.Week02.PrimitiveDatentypen.Start();
+﻿Riccardo.Week02.Arrays.Start();
