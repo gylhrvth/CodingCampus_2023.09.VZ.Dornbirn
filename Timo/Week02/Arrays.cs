@@ -7,7 +7,7 @@ namespace Timo.Week02
         public static void Start()
         {
             //Aufgabe1.1: Number Array Aufwärts
-            Console.WriteLine("\nNumber Array\r\n");
+            Console.WriteLine("\nNumber1.1 Array\r\n");
             int[] arrUp = new int[10];
             for (int i = 0; i < arrUp.Length; i++)
             {
@@ -19,7 +19,7 @@ namespace Timo.Week02
             }
 
             //Aufgabe1.1: Number Array Abwärts
-            Console.WriteLine("\nNumber Array\r\n");
+            Console.WriteLine("\nNumber1.2 Array\r\n");
             int[] arrDown = new int[10];
             int a = arrDown.Length;
             for (int i = 0; i < arrDown.Length; i++)
@@ -32,9 +32,24 @@ namespace Timo.Week02
                 Console.WriteLine("{0}. = {1}", i, arrDown[i]);
             }
 
+            //Aufgabe2
+            Console.WriteLine("\nNumber2 Kopie\r\n");
             makeACopy(arrUp);
 
+
+            //Aufgabe3
+            Console.WriteLine("\nNumber2 Kopie\r\n");
+            Random random = new Random();
+            
+            int[]arr = new int[10];
+            foreach (int number in arr)
+            {
+                int randomNumber = random.Next(1,100);
+                arr[number] = randomNumber;
+                Console.WriteLine($"{arr[number]} ");
+            }
         }
+
         //Aufgabe2: Kopie
         public static int[] makeACopy(int[] original)
         {
@@ -44,5 +59,7 @@ namespace Timo.Week02
             }
             return original;
         }
+
+        public static int[] Random(int i, int min, int max);
     }
 }

@@ -29,9 +29,9 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //GeheimeReihe();
             //Console.WriteLine(WurzelAnnaeherung(500));
-            //Console.WriteLine(WurzelAnnaeherungBonus(1297419));
+            Console.WriteLine(WurzelAnnaeherungBonus(1297419));
             //IstPrimzahl(31);
-            PrintAllePrimzahlen(31);
+            //PrintAllePrimzahlen(31);
         }
 
         public static int Summe(int start, int end) //void hat keinen rückgabewert und int/bool/float hat genau einen Rückgabewert
@@ -229,6 +229,7 @@ namespace Dimitri.Week02
                 Console.WriteLine();
 
                 Console.WriteLine("Mitte: " + mitte);
+
                 double differenz = Math.Abs(mitte - Math.Sqrt(random));
 
                 double fehlerInProzent = differenz / Math.Sqrt(random);
@@ -302,7 +303,7 @@ namespace Dimitri.Week02
                         break;
                     }
                 }
-                 
+
                 if (istPrim) { count++; }
 
                 if (count == 2)
