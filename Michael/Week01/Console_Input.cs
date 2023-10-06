@@ -117,7 +117,7 @@ namespace Michael.Week01
         }
 
 
-        public static void GuessingGame()
+        public static void GuessingGame(int attempts = -1)
         {
             Random rnd = new Random();
             Console.WriteLine("pick a difficulty for this game, the higher the number the more difficult");
@@ -128,26 +128,34 @@ namespace Michael.Week01
 
             Console.WriteLine($"a number between 0 and {maxNum} has been chosen. guess it.");
 
-            while (true)
+            if (attempts == -1)
             {
+                attempts = (int)Math.Floor(Math.Log(maxNum, 2));
+                Console.WriteLine($"you start with {attempts} guesses.\n");
+            }
 
+            for (int i = 0; i < attempts; i++)
+            {
                 guess = IntInput();
 
                 if (guess > number)
                 {
-                    Console.WriteLine($"sorry, your number {guess} is too big!");
+                    Console.WriteLine($"sorry, your number {guess} is too big! You have {attempts - (i + 1)} guess(es) left.");
                 }
                 else if (guess < number)
                 {
-                    Console.WriteLine($"sorry, your number {guess} is too small!");
+                    Console.WriteLine($"sorry, your number {guess} is too small! You have {attempts - (i + 1)} guess(es) left.");
                 }
                 else
                 {
-                    Console.WriteLine($"congrats! you won, the number was {guess}");
+                    Console.WriteLine($"congrats! you won, the number was {guess}. You needed {i + 1} guesses.");
                     return;
                 }
-
             }
+
+            Console.WriteLine("You used all your guesses up. Sorry but you lost.");
+            Console.WriteLine($"The number was {number}.");
+
         }
 
 
@@ -256,28 +264,41 @@ namespace Michael.Week01
                     num1 = FloatInput();
                 }
 
-                char operation = CharInput();
-
                 float num2 = FloatInput();
 
-                switch (operation)
+                bool correctOperation = false;
+
+                char operation = ' ';
+
+                while (!correctOperation)
                 {
-                    case '+':
-                        result = num1 + num2;
-                        break;
-                    case '-':
-                        result = num1 - num2;
-                        break;
-                    case '*':
-                        result = num1 * num2;
-                        break;
-                    case '/':
-                        result = num1 / num2;
-                        break;
-                    default:
-                        Console.WriteLine("nope, not an option");
-                        break;
+                    operation = CharInput();
+
+                    switch (operation)
+                    {
+                        case '+':
+                            result = num1 + num2;
+                            correctOperation = true;
+                            break;
+                        case '-':
+                            result = num1 - num2;
+                            correctOperation = true;
+                            break;
+                        case '*':
+                            result = num1 * num2;
+                            correctOperation = true;
+                            break;
+                        case '/':
+                            result = num1 / num2;
+                            correctOperation = true;
+                            break;
+                        default:
+                            Console.WriteLine("nope, not an option");
+                            break;
+                    }
+
                 }
+
 
                 Console.WriteLine($"{num1} {operation} {num2} = {result}");
 
@@ -471,24 +492,16 @@ namespace Michael.Week01
         }
 
 
-
         public static void TheGameAlt()
         {
 
         }
 
 
-
-
-
-        public static void ConsoleInput()
+        public static void Start()
         {
-
             BusinessCard();
-
         }
-
-
 
     }
 }

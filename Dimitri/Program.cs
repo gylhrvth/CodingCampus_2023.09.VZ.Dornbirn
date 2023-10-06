@@ -1,1 +1,1 @@
-﻿Dimitri.Week02.ConsoleInput.Main();
+﻿Dimitri.Week02.PrimitiveDatentypen.Main();

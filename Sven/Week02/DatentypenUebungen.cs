@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace Sven.Week02
 {
-    public class DatentypenÜbungen
+    public class DatentypenUebungen
     {
 
         public static void StartDatentypenÜbungen()
@@ -32,7 +32,7 @@ namespace Sven.Week02
             Console.WriteLine();
 
             Console.WriteLine("Result Teilen:");
-            Teilen();
+            Teilen( 1 ) ;
             Console.WriteLine();
 
 
@@ -66,7 +66,7 @@ namespace Sven.Week02
         {
             for (int i = 0; i <= 1000; i++)
             {
-                Console.WriteLine(i / 10.0);
+                Console.WriteLine($"{i / 10.0:N1}");
             }
         }
 
@@ -77,21 +77,23 @@ namespace Sven.Week02
             for (int i = 0; i <= 1000; i++)
             {
                 Console.WriteLine($"Result 1 digit: {result,3: 0.0}");
-                Console.WriteLine($"Result 2 digit: {result,7: 0.00}");
+                Console.WriteLine($"Result 2 digit: {result,10: 0.00}");
                 result = result + 0.1;
 
             }
         }
 
-        public static void Teilen()
+        public static double Teilen (double count)
         {
-
+            count = 0;
             for (int i = 0; i <= 20; i++)
             {
-                Console.WriteLine(i + " / 5 =");
-                Console.WriteLine(i + " / 5.0 =");
-            }
+                Console.WriteLine(i + $" / 5 = {count / 5: 0}");
+                Console.WriteLine(i + $" / 5.0 = {count / 5:0.0}");
+                count++;
 
+            }
+            return count;
         }
     }
 }
