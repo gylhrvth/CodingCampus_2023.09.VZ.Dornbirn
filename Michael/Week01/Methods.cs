@@ -15,14 +15,13 @@ namespace Michael.Week01
         {
             for (int i = 0; i < length; i++)
             {
-                Console.Write(character + " ");
+                Console.Write(character + "");
             }
             if (newLine)
             {
                 Console.WriteLine("");
             }
         }
-
 
 
         public static void printSquare(char character, int length)
@@ -34,7 +33,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printRect(char character, int width, int length)
         {
             for (int i = 0; i < length; i++)
@@ -43,9 +41,6 @@ namespace Michael.Week01
             }
         }
 
-
-
-        /* printRect loop */
 
         public static void printRectLoop(char character, int width, int length)
         {
@@ -60,7 +55,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printTriangleBottomLeft(char character, int width)
         {
             for (int i = 0; i < width; i++)
@@ -69,9 +63,6 @@ namespace Michael.Week01
             }
         }
 
-
-
-        /* printTriangleBottomLeft loop */
 
         public static void printTriangleBottomLeftLoop(char character, int width)
         {
@@ -86,8 +77,6 @@ namespace Michael.Week01
         }
 
 
-
-
         public static void printTriangleTopLeft(char character, int width)
         {
             for (int i = width; i > 0; i--)
@@ -96,10 +85,6 @@ namespace Michael.Week01
             }
         }
 
-
-
-
-        /* printTriangleTopLeft loop */
 
         public static void printTriangleTopLeftLoop(char character, int width)
         {
@@ -114,7 +99,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printTriangleTopRight(char character, int width)
         {
             for (int i = width; i > 0; i--)
@@ -124,8 +108,6 @@ namespace Michael.Week01
             }
         }
 
-
-        /* printTriangleTopRight loop */
 
         public static void printTriangleTopRightLoop(char character, int width)
         {
@@ -144,7 +126,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printTriangleBottomRight(char character, int width)
         {
             for (int i = 0; i < width; i++)
@@ -154,9 +135,6 @@ namespace Michael.Week01
             }
         }
 
-
-
-        /* printTriangleBottomRight loop */
 
         public static void printTriangleBottomRightLoop(char character, int width)
         {
@@ -176,7 +154,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printEmptySquare(char character, int width)
         {
             for (int i = 0; i < width; i++)
@@ -194,9 +171,6 @@ namespace Michael.Week01
             }
         }
 
-
-
-        /* printEmptySquare loop */
 
         public static void printEmptyRectLoop(char character, int length, int width)
         {
@@ -223,7 +197,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printSlash(char character, int length, bool backslash = true)
         {
             if (backslash)
@@ -243,7 +216,6 @@ namespace Michael.Week01
                 }
             }
         }
-
 
 
         public static void printTriangle(char character, int length, int offset = 0, bool solidLine = true, bool top = true)
@@ -279,8 +251,6 @@ namespace Michael.Week01
         }
 
 
-
-
         public static void printInvertedTriangle(char character, int length, int offset = 0, bool solidLine = true, bool top = true)
         {
             for (int i = length - 1; i >= 0; i--)
@@ -314,7 +284,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void printRhombus(char character, int length)
         {
             if (length % 2 == 0)
@@ -327,9 +296,6 @@ namespace Michael.Week01
             printInvertedTriangle(character, (length - 1) / 2, 1, false, true);
         }
 
-
-
-        /* printRhombus loop */
 
         public static void printRhombusLoop(char character, int length)
         {
@@ -389,8 +355,6 @@ namespace Michael.Week01
         }
 
 
-
-
         public static void printX(char character, int length)
         {
             if (length % 2 == 0)
@@ -402,7 +366,6 @@ namespace Michael.Week01
             printInvertedTriangle(character, (length + 1) / 2, 0, false, true);
             printTriangle(character, (length + 1) / 2, 0, false, false);
         }
-
 
 
         public static void printXBool(char character, int length)
@@ -429,7 +392,6 @@ namespace Michael.Week01
                 Console.WriteLine();
             }
         }
-
 
 
         public static void printChristmasTree(char character, int height)
@@ -467,7 +429,6 @@ namespace Michael.Week01
                 printChars('+', 5, true);
             }
         }
-
 
 
         public static void printCirclePythagoras(char character, int radius)
@@ -532,7 +493,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void drawCondition()
         {
             int range = 50;
@@ -560,7 +520,6 @@ namespace Michael.Week01
                 Console.WriteLine();
             }
         }
-
 
 
         public static void drawCube(char characterOut, char characterIn, int length)
@@ -675,7 +634,6 @@ namespace Michael.Week01
         }
 
 
-
         public static void drawCubeCondition(int length)
         {
             //array initialization
@@ -711,7 +669,6 @@ namespace Michael.Week01
                 Console.WriteLine();
             }
         }
-
 
 
         public static void drawPyramid(char characterOut, char characterIn, int diagonal)
@@ -752,7 +709,6 @@ namespace Michael.Week01
             }
             Console.WriteLine();
         }
-
 
 
         public static void Method()
