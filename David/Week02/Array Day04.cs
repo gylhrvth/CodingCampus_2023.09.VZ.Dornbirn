@@ -11,6 +11,8 @@ namespace David.Week02
             ArrayListe2();
             Console.WriteLine("-----");
 
+            ArrayListe3();
+
 
         }
         public static void ArrayListe1()
@@ -53,7 +55,18 @@ namespace David.Week02
             }
             
         }
+        public static void ArrayListe3()
+        {
+            int[] numbers = new int[10];
 
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                numbers[i] = i + 1;
 
-}
+                Console.WriteLine("{0}. = {1}", i, numbers[i]);
+            }
+
+        }
+
+    }
 }
