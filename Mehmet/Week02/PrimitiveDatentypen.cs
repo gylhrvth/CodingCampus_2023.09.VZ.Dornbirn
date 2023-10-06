@@ -36,7 +36,12 @@ namespace Mehmet.Week02
             double result7 = Add7();
             Console.WriteLine("--------------------------");
 
-            double result8 = Add8();
+            double random = new Random().Next(10000) + 1;
+            Console.WriteLine(random);
+            double result8 = MathSqrt(random);
+            Console.WriteLine("--------------------------");
+
+            double result9 = MathSqrt2(1297419);
             Console.WriteLine("--------------------------");
 
         }
@@ -155,13 +160,13 @@ namespace Mehmet.Week02
         }
 
 
-        public static double Add8()
+        public static double MathSqrt(double Start)
         {
             double random = new Random().Next(10000) + 1;
             Console.WriteLine(random);
 
-            double expectedSquareRoot = random;
-            double half = expectedSquareRoot / 2;
+            
+            double half =  / 2;
             double min = 0;
             double max = random;
 
@@ -182,8 +187,40 @@ namespace Mehmet.Week02
         }
 
 
+        public static double MathSqrt2(double z)
+        {
 
+            
+            double x = Math.Sqrt(z);
+            double xhalf = x / 2;
+            double min = 0;
+            double max = x;
+            Console.WriteLine("x  =      " + x);
+           
 
+            for (int y = 0; y < 16; y++)
+            {
+                
+                if (xhalf * xhalf > z)
+                {
+                    max = xhalf;
+                }
+                else
+                {
+                    min = xhalf;
+                }
+                xhalf = ((max - min) / 2) + min;
+                
+               
+            }
+
+            Console.WriteLine("x NEU = " + xhalf);
+            Console.WriteLine("%" + $"{(1 - (xhalf / x))*100,4:0.000000000}");
+            return xhalf;
+
+            
+
+        }
 
     }
 }
