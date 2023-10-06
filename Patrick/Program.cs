@@ -1,1 +1,1 @@
-﻿Patrick.Week02.PrimitiveDatentypen.start();
+﻿Patrick.Week02.uebungenArrays.start();
