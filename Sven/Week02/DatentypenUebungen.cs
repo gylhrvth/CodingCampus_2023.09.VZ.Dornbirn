@@ -93,7 +93,7 @@ namespace Sven.Week02
                 count++;
 
             }
-            return count;
+            
         }
     }
 }
