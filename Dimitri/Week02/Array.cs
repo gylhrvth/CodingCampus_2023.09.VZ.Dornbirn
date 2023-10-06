@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Dimitri.Week02
+﻿namespace Dimitri.Week02
 {
     internal class Array
     {
         public static void Main()
         {
-            Console.WriteLine("Increasing");
-            PrintArray(IncreaseNumberArray(5));
-            Console.WriteLine("COPY");
-            PrintArray(CopyArray(IncreaseNumberArray(5)));
-            Console.WriteLine("Decreasing");
-            PrintArray(DecreaseNumberArray(5));
-            Console.WriteLine("COPY");
-            PrintArray(CopyArray(DecreaseNumberArray(5)));
+            //Console.WriteLine("Increasing");
+            //PrintArray(IncreaseNumberArray(5));
+            //Console.WriteLine("COPY");
+            //PrintArray(CopyArray(IncreaseNumberArray(5)));
+            //Console.WriteLine("Decreasing");
+            //PrintArray(DecreaseNumberArray(5));
+            //Console.WriteLine("COPY");
+            //PrintArray(CopyArray(DecreaseNumberArray(5)));
             Console.WriteLine("print random array");
             PrintArray(RandomNumberArray(0, 100));
             //Console.WriteLine(CreateNumberArray(10));
             //CreateNumberArrayVerkehrt(7);
             //int[] lustigesArray = { 1, 3, 5, 7, 9 };
             //Console.WriteLine MakeACopy(lustigesArray);
-
-
-
+            PrintArrayToString0(RandomNumberArray(0, 100));
         }
 
         public static int[] IncreaseNumberArray(int n)
@@ -93,5 +85,42 @@ namespace Dimitri.Week02
 
             return arr;
         }
+
+        public static void PrintArrayToString0(int[] arr)
+        {
+            Console.Write("[ ");
+
+            //foreach (type variableName in arrayName) { }
+            foreach (int i in arr)
+            {
+                if (i < arr.Length - 1)
+                {
+                    Console.Write(arr[i] + ",");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write(" ]");
+        }
+        public static void PrintArrayToString1(int[] arr)
+        {
+            Console.Write("[ ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+
+                if (i < arr.Length - 1)
+                {
+                    Console.Write(arr[i] + ",");
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.Write(" ]");
+        }
+
     }
 }
