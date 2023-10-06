@@ -46,7 +46,7 @@ namespace David.Week02
             // Rechnen wir mit großen Zahlen UM ein genaues Ergebnis zu erhalen.
 
             int h2 = 500; //500 statt 5
-            for (int i = 0; i < 20; i++) ; // 
+            for (int i = 0; i < 20; i++) // 
             {
                 h2 = h2 + 10; // 10 statt 0,1
                 Console.WriteLine("h2 = " + (h2 / 100.0));
