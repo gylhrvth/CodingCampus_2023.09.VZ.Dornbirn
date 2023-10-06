@@ -106,7 +106,7 @@ namespace Ali.Week02
         }
         public static double printY(int max)
         {
-            double y = 0.0;
+            
             double x = 5.0;
             for(double i = 0.0;i <=max; i++)
             {
