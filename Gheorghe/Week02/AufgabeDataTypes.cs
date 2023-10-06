@@ -25,7 +25,7 @@ namespace Gheorghe.Week02
             int result = 0;
             for (int i = from; i <= to; i++)
             {
-                result = result + i;
+                result  +=  i;
             }
             return result;
         }

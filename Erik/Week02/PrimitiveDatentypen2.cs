@@ -14,11 +14,19 @@ namespace Erik.Week02
             //int result = SumOfNumbersButBetter(20, 50);
             //Console.WriteLine("Die Summe der Zahlen ist: " + result);
             //CalculateTheFactorial(20);
-            //CountFromZeroToHundred();
+            //Console.WriteLine(CountFromZeroToHundred());
             //CountFromZeroToHundred2();
             //CountFromZeroToHundred3();
             //CountFromZeroToHundredExtended();
-            divideTheNumbers();
+            //DivideTheNumbers();
+            //Console.WriteLine(CalculationOfPiLeibniz());
+            //Console.WriteLine("Berechnung von PI (Leibniz)");
+            //Console.WriteLine(Math.PI);
+            //Console.WriteLine("----------------------------------");
+            //Console.WriteLine("Berechnung von PI (Nilakantha)");
+            //Console.WriteLine(CalculationOfPiNilakantha());
+            TheSecretRow();
+
         }
 
 
@@ -58,6 +66,7 @@ namespace Erik.Week02
             for (int i = from; i <= to; i++)
             {
                 result = result + i; //das selbe wie resault += i
+
             }
             return result;
         }
@@ -73,12 +82,14 @@ namespace Erik.Week02
             return number;
         }
 
-        public static void CountFromZeroToHundred()
+        public static double CountFromZeroToHundred()
         {
+            double number = 0;
             for (double i = 0; i <= 100; i += 0.1)
             {
-                Console.WriteLine(i);
+                number = i;
             }
+            return number;
         }
 
         public static void CountFromZeroToHundred2()
@@ -109,16 +120,70 @@ namespace Erik.Week02
             }
         }
 
-        public static void divideTheNumbers()
-        {          
+        public static void DivideTheNumbers()
+        {
             for (int x = 0; x <= 20; x++)
             {
-                Console.WriteLine(x + " / " + 5 + " = " + x / 5 );
-                Console.WriteLine(x + " / " + 0.5 + " = " + x / 0.5 );
+                Console.WriteLine(x + " / " + 5 + " = " + x / 5);
+                Console.WriteLine(x + " / " + 0.5 + " = " + x / 0.5);
             }
+        }
+
+        public static double CalculationOfPiLeibniz()
+        {
+
+            double numberPi = 0;
+            double number01 = 0;
+            double number02 = 0;
+
+            for (int i = 1; i < 99999999; i += 4)
+            {
+                number01 = (double)4 / i;
+                number02 = (double)4 / (i + 2);
+
+                numberPi = numberPi + (number01 - number02);
+            }
+            return numberPi;
+
+        }
+
+        public static double CalculationOfPiNilakantha()
+        {
+
+            double numberPi = 3;
+            double numberResault01 = 0;
+            double numberResault02 = 0;
+
+
+            for (int i = 2; i < 10000; i += 4)
+            {
+                numberResault01 = 4 / (i * (i + 1.0) * (i + 2));
+                numberResault02 = 4 / ((i + 2.0) * (i + 3) * (i + 4));
+
+                numberPi = numberPi + (numberResault01 - numberResault02);
+
+            }
+            return numberPi;
+        }
+
+        public static void TheSecretRow()
+        {
+
+            for (int i = 1.0; i < 100000; i++)
+            {
+
+
+                
+            }
+
+
+
+
+
         }
     }
 }
+
 
 
 

@@ -11,7 +11,7 @@
 
             //Console.WriteLine("Pi is around {0}", CalculatePiLeibniz());
             //Console.WriteLine("Pi is around {0}", CalculatePiNilakantha());
-            //Console.WriteLine(CalcSecretRow());
+            Console.WriteLine(CalcSecretRow());
             //Console.WriteLine("Root i around {0}", CalcRootApproximation()); 
             //Console.WriteLine("Root is around {0}", CalcRootApproximationBonus()); 
 

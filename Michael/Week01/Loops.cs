@@ -8,7 +8,7 @@ namespace Michael.Week01
 {
     public class Loops
     {
-        public static void Loop()
+        public static void Start()
         {
 
 
