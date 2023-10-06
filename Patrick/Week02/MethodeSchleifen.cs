@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -7,24 +8,26 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Patrick.Week01
+namespace Patrick.Week02
 {
     internal class MethodeSchleifen
     {
-        public static void Start()
+        public static void start()
         {
-            printChars("x", 10);
-            printSquare("x", 10);
-            printRect("x", 20, 8);
-            printTriangleBottomLeft("x", 5);
-            printTriangleTopLeft("x", 5);
-            printTriangleTopRight("x", 5);
-            printTriangleBottomRight("x", 5);
-            printEmptySquare("x", 10);
-            printEmptySquare1("A", 3);
-            printSlash("x", 3);
-            printSlash1("y", 4);
-            printTriangle("x", 5);
+            //printChars("x", 10);
+            //printSquare("x", 10);
+            //printRect("x", 20, 8);
+            //printTriangleBottomLeft("x", 5);
+            //printTriangleTopLeft("x", 5);
+            //printTriangleTopRight("x", 5);
+            //printTriangleBottomRight("x", 5);
+            //printEmptySquare("x", 10);
+            //printEmptySquare1("A", 3);
+            //printSlash("x", 3, false);
+            //printPyramid("x", 5);
+            //printRhombus("x", 7);
+            //PrintX("x", 5);
+            printChristmasTree("*",10);
         }
 
 
@@ -199,14 +202,143 @@ namespace Patrick.Week01
             Console.WriteLine("-----------");
         }
 
-        public static void printSlash(string symbol, int count)
+        public static void printSlash(string symbol, int count, bool yes)
         {
 
+            if (yes == false)
+            {
+
+                for (int x = 0; x < count; x++)
+                {
+                    for (int y = 0; y < count; y++)
+                    {
+                        if (y == x)
+                        {
+                            Console.Write(symbol);
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine("-----------");
+                Console.WriteLine("-----------");
+            }
+
+            else
+            {
+                symbol = "y";
+                count = 4;
+
+                for (int x = 0; x < count; x++)
+                {
+                    for (int y = 0; y < count; y++)
+                    {
+                        if (x == count - y - 1)
+                        {
+                            Console.Write(symbol);
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+                    Console.WriteLine();
+                }
+                Console.WriteLine("-----------");
+                Console.WriteLine("-----------");
+            }
+        }
+
+        public static void printPyramid(string symbol, int count)
+        {
+            if (count % 2 == 1)
+            {
+                for (int x = 0; x < count; x++)
+                {
+                    for (int y = 0; y < count * 2 - 1; y++)
+                    {
+                        if (x == y - count + 1)
+                        {
+                            Console.Write(symbol);
+                        }
+                        else if (count - y == x + 1)
+                        {
+                            Console.Write(symbol);
+                        }
+                        else if (x == count - 1)
+                        {
+                            Console.Write(symbol);
+                        }
+
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.Write("Dies ist eine gerade Zahl, bitte durch eine ungerade Zahl ersetzen");
+                Console.WriteLine();
+            }
+            Console.WriteLine("-----------");
+            Console.WriteLine("-----------");
+
+
+        }
+
+        public static void printRhombus(string symbol, int count)
+        {
+
+            for (int x = 0; x < 2 * count - 1; x++)
+            {
+                for (int y = 0; y < 2 * count - 1; y++)
+                {
+                    if (x + y == count - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (x + y == 3 * count - 3)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (x == y + count - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (x + count - 1 == y)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(".");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("-----------");
+            Console.WriteLine("-----------");
+
+        }
+
+        public static void PrintX(string symbol, int count)
+        {
             for (int x = 0; x < count; x++)
             {
                 for (int y = 0; y < count; y++)
                 {
-                    if (y == x)
+                    if (x == y)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (count - 1 - x == y)
                     {
                         Console.Write(symbol);
                     }
@@ -219,62 +351,68 @@ namespace Patrick.Week01
             }
             Console.WriteLine("-----------");
             Console.WriteLine("-----------");
+
         }
 
-        public static void printSlash1(string symbol, int count)
+        public static void printChristmasTree(string symbol, int count)
         {
+            //Baum mit Spitze
             for (int x = 0; x < count; x++)
             {
-                for (int y = 0; y < count; y++)
+                for (int y = 0; y < count * 2 - 1; y++)
                 {
-                    if (x == count - y - 1)
+                    if (y < count - 1 - x)
                     {
-                        Console.Write(symbol);
+                        Console.Write(" ");
+                    }
+                    else if (y >= count + x)
+                    {
+                        Console.Write(" ");
                     }
                     else
                     {
-                        Console.Write(" ");
+                        Console.Write(symbol);
                     }
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("-----------");
-            Console.WriteLine("-----------");
-        }
 
-        public static void printTriangle(string symbol, int count)
-        {
-            for (int x = 0; x < count; x++)
+            //untere Reihe
+            for (int y = 0; y < count * 2 - 1; y++)
             {
-                for (int y = 0; y < count + 2; y++)
+                if (y % 2 == 0)
                 {
-                    if (x == 0 && y == count  )
-                    {
-                        Console.Write(symbol);
-                    }
-                    else if (x ==  && y % 2 == 1)
-                    {
-                        Console.Write(symbol);
-                    }
-                    else if ( x == count - 1)
-                    {
-                        Console.Write(symbol);
-                    }
-                    else
+                    Console.Write("0");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
+            }
+            Console.WriteLine();
+
+            //Stamm
+            for (int x = 0; x < count - 7; x++)
+            {
+                for (int y = 0; y < count * 2 - 1; y++)
+                {
+                    if(y <= count - 4 || y >= count + 2)
                     {
                         Console.Write(" ");
                     }
+                    else
+                    {
+                        Console.Write("+");
+                    }
+
                 }
                 Console.WriteLine();
             }
-
-           // printChars(symbol, count + 2);
-
         }
-
 
     }
 }
+
 
 
 

@@ -45,7 +45,11 @@ namespace Martin.Week02
             Console.WriteLine("i > 7:" + (ix > 7));
             Console.WriteLine("i >= 5:" + (ix >= 5));
 
-            int size = 7;
+            int size = 11;
+
+
+
+
 
             for(int i = 0; i < size; i++) // 5
             {

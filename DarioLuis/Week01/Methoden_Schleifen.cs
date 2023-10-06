@@ -245,49 +245,6 @@
                 Console.WriteLine();
 
             }
-
-        }
-        public static void PrintX(string symbol, int zahl)
-        {
-            //obere Hälfte
-            for (int i = 0; i < zahl; i++)
-            {
-                for (int j = 0; j < zahl - i - 1; j++)
-                {
-                    Console.Write(" ");
-                }
-                Console.Write(symbol);
-                if (i > 0)
-                {
-                    for (int k = 0; k < 2 * i - 1; k++)
-                    {
-                        Console.Write(" ");
-                    }
-                    Console.Write(symbol);
-                }
-                Console.WriteLine();
-
-            }
-            //untere Hälfte
-
-            for (int i = zahl - 2; i >= 0; i--)
-            {
-                for (int j = 0; j < zahl - i - 1; j++)
-                {
-                    Console.Write(" ");
-                }
-
-                Console.Write(symbol);
-                if (i > 0)
-                {
-                    for (int k = 0; k < 2 * i - 1; k++)
-                    {
-                        Console.Write(" ");
-                    }
-                    Console.Write(symbol);
-                }
-                Console.WriteLine();
-            }
         }
     }
 }

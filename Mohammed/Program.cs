@@ -1,1 +1,1 @@
-﻿Mohammed.Week01.HelloWorld.Start();
+﻿Mohammed.Week02.Day02.Start();

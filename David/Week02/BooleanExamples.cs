@@ -139,13 +139,17 @@ namespace David.Week02
         {
             for (int row = 0; row < count; row++)
             {
-                for (int col = 0; col < count; col++)
+                for (int col = 0; col < count - 1; col++)
                 {
-                    if (col == row + count)
+                    if (row + 3 == col || row - 3 == col)
                     {
                         Console.Write("o");
                     }
-                
+                    if (row + col == count - count)
+                    {
+                        Console.Write("c");
+                    }
+
                     else
                     {
                         Console.Write(".");
