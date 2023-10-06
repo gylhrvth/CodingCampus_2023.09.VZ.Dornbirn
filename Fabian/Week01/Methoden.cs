@@ -89,7 +89,7 @@ namespace Fabian.Week01
 
 
         //print characters
-        static void PrintChars(String character, int times, bool lineBreak = false)
+        public static void PrintChars(String character, int times, bool lineBreak = false)
         {
             for (int i = 0; i < times; i++)
             {
