@@ -15,7 +15,4 @@
     <Folder Include="Week01\" />
     <Folder Include="Week02\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
-  </ItemGroup>
 </Project>
