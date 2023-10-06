@@ -1,69 +1,69 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Security.Cryptography.X509Certificates;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System.Xml.Linq;
 
-namespace Dimitri.Week02
-{
-    internal class ConsoleInput
-    {
-        public static void Main()
-        {
+//namespace Dimitri.Week02
+//{
+//    internal class ConsoleInput
+//    {
+//        public static void Main()
+//        {
 
-            //Console.Write("Your string is: " + ReadString());
-            Console.Write("Your int is: " + ReadInt());
+//            //Console.Write("Your string is: " + ReadString());
+//            Console.Write("Your int is: " + ReadInt());
 
-        }
+//        }
 
-        public static string ReadString()
-        {
+//        public static string ReadString()
+//        {
 
-            Console.WriteLine("Enter a string and confirm your input with enter:");
+//            Console.WriteLine("Enter a string and confirm your input with enter:");
 
-            string UserInput = Console.ReadLine();
-
-
-            return UserInput;
-        }
-
-        public static int ReadInt()
-        {
-            int UserInput;
-
-            Console.WriteLine("Enter a int and confirm your input with enter:");
-
-            string intTmp = Console.ReadLine();
-
-            bool IsAllDigits = false;
-
-            while (IsAllDigits)
-            {
-                foreach (char c in intTmp)
-                {
-                    if (!char.IsDigit(c))
-                    {
-                        IsAllDigits = false;
-                    }
-                }
+//            string UserInput = Console.ReadLine();
 
 
-            Console.WriteLine("Enter a int and confirm your input with enter:");
+//            return UserInput;
+//        }
 
-            intTmp = Console.ReadLine();
+//        public static int ReadInt()
+//        {
+//            int UserInput;
 
-            }
-            IsAllDigits = true;
+//            Console.WriteLine("Enter a int and confirm your input with enter:");
+
+//            string intTmp = Console.ReadLine();
+
+//            bool IsAllDigits = false;
+
+//            while (IsAllDigits)
+//            {
+//                foreach (char c in intTmp)
+//                {
+//                    if (!char.IsDigit(c))
+//                    {
+//                        IsAllDigits = false;
+//                    }
+//                }
 
 
-            while (!IsAllDigits)
+//            Console.WriteLine("Enter a int and confirm your input with enter:");
+
+//            intTmp = Console.ReadLine();
+
+//            }
+//            IsAllDigits = true;
 
 
-            UserInput = Convert.ToInt32(intTmp);
+//            while (!IsAllDigits)
 
-            return UserInput;
-        }
-    }
-}
+
+//            UserInput = Convert.ToInt32(intTmp);
+
+//            return UserInput;
+//        }
+//    }
+//}
