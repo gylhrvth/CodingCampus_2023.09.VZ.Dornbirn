@@ -20,7 +20,7 @@ namespace Riccardo.Week02
                     {
                         Console.Write(symbol);
                     }
-                    else if ()
+                    else if (col == row)
                     {
                         Console.Write(symbol);
                     }
