@@ -1,1 +1,1 @@
-﻿Martin.Week02.PrimitiveDatenTypen.StartDatenTypen();
+﻿Martin.Week02.Arrays.StartArrays();

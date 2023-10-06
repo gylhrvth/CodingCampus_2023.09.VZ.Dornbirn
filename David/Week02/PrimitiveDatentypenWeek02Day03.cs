@@ -87,8 +87,11 @@ namespace David.Week02
 
         public static void PiNilakanthaReihe()
         {
-            int count = 4;
-            for (int x = 3; x < 10000; x++)
+           
+            for (int x = 1; x < 10000; x++)
+
+            //   double (4 / (x++ * x++ * x);
+                
             {
                 Console.WriteLine();
             }
