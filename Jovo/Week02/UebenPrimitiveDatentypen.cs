@@ -95,6 +95,9 @@ namespace Jovo.Week02
             Console.WriteLine("Aufgabe Wurzel");
             PrintWurzel();
 
+            Console.WriteLine("Aufgabe Wurzel2");
+            PrintWurzel2();
+
 
 
 
@@ -255,7 +258,7 @@ namespace Jovo.Week02
 
 
                 random = Math.Sqrt(random);
-               //random = (random / 2 + 1.0 / random);???wtf
+               
                 Console.WriteLine(random);
 
 
@@ -266,8 +269,27 @@ namespace Jovo.Week02
 
 
 
-        }
 
+
+
+        }
+        public static double PrintWurzel2()
+        {
+            double random = new Random().Next(10000) + 1;
+            Console.WriteLine(random);
+            for ( int i = 0; i < 1; i++)
+            {
+                random = random / 2;
+                Console.WriteLine("hallo" + random);
+                random = random * random;
+                Console.WriteLine("hallo2" + random);
+
+            }
+
+            return random;
+
+
+        }
 
        
         
