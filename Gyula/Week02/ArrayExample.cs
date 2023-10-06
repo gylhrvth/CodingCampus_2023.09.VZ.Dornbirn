@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 namespace Gyula.Week02
 {
 	public class ArrayExample

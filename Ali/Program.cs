@@ -1,1 +1,1 @@
-﻿Ali.Week02.primitive_Datentypen.Start();
+﻿Ali.Week02.Arrays.Start();
