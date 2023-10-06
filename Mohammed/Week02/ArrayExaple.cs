@@ -1,11 +1,10 @@
 ﻿using System;
 namespace Mohammed.Week02
 {
-	public class Day02
+	public class ArrayExaple
 	{
-		public static void Day02start()
+		public ArrayExaple()
 		{
-
 		}
 	}
 }

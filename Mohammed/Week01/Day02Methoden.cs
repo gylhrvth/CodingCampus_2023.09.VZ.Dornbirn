@@ -32,7 +32,7 @@ namespace Mohammed.Week01
 
         public static void PrintChars(string symbol, int count)
         {
-            for (int n = 0; n < count; n++)
+            for (int n=0; n<count; n++)
             {
                 Console.Write(symbol);
             }
