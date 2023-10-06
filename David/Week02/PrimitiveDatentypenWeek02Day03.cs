@@ -90,7 +90,7 @@ namespace David.Week02
            
             for (int x = 1; x < 10000; x++)
 
-               double (4 / (x++ * x++ * x);
+            //   double (4 / (x++ * x++ * x);
                 
             {
                 Console.WriteLine();
