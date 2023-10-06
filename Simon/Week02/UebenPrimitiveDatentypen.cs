@@ -76,16 +76,23 @@ namespace Simon.Week02
             Printdevide(0, 20); //der Grund des unterschiedes ist die gegebene Formatierung in der {} klammer das mit 5.0 ist halt genauer wegen der extra stelle
 
             Console.WriteLine("\nBerechnung von Pi");
-            double pi = CalculatePi(1, 1000000000);
+            double pi = CalculatePi(1, 100000000);
             Console.WriteLine(pi);
             Console.WriteLine("PI ==");
             Console.WriteLine(Math.PI);
             Console.WriteLine("\nPI (Nilakantha Reihe)");
-            double piv2 = CalculatePiv2(1000000000);
+            double piv2 = CalculatePiv2(100000000);
             Console.WriteLine(piv2);
             Console.WriteLine("\nPSSSSSSSSSSSSSST");
-            double secret = Calculatesecret(100);
+            double secret = Calculatesecret(4);
             Console.WriteLine(secret);
+            double secret1 = Calculatesecret(100000);
+            Console.WriteLine(secret1);
+            double secret2 = Calculatesecret(100000000);
+            Console.WriteLine(secret2);
+            // führt richtung 1.4
+            Console.WriteLine("\nI'm ROOTED");
+            double root = CalcRoot(1, 10000);
         }
         //Aufgabe Summe
         public static int PrintSummeGanzzahlen(int number1, int number2)
@@ -197,7 +204,7 @@ namespace Simon.Week02
             double devidor = 2;
             for (int i = 0; i < iterations; i++)
             {
-                pi = 4.0 / (devidor * (devidor +1) * (devidor + 2));
+                pi = 4.0 / (devidor * (devidor + 1) * (devidor + 2));
                 if (i % 2 == 0)
                 {
                     piresult = piresult + pi;
@@ -216,10 +223,35 @@ namespace Simon.Week02
             double secret = 1.0;
             for (int i = 0; i < iterations; i++)
             {
-                secret = (secret+i)/2+1/(secret+i);
-                
+                secret = (secret) / 2 + 1 / (secret);
             }
             return secret;
+        }
+        //Aufgabe Wurzelannäherung
+        public static double CalcRoot(int number1, int number2)
+        {
+            double random = new Random().Next(number2) + number1;
+            Console.WriteLine(random);
+            double min = 0;
+            double max = random;
+            double middle = 0;
+            for (int i = 0; i < 1000; i++)
+            {
+                middle = (min + max) / 2;
+                double middlesquared= middle * middle;
+                if (middlesquared > random)
+                {
+                    middle = max;
+                }
+                else
+                {
+                    middle = min;
+                }
+                middle = (min + max) / 2;
+            }
+            Console.WriteLine(random);
+
+            return middle;
         }
     }
 }
