@@ -16,9 +16,10 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //Console.WriteLine(Faktorial(10));
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
-            //FaktorialExtended(40);
+            //FaktorialExtended(21);
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //NullBisHundertv2(0.0, 100.0);
+            //NullBisHundertv1(0.0, 100.0);
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //TeilenUndHerrschen();
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
@@ -27,7 +28,10 @@ namespace Dimitri.Week02
             //Console.WriteLine(PiNilakanthaReihe(100000));
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //GeheimeReihe();
-            Console.WriteLine(WurzelAnnaeherung(500));
+            //Console.WriteLine(WurzelAnnaeherung(500));
+            //Console.WriteLine(WurzelAnnaeherungBonus(1297419));
+            //IstPrimzahl(31);
+            PrintAllePrimzahlen(31);
         }
 
         public static int Summe(int start, int end) //void hat keinen rückgabewert und int/bool/float hat genau einen Rückgabewert
@@ -169,21 +173,23 @@ namespace Dimitri.Week02
             double min = 0;
             double max = random;
 
-            for(int i=0; i<1000;i++)
+            for (int i = 0; i < 1000; i++)
             {
                 double quadr = mitte * mitte;
 
-                if(quadr > random)
+                if (quadr > random)
                 {
                     max = mitte;
-                } else if(quadr < random)
+                }
+                else if (quadr < random)
                 {
                     min = mitte;
-                } else
+                }
+                else
                 {
                     break;
                 }
-                mitte = (max + min)/2;
+                mitte = (max + min) / 2;
                 Console.WriteLine("Mitte: " + mitte);
             }
 
@@ -193,5 +199,123 @@ namespace Dimitri.Week02
             return awurzel;
 
         }
+
+        public static double WurzelAnnaeherungBonus(double random)
+        {
+            double awurzel = random;
+            double mitte = awurzel / 2;
+            double min = 0;
+            double max = random;
+            int count = 0;
+
+            for (int i = 0; i < 1000; i++)
+            {
+                double quadr = mitte * mitte;
+
+                if (quadr > random)
+                {
+                    max = mitte;
+                }
+                else if (quadr < random)
+                {
+                    min = mitte;
+                }
+                else
+                {
+                    break;
+                }
+                mitte = (max + min) / 2;
+
+                Console.WriteLine();
+
+                Console.WriteLine("Mitte: " + mitte);
+                double differenz = Math.Abs(mitte - Math.Sqrt(random));
+
+                double fehlerInProzent = differenz / Math.Sqrt(random);
+
+                Console.WriteLine(fehlerInProzent + "%");
+
+                if (fehlerInProzent >= 0.1)
+                {
+                    count++;
+                }
+            }
+
+
+            Console.WriteLine(count);
+
+
+
+            return awurzel;
+
+        }
+
+        public static void IstPrimzahl(long x)
+        {
+            bool istPrim = false;
+            for (int i = 2; i < x; i++)
+            {
+                if (x % i == 0)
+                {
+                    istPrim = false;
+                    break;
+                }
+                else
+                {
+                    istPrim = true;
+                }
+            }
+
+            if (istPrim)
+            {
+                Console.WriteLine(x + " ist eine Primzahl");
+            }
+            else
+            {
+                Console.WriteLine(x + " ist keine Primzahl");
+            }
+        }
+
+        public static void PrintAllePrimzahlen(int x)
+        {
+            bool istPrim = false;
+            int count = 0;
+            for (int i = 1; i <= x; i++)
+            {
+
+                for (int j = 1; j <= i; j++)
+                {
+                    if (i == 2)
+                    {
+                        istPrim = true;
+                        break;
+                    }
+                    else if (i % j == 0 && j != 1 && j != i)
+                    {
+                        istPrim = false;
+                        break;
+
+                    }
+                    else if (i % j != 0)
+                    {
+                        istPrim = true;
+                        break;
+                    }
+                }
+                 
+                if (istPrim) { count++; }
+
+                if (count == 2)
+                {
+                    Console.WriteLine((i - 1) + " und " + i + " sind Primzwillinge.");
+
+                    count = 0;
+                }
+
+            }
+
+
+        }
+
     }
 }

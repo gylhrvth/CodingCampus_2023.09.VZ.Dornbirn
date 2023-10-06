@@ -21,14 +21,14 @@ namespace Niklas.Week02
 			Console.WriteLine("d = " + d);
 			for (int i = 0; i < 20; i++)
 			{
-                d = d + 0.1;
+                d += 0.1;
                 Console.WriteLine("d = " + d);
             }
 
 			int d2 = 500;
 			for (int i = 0; i < 20; i++)
 			{
-				d2 = d2 + 10;
+				d2 += 10;
 				Console.WriteLine("d2 = " + (d2 / 100.0));
 			}
 

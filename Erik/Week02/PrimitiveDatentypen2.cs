@@ -19,7 +19,14 @@ namespace Erik.Week02
             //CountFromZeroToHundred3();
             //CountFromZeroToHundredExtended();
             //DivideTheNumbers();
-            CalculationOfPi();
+            //Console.WriteLine(CalculationOfPiLeibniz());
+            //Console.WriteLine("Berechnung von PI (Leibniz)");
+            //Console.WriteLine(Math.PI);
+            //Console.WriteLine("----------------------------------");
+            //Console.WriteLine("Berechnung von PI (Nilakantha)");
+            //Console.WriteLine(CalculationOfPiNilakantha());
+            TheSecretRow();
+
         }
 
 
@@ -122,51 +129,61 @@ namespace Erik.Week02
             }
         }
 
-        public static void CalculationOfPi()
+        public static double CalculationOfPiLeibniz()
         {
 
-            double numberPi;
-            double number01;
-            double number02;
-            bool numberChange = true;
-            bool charChange = true;
+            double numberPi = 0;
+            double number01 = 0;
+            double number02 = 0;
 
-            for (int i = 1; i < 30000; i += 2)
+            for (int i = 1; i < 99999999; i += 4)
             {
+                number01 = (double)4 / i;
+                number02 = (double)4 / (i + 2);
 
-                if (numberChange)
-                {
-                    number01 = (double)4 / i;
+                numberPi = numberPi + (number01 - number02);
+            }
+            return numberPi;
 
-                    numberChange = false;
-                    Console.WriteLine(number01);
-                }
-                else
-                {
-                    number02 = (double)4 / i;
-                    numberChange = true;
-                    Console.WriteLine(number02);
-                }
+        }
 
-                if (charChange)
-                {
+        public static double CalculationOfPiNilakantha()
+        {
 
-                    numberPi = number01 - number02;
-                    charChange = false;
+            double numberPi = 3;
+            double numberResault01 = 0;
+            double numberResault02 = 0;
 
-                }
-                else
-                {
-                    numberPi = number01 + number02;
-                    numberChange = true;
-                }
+
+            for (int i = 2; i < 10000; i += 4)
+            {
+                numberResault01 = 4 / (i * (i + 1.0) * (i + 2));
+                numberResault02 = 4 / ((i + 2.0) * (i + 3) * (i + 4));
+
+                numberPi = numberPi + (numberResault01 - numberResault02);
 
             }
+            return numberPi;
+        }
+
+        public static void TheSecretRow()
+        {
+
+            for (int i = 1.0; i < 100000; i++)
+            {
+
+
+                
+            }
+
+
+
 
 
         }
     }
 }
+
 
 
 
