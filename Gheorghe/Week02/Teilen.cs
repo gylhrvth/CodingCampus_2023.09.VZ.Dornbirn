@@ -33,13 +33,14 @@ namespace Gheorghe.Week02
         public static void BerechnungvonLeibniz(int input)
         {
             double pi = 0;
-            for (int i = 1; i < input; i = i + 4)
+            for (double i = 1; i < input; i += 2 )
             {
-                pi = pi + (4.0 / i);
-                pi = pi - (4.0 / (i + 2));
+                pi += 4.0 / i;
+                pi *= -1;
 
             }
             Console.WriteLine(pi);
         }
+
     }
 }
