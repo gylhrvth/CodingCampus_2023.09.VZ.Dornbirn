@@ -267,6 +267,8 @@ namespace Mohammed.Week01
                     {
                         Console.Write(". ");
                     }
+
+
                 }
             }
         }
