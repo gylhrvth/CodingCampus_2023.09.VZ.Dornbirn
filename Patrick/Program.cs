@@ -1,1 +1,1 @@
-﻿Patrick.Week02.uebungenArrays.start();
+﻿using Patrick.Week03;ExamplesArrays.start();
