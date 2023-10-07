@@ -29,7 +29,8 @@ namespace Dimitri.Week02
             //Console.WriteLine("\r\n/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\\r\n");
             //GeheimeReihe();
             //Console.WriteLine(WurzelAnnaeherung(500));
-            Console.WriteLine(WurzelAnnaeherungBonus(1297419));
+            //Console.WriteLine(WurzelAnnaeherungBonus(1297419));
+            Console.WriteLine(WurzelAnnaeherungv2());
             //IstPrimzahl(31);
             //PrintAllePrimzahlen(31);
         }
@@ -248,6 +249,38 @@ namespace Dimitri.Week02
 
 
             return awurzel;
+
+        }
+
+        public static double WurzelAnnaeherungv2()
+        {
+            double random = new Random().Next(10000) + 1;
+            double awurzel = random;
+            double mitte = awurzel / 2;
+            double min = 0;
+            double max = random;
+
+            for(int i = 0; i < 100; i++)
+            {
+                double quadrat = mitte * mitte;
+
+                if(quadrat > random)
+                {
+                    max = mitte;
+                } else if (quadrat < random)
+                {
+                    min = mitte;
+                } else
+                {
+                    break;
+                }
+
+                mitte = (min + max) / 2;
+
+            }
+
+            Console.WriteLine($"Die Wurzel von {random} ist:");
+            return mitte;
 
         }
 
