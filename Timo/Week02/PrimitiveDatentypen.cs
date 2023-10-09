@@ -42,10 +42,13 @@ namespace Timo.Week02
                 Console.WriteLine("Result 1 digit = {0:0.0}", result);
                 Console.WriteLine("result 2 digit = {0,9:N2}", result);
             }
-            */
+            
             Console.WriteLine("\nAufgabe5: Teilen und Herrschen");
             Divide(0, 20);
-            
+            */
+            Console.WriteLine("\nAufgabe6: Berechnung von Pi (Leibniz Reihe)");
+            double pi=PiNilakantha(10000000000);
+            Console.WriteLine(pi);
         }
 
 
@@ -72,7 +75,6 @@ namespace Timo.Week02
             }
             return fakt;
         }
-        //ToDo 
 
 
         //Aufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten
@@ -103,7 +105,6 @@ namespace Timo.Week02
 
 
         //Aufgabe4: Von 0 bis 100 Zählen in 0.1er Schritten erweitert
-        //TODO fertigstellen!
         public static double CountPlus01Extended(int j)
         {
             double result = 0;
@@ -111,7 +112,7 @@ namespace Timo.Week02
             for (double i = 0; i <= j; i++)
             {
                 a = (a + 10);
-                result = ((a -10) / 100.0);
+                result = ((a - 10) / 100.0);
             }
             return result;
         }
@@ -120,14 +121,59 @@ namespace Timo.Week02
         //Aufgabe5: Teilen und Herrschen
         public static double Divide(int start, int stop)
         {
+            int z = start;
             for (int i = start; i <= stop; ++i)
             {
-                int a = i / 50;
+                int a = i / 5;
                 double b = i / 5.0;
                 Console.WriteLine(i + " / 5 = " + a);
                 Console.WriteLine(i + " / 5.0 = " + b);
             }
             return 0;
+        }
+
+
+        //Aufgabe6: Berechnung von Pi (Leibniz Reihe)
+        public static void PiLeibnitz(long NumberOfRepetitions)
+        {
+            double Pi = 0.0;
+            long i = 1;
+            while (i < NumberOfRepetitions)
+            {
+                Pi = Pi + 4.0 / i;
+                if (i % 100000000 == 1)
+                {
+                    Console.WriteLine("Pi = " + Pi);
+                }
+                Pi = Pi * -1;
+                i = i + 2;
+            }
+            if (i % 2 == 0)
+            {
+                Console.WriteLine("\nPi = " + Pi);
+            }
+            else
+            {
+                Console.WriteLine("\nPi = " + (Pi*-1));
+            }
+        }
+
+
+        //Aufgabe7: 
+        public static double PiNilakantha(long max)
+        {
+            double pi = 3.0;
+            for (double i = 2; i < max; i += 2)
+            {
+
+                pi += 4.0 / (i * (i + 1) * (i + 2));
+                pi *= -1;
+                if (i % 100000000 == 0)
+                {
+                    Console.WriteLine("Pi = " + pi);
+                }
+            }
+            return pi;
         }
     }
 }

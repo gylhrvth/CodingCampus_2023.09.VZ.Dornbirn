@@ -1,1 +1,1 @@
-﻿DarioLuis.Week02.Taschenrechner.Start();
+﻿DarioLuis.Week02.Pirechnerv2.CalculatePi();

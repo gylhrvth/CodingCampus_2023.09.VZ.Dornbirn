@@ -6,17 +6,17 @@ namespace Fabian.Week02
     {
         public static void Start()
         {
-            //PrintReadString();
-            //PrintReadInt();
-            //PrintGuessGame();
-            //PrintMenu();
-            //PrintCalculator();
-            //PrintCalculatorBonus();
-            PrintBusinessCard();
+            //ReadString();
+            //ReadInt();
+            GuessGame();
+           // Menu();
+            //Calculator();
+            //CalculatorBonus();
+            //BusinessCard();
             //TheGameBegins();
         }
 
-        public static void PrintReadString()
+        public static void ReadString()
         {
             Console.WriteLine("Enter a text: ");
             String text = Console.ReadLine();
@@ -24,7 +24,7 @@ namespace Fabian.Week02
             Console.WriteLine($"text = {text}");
         }
 
-        public static void PrintReadInt()
+        public static void ReadInt()
         {
             int num = 0;
             while (num == 0)
@@ -42,7 +42,7 @@ namespace Fabian.Week02
             }
         }
 
-        public static void PrintGuessGame()
+        public static void GuessGame()
         {
             int num = new Random().Next(100) + 1;
             int guess = 0;
@@ -76,7 +76,7 @@ namespace Fabian.Week02
             }
         }
 
-        public static void PrintMenu()
+        public static void Menu()
         {
             bool playAgain = true;
 
@@ -125,7 +125,7 @@ namespace Fabian.Week02
             }
         }
 
-        public static void PrintCalculator()
+        public static void Calculator()
         {
             bool playAgain = true;
 
@@ -195,7 +195,7 @@ namespace Fabian.Week02
             }
         }
 
-        public static void PrintCalculatorBonus()
+        public static void CalculatorBonus()
         {
             bool playAgain = true;
             double totalResult = 0;
@@ -212,7 +212,7 @@ namespace Fabian.Week02
                     double num = Convert.ToDouble(Console.ReadLine());
                     totalResult += num;
 
-                    while (true)
+                    while (option != "=")
                     {
                         while (option == "")
                         {
@@ -236,7 +236,7 @@ namespace Fabian.Week02
                             }
                             else
                             {
-                                PrintCalculatorBonus();
+                                CalculatorBonus();
                             }
                         }
                         else if (option == "^")
@@ -254,20 +254,24 @@ namespace Fabian.Week02
                         {
                             case "+":
                                 totalResult += num;
-                                Console.WriteLine(totalResult);
+                                Console.WriteLine($"result = {totalResult}");
+                                option = "";
                                 break;
                             case "-":
                                 totalResult -= num;
-                                Console.WriteLine(totalResult);
+                                Console.WriteLine($"result = {totalResult}");
+                                option = "";
                                 break;
                             case "*":
                                 totalResult *= num;
-                                Console.WriteLine(totalResult);
+                                Console.WriteLine($"result = {totalResult}");
+                                option = "";
                                 break;
                             case "^":
                                 double pow = Math.Pow(num, exponent);
                                 totalResult += pow;
-                                Console.WriteLine(totalResult);
+                                Console.WriteLine($"result = {totalResult}");
+                                option = "";
                                 break;
                             case "/":
                                 if (num == 0 || totalResult == 0)
@@ -276,9 +280,11 @@ namespace Fabian.Week02
                                     break;
                                 }
                                 totalResult /= num;
-                                Console.WriteLine(totalResult);
+                                Console.WriteLine($"result = {totalResult}");
+                                option = "";
                                 break;
                         }
+
                     }
                 }
                 catch (Exception ex)
@@ -287,15 +293,15 @@ namespace Fabian.Week02
                 }
             }
         }
-
-        public static void PrintBusinessCard()
+        public static void BusinessCard()
         {
             String firstName = "";
             String lastName = "";
             String email = "";
             String phoneNumber = "";
-            int test = 5;
+            double width = 49;
 
+            Console.WriteLine("Welcome to my business card maker! :)");
 
             while (firstName == "")
             {
@@ -307,48 +313,96 @@ namespace Fabian.Week02
                 Console.WriteLine("Enter your last name: ");
                 lastName = Console.ReadLine();
             }
+            double nameSpaces = ((firstName.Length + lastName.Length) / 2) - 0.5;
             while (phoneNumber == "")
             {
                 Console.WriteLine("Enter your phone number: ");
                 phoneNumber = Console.ReadLine();
             }
+            double phoneSpaces = phoneNumber.Length / 2;
             while (email == "")
             {
                 Console.WriteLine("Enter your email: ");
                 email = Console.ReadLine();
             }
+            double emailSpaces = email.Length / 2;
 
-            for (int i = 0; i < 44; i++)
+
+
+
+            double nameSpaces2 = nameSpaces;
+
+            if ((firstName.Length + lastName.Length) % 2 == 1)
             {
-                Console.Write("*");
+                nameSpaces2 += 1;
+            }
+
+            double phoneSpaces2 = phoneSpaces;
+
+            if (phoneNumber.Length % 2 == 0)
+            {
+                phoneSpaces2 -= 1;
+            }
+
+            double emailSpaces2 = emailSpaces;
+
+            if (email.Length % 2 == 0)
+            {
+                emailSpaces2 -= 1;
+            }
+          
+
+            Methoden.PrintChars(" ", 25);
+            for (int i = 0; i < width / 2; i++)
+            {
+                Console.Write("* ");
             }
             Console.WriteLine();
-            for (int j = 0; j < 15; j++)
+            for (int j = 0; j < 14; j++)
             {
-                Console.WriteLine("*");
-                if (j == 4)
+                if (j == 5)
                 {
-                    Console.WriteLine($"* {firstName,20} {lastName} {"*",19}");
-                }
-                else if (j == 6)
-                {
-                    Console.WriteLine($"* {phoneNumber,27} {"*",14}");
+                    Methoden.PrintChars(" ", 25);
+                    Console.Write("*");
+                    Methoden.PrintChars(" ", (width / 2 - 2 - nameSpaces));
+                    Console.Write($"{firstName} {lastName}");
+                    Methoden.PrintChars(" ", (width / 2 - 2 -  nameSpaces2));
+                    Console.WriteLine("*");
                 }
                 else if (j == 7)
                 {
-                    Console.WriteLine($"* {email,30} {"*",11}");
+                    Methoden.PrintChars(" ", 25);
+                    Console.Write("*");
+                    Methoden.PrintChars(" ", width / 2 - 2 - phoneSpaces);
+                    Console.Write($"{phoneNumber}");
+                    Methoden.PrintChars(" ", width/ 2 - 2 - phoneSpaces2);
+                    Console.WriteLine("*");
+                }
+                else if (j == 8)
+                {
+                    Methoden.PrintChars(" ", 25);
+                    Console.Write("*");
+                    Methoden.PrintChars(" ", (width / 2 - 2) - emailSpaces);
+                    Console.Write($"{email}");
+                    Methoden.PrintChars(" ", (width / 2 - 2) - emailSpaces2);
+                    Console.WriteLine("*");
                 }
                 else
                 {
-                    Console.Write($"{"*",-43}");
+                    Methoden.PrintChars(" ", 25);
+                    Console.Write("*");
+                    Methoden.PrintChars(" ", width - 2);
+                    Console.WriteLine("*");
                 }
             }
-            Console.WriteLine();
-            for (int i = 0; i < 44; i++)
+            Methoden.PrintChars(" ", 25);
+            for (int i = 0; i < width / 2; i++)
             {
-                Console.Write("*");
+                Console.Write("* ");
             }
+            Console.WriteLine();
         }
+
 
         public static void TheGameBegins()
         {
@@ -356,9 +410,12 @@ namespace Fabian.Week02
             bool playAgain = true;
             while (playAgain)
             {
-                int tries = 0; ;
+                int tries = 0;
                 int value = new Random().Next(10000);
                 int tmp = value;
+                int guess = -1;
+                int wrongPlaceNumbers = 0;
+                Console.WriteLine(value);
 
                 int firstNumber = value / 1000;
                 tmp -= firstNumber * 1000;
@@ -368,10 +425,87 @@ namespace Fabian.Week02
                 tmp -= thirdNumber * 10;
                 int fourthNumber = tmp;
 
+                
 
-                Console.WriteLine("Enter a number between 0 and 9999: ");
-                int guess = Convert.ToInt32(Console.ReadLine());
+                while(guess != value) {
+                    try
+                    {
+                        Console.WriteLine("Enter a number between 0 and 9999: ");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                        tries++;
 
+                        int tmp2 = guess;
+                        int firstNumber2 = tmp2 / 1000;
+                        tmp2 -= firstNumber2 * 1000;
+                        int secondNumber2 = tmp2 / 100;
+                        tmp2 -= secondNumber2 * 100;
+                        int thirdNumber2 = tmp2 / 10;
+                        tmp2 -= thirdNumber2 * 10;
+                        int fourthNumber2 = tmp2;
+
+
+                        if (guess == value)
+                        {
+                            Console.WriteLine("You won!");
+                            Console.WriteLine($"you needed {tries} tries");
+
+                            Console.WriteLine("Do you want to play again? (Y/N)");
+                            String restart = Console.ReadLine();
+                            restart = restart.ToUpper();
+
+                            if (restart == "N" || restart == "")
+                            {
+                                Console.WriteLine("Bye, have a nice day! :)");
+                                playAgain = false;
+                            }
+                            break;
+                        }
+                        else if(guess < 0 || guess > 9999)
+                        {
+                            Console.WriteLine("only numbers between between 0 and 9999!!");
+                        }
+
+                        if (firstNumber == firstNumber2)
+                        {
+                            Console.WriteLine("the first digit is right!");
+                        }
+                        if (firstNumber != firstNumber2 && (firstNumber == secondNumber2 || firstNumber == thirdNumber2 || firstNumber == fourthNumber2))
+                        {
+                            wrongPlaceNumbers++;
+                        }
+                        if (secondNumber == secondNumber2)
+                        {
+                            Console.WriteLine("the second digit is right!");
+                        }
+                        if (secondNumber != secondNumber2 && (secondNumber == firstNumber2 || secondNumber == thirdNumber2 || secondNumber == fourthNumber2))
+                        {
+                            wrongPlaceNumbers++;
+                        }
+                        if (thirdNumber == thirdNumber2)
+                        {
+                            Console.WriteLine("the third digit is right!");
+                        }
+                        if (thirdNumber != thirdNumber2 && (thirdNumber == firstNumber2 || thirdNumber == secondNumber2 || thirdNumber == fourthNumber2))
+                        {
+                            wrongPlaceNumbers++;
+                        }
+                        if (fourthNumber == fourthNumber2)
+                        {
+                            Console.WriteLine("the fourth digit is right!");
+                        }
+                        if (fourthNumber != fourthNumber2 && (fourthNumber == firstNumber2 || fourthNumber == secondNumber2 || fourthNumber == thirdNumber2))
+                        {
+                            wrongPlaceNumbers++;
+                        }
+
+                        Console.WriteLine($"{wrongPlaceNumbers} numbers are on the wrong place");
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Enter a valid value!");
+                    }
+
+                }             
             }
         }
     }

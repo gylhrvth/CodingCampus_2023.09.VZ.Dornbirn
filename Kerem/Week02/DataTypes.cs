@@ -21,7 +21,14 @@ namespace Kerem.Week02
             Console.WriteLine("PRINTDECIMALNUMSV2");
             printDecimalNumsV2(1000);
             Console.WriteLine("PRINTDECIMALNUMSEXTEND");
-            double d3 = printDecimalNumsextend(0, 100);
+            printDecimalNumsextend();
+            Console.WriteLine("PRINTSHARECONQUER");
+            printShareConquer();
+            Console.WriteLine("NILAKANTHAROW");
+            printNilkanthaRow();
+            Console.WriteLine();
+            Console.WriteLine("LEIBNIZROW");
+            printLeibnicReihe();
 
 
 
@@ -83,17 +90,110 @@ namespace Kerem.Week02
 
             }
         }
-        public static double printDecimalNumsextend(int minNum, int maxNum)
+        public static double printDecimalNumsextend()
         {
-            double d3 = 0;
+            double minNum = 0;
+            int maxNum = 100;
             for (double i = minNum; i <= maxNum; i += 0.1)
             {
-                d3 += 0.1;
+
                 Console.WriteLine($"Result 1 digit = {i,3:N1}");
                 Console.WriteLine($"Result 2 digit = {i,7:N2}");
 
             }
-            return d3;
+            return minNum;
+        }
+        public static double printShareConquer()
+        {
+
+
+
+            int maxNum = 20;
+            int minNum = 0;
+
+
+            for (int i = minNum; i <= maxNum; i++)
+            {
+                Console.WriteLine($"Result w int  {i}/ 5 = {i / 5}");
+                Console.WriteLine($"Result w double  {i}/ 5.0 = {i / 5.0}");
+
+
+            }
+
+            return minNum;
+
+        }
+
+        public static double printNilkanthaRow()
+        {
+            double num1 = 3;
+            double num2 = 2;
+            double a = 0;
+            double b = 0;
+
+            for (int i = 0; i < 1; i++)
+            {
+                a = 4 / (num2 * (num2 + 1) * (num2 + 2));
+                Console.WriteLine(a);
+            }
+
+            num2 += 2;
+            for (int j = 0; j < 1; j++)
+            {
+                b = 4 / (num2 * (num2 + 1) * (num2 + 2));
+                Console.WriteLine(b);
+            }
+            num2 += 2;
+
+            num1 = 3 + (a - b);
+            {
+                Console.Write(num1);
+            }
+
+            return num1;
+        }
+
+
+
+        public static double printLeibnicReihe()
+        {
+            double num1 = 1;
+            double a = 0;
+            double b = 0;
+
+            for (int i = 0; i < 10; i++)
+            {
+                a = 4 / (num1);
+                Console.WriteLine(a);
+            }
+
+            num1 += 2;
+
+            for (int j = 0; j < 10; j++)
+            {
+                b = 4 / (num1);
+
+                Console.WriteLine(b);
+            }
+
+            num1 += 2;
+
+            num1 = a - b;
+            {
+                Console.Write(num1);
+
+            }
+
+            return num1;
+        }
+        public static double SecretRow()
+        {
+
+
+
+
+
+            return 0;
         }
 
 

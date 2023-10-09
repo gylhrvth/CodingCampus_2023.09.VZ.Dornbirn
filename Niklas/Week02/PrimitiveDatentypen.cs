@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace Niklas.Week02
             Console.WriteLine("\nFaktorial: ");
             PrintFaktorial(1);
             Console.WriteLine();
-
+            
             Console.WriteLine("\nCount: ");
             Count();
             Console.WriteLine();
@@ -38,14 +39,19 @@ namespace Niklas.Week02
             Console.WriteLine("\nPi2: ");
             Pi2();
             Console.WriteLine();
-
+            
             Console.WriteLine("\nGeheime Reihe: ");
             GeheimeReihe();
             Console.WriteLine();
-
+            
             Console.WriteLine("\nWurzel: ");
-            Wurzel();
-            Console.WriteLine();
+            double random = new Random().Next(10000) + 1;
+            Console.WriteLine($"Die zufällige Zahl ist: {random}");
+
+            Console.WriteLine($"Die Math.Sqrt()      : {Math.Sqrt(random)}");
+            Console.WriteLine($"Meine Wurzel Funktion: {Wurzel(random)}");
+
+            Console.WriteLine(); 
         }
 
         static void PrintSumme(int times)
@@ -85,12 +91,11 @@ namespace Niklas.Week02
                     if (times % 2 != 0)
                     {
                         Console.Write("");
-                    }
+                    } 
                     else { }
                     rows++;
                 }
             }
-
         }
         static void Count()
         {
@@ -106,7 +111,6 @@ namespace Niklas.Week02
         static void Count2(double times, double times2)
         {
             Console.WriteLine($"result 1 digit = {times / 10.0:N1} ");
-
             Console.WriteLine($"result 2 digit = {times2 / 100.0,10:N1}0");
 
             for (int i = 0; i < 1000; i++)
@@ -121,7 +125,6 @@ namespace Niklas.Week02
 
         static void Teilen(double times)
         {
-
             for (int rows = 0; rows <= 20; rows++)
             {
                 Console.Write($"{rows,2} / 5   = {times / 5,1:N1}");
@@ -142,56 +145,69 @@ namespace Niklas.Week02
                 result -= (4.0 / (index + 2));
 
             }
-
             Console.WriteLine(result);
-
         }
         static void Pi2()
         {
-            int i = 2, j = 3, k = 4;
             double result = 3;
-            for (long index = i * j * k; index < 50000000; index += 4)
+            for (long index = 2; index < 50000000; index += 2)
             {
 
-                result += (4.0 / index);
-                result -= (4.0 / (index + 2));
-                i += 2;
-                j += 2;
-                k += 2;
-
+                result += (4.0 / (index * (index + 1) * (index + 2)));
+                index += 2;
+                result -= (4.0 / (index * (index + 1) * (index + 2)));
             }
-
             Console.WriteLine(result);
-
         }
 
         static void GeheimeReihe()
         {
-            for (double index = 1.0; index < 1000; index++)
+            double wert = 1.0;
+            for (int i = 1; i < 100; i++)
             {
-                Console.WriteLine((index / 2) + (index / 1));
-                index++;
+                Console.WriteLine($"Wert = {wert,20} / 2 + 1 / {wert}");
+                wert = wert / 2 + 1 / wert;
             }
-
 
         }
 
-        static void Wurzel()
+
+        static double Wurze(double input)
         {
-            double random = new Random().Next(10000) + 1;
-            Console.WriteLine($"Wurzel aus {random} ist: {Math.Sqrt(random)}");
-            double ergebnis = Math.Sqrt(random);
-            double ergebnis2 = ergebnis / 2;
-            Console.WriteLine("neues ergebnis: " + ergebnis2);
-            Console.WriteLine("nach quadrieren: " + (ergebnis2 *= ergebnis2));
-            double ergebnisneu = ergebnis2 *= ergebnis2;
-
-            if (ergebnisneu > ergebnis2)
-            {
-
-            }
+            return 0.0;
         }
 
+        static double Wurzel(double input)
+        {
 
+            int max = 10000;
+            int min = 0;
+
+            double random = new Random().Next(10000) + 1;
+            Console.WriteLine($"Die zufällige Zahl ist: {random}");
+            double ergebnis = Math.Sqrt(random);
+
+
+            double mitte = random - ergebnis;
+
+            for (ergebnis = random; ;)
+            {
+                ergebnis *= ergebnis;
+
+                if (ergebnis > random)
+                {
+                    Console.WriteLine($"Das neue maximum ist: {ergebnis}", Math.Max(ergebnis, ergebnis));
+                }
+                else
+                {
+                    Console.WriteLine($"Das neue minimum ist: {ergebnis}", Math.Min(ergebnis, ergebnis));
+                }
+
+                Console.WriteLine($"{mitte} = {max - min} ");
+
+                Console.WriteLine();
+            }
+
+        }
     }
 }

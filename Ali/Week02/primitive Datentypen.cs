@@ -32,6 +32,14 @@ namespace Ali.Week02
             double x = printX(100);
             Console.WriteLine();
 
+            Console.WriteLine("Aufgabe Teilen und Herrschen");
+            double y = printY(20);
+            Console.WriteLine();
+           
+            Console.WriteLine("LeibnizReihe");
+            LeibnizRow();
+            
+
 
         }
         public static int printSum(int min, int max)
@@ -88,18 +96,60 @@ namespace Ali.Week02
         {
             double x = 0.0;
 
-            for (double i = 0.0; i <= max; i+=+0.1)
+            for (double i = 0.0; i <= max; i+=0.1)
             {
-                x = 0.1;
+                x += 0.1;
 
-                Console.WriteLine($"Result 1 digit ={i,3:N1}");
-                Console.WriteLine($"Result 2 digit ={i,7:N7}");
+                Console.WriteLine($"Result 1 digit ={i,0:0.0}");
+                Console.WriteLine($"Result 2 digit ={i,2:0.00}");
 
 
 
             }
             return x;
         }
+        public static double printY(int max)
+        {
+            int y = 5;
+            double x = 5.0;
+
+            for(int i = 0;i <=max; i++)
+
+            {
+                Console.WriteLine($"{i,2} / 5 ={i/y,4:0}");
+                Console.WriteLine($"{i,2} / 5.0 ={i/x,4:0.0}");
+            }
+            return max;
+        }
+        public static double LeibnizRow()
+        {
+            double num1 = 1;
+            double num2 = 0;
+            double num3 = 0;
+            
+            {
+                for(int i = 0; i <= num1; i++)
+                {
+                    num2 = 4 / (num1);
+                    //Console.WriteLine(num2);
+                }
+                num1 += 2;
+                for(int j = 0; j <= num2; j++)
+                {
+                    num3 = 4 / (num1);
+                    //Console.WriteLine(num3);
+                }
+                num1 += 2;
+                num1 = num2 - num3;
+                Console.WriteLine(num1);
+
+            }
+
+
+
+            return num1;
+        }
+        
     }
 }
 

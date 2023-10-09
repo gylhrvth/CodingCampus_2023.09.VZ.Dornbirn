@@ -16,17 +16,15 @@
                 Console.Write("Gib deine erste Zahl ein: ");
                 double num1 = Convert.ToDouble(Console.ReadLine());
 
+                //+,-,*,/
+                Console.WriteLine("Was magst du mit den Zahlen machen?(+, -, *, /)?");
+                char eingabe = Convert.ToChar(Console.ReadLine());
 
                 //num2
                 Console.Write("Gib deine zweite Zahl ein: ");
                 double num2 = Convert.ToDouble(Console.ReadLine());
 
-                //+,-,*,/
-                Console.WriteLine("Was magst du mit den Zahlen machen?(+, -, *, /)?");
-                char eingabe = Convert.ToChar(Console.ReadLine());
-
-
-
+                //Rechenmöglichkeiten
                 switch (eingabe)
                 {
                     //Addieren
@@ -55,7 +53,7 @@
                         {
                             if (num2 == 0)
                             {
-                                Console.WriteLine("Du hast den Taschenrechner nicht einmal verdient wann du durch 0 dividierst");
+                                Console.WriteLine("Du hast den Taschenrechner nicht einmal verdient wenn du durch 0 dividierst");
                             }
                             else
                             {
@@ -67,7 +65,7 @@
                     //Falsche Zeichen eingegeben
                     default:
                         {
-                            Console.WriteLine("Wo warst du bitte in der Volkschule? Gib bitte nur +, -, *, / ein!!");
+                            Console.WriteLine("Wo warst du bitte in der Volksschule? Gib bitte nur +, -, *, / ein!!");
                         }
                         break;
                 }

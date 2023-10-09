@@ -9,6 +9,8 @@ namespace Gyula.Week02
 
 			int c = Add(5, 4);
 			Console.WriteLine(c);
+
+			Console.WriteLine(Summ());
 		}
 
 
@@ -19,6 +21,16 @@ namespace Gyula.Week02
 			return result;
 		}
 
+
+		public static int Summ()
+		{
+			int result = 0;
+			for (int i = 20; i <= 50; i++)
+			{
+				result += i;
+			}
+			return result;
+		}
     }
 }
 

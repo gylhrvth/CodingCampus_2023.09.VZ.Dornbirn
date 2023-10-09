@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Martin.Week02
@@ -10,69 +15,227 @@ namespace Martin.Week02
     {
         public static void StartDatenTypen()
         {
-            int a = 1;
-            int b = -1;
+            Console.ForegroundColor = ConsoleColor.Green;
 
-            Console.WriteLine("ist gleich: " + (a == b));
+            //int Result = Ausrechnen(20);
+            //long Resutl = Faktorial(20);
+            //ZeroToHunderd();
+            //BeisSpielMitRunden();
+            //ZeroToHunderdErweitert();
+            //TeilenUndHerrschen();
+            //BerechnungVonPI();
+            //Console.WriteLine(Math.PI);
+            //BerechnungVonPINilkantka();
+            //Console.WriteLine(Math.PI);
+            //GeheimeReihe(20);
+            WurzelRechnung(20.0);
+        }
 
-            sbyte test = 120;
-            for (int i = 0; i < 20; i++)
+        //Aufgame: Summe
+        public static int Ausrechnen(int number)
+        {
+
+            int result = 0; // ergebnis
+
+            for (int i = number; i <= 50; i++)
             {
-                Console.WriteLine("test2 = " + test);
-                ++test;
+
+
+                result += i;
+                Console.WriteLine(result);
             }
 
-            double d = 5.0;
-            Console.WriteLine("d = " + d);
-            for (int i = 0; i < 20; i++)
+
+            return result;
+
+        }
+
+        //Aufgabe: Faktorial + Erweiterert(Bonus)
+
+        public static long Faktorial(long Number)
+        {
+           long result = 1;
+
+            for (long i = 1; i <= Number; i++)
             {
-                d = d + 0.1;
-                Console.WriteLine("d = " + d);
+
+                result = result * i;
+
+                Console.WriteLine("{0,-2} != {1,20} test",i,result);
+
             }
 
-            int d2 = 500;
-            for (int i = 0; i < 20; i++)
+            return result;
+
+        }
+
+        //Aufgabe: Von 0 bis 100 Zählen in 0.1er Schritten
+
+        public static void ZeroToHunderd()
+        {
+            //erste Variante
+
+            double number = 0.0;
+
+            for(int i = 0; i <= 1000; i++)
             {
-                d2 = d2 + 10;
-                Console.WriteLine("d2 = " + (d2 / 100.0));
+                number += 0.1;
+                Console.Write(i + "= ");
+                Console.WriteLine(Math.Round(number,1));
+
             }
 
+            //zweite Variante
+
+            int Counter = 0;
+            double ZeroOneSchritt = 0.0;
+            
+            while (Counter < 1000)
+            {
+                ZeroOneSchritt += 0.1;
+                Console.Write( Counter + "= ");
+                Console.WriteLine(Math.Round(ZeroOneSchritt,1));
+                Counter++;
+            }
+
+        }
+
+        //Aufgabe: Von 0 bis 100 Zählen in 0.1er Schritten (Erweitert)
+
+        public static void ZeroToHunderdErweitert()
+        {
+            double number = 0.0; 
+
+            for (int i = 0; i <= 1000; i++)
+            {
+
+                Console.WriteLine("Result 1 digit = {0:N1}",number); // N1 eine nachkomma stelle
+                Console.WriteLine("Result 2 digit = {0,9:N2}",number); // N2 zwei nachkomma stelle
+
+                number += 0.1;
+            }
+            Console.WriteLine();
+        }
+
+        //Aufgabe: Teilen und Herrschen //
+
+        public static void TeilenUndHerrschen()
+        {
+            for(int x = 0; x <= 20; x++)
+            {
+                Console.WriteLine(x + " / " + "5" +" = "+ x/5 );
+                Console.WriteLine(x + " / " + "5.0" + " = " + x/5.0);
+
+                Console.WriteLine();
+            }
+        }
+
+        // Aufgabe: Berechnung von PI(Leibniz Reihe)
+
+        public static void BerechnungVonPI()
+        {
+            double PI = 0;
 
 
-            Console.WriteLine("a + 1 = " + (a + 1)); // Addition
-            Console.WriteLine("a - 3 = " + (a - 3)); // Substraktion
-            Console.WriteLine("a * 5 = " + (a * 5)); // Multiplikation
-            Console.WriteLine("a / 5 = " + (a / 5)); // Division (integer)
-            Console.WriteLine("a % 5 = " + (a % 5)); // Modulo (Restwert)
+            for (long x = 1;x <= 100000;x+= 2)
+            {
+
+                PI += 4.0 / x;
+
+                PI *= -1;
+
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("PI ist: "+PI);
+        }
+
+        // Aufgabe: Berechnung von PI(Nilakantha Reihe)
+
+        public static void BerechnungVonPINilkantka()
+        {
+            
+                double PINilakantha = 3;
+
+                double Number1 = 2;
+
+                for(int x = 0;x <= 100000001 ; x++)
+                {
 
 
-            d = 5.25;
-            Console.WriteLine("d + 1 = " + (d + 1)); // Addition
-            Console.WriteLine("d - 3 = " + (d - 3)); // Substraktion
-            Console.WriteLine("d * 5 = " + (d * 5)); // Multiplikation
-            Console.WriteLine("d / 5 = " + (d / 5)); // Division (double)
-
-            Console.WriteLine("a = " + a);
-            ++a;
-            Console.WriteLine("a = " + a);
-            a++;
-            Console.WriteLine("a = " + a);
+                     PINilakantha = PINilakantha + 4.0/(Number1 * (Number1 + 1) * (Number1 + 2)); 
 
 
-            Console.WriteLine("a!!! = " + (a++));
-            Console.WriteLine("a!!! = " + (++a));
+                     PINilakantha *= -1;
+
+                     Number1+= 2;
+                    
+
+                }
 
 
-            a += 5; // a = a + 5
-            Console.WriteLine("a = " + a);
-            a -= 8; // a = a - 8
-            Console.WriteLine("a = " + a);
-            a *= 2; // a = a * 2
-            Console.WriteLine("a = " + a);
-            a /= 5; // a = a / 5
-            Console.WriteLine("a = " + a);
+
+            Console.WriteLine(PINilakantha);
 
 
+        }
+
+        //Geheime Reihe //sie hat als anfangszahl 1,41
+
+        public static void GeheimeReihe(double number)
+        {
+
+            double secret = 1.0;
+
+
+            for(double i = 1.0; i < number; i++)
+            {
+
+                secret = secret / 2 + 1 / secret;
+
+            }
+
+            Console.WriteLine(secret);
+
+        }
+
+        //Wurzelannäherung
+
+        public static void WurzelRechnung(double number)
+        {
+            double RandomNumber = new Random().Next((int)number) + 1;
+            double WurzelVonZahl = Math.Sqrt(RandomNumber);
+
+            Console.WriteLine(RandomNumber);
+            Console.WriteLine(Math.Sqrt(RandomNumber));
+
+            Console.WriteLine("Wurzel von "+RandomNumber+" ist "+ WurzelVonZahl);
+
+            double minimum = 0;
+            double maximum = RandomNumber;
+
+            double newNumber = RandomNumber / 2;
+            newNumber *= newNumber;
+                
+
+            if (newNumber < maximum)
+            {
+                maximum = newNumber;
+            }
+
+        }
+
+        //Beispiel//
+        public static void BeisSpielMitRunden()
+        {
+
+            Console.WriteLine();
+
+            double a = 1.9999999;
+
+            Console.WriteLine((int)a); // wird zur einem Int umgewandelt und die coma zahlen fallen weg
+            Console.WriteLine((int)Math.Ceiling(a)); // rundet die komma zahle auf und wird zur einer ganzen Zahl
         }
     }
 }
