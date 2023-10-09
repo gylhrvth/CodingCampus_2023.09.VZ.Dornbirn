@@ -1,1 +1,1 @@
-﻿using Patrick.Week03;ExamplesArrays.start();
+﻿using Patrick.Week03;Arraytry.start();
