@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week02
+namespace Gyula.Week02
 {
-    internal class uebungenArrays
+    internal class Arrays
     {
     }
 }

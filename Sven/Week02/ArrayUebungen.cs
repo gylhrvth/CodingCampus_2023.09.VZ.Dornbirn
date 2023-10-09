@@ -8,5 +8,15 @@ namespace Sven.Week02
 {
     internal class ArrayUebungen
     {
+
+        public static void StartArrayUebungen()
+        {
+
+
+
+
+
+        }
+
     }
 }
