@@ -43,7 +43,7 @@ namespace Timo.Week02
 
             //Aufgabe3.4 jeder zweite Wert
             Console.WriteLine("\nAufgabe3.4: jeder zweite Wert");
-            PrintRandomGeradeUngerade(arr2, 1);     //firstInt Beginn der Aufzählung -> bei firstInt=0 1., 3., 5... Stelle, bei firstInt=1 2., 4., 6... Stelle
+            PrintRandomGeradeUngerade(arr2, 1);                     //firstInt start of the count -> if firstInt=0 1st, 3rd, 5th... position, if firstInt=1 2nd, 4th, 6th... position
 
             Console.WriteLine("=======================================");
 
@@ -85,7 +85,11 @@ namespace Timo.Week02
             Console.WriteLine("\nAufgabe 8: Bubblesort mit Zahlen");
             int[] testBubble = RandomFor(20, 1, 100);
             PrintRandomFor(testBubble);
-            PrintBubblesort(Bubblesort(testBubble));
+            PrintBubblesort(Bubblesort(testBubble,false));      
+            PrintBubblesort(Bubblesort(testBubble, true));          //use 'true' for ascending sorting, 'false' for descending sorting
+
+            Console.WriteLine("=======================================");
+
         }
 
 
@@ -351,28 +355,55 @@ namespace Timo.Week02
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe 8 Bubblesort
-        public static int[] Bubblesort(int[] arr)
+        public static int[] Bubblesort(int[] arr, bool asc)
         {
-            int temp = 0;
-            for (int i = 0; i<arr.Length;i++)
+            if (asc)
             {
-                int x = 0;
-                int a = x; 
-                while (a < arr.Length)
+                int temp = 0;
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    if (arr[i] < arr[a])
+                    int x = 0;
+                    int a = x;
+                    while (a < arr.Length)
                     {
-                        temp = arr[a];
-                        arr[a] = arr[i];
-                        arr[i] = temp;
-                        a = x;
+                        if (arr[i] < arr[a])
+                        {
+                            temp = arr[a];
+                            arr[a] = arr[i];
+                            arr[i] = temp;
+                            a = x;
+                        }
+                        else
+                        {
+                            a++;
+                        }
                     }
-                    else
-                    {
-                        a++;
-                    }
+                    x++;
                 }
-                x++;
+            }
+            else
+            {
+                int temp = 0;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    int x = 0;
+                    int a = x;
+                    while (a < arr.Length)
+                    {
+                        if (arr[i] > arr[a])
+                        {
+                            temp = arr[a];
+                            arr[a] = arr[i];
+                            arr[i] = temp;
+                            a = x;
+                        }
+                        else
+                        {
+                            a++;
+                        }
+                    }
+                    x++;
+                }
             }
             return arr;
         }
