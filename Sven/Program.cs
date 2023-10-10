@@ -1,1 +1,1 @@
-﻿Sven.Week02.ArrayUebungen.StartArrayUebungen();
+﻿Sven.Week02.ArrayUebungen.ArrayExamples();

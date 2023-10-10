@@ -6,10 +6,12 @@ using System.Text.RegularExpressions;
 using System.Threading.Channels;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Timo.Week02
+namespace Timo.Week03
 {
     public class Arrays
     {
+        public static Random random = new Random();
+
         public static void Start()
         {
             //Aufgabe1.1: Number Array Aufwärts
@@ -85,7 +87,7 @@ namespace Timo.Week02
             Console.WriteLine("\nAufgabe 8: Bubblesort mit Zahlen");
             int[] testBubble = RandomFor(20, 1, 100);
             PrintRandomFor(testBubble);
-            PrintBubblesort(Bubblesort(testBubble,false));      
+            PrintBubblesort(Bubblesort(testBubble, false));         //use 'true' for ascending sorting, 'false' for descending sorting
             PrintBubblesort(Bubblesort(testBubble, true));          //use 'true' for ascending sorting, 'false' for descending sorting
 
             Console.WriteLine("=======================================");
@@ -116,6 +118,7 @@ namespace Timo.Week02
         //Aufgabe1.2: Number Array Abwärts
         public static int[] CreateArrayDown(int size)
         {
+           System.Environment.Exit(0);
             int[] arrDown = new int[size];
             int a = arrDown.Length;
             for (int i = 0; i < arrDown.Length; i++)
@@ -152,10 +155,9 @@ namespace Timo.Week02
         //Aufgabe3.1 Random foreach
         public static int[] Random(int i, int min, int max)
         {
-            Random random = new Random();
 
             int[] arr = new int[i];
-            foreach (int number in arr)
+            foreach (int number in arr).
             {
                 int randomNumber = random.Next(min, max);
                 arr[number] = randomNumber;
@@ -168,7 +170,6 @@ namespace Timo.Week02
         //Aufgabe3.2 Random for
         public static int[] RandomFor(int i, int min, int max)
         {
-            Random random = new Random();
             int[] arr2 = new int[i];
             for (int number = 0; number < i; number++)
             {

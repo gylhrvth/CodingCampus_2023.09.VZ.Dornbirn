@@ -173,7 +173,7 @@ namespace Kerem.Week02
             {
                 b = 4 / (num1);
 
-                Console.WriteLine(b);
+                Console.WriteLine(b);  
             }
 
             num1 += 2;
@@ -188,6 +188,14 @@ namespace Kerem.Week02
         }
         public static double SecretRow()
         {
+            double a = 1.0;
+            {
+                for(int i = 0; i< 10; i++)
+                {
+                     
+                }
+            }
+
 
 
 
