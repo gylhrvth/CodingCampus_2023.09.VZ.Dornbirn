@@ -19,15 +19,16 @@ namespace Erik.Week02
             //CountFromZeroToHundred3();
             //CountFromZeroToHundredExtended();
             //DivideTheNumbers();
-            //Console.WriteLine(CalculationOfPiLeibniz());
-            //Console.WriteLine("Berechnung von PI (Leibniz)");
-            //Console.WriteLine(Math.PI);
-            //Console.WriteLine("----------------------------------");
-            //Console.WriteLine("Berechnung von PI (Nilakantha)");
-            //Console.WriteLine(CalculationOfPiNilakantha());
+            Console.WriteLine(CalculationOfPiLeibniz());
+            Console.WriteLine("Berechnung von PI (Leibniz)");
+            Console.WriteLine(Math.PI);
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine("Berechnung von PI (Nilakantha)");
+            Console.WriteLine(CalculationOfPiNilakantha());
             //TheSecretRow();
             PrimeNumbersIntro();
             PrimeNumbersCalculation();
+            //PrintPrimParts(500);
         }
 
 
@@ -141,7 +142,6 @@ namespace Erik.Week02
             {
                 number01 = (double)4 / i;
                 number02 = (double)4 / (i + 2);
-
                 numberPi = numberPi + (number01 - number02);
             }
             return numberPi;
@@ -158,7 +158,6 @@ namespace Erik.Week02
             {
                 numberResault01 = 4 / (i * (i + 1.0) * (i + 2));
                 numberResault02 = 4 / ((i + 2.0) * (i + 3) * (i + 4));
-
                 numberPi = numberPi + (numberResault01 - numberResault02);
             }
             return numberPi;
@@ -168,9 +167,9 @@ namespace Erik.Week02
         {
             decimal numberResault = 1;
 
+
             for (int i = 1; i < 10000; i++)
             {
-
                 numberResault = numberResault / 2 + 1 / numberResault;
                 Console.WriteLine(numberResault + i);
             }
@@ -179,10 +178,10 @@ namespace Erik.Week02
         public static void PrimeNumbersCalculation() //primeNumber = max 100
         {
 
-            
+
 
             Console.WriteLine("Bitte geben Sie eine Zahl ein! (maximal 100!)");
-            Console.Write("Ihre Zahl: " );
+            Console.Write("Ihre Zahl: ");
             int numberUserInput = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
             while (numberUserInput > 100000000)
@@ -193,39 +192,39 @@ namespace Erik.Week02
             }
 
             PrintPrimParts(numberUserInput);
-            /*
+
+            {
+
+                Console.WriteLine("--------------------------------------------");
+                Console.Write("Ergebnis: ");
+
                 {
+                    int[] primeNumbersToDivide = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
 
-                    Console.WriteLine("--------------------------------------------");
-                    Console.Write("Ergebnis: ");
-
+                    while (numberUserInput != 1)
                     {
-                        int[] primeNumbersToDivide = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
-
-                        while (numberUserInput != 1)
+                        for (int i = 0; i < primeNumbersToDivide.Length; i++)
                         {
-                            for (int i = 0; i < primeNumbersToDivide.Length; i++)
+                            if (numberUserInput % primeNumbersToDivide[i] == 0)
                             {
-                                if (numberUserInput % primeNumbersToDivide[i] == 0)
+                                numberUserInput = numberUserInput / primeNumbersToDivide[i];
+                                Console.Write(primeNumbersToDivide[i]);
+
+                                if (numberUserInput != 1)
                                 {
-                                    numberUserInput = numberUserInput / primeNumbersToDivide[i];
-                                    Console.Write(primeNumbersToDivide[i]);
-
-                                    if (numberUserInput != 1)
-                                    {
-                                        Console.Write(" * ");
-                                    }
-
+                                    Console.Write(" * ");
                                 }
+
                             }
                         }
-                        Console.WriteLine();
                     }
+                    Console.WriteLine();
                 }
-                */
             }
+        }
 
 
+        
         public static void PrintPrimParts(long num)
         {
             Console.Write("Ergebnis: ");
@@ -238,11 +237,11 @@ namespace Erik.Week02
                     if (!firstElement)
                     {
                         Console.Write(" * ");
-                    }                    
+                    }
                     Console.Write("{0}", div);
                     num /= div;
                     firstElement = false;
-                } 
+                }
                 else
                 {
                     ++div;
@@ -250,14 +249,14 @@ namespace Erik.Week02
             }
         }
 
-            public static void PrimeNumbersIntro()
-            {
+        public static void PrimeNumbersIntro()
+        {
 
-                Console.WriteLine(" _______            __                 ______           __          __                                                        __                                                   \r\n/       \\          /  |               /      \\         /  |        /  |                                                      /  |                                                  \r\n$$$$$$$  | ______  $$/  _____  ____  /$$$$$$  |______  $$ |   __  _$$ |_     ______    ______   ________   ______    ______  $$ |  ______    ______   __    __  _______    ______  \r\n$$ |__$$ |/      \\ /  |/     \\/    \\ $$ |_ $$//      \\ $$ |  /  |/ $$   |   /      \\  /      \\ /        | /      \\  /      \\ $$ | /      \\  /      \\ /  |  /  |/       \\  /      \\ \r\n$$    $$//$$$$$$  |$$ |$$$$$$ $$$$  |$$   |   $$$$$$  |$$ |_/$$/ $$$$$$/   /$$$$$$  |/$$$$$$  |$$$$$$$$/ /$$$$$$  |/$$$$$$  |$$ |/$$$$$$  |/$$$$$$  |$$ |  $$ |$$$$$$$  |/$$$$$$  |\r\n$$$$$$$/ $$ |  $$/ $$ |$$ | $$ | $$ |$$$$/    /    $$ |$$   $$<    $$ | __ $$ |  $$ |$$ |  $$/   /  $$/  $$    $$ |$$ |  $$/ $$ |$$    $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |\r\n$$ |     $$ |      $$ |$$ | $$ | $$ |$$ |    /$$$$$$$ |$$$$$$  \\   $$ |/  |$$ \\__$$ |$$ |       /$$$$/__ $$$$$$$$/ $$ |      $$ |$$$$$$$$/ $$ \\__$$ |$$ \\__$$ |$$ |  $$ |$$ \\__$$ |\r\n$$ |     $$ |      $$ |$$ | $$ | $$ |$$ |    $$    $$ |$$ | $$  |  $$  $$/ $$    $$/ $$ |      /$$      |$$       |$$ |      $$ |$$       |$$    $$ |$$    $$/ $$ |  $$ |$$    $$ |\r\n$$/      $$/       $$/ $$/  $$/  $$/ $$/      $$$$$$$/ $$/   $$/    $$$$/   $$$$$$/  $$/       $$$$$$$$/  $$$$$$$/ $$/       $$/  $$$$$$$/  $$$$$$$ | $$$$$$/  $$/   $$/  $$$$$$$ |\r\n                                                                                                                                           /  \\__$$ |                    /  \\__$$ |\r\n                                                                                                                                           $$    $$/                     $$    $$/ \r\n                                                                                                                                            $$$$$$/                       $$$$$$/  ");
+            Console.WriteLine(" _______            __                 ______           __          __                                                        __                                                   \r\n/       \\          /  |               /      \\         /  |        /  |                                                      /  |                                                  \r\n$$$$$$$  | ______  $$/  _____  ____  /$$$$$$  |______  $$ |   __  _$$ |_     ______    ______   ________   ______    ______  $$ |  ______    ______   __    __  _______    ______  \r\n$$ |__$$ |/      \\ /  |/     \\/    \\ $$ |_ $$//      \\ $$ |  /  |/ $$   |   /      \\  /      \\ /        | /      \\  /      \\ $$ | /      \\  /      \\ /  |  /  |/       \\  /      \\ \r\n$$    $$//$$$$$$  |$$ |$$$$$$ $$$$  |$$   |   $$$$$$  |$$ |_/$$/ $$$$$$/   /$$$$$$  |/$$$$$$  |$$$$$$$$/ /$$$$$$  |/$$$$$$  |$$ |/$$$$$$  |/$$$$$$  |$$ |  $$ |$$$$$$$  |/$$$$$$  |\r\n$$$$$$$/ $$ |  $$/ $$ |$$ | $$ | $$ |$$$$/    /    $$ |$$   $$<    $$ | __ $$ |  $$ |$$ |  $$/   /  $$/  $$    $$ |$$ |  $$/ $$ |$$    $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |$$ |  $$ |\r\n$$ |     $$ |      $$ |$$ | $$ | $$ |$$ |    /$$$$$$$ |$$$$$$  \\   $$ |/  |$$ \\__$$ |$$ |       /$$$$/__ $$$$$$$$/ $$ |      $$ |$$$$$$$$/ $$ \\__$$ |$$ \\__$$ |$$ |  $$ |$$ \\__$$ |\r\n$$ |     $$ |      $$ |$$ | $$ | $$ |$$ |    $$    $$ |$$ | $$  |  $$  $$/ $$    $$/ $$ |      /$$      |$$       |$$ |      $$ |$$       |$$    $$ |$$    $$/ $$ |  $$ |$$    $$ |\r\n$$/      $$/       $$/ $$/  $$/  $$/ $$/      $$$$$$$/ $$/   $$/    $$$$/   $$$$$$/  $$/       $$$$$$$$/  $$$$$$$/ $$/       $$/  $$$$$$$/  $$$$$$$ | $$$$$$/  $$/   $$/  $$$$$$$ |\r\n                                                                                                                                           /  \\__$$ |                    /  \\__$$ |\r\n                                                                                                                                           $$    $$/                     $$    $$/ \r\n                                                                                                                                            $$$$$$/                       $$$$$$/  ");
 
-            }
         }
     }
+}
 
 
 

@@ -8,7 +8,7 @@ namespace Sven.Week02
     public class DatentypenUebungen
     {
 
-        public static void StartDatentypenÜbungen()
+        public static void StartDatentypenUebungen()
         {
             Console.WriteLine("Result Summe: ");
             Console.WriteLine(AddN());
@@ -32,7 +32,11 @@ namespace Sven.Week02
             Console.WriteLine();
 
             Console.WriteLine("Result Teilen:");
-            Teilen( 1 ) ;
+            Teilen(1) ;
+            Console.WriteLine();
+
+            Console.WriteLine("Result PiLeibnitz:");
+            PiLeibnitz(1);
             Console.WriteLine();
 
 
@@ -93,7 +97,19 @@ namespace Sven.Week02
                 count++;
 
             }
-            
+            return count;
         }
+
+        public static double PiLeibnitz(double count)
+        {
+
+
+
+
+
+            return count;
+        }
+        
+
     }
 }

@@ -4,19 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week02
+namespace DarioLuis.Week03
 {
-    internal class ArrayUebungen
+    class Array
     {
-
-        public static void StartArrayUebungen()
+        public static void Übungen()
         {
-
-
-
-
-
+            Console.WriteLine("Hello Dario");
         }
-
     }
 }
