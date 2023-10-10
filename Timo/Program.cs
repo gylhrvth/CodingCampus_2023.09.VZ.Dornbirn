@@ -1,1 +1,3 @@
-﻿Timo.Week02.Arrays.Start();
+﻿using Timo.Week03;
+
+Arrays.Start();
