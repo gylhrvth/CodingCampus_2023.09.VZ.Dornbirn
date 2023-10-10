@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -12,26 +13,29 @@ namespace Patrick.Week03
     {
         public static void start()
         {
-            try1();
-            Console.WriteLine("-----------------");
-            counterUp();
-            Console.WriteLine("-----------------");
-            addition();
-            Console.WriteLine("-----------------");
-            forEachSchleifeInteger();
-            Console.WriteLine("-----------------");
-            forEachSchleifeString();
-            Console.WriteLine("-----------------");
-            forSchleife();
-            Console.WriteLine("-----------------");
-            WhileSchleife();
-            Console.WriteLine("-----------------");
-            additionUdemy();
-            Console.WriteLine("-----------------");
-            WhileqQuiz();
-            Console.WriteLine("-----------------");
-            additionSelfTry(5);
-            Console.WriteLine("-----------------");
+            //try1();
+            //Console.WriteLine("-----------------");
+            //counterUp();
+            //Console.WriteLine("-----------------");
+            //addition();
+            //Console.WriteLine("-----------------");
+            //forEachSchleifeInteger();
+            //Console.WriteLine("-----------------");
+            //forEachSchleifeString();
+            //Console.WriteLine("-----------------");
+            //forSchleife();
+            //Console.WriteLine("-----------------");
+            //WhileSchleife(18);
+            //Console.WriteLine("-----------------");
+            //additionUdemy();
+            //Console.WriteLine("-----------------");
+            //WhileqQuiz();
+            //Console.WriteLine("-----------------");
+            //additionSelfTry(5);
+            //Console.WriteLine("-----------------");
+            //tryIfElse(5);
+            //Console.WriteLine("-----------------");
+            //tryIfElseString();
         }
 
 
@@ -129,11 +133,19 @@ namespace Patrick.Week03
             }
         }
 
-        public static void WhileSchleife()
+        public static void WhileSchleife(int size)
         {
 
             //whileSchleife mit Array
-            int[] numbers = new int[3] { 3, 10, -3 };
+            int[] numbers = { 3, 10, -3, 5, 6, 88 };
+            int[] num2 = new int[size];
+            for (int i = 0; i < num2.Length; i++)
+            {
+                num2[i] = i + 1;
+            }
+            Console.WriteLine("[{0}]", string.Join(", ", num2));
+
+
 
             int y = 0;
 
@@ -145,7 +157,7 @@ namespace Patrick.Week03
             }
         }
 
-        public static void additionUdemy()
+        public static void additionSelf()
         {
             int[] numbers = new int[5];
 
@@ -196,7 +208,7 @@ namespace Patrick.Week03
         }
 
 
-        public static int[] additionSelfTry( int counter)
+        public static int[] additionSelfTry(int counter)
         {
 
             int[] summand = new int[counter];
@@ -206,13 +218,62 @@ namespace Patrick.Week03
             for (int x = 0; x < summand.Length; x++)
             {
                 Console.WriteLine("Geben Sie die " + (x + 1) + ". Zahl ein:");
-                int input = int.Parse(Console.ReadLine());             
+                int input = int.Parse(Console.ReadLine());
                 summand[x] = input;
                 result += input;
             }
             Console.Write("Dein Ergebnis ist: " + result);
 
             return summand;
+        }
+
+        public static void tryIfElse(int count)
+        {
+
+            for (int x = 0; x < count; x++)
+            {
+                int input = int.Parse(Console.ReadLine());
+
+                if (input == 0)
+                {
+                    Console.WriteLine("Du hast die Zahl " + input + " eingegeben");
+                }
+                else if (input <= 0)
+                {
+                    Console.WriteLine("Du hast die negative Zahl" + input + " eingegeben");
+                }
+                else
+                {
+                    Console.WriteLine("Du hast die positive Zahl" + input + " eingegeben");
+
+                }
+            }
+        }
+
+        public static string tryIfElseString()
+        {
+            string userName = "Patrick Mair";
+            string password = "AsDfGh";
+
+            Console.Write("geben Sie den Benutzername ein: ");
+            string inputUsername = Console.ReadLine();
+            Console.WriteLine("geben Sie nun das Passwort ein");
+            string inputPassword = Console.ReadLine();
+
+            if ( inputUsername == userName && inputPassword == password)
+            {
+                Console.WriteLine("Sie sind nun eingeloggt");
+            }
+            else if(inputPassword != password)
+            {
+                Console.WriteLine("Das Passwort stimmt nicht");
+            }
+            else
+            {
+                Console.WriteLine("Der Benutzername stimmt nicht");
+            }
+
+            return userName;
         }
 
     }
