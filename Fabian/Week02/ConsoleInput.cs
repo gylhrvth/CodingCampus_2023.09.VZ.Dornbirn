@@ -8,8 +8,8 @@ namespace Fabian.Week02
         {
             //ReadString();
             //ReadInt();
-            GuessGame();
-           // Menu();
+            //GuessGame();
+            //Menu();
             //Calculator();
             //CalculatorBonus();
             //BusinessCard();
@@ -502,7 +502,7 @@ namespace Fabian.Week02
                     }
                     catch
                     {
-                        Console.WriteLine("Enter a valid value!");
+                        Console.WriteLine("Enter a valid number!");
                     }
 
                 }             

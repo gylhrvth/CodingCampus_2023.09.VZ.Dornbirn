@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,17 +13,19 @@ namespace Patrick.Week03
         public static void start()
         {
             /////////////////////////////////////////
-            createArrayIncrease(10);
-            Console.WriteLine("Increase");
-            printArray(createArrayIncrease(10));
-            Console.WriteLine("------------------");
+            //createArrayIncrease(10);
+            //Console.WriteLine("Increase");
+            //printArray(createArrayIncrease(10));
+            //Console.WriteLine("------------------");
 
-            Console.WriteLine("Decrease");
-            printArray(createArrayDecrease(10));
-            Console.WriteLine("------------------");
+            //Console.WriteLine("Decrease");
+            //printArray(createArrayDecrease(10));
+            //Console.WriteLine("------------------");
             //////////////////////////////////////////
 
-            makeACopy();
+            //makeACopy();
+            RandomNumberArray(0, 100);
+            RandomNumberArrayCrazyRange(-50, 50);
         }
 
         public static int[] createArrayIncrease(int count)
@@ -67,10 +70,57 @@ namespace Patrick.Week03
             Console.WriteLine("[{0}]", string.Join(", ", array));           //gyula syntax
         }
 
-        public static int[] makeACopy(int[] originals)
-        {
+    //    public static int[] makeACopy(int[] originals)
+    //    {
             
 
+    //    }
+
+        public static int[] RandomNumberArray(int low, int up)
+        {
+            int[] arrayRandom = new int[10];
+
+            Random random = new Random();
+
+            foreach (int x in arrayRandom)
+            {
+                arrayRandom[x] = random.Next(low, up);
+
+                Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("------------------");
+
+            for (int x = 0; x < 10; x++)
+            {
+                arrayRandom[x] = random.Next(low, up);
+
+                Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
+                //Console.Write(arrayRandom[1], arrayRandom[4], arrayRandom[9]);
+            }
+            //Console.WriteLine(arrayRandom[1], arrayRandom[4], arrayRandom[9]);
+            Console.WriteLine();
+            Console.WriteLine("------------------");
+
+            return arrayRandom;
         }
+
+
+        public static int[] RandomNumberArrayCrazyRange(int low, int up)
+        {
+            int[] arrayRandom = new int[10];
+
+            Random random = new Random();
+
+            foreach ( int x in arrayRandom)
+            {
+                arrayRandom[x] = random.Next(low, up);
+
+                Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
+            }
+            return arrayRandom;
+        }
+
     }
 }
