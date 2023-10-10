@@ -5,7 +5,7 @@ namespace David.Week03
 	{
 		public static void StartWeek03Day01()
 		{
-			/*
+            /*
 			Random rand = new Random();
 			int[] arr = new int[10];
 			for (int i = 0; i < arr.Length; i++)
@@ -21,42 +21,58 @@ namespace David.Week03
 			Console.WriteLine("[{0}]", string.Join(", ", arr));
 			*/
 
-			int[] arr1 = CreateArrayAsc(5);
-			PrintArray(arr1);
+            int[] arr1 = CreateArrayAsc(6);
+            PrintArray(arr1);
 
             int[] arr2 = CreateArrayDesc(5);
             PrintArray(arr2);
 
-            int[] arr3 = CreateArrayRandom(5);
-            PrintArray(arr3);
-
+             /*int[] arr3 = CreateArrayRandom(7);
+             PrintArray(arr3);
+			 */
+            
         }
+        //--------------
 
+         public static int[] CreateArrayAsc(int size)
+          {
+                return null;
+          }
 
-
-        public static int[] CreateArrayAsc(int size)
-		{
-			for (int i = 0; i < size; i++)
-			{
-				Console.WriteLine("{0}. = {1}", i, size[i]);
-			}
-		}
+		//-----------
 
         public static int[] CreateArrayDesc(int size)
-        {
-            return null;
-        }
-
-        public static int[] CreateArrayRandom(int size)
-        {
-            return null;
-        }
-
-
-		public static void PrintArray(int[] arr)
 		{
-			
+			int[] arr2 = new int[size];
+			for (int i = 0; i < size; i++)
+			{
+				arr2[i] = i + 1;
+			}
+			return arr2;
 		}
+
+		public static void PrintArray(int[] arr2)
+		{
+			for (int i = 0; i < arr2.Length; i++)
+			{
+				Console.WriteLine("{0}. = {1}", i, arr2[i]);
+            }
+		}
+
+
+		//---------------
+          /* public static int[] CreateArrayRandom(int size)
+           {
+               return null;
+           }*/
+        
     }
+
+
+
+
+
+
 }
+
 
