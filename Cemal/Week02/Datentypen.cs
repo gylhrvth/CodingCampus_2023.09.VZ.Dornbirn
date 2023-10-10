@@ -102,7 +102,7 @@ namespace Cemal.Week02
             {
                 result += 0.1;
                 Console.WriteLine($"{eins}{result:0.0}");
-                Console.WriteLine("{1,0}{0,7:N2}", result, zwei);
+                Console.WriteLine("{0,0}{1,7:N2}", zwei, result);            
             }
         }
 
@@ -126,19 +126,12 @@ namespace Cemal.Week02
         {
             double result = 0;
 
-            for (int i = 1; i <= 20; i += 2)
+            for (int i = 1; i <= 100000; i += 2)
             {
-                if (i % 4 == 1)
-                {
-                    result += 4.0 / i;
-                }
-                else if (i % 4 == 3)
-                {
-                    result -= 4.0 / i;
-                }
-
-                Console.WriteLine(result);
+                result += 4.0 / i;
+                result *= -1;
             }
+            Console.WriteLine(result);
         }
 
     }
