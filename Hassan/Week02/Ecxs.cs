@@ -72,17 +72,6 @@ namespace Hassan.Week02
 
 
 
-
-
-
-
-
-
-
-
-
     }
-
-
 
 }

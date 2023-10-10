@@ -85,7 +85,7 @@ namespace Jovo.Week02
             Console.WriteLine(" ");
 
             Console.WriteLine("Aufgabe Pi");
-            PrintPi(2, 3);
+            PrintPi(2);
 
 
             Console.WriteLine("Aufgabe GeheimeReihe");
@@ -198,7 +198,7 @@ namespace Jovo.Week02
         }
 
 
-        public static double PrintPi(int number1, int number2)
+        public static double PrintPi(int number1)
         {
 
 
@@ -277,15 +277,19 @@ namespace Jovo.Week02
         {
             double random = new Random().Next(10000) + 1;
             Console.WriteLine(random);
+            double half = random / 2;
+            double quad = half * half;
             for ( int i = 0; i < 1; i++)
+                
             {
                 random = random / 2;
+                
+               
                 Console.WriteLine("hallo" + random);
                 random = random * random;
                 Console.WriteLine("hallo2" + random);
-
             }
-
+            
             return random;
 
 

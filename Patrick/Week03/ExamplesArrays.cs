@@ -12,20 +12,24 @@ namespace Patrick.Week03
     {
         public static void start()
         {
-            /////////////////////////////////////////
-            //createArrayIncrease(10);
-            //Console.WriteLine("Increase");
-            //printArray(createArrayIncrease(10));
-            //Console.WriteLine("------------------");
+            ///////////////////////////////////////////
+            createArrayIncrease(10);
+            Console.WriteLine("Increase");
+            int[] test = createArrayIncrease(10);
+            printArray(test);
+            Console.WriteLine("------------------");
 
-            //Console.WriteLine("Decrease");
-            //printArray(createArrayDecrease(10));
-            //Console.WriteLine("------------------");
-            //////////////////////////////////////////
+            Console.WriteLine("Decrease");
+            int[] test1 = createArrayDecrease(10);
+            printArray(test1);
+            Console.WriteLine("------------------");
+            ////////////////////////////////////////////
 
-            //makeACopy();
-            RandomNumberArray(0, 100);
+            RandomNumberArray(0, 101);
             RandomNumberArrayCrazyRange(-50, 50);
+            randomNumberArrayZählen(0, 101);
+            randomNumberArraySumme(0, 101);
+            randomNumberArrayMin(0, 101);
         }
 
         public static int[] createArrayIncrease(int count)
@@ -64,17 +68,25 @@ namespace Patrick.Week03
 
             for (int x = 0; x < array.Length; x++)
             {
-                Console.WriteLine(array[x]);
+                //Console.WriteLine(array[x]);
             }
 
             Console.WriteLine("[{0}]", string.Join(", ", array));           //gyula syntax
         }
 
-    //    public static int[] makeACopy(int[] originals)
-    //    {
-            
+        public static int[] makeACopy(int[] originals)
+        {
+            int[] arrayCopy = new int[originals.Length];
 
-    //    }
+            for (int x = 0;x < originals.Length; x++)
+            {
+                arrayCopy[x] = originals[x];
+            }
+
+            return arrayCopy;
+
+        }
+
 
         public static int[] RandomNumberArray(int low, int up)
         {
@@ -95,11 +107,13 @@ namespace Patrick.Week03
             for (int x = 0; x < 10; x++)
             {
                 arrayRandom[x] = random.Next(low, up);
-
+                
                 Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
-                //Console.Write(arrayRandom[1], arrayRandom[4], arrayRandom[9]);
+
             }
-            //Console.WriteLine(arrayRandom[1], arrayRandom[4], arrayRandom[9]);
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", arrayRandom[1], arrayRandom[4], arrayRandom[9]));                                      //gib den 2. 5.und 9. Wert des Arrays aus
+            Console.WriteLine("[{0}]", string.Join(", ", arrayRandom[1], arrayRandom[3], arrayRandom[5], arrayRandom[7], arrayRandom[9]));      // gib jeden 2. Wert des Arrays aus
             Console.WriteLine();
             Console.WriteLine("------------------");
 
@@ -122,5 +136,75 @@ namespace Patrick.Week03
             return arrayRandom;
         }
 
+
+        public static int[] randomNumberArrayZählen (int low, int up)
+        {
+            int[] randomNumber = new int[10];
+            Random random = new Random();
+
+            for( int x = 0; x < randomNumber.Length; x++)
+            {
+                randomNumber[x] = random.Next(low, up);
+
+                if (randomNumber[x] >= 30)
+                {
+                    Console.Write("[{0}]", randomNumber[x]);
+                }
+                else
+                {                   
+                    Console.Write("XX");
+                }
+            }
+            return randomNumber;
+        }
+
+
+        public static int[] randomNumberArraySumme (int low, int up)
+        {
+            int[] randomNumber = new int[10];
+            Random random = new Random();
+            int result = 0;
+
+            for ( int x = 0; x < randomNumber.Length; x++)
+            {
+                randomNumber[x] = random.Next(low, up);
+                result += randomNumber[x];
+
+                Console.Write("[{0}]", string.Join(", ", randomNumber[x]));
+            }
+            Console.WriteLine();
+            Console.WriteLine("Die Summe von den 10 Zahlen ist: " + result);
+
+            return randomNumber;
+        }
+
+
+        public static int sum(int[] nums)
+        {
+            return 0;
+        }
+
+
+        public static int[] randomNumberArrayMin(int low, int up)
+        {
+            int[] randomNumber = new int[10];
+
+            return randomNumber;
+        }
+
+        public static int[] randomNumberArrayMax(int low, int up)
+        {
+            int[] randomNumber = new int[10];
+
+            return randomNumber;
+        }
+
+        public static int[] randomNumberArrayAvg(int low, int up)
+        {
+            int[] randomNumber = new int[10];
+
+            return randomNumber;
+        }
+ 
     }
 }
