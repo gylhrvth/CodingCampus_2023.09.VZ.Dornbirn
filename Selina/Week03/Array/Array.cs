@@ -6,7 +6,7 @@
     internal class Array
     {
         public static Random rand = new Random();
-
+        //Hallo
 
         public static void Start()
         {
