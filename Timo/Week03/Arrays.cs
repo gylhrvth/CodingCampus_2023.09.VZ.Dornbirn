@@ -157,7 +157,7 @@ namespace Timo.Week03
         {
 
             int[] arr = new int[i];
-            foreach (int number in arr)
+            foreach (int number in arr).
             {
                 int randomNumber = random.Next(min, max);
                 arr[number] = randomNumber;
