@@ -1,1 +1,1 @@
-﻿Sven.Week02.DatentypenUebungen.StartDatentypenÜbungen();
+﻿Sven.Week02.ArrayUebungen.StartArrayUebungen();

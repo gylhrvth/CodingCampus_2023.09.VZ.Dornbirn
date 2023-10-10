@@ -30,8 +30,9 @@ namespace Dimitri.Week02
             //GeheimeReihe();
             //Console.WriteLine(WurzelAnnaeherung(500));
             //Console.WriteLine(WurzelAnnaeherungBonus(1297419));
+            Console.WriteLine(WurzelAnnaeherungv2());
             //IstPrimzahl(31);
-            PrintAllePrimzahlen(31);
+            //PrintAllePrimzahlen(31);
         }
 
         public static int Summe(int start, int end) //void hat keinen rückgabewert und int/bool/float hat genau einen Rückgabewert
@@ -229,6 +230,7 @@ namespace Dimitri.Week02
                 Console.WriteLine();
 
                 Console.WriteLine("Mitte: " + mitte);
+
                 double differenz = Math.Abs(mitte - Math.Sqrt(random));
 
                 double fehlerInProzent = differenz / Math.Sqrt(random);
@@ -247,6 +249,38 @@ namespace Dimitri.Week02
 
 
             return awurzel;
+
+        }
+
+        public static double WurzelAnnaeherungv2()
+        {
+            double random = new Random().Next(10000) + 1;
+            double awurzel = random;
+            double mitte = awurzel / 2;
+            double min = 0;
+            double max = random;
+
+            for(int i = 0; i < 100; i++)
+            {
+                double quadrat = mitte * mitte;
+
+                if(quadrat > random)
+                {
+                    max = mitte;
+                } else if (quadrat < random)
+                {
+                    min = mitte;
+                } else
+                {
+                    break;
+                }
+
+                mitte = (min + max) / 2;
+
+            }
+
+            Console.WriteLine($"Die Wurzel von {random} ist:");
+            return mitte;
 
         }
 
@@ -302,7 +336,7 @@ namespace Dimitri.Week02
                         break;
                     }
                 }
-                 
+
                 if (istPrim) { count++; }
 
                 if (count == 2)
