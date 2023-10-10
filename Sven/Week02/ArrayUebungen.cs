@@ -45,7 +45,7 @@ namespace Sven.Week02
         static void Copy()
         {
 
-            int[] arr = { 5, 4, 7, 2, 9 };
+            int[] arr = { 6, 2, 8, 5, 4 };
 
             int[] copy = new int[arr.Length];
             Array.Copy(arr, copy, arr.Length);
@@ -56,7 +56,7 @@ namespace Sven.Week02
 
         }
 
-        static int RandomArray()
+        static void RandomArray()
         {
 
             Random random = new Random();                          
@@ -66,9 +66,7 @@ namespace Sven.Week02
                 int[] rand = new int[random.Next(0, 100)];
                 Console.WriteLine(rand);
             }
-                
-            
-
+                           
 
         }
 
