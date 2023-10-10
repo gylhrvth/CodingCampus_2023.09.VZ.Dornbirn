@@ -6,10 +6,10 @@ namespace Fabian.Week02
     {
         public static void Start()
         {
-            NumberArray();
+            //NumberArray();
             int[] originial = { 1, 2, 3, 4 };
             //MakeACopy(originial);
-            //RandomNumberArray();
+            RandomNumberArray();
 
         }
 
@@ -21,7 +21,9 @@ namespace Fabian.Week02
             for (int i = 1; i < nums1.Length; i++)
             {
                 nums1[i] = i;
+                nums2[i] = i;
                 Console.WriteLine(nums1[i]);
+                Console.WriteLine(nums2[^i]);
             }
             Console.WriteLine();
             for (int i = 9; i < nums2.Length; i--)
