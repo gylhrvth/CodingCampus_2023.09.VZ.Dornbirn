@@ -88,26 +88,6 @@ namespace Jovo.Week93
         }
 
 
-        public static void PrintSecondFifthTenth(int[] arr)
-        {
-            PrintXth(arr, 1);
-            PrintXth(arr, 4);
-            PrintXth(arr, 9);
-        }
-
-        public static void PrintXth(int[] arr, int pos)
-        {
-            if (pos >= 0 && arr.Length > pos)
-            {
-                Console.WriteLine(arr[pos]);
-            }
-            else
-            {
-                Console.WriteLine("N/A");
-            }
-
-
-        }
 
 
 
@@ -185,22 +165,42 @@ namespace Jovo.Week93
             
         }
 
-       
+
 
 
         public static int[] RandomNumberArray(int size)
         {
             int[] arraynew = new int[size];
-            for (int i = 0; i < arraynew.Length; ++i)    
+            for (int i = 0; i < arraynew.Length; ++i)
             {
                 arraynew[i] = rand.Next(101);
             }
             return arraynew;
         }
-      
-       
 
 
+
+
+        public static void PrintSecondFifthTenth(int[] arr)
+        {
+            PrintXth(arr, 1);
+            PrintXth(arr, 4);
+            PrintXth(arr, 9);
+        }
+
+        public static void PrintXth(int[] arr, int pos)
+        {
+            if (pos >= 0 && arr.Length > pos)
+            {
+                Console.WriteLine(arr[pos]);
+            }
+            else
+            {
+                Console.WriteLine("N/A");
+            }
+
+
+        }
 
 
 
