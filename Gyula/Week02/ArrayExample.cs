@@ -35,8 +35,16 @@ namespace Gyula.Week02
             }
 
 
+            Console.WriteLine("[{0}]", string.Join(", ", arr2));
 
-			Console.WriteLine(arr[4]);
+
+            //Console.WriteLine(arr[4]);
+
+			foreach (int x in arr2)
+			{
+				Console.Write(x + " ");
+			}
+			Console.WriteLine();
         }
     }
 }
