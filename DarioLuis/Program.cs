@@ -1,1 +1,1 @@
-﻿DarioLuis.Week03.Array.Übungen();
+﻿DarioLuis.Week03.Array.StartArrayExample();

@@ -14,6 +14,10 @@ namespace Sven.Week02
             Copy();
             Console.WriteLine();
 
+            Console.WriteLine("Example2 Random:");
+            RandomArray();
+            Console.WriteLine();
+
         }
 
         static void Count()
@@ -41,7 +45,7 @@ namespace Sven.Week02
         static void Copy()
         {
 
-            int[] arr = { 5, 4, 7, 2, 9 };
+            int[] arr = { 6, 2, 8, 5, 4 };
 
             int[] copy = new int[arr.Length];
             Array.Copy(arr, copy, arr.Length);
@@ -49,6 +53,20 @@ namespace Sven.Week02
             for (int i = 0; i < 10; i++ )
 
             Console.WriteLine(String.Join(", ", copy));
+
+        }
+
+        static void RandomArray()
+        {
+
+            Random random = new Random();                          
+
+            for (int i = 0; i < 10; i++)
+            {
+                int[] rand = new int[random.Next(0, 100)];
+                Console.WriteLine(rand);
+            }
+                           
 
         }
 
