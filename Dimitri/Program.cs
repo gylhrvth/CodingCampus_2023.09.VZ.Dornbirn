@@ -1,1 +1,1 @@
-﻿Dimitri.Week02.Array.Main();
+﻿Dimitri.Week02.PrimitiveDatentypen.Main();
