@@ -22,7 +22,13 @@ namespace Dimitri.Week03
             //Console.WriteLine MakeACopy(lustigesArray);
             //PrintArrayToString3(RandomNumberArray(0, 100));
             //PrintCrazyRangeArray(RandomNumberArray(-50, 50));
-            PrintArrayZaehlen(RandomNumberArray(1, 100), 30);
+            //PrintArrayZaehlen(RandomNumberArray(1, 100), 30);
+            //Console.WriteLine(ReturnArraySumme(RandomNumberArray(1, 100)));
+            //Console.WriteLine(ReturnArrayMin(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayMax(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayAvg(RandomNumberArray(0, 100)));
+            Console.WriteLine(ReturnArrayMinIndex(RandomNumberArray(-50, 50)));
+            Console.WriteLine(ReturnArrayMaxIndex(RandomNumberArray(-50, 50)));
         }
 
         public static int[] IncreaseNumberArray(int n)
@@ -158,7 +164,7 @@ namespace Dimitri.Week03
             //}
 
             int count = 0;
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 Console.WriteLine(arr[i]);
                 count++;
@@ -170,13 +176,106 @@ namespace Dimitri.Week03
         }
         public static void PrintArrayZaehlen(int[] arr, int from)
         {
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] > 30)
                 {
                     Console.WriteLine(arr[i]);
                 }
             }
+        }
+
+        public static int ReturnArraySumme(int[] arr)
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+
+            return sum;
+        }
+
+        public static int ReturnArrayMin(int[] arr)
+        {
+            int min = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+
+
+
+            return min;
+        }
+
+        public static int ReturnArrayMax(int[] arr)
+        {
+            int max = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+
+
+
+            return max;
+        }
+
+        public static int ReturnArrayAvg(int[] arr)
+        {
+
+            int sum = ReturnArraySumme(arr);
+
+            int avg = sum / arr.Length;
+
+            return avg;
+        }
+
+        public static int ReturnArrayMinIndex(int[] arr)
+        {
+            int min = arr[0];
+            int indexMin = 0;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                    indexMin = i;
+                }
+            }
+
+            return indexMin;
+        }
+
+        public static int ReturnArrayMaxIndex(int[] arr)
+        {
+            int max = arr[0];
+            int indexMax = 0;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                    indexMax = i;
+                }
+            }
+
+            return indexMax;
         }
     }
 }
