@@ -40,6 +40,7 @@ namespace Riccardo.Week02
 
         }
         //Aufgabe2: Kopie
+        /*
         public static int[] makeACopy(int[] original)
         {
             for (int i = 0; i < original.Length; i++)
@@ -47,7 +48,7 @@ namespace Riccardo.Week02
                 Console.WriteLine(original[i]);
             }
             return original;
-        }
+        } */
     
     }
 }
