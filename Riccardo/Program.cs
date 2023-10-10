@@ -1,1 +1,1 @@
-﻿Riccardo.Week02.MyArrays.Start();
+﻿Riccardo.Week03.ArraysUebung.Start();

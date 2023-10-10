@@ -26,9 +26,16 @@ namespace Timo.Week03
 
             Console.WriteLine("=======================================");
 
-            //Aufgabe2
-            Console.WriteLine("\nAufgabe2: Kopie");
-            PrintArrayAndIndex(MakeACopy(CreateArrayUp(5)));
+            //Aufgabe2 Kopie:
+
+            int[] testArr = CreateArrayUp(5);
+            int[] copyArr = MakeACopy(testArr); // Hier kommt die Kopie
+            Console.WriteLine("Original:"); Console.WriteLine("[{0}]", string.Join(", ", testArr));
+            Console.WriteLine("Kopie:"); Console.WriteLine("[{0}]", string.Join(", ", copyArr));
+            Console.WriteLine("- - - - - - - -");
+            testArr[0] = 99;
+            Console.WriteLine("Original neu:"); Console.WriteLine("[{0}]", string.Join(", ", testArr));
+            Console.WriteLine("Kopie:"); Console.WriteLine("[{0}]", string.Join(", ", copyArr));
 
             Console.WriteLine("=======================================");
 
@@ -43,7 +50,8 @@ namespace Timo.Week03
 
             //Aufgabe3.3 Den zweiten, fünften und zehnten Wert des Arrays ausgeben
             Console.WriteLine("\nAufgabe3.3: ausgewählte Werte");
-            PrintRandomSpezial(arr2);
+            int[] speicher = { 2, 5, 10, 11 };
+            PrintRandomSpezial(arr2, new int[] { 16, 5, 3, 1});                     //Speicher is for storing the values i want to check
 
             //Aufgabe3.4 jeder zweite Wert
             Console.WriteLine("\nAufgabe3.4: jeder zweite Wert");
@@ -74,7 +82,7 @@ namespace Timo.Week03
 
             //Aufgabe7 Min, Max, Avg
             Console.WriteLine("\nAufgabe 7: Random Number Array Min/Max/Avg");
-            int[] Array = RandomFor(20, 1, 100);
+            int[] Array = {}; //RandomFor(20, 1, 100);
             int min = Minimum(Array);
             int max = Maximum(Array);
             int avg = Average(Array);
@@ -89,8 +97,8 @@ namespace Timo.Week03
             Console.WriteLine("\nAufgabe 8: Bubblesort mit Zahlen");
             int[] testBubble = RandomFor(20, 1, 100);
             PrintString(testBubble);
-            PrintBubblesort(Bubblesort(testBubble, false));         //use 'true' for ascending sorting, 'false' for descending sorting
-            PrintBubblesort(Bubblesort(testBubble, true));          //use 'true' for ascending sorting, 'false' for descending sorting
+            PrintString(Bubblesort(testBubble, false));             //use 'true' for ascending sorting, 'false' for descending sorting
+            PrintString(Bubblesort(testBubble, true));              //use 'true' for ascending sorting, 'false' for descending sorting
 
             Console.WriteLine("=======================================");
 
@@ -125,7 +133,7 @@ namespace Timo.Week03
             }
             return arrUp;
         }
-        
+
 
         //Aufgabe1.2: Number Array Abwärts
         public static int[] CreateArrayDown(int size)
@@ -139,21 +147,23 @@ namespace Timo.Week03
             }
             return arrDown;
         }
-        
+
 
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe2: Kopie
         public static int[] MakeACopy(int[] original)
+        
         {
-            int[] arrA = original;
-            int[] arrB = arrA;
-            arrB[0] = 50;
-
-            return arrB;
+            int[] copy = new int[original.Length];
+            for (int i = 0; i < original.Length; i++)
+            {
+                copy[i] = original[i];
+            }
+            return copy;
         }
-        
-        
+
+
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe3.1 Random foreach
@@ -182,19 +192,16 @@ namespace Timo.Week03
             }
             return arr2;
         }
-        
+
 
         //Aufgabe3.3 Den zweiten, fünften und zehnten Wert des Arrays ausgeben
-        //ToDo 3.3 Übergabe der Parameter per Funktion
-        public static int[] PrintRandomSpezial(int[] arr2 /*, int[] speicher*/)
+        public static int[] PrintRandomSpezial(int[] arr2, int[] speicher)
         {
-            int[] speicher = { 2, 5, 10, 11 };
             for (int a = 0; a < speicher.Length; a++)
             {
                 if (speicher[a] > arr2.Length)
                 {
-                    Console.WriteLine("Die auszugebende Stelle darf nicht länger sein als die  Länge des Arrays!");
-                    break;
+                    Console.WriteLine("Die Stelle {0} darf nicht länger sein als die  Länge ({1}) des Arrays!", speicher[a],arr2.Length);
                 }
                 else
                 {
@@ -273,6 +280,7 @@ namespace Timo.Week03
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe7.1 Min.
+        //ToDo 7.1 leeres Array!
         public static int Minimum(int[] arr)
         {
             int min = arr[0];
@@ -292,7 +300,9 @@ namespace Timo.Week03
             return min;
         }
 
-        //Aufgabe7.2 Max.
+        //Aufgabe7.2 Max.,
+        //ToDo 7.2 leeres Array!
+
         public static int Maximum(int[] arr)
         {
             int max = arr[0];
@@ -313,6 +323,8 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.3 Avg
+        //ToDo 7.3 Kommazahlen!!! leeres Array!
+
         public static int Average(int[] arr)
         {
             int avg = ArraySum(arr) / arr.Length;
@@ -326,6 +338,8 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.4 IndexMin
+        //ToDo 7.4 leeres Array!
+
         public static int IndexMinimum(int[] arr)
         {
             int indexMin = 0;
@@ -339,7 +353,9 @@ namespace Timo.Week03
             return indexMin;
         }
 
-        //Aufgabe7.4 IndexMax
+        //Aufgabe7.5 IndexMax
+        //ToDo 7.5 leeres Array!
+
         public static int IndexMaximum(int[] arr)
         {
             int indexMax = 0;
@@ -405,12 +421,6 @@ namespace Timo.Week03
                     x++;
                 }
             }
-            return arr;
-        }
-        //Print
-        public static int[] PrintBubblesort(int[] arr)
-        {
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
             return arr;
         }
     }

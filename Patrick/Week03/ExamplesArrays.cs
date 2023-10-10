@@ -12,23 +12,24 @@ namespace Patrick.Week03
     {
         public static void start()
         {
-            /////////////////////////////////////////
-            //createArrayIncrease(10);
-            //Console.WriteLine("Increase");
-            //printArray(createArrayIncrease(10));
-            //Console.WriteLine("------------------");
+            ///////////////////////////////////////////
+            createArrayIncrease(10);
+            Console.WriteLine("Increase");
+            int[] test = createArrayIncrease(10);
+            printArray(test);
+            Console.WriteLine("------------------");
 
-            //Console.WriteLine("Decrease");
-            //printArray(createArrayDecrease(10));
-            //Console.WriteLine("------------------");
-            //////////////////////////////////////////
+            Console.WriteLine("Decrease");
+            int[] test1 = createArrayDecrease(10);
+            printArray(test1);
+            Console.WriteLine("------------------");
+            ////////////////////////////////////////////
 
-            //makeACopy();
-            //RandomNumberArray(0, 101);
-            //RandomNumberArrayCrazyRange(-50, 50);
-            //randomNumberArrayZählen(0, 101);
-            //randomNumberArraySumme(0, 101);
-            randomNumberArrayMinMaxAvg(0, 101);
+            RandomNumberArray(0, 101);
+            RandomNumberArrayCrazyRange(-50, 50);
+            randomNumberArrayZählen(0, 101);
+            randomNumberArraySumme(0, 101);
+            randomNumberArrayMin(0, 101);
         }
 
         public static int[] createArrayIncrease(int count)
@@ -67,17 +68,24 @@ namespace Patrick.Week03
 
             for (int x = 0; x < array.Length; x++)
             {
-                Console.WriteLine(array[x]);
+                //Console.WriteLine(array[x]);
             }
 
             Console.WriteLine("[{0}]", string.Join(", ", array));           //gyula syntax
         }
 
-        //public static int[] makeACopy(int[] originals)
-        //{
-            
+        public static int[] makeACopy(int[] originals)
+        {
+            int[] arrayCopy = new int[originals.Length];
 
-        //}
+            for (int x = 0;x < originals.Length; x++)
+            {
+                arrayCopy[x] = originals[x];
+            }
+
+            return arrayCopy;
+
+        }
 
 
         public static int[] RandomNumberArray(int low, int up)
@@ -140,7 +148,7 @@ namespace Patrick.Week03
 
                 if (randomNumber[x] >= 30)
                 {
-                    Console.Write("[{0}]", string.Join(", ", randomNumber[x]));
+                    Console.Write("[{0}]", randomNumber[x]);
                 }
                 else
                 {                   
@@ -171,12 +179,29 @@ namespace Patrick.Week03
         }
 
 
-        public static int[] randomNumberArrayMinMaxAvg(int low, int up)
+        public static int sum(int[] nums)
+        {
+            return 0;
+        }
+
+
+        public static int[] randomNumberArrayMin(int low, int up)
         {
             int[] randomNumber = new int[10];
 
+            return randomNumber;
+        }
 
+        public static int[] randomNumberArrayMax(int low, int up)
+        {
+            int[] randomNumber = new int[10];
 
+            return randomNumber;
+        }
+
+        public static int[] randomNumberArrayAvg(int low, int up)
+        {
+            int[] randomNumber = new int[10];
 
             return randomNumber;
         }
