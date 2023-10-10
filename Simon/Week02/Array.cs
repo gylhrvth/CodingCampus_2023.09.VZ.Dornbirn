@@ -19,11 +19,11 @@ namespace Simon.Week02
             Console.WriteLine("\nMake a Copy");
             PrintArray(MakeACopy(CreateArray(3),3));
             Console.WriteLine("\nRandom Number foreach");
-            PrintArray(CreateRandom(5));
+            CreateRandomforeach(5);
             Console.WriteLine("\nRandom Number for");
-            CreateRandom2(5);
+            CreateRandom(5);
             Console.WriteLine("\nRandom Number 2,5,10");
-            PrintRandom3(5);
+            PrintRandom2(5);
             Console.WriteLine("\nRandom Number print every 2. one");
             PrintRandom4(5);
             Console.WriteLine("\nRandom Number Crazy");
@@ -39,22 +39,19 @@ namespace Simon.Week02
             Console.WriteLine("{0} {1}", a, b);
 
 
-
-
+            Console.WriteLine();
+            Console.WriteLine("TEST MAKE A COPY");
             int[] testArr = CreateArray(5);
             int[] copyArr = MakeACopy(testArr, 5); // Hier kommt die Kopie
 
-            Console.WriteLine("[{0}]", string.Join(", ", testArr));
+            Console.WriteLine("[{0}]", string.Join(", ", CreateArray(5)));
             Console.WriteLine("[{0}]", string.Join(", ", copyArr));
 
             Console.WriteLine("===================================");
 
-            copyArr[0] = 99;
+            testArr[0] = 99;
             Console.WriteLine("[{0}]", string.Join(", ", testArr));
             Console.WriteLine("[{0}]", string.Join(", ", copyArr));
-            Console.WriteLine("---------------------------------");
-            
-
         }
         //Aufgabe Number Array
         public static int[] CreateArray(int arrlength)
@@ -75,15 +72,6 @@ namespace Simon.Week02
                 Console.WriteLine("{0}. = {1}", i + 1, arr[i]);
             }
         }
-        //Print Array v2
-        public static void PrintArrayv2(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.WriteLine("[{0}]", string.Join(", ", arr[i]));
-            }
-        }
-        
 
         //Aufgabe Number Array 2
         public static int[] CreateArrayreverse(int arrlength)
@@ -107,41 +95,42 @@ namespace Simon.Week02
         }
 
         //Aufgabe Random Number Array mit foreach
-        public static int[] CreateRandom(int arrlength)
+        public static int[] CreateRandomforeach(int arrlength)
         {
             int[] arr = new int[arrlength];
+            int a = 0;
             foreach (int i in arr)
             {
                 arr[i] = random.Next(0, 100);
+                Console.WriteLine("{0}. = {1}", a + 1, arr[i]);
+                a++;
             }
             return arr;
         }
         //Aufgabe Random Number Array mit for
-        public static int[] CreateRandom2(int arrlength)
+        public static int[] CreateRandom(int arrlength)
         {
-            int[] arr4 = new int[arrlength];
-            Random random = new Random();
+            int[] arr = new int[arrlength];
             for (int i = 0; i < arrlength; i++)
             {
-                arr4[i] = random.Next(0, 100);
+                arr[i] = random.Next(0, 100);
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr4));
-            return arr4;
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+            return arr;
         }
         //Aufgabe Random Number Array mit 2,5,10
-        public static int[] PrintRandom3(int arrlength)
+        public static int[] PrintRandom2(int arrlength)
         {
-            int[] arr5 = new int[arrlength];
-            Random random = new Random();
+            int[] arr = new int[arrlength];
             for (int i = 0; i < arrlength; i++)
             {
                 if (i == 1 || i == 4 || i == 9)
                 {
-                    arr5[i] = random.Next(0, 100);
-                    Console.WriteLine(arr5[i]);
+                    arr[i] = random.Next(0, 100);
+                    Console.WriteLine(arr[i]);
                 }
             }
-            return arr5;
+            return arr;
         }
         //Aufgabe Random Number Array mit jedem 2. Wert
         public static int[] PrintRandom4(int arrlength)
