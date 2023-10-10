@@ -33,6 +33,7 @@ namespace Simon.Week02
             Console.WriteLine("\nRandom Number Array Summe");
             PrintSumm(CreateArrayCount(3));
 
+
             Console.WriteLine("\n\n");
             int a = 7;
             int b = a;
@@ -237,7 +238,6 @@ namespace Simon.Week02
         public static int CalcAvg(int[] arr)
         {
             int avg = 0;
-            PrintArray(arr);
             int a = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -246,8 +246,37 @@ namespace Simon.Week02
             avg = a / arr.Length;
             return avg;
         }
-
-
+        //Aufgabe Random Number Array Min Index
+        public static int IndexMin(int[] arr)
+        {
+            int min = 0;
+            int index = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                    index = i;
+                }
+            }
+            Console.WriteLine(index);
+            return index;
+        }
+        //Aufgabe Random Number Array Max Index
+        public static int IndexMax(int[] arr)
+        {
+            int max = 0;
+            int index = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                    index = i;
+                }
+            }
+            return max;
+        }
 
 
     }
