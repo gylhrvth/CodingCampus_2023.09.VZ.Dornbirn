@@ -52,7 +52,7 @@ namespace Mehmet.Week02
             int result = 0;
             for (int i = x; i <= y; i++)
             {
-                result += i;
+                result += i;              
             }
             return result;
         }
@@ -97,7 +97,7 @@ namespace Mehmet.Week02
             for (float y = 0; y < x; y++)
             {
                 result4 += x;
-                Console.WriteLine($"{result4 / x / 10,-3:0.00}");
+                Console.WriteLine($"{result4 / x / 10,-3:00.00}");
             }
             return result4;
         }
@@ -162,18 +162,16 @@ namespace Mehmet.Week02
 
         public static double MathSqrt(double Start)
         {
-            double random = new Random().Next(10000) + 1;
-            Console.WriteLine(random);
-
+          
             
-            double half =  / 2;
+            double half = Start / 2;
             double min = 0;
-            double max = random;
+            double max = Start;
 
             for (int y = 0; y < 10000; y++)
             {
                 double quadr = half * half;
-                if(quadr > random)
+                if(quadr > Start)
                 {
                     max = half;
                 } else
