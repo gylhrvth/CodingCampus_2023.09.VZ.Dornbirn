@@ -1,16 +1,19 @@
-﻿using System;
-
-namespace Fabian.Week02
+﻿namespace Fabian.Week02
 {
     public class Arrays
     {
         public static void Start()
         {
-            NumberArray();
+            //NumberArray();
             int[] originial = { 1, 2, 3, 4 };
+<<<<<<< HEAD
             MakeACopy(originial);
             //RandomNumberArray();
 
+=======
+            //MakeACopy(originial);
+            RandomNumberArray();
+>>>>>>> cac75163d540e87e9767ed635dfd61e3a66d8102
         }
 
         public static void NumberArray()
@@ -21,14 +24,11 @@ namespace Fabian.Week02
             for (int i = 1; i < nums1.Length; i++)
             {
                 nums1[i] = i;
+                nums2[i] = i;
                 Console.WriteLine(nums1[i]);
+                Console.WriteLine(nums2[^i]);
             }
             Console.WriteLine();
-            for (int i = 9; i < nums2.Length; i--)
-            {
-                nums2[i] = i;
-                Console.WriteLine(nums2[i]);
-            }
         }
 
         public static int[] MakeACopy(int[] original)
@@ -46,20 +46,30 @@ namespace Fabian.Week02
         public static void RandomNumberArray()
         {
             Random rnd = new Random();
-
             int[] randomNums = new int[10];
 
+            Console.WriteLine("array in foreach loop: ");
             foreach (int i in randomNums)
             {
                 randomNums[i] = rnd.Next(100);
                 Console.WriteLine(randomNums[i]);
             }
-            Console.WriteLine();
+            Console.WriteLine("\narray in for loop: ");
+            Console.Write("[");
             for (int i = 0; i < randomNums.Length; i++)
             {
                 randomNums[i] = rnd.Next(100);
-                Console.WriteLine(randomNums[2]);
-                Console.WriteLine(randomNums[i]);
+            }
+            Console.Write($"{randomNums}]");
+
+            Console.WriteLine($"\n2nd value = {randomNums[1]}");
+            Console.WriteLine($"5th value = {randomNums[4]}");
+            Console.WriteLine($"10th value = {randomNums[9]}\n");
+
+            Console.WriteLine("every second value: ");
+            for (int i = 0; i < randomNums.Length-1; i+=2)
+            {
+                Console.WriteLine($"{i} = {randomNums[i]}");
             }
         }
 

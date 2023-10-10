@@ -18,7 +18,7 @@ namespace Jovo.Week02
 
 
             int[] Main = { 1, 2, 3, 4 };
-            MakeACopy(Main);
+            //MakeACopy(Main);
 
 
 
@@ -50,11 +50,11 @@ namespace Jovo.Week02
 
         }
 
-        public static int[] MakeACopy(int[] Main)
+       /* public static int[] MakeACopy(int[] Main)
         {
             int[] copy = new int[Main.Length];
 
-            for (int i=0;i< copy.Length; i++)
+            for (int i = 0; i < copy.Length; i++)
             {
                 copy[i] = Main[i];
                 Console.WriteLine(i);
@@ -63,8 +63,7 @@ namespace Jovo.Week02
             return copy;
 
 
-        }
-        
+        }*/
 
 
     }

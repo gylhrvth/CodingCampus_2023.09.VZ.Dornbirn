@@ -359,7 +359,6 @@ namespace Timo.Week01
 
 
         //Aufgabe15
-        //TODO Sinus und Cosinus
         public static void PrintCircleSinCos(int radius)
         {
             for (int i = radius; i > -radius * 2; radius--)

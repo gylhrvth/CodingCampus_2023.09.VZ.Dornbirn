@@ -24,9 +24,11 @@ namespace Martin.Week02
             //ZeroToHunderdErweitert();
             //TeilenUndHerrschen();
             //BerechnungVonPI();
+            //Console.WriteLine(Math.PI);
             //BerechnungVonPINilkantka();
             //Console.WriteLine(Math.PI);
-            GeheimeReihe();
+            //GeheimeReihe(20);
+            WurzelRechnung(20.0);
         }
 
         //Aufgame: Summe
@@ -135,16 +137,11 @@ namespace Martin.Week02
             double PI = 0;
 
 
-            for (long x = 1;x <= 3000000000000;x+= 2)
+            for (long x = 1;x <= 100000;x+= 2)
             {
 
                 PI += 4.0 / x;
 
-                /*if(x % 100000 == 1)
-              {
-                   Console.WriteLine("PI =" + PI);
-                }
-                */
                 PI *= -1;
 
             }
@@ -167,7 +164,7 @@ namespace Martin.Week02
                 {
 
 
-                     PINilakantha = PINilakantha + 4.0/(Number1 * (Number1 + 1) * (Number1 + 2));
+                     PINilakantha = PINilakantha + 4.0/(Number1 * (Number1 + 1) * (Number1 + 2)); 
 
 
                      PINilakantha *= -1;
@@ -184,16 +181,50 @@ namespace Martin.Week02
 
         }
 
-        //Geheime Reihe
+        //Geheime Reihe //sie hat als anfangszahl 1,41
 
-        public static void GeheimeReihe()
+        public static void GeheimeReihe(double number)
         {
-            for(double i = 1.0; i < 10; i++)
+
+            double secret = 1.0;
+
+
+            for(double i = 1.0; i < number; i++)
             {
 
+                secret = secret / 2 + 1 / secret;
+
             }
+
+            Console.WriteLine(secret);
+
         }
 
+        //Wurzelannäherung
+
+        public static void WurzelRechnung(double number)
+        {
+            double RandomNumber = new Random().Next((int)number) + 1;
+            double WurzelVonZahl = Math.Sqrt(RandomNumber);
+
+            Console.WriteLine(RandomNumber);
+            Console.WriteLine(Math.Sqrt(RandomNumber));
+
+            Console.WriteLine("Wurzel von "+RandomNumber+" ist "+ WurzelVonZahl);
+
+            double minimum = 0;
+            double maximum = RandomNumber;
+
+            double newNumber = RandomNumber / 2;
+            newNumber *= newNumber;
+                
+
+            if (newNumber < maximum)
+            {
+                maximum = newNumber;
+            }
+
+        }
 
         //Beispiel//
         public static void BeisSpielMitRunden()
