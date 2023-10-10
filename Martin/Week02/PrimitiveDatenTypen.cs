@@ -22,13 +22,14 @@ namespace Martin.Week02
             //ZeroToHunderd();
             //BeisSpielMitRunden();
             //ZeroToHunderdErweitert();
-            //TeilenUndHerrschen();
-            //BerechnungVonPI();
+            TeilenUndHerrschen();
+            BerechnungVonPI();
+            Console.WriteLine(Math.PI);
             //Console.WriteLine(Math.PI);
             //BerechnungVonPINilkantka();
             //Console.WriteLine(Math.PI);
             //GeheimeReihe(20);
-            WurzelRechnung(20.0);
+            //WurzelRechnung(20.0);
         }
 
         //Aufgame: Summe
@@ -121,10 +122,19 @@ namespace Martin.Week02
 
         public static void TeilenUndHerrschen()
         {
-            for(int x = 0; x <= 20; x++)
+            double result = 0;
+            string eins = "Result 1 digit";
+            string zwei = "Result 2 digit";
+
+            for (int x = 0; x <= 100; x++)
             {
-                Console.WriteLine(x + " / " + "5" +" = "+ x/5 );
-                Console.WriteLine(x + " / " + "5.0" + " = " + x/5.0);
+                //Console.WriteLine(x + " / " + "5" +" = "+ x/5 );
+                //Console.WriteLine(x + " / " + "5.0" + " = " + x/5.0);
+
+                result += 0.1;
+
+                Console.WriteLine("{1,0}{0,1}", x, zwei);
+                Console.WriteLine("{1,0}{0,7:N2}",x,eins);
 
                 Console.WriteLine();
             }
