@@ -1,1 +1,1 @@
-﻿Niklas.Week02.PrimitiveDatentypen.Start();
+﻿Niklas.Week02.ArrayNumber.Start();

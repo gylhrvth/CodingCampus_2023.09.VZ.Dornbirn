@@ -1,1 +1,1 @@
-﻿Kerem.Week02.DataTypes.Start();
+﻿Kerem.Week02.ArrayExamples.StartArrayExamples();
