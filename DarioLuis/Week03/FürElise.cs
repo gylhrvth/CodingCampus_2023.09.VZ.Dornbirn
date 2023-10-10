@@ -13,8 +13,6 @@
             Console.Beep(293, 500);
             Console.Beep(261, 500);
             Console.Beep(220, 800);
-
-
         }
     }
 }
