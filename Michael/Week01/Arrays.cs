@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Channels;
@@ -36,6 +37,30 @@ namespace Michael.Week01
 
             writeIntArray(myArrayReversed);
 
+        }
+
+
+        public static int[] ascendingArray(int length)
+        {
+            int[] array = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                array[i] = i + 1;
+            }
+            return array;
+        }
+
+
+        public static int[] descendingArray(int length)
+        {
+            int[] array = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                array[i] = length - i;
+            }
+            return array;
         }
 
 
@@ -643,38 +668,144 @@ namespace Michael.Week01
             Console.WriteLine("\n\n\nno winner, rip");
         }
 
-        /*
-        public static void printGOLField(int[,] field)
+
+        public static void printGOLField(int[,] field, int size)
         {
-            foreach (int[] row in field)
+
+            for (int y = 0; y < size; y++)
             {
-                foreach (int cell in row)
+                for (int x = 0; x < size; x++)
                 {
-                    if (cell == 0)
+                    if (field[y,x] == 0)
                     {
                         Console.Write("  ");
                     }
                     else
                     {
-                        Console.Write((char)9632);
+                        Console.Write((char)9632 + " ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+        public static int[,] randomBinaryField(int size)
+        {
+            Random rnd = new Random();
+            int[,] field = new int[size, size];
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    field[y, x] = rnd.Next(2);
+                }
+                Console.WriteLine();
+            }
+            return field;
+        }
+
+
+        public static int numberOfLivingNeighbors(int[,] field, int size, int xCoord, int yCoord)
+        {
+            int livingNeighbors = 0;
+
+            for (int i = -1; i <= 1; i++)
+            {
+                for (int j = -1; j <=1; j++)
+                {
+                    try
+                    {
+                        if ((j != 0 || i != 0) && (field[yCoord + i, xCoord + j] == 1))
+                        {
+                            livingNeighbors++;
+                        }
+                        // alternative
+                        //if(field[yCoord + i, xCoord + j] == 1)
+                    }
+                    catch
+                    {
                     }
                 }
             }
+            return livingNeighbors /*-field[yCoord,xCoord]*/;
         }
-        */
+
+
+        public static int[,] nextGenerationOfField(int[,] field, int size)
+        {
+            int[,] tempField = new int[size,size];
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    if (field[y, x] == 0 && numberOfLivingNeighbors(field, 20, x, y) == 3)
+                    {
+                        tempField[y, x] = 1;
+                    }
+                    else if (field[y, x] == 1 && numberOfLivingNeighbors(field, 20, x, y) < 2)
+                    {
+                        tempField[y, x] = 0;
+                    }
+                    else if (field[y, x] == 1 && numberOfLivingNeighbors(field, 20, x, y) > 3)
+                    {
+                        tempField[y, x] = 0;
+                    }
+                    else
+                    {
+                        tempField[y, x] = field[y, x];
+                    }
+                }
+            }
+            return tempField;
+        }
 
        
-        public static void GameOfLife(int size)
+        public static int[,] randomBinaryFieldCorrelated(int size)
         {
+            Random rnd = new Random();
             int[,] field = new int[size, size];
+
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    field[y, x] = rnd.Next(10);
+                    if (field[y,x] != 0)
+                    {
+                        field[y, x] = 0;
+                    }
+                    else
+                    {
+                        field[y, x] = 1;
+                    }
+                }
+                Console.WriteLine();
+            }
+            return field;
+        }
+
+
+        public static void GameOfLife(int size, double generationsPerSecond = 1)
+        {
+            int[,] field = randomBinaryFieldCorrelated(size);
+            //int[,] field = new int[5, 5] { { 0, 1, 0, 1, 0 }, { 0, 0, 1, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 }, { 0, 0, 0, 0, 0 } };
+
+            while (true)
+            {
+                Console.Clear();
+                printGOLField(field,size);
+                field = nextGenerationOfField(field,size);
+                Thread.Sleep((int)Math.Floor(1000/generationsPerSecond));
+            }
         }
         
 
         public static void Start()
         {
-            int[,] array = new int[2, 2] { { 0, 1 }, { 1, 0 } };
-            //printGOLField(array);
+            GameOfLife(30);
         }
-
     }
 }

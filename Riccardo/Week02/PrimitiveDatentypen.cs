@@ -34,8 +34,8 @@ namespace Riccardo.Week02
             double piv2 = CalculatePiv2(100000);
             Console.WriteLine(piv2);
             Console.WriteLine("\nPSSSSSSSSSSSSSST");
-            double secret = Calculatesecret(100);
-            Console.WriteLine(secret);
+            //double secret = Calculatesecret(100);
+            //Console.WriteLine(secret);
 
 
 
@@ -85,21 +85,20 @@ namespace Riccardo.Week02
             Printdevide(0, 20); //der Grund des unterschiedes ist die gegebene Formatierung in der {} klammer das mit 5.0 ist halt genauer wegen der extra stelle
 
             Console.WriteLine("\nBerechnung von Pi");
-            double pi = CalculatePi(1, 100000000);
+            pi = CalculatePi(1, 100000000);
             Console.WriteLine(pi);
             Console.WriteLine("PI ==");
             Console.WriteLine(Math.PI);
             Console.WriteLine("\nPI (Nilakantha Reihe)");
-            double piv2 = CalculatePiv2(100000);
+            piv2 = CalculatePiv2(100000);
             Console.WriteLine(piv2);
             Console.WriteLine("\nPSSSSSSSSSSSSSST");
-            double secret = Calculatesecret(100);
-            Console.WriteLine(secret);
+            //secret = Calculatesecret(100);
+            //Console.WriteLine(secret);
         }
         //Aufgabe StartBoolean
-        public static int StartBooleanExamples(string symbol, int size)
+        public static void StartBooleanExamples(string symbol, int size)
         {
-            int size = 7;
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
@@ -115,7 +114,6 @@ namespace Riccardo.Week02
                 }
                 Console.WriteLine();
             }
-
 
         }
 

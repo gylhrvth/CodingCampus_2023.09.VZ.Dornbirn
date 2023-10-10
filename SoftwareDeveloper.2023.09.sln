@@ -100,6 +100,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Timo", "Timo\Timo.csproj", "{FB493C95-31A4-4049-AE09-07EC9CB517C4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sandro", "Sandro", "{02C1395F-63D5-4384-89FD-69DC5ED39E38}"
+	ProjectSection(SolutionItems) = preProject
+		Riccardo\Program.cs = Riccardo\Program.cs
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sandro", "Sandro\Sandro.csproj", "{EEF350B0-A00C-4419-BCC1-76B98F813931}"
 EndProject
@@ -119,7 +122,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
-
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
