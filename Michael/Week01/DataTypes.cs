@@ -5,6 +5,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Michael.Week01
 {
@@ -242,11 +243,182 @@ namespace Michael.Week01
         }
 
 
+        public static bool isPrimeSlow(int number)
+        {
+            for (int i = number-1; i > 1; i--)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static bool isPrimeFast(int number)
+        {
+            for (int i = number/2; i > 1; i--)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static bool isPrimeFaster(int number)
+        {
+            for (int i = 2; i < number/2+1; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static bool isPrimeFastest(int number)
+        {
+            for (int i = 2; i < Math.Sqrt(number)+1; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static int nthTwinPrimeSlow(int number)
+        {
+            int twinPrimeCount = 0;
+            int prime = 1;
+
+            while (twinPrimeCount < number)
+            {
+                prime++;
+                if (isPrimeSlow(prime) && isPrimeSlow(prime + 2))
+                {
+                    twinPrimeCount++;
+                }
+            }
+            return prime;
+        }
+
+
+        public static int nthTwinPrimeFast(int number)
+        {
+            int twinPrimeCount = 0;
+            int prime = 1;
+
+            while (twinPrimeCount < number)
+            {
+                prime++;
+                if (isPrimeFast(prime) && isPrimeFast(prime + 2))
+                {
+                    twinPrimeCount++;
+                }
+            }
+            return prime;
+        }
+
+
+        public static int nthTwinPrimeFaster(int number)
+        {
+            int twinPrimeCount = 0;
+            int prime = 1;
+
+            while (twinPrimeCount < number)
+            {
+                prime++;
+                if (isPrimeFaster(prime) && isPrimeFaster(prime + 2))
+                {
+                    twinPrimeCount++;
+                }
+            }
+            return prime;
+        }
+
+
+        public static int nthTwinPrimeFastest(int number)
+        {
+            int twinPrimeCount = 0;
+            int prime = 1;
+
+            while (twinPrimeCount < number)
+            {
+                prime++;
+                if (isPrimeFastest(prime) && isPrimeFastest(prime + 2))
+                {
+                    twinPrimeCount++;
+                }
+            }
+            return prime;
+        }
+
+
+        public static void comparePrimeBoundaries(int number)
+        {
+            Stopwatch sw = new Stopwatch();
+            Console.WriteLine("test slow (full length and backwards)");
+            sw.Start();
+            int resultSlow = nthTwinPrimeSlow(1000);
+            sw.Stop();
+            TimeSpan ts = sw.Elapsed;
+            Console.WriteLine("Run time {0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine($"{resultSlow} and {resultSlow + 2}\n");
+
+            Console.WriteLine("test fast (half length and backwards)");
+            sw.Reset();
+            sw.Start();
+            int resultFast = nthTwinPrimeFast(1000);
+            sw.Stop();
+            ts = sw.Elapsed;
+            Console.WriteLine("Run time {0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine($"{resultFast} and {resultFast + 2}\n");
+
+            Console.WriteLine("test faster (half length and forwards)");
+            sw.Reset();
+            sw.Start();
+            int resultFaster = nthTwinPrimeFaster(1000);
+            sw.Stop();
+            ts = sw.Elapsed;
+            Console.WriteLine("Run time {0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine($"{resultFaster} and {resultFaster + 2}\n");
+
+            Console.WriteLine("test fastest (sqrt length and forwards)");
+            sw.Reset();
+            sw.Start();
+            int resultFastest = nthTwinPrimeFastest(1000);
+            sw.Stop();
+            ts = sw.Elapsed;
+            Console.WriteLine("Run time {0:00}:{1:00}:{2:00}.{3:000}", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            Console.WriteLine($"{resultFastest} and {resultFastest + 2}\n");
+        }
+
         public static void Start()
         {
-            int test = 5;
-            Console.WriteLine(piNilakantha(4));
-            Console.WriteLine($"test {12.242525655,3:0.0000}");
+            int i = 2;
+            int n = 0;
+            while (true)
+            {
+                if (isPrimeFast(i))
+                {
+                    if(true)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    n++;
+                }
+                i++;
+            }
+
         }
 
     }

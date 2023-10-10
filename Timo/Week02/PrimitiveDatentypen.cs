@@ -75,7 +75,6 @@ namespace Timo.Week02
             }
             return fakt;
         }
-        //ToDo 
 
 
         //Aufgabe3: Von 0 bis 100 Zählen in 0.1er Schritten
@@ -106,7 +105,6 @@ namespace Timo.Week02
 
 
         //Aufgabe4: Von 0 bis 100 Zählen in 0.1er Schritten erweitert
-        //TODO fertigstellen!
         public static double CountPlus01Extended(int j)
         {
             double result = 0;

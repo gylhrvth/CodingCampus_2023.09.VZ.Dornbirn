@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Riccardo.Week02
 {
-    internal class Arrays
+    public class MyArrays
     {
         public static void Start()
         {
