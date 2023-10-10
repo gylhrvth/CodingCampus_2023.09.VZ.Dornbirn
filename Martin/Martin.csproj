@@ -8,10 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Week01\" />
+    <Compile Remove="sdf\**" />
+    <EmbeddedResource Remove="sdf\**" />
+    <None Remove="sdf\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="sdf\" />
+    <None Remove="Week01\" />
   </ItemGroup>
 </Project>
