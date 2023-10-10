@@ -27,8 +27,9 @@ namespace Dimitri.Week03
             //Console.WriteLine(ReturnArrayMin(RandomNumberArray(-50, 50)));
             //Console.WriteLine(ReturnArrayMax(RandomNumberArray(-50, 50)));
             //Console.WriteLine(ReturnArrayAvg(RandomNumberArray(0, 100)));
-            Console.WriteLine(ReturnArrayMinIndex(RandomNumberArray(-50, 50)));
-            Console.WriteLine(ReturnArrayMaxIndex(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayMinIndex(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayMaxIndex(RandomNumberArray(-50, 50)));
+            PrintArray((BubbleSortAsc(RandomNumberArray(0, 100))));
         }
 
         public static int[] IncreaseNumberArray(int n)
@@ -277,5 +278,37 @@ namespace Dimitri.Week03
 
             return indexMax;
         }
+
+        public static int[] BubbleSortAsc(int[] arr)
+        {
+            int[] arrAsc = new int[arr.Length];
+
+            for (int i = 0; i < arr.Length * arr.Length; i++)
+            {
+                for (int j = 0; j < arrAsc.Length; j++)
+                {
+                    int a = arr[j];
+                    int b = arr[j + 1];
+                    if (a > b)
+                    {
+                        arrAsc[j + 1] = a;
+                        arrAsc[j] = b;
+                    } else
+                    {
+                        arrAsc[j] = a;
+                        arrAsc[j + 1] = b;
+                    }
+
+                }
+
+            }
+
+            return arrAsc;
+        }
+
+        //public static void BubbleSortDesc(int[] arr)
+        //{
+
+        //}
     }
 }
