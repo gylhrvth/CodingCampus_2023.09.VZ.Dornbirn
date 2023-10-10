@@ -8,7 +8,7 @@ namespace Fabian.Week02
         {
             NumberArray();
             int[] originial = { 1, 2, 3, 4 };
-            //MakeACopy(originial);
+            MakeACopy(originial);
             //RandomNumberArray();
 
         }
