@@ -106,7 +106,6 @@ namespace Cemal.Week02
             }
         }
 
-
         public static void TeilenHerrschen()
         {
             for (int i = 0; i <= 20; i++)
