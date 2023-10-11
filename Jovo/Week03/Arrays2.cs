@@ -3,16 +3,17 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Jovo.Week93
 {
-    internal class Arrays2 { 
+    internal class Arrays2
+    {
 
 
         public static Random rand = new Random();
 
 
-        
+
         public static void Start()
         {
-            /*
+
             Console.WriteLine("Aufgabe Number Increase");
             int[] arr = NumberArrayIncrease(10);
             foreach (int element in arr)
@@ -22,7 +23,7 @@ namespace Jovo.Week93
             Console.WriteLine();
             Console.WriteLine("===================");
 
-            
+
 
 
             Console.WriteLine("Aufgabe Number Decrease");
@@ -33,7 +34,7 @@ namespace Jovo.Week93
             }
             Console.WriteLine();
             Console.WriteLine("=================");
-
+            /*
             Console.WriteLine("Aufgabe MakeACopy");
             int[] arr3 = MakeACopy(arr);
             foreach (int element in arr3)
@@ -73,7 +74,7 @@ namespace Jovo.Week93
             
             Console.WriteLine();
             Console.WriteLine("===============");
-            */
+            
 
             Console.WriteLine("Random Number Array");
             int[] arr = RandomNumberArray(2);
@@ -84,7 +85,7 @@ namespace Jovo.Week93
 
 
             PrintSecondFifthTenth(arr);
-
+            */
         }
 
 
@@ -107,7 +108,7 @@ namespace Jovo.Week93
             Console.WriteLine("]");
         }
 
-        public static void PrintArrayWithFori(int[] arr) 
+        public static void PrintArrayWithFori(int[] arr)
         {
             Console.Write("[");
             for (int i = 0; i < arr.Length; i++)
@@ -115,7 +116,7 @@ namespace Jovo.Week93
                 if (i > 0)
                 {
                     Console.Write(", ");
-                }                
+                }
                 Console.Write(arr[i]);
             }
             Console.WriteLine("]");
@@ -125,14 +126,14 @@ namespace Jovo.Week93
         public static int[] NumberArrayIncrease(int size)
         {
             int[] num1 = new int[size];
-            
+
 
             for (int i = 0; i < num1.Length; i++)
             {
                 num1[i] = i;
-                
+
             }
-           
+
 
             return num1;
         }
@@ -140,12 +141,12 @@ namespace Jovo.Week93
 
         public static int[] NumberArrayDecrease(int size)
         {
-            int[] num2= new int[10];
+            int[] num2 = new int[10];
 
             for (int j = 0; j < num2.Length; j++)
             {
 
-                num2[j] = j;
+                num2[j] = j - 10; Math.Abs(-10);
 
             }
             return num2;
@@ -159,10 +160,11 @@ namespace Jovo.Week93
 
             for (int i = 0; i < copy.Length; i++)
             {
-                copy[i] = original[i];  
+                copy[i] = original[i];
+
             }
             return copy;
-            
+
         }
 
 
