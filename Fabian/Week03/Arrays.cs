@@ -2,18 +2,18 @@
 {
     public class Arrays
     {
-        public static Random rand = new Random(1234);
+        public static Random rand = new Random(123);
         public static int[] arr = RandomNumberArrayMinMaxAvg();
 
         public static void Start()
         {
             //Console.WriteLine("[{0}]", string.Join(", ", NumberArray()));
             //Console.WriteLine("[{0}]", string.Join(", ", NumberArrayReversed()));
-            /*int[] originial = { 1, 2, 3, 4 };
-            MakeACopy(originial);*/
+            //int[] originial = { 1, 2, 3, 4 };
+            //Console.WriteLine("[{0}]", string.Join(", ", MakeACopy(originial)));
             //RandomNumberArray();
             //PrintRandomNumberArrayCrazyRange();
-            //PrintRandomNumberArrayCount();
+            //Console.WriteLine(RandomNumberArrayCount(arr));
             //Console.WriteLine("sum of array = " + RandomNumberArraySum());
 
             //task Random Number Array Min/Max/Avg:
@@ -127,25 +127,17 @@
             }
         }
 
-        public static int[] RandomNumberArrayCount()
+        public static int RandomNumberArrayCount(int[] arr)
         {
-            int[] randomNums = new int[10];
-
-            for (int i = 0; i < randomNums.Length; i++)
+            int count = 0;
+            for (int i = 0; i < arr.Length; i++) 
             {
-                randomNums[i] = rand.Next(1, 100);
-
-                if (randomNums[i] < 30)
+                if (arr[i] > 30)
                 {
-                    randomNums[i] = 0;
+                    count++;
                 }
             }
-            return randomNums;
-        }
-
-        public static void PrintRandomNumberArrayCount()
-        {
-            Console.WriteLine("[{0}]", string.Join(", ", RandomNumberArrayCount()));
+            return count;
         }
 
         public static int RandomNumberArraySum()

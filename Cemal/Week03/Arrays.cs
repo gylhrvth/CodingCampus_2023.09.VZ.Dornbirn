@@ -37,7 +37,7 @@ namespace Cemal.Week03
             {
                 Console.Write(element + " ");
             }
-            Console.WriteLine();
+            Console.WriteLince();
 
 
             myArr[0] = 200;
