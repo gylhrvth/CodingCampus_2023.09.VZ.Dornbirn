@@ -51,7 +51,7 @@ namespace Timo.Week03
             //Aufgabe3.3 Den zweiten, fünften und zehnten Wert des Arrays ausgeben
             Console.WriteLine("\nAufgabe3.3: ausgewählte Werte");
             int[] speicher = { 2, 5, 10, 11 };
-            PrintRandomSpezial(arr2, speicher);
+            PrintRandomSpezial(arr2, new int[] { 16, 5, 3, 1});                     //Speicher is for storing the values i want to check
 
             //Aufgabe3.4 jeder zweite Wert
             Console.WriteLine("\nAufgabe3.4: jeder zweite Wert");
@@ -82,7 +82,7 @@ namespace Timo.Week03
 
             //Aufgabe7 Min, Max, Avg
             Console.WriteLine("\nAufgabe 7: Random Number Array Min/Max/Avg");
-            int[] Array = RandomFor(20, 1, 100);
+            int[] Array = {}; //RandomFor(20, 1, 100);
             int min = Minimum(Array);
             int max = Maximum(Array);
             int avg = Average(Array);
@@ -201,8 +201,7 @@ namespace Timo.Week03
             {
                 if (speicher[a] > arr2.Length)
                 {
-                    Console.WriteLine("Die auszugebende Stelle darf nicht länger sein als die  Länge des Arrays!");
-                    break;
+                    Console.WriteLine("Die Stelle {0} darf nicht länger sein als die  Länge ({1}) des Arrays!", speicher[a],arr2.Length);
                 }
                 else
                 {
@@ -281,6 +280,7 @@ namespace Timo.Week03
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe7.1 Min.
+        //ToDo 7.1 leeres Array!
         public static int Minimum(int[] arr)
         {
             int min = arr[0];
@@ -300,7 +300,9 @@ namespace Timo.Week03
             return min;
         }
 
-        //Aufgabe7.2 Max.
+        //Aufgabe7.2 Max.,
+        //ToDo 7.2 leeres Array!
+
         public static int Maximum(int[] arr)
         {
             int max = arr[0];
@@ -321,6 +323,8 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.3 Avg
+        //ToDo 7.3 Kommazahlen!!! leeres Array!
+
         public static int Average(int[] arr)
         {
             int avg = ArraySum(arr) / arr.Length;
@@ -334,6 +338,8 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.4 IndexMin
+        //ToDo 7.4 leeres Array!
+
         public static int IndexMinimum(int[] arr)
         {
             int indexMin = 0;
@@ -347,7 +353,9 @@ namespace Timo.Week03
             return indexMin;
         }
 
-        //Aufgabe7.4 IndexMax
+        //Aufgabe7.5 IndexMax
+        //ToDo 7.5 leeres Array!
+
         public static int IndexMaximum(int[] arr)
         {
             int indexMax = 0;

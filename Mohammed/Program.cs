@@ -1,1 +1,1 @@
-﻿Mohammed.Week02.Day02.Day02start();
+﻿Mohammed.Week03.Arrayall.startArrayall();

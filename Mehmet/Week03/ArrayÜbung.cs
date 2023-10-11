@@ -63,10 +63,13 @@ namespace Mehmet.Week03
 
 
             Console.WriteLine("RandomNumberArray");
-            int random = new Random().Next(100) + 1;
-            RandomNumberArray(random,10);
-            Console.WriteLine();
-            Console.WriteLine();
+            int[] arr = RandomNumberArray(10);
+            foreach (int element in arr)
+            {
+                Console.Write(element);
+            }
+            
+         
 
 
 
@@ -106,20 +109,24 @@ namespace Mehmet.Week03
 
 
 
-        public static int RandomNumberArray(int random,int size)
+        public static int[] RandomNumberArray(int size)
         {
-            
-        for (int i = 0;i < size; i++)
+            int[] arr = new int[size];
+            for(int i = 0;i < 3; i++)
             {
-                Console.Write(random + " ");
-                random = new Random().Next(100) + 1;
+                Random random = new Random();
+                Console.WriteLine(random);
             }
             
-
-
-
-            return random;
+            
+            return arr;
         }
+              
+            
+
+
+           
+        
 
 
 
