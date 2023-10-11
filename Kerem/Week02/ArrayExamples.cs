@@ -3,47 +3,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Kerem.Week02
 {
     internal class ArrayExamples
     {
+        public static Random rand = new Random();
         public static void StartArrayExamples()
         {
-            int[] arr = CreateArray(10);
-            PrintArray(arr);
+            Console.WriteLine("ORIGINAL");
+            int[] original = CreateArray(10);
+            Console.WriteLine("[{0}]", string.Join(", ", original));
+
+
+
+            Console.WriteLine("ARRAY2");
             int[] arr2 = CreateArray2(10);
-            PrintArray(arr2);
+            Console.WriteLine("[{0}]", string.Join(", ", arr2));
 
 
-            //int[] arr = { 1, 2, 3, 4, 5, 6};
-            //{
-            //    Console.WriteLine(arr);
-            //    for(int i = 0; i < arr.Length; ++i)
-            //    {
-            //        Console.WriteLine("{0}. = {1} ", i, arr[i]);
-            //    }
-            //}
-            //int[] arr2 = { 6, 5, 4, 3, 2, 1 };
-            //{
-            //    Console.WriteLine(arr2);
-            //    for(int i = 0; i < arr2.Length; ++i)
-            //    {
-            //        Console.WriteLine("{0}. = {1}", i, arr2[i]);
-            //    }
-            //}
+
+
+            Console.WriteLine("COPY");
+            int[] copy = MakeACopy(original);
+            Console.WriteLine("[{0}]", string.Join(", ", copy));
+
+
+
+            Console.WriteLine("CHANGEORIGINAL");
+            original[0] = 30;
+            Console.WriteLine("[{0}]", string.Join(", ", original));
+            Console.WriteLine("COPY");
+            Console.WriteLine("[{0}]", string.Join(", ", copy));
+
+
+            Console.WriteLine("===========================");
+            Console.WriteLine("RANDOMNUMB");
+            int[] arr3 = RandomNumberArray(10);         
+            Console.WriteLine("[{0}]", string.Join(", ",arr3));
+
+
+            Console.WriteLine("===========================");
+            Console.WriteLine("RANDOMNUMB FOREACH");
+            foreach (int element in arr3)
+            {
+                Console.Write(element + ", ");
+            }
+
+
         }
 
-        public static void PrintArray(int[] arr)
-        {
-            // Hier muss man einen Ausdruck siehe Oben...
-            //for (int i = 0; i < arr.Length; ++i)
-            //{
-            //    Console.WriteLine("{0}. = {1} ", i, arr[i]);
-            //}
-            // alternative wäre
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
-        }
 
 
         public static int[] CreateArray(int size)
@@ -53,6 +63,7 @@ namespace Kerem.Week02
             for (int i = 0; i < arr.Length; ++i)
             {
                 arr[i] = 1+ i;
+                
 
             }
 
@@ -70,5 +81,32 @@ namespace Kerem.Week02
 
             return arr2;
         }
+        public static int[] MakeACopy(int[] original)
+        {
+            int[] copy = new int[original.Length];
+            for (int i = 0; i < original.Length; i++)
+            {
+                copy[i] = original[i];
+            }
+            return copy;
+        }
+        public static int[] RandomNumberArray(int size)
+        {
+            int[] arr3  = new int [size];
+            
+            for( int i = 0; i < arr3.Length; ++i)
+            {
+                int value = arr3[i];
+                arr3[i] = rand.Next(0, 100);
+                arr3[3] = 100000;
+               
+            }
+         
+            Console.WriteLine();
+
+                
+            return arr3;
+        }
+
     }
 }

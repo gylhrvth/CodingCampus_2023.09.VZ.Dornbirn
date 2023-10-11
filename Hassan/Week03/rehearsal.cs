@@ -16,46 +16,28 @@ namespace Hassan.Week03
             Console.WriteLine("Orginal");
             int[] orginal = Array(10);
 
-            foreach (int element in orginal)
-            {
-                Console.Write(element + " ");
-            }
+            Console.WriteLine("[{0}]", string.Join(", ", orginal));
 
             Console.WriteLine();
             Console.WriteLine("=========");
             Console.WriteLine("Copy");
             int[] copy = MakeACopy(orginal);
-            foreach (int element in copy)
-            {
-                Console.Write(element + " ");
-            }
+
+            Console.WriteLine("[{0}]", string.Join(", ", copy));
+
+
             Console.WriteLine();
             Console.WriteLine("=============");
             Console.WriteLine("Änderung orginal");
             orginal[3] = 200;
-            foreach (int element in orginal)
-            {
-                Console.Write(element + " ");
-            }
+            Console.WriteLine("[{0}]", string.Join(", ", orginal));
             Console.WriteLine();
             Console.WriteLine("Änderung Copy");
 
-            foreach (int element in copy)
-            {
-                Console.Write(element + " ");
-            }
+            Console.WriteLine("[{0}]", string.Join(", ", copy));
             Console.WriteLine();
 
-            int[] arr2 = Array(12);
-            foreach (int element in arr2)
-            {
-                Console.Write(element + " ");
-            }
-            Console.WriteLine();
-            foreach (int element in orginal)
-            {
-                Console.Write(element + " ");
-            }
+           
 
             int[] array = Array(31);
             int[] array2 = Array(49);
