@@ -57,17 +57,20 @@
             double number;
 
             max = random;
-            number = random / 2;
+
 
             do
             {
+                number = random / 2;
+
                 if (Math.Pow(number, 2) > max)
                 {
-                    max = Math.Pow(number, 2);
+                    max = number;
+
                 }
                 else if (Math.Pow(number, 2) < max)
                 {
-                    min = Math.Pow(number, 2);
+                    min = number;
                 }
 
             } while (min == max);
@@ -92,12 +95,13 @@
             /* WertN/2 erhöt sich mit 0,5 Schritten!
              * 1/WertN wird immer kleiner und die Nachkommastellen sind meisten nach jeder 3 Rechnung periodisch!
              */
+            result = 1;
 
             for (double number1 = 1.0; number1 <= 30; number1++)
             {
-                result += number1 + 1;
-                result = (number1 / 2) + (1 / number1);
-                Console.WriteLine($"{result,-20} =  {number1 / 2,-4}  +  {1 / number1,-7} ");
+                
+                result = (result / 2) + (1 / result);
+                Console.WriteLine($"{result,-20} =  {result / 2,-4}  +  {1 / result,-7} ");
             }
 
             return result;
