@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -20,14 +21,13 @@ namespace Erik.Week03
             PrintArray(arr2);
 
             //finalCopyMethode();
-            
-            
+
             int[] arr = CreateRandomArray(10);
             Console.WriteLine("[{0}]", string.Join(", ", arr));
             PrintArray(arr);
+            Console.WriteLine();
 
-
-
+            ArrayPrintYourNumber(5, 20);
 
         }
 
@@ -40,11 +40,11 @@ namespace Erik.Week03
                 if (!firstElement)
                 {
                     Console.Write(", ");
-                }                
+                }
                 Console.Write(elements);
                 firstElement = false;
             }
-            Console.WriteLine("]");            
+            Console.WriteLine("]");
         }
 
 
@@ -75,7 +75,6 @@ namespace Erik.Week03
             {
                 arr[i] = original[i];
             }
-
             return arr;
         }
 
@@ -103,12 +102,30 @@ namespace Erik.Week03
 
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rand.Next(100);                
+                arr[i] = rand.Next(100);
             }
             return arr;
         }
+
+        public static void ArrayPrintYourNumber(int numberToChange, int size)
+        {
+         
+            int[] yourNumber = CreateRandomArray(size);
+            Console.WriteLine("Random Number Original: ");
+            PrintArray(yourNumber);
+
+            for (int i = 0; i < size; i += numberToChange)
+            {
+                
+                Console.Write(yourNumber[i] + " ");
+            }
+        }
     }
 }
+
+
+
+
 
 
 
