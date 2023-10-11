@@ -148,6 +148,18 @@ namespace Mohammed.Week02
 
         }
 
+        public static void GeheimReihe()
+        {
+            double pi = 1.0;
+            Console.WriteLine("1.Element = " + pi);
+
+            for (int i= 2; i<= 10000; i++)
+            {
+                pi = (pi / 2) + (1 / pi);
+                Console.WriteLine(i + ".Element = " +pi);
+            }
+        }
+
 
 
 
