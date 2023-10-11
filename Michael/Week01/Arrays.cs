@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
@@ -11,8 +14,11 @@ using System.Threading.Tasks;
 
 namespace Michael.Week01
 {
-    internal class Arrays
+    public class Arrays
     {
+
+        public static Random rnd = new Random();
+
 
         public static void NumberArray()
         {
@@ -27,8 +33,6 @@ namespace Michael.Week01
                 myArrayReversed[i] = size - i;
             }
 
-            Console.WriteLine("test");
-
             Console.WriteLine("normal array:");
 
             writeIntArray(myArray);
@@ -36,7 +40,6 @@ namespace Michael.Week01
             Console.WriteLine("\n\nreversed array:");
 
             writeIntArray(myArrayReversed);
-
         }
 
 
@@ -68,8 +71,9 @@ namespace Michael.Week01
         {
             for (int i = 0; i < array.Length; i++)
             {
-                Console.Write($"{array[i],/*space*/6}" + " ");
+                Console.Write($"{array[i],/*space*/3}" + " ");
             }
+            Console.WriteLine();
         }
 
 
@@ -173,24 +177,16 @@ namespace Michael.Week01
         }
 
 
-        public static void randomNumberArraySumme()
+        public static int randomNumberArraySumme(int[] array)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[40];
-
-            for (int i = 0; i < randomIntegers.Length; i++)
-            {
-                randomIntegers[i] = rnd.Next(-50, 51);
-            }
-
             int sum = 0;
 
-            foreach (int number in randomIntegers)
+            foreach (int number in array)
             {
                 sum += number;
             }
 
-            Console.WriteLine(sum);
+            return sum;
         }
 
 
@@ -213,7 +209,6 @@ namespace Michael.Week01
                     max = number;
                 }
             }
-
             return max;
         }
 
@@ -237,7 +232,6 @@ namespace Michael.Week01
                     min = number;
                 }
             }
-
             return min;
         }
 
@@ -263,63 +257,53 @@ namespace Michael.Week01
         }
 
 
-        public static int randomNumberArrayMaxIndex(int size, int minRange, int maxRange)
+        public static int ArrayMaxIndex(int[] array, int start = 0, int end = -1)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[size];
-
-            for (int i = 0; i < randomIntegers.Length; i++)
+            if (end == -1)
             {
-                randomIntegers[i] = rnd.Next(minRange, maxRange + 1);
+                end = array.Length;
             }
 
-            int max = randomIntegers[0];
+            int max = array[0];
             int index = 0;
 
-            for (int i = 0; i < randomIntegers.Length; i++)
+            for (int i = start; i < end; i++)
             {
-                if (randomIntegers[i] > max)
+                if (array[i] > max)
                 {
-                    max = randomIntegers[i];
+                    max = array[i];
                     index = i;
                 }
             }
-
-            Console.WriteLine(randomIntegers[index]);
             return index;
         }
 
 
-        public static int randomNumberArrayMinIndex(int size, int minRange, int maxRange)
+        public static int ArrayMinIndex(int[] array, int start = 0)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[size];
+            return ArrayMinIndex(array, start, array.Length);
+        }
 
-            for (int i = 0; i < randomIntegers.Length; i++)
+
+        public static int ArrayMinIndex(int[] array, int start, int end)
+        {
+            int min = array[start];
+            int index = start;
+
+            for (int i = start; i < end; i++)
             {
-                randomIntegers[i] = rnd.Next(minRange, maxRange + 1);
-            }
-
-            int min = randomIntegers[0];
-            int index = 0;
-
-            for (int i = 0; i < randomIntegers.Length; i++)
-            {
-                if (randomIntegers[i] < min)
+                if (array[i] < min)
                 {
-                    min = randomIntegers[i];
+                    min = array[i];
                     index = i;
                 }
             }
-
-            Console.WriteLine(randomIntegers[index]);
             return index;
         }
 
 
         public static int[] createRandomArray(int size, int minRange, int maxRange)
         {
-            Random rnd = new Random();
             int[] randomIntegers = new int[size];
 
             for (int i = 0; i < randomIntegers.Length; i++)
@@ -331,38 +315,31 @@ namespace Michael.Week01
         }
 
 
-        public static int[] bubbleSortAscending(int[] toSort)
+        public static int[] bubbleSortAscending(int[] array)
         {
-            int[] sortedArray = new int[toSort.Length];
-
-            sortedArray = toSort;
             bool hadToSwap = true;
-            int first = 0;
 
             while (hadToSwap)
             {
                 hadToSwap = false; 
 
-                for(int i = 0; i < toSort.Length - 1; i++)
+                for(int i = 0; i < array.Length - 1; i++)
                 {
-                    if (sortedArray[i] > sortedArray[i + 1])
+                    if (array[i] > array[i + 1])
                     {
-                        first = sortedArray[i];
-                        sortedArray[i] = sortedArray[i + 1];
-                        sortedArray[i + 1] = first;
+                        int first = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = first;
                         hadToSwap = true;
                     }
                 }
             }
-            return sortedArray;
+            return array;
         }
 
 
-        public static int[] bubbleSortDescending(int[] toSort)
+        public static int[] bubbleSortDescending(int[] array)
         {
-            int[] sortedArray = new int[toSort.Length];
-
-            sortedArray = toSort;
             bool hadToSwap = true;
             int first = 0;
 
@@ -370,18 +347,156 @@ namespace Michael.Week01
             {
                 hadToSwap = false;
 
-                for (int i = 0; i < toSort.Length - 1; i++)
+                for (int i = 0; i < array.Length - 1; i++)
                 {
-                    if (sortedArray[i] < sortedArray[i + 1])
+                    if (array[i] < array[i + 1])
                     {
-                        first = sortedArray[i];
-                        sortedArray[i] = sortedArray[i+1];
-                        sortedArray[i + 1] = first;
+                        first = array[i];
+                        array[i] = array[i+1];
+                        array[i + 1] = first;
                         hadToSwap = true;
                     }
                 }
             }
-            return sortedArray;
+            return array;
+        }
+
+
+        public static int[] selectionSortAscending(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                int first = array[i];
+                int mindex = ArrayMinIndex(array,i);
+
+                array[i] = array[mindex];
+                array[mindex] = first;
+            }
+            return array;
+        }
+
+
+        public static int[] insertionSortAscending(int[] array)
+        {
+            for (int i = 2; i < array.Length; i++)
+            {
+                int j = i;
+                while ( (j > 0) && (array[j - 1] > array[j]))
+                {
+                    int first = array[j - 1];
+                    array[j - 1] = array[j];
+                    array[j] = first;
+
+                    j--;
+                }
+            }
+            return array;
+        }
+
+        
+        public static int[] mergeSortAscending(int[] array)
+        {
+            if (array.Length == 1)
+                return array;
+
+            int middle = array.Length / 2;
+
+            int[] leftArray = splitLeft(array, middle);
+            int[] rightArray = splitRight(array, middle);
+
+            leftArray = mergeSortAscending(leftArray);
+            rightArray = mergeSortAscending(rightArray);
+
+            return mergeArrays(leftArray, rightArray);
+        }
+        
+
+        public static int[] splitLeft(int[] array, int index)
+        {
+            int[] result = new int[index];
+
+            for(int i = 0; i < index; i++)
+            {
+                result[i] = array[i];
+            }
+
+            return result;
+        }
+
+
+        public static int[] splitRight(int[] array, int index)
+        {
+            int[] result = new int[array.Length - index];
+
+            for (int i = 0; i < array.Length - index; i++)
+            {
+                result[i] = array[i+index];
+            }
+
+            return result;
+        }
+
+
+        public static int[] mergeArrays(int[] array1, int[] array2)
+        {
+            int[] result = new int[array1.Length + array2.Length];
+            int i = 0;
+            int j = 0;
+            int k = 0;
+
+            while ((k < array1.Length + array2.Length) && (i != array1.Length) && (j != array2.Length))
+            {
+                if (array1[i] < array2[j])
+                {
+                    result[k] = array1[i];
+                    i++;
+                }
+                else
+                {
+                    result[k] = array2[j];
+                    j++;
+                }
+
+                k++;
+            }
+
+            while (i != array1.Length)
+            {
+                result[k] = array1[i];
+                i++;
+                k++;
+            }
+
+            while (j != array2.Length)
+            {
+                result[k] = array2[j];
+                j++;
+                k++;
+            }
+
+            return result;
+        }
+
+
+        public static int[] gnomeSortAscending(int[] array)
+        {
+            int i = 1;
+
+            while(i < array.Length)
+            {
+                if (array[i] >= array[i - 1])
+                {
+                    i++;
+                }
+                else
+                {
+                    int first = array[i];
+                    array[i] = array[i - 1];
+                    array[i-1] = first;
+                    if (i > 1) i--;
+                }
+            }
+            return array;
         }
 
 
@@ -614,6 +729,7 @@ namespace Michael.Week01
                     printTicTacToe(playField,'x','o');
                     Console.WriteLine();
 
+                    /*
                     if (i%2 == 1)
                     {
                         choice = ConsoleInputs.IntInput();
@@ -623,6 +739,9 @@ namespace Michael.Week01
                         Thread.Sleep(3000);
                         choice = rnd.Next(1, 10);
                     }
+                    */
+
+                    choice = ConsoleInputs.IntInput();
 
 
                     Console.Clear();
@@ -801,11 +920,63 @@ namespace Michael.Week01
                 Thread.Sleep((int)Math.Floor(1000/generationsPerSecond));
             }
         }
-        
+
 
         public static void Start()
         {
-            GameOfLife(30);
+            //int i = 30000;
+            //for (int i = 1; i < 3000000; i+= 1000)
+            {
+                int[] array = createRandomArray(i, 0, 100000);
+                int[] arrayInput = new int[i];
+
+                
+                arrayInput = makeACopyAlt(array);
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                bubbleSortAscending(arrayInput);
+                watch.Stop();
+                Console.WriteLine("bubble:\t\t" + watch.ElapsedMilliseconds + " ms");
+
+                
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
+                selectionSortAscending(arrayInput);
+                watch.Stop();
+                Console.WriteLine("selection:\t" + watch.ElapsedMilliseconds + " ms");
+
+
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
+                insertionSortAscending(arrayInput);
+                watch.Stop();
+                Console.WriteLine("insertion:\t" + watch.ElapsedMilliseconds + " ms");
+
+
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
+                gnomeSortAscending(arrayInput);
+                watch.Stop();
+                Console.WriteLine("gnome:\t\t" + watch.ElapsedMilliseconds + " ms");
+
+
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
+                mergeSortAscending(arrayInput);
+                watch.Stop();
+                Console.WriteLine("merge:\t\t" + watch.ElapsedMilliseconds + " ms");
+            }
         }
     }
 }
