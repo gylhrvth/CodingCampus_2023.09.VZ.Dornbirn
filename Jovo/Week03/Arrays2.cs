@@ -91,36 +91,7 @@ namespace Jovo.Week93
 
 
 
-        public static void PrintArrayWithForeach(int[] arr)
-        {
-            bool firstValue = true;
-            Console.Write("[");
-            foreach (int value in arr)
-            {
-                if (!firstValue)
-                {
-                    Console.Write(", ");
-                }
-                Console.Write(value);
-                firstValue = false;
-            }
-            Console.WriteLine("]");
-        }
-
-        public static void PrintArrayWithFori(int[] arr) 
-        {
-            Console.Write("[");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (i > 0)
-                {
-                    Console.Write(", ");
-                }                
-                Console.Write(arr[i]);
-            }
-            Console.WriteLine("]");
-        }
-
+       
 
         public static int[] NumberArrayIncrease(int size)
         {
@@ -200,6 +171,38 @@ namespace Jovo.Week93
             }
 
 
+        }
+
+
+
+        public static void PrintArrayWithForeach(int[] arr)
+        {
+            bool firstValue = true;
+            Console.Write("[");
+            foreach (int value in arr)
+            {
+                if (!firstValue)
+                {
+                    Console.Write(", ");
+                }
+                Console.Write(value);
+                firstValue = false;
+            }
+            Console.WriteLine("]");
+        }
+
+        public static void PrintArrayWithFori(int[] arr)
+        {
+            Console.Write("[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i > 0)
+                {
+                    Console.Write(", ");
+                }
+                Console.Write(arr[i]);
+            }
+            Console.WriteLine("]");
         }
 
 
