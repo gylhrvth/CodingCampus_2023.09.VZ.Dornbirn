@@ -341,26 +341,21 @@ namespace Eren.Week01
 
                 for (int col = 0; col < width; col++)
                 {
-                    if( col >= row)
+                    if (col >= row)
                     {
                         Console.Write(symbol);
                     }
 
                     else
                     {
-                        Console.WriteLine();
+                        Console.WriteLine("x");
                     }
-                           
+
 
                 }
 
 
             }
-
-
-
-
-
 
         }
 

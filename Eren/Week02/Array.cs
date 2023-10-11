@@ -1,9 +1,8 @@
 ﻿using System;
 namespace Eren.Week02
 {
-	public static void StartBoolExample()
+	public enum Array
 	{
-		bool 
 	}
 }
 
