@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
@@ -26,6 +27,7 @@ namespace Timo.Week03
 
             Console.WriteLine("=======================================");
 
+
             //Aufgabe2 Kopie:
 
             int[] testArr = CreateArrayUp(5);
@@ -39,6 +41,7 @@ namespace Timo.Week03
 
             Console.WriteLine("=======================================");
 
+
             //Aufgabe3.1 Random foreach
             Console.WriteLine("\nAufgabe3.1: Random Number Array");
             int[] arr = Random(5, 0, 100);
@@ -50,8 +53,7 @@ namespace Timo.Week03
 
             //Aufgabe3.3 Den zweiten, fünften und zehnten Wert des Arrays ausgeben
             Console.WriteLine("\nAufgabe3.3: ausgewählte Werte");
-            int[] speicher = { 2, 5, 10, 11 };
-            PrintRandomSpezial(arr2, new int[] { 16, 5, 3, 1});                     //Speicher is for storing the values i want to check
+            PrintRandomSpezial(arr2, new int[] { 16, -5, 3, 1 });     //Speicher is for storing the values i want to check
 
             //Aufgabe3.4 jeder zweite Wert
             Console.WriteLine("\nAufgabe3.4: jeder zweite Wert");
@@ -59,11 +61,13 @@ namespace Timo.Week03
 
             Console.WriteLine("=======================================");
 
+
             //Aufgabe 4
             Console.WriteLine("\nAufgabe 4: Random Number Array Crazy Range");
             int[] crazy = Random(5, -50, 50);
 
             Console.WriteLine("=======================================");
+
 
             //Aufgabe5 zählen wenn bestimmte Größe
             Console.WriteLine("\nAufgabe 5: Random Number Array Zählen");
@@ -71,6 +75,7 @@ namespace Timo.Week03
             PrintArrayCount(count);
 
             Console.WriteLine("=======================================");
+
 
             //Aufgabe6 Summe des Arrays
             Console.WriteLine("\nAufgabe 6: Random Number Array Summe");
@@ -82,23 +87,31 @@ namespace Timo.Week03
 
             //Aufgabe7 Min, Max, Avg
             Console.WriteLine("\nAufgabe 7: Random Number Array Min/Max/Avg");
-            int[] Array = {}; //RandomFor(20, 1, 100);
+            int[] Array = RandomFor(20, -100, 100);
             int min = Minimum(Array);
             int max = Maximum(Array);
-            int avg = Average(Array);
+            double avg = Average(Array);
             int indexMin = IndexMinimum(Array);
             int indexMax = IndexMaximum(Array);
             PrintString(Array);
-            Console.WriteLine("Minimum: {0} - am Index: {3}\nMaximum: {1} - am Index: {4}\nAverage: {2}", min, max, avg, indexMin, indexMax);
+            if (min == Int32.MaxValue)
+            {
+                Console.WriteLine("Fehler: Das Array darf nicht leer sein!");
+            }
+            else
+            {
+                Console.WriteLine("Minimum: {0} - am Index: {3}\nMaximum: {1} - am Index: {4}\nAverage: {2}", min, max, avg, indexMin, indexMax);
+            }
 
             Console.WriteLine("=======================================");
+
 
             //Aufgabe8 Bubblesort
             Console.WriteLine("\nAufgabe 8: Bubblesort mit Zahlen");
             int[] testBubble = RandomFor(20, 1, 100);
             PrintString(testBubble);
-            PrintString(Bubblesort(testBubble, false));             //use 'true' for ascending sorting, 'false' for descending sorting
             PrintString(Bubblesort(testBubble, true));              //use 'true' for ascending sorting, 'false' for descending sorting
+            PrintString(Bubblesort(testBubble, false));             //use 'true' for ascending sorting, 'false' for descending sorting
 
             Console.WriteLine("=======================================");
 
@@ -153,7 +166,7 @@ namespace Timo.Week03
 
         //Aufgabe2: Kopie
         public static int[] MakeACopy(int[] original)
-        
+
         {
             int[] copy = new int[original.Length];
             for (int i = 0; i < original.Length; i++)
@@ -199,9 +212,9 @@ namespace Timo.Week03
         {
             for (int a = 0; a < speicher.Length; a++)
             {
-                if (speicher[a] > arr2.Length)
+                if (speicher[a] > arr2.Length || speicher[a]<0)
                 {
-                    Console.WriteLine("Die Stelle {0} darf nicht länger sein als die  Länge ({1}) des Arrays!", speicher[a],arr2.Length);
+                    Console.WriteLine("Die Stelle {0} darf nicht außerhalb des Arrays (0 - {1}) liegen!", speicher[a], arr2.Length);
                 }
                 else
                 {
@@ -283,8 +296,8 @@ namespace Timo.Week03
         //ToDo 7.1 leeres Array!
         public static int Minimum(int[] arr)
         {
-            int min = arr[0];
-            for (int i = 1; i < arr.Length; i++)
+            int min = Int32.MaxValue;
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] < min)
                 {
@@ -294,10 +307,16 @@ namespace Timo.Week03
             return min;
         }
         //Print
-        public static int PrintMinimum(int min)
+        public static void PrintMinimum(int min)
         {
-            Console.WriteLine("Minimum: " + min);
-            return min;
+            if (min == Int32.MaxValue)
+            {
+                Console.WriteLine("Minimum: Das Array darf nicht leer sein!");
+            }
+            else
+            { 
+                Console.WriteLine("Minimum: " + min + " ");
+            }
         }
 
         //Aufgabe7.2 Max.,
@@ -305,8 +324,8 @@ namespace Timo.Week03
 
         public static int Maximum(int[] arr)
         {
-            int max = arr[0];
-            for (int i = 1; i < arr.Length; i++)
+            int max = Int32.MinValue;
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] > max)
                 {
@@ -323,11 +342,11 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.3 Avg
-        //ToDo 7.3 Kommazahlen!!! leeres Array!
+        //ToDo 7.3 leeres Array!
 
-        public static int Average(int[] arr)
+        public static double Average(int[] arr)
         {
-            int avg = ArraySum(arr) / arr.Length;
+            double avg = (ArraySum(arr) * 1.0) / arr.Length;
             return avg;
         }
         //Print
@@ -354,7 +373,7 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.5 IndexMax
-        //ToDo 7.5 leeres Array!
+        //ToDo 7.5cd leeres Array!
 
         public static int IndexMaximum(int[] arr)
         {
@@ -373,31 +392,50 @@ namespace Timo.Week03
         //Aufgabe 8 Bubblesort
         public static int[] Bubblesort(int[] arr, bool asc)
         {
-            if (asc)
+
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                int temp = 0;
-                for (int i = 0; i < arr.Length; i++)
+                int a = i;
+                if (asc)
                 {
-                    int x = 0;
-                    int a = x;
                     while (a < arr.Length)
                     {
-                        if (arr[i] < arr[a])
+
+                        if (arr[i] > arr[a])
                         {
-                            temp = arr[a];
+                            int temp = arr[a];
                             arr[a] = arr[i];
                             arr[i] = temp;
-                            a = x;
+                            a = i;
                         }
                         else
                         {
                             a++;
                         }
                     }
-                    x++;
+                }
+                else
+                {
+                    while (a < arr.Length)
+                    {
+                        if (arr[i] < arr[a])
+                        {
+                            int temp = arr[a];
+                            arr[a] = arr[i];
+                            arr[i] = temp;
+                            a = i;
+                        }
+                        else
+                        {
+                            a++;
+                        }
+                    }
                 }
             }
-            else
+
+
+            /*else
             {
                 int temp = 0;
                 for (int i = 0; i < arr.Length; i++)
@@ -420,7 +458,7 @@ namespace Timo.Week03
                     }
                     x++;
                 }
-            }
+            }*/
             return arr;
         }
     }

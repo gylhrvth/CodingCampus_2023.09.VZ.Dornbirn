@@ -4,7 +4,7 @@
     {
         public static Random rand = new Random();
 
-
+        
         public static void StartArrayExample()
         {
             int[] fixArray = { 5, 3, 12, -4, 0, 9, 6, 2 };
@@ -30,8 +30,10 @@
                 Console.WriteLine("... {0}", value);
             }
             Console.WriteLine("======================");
-        }
 
+            Console.WriteLine("[{0}]", string.Join(", ", CreateArray(10)));
+
+        }
         public static int[] CreateArray(int size)
         {
             int[] arr = new int[size];
@@ -39,11 +41,11 @@
             {
                 arr[i] = rand.Next(100);
             }
-
             return arr;
-            
         }
-        
+
+
+        public static void Main(string[] args) => Console.WriteLine("Hello World!!");
     }
 }
 
