@@ -29,25 +29,19 @@ namespace Sven.Week02
             int count = RandomCount1(arr);
             Console.WriteLine("Es sind " +  count + " Zahlen über 30");
 
+            int count1 = RandomCount2(arr);
+            Console.WriteLine("Es sind " + count + " Zahlen über 30");
+
 
             /*
             Console.WriteLine("Example4 Range:");
             CrazyRange();
             Console.WriteLine();
-            /*
-
-
-
-            /*Console.WriteLine("Example4 Random Count:");
-            RandomCount(0);
-            Console.WriteLine();*/
-
-
+            */
 
 
         }
         
-
         static void Count()
         {
             int[] arr = {0,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 , 10 };
@@ -146,48 +140,24 @@ namespace Sven.Week02
             return count;
         }
 
-
-        /*
-        static void RandomCount()
+ 
+        public static int RandomCount2(int[] arr)
         {
-            
 
-
-
-
-            for ( int i = 0; i < 10; i++)
+            int count1 = 0;
+            foreach (int i in arr)
             {
-                int[] arr1 = { Random.Next(1, 100) };
-
-
-                    Console.WriteLine(String.Join(", ", arr1));
-                if (arr1 > 30)
+                if (i > 30)
                 {
-
-
+                    count1++;
                 }
             }
-            
-           
+            return count1;
 
 
+        }
 
-
-
-
-                foreach (int element in arr)
-            {
-                arr1 = {Random.Next(1, 100)} ;
-
-                if (arr > 30)
-
-                Console.WriteLine(String.Join(", ", arr));
-
-
-                
-            }
-        
-        */
+  
 
     }
 
