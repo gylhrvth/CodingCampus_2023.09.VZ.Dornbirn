@@ -23,28 +23,38 @@ namespace David.Week03
 
 			//Aufgabe Kopie 3
 
-			//ab hier das Original:
+				//ab hier das Original:
 			Console.WriteLine("Kopie erstellen 3");
 
 			int[] arr3 = NewArray4Copy(7);
 			Console.WriteLine("[{0}]", string.Join(", ", arr3));
 
-			//ab hier die Kopie:
+				//ab hier die Kopie:
 			int[] copiedArray = MakeACopy(arr3); //Greift auf arr3 von Original zu.
             Console.WriteLine("[{0}]", string.Join(", ", copiedArray)); //Ausgabe der Kopie.
-																		//Bis hier ist die Kopie 1:1.
-			arr3[0] = 200; //jetzt wird die Kopie an Stelle "0" verändert,
-						   //ohne das Original zu verändern.
-						   //es bleibt eine 1:1 Kopie, bis es nochmals neu "gedruckt" wird.
+                                                                        //Bis hier ist die Kopie 1:1.
 
-			Console.WriteLine("Kopie, verändert");
-            Console.WriteLine("[{0}]", string.Join(", ", arr3));//Jetzt mit veränderter Stelle.
+				//jetzt wird die Kopie an Stelle "0" verändert,
+            arr3[0] = 200;
+				 //ohne das Original zu verändern.
+				//es bleibt eine 1:1 Kopie, bis es nochmals neu "gedruckt" wird.
 
-			//Kopie wird nochmals mit "foreach"
-			foreach (int element in arr3)
+            Console.WriteLine();
+            Console.WriteLine("Kopie, verändert");
+
+				//Jetzt wird die Kopie mit veränderter Stelle in der Konsole gedruckt.
+            Console.WriteLine("[{0}]", string.Join(", ", arr3));
+
+
+				 //Kopie wird nochmals mit "foreach", gedruckt.
+				//(Um den Unterschied zwischen "String.Join" und "foreach" zu sehen.)
+            foreach (int element in arr3)
 			{
 				Console.Write(element + ", ");
 			}
+			Console.WriteLine();
+            Console.WriteLine();
+
 
         }
 
@@ -92,6 +102,11 @@ namespace David.Week03
 			}                          //Der Array "Copy" soll gleich sein wie "Original".
 			return copy;
 		}
+		//---------------------------------------------------
+		
+		
+
+		
     }
 }
 
