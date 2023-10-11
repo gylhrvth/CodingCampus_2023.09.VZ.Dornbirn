@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Erik.Week02
 {
-    public class MyBoolean
+    public class Methoden
     {
         public static void Start()
         {
@@ -112,9 +112,9 @@ namespace Erik.Week02
                     if (row == col)
                     {
                         Console.Write(letter);
-                        
+
                     }
-                    
+
                     else
                     {
 
@@ -122,12 +122,8 @@ namespace Erik.Week02
                     }
                 }
                 Console.WriteLine();
-             }
-
-
+            }
         }
-
-
     }
 }
 

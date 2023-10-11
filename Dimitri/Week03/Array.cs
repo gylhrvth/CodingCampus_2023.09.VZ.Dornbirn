@@ -22,7 +22,16 @@ namespace Dimitri.Week03
             //Console.WriteLine MakeACopy(lustigesArray);
             //PrintArrayToString3(RandomNumberArray(0, 100));
             //PrintCrazyRangeArray(RandomNumberArray(-50, 50));
-            PrintArrayZaehlen(RandomNumberArray(1, 100), 30);
+            //PrintArrayZaehlen(RandomNumberArray(1, 100), 30);
+            //Console.WriteLine(ReturnArraySumme(RandomNumberArray(1, 100)));
+            //Console.WriteLine(ReturnArrayMin(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayMax(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayAvg(RandomNumberArray(0, 100)));
+            //Console.WriteLine(ReturnArrayMinIndex(RandomNumberArray(-50, 50)));
+            //Console.WriteLine(ReturnArrayMaxIndex(RandomNumberArray(-50, 50)));
+            //PrintArray(BubbleSortAsc(RandomNumberArray(0, 100)));
+            //PrintArray(BubbleSortDesc(RandomNumberArray(0, 100)));
+            PrintArray(MergeSort(RandomNumberArray(0, 5)));
         }
 
         public static int[] IncreaseNumberArray(int n)
@@ -58,8 +67,9 @@ namespace Dimitri.Week03
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine(arr[i]);
+                Console.WriteLine("{0}...{1}", i, arr[i]);
             }
+            /* For some reason this only returns a 0 if you have an array with only one element */
         }
 
         public static int[] CopyArray(int[] original)
@@ -158,7 +168,7 @@ namespace Dimitri.Week03
             //}
 
             int count = 0;
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 Console.WriteLine(arr[i]);
                 count++;
@@ -170,12 +180,214 @@ namespace Dimitri.Week03
         }
         public static void PrintArrayZaehlen(int[] arr, int from)
         {
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] > 30)
                 {
                     Console.WriteLine(arr[i]);
                 }
+            }
+        }
+
+        public static int ReturnArraySumme(int[] arr)
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+
+            return sum;
+        }
+
+        public static int ReturnArrayMin(int[] arr)
+        {
+            int min = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                }
+            }
+
+
+
+            return min;
+        }
+
+        public static int ReturnArrayMax(int[] arr)
+        {
+            int max = arr[0];
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                }
+            }
+
+
+
+            return max;
+        }
+
+        public static int ReturnArrayAvg(int[] arr)
+        {
+
+            int sum = ReturnArraySumme(arr);
+
+            int avg = sum / arr.Length;
+
+            return avg;
+        }
+
+        public static int ReturnArrayMinIndex(int[] arr)
+        {
+            int min = arr[0];
+            int indexMin = 0;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] < min)
+                {
+                    min = arr[i];
+                    indexMin = i;
+                }
+            }
+
+            return indexMin;
+        }
+
+        public static int ReturnArrayMaxIndex(int[] arr)
+        {
+            int max = arr[0];
+            int indexMax = 0;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] > max)
+                {
+                    max = arr[i];
+                    indexMax = i;
+                }
+            }
+
+            return indexMax;
+        }
+
+        public static int[] BubbleSortAsc(int[] arr)
+        {
+
+            for (int i = 0; i <= arr.Length * arr.Length; i++)
+            {
+
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    int a = arr[j];
+                    int b = arr[j + 1];
+                    if (a > b)
+                    {
+                        arr[j + 1] = a;
+                        arr[j] = b;
+                    }
+
+                }
+
+            }
+
+            return arr;
+        }
+
+        public static int[] BubbleSortDesc(int[] arr)
+        {
+            for (int i = 0; i <= arr.Length * arr.Length; i++)
+            {
+
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    int a = arr[j];
+                    int b = arr[j + 1];
+                    if (a < b)
+                    {
+                        arr[j + 1] = a;
+                        arr[j] = b;
+                    }
+
+                }
+
+            }
+
+            return arr;
+
+        }
+
+        public static int[] MergeSort(int[] arr)
+        {
+
+            int indexMax = ReturnArrayMaxIndex(arr);
+
+            int indexMin = ReturnArrayMinIndex(arr);
+
+            if (indexMax - indexMin <= 1)
+            {
+                return arr;
+            }
+            else
+            {
+                int indexMid = (indexMax + indexMin) / 2;
+
+                int[] tmpArr = arr;
+
+                int i = indexMin;
+                int j = indexMid;
+                int k = 1;
+
+                while (i < indexMid && j < indexMax)
+                {
+
+
+                    if (arr[i] < arr[j])
+                    {
+                        tmpArr[k] = arr[i];
+                        i++;
+                        k++;
+                        j++;
+
+                    }
+                    else
+                    {
+                        tmpArr[k] = arr[j];
+                        i++;
+                        k++;
+                        j++;
+                    }
+
+                }
+
+                while (i < indexMid)
+                {
+                    tmpArr[k++] = arr[i++];
+                    i++;
+                    k++;
+                }
+
+                while (j < indexMax)
+                {
+                    tmpArr[k++] = arr[j++];
+                    j++;
+                    k++;
+                }
+
+                arr = tmpArr;
+
+                return arr;
             }
         }
     }
