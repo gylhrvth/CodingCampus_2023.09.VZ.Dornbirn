@@ -25,12 +25,29 @@ namespace Sven.Week02
             int[] arr = RandomArray(10);
             Console.WriteLine("[{0}]", string.Join(", ", arr));
             Console.WriteLine();
-
+            
             int count = RandomCount1(arr);
             Console.WriteLine("Es sind " +  count + " Zahlen über 30");
+            Console.WriteLine();
 
-            int count1 = RandomCount2(arr);
-            Console.WriteLine("Es sind " + count + " Zahlen über 30");
+            Console.WriteLine("Example5 Random2:");
+            int sum = RandomSum(arr);
+            Console.WriteLine("Die Summe der Zahlen ist: " + sum);
+
+            Console.WriteLine("Example6 RandomMin: ");
+            int min = RandomMin(arr);
+            Console.WriteLine("Das Minimum ist:  " + min);
+
+            Console.WriteLine("Example7 RandomMax: ");
+            int max = RandomMax(arr);
+            Console.WriteLine("Das Maximum ist:  " + max);
+
+            Console.WriteLine("Example7 RandomAvg: ");
+            double avg = RandomAvg(arr);
+            Console.WriteLine("Das Avg ist:  " + avg);
+
+
+
 
 
             /*
@@ -41,7 +58,7 @@ namespace Sven.Week02
 
 
         }
-        
+
         static void Count()
         {
             int[] arr = {0,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 , 10 };
@@ -141,23 +158,62 @@ namespace Sven.Week02
         }
 
  
-        public static int RandomCount2(int[] arr)
+        public static int RandomSum(int[] arr)
         {
 
-            int count1 = 0;
+            int sum = 0;
             foreach (int i in arr)
             {
-                if (i > 30)
-                {
-                    count1++;
-                }
+                sum += i;
+                
             }
-            return count1;
+            return sum;
 
 
         }
+        public static int RandomMin(int[] arr)
+        {
 
-  
+            int min = int.MaxValue;
+            foreach (int i in arr)
+            {
+                if ( i < min)
+                {
+                    min = i;
+                }
+
+            }
+            return min;
+
+
+        }
+        public static int RandomMax(int[] arr)
+        {
+
+            int max = int.MinValue;
+            foreach (int i in arr)
+            {
+                if (i > max)
+                {
+                    max = i;
+                }
+            }
+            return max;
+        }
+
+
+
+        public static double RandomAvg(int[] arr)
+        {
+            
+            int sum = 0;
+            foreach (int i in arr)
+            {
+                sum += i;
+            }
+
+            return(double) sum / arr.Length ;
+        }
 
     }
 
