@@ -1,11 +1,11 @@
 ﻿using System;
 namespace David.Week03
 {
-	public class Week03Day01
-	{
-		public static void StartWeek03Day01()
-		{
-			/*
+    public class Week03Day01
+    {
+        public static void StartWeek03Day01()
+        {
+            /*
 			Random rand = new Random();
 			int[] arr = new int[10];
 			for (int i = 0; i < arr.Length; i++)
@@ -21,42 +21,88 @@ namespace David.Week03
 			Console.WriteLine("[{0}]", string.Join(", ", arr));
 			*/
 
-			int[] arr1 = CreateArrayAsc(5);
-			PrintArray(arr1);
 
+
+
+
+
+            Console.WriteLine("Formater");
+            int[] arr1 = CreateArrayAsc(6);
+            Console.WriteLine("[{0}]", string.Join(", " , arr1));
+
+            Console.WriteLine();
+            Console.WriteLine("For Each");
+            foreach(int index in arr1)
+            {
+                Console.Write(index + " ");
+            }
+
+
+
+
+
+
+            Console.WriteLine();
             int[] arr2 = CreateArrayDesc(5);
-            PrintArray(arr2);
+            PrintArray2(arr2);
 
-            int[] arr3 = CreateArrayRandom(5);
+            /*int[] arr3 = CreateArrayRandom(7);
             PrintArray(arr3);
+            */
 
         }
-
-
+        //--------------
 
         public static int[] CreateArrayAsc(int size)
-		{
-			for (int i = 0; i < size; i++)
-			{
-				Console.WriteLine("{0}. = {1}", i, size[i]);
-			}
-		}
+        {
+            int[] arr1 = new int[size];
+            for (int e = 0; e < size; e++)
+            {
+                arr1[e] = e + 1;
+            }
+            return arr1;
+            
+        }
+        
+
+
+
+        //-----------
 
         public static int[] CreateArrayDesc(int size)
         {
-            return null;
+            int[] arr2 = new int[size];
+            for (int i = 0; i < size; i++)
+            {
+                arr2[i] = -i - 1;
+            }
+            return arr2;
         }
 
-        public static int[] CreateArrayRandom(int size)
+        public static void PrintArray2(int[] arr2)
         {
-            return null;
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                Console.Write(arr2[i]);
+            }
+            Console.WriteLine();
+
         }
 
 
-		public static void PrintArray(int[] arr)
-		{
-			
-		}
+        //---------------
+        /* public static int[] CreateArrayRandom(int size)
+         {
+             return null;
+         }*/
+
     }
+
+
+
+
+
+
 }
+
 

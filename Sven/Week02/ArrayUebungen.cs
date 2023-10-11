@@ -14,8 +14,12 @@ namespace Sven.Week02
             Copy();
             Console.WriteLine();
 
-            Console.WriteLine("Example2 Random:");
+            Console.WriteLine("Example3 Random:");
             RandomArray();
+            Console.WriteLine();
+
+            Console.WriteLine("Example4 Range:");
+            CrazyRange();
             Console.WriteLine();
 
         }
@@ -45,31 +49,64 @@ namespace Sven.Week02
         static void Copy()
         {
 
-            int[] arr = { 5, 4, 7, 2, 9 };
+            int[] arr = { 10, 23, 34, 12, 45, 16, 2 };
+            foreach (int i in arr)
+            {
+                Console.Write(i + ", ");
+            }
+
+            Console.WriteLine();
+
+            arr[2] = 0;
+
+            int[] arr2 = arr;
+            foreach (int i in arr)
+            {
+                Console.Write(i + ", ");
+            }
+
+
+            /*
+            int[] arr = { 6, 2, 8, 5, 4 };
 
             int[] copy = new int[arr.Length];
             Array.Copy(arr, copy, arr.Length);
 
-            for (int i = 0; i < 10; i++ )
+            for (int i = 0; i < 10; i++)
 
-            Console.WriteLine(String.Join(", ", copy));
+                Console.WriteLine(String.Join(", ", copy));
+            */
 
         }
 
-        static int RandomArray()
+        static void RandomArray()
         {
 
-            Random random = new Random();                          
+            Random random = new Random();
 
             for (int i = 0; i < 10; i++)
             {
-                int[] rand = new int[random.Next(0, 100)];
-                Console.WriteLine(rand);
+                int[] arr = { random.Next(100) };
+
+                Console.WriteLine(String.Join(", ", arr));
             }
-                
-            
+
+        }
 
 
+        static void CrazyRange()
+        {
+
+            Random random = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                int[] arr = { random.Next(-50, 50) };
+
+                Console.WriteLine(String.Join(", ", arr));
+
+
+            }
         }
 
     }

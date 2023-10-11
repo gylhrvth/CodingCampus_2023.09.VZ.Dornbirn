@@ -1,4 +1,4 @@
-﻿using System;
+﻿	using System;
 namespace Gyula.Week03
 {
 	public class RandomExample
