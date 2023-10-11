@@ -7,11 +7,12 @@
 
         public static void Start()
         {
-            //NumberArray();
+            //Console.WriteLine("[{0}]", string.Join(", ", NumberArray()));
+            //Console.WriteLine("[{0}]", string.Join(", ", NumberArrayReversed()));
             /*int[] originial = { 1, 2, 3, 4 };
             MakeACopy(originial);*/
             //RandomNumberArray();
-            //RandomNumberArrayCrazyRange();
+            //PrintRandomNumberArrayCrazyRange();
             //PrintRandomNumberArrayCount();
             //Console.WriteLine("sum of array = " + RandomNumberArraySum());
 
@@ -24,27 +25,46 @@
             Console.WriteLine("index of biggest number = " + IndexOfRandomNumberArrayMax(arr));
             Console.WriteLine("average = " + RandomNumberArrayAvg(arr));*/
 
-            //BubbleSortASC(arr);
-            //BubbleSortDESC(arr);
-            SelectionSort(arr);
+            int[] arr1 = MakeACopy(arr);
+            //BubbleSortASC(arr1);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr1));
+            int[] arr2 = MakeACopy(arr);
+            //BubbleSortDESC(arr2);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr2));
+            int[] arr3 = MakeACopy(arr);
+            //SelectionSort(arr3);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr3));
+            int[] arr4 = MakeACopy(arr);
+            //InsertionSort(arr4);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr4));
+            int[] arr5 = MakeACopy(arr);
+            //GnomeSort(arr5);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr5));
 
 
 
 
         }
-        public static void NumberArray()
+        public static int[] NumberArray()
         {
             int[] nums = new int[10];
-            int[] numsReversed = new int[10];
 
             for (int i = 0; i < nums.Length; i++)
             {
-                nums[i] = i;
-                numsReversed[i] = numsReversed.Length - 1 - i;
+                nums[i] = i + 1;
             }
-            Console.WriteLine("[{0}]", string.Join(", ", nums));
-            Console.WriteLine("[{0}]", string.Join(", ", numsReversed));
-            Console.WriteLine();
+            return nums;
+        }
+
+        public static int[] NumberArrayReversed()
+        {
+            int[] numsReversed = new int[10];
+
+            for (int i = 0; i < numsReversed.Length; i++)
+            {
+                numsReversed[i] = numsReversed.Length - i;
+            }
+            return numsReversed;
         }
 
         public static int[] MakeACopy(int[] original)
@@ -54,7 +74,6 @@
             for (int i = 0; i < copy.Length; i++)
             {
                 copy[i] = original[i];
-                Console.WriteLine(copy[i]);
             }
             return copy;
         }
@@ -87,14 +106,24 @@
             }
         }
 
-        public static void RandomNumberArrayCrazyRange()
+        public static int [] RandomNumberArrayCrazyRange()
         {
             int[] randomNums = new int[10];
 
-            foreach (int i in randomNums)
+            for (int i = 0; i < randomNums.Length; i++)
             {
                 randomNums[i] = rand.Next(-50, 50);
-                Console.WriteLine(randomNums[i]);
+            }
+
+            return randomNums;
+        }
+
+        public static void PrintRandomNumberArrayCrazyRange()
+        {
+
+            foreach(int i in RandomNumberArrayCrazyRange())
+            {
+                Console.WriteLine(i);
             }
         }
 
@@ -176,20 +205,17 @@
 
         public static void BubbleSortASC(int[] arr)
         {
-            
+
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int j = 0; j < arr.Length - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp; 
+                        (arr[j + 1], arr[j]) = (arr[j], arr[j + 1]);
                     }
                 }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
 
         public static void BubbleSortDESC(int[] arr)
@@ -201,13 +227,10 @@
                 {
                     if (arr[j] < arr[j + 1])
                     {
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+                        (arr[j + 1], arr[j]) = (arr[j], arr[j + 1]);
                     }
                 }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
 
         public static void SelectionSort(int[] arr)
@@ -215,17 +238,47 @@
             int min;
             for (int i = 0; i < arr.Length; i++)
             {
-                min = arr[i];
+                min = i;
                 for (int j = 0; j < arr.Length; j++)
                 {
-                    if (arr[j] < min)
+                    if (arr[j] > arr[min])
                     {
-                        min = arr[j];      
+                        min = j;
+
+                        (arr[min], arr[i]) = (arr[i], arr[min]);
                     }
                 }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
-        
+
+        public static void InsertionSort(int[] arr)
+        {
+            int j;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                j = i;
+                while (j > 0 && arr[j - 1] > arr[j])
+                {
+                    (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
+                    j--;
+                }
+            }
+        }
+
+        public static void GnomeSort(int[] arr)
+        {
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+
+            int i = 2;
+
+            while (i < arr.Length)
+            {
+                if (arr[i] > arr[i - 1])
+                {
+                    i++;
+                }
+            }
+        }
+
     }
 }
