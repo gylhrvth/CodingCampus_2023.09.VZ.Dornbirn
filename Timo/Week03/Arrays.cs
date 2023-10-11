@@ -87,7 +87,7 @@ namespace Timo.Week03
 
             //Aufgabe7 Min, Max, Avg
             Console.WriteLine("\nAufgabe 7: Random Number Array Min/Max/Avg");
-            int[] Array = RandomFor(20, -100, 100);
+            int[] Array = RandomFor(19, -100, 100);
             int min = Minimum(Array);
             int max = Maximum(Array);
             double avg = Average(Array);
@@ -100,18 +100,20 @@ namespace Timo.Week03
             }
             else
             {
-                Console.WriteLine("Minimum: {0} - am Index: {3}\nMaximum: {1} - am Index: {4}\nAverage: {2}", min, max, avg, indexMin, indexMax);
+                Console.WriteLine("Minimum: {0} - am Index: {3}\nMaximum: {1} - am Index: {4}\nAverage: {2:N2}", min, max, avg, indexMin, indexMax);
             }
 
             Console.WriteLine("=======================================");
 
 
-            //Aufgabe8 Bubblesort
-            Console.WriteLine("\nAufgabe 8: Bubblesort mit Zahlen");
-            int[] testBubble = RandomFor(20, 1, 100);
-            PrintString(testBubble);
-            PrintString(Bubblesort(testBubble, true));              //use 'true' for ascending sorting, 'false' for descending sorting
-            PrintString(Bubblesort(testBubble, false));             //use 'true' for ascending sorting, 'false' for descending sorting
+            //Aufgabe8 (Bubble)sort
+            Console.WriteLine("\nAufgabe 8: (Bubble)sort mit Zahlen");
+            int[] testSort = RandomFor(20, 1, 100);
+            PrintString(testSort);
+            PrintString(Sort(testSort, true));              //use 'true' for ascending sorting, 'false' for descending sorting
+            PrintString(Sort(testSort, false));             //use 'true' for ascending sorting, 'false' for descending
+            PrintString(BubbleSort(testSort, true));
+            PrintString(BubbleSort(testSort, false));
 
             Console.WriteLine("=======================================");
 
@@ -212,7 +214,7 @@ namespace Timo.Week03
         {
             for (int a = 0; a < speicher.Length; a++)
             {
-                if (speicher[a] > arr2.Length || speicher[a]<0)
+                if (speicher[a] > arr2.Length || speicher[a] < 0)
                 {
                     Console.WriteLine("Die Stelle {0} darf nicht außerhalb des Arrays (0 - {1}) liegen!", speicher[a], arr2.Length);
                 }
@@ -314,7 +316,7 @@ namespace Timo.Week03
                 Console.WriteLine("Minimum: Das Array darf nicht leer sein!");
             }
             else
-            { 
+            {
                 Console.WriteLine("Minimum: " + min + " ");
             }
         }
@@ -346,7 +348,7 @@ namespace Timo.Week03
 
         public static double Average(int[] arr)
         {
-            double avg = (ArraySum(arr) * 1.0) / arr.Length;
+            double avg = (ArraySum(arr) * 1.00) / arr.Length;
             return avg;
         }
         //Print
@@ -389,11 +391,9 @@ namespace Timo.Week03
         }
         //------------------------------------------------------------------------------------------------------------------------------
 
-        //Aufgabe 8 Bubblesort
-        public static int[] Bubblesort(int[] arr, bool asc)
+        //Aufgabe 8 (Bubble)sort
+        public static int[] Sort(int[] arr, bool asc)
         {
-
-
             for (int i = 0; i < arr.Length; i++)
             {
                 int a = i;
@@ -401,7 +401,6 @@ namespace Timo.Week03
                 {
                     while (a < arr.Length)
                     {
-
                         if (arr[i] > arr[a])
                         {
                             int temp = arr[a];
@@ -433,32 +432,26 @@ namespace Timo.Week03
                     }
                 }
             }
+            return arr;
+        }
 
-
-            /*else
+        //Aufgabe 8 Bubblesort
+        public static int[] BubbleSort(int[] arr, bool asc)
+        {
+            for (int i = arr.Length; i > 1; i--)
             {
-                int temp = 0;
-                for (int i = 0; i < arr.Length; i++)
+                for (int a = 0; a < arr.Length - 1; a++)
                 {
-                    int x = 0;
-                    int a = x;
-                    while (a < arr.Length)
+
+                    if ((asc && arr[a] > arr[a + 1]) || (!asc && arr[a] < arr[a + 1]))
                     {
-                        if (arr[i] > arr[a])
-                        {
-                            temp = arr[a];
-                            arr[a] = arr[i];
-                            arr[i] = temp;
-                            a = x;
-                        }
-                        else
-                        {
-                            a++;
-                        }
+                        int temp = arr[a + 1];
+                        arr[a + 1] = arr[a];
+                        arr[a] = temp;
                     }
-                    x++;
+
                 }
-            }*/
+            }
             return arr;
         }
     }

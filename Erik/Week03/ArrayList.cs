@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,18 +31,22 @@ namespace Erik.Week03
             //ArrayPrintYourNumber(5, 20);
             //ArrayCrazyRange(20, -50, 50);
 
-            // Crazy Range
+            //Crazy Range
             int[] arr = CreateRandomArray(20, 1, 100);
             PrintArray(arr);
             //PrintArrayWithIndex(arr);
             //Console.WriteLine(CountTheNumbers(arr)+ " Numbers are bigger then 30!");
             //Console.WriteLine("The Sum of the Numbers: " + ArraySumOfNumbers(7, 1, 100));
-            Console.WriteLine("The min Number: " + Minimum(arr));
+            //Console.WriteLine("The min Number: " + Minimum(arr));
+            //Console.WriteLine("The min Number: " + Minimum(new double[] { 1.0, 0.5, 3.2 }));
 
-            Console.WriteLine("The min Number: " + Minimum(new double[] { 1.0, 0.5, 3.2 }));
+            Console.WriteLine("The max Number: " + Maximum(arr));
+
+
+            Console.WriteLine("Durchschnitt ist: " + Average(arr));
+
 
         }
-
 
         public static void PrintArrayWithIndex(int[] arr)
         {
@@ -72,7 +77,6 @@ namespace Erik.Week03
             }
             Console.WriteLine("]");
         }
-
 
         public static int[] CreateArray(int size)
         {
@@ -156,7 +160,6 @@ namespace Erik.Week03
 
             for (int i = 0; i < size; i += numberToChange)
             {
-
                 Console.Write(yourNumber[i] + " ");
             }
         }
@@ -171,8 +174,7 @@ namespace Erik.Week03
         {
             int[] numberRange = CreateRandomArray(size, min, max);
             PrintArray(numberRange);
-            int theSum = 0;
-
+            int theSum = Int32.MaxValue;
             for (int i = 0; i < numberRange.Length; i++)
             {
                 theSum = theSum + numberRange[i];
@@ -196,7 +198,6 @@ namespace Erik.Week03
             return theMinOfNumbers;
         }
 
-
         public static int Minimum(int[] arr)
         {
             int theMinOfNumbers = Int32.MaxValue;
@@ -215,12 +216,43 @@ namespace Erik.Week03
         {
             return Double.MaxValue;
         }
+
+        public static int Maximum(int[] arr)
+        {
+            int theMaxofNumbers = Int32.MinValue;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > theMaxofNumbers)
+                {
+                    theMaxofNumbers = arr[i];
+                }
+            }
+            return theMaxofNumbers;
+        }
+
+        public static double Average(int[] arr)
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+            }
+            return (double)sum / arr.Length;
+        }
+
+        public static void sortAlgorithm()
+        {
+            int[] randomNumbers = CreateRandomArray(20, 1, 500);
+
+            bool finished = false;
+            for (int i = 0; i < randomNumbers.Length; i++)
+            {
+                if (randomNumbers[i] > randomNumbers[i + 1] && !finished)
+                {
+
+
+                }
+            }
+        }
     }
 }
-
-
-
-
-
-
-
