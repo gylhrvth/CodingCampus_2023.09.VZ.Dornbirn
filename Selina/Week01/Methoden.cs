@@ -43,7 +43,7 @@ namespace Selina.Week01
 
             //PrintRhombus();
             PrintX();
-           PrintChristmastree();
+            PrintChristmastree();
         }
 
 
