@@ -4,14 +4,21 @@
     {
         public static Random rand = new Random();
 
-        
+
         public static void StartArrayExample()
         {
+            Console.WriteLine("[{0}]", string.Join(", ", CreateArray(10)));
+
+            //============================================
+            Console.WriteLine("[{0}]", string.Join(", ", CrazyRangeArray(10)));
+
+            //============================================
             int[] fixArray = { 5, 3, 12, -4, 0, 9, 6, 2 };
             Console.WriteLine("[{0}]", string.Join(", ", fixArray));
 
             Console.WriteLine("======================");
 
+            //============================================
             int[] myArray = CreateArray(10);
             Console.WriteLine("[{0}]", string.Join(", ", myArray));
 
@@ -31,8 +38,10 @@
             }
             Console.WriteLine("======================");
 
-            Console.WriteLine("[{0}]", string.Join(", ", CreateArray(10)));
+            
 
+            Console.WriteLine("\nI don't lock my PC");
+            Console.WriteLine("--> To Lock Pc Type Windows + L");
         }
         public static int[] CreateArray(int size)
         {
@@ -43,9 +52,16 @@
             }
             return arr;
         }
+        public static int[]CrazyRangeArray(int size)
+        {
+            int[] arr = new int[size];
+            for (int i = 0;i < arr.Length; i++)
+            {
+                arr[i] = rand.Next(-50, 50);
+            }
 
-
-        public static void Main(string[] args) => Console.WriteLine("Hello World!!");
+            return arr;
+        }
     }
 }
 
