@@ -9,9 +9,14 @@ namespace Fabienne.Week02
         public static Random rand = new Random();
         public static void Start()
         {
-            /*
+            
             int[] original = { 1, 7, 8 , 11, 32, 4, -5};
-            NumberArray();
+
+         
+            Console.WriteLine("[{0}]", string.Join(", ", NumberArray()));
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", NumbArrayReverse()));
+
             Console.WriteLine();
             MakeACopy(original);
 
@@ -26,9 +31,7 @@ namespace Fabienne.Week02
 
             Console.WriteLine();
             RandomNumberArrayMinMaxAvg();
-            */
-
-            /*
+                       
             int a = 10;
             int b = a;
             Console.WriteLine("{0} {1}", a, b);
@@ -48,33 +51,39 @@ namespace Fabienne.Week02
             arr2[0] = -99;
             PrintArray(arr);
             PrintArray(arr2);
-            */
+            
 
-            int[] arr = CreateRandomArray(12);
-            PrintArray(arr);
+            //int[] arr = CreateRandomArray(12);
+            //PrintArray(arr);
 
             int limit = 30;
             Console.WriteLine("Count values bigger than {0}: {1}", limit, Count(arr, limit));
 
         }
 
-        public static void NumberArray()
+        public static int[] NumberArray()
         {
             int[] num1 = new int[10];
-            int[] num2 = new int[10];
+           
 
             for (int i = 1; i < num1.Length; ++i)
             {
                 num1[i] = i;
-                Console.WriteLine(num1[i]);
             }
-            Console.WriteLine();
+
+            return num1;
+        }
+
+        public static int[] NumbArrayReverse()
+        {
+            int[] num2 = new int[10];
 
             for (int i = num2.Length - 1; i > 0; i--)
             {
                 num2[i] = i;
-                Console.WriteLine(num2[i]);
             }
+
+            return num2;
         }
 
         public static int[] MakeACopy(int[] original)

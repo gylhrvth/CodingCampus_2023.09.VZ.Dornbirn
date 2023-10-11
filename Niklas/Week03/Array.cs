@@ -1,5 +1,9 @@
 ﻿using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Schema;
 
 namespace Niklas.Week03
 {
@@ -29,7 +33,13 @@ namespace Niklas.Week03
 
             Console.WriteLine("\nRandom Number: ");
             RandomNumber();
-            PrintSecondFifthandTenth(arr);
+
+            Console.WriteLine("\nSecond fifth and thenth: ");
+            PrintSecondFifthandTenth();
+
+            Console.WriteLine("\nEvery second value: ");
+            EverySecondValue();
+
             /*
             newArray[0] = -10;
             PrintArray(original);
@@ -37,9 +47,9 @@ namespace Niklas.Week03
             //Console.WriteLine("[{0}]", string.Join(", ", original));
             //Console.WriteLine("[{0}]", string.Join(", ", newArray));
 
-              Console.WriteLine("=================================");
-              Console.WriteLine("[{0}]", string.Join(", ", original));
-              PrintArray(original); */
+            Console.WriteLine("=================================");
+            Console.WriteLine("[{0}]", string.Join(", ", original));
+            PrintArray(original); */
 
             Console.WriteLine("\nRandom Crazy Number: ");
             CrazyRandomNumber();
@@ -68,32 +78,24 @@ namespace Niklas.Week03
 
         public static int[] CreateArrayAsc(int[] size)
         {
+            int[] myArray = CountUp(10);
+
+            Console.WriteLine("[{0}]", string.Join(", ", myArray));
 
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (i > 0)
-                {
-                    Console.Write(", ");
-                }
-                Console.Write(arr[i]);
-            }
+
             return arr;
-
-
         }
 
         public static int[] CreateArrayDesc(int size)
         {
-            int[] arr = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (i > 0)
-                {
-                    Console.Write(", ");
-                }
-                Console.Write(arr[i]);
-            }
+            int[] myArray = CountDown(10);
+
+            Console.WriteLine("[{0}]", string.Join(", ", myArray));
+
+            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+
             return arr;
         }
 
@@ -141,34 +143,50 @@ namespace Niklas.Week03
                 Console.WriteLine("{0}", value);
             }
 
+
             Console.WriteLine("[{0}]", string.Join(", ", myArray));
 
             int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            Console.WriteLine(arr);
-
 
 
 
         }
 
-        public static void PrintSecondFifthandTenth(int[] arr)
+        public static void PrintSecondFifthandTenth()
+        {
+            //int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] arr = { 1, 2, 3 };
+            PrintXth(arr, 1);
+            PrintXth(arr, 4);
+            PrintXth(arr, 9);
+        }
+
+        public static void EverySecondValue()
         {
             int[] fixArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] myArray = CreateArray(10);
+            int[] myArray = CreateArrayTwo(10);
 
-            int[] i = fixArray;
+            Console.WriteLine("[{0}]", string.Join(", ", myArray));
 
-            foreach (int value in myArray)
+            for (int value = 0; value < fixArray.Length; value++)
             {
-                Console.WriteLine("{0}", value);
+                if (fixArray.Length % 2 != 0)
+                {
+
+                }
+                else
+                {
+                    Console.WriteLine("[{0}]", string.Join(", ", myArray));
+                }
+
             }
 
-        }
 
+
+        }
 
         public static void CrazyRandomNumber()
         {
-            int[] fixArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int[] myArray = CreateArray(10);
 
             foreach (int value in myArray)
@@ -204,16 +222,61 @@ namespace Niklas.Week03
             return arr;
         }
 
-        public static int[] CreateArray3(int size)
+
+
+        public static int[] CountUp(int size)
         {
             int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = random.Next(99);
+                {
+                    arr[i] = i + 1;
+                }
+            }
+            return arr;
+        }
+
+        public static int[] CountDown(int size)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                {
+                    arr[i] = size - i;
+                }
             }
 
             return arr;
         }
+
+        public static void PrintXth(int[] arr, int pos)
+        {
+            if (pos >= 0 && arr.Length > pos)
+            {
+                Console.WriteLine(arr[pos]);
+            }
+            else
+            {
+                Console.WriteLine("Nicht vorhanden!");
+            }
+
+        }
+
+        public static int[] CreateArrayTwo(int size)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (size % 2 == 0)
+                {
+                    arr[i] = random.Next(100);
+                }
+            }
+
+            return arr;
+        }
+
+
 
     }
 }
