@@ -9,52 +9,48 @@ namespace Sven.Week02
         
         public static void ArrayExamples()
         {
-            Console.WriteLine("Example1 Count:");
+            Console.WriteLine("Example 1 Count:");
             Count();
             Console.WriteLine();
-
-            Console.WriteLine("RandomCount1");
-            
-            
-
-            Console.WriteLine("Example2 Copy:");
+                        
+            Console.WriteLine("Example 2 Copy:");
             Copy();
+            Console.WriteLine(); 
+
+            Console.WriteLine("Example 3 Crazy Range:");
+            CrazyRange();
             Console.WriteLine();
 
-            Console.WriteLine("Example3 Random:");
+            Console.WriteLine("Example 4 Random:");
             int[] arr = RandomArray(10);
             Console.WriteLine("[{0}]", string.Join(", ", arr));
             Console.WriteLine();
-            
+
+            Console.WriteLine("RandomCount1");
             int count = RandomCount1(arr);
             Console.WriteLine("Es sind " +  count + " Zahlen über 30");
             Console.WriteLine();
 
-            Console.WriteLine("Example5 Random2:");
+            Console.WriteLine("Example 5 Random2:");
             int sum = RandomSum(arr);
             Console.WriteLine("Die Summe der Zahlen ist: " + sum);
+            Console.WriteLine();
 
-            Console.WriteLine("Example6 RandomMin: ");
+            Console.WriteLine("Example 6 RandomMin: ");
             int min = RandomMin(arr);
             Console.WriteLine("Das Minimum ist:  " + min);
+            Console.WriteLine();
 
-            Console.WriteLine("Example7 RandomMax: ");
+            Console.WriteLine("Example 7 RandomMax: ");
             int max = RandomMax(arr);
             Console.WriteLine("Das Maximum ist:  " + max);
+            Console.WriteLine();
 
-            Console.WriteLine("Example7 RandomAvg: ");
+            Console.WriteLine("Example 8 RandomAvg: ");
             double avg = RandomAvg(arr);
             Console.WriteLine("Das Avg ist:  " + avg);
-
-
-
-
-
-            /*
-            Console.WriteLine("Example4 Range:");
-            CrazyRange();
             Console.WriteLine();
-            */
+
 
 
         }
