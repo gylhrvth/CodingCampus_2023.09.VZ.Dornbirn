@@ -34,13 +34,13 @@ namespace Ali.Week02
 
             Console.WriteLine("Aufgabe 3: Random Numer Array");
             int[] random1 = ArrayRandom(10);
-            Console.WriteLine("[{0}]", string.Join(", ",random1));
+            Console.WriteLine("[{0}]", string.Join(", ", random1));
 
             Console.WriteLine(" ");
             Console.WriteLine("Random Array foreach");
             foreach (int element in random1)
             {
-                Console.Write(element + " ");            
+                Console.Write(element + " ");
             }
 
             Console.WriteLine(" ");
@@ -66,9 +66,9 @@ namespace Ali.Week02
             foreach (int element in crazy)
             {
                 Console.Write(element + " ");
-                
+
             }
-           
+
             Console.WriteLine();
 
             Console.WriteLine("Aufgabe: Random Number Array Zählen");
@@ -77,7 +77,31 @@ namespace Ali.Week02
             Console.WriteLine();
 
             Console.Write("Aufgabe: Random Number Array Summe");
-            int[] sum = ArraySum(10);
+            int sum = ArraySum(random1);
+            Console.WriteLine();
+            Console.WriteLine("Die Summe ist:" + sum);
+            Console.WriteLine();
+
+            Console.WriteLine("Aufgabe: Random Number Array Min/Max/Avg");
+            int min = ArrayMin(random1);
+            Console.WriteLine();
+            Console.WriteLine("Der Minimum ist:" + min);
+            
+
+            int max = ArrayMax(random1);
+            Console.WriteLine();
+            Console.WriteLine("Der Maximum ist:" + max);
+
+            double avg = ArrayAvg(random1);
+            Console.WriteLine();
+            Console.WriteLine("Der Average ist:" + avg);
+            Console.WriteLine();
+
+            Console.WriteLine("Aufgabe: Bubblesort mit Zahlen");
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", BubbleArray(random1)));
+
+
 
 
         }
@@ -188,11 +212,11 @@ namespace Ali.Week02
                 random1[i] = rand.Next(0, 101);
             }
             Console.WriteLine();
-            for (int i = 0; i < random1.Length; i+=2)
-           
+            for (int i = 0; i < random1.Length; i += 2)
+
             {
-                Console.WriteLine($"{i}= {random1[i]}");   
-               
+                Console.WriteLine($"{i}= {random1[i]}");
+
             }
             return random1;
 
@@ -219,15 +243,70 @@ namespace Ali.Week02
             }
             return count;
         }
-        public static int[] ArraySum(int size)
+        public static int ArraySum(int[] random1)
         {
-            int[] sum=new int[size];
-            for (int i = 0; i < sum.Length; i++)
+            int sum = 0;
+            foreach (int value in random1)
             {
-                sum[i] = rand.Next(1, 100);
+                sum += value;
             }
             return sum;
         }
+        public static int ArrayMin(int[] random1)
+        {
+            int min = Int32.MaxValue;
+            foreach (int value in random1)
+            {
+                if (value < min)
+                {
+                    min = value;
+                }
+            }
+            return min;
+        }
+        public static int ArrayMax(int[] random1)
+        {
+            int max = Int32.MinValue;
+            foreach (int value in random1)
+            {
+                if (value > max)
+                {
+                    max = value;
+                }
+
+            }
+            return max;
+        }
+        public static double ArrayAvg(int[] random1)
+        {
+            
+            if (random1.Length == 0)
+            {
+                return 0;
+            }
+            return ArraySum(random1)/ (double)random1.Length;
+        }
+        public static int[] BubbleArray(int[] random1)
+        {
+            int a = random1.Length;
+            bool sorted = false;
+            while (!sorted)
+            {
+                sorted = true;
+                for(int i = 0; i < a-1; i++)
+                {
+                    if (random1[i] < random1[i + 1])
+                    {
+                        int t = random1[i];
+                        random1[i] = random1[i + 1];
+                        random1[i +1] = t;
+                        sorted = false;
+                    }
+                }
+            }
+            return random1-1;
+        }
+
 
 
 

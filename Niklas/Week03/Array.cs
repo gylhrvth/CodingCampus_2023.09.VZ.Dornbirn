@@ -1,8 +1,11 @@
-﻿using System.Drawing;
+﻿using System.Collections;
+using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks.Dataflow;
 using System.Xml.Schema;
 
 namespace Niklas.Week03
@@ -13,10 +16,12 @@ namespace Niklas.Week03
         public static void Start()
         {
 
+            int[] arr1 = CreateArrayRandom(10, 0, 101);
+
 
             Console.WriteLine("\nAscending: ");
-            int[] arr = new int[10];
-            CreateArrayAsc(arr);
+            int[] arr = new int[1];
+            CreateArrayAsc(arr1);
 
             Console.WriteLine("\nDescending: ");
             CreateArrayDesc(10);
@@ -34,7 +39,7 @@ namespace Niklas.Week03
             Console.WriteLine("\nRandom Number: ");
             RandomNumber();
 
-            Console.WriteLine("\nSecond fifth and thenth: ");
+            Console.WriteLine("\nSecond, fifth and thenth: ");
             PrintSecondFifthandTenth();
 
             Console.WriteLine("\nEvery second value: ");
@@ -58,6 +63,24 @@ namespace Niklas.Week03
             int treshhold = 30;
             int cnt = countBiggerThen(original, treshhold);
             Console.WriteLine("Count bigger then {0}: {1}", treshhold, cnt);
+
+            Console.WriteLine("[{0}]", string.Join(", ", arr1));
+
+            Console.WriteLine("______________________");
+            Console.WriteLine("Summe: {0,4}", ArraySumme(arr1));
+
+            Console.WriteLine("______________________");
+            Console.WriteLine("Average: {0,4}", ArrayAvg(arr1));
+            Console.WriteLine("Min: {0,4}", ArrayMin(arr1));
+            Console.WriteLine("Max: {0,4}", ArrayMax(arr1));
+
+
+            Console.WriteLine("______________________");
+            Console.WriteLine("Unsorted: [{0}]", string.Join(", ", arr1));
+            BubbleSortAsc(arr1);
+            Console.WriteLine("Bubblesort Ascending: " + string.Join(", ", arr1));
+            BubbleSortDesc(arr1);
+            Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
         }
 
 
@@ -99,27 +122,6 @@ namespace Niklas.Week03
             return arr;
         }
 
-
-        public static void Count()
-        {
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            Console.WriteLine(arr);
-
-            for (int i = 0; i < arr.Length; ++i)
-            {
-                Console.WriteLine("{0}. = {1}", i, arr[i]);
-            }
-
-            int[] arr2 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            Console.WriteLine(arr2);
-
-            for (int i = 0; i < arr2.Length; ++i)
-            {
-                Console.WriteLine("{0}. = {1}", i, arr2[i]);
-            }
-        }
-
-
         public static int[] MakeACopy(int[] arr)
         {
             int[] copy = new int[arr.Length];
@@ -135,7 +137,6 @@ namespace Niklas.Week03
 
 
         {
-            int[] fixArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             int[] myArray = CreateArray(10);
 
             foreach (int value in myArray)
@@ -146,41 +147,34 @@ namespace Niklas.Week03
 
             Console.WriteLine("[{0}]", string.Join(", ", myArray));
 
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
 
 
         }
 
         public static void PrintSecondFifthandTenth()
         {
-            //int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] arr = { 1, 2, 3 };
-            PrintXth(arr, 1);
-            PrintXth(arr, 4);
-            PrintXth(arr, 9);
+            int[] fixArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] myArray = PrintXth(11);
+
+            for (int i = 1; i <= fixArray.Length; i++)
+            {
+                if (i == 2 || i == 5 || i == 10)
+                {
+                    Console.WriteLine(i + " = " + "[{0}]", string.Join(", ", myArray[i]));
+                }
+            }
+
         }
 
         public static void EverySecondValue()
         {
             int[] fixArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[] myArray = CreateArrayTwo(10);
+            int[] myArray = CreateArrayTwo(11);
 
-            Console.WriteLine("[{0}]", string.Join(", ", myArray));
-
-            for (int value = 0; value < fixArray.Length; value++)
+            for (int i = 2; i <= fixArray.Length; i += 2)
             {
-                if (fixArray.Length % 2 != 0)
-                {
-
-                }
-                else
-                {
-                    Console.WriteLine("[{0}]", string.Join(", ", myArray));
-                }
-
+                Console.WriteLine(i + " = " + "[{0}]", string.Join(", ", myArray[i]));
             }
-
 
 
         }
@@ -209,7 +203,104 @@ namespace Niklas.Week03
             return count;
         }
 
+        public static int ArraySumme(int[] arr)
+        {
+            int sum = 0;
+            foreach (int value in arr)
+            {
+                sum += value;
+            }
+            return sum;
+        }
 
+        public static double ArrayAvg(int[] arr)
+        {
+            if (arr.Length == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return ArraySumme(arr) / (double)arr.Length;
+            }
+        }
+
+        public static double ArrayMin(int[] arr)
+        {
+            int min = Int32.MaxValue;
+
+            foreach (int value in arr)
+            {
+                if (value < min)
+                {
+                    min = value;
+                }
+            }
+            return min;
+        }
+
+        public static double ArrayMax(int[] arr)
+        {
+            int max = Int32.MinValue;
+
+            foreach (int value in arr)
+            {
+                if (value > max)
+                {
+                    max = value;
+                }
+            }
+            return max;
+        }
+
+        public static int[] BubbleSortAsc(int[] arr)
+        {
+            int steps = 0;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                    steps++;
+                }
+            }
+            Console.WriteLine("Size: " + arr.Length + " Steps: " + steps);
+            return arr;
+
+        }
+
+        public static int[] BubbleSortDesc(int[] arr)
+        {
+            int steps = 0;
+            for (int i = 0; i < arr.Length -1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] < arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                    steps++;
+                }
+            }
+            Console.WriteLine("Size: " + arr.Length + " Steps: " + steps);
+            return arr;
+
+        }
+
+        //===================================================================================================================================================================\\
+        //===================================================================================================================================================================\\
+        //===================================================================================================================================================================\\
+        //===================================================================================================================================================================\\
+        //===================================================================================================================================================================\\
+        //===================================================================================================================================================================\\
 
         public static int[] CreateArray(int size)
         {
@@ -249,17 +340,16 @@ namespace Niklas.Week03
             return arr;
         }
 
-        public static void PrintXth(int[] arr, int pos)
+        public static int[] PrintXth(int size)
         {
-            if (pos >= 0 && arr.Length > pos)
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine(arr[pos]);
-            }
-            else
-            {
-                Console.WriteLine("Nicht vorhanden!");
-            }
 
+                arr[i] = random.Next(100);
+
+            }
+            return arr;
         }
 
         public static int[] CreateArrayTwo(int size)
@@ -267,10 +357,9 @@ namespace Niklas.Week03
             int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                if (size % 2 == 0)
-                {
-                    arr[i] = random.Next(100);
-                }
+
+                arr[i] = random.Next(100);
+
             }
 
             return arr;
@@ -278,5 +367,15 @@ namespace Niklas.Week03
 
 
 
+
+        public static int[] CreateArrayRandom(int size, int min, int max)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(min, max);
+            }
+            return arr;
+        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Dimitri.Week03
 {
@@ -29,7 +30,11 @@ namespace Dimitri.Week03
             //Console.WriteLine(ReturnArrayAvg(RandomNumberArray(0, 100)));
             //Console.WriteLine(ReturnArrayMinIndex(RandomNumberArray(-50, 50)));
             //Console.WriteLine(ReturnArrayMaxIndex(RandomNumberArray(-50, 50)));
-            PrintArray((BubbleSortAsc(RandomNumberArray(0, 100))));
+            //PrintArray(BubbleSortAsc(RandomNumberArray(0, 100)));
+            //PrintArray(BubbleSortDesc(RandomNumberArray(0, 10)));
+            //PrintArray(MergeSort(RandomNumberArray(0, 5)));
+            //PrintArray(SelectionSort(RandomNumberArray(0, 10)));
+            PrintArray(InsertionSort(RandomNumberArray(0, 10)));
         }
 
         public static int[] IncreaseNumberArray(int n)
@@ -65,8 +70,9 @@ namespace Dimitri.Week03
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine(arr[i]);
+                Console.WriteLine("{0}...{1}", i, arr[i]);
             }
+            /* For some reason this only returns a 0 if you have an array with only one element */
         }
 
         public static int[] CopyArray(int[] original)
@@ -84,16 +90,26 @@ namespace Dimitri.Week03
 
         public static int[] RandomNumberArray(int lower, int upper)
         {
+
             int[] arr = new int[(upper - lower)];
-            Random random = new Random();
-
-
-            for (int i = 0; i < (upper - lower); i++)
+            if (lower == upper)
             {
-                arr[i] = random.Next(lower, upper);
+                return arr;
+            }
+            else
+            {
+                Random random = new Random();
+
+
+                for (int i = 0; i < (upper - lower); i++)
+                {
+                    arr[i] = random.Next(lower, upper);
+                }
+
+                return arr;
             }
 
-            return arr;
+
         }
 
         public static void PrintArrayToString0(int[] arr)
@@ -281,34 +297,228 @@ namespace Dimitri.Week03
 
         public static int[] BubbleSortAsc(int[] arr)
         {
-            int[] arrAsc = new int[arr.Length];
 
-            for (int i = 0; i < arr.Length * arr.Length; i++)
+            for (int i = 0; i <= arr.Length * arr.Length; i++)
             {
-                for (int j = 0; j < arrAsc.Length; j++)
+
+                for (int j = 0; j < arr.Length - 1; j++)
                 {
                     int a = arr[j];
                     int b = arr[j + 1];
                     if (a > b)
                     {
-                        arrAsc[j + 1] = a;
-                        arrAsc[j] = b;
-                    } else
-                    {
-                        arrAsc[j] = a;
-                        arrAsc[j + 1] = b;
+                        arr[j + 1] = a;
+                        arr[j] = b;
                     }
 
                 }
 
             }
 
-            return arrAsc;
+            return arr;
         }
 
-        //public static void BubbleSortDesc(int[] arr)
+        public static int[] BubbleSortDesc(int[] arr)
+        {
+            for (int i = 0; i <= arr.Length * arr.Length; i++)
+            {
+
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    int a = arr[j];
+                    int b = arr[j + 1];
+                    if (a < b)
+                    {
+                        arr[j + 1] = a;
+                        arr[j] = b;
+                    }
+
+                }
+
+            }
+
+            return arr;
+
+        }
+
+        //private static int[] MergeSort(int lo, int hi, int[] arr)
+        //{
+        //    int hi = ReturnArrayMaxIndex(arr);
+        //    int lo = ReturnArrayMaxIndex(arr);
+
+        //    if (hi - lo <= 1)
+        //    {
+        //        return arr;
+        //    }
+
+        //    int mid = (hi + lo) / 2;
+
+        //    for (int i = 0; i )
+
+
+
+
+        //        int indexMax = ReturnArrayMaxIndex(arr);
+
+        //    int indexMin = ReturnArrayMinIndex(arr);
+
+        //    if (indexMax - indexMin <= 1)
+        //    {
+        //        return arr;
+        //    }
+        //    else
+        //    {
+        //        int indexMid = (indexMax + indexMin) / 2;
+
+        //        int[] tmpArr = arr;
+
+        //        int i = indexMin;
+        //        int j = indexMid;
+        //        int k = 1;
+
+        //        while (i < indexMid && j < indexMax)
+        //        {
+
+
+        //            if (arr[i] < arr[j])
+        //            {
+        //                tmpArr[k] = arr[i];
+        //                i++;
+        //                k++;
+        //                j++;
+
+        //            }
+        //            else
+        //            {
+        //                tmpArr[k] = arr[j];
+        //                i++;
+        //                k++;
+        //                j++;
+        //            }
+
+        //        }
+
+        //        while (i < indexMid)
+        //        {
+        //            tmpArr[k++] = arr[i++];
+        //            i++;
+        //            k++;
+        //        }
+
+        //        while (j < indexMax)
+        //        {
+        //            tmpArr[k++] = arr[j++];
+        //            j++;
+        //            k++;
+        //        }
+
+        //        arr = tmpArr;
+
+        //        return arr;
+        //    }
+        //}
+
+        //public static int[] MergeSort(int[] arr)
+        //{
+        //    return MergeSort(0, arr.Length - 1, arr);
+        //}
+
+        //public static int[] QuickSort(int[] arr)
         //{
 
+        //    return QuickSort(arr, left, mid - 1);
         //}
+
+        //private static int[] QuickSort(int[] arr, int left, int right)
+        //{
+        //    if (left < right)
+        //    {
+        //        arr;
+        //    }
+        //    else
+        //    {
+
+        //    }
+
+        //    return
+        //}
+
+        public static int[] SelectionSort(int[] arr)
+        {
+            int n = arr.Length;
+
+            //int[] tempArr = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                int min = i;
+
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[j] < arr[min])
+                    {
+                        min = j;
+                    }
+
+                }
+                int a = arr[i];
+                int b = arr[min];
+                arr[min] = a;
+                arr[i] = b;
+            }
+
+            return arr;
+        }
+
+        //public static int[] InsertionSort(int[] arr)
+        //{
+        //    int n = arr.Length;
+        //    int[] tmpArr = CopyArray(arr);
+        //    for (int k = 0; k < arr.Length - 1; k++)
+        //    {
+        //        int i = 0;
+        //        int j = i + 1;
+        //        while (i < n)
+        //        {
+        //            for (j = i + 1; j < n; j++)
+        //            {
+        //                if (arr[i] < arr[j])
+        //                {
+        //                    tmpArr[i] = arr[i];
+        //                    i++;
+        //                }
+        //                else
+        //                {
+        //                    tmpArr[i] = arr[j];
+        //                    i++;
+        //                }
+        //            }
+        //            i++;
+
+        //        }
+        //    }
+
+        //    return tmpArr;
+        //}
+        public static int[] InsertionSort(int[] arr)
+        {
+            int n = arr.Length;
+            for (int i = 1; i < n; i++)
+            {
+                int j = i;
+                while (j > 0 && arr[j - 1] > arr[j])
+                {
+                    int a = arr[j];
+                    int b = arr[j - 1];
+
+                    arr[j] = b;
+                    arr[j - 1] = a;
+
+                    j--;
+                }
+            }
+
+            return arr;
+        }
     }
+
 }
