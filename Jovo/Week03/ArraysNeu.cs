@@ -1,33 +1,35 @@
-﻿namespace Mehmet.Week03
-{
-    internal class ArrayÜbung
-    {
+﻿
+using System.Reflection.Metadata.Ecma335;
 
+namespace Jovo.Week03
+{
+    internal class ArraysNeu
+    {
 
         public static Random rand = new Random();
 
-        public static void start()
+        public static void Start()
         {
 
-            Console.WriteLine("Original");
+            Console.WriteLine("Increase");
             int[] original = Array(10);
             foreach (int element in original)
             {
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------");
+            Console.WriteLine("=========================");
 
 
 
-            Console.WriteLine("OriginalR");
+            Console.WriteLine("Decrease");
             int[] originalR = ArrayR(10);
             foreach (int element in originalR)
             {
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------");
+            Console.WriteLine("=========================");
 
 
 
@@ -38,8 +40,7 @@
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------");
-
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("OriginalVerändert");
@@ -55,8 +56,6 @@
             Console.WriteLine();
 
 
-
-
             Console.WriteLine("RandomNumberArray");
             int[] arr = RandomNumberArray(10);
             foreach (int element in arr)
@@ -64,7 +63,7 @@
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArray2");
@@ -78,7 +77,7 @@
                 Console.Write(randArr[i] + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("--------------");
+            Console.WriteLine("=========================");
             Console.WriteLine(" 2: index = " + randArr[1]);
             Console.WriteLine(" 5: index = " + randArr[4]);
             Console.WriteLine("10: index = " + randArr[9]);
@@ -94,7 +93,7 @@
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArrayZählen");
@@ -103,33 +102,42 @@
 
 
             Console.WriteLine("Zahlen über 30: " + Count30);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArraySumme");
             int Summe = RandomNumberArraySumme(randArr);
             Console.WriteLine("[{0}]", string.Join(", ", randArr));
             Console.WriteLine("Summe = " + Summe);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArrayMinMaxAvg");
 
-
+            randArr = new int[] { 2, 3 };
 
             int Min = ArrayMin(randArr);
             int Max = ArrayMax(randArr);
             double Avg = ArrayAvg(randArr);
             Console.WriteLine("[{0}]", string.Join(", ", randArr));
             Console.WriteLine("Min = {0} Max = {1} Avg = {2}", Min, Max, Avg);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
-            Console.WriteLine("BubblesortMitZahlen");
-            BubblesortMitZahlenAscending(randArr);
+            Console.WriteLine("BubbleSortAscending");
+            Console.WriteLine();
+            //int[] newArr = RandomNumberArrayCrazyRange(100, 0, 100); so neue array angeben
+            int[] array = SortArrayAscending(arr); //warum kann ich keine Zahl eingeben
+            Console.WriteLine("=========================");
 
 
+            Console.WriteLine("BubbleSortDescending");
+            Console.WriteLine();
+            int[] array2 = SortArraysDescending(arr);
+            Console.WriteLine("======================");
 
+
+           
 
         }
 
@@ -191,12 +199,12 @@
 
         public static int[] RandomNumberArrayCrazyRange(int size, int num1, int num2)
         {
-            int[] CrazyArr = new int[size];
-            for (int i = 0; i < CrazyArr.Length; i++)
+            int[] crazyArr = new int[size];
+            for (int i = 0; i < crazyArr.Length; i++)
             {
-                CrazyArr[i] = rand.Next(num1, num2);
+                crazyArr[i] = rand.Next(num1, num2);
             }
-            return CrazyArr;
+            return crazyArr;
         }
 
 
@@ -266,51 +274,68 @@
         }
 
 
-        public static void BubblesortMitZahlenAscending(int[] arr)
+
+
+
+        public static int[] SortArrayAscending(int[] array)
         {
+            int length = array.Length;
 
-            for (int i = 0; i < arr.Length-1; i++)
+            int temp = array[0];
+
+            for (int i = 0; i < length; i++)
             {
-                for (int j = 0; j < arr.Length - 1; j++)
+                for (int j = 0; j < length - 1; j++)
                 {
-                    int num1 = arr[j];
-                    int num2 = arr[j + 1];
-                   
-                    Console.WriteLine("     Comparing: num1: " + num1 + " num2: " + num2 + " Index: " + j);
-                    if (num1 > num2)
+                    if (array[j] > array[j + 1])
                     {
-                        Console.WriteLine("     Before Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
+                        temp = array[j + 1];
 
-                        arr[j] = num2;
-                        arr[j + 1] = num1;
+                        array[j + 1] = array[j];
 
-                        Console.WriteLine("     After Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
-         
+                        array[j] = temp;
                     }
-
-                    Console.Write(num1);
-                   
+                    //jeder Schritt wird ausgegeben
+                    Console.WriteLine(String.Join(", ", array));
                 }
-
-                Console.WriteLine();
-                int Max = Int32.MinValue;
-                foreach (int element in arr)
-                {
-                    if (element > Max)
-                    {
-                        Max = element;
-                    }
-                }
-                Console.WriteLine(Max);
-
             }
 
-            Console.WriteLine();
-            Console.WriteLine();
+            return array;
+
         }
+
+
+
+        public static int[] SortArraysDescending(int[] array2)
+        {
+            int length = array2.Length;
+
+            int temp = array2[0];
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length - 1; j++)
+                {
+                    if (array2[j + 1] > array2[j])
+                    {
+                        temp = array2[j + 1];
+
+                        array2[j + 1] = array2[j];
+
+                        array2[j] = temp;
+                    }
+                    //jeder Schritt wird ausgegeben
+                    Console.WriteLine(String.Join(", ", array2));
+                }
+            }
+            return array2;
+
+
+        }
+
+
+
 
 
     }
 }
-
-
