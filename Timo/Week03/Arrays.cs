@@ -115,8 +115,25 @@ namespace Timo.Week03
             PrintString(BubbleSort(testSort, true));
             PrintString(BubbleSort(testSort, false));
 
+            testSort = RandomFor(50000, 1, 100);
+            BubbleSort(testSort, true);
+
             Console.WriteLine("=======================================");
 
+            int[][] arr2D = new int[100][];
+            for(int i=0; i < arr2D.Length; i++)
+            {
+                arr2D[i] = new int[100];
+            }
+
+            for (int row = 0; row < arr2D.Length; row++)
+            {
+                for(int col = 0;  col < arr2D[row].Length; col++)
+                {
+                    Console.Write(arr2D[row][col]);
+                }
+                Console.WriteLine();
+            }
         }
 
 
@@ -418,9 +435,10 @@ namespace Timo.Week03
         //Aufgabe 8 Bubblesort
         public static int[] BubbleSort(int[] arr, bool asc)
         {
+            int steps = 0;
             for (int i = arr.Length; i > 1; i--)
             {
-                for (int a = 0; a < arr.Length - 1; a++)
+                for (int a = 0; a < i - 1; a++)
                 {
                     if ((asc && arr[a] > arr[a + 1]) || (!asc && arr[a] < arr[a + 1]))
                     {
@@ -428,8 +446,15 @@ namespace Timo.Week03
                         arr[a + 1] = arr[a];
                         arr[a] = temp;
                     }
+                    steps++;
+                   
+                }
+                if(i % 10000 == 0)
+                {
+                    Console.WriteLine("sorted");
                 }
             }
+            Console.WriteLine("Size: "+arr.Length+"Steps: " + steps);
             return arr;
         }
     }
