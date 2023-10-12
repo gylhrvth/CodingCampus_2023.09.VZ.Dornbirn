@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -10,9 +11,11 @@ namespace Cemal.Week03
 {
     internal class Arrays
     {
-       public static Random random = new Random();
+        public static Random random = new Random();
         public static void StartArray()
         {
+
+
             //Aufgabe 1
             Console.WriteLine("Aufgabe Number Array");
             int[] myArr = CreateArray(6);
@@ -34,7 +37,7 @@ namespace Cemal.Week03
             {
                 Console.Write(element + " ");
             }
-            Console.WriteLince();
+            Console.WriteLine();
 
 
             myArr[0] = 200;
@@ -59,9 +62,10 @@ namespace Cemal.Week03
 
             //Aufgabe 3 . 1 (mit FOREACH)
 
+            int[] myRandom = RandomNumberArray(10);
+
             Console.WriteLine();
             Console.WriteLine("Random Number Array 1.0");
-            int[] myRandom = RandomNumberArray(10);
             Console.Write("[");
             foreach (var element in myRandom)
             {
@@ -94,7 +98,7 @@ namespace Cemal.Week03
 
             Console.WriteLine();
             Console.WriteLine("Random Number Array 4.0");
-            for (int i = 0; i < myRandom.Length; i+= 2)
+            for (int i = 0; i < myRandom.Length; i += 2)
             {
                 Console.Write(myRandom[i] + ", ");
             }
@@ -103,18 +107,52 @@ namespace Cemal.Week03
 
             //Aufgabe 4
 
+            int[] crazy = RandomNumberArrayCrazy(5);
+
             Console.WriteLine();
             Console.WriteLine("Random Number Array Crazy Range");
-            foreach (var element in myRandom)
+            foreach (var element in crazy)
             {
-
+                Console.Write(element + " ");
             }
+            Console.WriteLine();
 
 
+            //Aufgabe 5
+
+            Console.WriteLine();
+            Console.WriteLine("Random Number Array Zählen");
+            int erg = RandomNumberArrayZaehler(5);
+            Console.WriteLine(erg);
 
 
+            //Aufgabe 6
+            Console.WriteLine();
+            Console.WriteLine("Random Number Array Summe");
+            int ergeb = RandomNumberArraySumme(5);
+            Console.WriteLine(ergeb);
 
 
+            //Aufgabe 7
+
+            Console.WriteLine();
+            Console.WriteLine(String.Join(" ", myRandom));
+            Console.WriteLine();
+
+            Console.WriteLine("Random Number Array Min");
+            int min = RandomNumberArrayMin(myRandom);
+            Console.WriteLine(min);
+            Console.WriteLine();
+
+            Console.WriteLine("Random Number Array Max");
+            int max = RandomNumberArrayMax(myRandom);
+            Console.WriteLine(max);
+            Console.WriteLine();
+
+            Console.WriteLine("Random Number Array Avg");
+            double avg = RandomNumberArrayAvg(myRandom);
+            Console.WriteLine(avg);
+            Console.WriteLine();
 
 
         }
@@ -156,9 +194,9 @@ namespace Cemal.Week03
         }
 
         public static int[] RandomNumberArray(int size)
-        {        
+        {
             int[] arr = new int[size];
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = random.Next(101);
             }
@@ -170,9 +208,70 @@ namespace Cemal.Week03
             int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = random.Next(-50,50);
+                arr[i] = random.Next(-50, 50);
             }
             return arr;
+        }
+
+        public static int RandomNumberArrayZaehler(int arr)
+        {
+            int[] array = new int[arr];
+            int ergebnis = 0;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 101);
+                if (array[i] > 30)
+                {
+                    ergebnis++;
+                }
+            }
+            return ergebnis;
+        }
+
+        public static int RandomNumberArraySumme(int arr)
+        {
+            int[] array = new int[arr];
+            int ergebnis = 0;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 101);
+                ergebnis += array[i];
+            }
+            return ergebnis;
+        }
+
+        public static int RandomNumberArrayMin(int[] arr)
+        {
+            int mindestwert = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                mindestwert = Math.Min(mindestwert, arr[i]);
+            }
+            return mindestwert;
+        }
+
+        public static int RandomNumberArrayMax(int[] arr)
+        {
+            int maximalwert = arr[0];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                maximalwert = Math.Max(maximalwert, arr[i]);
+            }
+            return maximalwert;
+        }
+
+        public static double RandomNumberArrayAvg(int[] arr)
+        {
+            double avg = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                avg = arr.Average();
+            }
+            return avg;
         }
     }
 }
