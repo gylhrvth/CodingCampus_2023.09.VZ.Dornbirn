@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks.Dataflow;
 using System.Xml.Schema;
 
 namespace Niklas.Week03
@@ -15,11 +16,11 @@ namespace Niklas.Week03
         public static void Start()
         {
 
-            int[] arr1 = ArrayGenerator.CreateArrayRandom(10, 0, 101);
-            
+            int[] arr1 = CreateArrayRandom(10, 0, 101);
+
 
             Console.WriteLine("\nAscending: ");
-            int[] arr = new int[10];
+            int[] arr = new int[1];
             CreateArrayAsc(arr1);
 
             Console.WriteLine("\nDescending: ");
@@ -75,9 +76,11 @@ namespace Niklas.Week03
 
 
             Console.WriteLine("______________________");
-            Console.WriteLine("Bubblesort: ");
-            BubbleSort(arr1);
-
+            Console.WriteLine("Unsorted: [{0}]", string.Join(", ", arr1));
+            BubbleSortAsc(arr1);
+            Console.WriteLine("Bubblesort Ascending: " + string.Join(", ", arr1));
+            BubbleSortDesc(arr1);
+            Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
         }
 
 
@@ -118,27 +121,6 @@ namespace Niklas.Week03
 
             return arr;
         }
-
-
-        public static void Count()
-        {
-            int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            Console.WriteLine(arr);
-
-            for (int i = 0; i < arr.Length; ++i)
-            {
-                Console.WriteLine("{0}. = {1}", i, arr[i]);
-            }
-
-            int[] arr2 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            Console.WriteLine(arr2);
-
-            for (int i = 0; i < arr2.Length; ++i)
-            {
-                Console.WriteLine("{0}. = {1}", i, arr2[i]);
-            }
-        }
-
 
         public static int[] MakeACopy(int[] arr)
         {
@@ -271,12 +253,46 @@ namespace Niklas.Week03
             return max;
         }
 
-        public static int[] BubbleSort(int[] arr)
+        public static int[] BubbleSortAsc(int[] arr)
         {
-            arr = CreateArray(10);
-
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
+            int steps = 0;
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                    steps++;
+                }
+            }
+            Console.WriteLine("Size: " + arr.Length + " Steps: " + steps);
             return arr;
+
+        }
+
+        public static int[] BubbleSortDesc(int[] arr)
+        {
+            int steps = 0;
+            for (int i = 0; i < arr.Length -1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (arr[j] < arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                    steps++;
+                }
+            }
+            Console.WriteLine("Size: " + arr.Length + " Steps: " + steps);
+            return arr;
+
         }
 
         //===================================================================================================================================================================\\
@@ -349,5 +365,17 @@ namespace Niklas.Week03
             return arr;
         }
 
+
+
+
+        public static int[] CreateArrayRandom(int size, int min, int max)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(min, max);
+            }
+            return arr;
+        }
     }
 }
