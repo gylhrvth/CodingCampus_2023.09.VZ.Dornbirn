@@ -293,9 +293,7 @@ namespace Simon.Week02
                     index = i;
                 }
             }
-            return max;
+            return index;
         }
-
-
     }
 }

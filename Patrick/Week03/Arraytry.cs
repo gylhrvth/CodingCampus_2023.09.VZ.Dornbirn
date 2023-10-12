@@ -51,9 +51,21 @@ namespace Patrick.Week03
             numbers[4] = 5;
             numbers[5] = 700;
 
+
+            //foreach(int i in numbers)
+            //{
+            //    Console.Write(i +" ");
+            //}
+
             Array.Sort(numbers);    // sortiert den Array nach der Zahlengröße
 
+            foreach (int i in numbers)
+            {
+                Console.Write(i + " ");
+            }
 
+
+            Console.WriteLine();
             for (int x = 0; x < numbers.Length; x++)
             {
                 Console.WriteLine("{0}. = {1}", x, numbers[x]);
@@ -179,9 +191,9 @@ namespace Patrick.Week03
             }
 
             Console.WriteLine("Dein Ergebnis:" + result);
-
-
         }
+
+
         public static void WhileqQuiz()
         {
             Random randomNumber = new Random();                         // eine Variable von einer zufälligen Zahl erstellen
@@ -225,6 +237,7 @@ namespace Patrick.Week03
             Console.Write("Dein Ergebnis ist: " + result);
 
             return summand;
+
         }
 
         public static void tryIfElse(int count)
@@ -260,11 +273,11 @@ namespace Patrick.Week03
             Console.WriteLine("geben Sie nun das Passwort ein");
             string inputPassword = Console.ReadLine();
 
-            if ( inputUsername == userName && inputPassword == password)
+            if (inputUsername == userName && inputPassword == password)
             {
                 Console.WriteLine("Sie sind nun eingeloggt");
             }
-            else if(inputPassword != password)
+            else if (inputPassword != password)
             {
                 Console.WriteLine("Das Passwort stimmt nicht");
             }
