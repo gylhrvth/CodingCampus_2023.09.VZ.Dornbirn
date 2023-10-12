@@ -3,16 +3,18 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace Jovo.Week93
 {
-    internal class Arrays2 { 
+    internal class Arrays2
+    {
 
 
         public static Random Random = new Random();
 
 
-        
+
         public static void Start()
         {
-            
+
+
             Console.WriteLine("Aufgabe Number Increase");
             int[] arr = NumberArrayIncrease(10);
             foreach (int element in arr)
@@ -22,7 +24,7 @@ namespace Jovo.Week93
             Console.WriteLine();
             Console.WriteLine("===================");
 
-            
+
 
 
             Console.WriteLine("Aufgabe Number Decrease");
@@ -36,7 +38,7 @@ namespace Jovo.Week93
 
             Console.WriteLine();
             Console.WriteLine("=================");
-
+            
             Console.WriteLine("Aufgabe MakeACopy");
             int[] arr3 = MakeACopy(arr);
             foreach (int element in arr3)
@@ -78,6 +80,7 @@ namespace Jovo.Week93
             Console.WriteLine("===============");
 
 
+
              Console.WriteLine("Random Number Array");
              int[] arr4 = RandomNumberArray(2);
 
@@ -95,11 +98,20 @@ namespace Jovo.Week93
 
             Console.WriteLine("Example3 Random:");
             int[] arr5 = RandomArray(10);
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
+            Console.WriteLine("[{0}]", string.Join(", ", arr5));
+
             Console.WriteLine();
 
             int count = RandomCount1(arr5);
             Console.WriteLine("Es sind " + count + " Zahlen über 30");
+
+            PrintArrayWithFori(arr);
+            PrintArrayWithForeach(arr);
+
+
+            PrintSecondFifthTenth(arr);
+            
+
         }
 
 
@@ -111,14 +123,14 @@ namespace Jovo.Week93
         public static int[] NumberArrayIncrease(int size)
         {
             int[] num1 = new int[size];
-            
+
 
             for (int i = 0; i < num1.Length; i++)
             {
                 num1[i] = i;
-                
+
             }
-           
+
 
             return num1;
         }
@@ -128,10 +140,17 @@ namespace Jovo.Week93
         {
 
             int[] num2 = new int[size];
+
+
+            int[] num3 = new int[size];
             for (int j = 0; j < num2.Length; j++)
             {
 
+
                 num2[j] = size - j;
+
+                num2[j] = j - 10; Math.Abs(-10);
+
 
             }
 
@@ -146,10 +165,11 @@ namespace Jovo.Week93
 
             for (int i = 0; i < copy.Length; i++)
             {
-                copy[i] = original[i];  
+                copy[i] = original[i];
+
             }
             return copy;
-            
+
         }
         
         //Start Random NumberArray

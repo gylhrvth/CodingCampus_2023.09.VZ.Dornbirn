@@ -1,46 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
+﻿
 using System.Reflection.Metadata.Ecma335;
-using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Mehmet.Week03
+namespace Jovo.Week03
 {
-    internal class ArrayÜbung
+    internal class ArraysNeu
     {
-
 
         public static Random rand = new Random();
 
-        public static void start()
+        public static void Start()
         {
 
-            Console.WriteLine("Original");
+            Console.WriteLine("Increase");
             int[] original = Array(10);
             foreach (int element in original)
             {
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------");
+            Console.WriteLine("=========================");
 
 
 
-            Console.WriteLine("OriginalR");
+            Console.WriteLine("Decrease");
             int[] originalR = ArrayR(10);
             foreach (int element in originalR)
             {
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------");
+            Console.WriteLine("=========================");
 
 
 
@@ -51,7 +40,7 @@ namespace Mehmet.Week03
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------");
+            Console.WriteLine("=========================");
 
 
 
@@ -77,7 +66,7 @@ namespace Mehmet.Week03
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArray2");
@@ -91,7 +80,7 @@ namespace Mehmet.Week03
                 Console.Write(randArr[i] + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("--------------");
+            Console.WriteLine("=========================");
             Console.WriteLine(" 2: index = " + randArr[1]);
             Console.WriteLine(" 5: index = " + randArr[4]);
             Console.WriteLine("10: index = " + randArr[9]);
@@ -107,7 +96,7 @@ namespace Mehmet.Week03
                 Console.Write(element + " ");
             }
             Console.WriteLine();
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArrayZählen");
@@ -116,32 +105,32 @@ namespace Mehmet.Week03
 
 
             Console.WriteLine("Zahlen über 30: " + Count30);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArraySumme");
             int Summe = RandomNumberArraySumme(randArr);
             Console.WriteLine("[{0}]", string.Join(", ", randArr));
             Console.WriteLine("Summe = " + Summe);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
             Console.WriteLine("RandomNumberArrayMinMaxAvg");
 
-            randArr = new int[]{ 2, 3};
+            randArr = new int[] { 2, 3 };
 
             int Min = ArrayMin(randArr);
             int Max = ArrayMax(randArr);
             double Avg = ArrayAvg(randArr);
             Console.WriteLine("[{0}]", string.Join(", ", randArr));
             Console.WriteLine("Min = {0} Max = {1} Avg = {2}", Min, Max, Avg);
-            Console.WriteLine("----------------------------");
+            Console.WriteLine("=========================");
 
 
-            Console.WriteLine("BubblesortMitZahlen");
-            int Ascending = BubblesortMitZahlenAscending(randArr);
-            Console.WriteLine(Ascending);
 
+            Console.WriteLine();
+            int[] array = SortArray(arr);
+            
 
 
         }
@@ -279,35 +268,35 @@ namespace Mehmet.Week03
         }
 
 
-        public static int BubblesortMitZahlenAscending(int[] arr)
+
+
+
+        public static int[] SortArray(int[] array)
         {
+            int length = array.Length;
 
+            int temp = array[0];
 
-
-            int Max = 0;
-            
-            foreach (int element in arr)
+            for (int i = 0; i < length; i++)
             {
-                if (element > Max)
+                for (int j = i + 1; j < length; j++)
                 {
-                    Max = element;
-                    return Max;
+                    if (array[i] > array[j])
+                    {
+                        temp = array[i];
+
+                        array[i] = array[j];
+
+                        array[j] = temp;
+                    }
                 }
-                
             }
 
-
-
-            return Max;
-
+            return array;
 
         }
 
-
-
-
-
+        
 
     }
 }
-
