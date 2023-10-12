@@ -9,8 +9,11 @@ namespace Gheorghe.Week03
 {
     internal class Arrays03
     {
+        public static Random rand = new Random();
         public static void Start()
         {
+            /*
+
             // ARRAY Print
             int[] original = Array(10);
             Console.WriteLine("===================   ");
@@ -21,7 +24,7 @@ namespace Gheorghe.Week03
             }
             Console.WriteLine();
             Console.WriteLine("==================");
-            
+
 
 
             //Arry Copy 
@@ -44,8 +47,8 @@ namespace Gheorghe.Week03
 
             }
             Console.WriteLine();
-           
-            
+
+
 
             // Änderung von Copy
             copy[2] = 100;
@@ -56,6 +59,18 @@ namespace Gheorghe.Week03
                 Console.Write(element + " ");
             }
             Console.WriteLine();
+            */
+
+            int[] arr = NumberArray(7);
+            int[] cp = MakeaACopy(arr);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr));
+            PrintArray(arr);
+            PrintArray(cp);
+            Console.WriteLine("==================");
+            arr[0] = 999;
+            PrintArray(arr);
+            PrintArray(cp);
+
         }
 
 
@@ -85,7 +100,32 @@ namespace Gheorghe.Week03
 
         }
 
+        public static int[] NumberArray(int size)
+        {       
+            int[] randoms = new int[size];
+            for (int i = 0; i < randoms.Length; i++)
+            {                
+                randoms[i] = rand.Next(-50, 50);               
+            }
+            return randoms;
 
+        }
+
+        public static void PrintArray(int[] arr)
+        {
+            Console.Write("[");
+            bool first = true;
+            foreach (int value in arr)
+            {
+                if (!first)
+                {
+                    Console.Write(", ");
+                }                
+                Console.Write(value);
+                first = false;
+            }
+            Console.WriteLine("]");
+        }
 
     }
 }

@@ -397,38 +397,18 @@ namespace Timo.Week03
             for (int i = 0; i < arr.Length; i++)
             {
                 int a = i;
-                if (asc)
+                while (a < arr.Length)
                 {
-                    while (a < arr.Length)
+                    if (asc && (arr[i] > arr[a]) || !asc && (arr[i] < arr[a]))
                     {
-                        if (arr[i] > arr[a])
-                        {
-                            int temp = arr[a];
-                            arr[a] = arr[i];
-                            arr[i] = temp;
-                            a = i;
-                        }
-                        else
-                        {
-                            a++;
-                        }
+                        int temp = arr[a];
+                        arr[a] = arr[i];
+                        arr[i] = temp;
+                        a = i;
                     }
-                }
-                else
-                {
-                    while (a < arr.Length)
+                    else
                     {
-                        if (arr[i] < arr[a])
-                        {
-                            int temp = arr[a];
-                            arr[a] = arr[i];
-                            arr[i] = temp;
-                            a = i;
-                        }
-                        else
-                        {
-                            a++;
-                        }
+                        a++;
                     }
                 }
             }
@@ -442,14 +422,12 @@ namespace Timo.Week03
             {
                 for (int a = 0; a < arr.Length - 1; a++)
                 {
-
                     if ((asc && arr[a] > arr[a + 1]) || (!asc && arr[a] < arr[a + 1]))
                     {
                         int temp = arr[a + 1];
                         arr[a + 1] = arr[a];
                         arr[a] = temp;
                     }
-
                 }
             }
             return arr;
