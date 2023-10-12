@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,11 +8,19 @@ using System.Xml.Linq;
 
 namespace Erik.Week03
 {
-    public class SortAlgorithm
+    public class SortAlgorithmBubblesort
     {
         public static void StartSortAlgorithm()
         {
-            SortAlgoBubblesort(NumbersOutput(10, 100, 40));
+
+            System.Diagnostics.Stopwatch.StartNew();
+            var timer = new Stopwatch();
+            //SortAlgoBubblesort(NumbersOutput(10, 100, 20));
+            PrintArrayWithIndex(SortAlgoBubblesort(NumbersOutput(10, 100, 20)));
+
+
+
+
         }
 
         public static int[] NumbersOutput(int randMin, int randMax, int randSize)
@@ -39,7 +48,7 @@ namespace Erik.Week03
             return arr1;
         }
 
-        public static void SortAlgoBubblesort(int[] arr)
+        public static int[] SortAlgoBubblesort(int[] arr)
         {
             int n = arr.Length;
             int counter = 1;
@@ -54,19 +63,32 @@ namespace Erik.Week03
                         int tmp = arr[j];
                         arr[j] = arr[j + 1];
                         arr[j + 1] = tmp;
-                        Console.Write(arr[j] + "  ");
+                        //PrintArrayWithIndex(arr);
+                        // Console.Write(arr[j] + " ");
                     }
-                    else
-                    {
-                        Console.Write(arr[j] + "  ");
-                    }
-                    if (counter % 20 == 0)
-                    {
-                        Console.WriteLine();
-                    }
+                    //else
+                    //{
+                    //    Console.Write(arr[j] + " ");
+                    //}
+
                     counter++;
                 }
             }
+            return arr;
+        }
+
+        public static void PrintArrayWithIndex(int[] arr)
+        {
+            Console.Write("[");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i > 0)
+                {
+                    Console.Write(", ");
+                }
+                Console.Write(arr[i]);
+            }
+            Console.WriteLine("]");
         }
     }
 }

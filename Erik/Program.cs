@@ -1,2 +1,2 @@
-﻿Erik.Week03.SortAlgorithm.StartSortAlgorithm();
+﻿Erik.Week03.SortAlgorithmSelectionSort.StartSortAlgorithmSelctionSort();
 
