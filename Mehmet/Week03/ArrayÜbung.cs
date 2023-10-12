@@ -269,7 +269,7 @@
         public static void BubblesortMitZahlenAscending(int[] arr)
         {
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length-1; i++)
             {
                 for (int j = 0; j < arr.Length - 1; j++)
                 {
@@ -289,11 +289,19 @@
                     }
 
                     Console.Write(num1);
-                    Console.WriteLine();
+                   
                 }
 
                 Console.WriteLine();
-
+                int Max = Int32.MinValue;
+                foreach (int element in arr)
+                {
+                    if (element > Max)
+                    {
+                        Max = element;
+                    }
+                }
+                Console.WriteLine(Max);
 
             }
 
