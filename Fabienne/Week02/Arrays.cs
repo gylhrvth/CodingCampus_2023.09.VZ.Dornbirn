@@ -64,6 +64,8 @@ namespace Fabienne.Week02
             Bubblesort(arr);
             Console.WriteLine("==========================================");
             PrintArray(arr);
+
+            GnomeSort();
         }
         public static int[] NumberArray()
         {
@@ -288,9 +290,9 @@ namespace Fabienne.Week02
                 }
             }
         }
-        public static void TwoDArrays()
+        public static void GnomeSort() //careful: bite ankles
         {
-            ö
+            
         }
     }
 }
