@@ -7,12 +7,13 @@ namespace Jovo.Week93
     {
 
 
-        public static Random rand = new Random();
+        public static Random Random = new Random();
 
 
 
         public static void Start()
         {
+
 
             Console.WriteLine("Aufgabe Number Increase");
             int[] arr = NumberArrayIncrease(10);
@@ -33,8 +34,11 @@ namespace Jovo.Week93
                 Console.Write(element + ", ");
             }
             Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(" ~~~ ", arr2));
+
+            Console.WriteLine();
             Console.WriteLine("=================");
-            /*
+            
             Console.WriteLine("Aufgabe MakeACopy");
             int[] arr3 = MakeACopy(arr);
             foreach (int element in arr3)
@@ -74,18 +78,40 @@ namespace Jovo.Week93
             
             Console.WriteLine();
             Console.WriteLine("===============");
-            
 
-            Console.WriteLine("Random Number Array");
-            int[] arr = RandomNumberArray(2);
 
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
+
+             Console.WriteLine("Random Number Array");
+             int[] arr4 = RandomNumberArray(2);
+
+             Console.WriteLine("[{0}]", string.Join(", ", arr4));
+             PrintArrayWithFori(arr4);
+             PrintArrayWithForeach(arr4);
+
+
+             PrintSecondFifthTenth(arr4);
+
+
+
+           
+
+
+            Console.WriteLine("Example3 Random:");
+            int[] arr5 = RandomArray(10);
+            Console.WriteLine("[{0}]", string.Join(", ", arr5));
+
+            Console.WriteLine();
+
+            int count = RandomCount1(arr5);
+            Console.WriteLine("Es sind " + count + " Zahlen über 30");
+
             PrintArrayWithFori(arr);
             PrintArrayWithForeach(arr);
 
 
             PrintSecondFifthTenth(arr);
-            */
+            
+
         }
 
 
@@ -112,14 +138,22 @@ namespace Jovo.Week93
 
         public static int[] NumberArrayDecrease(int size)
         {
-            int[] num2 = new int[10];
 
+            int[] num2 = new int[size];
+
+
+            int[] num3 = new int[size];
             for (int j = 0; j < num2.Length; j++)
             {
 
+
+                num2[j] = size - j;
+
                 num2[j] = j - 10; Math.Abs(-10);
 
+
             }
+
             return num2;
 
 
@@ -137,8 +171,8 @@ namespace Jovo.Week93
             return copy;
 
         }
-
-
+        
+        //Start Random NumberArray
 
 
         public static int[] RandomNumberArray(int size)
@@ -146,7 +180,7 @@ namespace Jovo.Week93
             int[] arraynew = new int[size];
             for (int i = 0; i < arraynew.Length; ++i)
             {
-                arraynew[i] = rand.Next(101);
+                arraynew[i] = Random.Next(101);
             }
             return arraynew;
         }
@@ -207,6 +241,50 @@ namespace Jovo.Week93
             Console.WriteLine("]");
         }
 
+        //ende Random NumberArray 
+        
+       
+
+        public static int[] RandomArray(int size)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Random.Next(101);
+
+            }
+            return arr;
+
+        }
+
+
+        static void CrazyRange()
+        {
+
+            for (int i = 0; i < 10; i++)
+            {
+                int[] arr5 = {Random.Next(-50, 50) };
+
+                Console.WriteLine(String.Join(", ", arr5));
+
+            }
+
+        }
+
+
+
+        public static int RandomCount1(int[] arr)
+        {
+            int count = 0;
+            foreach (int i in arr)
+            {
+                if (i > 30)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
 
 
     }
