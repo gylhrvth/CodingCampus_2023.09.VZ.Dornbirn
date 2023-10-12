@@ -10,7 +10,7 @@ namespace Riccardo.Week02
     {
         public static void Start()
         {
-
+            /*
             //Number Array Aufwärts
             Console.WriteLine("Number Array Aufwärts");
 
@@ -23,7 +23,7 @@ namespace Riccardo.Week02
 
 
 
-            /*
+            
             //Number Array Aufwärts
             Console.WriteLine("Number Array Aufwärts");
             int[] arrUp = new int[10];
@@ -63,7 +63,8 @@ namespace Riccardo.Week02
                 Console.WriteLine(original[i]);
             }
             return original;
-        } */
+        } 
+        */
     
     }
 }

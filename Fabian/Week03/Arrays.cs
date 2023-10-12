@@ -2,17 +2,21 @@
 {
     public class Arrays
     {
-        public static Random rand = new Random(1234);
+        public static Random rand = new Random(123);
         public static int[] arr = RandomNumberArrayMinMaxAvg();
 
         public static void Start()
         {
-            //NumberArray();
-            /*int[] originial = { 1, 2, 3, 4 };
-            MakeACopy(originial);*/
-            //RandomNumberArray();
-            //RandomNumberArrayCrazyRange();
-            //PrintRandomNumberArrayCount();
+            //Console.WriteLine("[{0}]", string.Join(", ", CreateNumberArray(10)));
+            //Console.WriteLine("[{0}]", string.Join(", ", NumberArrayReversed()));
+            //int[] originial = { 1, 2, 3, 4 };
+            //Console.WriteLine("[{0}]", string.Join(", ", MakeACopy(originial)));
+            //RandomNumberArray(10);
+            //PrintRandomNumberArrayEverySecond();
+            //PrintRandomNumberArray2();
+            //PrintRandomNumberArrayEverySecond();
+            //PrintRandomNumberArrayCrazyRange();
+            //Console.WriteLine(RandomNumberArrayCount(arr));
             //Console.WriteLine("sum of array = " + RandomNumberArraySum());
 
             //task Random Number Array Min/Max/Avg:
@@ -24,27 +28,50 @@
             Console.WriteLine("index of biggest number = " + IndexOfRandomNumberArrayMax(arr));
             Console.WriteLine("average = " + RandomNumberArrayAvg(arr));*/
 
-            //BubbleSortASC(arr);
-            //BubbleSortDESC(arr);
-            SelectionSort(arr);
+            int[] arr1 = MakeACopy(arr);
+            //BubbleSortASC(arr1);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr1));
+            int[] arr2 = MakeACopy(arr);
+            //BubbleSortDESC(arr2);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr2));
+            int[] arr3 = MakeACopy(arr);
+            //SelectionSort(arr3);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr3));
+            int[] arr4 = MakeACopy(arr);
+            //InsertionSort(arr4);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr4));
+            int[] arr5 = MakeACopy(arr);
+            //GnomeSort(arr5);
+            //Console.WriteLine("[{0}]", string.Join(", ", arr5));
 
+            /*int[,] twoDarray = CreateRandomMultiDimensionalArray(4, 3);
+            Print2DArray(twoDarray);
+            Console.WriteLine("sum of columns = [{0}]", string.Join(", ", SumByColumn(twoDarray)));
+            Console.WriteLine("sum of rows = [{0}]", string.Join(", ", SumByRow(twoDarray)));*/
 
-
-
+            int[,] pascal = CreatePascalTriangle(10);
+            PrintPascalTriangle(pascal);
         }
-        public static void NumberArray()
+        public static int[] CreateNumberArray(int size)
         {
-            int[] nums = new int[10];
+            int[] nums = new int[size];
+
+            for (int i = 0; i < size; i++)
+            {
+                nums[i] = i + 1;
+            }
+            return nums;
+        }
+
+        public static int[] NumberArrayReversed()
+        {
             int[] numsReversed = new int[10];
 
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < numsReversed.Length; i++)
             {
-                nums[i] = i;
-                numsReversed[i] = numsReversed.Length - 1 - i;
+                numsReversed[i] = numsReversed.Length - i;
             }
-            Console.WriteLine("[{0}]", string.Join(", ", nums));
-            Console.WriteLine("[{0}]", string.Join(", ", numsReversed));
-            Console.WriteLine();
+            return numsReversed;
         }
 
         public static int[] MakeACopy(int[] original)
@@ -54,69 +81,91 @@
             for (int i = 0; i < copy.Length; i++)
             {
                 copy[i] = original[i];
-                Console.WriteLine(copy[i]);
             }
             return copy;
         }
 
-        public static void RandomNumberArray()
+        public static int[] RandomNumberArray()
+        {
+            int[] arr = new int[10];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = rand.Next(1, 100);
+            }
+
+            return arr;
+        }
+        public static int[] RandomNumberArrayFor()
         {
             int[] randomNums = new int[10];
 
-            Console.WriteLine("array in foreach loop: ");
-            foreach (int i in randomNums)
-            {
-                randomNums[i] = rand.Next(1, 100);
-                Console.WriteLine(randomNums[i]);
-            }
-            Console.WriteLine("\narray in for loop with string.Join: ");
             for (int i = 0; i < randomNums.Length; i++)
             {
                 randomNums[i] = rand.Next(1, 100);
             }
-            Console.WriteLine("[{0}]", string.Join(", ", randomNums));
+            return randomNums;
 
-            Console.WriteLine($"\n2nd value = {randomNums[1]}");
-            Console.WriteLine($"5th value = {randomNums[4]}");
-            Console.WriteLine($"10th value = {randomNums[9]}\n");
-
-            Console.WriteLine("every second value: ");
-            for (int i = 0; i < randomNums.Length - 1; i += 2)
+        }
+        public static void PrintRandomNumberArrayForEach()
+        {
+            foreach (int i in RandomNumberArray())
             {
-                Console.WriteLine($"{i} = {randomNums[i]}");
+                Console.WriteLine(i);
             }
         }
 
-        public static void RandomNumberArrayCrazyRange()
+        public static void PrintRandomNumberArray2()
+        {
+            int[] arr = RandomNumberArray();
+
+            Console.WriteLine($"\n2nd value = {arr[1]}");
+            Console.WriteLine($"5th value = {arr[4]}");
+            Console.WriteLine($"10th value = {arr[9]}");
+        }
+        public static void PrintRandomNumberArrayEverySecond()
+        {
+            int[] arr = RandomNumberArray();
+
+            for (int i = 0; i < arr.Length - 1; i += 2)
+            {
+                Console.WriteLine(arr[i]);
+            }
+
+        }
+
+        public static int[] RandomNumberArrayCrazyRange()
         {
             int[] randomNums = new int[10];
 
-            foreach (int i in randomNums)
+            for (int i = 0; i < randomNums.Length; i++)
             {
                 randomNums[i] = rand.Next(-50, 50);
-                Console.WriteLine(randomNums[i]);
             }
-        }
 
-        public static int[] RandomNumberArrayCount()
-        {
-            int[] randomNums = new int[10];
-
-            for (int i = 0; i < randomNums.Length; i++)
-            {
-                randomNums[i] = rand.Next(1, 100);
-
-                if (randomNums[i] < 30)
-                {
-                    randomNums[i] = 0;
-                }
-            }
             return randomNums;
         }
 
-        public static void PrintRandomNumberArrayCount()
+        public static void PrintRandomNumberArrayCrazyRange()
         {
-            Console.WriteLine("[{0}]", string.Join(", ", RandomNumberArrayCount()));
+
+            foreach (int i in RandomNumberArrayCrazyRange())
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static int RandomNumberArrayCount(int[] arr)
+        {
+            int count = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > 30)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
 
         public static int RandomNumberArraySum()
@@ -176,20 +225,17 @@
 
         public static void BubbleSortASC(int[] arr)
         {
-            
+
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int j = 0; j < arr.Length - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp; 
+                        (arr[j + 1], arr[j]) = (arr[j], arr[j + 1]);
                     }
                 }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
 
         public static void BubbleSortDESC(int[] arr)
@@ -201,13 +247,10 @@
                 {
                     if (arr[j] < arr[j + 1])
                     {
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+                        (arr[j + 1], arr[j]) = (arr[j], arr[j + 1]);
                     }
                 }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
 
         public static void SelectionSort(int[] arr)
@@ -215,17 +258,137 @@
             int min;
             for (int i = 0; i < arr.Length; i++)
             {
-                min = arr[i];
+                min = i;
                 for (int j = 0; j < arr.Length; j++)
                 {
-                    if (arr[j] < min)
+                    if (arr[j] > arr[min])
                     {
-                        min = arr[j];      
+                        min = j;
+
+                        (arr[min], arr[i]) = (arr[i], arr[min]);
                     }
                 }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
-        
+
+        public static void InsertionSort(int[] arr)
+        {
+            int j;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                j = i;
+                while (j > 0 && arr[j - 1] > arr[j])
+                {
+                    (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
+                    j--;
+                }
+            }
+        }
+
+        public static void GnomeSort(int[] arr)
+        {
+            int i = 2;
+
+            while (i < arr.Length)
+            {
+                if (arr[i] >= arr[i - 1])
+                {
+                    i++;
+                }
+                else
+                {
+                    (arr[i], arr[i - 1]) = (arr[i - 1], arr[i]);
+
+                    if (i >= 2)
+                    {
+                        i--;
+                    }
+                }
+            }
+        }
+
+        public static int[,] CreateRandomMultiDimensionalArray(int height, int width)
+        {
+            int[,] arr = new int[height, width];
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr[i, j] = rand.Next(100);
+                }
+            }
+            return arr;
+        }
+
+        public static void Print2DArray(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", arr[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static int[] SumByColumn(int[,] arr)
+        {
+            int[] sum = new int[arr.GetLength(1)];
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    sum[j] += arr[i, j];
+                }
+            }
+
+            return sum;
+        }
+
+        public static int[] SumByRow(int[,] arr)
+        {
+            int[] sum = new int[arr.GetLength(0)];
+
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    sum[i] += arr[i, j];
+                }
+            }
+
+            return sum;
+        }
+
+        public static int[,] CreatePascalTriangle(int size)
+        {
+            int[,] arr = new int[size, size];
+            int sum;
+
+            for (int i = 1; i < size; i++)
+            {
+                for (int j = 1; j < size; j++)
+                {
+                    sum = arr[i, j - 1] + arr[i - 1, j];
+                    arr[i, j] = sum;
+                }
+            }
+
+            return arr;
+        }
+        public static void PrintPascalTriangle(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write("{0} ", arr[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
     }
 }

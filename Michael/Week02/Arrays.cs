@@ -11,8 +11,9 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using Michael.Week01;
 
-namespace Michael.Week01
+namespace Michael.Week02
 {
     public class Arrays
     {
@@ -96,12 +97,12 @@ namespace Michael.Week01
 
         }
 
-        
+
         public static void randomArray()
         {
             Random rnd = new Random();
             int[] randomIntegers = new int[40];
-            
+
             for (int i = 0; i < 40; i++)
             {
                 randomIntegers[i] = rnd.Next(101);
@@ -128,7 +129,7 @@ namespace Michael.Week01
             for (int i = 0; i < randomIntegers.Length; i++)
             {
                 if (i % 2 == 1)
-                Console.Write(randomIntegers[i] + " ");
+                    Console.Write(randomIntegers[i] + " ");
             }
 
             Console.WriteLine();
@@ -143,7 +144,7 @@ namespace Michael.Week01
 
             for (int i = 0; i < randomIntegers.Length; i++)
             {
-                randomIntegers[i] = rnd.Next(-50,51);
+                randomIntegers[i] = rnd.Next(-50, 51);
             }
 
             foreach (int number in randomIntegers)
@@ -190,19 +191,11 @@ namespace Michael.Week01
         }
 
 
-        public static int randomNumberArrayMax(int size, int minRange, int maxRange)
+        public static int randomNumberArrayMax(int[] array, int minRange, int maxRange)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[size];
+            int max = array[0];
 
-            for (int i = 0; i < randomIntegers.Length; i++)
-            {
-                randomIntegers[i] = rnd.Next(minRange, maxRange+1);
-            }
-
-            int max = randomIntegers[0];
-
-            foreach (int number in randomIntegers)
+            foreach (int number in array)
             {
                 if (number > max)
                 {
@@ -213,19 +206,11 @@ namespace Michael.Week01
         }
 
 
-        public static int randomNumberArrayMin(int size, int minRange, int maxRange)
+        public static int randomNumberArrayMin(int[] array, int minRange, int maxRange)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[size];
+            int min = array[0];
 
-            for (int i = 0; i < randomIntegers.Length; i++)
-            {
-                randomIntegers[i] = rnd.Next(minRange, maxRange + 1);
-            }
-
-            int min = randomIntegers[0];
-
-            foreach (int number in randomIntegers)
+            foreach (int number in array)
             {
                 if (number < min)
                 {
@@ -315,15 +300,33 @@ namespace Michael.Week01
         }
 
 
+        public static void bubbleSort2(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length - i - 1; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
+
         public static int[] bubbleSortAscending(int[] array)
         {
             bool hadToSwap = true;
+            int length = array.Length;
 
             while (hadToSwap)
             {
-                hadToSwap = false; 
+                hadToSwap = false;
 
-                for(int i = 0; i < array.Length - 1; i++)
+                for (int i = 0; i < length - 1; ++i)
                 {
                     if (array[i] > array[i + 1])
                     {
@@ -352,7 +355,7 @@ namespace Michael.Week01
                     if (array[i] < array[i + 1])
                     {
                         first = array[i];
-                        array[i] = array[i+1];
+                        array[i] = array[i + 1];
                         array[i + 1] = first;
                         hadToSwap = true;
                     }
@@ -367,7 +370,7 @@ namespace Michael.Week01
             for (int i = 0; i < array.Length; i++)
             {
                 int first = array[i];
-                int mindex = ArrayMinIndex(array,i);
+                int mindex = ArrayMinIndex(array, i);
 
                 array[i] = array[mindex];
                 array[mindex] = first;
@@ -381,7 +384,7 @@ namespace Michael.Week01
             for (int i = 2; i < array.Length; i++)
             {
                 int j = i;
-                while ( (j > 0) && (array[j - 1] > array[j]))
+                while (j > 0 && array[j - 1] > array[j])
                 {
                     int first = array[j - 1];
                     array[j - 1] = array[j];
@@ -393,7 +396,7 @@ namespace Michael.Week01
             return array;
         }
 
-        
+
         public static int[] mergeSortAscending(int[] array)
         {
             if (array.Length == 1)
@@ -409,13 +412,13 @@ namespace Michael.Week01
 
             return mergeArrays(leftArray, rightArray);
         }
-        
+
 
         public static int[] splitLeft(int[] array, int index)
         {
             int[] result = new int[index];
 
-            for(int i = 0; i < index; i++)
+            for (int i = 0; i < index; i++)
             {
                 result[i] = array[i];
             }
@@ -430,7 +433,7 @@ namespace Michael.Week01
 
             for (int i = 0; i < array.Length - index; i++)
             {
-                result[i] = array[i+index];
+                result[i] = array[i + index];
             }
 
             return result;
@@ -444,7 +447,7 @@ namespace Michael.Week01
             int j = 0;
             int k = 0;
 
-            while ((k < array1.Length + array2.Length) && (i != array1.Length) && (j != array2.Length))
+            while (k < array1.Length + array2.Length && i != array1.Length && j != array2.Length)
             {
                 if (array1[i] < array2[j])
                 {
@@ -482,7 +485,7 @@ namespace Michael.Week01
         {
             int i = 1;
 
-            while(i < array.Length)
+            while (i < array.Length)
             {
                 if (array[i] >= array[i - 1])
                 {
@@ -492,7 +495,7 @@ namespace Michael.Week01
                 {
                     int first = array[i];
                     array[i] = array[i - 1];
-                    array[i-1] = first;
+                    array[i - 1] = first;
                     if (i > 1) i--;
                 }
             }
@@ -503,7 +506,7 @@ namespace Michael.Week01
         public static void twoDArray(int length)
         {
             int[][] twoDArray = new int[length][];
-            
+
             for (int i = 0; i < length; i++)
             {
                 twoDArray[i] = createRandomArray(length, 0, 101);
@@ -551,9 +554,9 @@ namespace Michael.Week01
                 coefficients[i] = new int[size];
             }
 
-            for (int i = 0; i< size; i++)
+            for (int i = 0; i < size; i++)
             {
-                for (int j = 0; j < size; j ++)
+                for (int j = 0; j < size; j++)
                 {
                     try
                     {
@@ -613,11 +616,11 @@ namespace Michael.Week01
 
             for (int i = 0; i <= exponent; i++)
             {
-                coefficient = pascalDreieckCoefficient(exponent+1, i+1);
+                coefficient = pascalDreieckCoefficient(exponent + 1, i + 1);
 
                 if (coefficient != 1)
                 {
-                    returnString += (coefficient + " ");
+                    returnString += coefficient + " ";
                 }
 
                 if (exponent - i != 0)
@@ -657,15 +660,15 @@ namespace Michael.Week01
 
         public static bool winsTicTacToe(int[,] field)
         {
-            if ((field[0,0] == field[1,1] && field[1,1] == field[2,2] && field[1,1] != 0) ||
-                (field[2,0] == field[1,1] && field[1,1] == field[0,2] && field[1,1] != 0))
+            if (field[0, 0] == field[1, 1] && field[1, 1] == field[2, 2] && field[1, 1] != 0 ||
+                field[2, 0] == field[1, 1] && field[1, 1] == field[0, 2] && field[1, 1] != 0)
             {
                 return true;
             }
             for (int i = 0; i < 3; i++)
             {
-                if ((field[i,0] == field[i,1] && field[i,1] == field[i,2] && field[i,0] != 0) ||
-                    (field[0,i] == field[1,i] && field[1,i] == field[2,i] && field[0,i] != 0))
+                if (field[i, 0] == field[i, 1] && field[i, 1] == field[i, 2] && field[i, 0] != 0 ||
+                    field[0, i] == field[1, i] && field[1, i] == field[2, i] && field[0, i] != 0)
                 {
                     return true;
                 }
@@ -680,11 +683,11 @@ namespace Michael.Week01
             {
                 for (int x = 0; x < 3; x++)
                 {
-                    if (field[y,x] == 1)
+                    if (field[y, x] == 1)
                     {
                         Console.Write(player1 + " ");
                     }
-                    else if (field[y,x] == 2)
+                    else if (field[y, x] == 2)
                     {
                         Console.Write(player2 + " ");
                     }
@@ -692,7 +695,7 @@ namespace Michael.Week01
                     {
                         Console.Write("  ");
                     }
-                    
+
                     if (x < 2)
                     {
                         Console.Write("| ");
@@ -713,74 +716,107 @@ namespace Michael.Week01
         {
             Random rnd = new Random();
 
-            int[,] playField = new int[3,3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
-            bool repeat = true;
-            int choice = 0;
-
-            for (int i = 1; i < 10; i++)
+            while (true)
             {
-                Console.WriteLine();
+                int[,] playField = new int[3, 3] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+                bool repeat = true;
+                int choice = 0;
 
-                repeat = true;
-                while (repeat)
+                for (int i = 1; i < 10; i++)
                 {
-                    Console.WriteLine($"player {(i+1)%2+1}, your turn. pick an empty field.\n");
-
-                    printTicTacToe(playField,'x','o');
                     Console.WriteLine();
 
-                    /*
-                    if (i%2 == 1)
+                    repeat = true;
+                    while (repeat)
                     {
-                        choice = ConsoleInputs.IntInput();
-                    }
-                    else
-                    {
-                        Thread.Sleep(3000);
-                        choice = rnd.Next(1, 10);
-                    }
-                    */
+                        Console.WriteLine($"player {(i + 1) % 2 + 1}, your turn. pick an empty field.\n");
 
-                    choice = ConsoleInputs.IntInput();
+                        printTicTacToe(playField, 'x', 'o');
+                        Console.WriteLine();
 
-
-                    Console.Clear();
-
-                    try
-                    {
-                        if (playField[(choice-1)/3 , (choice-1) % 3] == 0)
+                        /*
+                        if (i%2 == 1)
                         {
-                           Console.Write("understood");
-                           playField[(choice-1) / 3, (choice-1) % 3] = (i + 1) % 2 + 1;
-                           repeat = false;
-                        }
-                        else 
-                        {
-                            Console.WriteLine("this field is already taken");
-                        }
-                    }
-                    catch
-                    {
-                        Console.WriteLine("field is out of bounds");
-                    }
-
-                    if (winsTicTacToe(playField))
-                    {
-                        Console.WriteLine($"\nCongrats Player {(i + 1) % 2 + 1}, you won!\n");
-                        
-                        if ((i + 1) % 2 + 1 == 1)
-                        {
-                            printTicTacToe(playField, 'X', 'o');
+                            choice = ConsoleInputs.IntInput();
                         }
                         else
                         {
-                            printTicTacToe(playField, 'x', 'O');
+                            Thread.Sleep(3000);
+                            choice = rnd.Next(1, 10);
                         }
-                        return;
+                        */
+
+                        choice = ConsoleInputs.IntInput();
+
+                        switch (choice)
+                        {
+                            case 7:
+                                choice = 1;
+                                break;
+                            case 8:
+                                choice = 2;
+                                break;
+                            case 9:
+                                choice = 3;
+                                break;
+                            case 1:
+                                choice = 7;
+                                break;
+                            case 2:
+                                choice = 8;
+                                break;
+                            case 3:
+                                choice = 9;
+                                break;
+                            default:
+                                break;
+                        }
+
+
+                        Console.Clear();
+
+                        try
+                        {
+                            if (playField[(choice - 1) / 3, (choice - 1) % 3] == 0)
+                            {
+                                Console.Write("understood");
+                                playField[(choice - 1) / 3, (choice - 1) % 3] = (i + 1) % 2 + 1;
+                                repeat = false;
+                            }
+                            else
+                            {
+                                Console.WriteLine("this field is already taken");
+                            }
+                        }
+                        catch
+                        {
+                            Console.WriteLine("field is out of bounds");
+                        }
+
+                        if (winsTicTacToe(playField))
+                        {
+                            Console.WriteLine($"\nCongrats Player {(i + 1) % 2 + 1}, you won!\n");
+
+                            if ((i + 1) % 2 + 1 == 1)
+                            {
+                                printTicTacToe(playField, 'X', 'o');
+                            }
+                            else
+                            {
+                                printTicTacToe(playField, 'x', 'O');
+                            }
+                            return;
+                        }
+
                     }
 
                 }
-
+                Console.WriteLine("wanna play again? y/n");
+                string userInput2 = Console.ReadLine();
+                if (userInput2 == "n")
+                {
+                    break;
+                }
             }
 
             Console.Clear();
@@ -795,7 +831,7 @@ namespace Michael.Week01
             {
                 for (int x = 0; x < size; x++)
                 {
-                    if (field[y,x] == 0)
+                    if (field[y, x] == 0)
                     {
                         Console.Write("  ");
                     }
@@ -832,11 +868,11 @@ namespace Michael.Week01
 
             for (int i = -1; i <= 1; i++)
             {
-                for (int j = -1; j <=1; j++)
+                for (int j = -1; j <= 1; j++)
                 {
                     try
                     {
-                        if ((j != 0 || i != 0) && (field[yCoord + i, xCoord + j] == 1))
+                        if ((j != 0 || i != 0) && field[yCoord + i, xCoord + j] == 1)
                         {
                             livingNeighbors++;
                         }
@@ -854,7 +890,7 @@ namespace Michael.Week01
 
         public static int[,] nextGenerationOfField(int[,] field, int size)
         {
-            int[,] tempField = new int[size,size];
+            int[,] tempField = new int[size, size];
 
             for (int y = 0; y < size; y++)
             {
@@ -881,7 +917,7 @@ namespace Michael.Week01
             return tempField;
         }
 
-       
+
         public static int[,] randomBinaryFieldCorrelated(int size)
         {
             Random rnd = new Random();
@@ -892,7 +928,7 @@ namespace Michael.Week01
                 for (int x = 0; x < size; x++)
                 {
                     field[y, x] = rnd.Next(10);
-                    if (field[y,x] != 0)
+                    if (field[y, x] != 0)
                     {
                         field[y, x] = 0;
                     }
@@ -915,29 +951,42 @@ namespace Michael.Week01
             while (true)
             {
                 Console.Clear();
-                printGOLField(field,size);
-                field = nextGenerationOfField(field,size);
-                Thread.Sleep((int)Math.Floor(1000/generationsPerSecond));
+                printGOLField(field, size);
+                field = nextGenerationOfField(field, size);
+                Thread.Sleep((int)Math.Floor(1000 / generationsPerSecond));
             }
         }
 
 
         public static void Start()
         {
-            //int i = 30000;
+
+            GameOfLife(30);
+
+            /*
+            int size = 30000;
             //for (int i = 1; i < 3000000; i+= 1000)
             {
-                int[] array = createRandomArray(i, 0, 100000);
-                int[] arrayInput = new int[i];
+                int[] array = createRandomArray(size, 0, 100);
+                int[] arrayInput = { };
 
-                
                 arrayInput = makeACopyAlt(array);
                 var watch = System.Diagnostics.Stopwatch.StartNew();
+                bubbleSort2(arrayInput);
+                watch.Stop();
+                Console.WriteLine("bubble faster:\t\t" + watch.ElapsedMilliseconds + " ms");
+
+
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
                 bubbleSortAscending(arrayInput);
                 watch.Stop();
-                Console.WriteLine("bubble:\t\t" + watch.ElapsedMilliseconds + " ms");
+                Console.WriteLine("bubble slow:\t" + watch.ElapsedMilliseconds + " ms");
 
-                
+
                 Console.WriteLine();
 
 
@@ -970,13 +1019,18 @@ namespace Michael.Week01
 
                 Console.WriteLine();
 
-
+                //writeIntArray(array);
+                Console.WriteLine(array.Length);
                 arrayInput = makeACopyAlt(array);
                 watch.Restart();
-                mergeSortAscending(arrayInput);
+                int[] result = mergeSortAscending(arrayInput);
                 watch.Stop();
                 Console.WriteLine("merge:\t\t" + watch.ElapsedMilliseconds + " ms");
+                Console.WriteLine(result.Length);
+                //writeIntArray(result);
+            
             }
+            */
         }
     }
 }

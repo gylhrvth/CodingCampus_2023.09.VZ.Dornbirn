@@ -29,7 +29,9 @@ namespace Dimitri.Week03
             //Console.WriteLine(ReturnArrayAvg(RandomNumberArray(0, 100)));
             //Console.WriteLine(ReturnArrayMinIndex(RandomNumberArray(-50, 50)));
             //Console.WriteLine(ReturnArrayMaxIndex(RandomNumberArray(-50, 50)));
-            PrintArray((BubbleSortAsc(RandomNumberArray(0, 100))));
+            //PrintArray(BubbleSortAsc(RandomNumberArray(0, 100)));
+            //PrintArray(BubbleSortDesc(RandomNumberArray(0, 100)));
+            PrintArray(MergeSort(RandomNumberArray(0, 5)));
         }
 
         public static int[] IncreaseNumberArray(int n)
@@ -65,8 +67,9 @@ namespace Dimitri.Week03
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.WriteLine(arr[i]);
+                Console.WriteLine("{0}...{1}", i, arr[i]);
             }
+            /* For some reason this only returns a 0 if you have an array with only one element */
         }
 
         public static int[] CopyArray(int[] original)
@@ -281,34 +284,111 @@ namespace Dimitri.Week03
 
         public static int[] BubbleSortAsc(int[] arr)
         {
-            int[] arrAsc = new int[arr.Length];
 
-            for (int i = 0; i < arr.Length * arr.Length; i++)
+            for (int i = 0; i <= arr.Length * arr.Length; i++)
             {
-                for (int j = 0; j < arrAsc.Length; j++)
+
+                for (int j = 0; j < arr.Length - 1; j++)
                 {
                     int a = arr[j];
                     int b = arr[j + 1];
                     if (a > b)
                     {
-                        arrAsc[j + 1] = a;
-                        arrAsc[j] = b;
-                    } else
-                    {
-                        arrAsc[j] = a;
-                        arrAsc[j + 1] = b;
+                        arr[j + 1] = a;
+                        arr[j] = b;
                     }
 
                 }
 
             }
 
-            return arrAsc;
+            return arr;
         }
 
-        //public static void BubbleSortDesc(int[] arr)
-        //{
+        public static int[] BubbleSortDesc(int[] arr)
+        {
+            for (int i = 0; i <= arr.Length * arr.Length; i++)
+            {
 
-        //}
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    int a = arr[j];
+                    int b = arr[j + 1];
+                    if (a < b)
+                    {
+                        arr[j + 1] = a;
+                        arr[j] = b;
+                    }
+
+                }
+
+            }
+
+            return arr;
+
+        }
+
+        public static int[] MergeSort(int[] arr)
+        {
+
+            int indexMax = ReturnArrayMaxIndex(arr);
+
+            int indexMin = ReturnArrayMinIndex(arr);
+
+            if (indexMax - indexMin <= 1)
+            {
+                return arr;
+            }
+            else
+            {
+                int indexMid = (indexMax + indexMin) / 2;
+
+                int[] tmpArr = arr;
+
+                int i = indexMin;
+                int j = indexMid;
+                int k = 1;
+
+                while (i < indexMid && j < indexMax)
+                {
+
+
+                    if (arr[i] < arr[j])
+                    {
+                        tmpArr[k] = arr[i];
+                        i++;
+                        k++;
+                        j++;
+
+                    }
+                    else
+                    {
+                        tmpArr[k] = arr[j];
+                        i++;
+                        k++;
+                        j++;
+                    }
+
+                }
+
+                while (i < indexMid)
+                {
+                    tmpArr[k++] = arr[i++];
+                    i++;
+                    k++;
+                }
+
+                while (j < indexMax)
+                {
+                    tmpArr[k++] = arr[j++];
+                    j++;
+                    k++;
+                }
+
+                arr = tmpArr;
+
+                return arr;
+            }
+        }
     }
 }
