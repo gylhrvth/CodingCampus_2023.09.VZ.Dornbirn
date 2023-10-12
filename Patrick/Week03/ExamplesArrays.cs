@@ -10,26 +10,28 @@ namespace Patrick.Week03
 {
     internal class ExamplesArrays
     {
+        public static Random random = new Random();
+
         public static void start()
         {
             ///////////////////////////////////////////
-            createArrayIncrease(10);
-            Console.WriteLine("Increase");
-            int[] test = createArrayIncrease(10);
-            printArray(test);
-            Console.WriteLine("------------------");
+            //createArrayIncrease(10);
+            //Console.WriteLine("Increase");
+            //int[] test = createArrayIncrease(10);
+            //printArray(test);
+            //Console.WriteLine("------------------");
 
-            Console.WriteLine("Decrease");
-            int[] test1 = createArrayDecrease(10);
-            printArray(test1);
-            Console.WriteLine("------------------");
+            //Console.WriteLine("Decrease");
+            //int[] test1 = createArrayDecrease(10);
+            //printArray(test1);
+            //Console.WriteLine("------------------");
             ////////////////////////////////////////////
 
-            RandomNumberArray(0, 101);
-            RandomNumberArrayCrazyRange(-50, 50);
-            randomNumberArrayZählen(0, 101);
-            randomNumberArraySumme(0, 101);
-            randomNumberArrayMin(0, 101);
+            //RandomNumberArray(0, 101);
+            //RandomNumberArrayCrazyRange(-50, 50);
+            //randomNumberArrayZählen(0, 101);
+            //randomNumberArraySumme(0, 101);
+            //randomNumberArrayMin(0, 101);
         }
 
         public static int[] createArrayIncrease(int count)
@@ -92,14 +94,17 @@ namespace Patrick.Week03
         {
             int[] arrayRandom = new int[10];
 
-            Random random = new Random();
 
             foreach (int x in arrayRandom)
             {
                 arrayRandom[x] = random.Next(low, up);
 
-                Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
+                Console.Write("[{0}]", arrayRandom[x].ToString());
             }
+
+            Console.WriteLine("{0}", String.Join(";", arrayRandom));
+
+
 
             Console.WriteLine();
             Console.WriteLine("------------------");
@@ -124,9 +129,7 @@ namespace Patrick.Week03
         public static int[] RandomNumberArrayCrazyRange(int low, int up)
         {
             int[] arrayRandom = new int[10];
-
-            Random random = new Random();
-
+            
             foreach ( int x in arrayRandom)
             {
                 arrayRandom[x] = random.Next(low, up);
