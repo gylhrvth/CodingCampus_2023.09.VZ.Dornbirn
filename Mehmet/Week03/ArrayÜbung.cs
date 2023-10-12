@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Mehmet.Week03
+﻿namespace Mehmet.Week03
 {
     internal class ArrayÜbung
     {
@@ -128,7 +115,7 @@ namespace Mehmet.Week03
 
             Console.WriteLine("RandomNumberArrayMinMaxAvg");
 
-            randArr = new int[]{ 2, 3};
+
 
             int Min = ArrayMin(randArr);
             int Max = ArrayMax(randArr);
@@ -139,8 +126,8 @@ namespace Mehmet.Week03
 
 
             Console.WriteLine("BubblesortMitZahlen");
-            int Ascending = BubblesortMitZahlenAscending(randArr);
-            Console.WriteLine(Ascending);
+            BubblesortMitZahlenAscending(randArr);
+
 
 
 
@@ -279,35 +266,43 @@ namespace Mehmet.Week03
         }
 
 
-        public static int BubblesortMitZahlenAscending(int[] arr)
+        public static void BubblesortMitZahlenAscending(int[] arr)
         {
 
-
-
-            int Max = 0;
-            
-            foreach (int element in arr)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                if (element > Max)
+                for (int j = 0; j < arr.Length - 1; j++)
                 {
-                    Max = element;
-                    return Max;
+                    int num1 = arr[j];
+                    int num2 = arr[j + 1];
+                   
+                    Console.WriteLine("     Comparing: num1: " + num1 + " num2: " + num2 + " Index: " + j);
+                    if (num1 > num2)
+                    {
+                        Console.WriteLine("     Before Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
+
+                        arr[j] = num2;
+                        arr[j + 1] = num1;
+
+                        Console.WriteLine("     After Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
+         
+                    }
+
+                    Console.Write(num1);
+                    Console.WriteLine();
                 }
-                
+
+                Console.WriteLine();
+
+
             }
 
-
-
-            return Max;
-
-
+            Console.WriteLine();
+            Console.WriteLine();
         }
-
-
-
-
 
 
     }
 }
+
 
