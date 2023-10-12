@@ -34,13 +34,13 @@ namespace Ali.Week02
 
             Console.WriteLine("Aufgabe 3: Random Numer Array");
             int[] random1 = ArrayRandom(10);
-            Console.WriteLine("[{0}]", string.Join(", ",random1));
+            Console.WriteLine("[{0}]", string.Join(", ", random1));
 
             Console.WriteLine(" ");
             Console.WriteLine("Random Array foreach");
             foreach (int element in random1)
             {
-                Console.Write(element + " ");            
+                Console.Write(element + " ");
             }
 
             Console.WriteLine(" ");
@@ -66,9 +66,9 @@ namespace Ali.Week02
             foreach (int element in crazy)
             {
                 Console.Write(element + " ");
-                
+
             }
-           
+
             Console.WriteLine();
 
             Console.WriteLine("Aufgabe: Random Number Array Zählen");
@@ -77,7 +77,13 @@ namespace Ali.Week02
             Console.WriteLine();
 
             Console.Write("Aufgabe: Random Number Array Summe");
-            int[] sum = ArraySum(10);
+            int sum = ArraySum(random1);
+            Console.WriteLine();
+            Console.WriteLine("Die Summe ist:" +sum);
+            Console.WriteLine();
+
+            Console.WriteLine("Aufgabe: Random Number Array Min/Max/Avg");
+
 
 
         }
@@ -188,11 +194,11 @@ namespace Ali.Week02
                 random1[i] = rand.Next(0, 101);
             }
             Console.WriteLine();
-            for (int i = 0; i < random1.Length; i+=2)
-           
+            for (int i = 0; i < random1.Length; i += 2)
+
             {
-                Console.WriteLine($"{i}= {random1[i]}");   
-               
+                Console.WriteLine($"{i}= {random1[i]}");
+
             }
             return random1;
 
@@ -219,15 +225,16 @@ namespace Ali.Week02
             }
             return count;
         }
-        public static int[] ArraySum(int size)
+        public static int ArraySum(int[] random1)
         {
-            int[] sum=new int[size];
-            for (int i = 0; i < sum.Length; i++)
+            int sum = 0;
+            foreach (int value in random1)
             {
-                sum[i] = rand.Next(1, 100);
+                sum += value;
             }
             return sum;
         }
+
 
 
 

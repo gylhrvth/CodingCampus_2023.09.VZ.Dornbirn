@@ -25,28 +25,39 @@ namespace Sven.Week02
             int[] arr = RandomArray(10);
             Console.WriteLine("[{0}]", string.Join(", ", arr));
             Console.WriteLine();
-
+            
             int count = RandomCount1(arr);
             Console.WriteLine("Es sind " +  count + " Zahlen über 30");
+            Console.WriteLine();
+
+            Console.WriteLine("Example5 Random2:");
+            int sum = RandomSum(arr);
+            Console.WriteLine("Die Summe der Zahlen ist: " + sum);
+
+            Console.WriteLine("Example6 RandomMin: ");
+            int min = RandomMin(arr);
+            Console.WriteLine("Das Minimum ist:  " + min);
+
+            Console.WriteLine("Example7 RandomMax: ");
+            int max = RandomMax(arr);
+            Console.WriteLine("Das Maximum ist:  " + max);
+
+            Console.WriteLine("Example7 RandomAvg: ");
+            double avg = RandomAvg(arr);
+            Console.WriteLine("Das Avg ist:  " + avg);
+
+
+
 
 
             /*
             Console.WriteLine("Example4 Range:");
             CrazyRange();
             Console.WriteLine();
-            /*
-
-
-
-            /*Console.WriteLine("Example4 Random Count:");
-            RandomCount(0);
-            Console.WriteLine();*/
-
-
+            */
 
 
         }
-        
 
         static void Count()
         {
@@ -146,48 +157,63 @@ namespace Sven.Week02
             return count;
         }
 
-
-        /*
-        static void RandomCount()
+ 
+        public static int RandomSum(int[] arr)
         {
-            
 
-
-
-
-            for ( int i = 0; i < 10; i++)
+            int sum = 0;
+            foreach (int i in arr)
             {
-                int[] arr1 = { Random.Next(1, 100) };
-
-
-                    Console.WriteLine(String.Join(", ", arr1));
-                if (arr1 > 30)
-                {
-
-
-                }
-            }
-            
-           
-
-
-
-
-
-
-                foreach (int element in arr)
-            {
-                arr1 = {Random.Next(1, 100)} ;
-
-                if (arr > 30)
-
-                Console.WriteLine(String.Join(", ", arr));
-
-
+                sum += i;
                 
             }
-        
-        */
+            return sum;
+
+
+        }
+        public static int RandomMin(int[] arr)
+        {
+
+            int min = int.MaxValue;
+            foreach (int i in arr)
+            {
+                if ( i < min)
+                {
+                    min = i;
+                }
+
+            }
+            return min;
+
+
+        }
+        public static int RandomMax(int[] arr)
+        {
+
+            int max = int.MinValue;
+            foreach (int i in arr)
+            {
+                if (i > max)
+                {
+                    max = i;
+                }
+            }
+            return max;
+        }
+
+
+
+        public static double RandomAvg(int[] arr)
+        {
+            
+            int sum = 0;
+            foreach (int i in arr)
+            {
+                sum += i;
+            }
+
+            return(double) sum / arr.Length ;
+        }
 
     }
 
