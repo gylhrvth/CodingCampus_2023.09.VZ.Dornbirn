@@ -154,6 +154,10 @@ namespace Cemal.Week03
             Console.WriteLine(avg);
             Console.WriteLine();
 
+            Console.WriteLine("Bubblesort");
+            int bubble = Bubblesort(myRandom);
+
+
 
         }
         ///////////////////////////////////////////////////////////////////////////////////
@@ -272,6 +276,24 @@ namespace Cemal.Week03
                 avg = arr.Average();
             }
             return avg;
+        }
+
+        public static int Bubblesort(int[] arr)
+        {
+            int[] array = new int[arr.Length];
+            int temp;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length - (1 + i); j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+
+                    }
+                }
+            }
+            return 0;
         }
     }
 }
