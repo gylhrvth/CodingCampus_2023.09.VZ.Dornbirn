@@ -10,17 +10,14 @@ namespace Erik.Week03
     {
         public static void StartSortAlgorithmSelctionSort()
         {
-
-            sortArrayListAlgorithm(creatArrayList(10, 10, 101));
-
-
-
+            printSortedArrayList(selectionArrayListAlgorithm(creatArrayList(10, 10, 101)));
         }
 
         public static int[] creatArrayList(int randomSize, int randomNumMin, int randomNumMax)
         {
             int[] arrList = new int[randomSize];
             Random randomiseNumbers = new Random();
+            Console.WriteLine("Unsorted:");
 
             for (int i = 0; i < arrList.Length; i++)
             {
@@ -29,13 +26,15 @@ namespace Erik.Week03
             }
             Console.WriteLine();
             return arrList;
+            
         }
 
-        public static int[] sortArrayListAlgorithm(int[] arrList)
+        public static int[] selectionArrayListAlgorithm(int[] arrList)
         {
             var tmpVar = 0;
 
-            for (int i = 1; i < arrList.Length; i++)
+            
+            for (int i = 0; i < arrList.Length; i++)
             {
                 int minimum = i;
                 for (int j = i + 1; j < arrList.Length; j++)
@@ -44,13 +43,11 @@ namespace Erik.Week03
                     {
                         minimum = j;
                     }
-                    Console.Write(arrList[j] + " ");
                 }
                 tmpVar = arrList[minimum];
                 arrList[minimum] = arrList[i];
                 arrList[i] = tmpVar;
             }
-
             return arrList;
 
         }
@@ -58,6 +55,7 @@ namespace Erik.Week03
         {
             int[] arrList = sortedArrayList;
 
+            Console.WriteLine("Sorted: ");
             Console.Write("[");
             for (int i = 0; i < sortedArrayList.Length; i++)
             {
