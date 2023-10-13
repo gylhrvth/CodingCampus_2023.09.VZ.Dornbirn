@@ -401,7 +401,7 @@ namespace Michael.Week02
         {
             if (array.Length == 1)
                 return array;
-
+             
             int middle = array.Length / 2;
 
             int[] leftArray = splitLeft(array, middle);
@@ -624,6 +624,37 @@ namespace Michael.Week02
         }
 
 
+        public static void cocktailShakerSort(int[] array)
+        {
+            int low = 0;
+            int high = array.Length-1;
+            int mov = low;
+
+            while (low < high)
+            {
+                for (int i = high; i > low ; i--)
+                {
+                    if (array[i-1] > array[i])
+                    {
+                        Swap(array, i - 1, i);
+                        mov = i;
+                    }
+                }
+                low = mov;
+
+                for(int i = low; i > high; i++)
+                {
+                    if (array[i] > array[i + 1])
+                    {
+                        Swap(array, i, i + 1);
+                        mov = i;
+                    }
+                }
+                high = mov;
+            }
+        }
+
+
         public static void twoDArray(int length)
         {
             int[][] twoDArray = new int[length][];
@@ -830,6 +861,14 @@ namespace Michael.Week02
                     Console.WriteLine("- + - + - ");
                 }
             }
+        }
+
+
+        public static void Switch(int[] array, int index1, int index2)
+        {
+            int temp = array[index1];
+            array[index1] = array[index2];
+            array[index2] = temp;
         }
 
 
@@ -1079,6 +1118,29 @@ namespace Michael.Week02
         }
 
 
+        public static void randomizeArray(int[] userInput)
+        {
+
+            for (int i = 0; i < userInput.Length; i++)
+            {
+                Switch(userInput, i, rnd.Next(i, userInput.Length));
+            }
+        }
+
+
+        public static void randomSort(int[] array)
+        {
+            int counter = 0;
+            while (!IsSorted(array))
+            {
+                randomizeArray(array);
+                counter++;
+                Console.Clear();
+            }
+            Console.WriteLine(counter);
+        }
+
+
         public static void Start()
         {
             var watch1 = System.Diagnostics.Stopwatch.StartNew();
@@ -1087,13 +1149,29 @@ namespace Michael.Week02
             var watch2 = System.Diagnostics.Stopwatch.StartNew();
             watch2.Stop();
 
-            //int size = 8;
-            for (int i = 10000; i < 2000000; i+=1000)
-            {
+            TicTacToe();
 
+            /*
+
+            int i = 8;
+
+            //for (int i = 3; i < 30; i++)
+            {
+                
                 int[] array = createRandomArray(i, 0, 100);
                 int[] arrayCopy = makeACopyAlt(array);
 
+
+                printIntArray(array);
+
+                randomSort(array);
+
+                Console.WriteLine();
+
+                printIntArray(array);
+
+
+                /*
                 watch1.Restart();
                 mergeSortAscending(arrayCopy);
                 watch1.Stop();
@@ -1102,26 +1180,26 @@ namespace Michael.Week02
                 quickSortAscendingClean(array, 0, array.Length-1);
                 watch2.Stop();
 
-
+                 
                 Console.WriteLine("array size: " + i);
                 Console.WriteLine("time diff: " + (watch2.ElapsedMilliseconds - watch1.ElapsedMilliseconds) + "ms");
                 Console.WriteLine("factor: " + (double) watch1.ElapsedMilliseconds/watch2.ElapsedMilliseconds);
                 Console.WriteLine();
+                
 
 
 
-
-                /*
+                
                 int[] array = createRandomArray(size, 0, 100);
                 int[] arrayInput = { };
 
+
+
                 arrayInput = makeACopyAlt(array);
-                Console.WriteLine(IsSorted(arrayInput));
                 var watch = System.Diagnostics.Stopwatch.StartNew();
                 bubbleSortAscending(arrayInput);
                 watch.Stop();
                 Console.WriteLine("bubble slow:\t" + watch.ElapsedMilliseconds + " ms");
-                Console.WriteLine(IsSorted(arrayInput));
 
 
                 Console.WriteLine();
@@ -1166,20 +1244,39 @@ namespace Michael.Week02
 
                 Console.WriteLine();
 
-                //writeIntArray(array);
-                //Console.WriteLine(array.Length);
+
                 arrayInput = makeACopyAlt(array);
                 watch.Restart();
                 int[] result = mergeSortAscending(arrayInput);
                 watch.Stop();
                 Console.WriteLine("merge:\t\t" + watch.ElapsedMilliseconds + " ms");
-                //Console.WriteLine(result.Length);
-                //writeIntArray(result);
 
-                */
+
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
+                quickSortAscending(arrayInput,0,array.Length-1);
+                watch.Stop();
+                Console.WriteLine("quicksort slow:\t\t" + watch.ElapsedMilliseconds + " ms");
+
+
+                Console.WriteLine();
+
+
+                arrayInput = makeACopyAlt(array);
+                watch.Restart();
+                quickSortAscendingClean(array, 0, array.Length-1);
+                watch.Stop();
+                Console.WriteLine("quicksort fast:\t\t" + watch.ElapsedMilliseconds + " ms");
+
+                
 
 
             }
+
+            */
         }
     }
 }
