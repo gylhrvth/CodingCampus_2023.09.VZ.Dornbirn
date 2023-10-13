@@ -155,12 +155,34 @@ namespace Cemal.Week03
             Console.WriteLine();
 
             Console.WriteLine("Bubblesort");
-            int bubble = Bubblesort(myRandom);
+            int[] bubbleArray = RandomNumberArray(10);
+            PrintMyArray(bubbleArray);
+            PrintMyArray(Bubblesort(bubbleArray));
+            
 
 
 
         }
         ///////////////////////////////////////////////////////////////////////////////////
+
+        public static void PrintMyArray(int[] array) {
+            int count = 0;
+            Console.Write("[");
+            foreach (var element in array)
+            {
+                count ++;
+                if (count == array.Length)
+                {
+                    Console.Write(element);
+                }
+                else
+                {
+                    Console.Write(element + ", ");
+                }
+            }
+            Console.Write("]");
+            Console.WriteLine();
+        }
 
         public static int[] CreateArray(int size)
         {
@@ -278,22 +300,25 @@ namespace Cemal.Week03
             return avg;
         }
 
-        public static int Bubblesort(int[] arr)
+        public static int[] Bubblesort(int[] array)
         {
-            int[] array = new int[arr.Length];
+            
             int temp;
 
             for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < array.Length - (1 + i); j++)
+                for (int j = 0; j < array.Length -1 - i; j++)
                 {
                     if (array[j] > array[j + 1])
                     {
-
+                        temp = array[j+1];
+                        array[j + 1] = array[j];
+                        array[j] = temp;
+                        //PrintMyArray(array);
                     }
                 }
             }
-            return 0;
+            return array;
         }
     }
 }

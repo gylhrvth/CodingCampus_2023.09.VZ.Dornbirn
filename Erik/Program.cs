@@ -1,2 +1,2 @@
-﻿Erik.Week03.SortAlgorithmSelectionSort.StartSortAlgorithmSelctionSort();
+﻿Erik.Week03.GuessingGame.startGuessingGame();
 
