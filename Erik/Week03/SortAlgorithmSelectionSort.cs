@@ -10,7 +10,8 @@ namespace Erik.Week03
     {
         public static void StartSortAlgorithmSelctionSort()
         {
-            printSortedArrayList(selectionArrayListAlgorithm(creatArrayList(10, 10, 101)));
+            int[] arr = creatArrayList(10, 10, 101);
+            printSortedArrayList(selectionArrayListAlgorithm(arr));
         }
 
         public static int[] creatArrayList(int randomSize, int randomNumMin, int randomNumMax)

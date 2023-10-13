@@ -134,8 +134,11 @@ namespace Mehmet.Week03
             BubblesortMitZahlenDescending(randArr);
 
 
+            int[] randArrNew = RandomNumberArray(10);
 
 
+            Console.WriteLine("ZweiDArray");
+            ZweiDArray(randArrNew, randArrNew);
 
 
 
@@ -304,20 +307,24 @@ namespace Mehmet.Week03
                 {
                     int num1 = arr[j];
                     int num2 = arr[j + 1];
-
                     if (num1 < num2)
                     {
                         arr[j] = num2;
                         arr[j + 1] = num1;
                     }                   
-                }
-               
+                }               
             }
-
-            Console.WriteLine("[{0}]", string.Join (" > ", arr));
-           
+            Console.WriteLine("[{0}]", string.Join (" > ", arr));           
         }
 
+
+        public static void ZweiDArray(int[] arr1, int[] arr2)
+        {
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Console.WriteLine("[{0}]", string.Join (" ,", arr1));
+            }
+        }
 
 
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,14 +76,22 @@ namespace Kerem.Week03
             Console.WriteLine();
             Console.WriteLine("RNMMINMAXAVG");
             Console.WriteLine("[{0}]", string.Join(", ", arr));
+
             Console.WriteLine("smallest number is = " + (Arraymin(arr)));
             Console.WriteLine("biggest number is = " + (Arraymax(arr)));
             Console.WriteLine("average number is = " + (Arrayavg(arr)));
-            Console.WriteLine("index of smallest number is = " + (Arraymin(arr)));
-            Console.WriteLine("index of biggest number is = " + (Arraymax(arr)));
+            Console.WriteLine("index of smallest number is = " + (MinIndex(arr)));
+            Console.WriteLine("index of biggest number is = " + (MaxIndex(arr)));
 
-            Console.WriteLine("BubbleSort");
-            Console.WriteLine("[{0}]", string.Join(", ", SortArray(arr3)));
+            Console.WriteLine("BubbleSortAscending");
+            Console.WriteLine("[{0}]", string.Join(", ", SortArrayAscending(arr3)));
+            Console.WriteLine();
+
+            Console.WriteLine("BubbleSortDescending");
+            Console.WriteLine("[{0}]", string.Join(", ", SortArrayDescending(arr3)));
+            Console.WriteLine();
+
+            Console.WriteLine("Array2D");
 
 
         }
@@ -217,10 +226,10 @@ namespace Kerem.Week03
             }
             return max;
         }
-        public static int ArraySumX(int[] arr5)
+        public static int ArraySumX(int[] arr)
         {
             int sumx = 0;
-            foreach (int element in arr5)
+            foreach (int element in arr)
             {
                 sumx += element;
             }
@@ -229,15 +238,15 @@ namespace Kerem.Week03
         }
 
 
-        public static double Arrayavg(int[] arr5)
+        public static double Arrayavg(int[] arr)
         {
 
-            if (arr5.Length == 0)
+            if (arr.Length == 0)
             {
                 return 0;
 
             }
-            return ArraySumX(arr5) / (double)arr5.Length;
+            return ArraySumX(arr) / (double)arr.Length;
 
 
 
@@ -255,13 +264,10 @@ namespace Kerem.Week03
                 {
                     min = element;
                     minIndex = i;
-                    Console.WriteLine("Minimum index: " + i);
-
 
                 }
-
             }
-            return min;
+            return minIndex;
         }
         public static int MaxIndex(int[] arr)
         {
@@ -273,38 +279,78 @@ namespace Kerem.Week03
                 if (element > max)
                 {
                     max = element;
-                    Console.WriteLine("Maximum index: " + i);
-
+                    maxIndex = i;
                 }
 
 
             }
-            return max;
-
-
+            return maxIndex;
 
         }
-        public static int[] SortArray(int[] arr3)
+        public static int[] SortArrayAscending(int[] arr8)
         {
-            int a = arr3.Length;
+            int a = arr8.Length;
             bool sorted = false;
             while (!sorted)
             {
                 sorted = true;
                 for (int i = 0; i < a - 1; i++)
                 {
-                    if (arr3[i] < arr3[i + 1])
+                    if (arr8[i] < arr8[i + 1])
                     {
-                        int t = arr3[i];
-                        arr3[i] = arr3[i + 1];
-                        arr3[i + 1] = t;
+                        int t = arr8[i];
+                        arr8[i] = arr8[i + 1];
+                        arr8[i + 1] = t;
                         sorted = false;
                     }
                 }
 
             }
-            return arr3;
+            return arr8;
+        }
+        public static int[] SortArrayDescending(int[] arr7)
+        {
+            int length = arr7.Length;
+            int anfang = arr7[0];
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length - 1; j++)
+                {
+                    if (arr7[j] > arr7[j + 1])
+                    {
+                        anfang = arr7[j + 1];
+                        arr7[j + 1] = arr7[j];
+                        arr7[j] = anfang;
+                    }
+
+
+                }
+
+
+            }
+            return arr7;
+
+        }
+        public static void Array2D()
+        {
+            int[,] numbers = new int[3, 5];
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        numbers[i, j] = rand.Next(101);
+                        Console.WriteLine("{[0}, {1}] = {2}", i, j, numbers[i, j]);
+                        
+
+                    }
+
+                }
+            }
         }
     }
-
 }
+
+
+

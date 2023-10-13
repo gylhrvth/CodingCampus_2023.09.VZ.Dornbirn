@@ -7,12 +7,20 @@
     using System.Runtime.ConstrainedExecution;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Diagnostics.Metrics;
+    using System.Reflection.Emit;
+    using System.Windows;
+    using Microsoft.Win32.SafeHandles;
 
     internal class Array
     {
         public static Random rand = new Random();
+       
+
         public static void Start()
         {
+           
+
             // Aufagbe 1:
             Output("Number Array\n", ConsoleColor.Red);
             int size = ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
@@ -131,11 +139,18 @@
 
             //Aufagbe 9:
             Output("Aufgabe: 2D-Array\n", ConsoleColor.DarkMagenta);
-            int[,] randomArray2D= CreateRandomArray2D(size,0, 101);
-            OutputForUser2D(randomArray2D);
+            int[,] randomArray2D= CreateRandomArray2D(size,0, 101);     //macht Array2D mit random Zahlen von 0 bis 100
+            OutputForUser2D(randomArray2D);     //Output für User
             Console.WriteLine();
-            Summe2D(randomArray2D);
+            Summe2D(randomArray2D); //Output Summe für User
+            Console.WriteLine("\n----------------------------------------------------------");
 
+            //Aufagbe 10:
+            Output("Aufgabe: Pascal Dreieck\n", ConsoleColor.DarkCyan);
+
+            int [][] trinangel= GeneratePascalTriangle(size);
+            PrintPascalTriangle(trinangel);
+            Console.WriteLine("\n----------------------------------------------------------");
 
         }
 
@@ -156,6 +171,7 @@
                 }
             }
         }
+
         //Random Number:
         public static int[] CreateRandomArray(int size, int from, int to)
         {
@@ -217,7 +233,7 @@
         {
             Console.ForegroundColor = color;
             Console.WriteLine($"\n\nAufgabe: {output}");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
 
             return output;
         }
@@ -249,6 +265,18 @@
                 Console.WriteLine();
             }
         }
+        public static void OutputForUser2D(int[][] randomArray)
+        {
+            for (int row = 0; row < randomArray.GetLength(0); row++)
+            {
+                for (int col = 0; col < randomArray.GetLength(1); col++)
+                {
+                    Console.Write($"{randomArray[row][col],-4}   ");
+                }
+                Console.WriteLine();
+            }
+        }
+
 
         // Aufgabe 1: Number Array
         public static int[] CreateArray2(int size)
@@ -326,7 +354,7 @@
             return avg;
         }
 
-        //Aufagbe 8:
+        //Aufagbe 8: Bubblesort mit Zahlen
         public static void Ascending(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -358,7 +386,7 @@
             }
         }
 
-        //Aufgabe 9:
+        //Aufgabe 9: Bubblesort mit Zahlen
         public static int Summe2D(int[,] randomArray)
         {
             int sum = 0;
@@ -370,12 +398,48 @@
                 {
                     sum = sum + randomArray[row, col];
                 }
-                Console.WriteLine($"Summe der Reihe {count}: {sum}");
+          
+                Console.WriteLine($"Summe der Reihe {count}:\x1B[4m{sum}\x1B[0m");
                 sum = 0;
                 count++;
             }
             return sum;
-            
+        }
+
+        //Aufagbe 10: Aufgabe: Pascal Dreieck
+        public static int[][] GeneratePascalTriangle(int size)
+        {
+            int[][] triangle = new int[size][];
+
+            for (int i = 0; i < size; i++)
+            {
+                triangle[i] = new int[i + 1];
+                triangle[i][0] = 1;
+
+                for (int j = 1; j < i; j++)
+                {
+                    triangle[i][j] = 1;
+                }
+            }
+         
+            return triangle;
+
+        }
+
+        public static void PrintPascalTriangle(int[][] triangle)
+        {
+
+            foreach (var row in triangle)
+            {
+                foreach (var number in row)
+                {
+                    Console.Write(number + " ");
+                }
+           
+            }
         }
     }
 }
+
+
+
