@@ -80,9 +80,7 @@ namespace Fabienne.Week02
             int[,] arr5 = new int[7, 8];
             int[,] rand2dArray = CreateRandom2DArray(20, 10);
 
-            Print2DArray(rand2dArray);
-            
-            
+            Print2DArray(rand2dArray);          
         }
         public static int[] NumberArray()
         {

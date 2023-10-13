@@ -304,7 +304,7 @@ namespace Ali.Week02
                     }
                 }
             }
-            return random1-1;
+            return random1;
         }
 
 

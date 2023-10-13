@@ -1,1 +1,1 @@
-﻿Simon.Week03.Sortieralgorithmen.Start();
+﻿Simon.Week03.Console_Input.Start();
