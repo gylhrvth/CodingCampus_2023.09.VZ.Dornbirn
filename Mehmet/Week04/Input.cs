@@ -22,8 +22,10 @@ namespace Mehmet.Week04
             //int readNumber = ReadNumbner("Enter a Numero:", " EROR 404 : Try again : ");
 
             int readRandomNumber = ReadRandomNumber("Las uns ein Spiel spielen ö_ö , tippe einen Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runter: ", "Richtig !!!");
+            
+                    //int readNumberMenue = ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
 
-
+        
         }
 
         public static Random rand = new Random();
@@ -51,6 +53,7 @@ namespace Mehmet.Week04
             Console.WriteLine(Stage1);
             int random = rand.Next(101);
             int answer = random;
+            bool start = true;
             while (true)
             {
                 try
@@ -86,7 +89,115 @@ namespace Mehmet.Week04
             }
         }
 
+        static int ReadNumberMenue(String stage1, String questionDrawing, String drawing1, String drawing2, String drawing3, String asksize, String asksymbol)
+        {
+            Console.WriteLine(stage1);
+            Console.WriteLine(questionDrawing);
+            Console.WriteLine("1 für = " + drawing1);
+            Console.WriteLine("2 für = " + drawing2);
+            Console.WriteLine("3 für = " + drawing3);
+            Console.WriteLine();
+            int n1 = 1;
+            int n2 = 2;
+            int n3 = 3;
 
+
+            while (true) 
+            {
+                try
+                {
+                    String input = Console.ReadLine();
+                    int myNumber = Convert.ToInt32(input);
+                    
+
+                    if (myNumber == n1)
+                    {
+                        
+                        Console.WriteLine(asksize);
+                        String inputsize = Console.ReadLine();
+                        int size = Convert.ToInt32(inputsize);
+                        int sizeOfDrawing = size;
+
+
+
+
+
+                        
+                        Console.WriteLine(asksymbol);
+                        String symbol = Console.ReadLine();
+                        String symbolofDrawing = symbol;
+
+
+
+                       
+                        Mehmet.Week02.BooleanExamples.PrintChristmasTree(sizeOfDrawing, symbolofDrawing);
+                        Mehmet.Week02.BooleanExamples.PrintRhombus(symbolofDrawing,sizeOfDrawing);
+
+                    }
+
+
+
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+
+
+
+
+
+
+        //public static void PrintChristmasTree(int size,String symbol)
+        //{
+        //    for (int x = 0; x < size; x++)
+        //    {
+        //        {
+        //            for (int y = size - 1; y > x; y--)
+        //            {
+        //                Console.Write(" ");
+        //            }
+        //            for (int z = -1; z < x; z++)
+        //            {
+        //                Console.Write(symbol);
+        //            }
+        //            for (int z = 0; z < x; z++)
+        //            {
+        //                Console.Write(symbol);
+        //            }
+        //            for (int y = size; y > x; y--)
+        //            {
+        //                Console.Write(" ");
+        //            }
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    for (int y = 0; y < size; ++y)
+        //    {
+        //        Console.Write(symbol);
+        //        Console.Write(" ");
+        //    }
+        //    Console.WriteLine();
+        //    for (int y = 0; y < size / 4; ++y)
+        //    {
+        //        for (int x1 = 0; x1 < size - 3; ++x1)
+        //        {
+        //            Console.Write(" ");
+        //        }
+        //        for (int x2 = 0; x2 < size - 4; ++x2)
+        //        {
+        //            Console.Write(symbol);
+        //        }
+        //        for (int x3 = 0; x3 < size - 3; ++x3)
+        //        {
+        //            Console.Write(" ");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //}
 
 
     }
