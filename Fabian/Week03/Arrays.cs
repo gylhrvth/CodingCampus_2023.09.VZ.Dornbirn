@@ -269,7 +269,7 @@ namespace Fabian.Week03
         {
             int j;
             for (int i = 0; i < arr.Length; i++)
-            {
+               {
                 j = i;
                 while (j > 0 && arr[j - 1] > arr[j])
                 {
