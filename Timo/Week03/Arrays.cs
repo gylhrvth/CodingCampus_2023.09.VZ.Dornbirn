@@ -125,7 +125,7 @@ namespace Timo.Week03
             //Aufgabe9 2D-Array
             Console.WriteLine("\nAufgabe 9: 2D-Array");
             //PrintArray2D(Arr2DRandom(10, 10, 0, 100));
-            PrintArray2D(Matrix2(5, 10, 1, 100));
+            //PrintArray2D(Matrix2(5, 10, 1, 100));
         }
 
 
@@ -483,17 +483,26 @@ namespace Timo.Week03
                 Console.WriteLine();
             }
         }
+
+
+
+
+
+        //_________________________________________________________________________________________________________________________________________________
+        //funktioniert nicht!!!!!!
+
+
+
         //public static int[] SumArray2D(int[][] arr2D, bool Spalte)
         //{
-
         //}
 
 
+     
 
 
 
-
-
+        /*
 
         public static int[][] Matrix2(int width, int height, int upper, int lower)
         {
@@ -510,14 +519,20 @@ namespace Timo.Week03
                     arr[row][col] = random.Next(upper, lower);
                     summrow += arr[row][col];
 
-                    Console.WriteLine("Summe Spalte {1} = {0,3}", summcol, col + 1);
                 }
-                summcol += arr[row][col];
+                Console.WriteLine("Summe Zeile {1} = {0,3}", summrow, row + 1);
+
+                //summcol += arr[row][col];
                 //Console.WriteLine("Summe Zeile {1} = {0,3}", summrow, row+1);
 
             }
             return arr;
         }
+
+
+
+
+        */
     }
     }
 
