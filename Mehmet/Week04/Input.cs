@@ -21,7 +21,7 @@ namespace Mehmet.Week04
 
             //int readNumber = ReadNumbner("Enter a Numero:", " EROR 404 : Try again : ");
 
-            int readRandomNumber = ReadRandomNumber("Las uns ein Spiel spielen ö_ö , tippe einen Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runta: ", "Richtig du Pic!!!!");
+            int readRandomNumber = ReadRandomNumber("Las uns ein Spiel spielen ö_ö , tippe einen Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runter: ", "Richtig !!!");
 
 
         }
@@ -57,29 +57,33 @@ namespace Mehmet.Week04
                 {
                     String input = Console.ReadLine();
                     int myNumber = Convert.ToInt32(input);
-
                     if (answer < myNumber)
                     {
+                        Console.WriteLine();
                         Console.WriteLine(lower);
+                        Console.WriteLine("<--" + myNumber);
+                        Console.WriteLine();
                     }
                     else if (answer > myNumber)
                     {
+                        Console.WriteLine();
                         Console.WriteLine(higher);
+                        Console.WriteLine(myNumber + "-->");
+                        Console.WriteLine();
                     }
                     else if (answer == myNumber)
                     {
+                        Console.WriteLine();
                         Console.WriteLine(answer + " " + correct);
+                        Console.WriteLine();
                         return answer;
-                    }
-                            
+                    }                           
                 }
                 catch
                 {
                     Console.Error.WriteLine(error);
                 }
             }
-
-
         }
 
 
