@@ -109,6 +109,14 @@ namespace Dimitri.Week03
             Console.WriteLine("2) Quader");
             Console.WriteLine("3) Rhombus");
             int num = IntRead("Bitte wählen Sie nun(1/2/3):", "Input not allowed. Please enter an Integer:");
+            while(num > 3)
+            {
+                Console.WriteLine("Please Enter a valid Number.");
+                num = IntRead("Bitte wählen Sie nun(1/2/3):", "Input not allowed. Please enter an Integer:");
+            }
+            {
+                
+            }
             if (num == 1)
             {
                 int height = IntRead("Wie hoch soll der Baum sein?", "Input not allowed. Please enter an Integer:");
@@ -121,6 +129,11 @@ namespace Dimitri.Week03
                 int height = IntRead("Wie hoch soll der Quader sein?", "Input not allowed. Please enter an Integer:");
                 Console.WriteLine("Welches Symbol soll verwendet werden?");
                 string symbol = StringRead();
+                while (symbol.Length > 1)
+                {
+                    Console.WriteLine("Your Symbol has more than one charactere");
+                    symbol = StringRead();
+                }
                 Dimitri.Week02.MethodenUndSchleifen.PrintEmptySquare(symbol, height);
 
             }
@@ -138,16 +151,18 @@ namespace Dimitri.Week03
 
                     }
                 }
+
+
                 Console.WriteLine("Welches Symbol soll verwendet werden?");
                 string symbol = StringRead();
+
+                while (symbol.Length > 1)
+                {
+                    Console.WriteLine("Your Symbol has more than one character. Please enter a new Symbol:");
+                    symbol = StringRead();
+                }
+
                 Dimitri.Week02.MethodenUndSchleifen.PrintRhombus(symbol, height);
-
-
-            }
-
-            else
-            {
-
             }
 
         }
