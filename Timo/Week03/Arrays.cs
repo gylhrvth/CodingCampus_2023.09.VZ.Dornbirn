@@ -115,25 +115,17 @@ namespace Timo.Week03
             PrintString(BubbleSort(testSort, true));
             PrintString(BubbleSort(testSort, false));
 
-            testSort = RandomFor(50000, 1, 100);
-            BubbleSort(testSort, true);
+            //testSort = RandomFor(50000, 1, 100);
+            //BubbleSort(testSort, true);
 
             Console.WriteLine("=======================================");
+            Console.WriteLine("=======================================");
 
-            int[][] arr2D = new int[100][];
-            for(int i=0; i < arr2D.Length; i++)
-            {
-                arr2D[i] = new int[100];
-            }
 
-            for (int row = 0; row < arr2D.Length; row++)
-            {
-                for(int col = 0;  col < arr2D[row].Length; col++)
-                {
-                    Console.Write(arr2D[row][col]);
-                }
-                Console.WriteLine();
-            }
+            //Aufgabe9 2D-Array
+            Console.WriteLine("\nAufgabe 9: 2D-Array");
+            //PrintArray2D(Arr2DRandom(10, 10, 0, 100));
+            PrintArray2D(Matrix2(5, 10, 1, 100));
         }
 
 
@@ -408,7 +400,7 @@ namespace Timo.Week03
         }
         //------------------------------------------------------------------------------------------------------------------------------
 
-        //Aufgabe 8 (Bubble)sort
+        //Aufgabe8 (Bubble)sort
         public static int[] Sort(int[] arr, bool asc)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -432,7 +424,7 @@ namespace Timo.Week03
             return arr;
         }
 
-        //Aufgabe 8 Bubblesort
+        //Aufgabe8 Bubblesort
         public static int[] BubbleSort(int[] arr, bool asc)
         {
             int steps = 0;
@@ -447,16 +439,85 @@ namespace Timo.Week03
                         arr[a] = temp;
                     }
                     steps++;
-                   
+
                 }
-                if(i % 10000 == 0)
+                if (i % 10000 == 0)
                 {
                     Console.WriteLine("sorted");
                 }
             }
-            Console.WriteLine("Size: "+arr.Length+"Steps: " + steps);
+            Console.WriteLine("Size: " + arr.Length + "Steps: " + steps);
+            return arr;
+        }
+
+
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        //Aufgabe9 2D-Array
+        public static int[][] Arr2DRandom(int height, int length, int min, int max)
+        {
+            int[][] arr2D = new int[height][];
+            for (int i = 0; i < arr2D.Length; i++)
+            {
+                arr2D[i] = new int[length];
+            }
+            for (int row = 0; row < arr2D.Length; row++)
+            {
+                for (int col = 0; col < arr2D[row].Length; col++)
+                {
+                    int randomNumber = random.Next(min, max);
+                    arr2D[row][col] = randomNumber;
+                }
+            }
+            return arr2D;
+        }
+        //Print
+        public static void PrintArray2D(int[][] arr2D)
+        {
+            for (int row = 0; row < arr2D.Length; row++)
+            {
+                for (int col = 0; col < arr2D[row].Length; col++)
+                {
+                    Console.Write("{0,4}", arr2D[row][col]);
+                }
+                Console.WriteLine();
+            }
+        }
+        //public static int[] SumArray2D(int[][] arr2D, bool Spalte)
+        //{
+
+        //}
+
+
+
+
+
+
+
+
+        public static int[][] Matrix2(int width, int height, int upper, int lower)
+        {
+            int summrow = 0;
+            int summcol = 0;
+
+            int[][] arr = new int[height][];
+            for (int row = 0; row < height; row++)
+            {
+                arr[row] = new int[width];
+                summrow = 0;
+                for (int col = 0; col < width; col++)
+                {
+                    arr[row][col] = random.Next(upper, lower);
+                    summrow += arr[row][col];
+
+                    Console.WriteLine("Summe Spalte {1} = {0,3}", summcol, col + 1);
+                }
+                summcol += arr[row][col];
+                //Console.WriteLine("Summe Zeile {1} = {0,3}", summrow, row+1);
+
+            }
             return arr;
         }
     }
-}
+    }
 

@@ -134,7 +134,7 @@ namespace Erik.Week03
             {
                 arr[i] = rand.Next(min, max);
             }
-            return arr;
+            return arr;            
         }
 
 

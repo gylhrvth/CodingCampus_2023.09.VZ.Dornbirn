@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Globalization;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata;
 
 namespace Fabienne.Week02
 {
@@ -47,8 +48,8 @@ namespace Fabienne.Week02
             //PrintArray(arr2);
 
 
-            int[] arr = CreateRandomArray(12);
-            PrintArray(arr);
+            //int[] arr = CreateRandomArray(12);
+            //PrintArray(arr);
 
             //int limit = 30;
             //Console.WriteLine("Count values bigger than {0}: {1}", limit, Count(arr, limit));
@@ -61,11 +62,25 @@ namespace Fabienne.Week02
             //Console.WriteLine("Maximum: {0}", Maximum(testArray));
             //Console.WriteLine("Avarage: {0}", Average(testArray));
 
-            Bubblesort(arr);
-            Console.WriteLine("==========================================");
-            PrintArray(arr);
+            //Bubblesort(arr);
+            //Console.WriteLine("==========================================");
+            //PrintArray(arr);
 
-            GnomeSort();
+            //int[] arr2 = CreateRandomArray(12);
+            //GnomeSort(arr2);
+
+            //int[] arr3 = CreateRandomArray(12);
+            //PrintArray(arr3);
+            //SelectionSort(arr3);
+
+            //int[] arr4 = CreateRandomArray(12);
+            //PrintArray(arr4);
+            //InsertionSort(arr4);
+
+            int[,] arr5 = new int[7, 8];
+            int[,] rand2dArray = CreateRandom2DArray(20, 10);
+
+            Print2DArray(rand2dArray);          
         }
         public static int[] NumberArray()
         {
@@ -290,9 +305,74 @@ namespace Fabienne.Week02
                 }
             }
         }
-        public static void GnomeSort() //careful: bite ankles
+        public static void GnomeSort(int[] arr) //careful: bites ankles
         {
-            
+            int i = 2;
+
+            while (i < arr.Length)
+            {
+                if (arr[i] >= arr[i - 1])
+                {
+                    i = i + 1;
+                }
+                else
+                {
+                    (arr[i], arr[i - 1]) = (arr[i - 1], arr[i]);
+                    
+                    if(i >= 2)
+                    {
+                        i--;
+                    }
+                }
+            }
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+        }
+        public static void SelectionSort(int[] arr)
+        {
+            int min;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                min = i;
+
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (arr[j] > arr[min])
+                    {
+                        min = j;
+
+                        (arr[i], arr[min]) = (arr[min], arr[i]);
+                    }
+                }              
+            }
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+        }
+        public static void InsertionSort(int[] arr)
+        {
+            int j;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                j = i;
+                while (j > 0 && arr[j - 1] > arr[j])
+                {
+                    (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
+                    j--;
+                }
+            }
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+        }
+        public static int[,] CreateRandom2DArray(int width, int height)
+        {
+            int[,] arr = new int[height, width];
+
+            for (int row = 0; row < arr.GetLength(0); row++)
+            {
+                for (int col = 0; col < arr.GetLength(1); col++)
+                {
+                    arr[row, col] = rand.Next(0, 10);
+                }
+            }
+            return arr;
         }
     }
 }

@@ -48,11 +48,16 @@ namespace Niklas
             {
                 arr[i] = rand.Next(101);
             }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i % 10 == 0)
+                {
+                    Console.WriteLine();
+                }
+                Console.Write(arr[i] + " ");
+            }
             return arr;
         }
-
-        
-
     }
 }
 
