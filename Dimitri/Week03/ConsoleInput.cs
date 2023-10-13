@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -28,14 +29,24 @@ namespace Dimitri.Week03
 
         public static string StringRead()
         {
-            string input = Console.ReadLine();
+            string input = "";
+            while (string.IsNullOrEmpty(input) || input == " " || input == "\t")
+            {
+                input = Console.ReadLine();
+                if (string.IsNullOrEmpty(input) || input == " " || input == "\t")
+                {
+                    Console.WriteLine("Your String is Null or Empty. Type in a new String:");
+                }
+            }
             return input;
 
         }
 
         public static void StringOutput(string input)
         {
+
             Console.WriteLine("This is your input:");
+
             Console.WriteLine(input);
 
         }
@@ -98,7 +109,6 @@ namespace Dimitri.Week03
             Console.WriteLine("2) Quader");
             Console.WriteLine("3) Rhombus");
             int num = IntRead("Bitte wählen Sie nun(1/2/3):", "Input not allowed. Please enter an Integer:");
-
             if (num == 1)
             {
                 int height = IntRead("Wie hoch soll der Baum sein?", "Input not allowed. Please enter an Integer:");
@@ -106,16 +116,7 @@ namespace Dimitri.Week03
 
             }
 
-            if (num == 3)
-            {
-                int height = IntRead("Wie hoch soll der Rhombus sein?", "Input not allowed. Please enter an Integer:");
-                Console.WriteLine("Welches Symbol soll verwendet werden?");
-                string symbol = StringRead();
-                Dimitri.Week02.MethodenUndSchleifen.PrintRhombus(symbol, height);
-
-            }
-
-            if (num == 2)
+            else if (num == 2)
             {
                 int height = IntRead("Wie hoch soll der Quader sein?", "Input not allowed. Please enter an Integer:");
                 Console.WriteLine("Welches Symbol soll verwendet werden?");
@@ -124,6 +125,30 @@ namespace Dimitri.Week03
 
             }
 
+            else if (num == 3)
+            {
+                int height = 2;
+                while (height % 2 == 0)
+                {
+                    height = IntRead("Wie hoch soll der Rhombus sein?", "Input not allowed. Please enter an Integer:");
+
+                    if (height % 2 == 0)
+                    {
+                        Console.WriteLine("Die Zahl {0} ist gerade. Bitte gib eine ungerade Zahl ein:", height);
+
+                    }
+                }
+                Console.WriteLine("Welches Symbol soll verwendet werden?");
+                string symbol = StringRead();
+                Dimitri.Week02.MethodenUndSchleifen.PrintRhombus(symbol, height);
+
+
+            }
+
+            else
+            {
+
+            }
 
         }
 
