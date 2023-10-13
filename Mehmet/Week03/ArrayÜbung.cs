@@ -1,4 +1,6 @@
-﻿namespace Mehmet.Week03
+﻿using System.Runtime.ExceptionServices;
+
+namespace Mehmet.Week03
 {
     internal class ArrayÜbung
     {
@@ -125,9 +127,18 @@
             Console.WriteLine("----------------------------");
 
 
-            Console.WriteLine("BubblesortMitZahlen");
+            Console.WriteLine("BubblesortMitZahlenAscending");
             BubblesortMitZahlenAscending(randArr);
 
+            Console.WriteLine("BubblesortMitZahlenDescending");
+            BubblesortMitZahlenDescending(randArr);
+
+
+            int[] randArrNew = RandomNumberArray(10);
+
+
+            Console.WriteLine("ZweiDArray");
+            ZweiDArray(randArrNew, randArrNew);
 
 
 
@@ -172,7 +183,7 @@
             int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rand.Next(100);
+                arr[i] = rand.Next(101);
             }
             return arr;
         }
@@ -268,38 +279,54 @@
 
         public static void BubblesortMitZahlenAscending(int[] arr)
         {
-
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length-1; i++)
             {
                 for (int j = 0; j < arr.Length - 1; j++)
                 {
                     int num1 = arr[j];
-                    int num2 = arr[j + 1];
-                   
-                    Console.WriteLine("     Comparing: num1: " + num1 + " num2: " + num2 + " Index: " + j);
+                    int num2 = arr[j + 1];                  
+                     //            Console.WriteLine("         Comparing: num1: " + num1 + " num2: " + num2 + " Index: " + j);
                     if (num1 > num2)
                     {
-                        Console.WriteLine("     Before Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
-
+                       //          Console.WriteLine("        Before Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
                         arr[j] = num2;
                         arr[j + 1] = num1;
-
-                        Console.WriteLine("     After Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
-         
+                       //           Console.WriteLine("       After Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);        
                     }
-
-                    Console.Write(num1);
-                    Console.WriteLine();
-                }
-
-                Console.WriteLine();
-
-
+                }     
             }
-
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join (" < ", arr));
         }
+
+
+        public static void BubblesortMitZahlenDescending(int[] arr)
+        {
+            for (int i = 0;i < arr.Length - 1; i++)
+            {
+                for (int j = 0;j < arr.Length - 1;j++)
+                {
+                    int num1 = arr[j];
+                    int num2 = arr[j + 1];
+                    if (num1 < num2)
+                    {
+                        arr[j] = num2;
+                        arr[j + 1] = num1;
+                    }                   
+                }               
+            }
+            Console.WriteLine("[{0}]", string.Join (" > ", arr));           
+        }
+
+
+        public static void ZweiDArray(int[] arr1, int[] arr2)
+        {
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Console.WriteLine("[{0}]", string.Join (" ,", arr1));
+            }
+        }
+
+
 
 
     }

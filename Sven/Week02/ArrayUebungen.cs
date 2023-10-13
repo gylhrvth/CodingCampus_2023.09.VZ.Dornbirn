@@ -1,21 +1,22 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Sven.Week02
 {
     public class ArrayUebungen
     {
-        
+
         public static Random Random = new Random();
-        
+
         public static void ArrayExamples()
         {
             Console.WriteLine("Example 1 Count:");
             Count();
             Console.WriteLine();
-                        
+
             Console.WriteLine("Example 2 Copy:");
             Copy();
-            Console.WriteLine(); 
+            Console.WriteLine();
 
             Console.WriteLine("Example 3 Crazy Range:");
             CrazyRange();
@@ -28,7 +29,7 @@ namespace Sven.Week02
 
             Console.WriteLine("RandomCount1");
             int count = RandomCount1(arr);
-            Console.WriteLine("Es sind " +  count + " Zahlen über 30");
+            Console.WriteLine("Es sind " + count + " Zahlen über 30");
             Console.WriteLine();
 
             Console.WriteLine("Example 5 Random2:");
@@ -51,14 +52,24 @@ namespace Sven.Week02
             Console.WriteLine("Das Avg ist:  " + avg);
             Console.WriteLine();
 
+            Console.WriteLine("Example 9 SortAscending:");
+            SortAscending(arr);
+            Console.WriteLine();
+
+            Console.WriteLine("Example 9 SortDescending:");
+            SortDescending(arr);
+            Console.WriteLine();
+
+
 
 
         }
 
+
         static void Count()
         {
-            int[] arr = {0,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 , 10 };
-            
+            int[] arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
 
 
             for (int i = 0; i < arr.Length; ++i)
@@ -70,7 +81,7 @@ namespace Sven.Week02
 
 
             int[] arr2 = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-            
+
 
             for (int i = 0; i < arr2.Length; ++i)
             {
@@ -78,9 +89,9 @@ namespace Sven.Week02
             }
 
         }
-        
 
-       static void Copy()
+
+        static void Copy()
         {
 
             int[] arr = { 10, 23, 34, 12, 45, 16, 2 };
@@ -114,7 +125,7 @@ namespace Sven.Week02
         }
 
 
-       public static int[] RandomArray(int size)
+        public static int[] RandomArray(int size)
         {
             int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
@@ -123,7 +134,7 @@ namespace Sven.Week02
 
             }
             return arr;
-            
+
         }
 
 
@@ -145,7 +156,7 @@ namespace Sven.Week02
             int count = 0;
             foreach (int i in arr)
             {
-                if(i > 30)
+                if (i > 30)
                 {
                     count++;
                 }
@@ -153,7 +164,7 @@ namespace Sven.Week02
             return count;
         }
 
- 
+
         public static int RandomSum(int[] arr)
         {
 
@@ -161,7 +172,7 @@ namespace Sven.Week02
             foreach (int i in arr)
             {
                 sum += i;
-                
+
             }
             return sum;
 
@@ -173,7 +184,7 @@ namespace Sven.Week02
             int min = int.MaxValue;
             foreach (int i in arr)
             {
-                if ( i < min)
+                if (i < min)
                 {
                     min = i;
                 }
@@ -201,17 +212,55 @@ namespace Sven.Week02
 
         public static double RandomAvg(int[] arr)
         {
-            
+
             int sum = 0;
             foreach (int i in arr)
             {
                 sum += i;
             }
 
-            return(double) sum / arr.Length ;
+            return (double)sum / arr.Length;
         }
 
-    }
 
+        public static void SortAscending(int[] arr)
+        {
+            int temp = 0;
+
+            for (int count = 0; count < arr.Length; count++)
+            {
+                for (int sort = 0; sort < arr.Length - 1; sort++)
+                {
+                    if (arr[sort] > arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+                }
+                Console.Write("{0} ", arr[count]);
+
+            }
+
+        }
+        public static void SortDescending(int[] arr)
+        {
+            int temp = 0;
+
+            for (int count = 0; count < arr.Length ; count++)
+            {
+                for (int sort = 0; sort < arr.Length - 1; sort++)
+                {
+                    if (arr[sort] > arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+                }
+                Console.Write("{0} ", arr[count]);
+            }
+        }
+    }
 }
 

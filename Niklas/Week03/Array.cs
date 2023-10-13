@@ -17,7 +17,7 @@ namespace Niklas.Week03
         {
 
             int[] arr1 = CreateArrayRandom(10, 0, 101);
-
+            int[] arr2 = CreateArrayRandom(100, 0, 101);
 
             Console.WriteLine("\nAscending: ");
             int[] arr = new int[1];
@@ -74,13 +74,16 @@ namespace Niklas.Week03
             Console.WriteLine("Min: {0,4}", ArrayMin(arr1));
             Console.WriteLine("Max: {0,4}", ArrayMax(arr1));
 
-
             Console.WriteLine("______________________");
             Console.WriteLine("Unsorted: [{0}]", string.Join(", ", arr1));
             BubbleSortAsc(arr1);
             Console.WriteLine("Bubblesort Ascending: " + string.Join(", ", arr1));
             BubbleSortDesc(arr1);
             Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
+
+            Console.WriteLine("______________________");
+            TwoDArray(arr2);
+
         }
 
 
@@ -134,8 +137,6 @@ namespace Niklas.Week03
 
 
         public static void RandomNumber()
-
-
         {
             int[] myArray = CreateArray(10);
 
@@ -146,9 +147,6 @@ namespace Niklas.Week03
 
 
             Console.WriteLine("[{0}]", string.Join(", ", myArray));
-
-
-
         }
 
         public static void PrintSecondFifthandTenth()
@@ -277,7 +275,7 @@ namespace Niklas.Week03
         public static int[] BubbleSortDesc(int[] arr)
         {
             int steps = 0;
-            for (int i = 0; i < arr.Length -1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int j = 0; j < arr.Length - 1 - i; j++)
                 {
@@ -295,11 +293,35 @@ namespace Niklas.Week03
 
         }
 
-        //===================================================================================================================================================================\\
-        //===================================================================================================================================================================\\
-        //===================================================================================================================================================================\\
-        //===================================================================================================================================================================\\
-        //===================================================================================================================================================================\\
+        public static void TwoDArray(int[] size)
+        {
+            int[] arr = new int[100];
+            int sum = 0;
+            Random random = new Random();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int randomNumber = random.Next(10, 100);
+                arr[i] = randomNumber;
+
+                sum = 0;
+                foreach (int value in arr)
+                {
+                    sum += value;
+                }
+            }
+
+            for (int i = 0; i < arr.Length + 1; i++)
+            {
+                if (i % 10 == 0 && i > 0)
+                {
+                    Console.WriteLine(" | Summe = " + sum);
+                }
+                Console.Write(arr[i] + " ");
+            }
+            sum = 0;
+        }
+
         //===================================================================================================================================================================\\
 
         public static int[] CreateArray(int size)
@@ -365,9 +387,6 @@ namespace Niklas.Week03
             return arr;
         }
 
-
-
-
         public static int[] CreateArrayRandom(int size, int min, int max)
         {
             int[] arr = new int[size];
@@ -378,4 +397,5 @@ namespace Niklas.Week03
             return arr;
         }
     }
+
 }

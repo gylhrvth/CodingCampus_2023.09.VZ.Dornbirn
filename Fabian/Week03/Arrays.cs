@@ -1,4 +1,7 @@
-﻿namespace Fabian.Week03
+﻿using System.Reflection;
+using System.Text.RegularExpressions;
+
+namespace Fabian.Week03
 {
     public class Arrays
     {
@@ -44,13 +47,22 @@
             //GnomeSort(arr5);
             //Console.WriteLine("[{0}]", string.Join(", ", arr5));
 
-            /*int[,] twoDarray = CreateRandomMultiDimensionalArray(4, 3);
+            /*int[,] twoDarray = CreateRandom2DArray();
             Print2DArray(twoDarray);
             Console.WriteLine("sum of columns = [{0}]", string.Join(", ", SumByColumn(twoDarray)));
             Console.WriteLine("sum of rows = [{0}]", string.Join(", ", SumByRow(twoDarray)));*/
 
-            int[,] pascal = CreatePascalTriangle(10);
-            PrintPascalTriangle(pascal);
+            //int[,] pascal = CreatePascalTriangle();
+            //PrintPascalTriangle(pascal);
+
+            //string formula = CreateFormula();
+            //PrintFormula(formula);
+
+            TicTacToe();
+        }
+        public static void PrintArray(int[] arr)
+        {
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
         public static int[] CreateNumberArray(int size)
         {
@@ -62,7 +74,6 @@
             }
             return nums;
         }
-
         public static int[] NumberArrayReversed()
         {
             int[] numsReversed = new int[10];
@@ -73,7 +84,6 @@
             }
             return numsReversed;
         }
-
         public static int[] MakeACopy(int[] original)
         {
             int[] copy = new int[original.Length];
@@ -84,7 +94,6 @@
             }
             return copy;
         }
-
         public static int[] RandomNumberArray()
         {
             int[] arr = new int[10];
@@ -114,7 +123,6 @@
                 Console.WriteLine(i);
             }
         }
-
         public static void PrintRandomNumberArray2()
         {
             int[] arr = RandomNumberArray();
@@ -133,7 +141,6 @@
             }
 
         }
-
         public static int[] RandomNumberArrayCrazyRange()
         {
             int[] randomNums = new int[10];
@@ -145,7 +152,6 @@
 
             return randomNums;
         }
-
         public static void PrintRandomNumberArrayCrazyRange()
         {
 
@@ -154,7 +160,6 @@
                 Console.WriteLine(i);
             }
         }
-
         public static int RandomNumberArrayCount(int[] arr)
         {
             int count = 0;
@@ -167,7 +172,6 @@
             }
             return count;
         }
-
         public static int RandomNumberArraySum()
         {
             int[] randomNums = new int[10];
@@ -181,7 +185,6 @@
 
             return sum;
         }
-
         public static int[] RandomNumberArrayMinMaxAvg()
         {
             int[] randomNums = new int[10];
@@ -193,36 +196,30 @@
 
             return randomNums;
         }
-
         public static int RandomNumberArrayMin(int[] arr)
         {
             return arr.Min();
         }
-
         public static int RandomNumberArrayMax(int[] arr)
         {
             return arr.Max();
         }
-
         public static double RandomNumberArrayAvg(int[] arr)
         {
             return arr.Average();
         }
-
         public static int IndexOfRandomNumberArrayMin(int[] arr)
         {
             int minIndex = Array.IndexOf(arr, RandomNumberArrayMin(arr));
 
             return minIndex;
         }
-
         public static int IndexOfRandomNumberArrayMax(int[] arr)
         {
             int maxIndex = Array.IndexOf(arr, RandomNumberArrayMax(arr));
 
             return maxIndex;
         }
-
         public static void BubbleSortASC(int[] arr)
         {
 
@@ -237,7 +234,6 @@
                 }
             }
         }
-
         public static void BubbleSortDESC(int[] arr)
         {
 
@@ -252,7 +248,6 @@
                 }
             }
         }
-
         public static void SelectionSort(int[] arr)
         {
             int min;
@@ -270,12 +265,11 @@
                 }
             }
         }
-
         public static void InsertionSort(int[] arr)
         {
             int j;
             for (int i = 0; i < arr.Length; i++)
-            {
+               {
                 j = i;
                 while (j > 0 && arr[j - 1] > arr[j])
                 {
@@ -284,7 +278,6 @@
                 }
             }
         }
-
         public static void GnomeSort(int[] arr)
         {
             int i = 2;
@@ -306,9 +299,26 @@
                 }
             }
         }
-
-        public static int[,] CreateRandomMultiDimensionalArray(int height, int width)
+        public static int[,] CreateRandom2DArray(int height = 0, int width = 0)
         {
+            while (height < 1 || width < 1)
+            {
+                try
+                {
+                    Console.WriteLine("Enter number of rows: ");
+                    height = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Enter number of columns: ");
+                    width = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a valid number!");
+                }
+            }
+
+
+
             int[,] arr = new int[height, width];
 
             for (int i = 0; i < arr.GetLength(0); i++)
@@ -320,19 +330,17 @@
             }
             return arr;
         }
-
         public static void Print2DArray(int[,] arr)
         {
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    Console.Write("{0} ", arr[i, j]);
+                    Console.Write(arr[i, j] + " ");
                 }
                 Console.WriteLine();
             }
         }
-
         public static int[] SumByColumn(int[,] arr)
         {
             int[] sum = new int[arr.GetLength(1)];
@@ -347,7 +355,6 @@
 
             return sum;
         }
-
         public static int[] SumByRow(int[,] arr)
         {
             int[] sum = new int[arr.GetLength(0)];
@@ -362,21 +369,34 @@
 
             return sum;
         }
-
-        public static int[,] CreatePascalTriangle(int size)
+        public static int[,] CreatePascalTriangle(int size = 0)
         {
+            while (size < 1)
+            {
+                try
+                {
+                    Console.WriteLine("Enter the size: ");
+                    size = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a valid number!!");
+                }
+            }
             int[,] arr = new int[size, size];
             int sum;
 
             for (int i = 1; i < size; i++)
             {
+                arr[0, 0] = 1;
+                arr[i, 0] = 1;
                 for (int j = 1; j < size; j++)
                 {
+                    arr[0, j] = 1;
                     sum = arr[i, j - 1] + arr[i - 1, j];
                     arr[i, j] = sum;
                 }
             }
-
             return arr;
         }
         public static void PrintPascalTriangle(int[,] arr)
@@ -385,10 +405,129 @@
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    Console.Write("{0} ", arr[i, j]);
+                    Console.Write("{0,10} ", arr[i, j]);
                 }
                 Console.WriteLine();
             }
         }
+        public static string CreateFormula()
+        {
+            string formula;
+            int exponent = 0;
+
+            while (exponent < 1)
+            {
+                try
+                {
+                    Console.WriteLine("Enter an exponent: ");
+                    exponent = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a valid number!");
+                }
+            }
+
+            int[,] arr = CreatePascalTriangle(exponent);
+            //PrintPascalTriangle(arr);
+
+            if(exponent == 1) 
+            {
+                formula = $"(a + b)^1 = a + b";
+            }
+            else
+            {
+                formula = $"(a + b)^{exponent} = a^{exponent} + ";
+                for (int i = arr.GetLength(0) - 1; i > 0; i--)
+                {
+                    for (int j = 1; j < arr.GetLength(1); j++)
+                    {
+                        formula += $"{arr[i, j]}a";
+                        if(i > 1)
+                        {
+                            formula += "^" + i;
+                        }
+                        formula += "b";
+                        if (j > 1)
+                        {
+                            formula += "^" + j;
+                        }
+                        formula += " + ";
+                        i--;
+                    }
+                }
+                formula += $"b^{exponent}";
+            }
+            return formula;
+
+        }
+
+        public static void PrintFormula(string formula)
+        {
+            Console.WriteLine(formula);
+        } 
+
+        public static void TicTacToe()
+        {
+            bool gameOver = false;
+            int[,] playGround = new int[3, 3];
+            
+
+            for (int i = 0; i < playGround.GetLength(0); i++)
+            {
+                for (int j = 0; j < playGround.GetLength(1); j++)
+                {
+                    playGround[i, j] = 0;
+                }
+            }
+            Print2DArray(playGround);
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Enter row: (player 1): ");
+                    int p1Row = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Enter column: (player 1): ");
+                    int p1Col = Convert.ToInt32(Console.ReadLine());
+
+                    playGround[p1Row - 1, p1Col - 1] = 1;
+
+                    Print2DArray(playGround);
+
+                    if ((playGround[0, 0] == 1 && playGround[0, 1] == 1 && playGround[0, 2] == 1) || (playGround[1, 0] == 1 && playGround[1, 1] == 1 && playGround[1, 2] == 1) || (playGround[2, 0] == 1 && playGround[2, 1] == 1 && playGround[2, 2] == 1))
+                    {
+                        Console.WriteLine("Player 1 won!");
+                        return;
+                    }
+                    else if ((playGround[0, 0] == 1 && playGround[1, 0] == 1 && playGround[2, 0] == 1) || (playGround[0, 1] == 1 && playGround[1, 1] == 1 && playGround[2, 1] == 1) || (playGround[0, 2] == 1 && playGround[1, 2] == 1 && playGround[2, 2] == 1))
+                    {
+                        Console.WriteLine("Player 1 won!");
+                        return;
+                    }
+                    else if ((playGround[0, 0] == 1 && playGround[1, 1] == 1 && playGround[2, 2] == 1) || (playGround[0, 2] == 1 && playGround[1, 1] == 1 && playGround[2, 0] == 1))
+                    {
+                        Console.WriteLine("Player 1 won!");
+                        return;
+                    }
+
+                    Console.WriteLine("Enter row: (player 2): ");
+                    int p2Row = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Enter column: (player 2): ");
+                    int p2Col = Convert.ToInt32(Console.ReadLine());
+
+                    playGround[p2Row - 1, p2Col - 1] = 2;
+  
+                    Print2DArray(playGround);
+
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a valid number!");
+                }
+            }
+        }
+
     }
 }
