@@ -1,2 +1,2 @@
-﻿Erik.Week03.SortAlgorithmCocktailShakerSort.StartSortAlgorithmCocktailShakerSort();
+﻿Erik.Week03.GuessingGame.startGuessingGame();
 
