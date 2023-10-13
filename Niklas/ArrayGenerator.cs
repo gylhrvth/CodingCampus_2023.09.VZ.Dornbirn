@@ -48,19 +48,16 @@ namespace Niklas
             {
                 arr[i] = rand.Next(101);
             }
-            return arr;
-        }
-
-        public static int[] CreateArrayRandom(int size, int min, int max)
-        {
-            int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rand.Next(min, max);
+                if (i % 10 == 0)
+                {
+                    Console.WriteLine();
+                }
+                Console.Write(arr[i] + " ");
             }
             return arr;
         }
-
     }
 }
 

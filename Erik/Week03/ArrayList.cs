@@ -134,7 +134,7 @@ namespace Erik.Week03
             {
                 arr[i] = rand.Next(min, max);
             }
-            return arr;
+            return arr;            
         }
 
 
@@ -238,21 +238,6 @@ namespace Erik.Week03
                 sum += arr[i];
             }
             return (double)sum / arr.Length;
-        }
-
-        public static void sortAlgorithm()
-        {
-            int[] randomNumbers = CreateRandomArray(20, 1, 500);
-
-            bool finished = false;
-            for (int i = 0; i < randomNumbers.Length; i++)
-            {
-                if (randomNumbers[i] > randomNumbers[i + 1] && !finished)
-                {
-
-
-                }
-            }
         }
     }
 }

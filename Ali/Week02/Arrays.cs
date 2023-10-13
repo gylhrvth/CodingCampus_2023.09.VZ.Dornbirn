@@ -79,10 +79,28 @@ namespace Ali.Week02
             Console.Write("Aufgabe: Random Number Array Summe");
             int sum = ArraySum(random1);
             Console.WriteLine();
-            Console.WriteLine("Die Summe ist:" +sum);
+            Console.WriteLine("Die Summe ist:" + sum);
             Console.WriteLine();
 
             Console.WriteLine("Aufgabe: Random Number Array Min/Max/Avg");
+            int min = ArrayMin(random1);
+            Console.WriteLine();
+            Console.WriteLine("Der Minimum ist:" + min);
+            
+
+            int max = ArrayMax(random1);
+            Console.WriteLine();
+            Console.WriteLine("Der Maximum ist:" + max);
+
+            double avg = ArrayAvg(random1);
+            Console.WriteLine();
+            Console.WriteLine("Der Average ist:" + avg);
+            Console.WriteLine();
+
+            Console.WriteLine("Aufgabe: Bubblesort mit Zahlen");
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", BubbleArray(random1)));
+
 
 
 
@@ -233,6 +251,60 @@ namespace Ali.Week02
                 sum += value;
             }
             return sum;
+        }
+        public static int ArrayMin(int[] random1)
+        {
+            int min = Int32.MaxValue;
+            foreach (int value in random1)
+            {
+                if (value < min)
+                {
+                    min = value;
+                }
+            }
+            return min;
+        }
+        public static int ArrayMax(int[] random1)
+        {
+            int max = Int32.MinValue;
+            foreach (int value in random1)
+            {
+                if (value > max)
+                {
+                    max = value;
+                }
+
+            }
+            return max;
+        }
+        public static double ArrayAvg(int[] random1)
+        {
+            
+            if (random1.Length == 0)
+            {
+                return 0;
+            }
+            return ArraySum(random1)/ (double)random1.Length;
+        }
+        public static int[] BubbleArray(int[] random1)
+        {
+            int a = random1.Length;
+            bool sorted = false;
+            while (!sorted)
+            {
+                sorted = true;
+                for(int i = 0; i < a-1; i++)
+                {
+                    if (random1[i] < random1[i + 1])
+                    {
+                        int t = random1[i];
+                        random1[i] = random1[i + 1];
+                        random1[i +1] = t;
+                        sorted = false;
+                    }
+                }
+            }
+            return random1;
         }
 
 

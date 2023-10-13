@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System.Runtime.ExceptionServices;
 
 namespace Mehmet.Week03
 {
@@ -128,7 +117,7 @@ namespace Mehmet.Week03
 
             Console.WriteLine("RandomNumberArrayMinMaxAvg");
 
-            randArr = new int[]{ 2, 3};
+
 
             int Min = ArrayMin(randArr);
             int Max = ArrayMax(randArr);
@@ -138,9 +127,18 @@ namespace Mehmet.Week03
             Console.WriteLine("----------------------------");
 
 
-            Console.WriteLine("BubblesortMitZahlen");
-            int Ascending = BubblesortMitZahlenAscending(randArr);
-            Console.WriteLine(Ascending);
+            Console.WriteLine("BubblesortMitZahlenAscending");
+            BubblesortMitZahlenAscending(randArr);
+
+            Console.WriteLine("BubblesortMitZahlenDescending");
+            BubblesortMitZahlenDescending(randArr);
+
+
+            int[] randArrNew = RandomNumberArray(10);
+
+
+            Console.WriteLine("ZweiDArray");
+            ZweiDArray(randArrNew, randArrNew);
 
 
 
@@ -185,7 +183,7 @@ namespace Mehmet.Week03
             int[] arr = new int[size];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rand.Next(100);
+                arr[i] = rand.Next(101);
             }
             return arr;
         }
@@ -279,35 +277,59 @@ namespace Mehmet.Week03
         }
 
 
-        public static int BubblesortMitZahlenAscending(int[] arr)
+        public static void BubblesortMitZahlenAscending(int[] arr)
         {
-
-
-
-            int Max = 0;
-            
-            foreach (int element in arr)
+            for (int i = 0; i < arr.Length-1; i++)
             {
-                if (element > Max)
+                for (int j = 0; j < arr.Length - 1; j++)
                 {
-                    Max = element;
-                    return Max;
-                }
-                
+                    int num1 = arr[j];
+                    int num2 = arr[j + 1];                  
+                     //            Console.WriteLine("         Comparing: num1: " + num1 + " num2: " + num2 + " Index: " + j);
+                    if (num1 > num2)
+                    {
+                       //          Console.WriteLine("        Before Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);
+                        arr[j] = num2;
+                        arr[j + 1] = num1;
+                       //           Console.WriteLine("       After Arr[" + j + "] -> " + arr[j] + " Arr[" + (j + 1) + "] -> " + arr[j + 1]);        
+                    }
+                }     
             }
-
-
-
-            return Max;
-
-
+            Console.WriteLine("[{0}]", string.Join (" < ", arr));
         }
 
 
+        public static void BubblesortMitZahlenDescending(int[] arr)
+        {
+            for (int i = 0;i < arr.Length - 1; i++)
+            {
+                for (int j = 0;j < arr.Length - 1;j++)
+                {
+                    int num1 = arr[j];
+                    int num2 = arr[j + 1];
+                    if (num1 < num2)
+                    {
+                        arr[j] = num2;
+                        arr[j + 1] = num1;
+                    }                   
+                }               
+            }
+            Console.WriteLine("[{0}]", string.Join (" > ", arr));           
+        }
+
+
+        public static void ZweiDArray(int[] arr1, int[] arr2)
+        {
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                Console.WriteLine("[{0}]", string.Join (" ,", arr1));
+            }
+        }
 
 
 
 
     }
 }
+
 
