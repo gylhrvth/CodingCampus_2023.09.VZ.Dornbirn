@@ -1,4 +1,4 @@
 ﻿using Patrick.Week03;
-UebungMakeACopy.start();
+ExamplesArrays.start();
 
 //Patrick.Week03.ExamplesArrays.start();

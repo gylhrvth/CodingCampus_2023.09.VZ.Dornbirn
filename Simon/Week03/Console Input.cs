@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Simon.Week03
@@ -19,8 +21,16 @@ namespace Simon.Week03
             //int userinput = Readuserinputint("Enter a number", "Please only input numbers! Try again!");
             //Console.WriteLine("Userinput was: " + userinput);
 
-            Console.WriteLine("Task - Guessinggame");
-            int game = Guessinggame("Willkommen beim super coolen Zahlen Ratespiel", "Errate die Zahl zwischen 0 und 100", "Die Zahl ist zu hoch!", "Die zahl ist zu niedrig!", "Du hast gewonnen!!! DAS WAR DIE RICHTIGE ZAHL", "Please only input numbers! Try again!");
+            //Console.WriteLine("Task - Guessinggame");
+            //Guessinggame("Willkommen beim super coolen Zahlen Ratespiel", "Errate die Zahl zwischen 0 und 100", "Die Zahl ist zu hoch!", "Die zahl ist zu niedrig!", "Du hast gewonnen!!! DAS WAR DIE RICHTIGE ZAHL", "Please only input numbers! Try again!");
+            Console.WriteLine("Input parameters for Guessing Game");
+            Guessinggame(ReaduserinputString("schreibe eine Willkommensnachricht"), 
+                ReaduserinputString("user soll wissen in welchem Parameter er die Zahlen erraten soll"),
+                ReaduserinputString("schreibe eine Ausgabe für wenn die Zahl zu hoch ist"), 
+                ReaduserinputString("schreibe eine Ausgabe für wenn die Zahl zu nieder ist"), 
+                ReaduserinputString("schreibe eine Siegesnachricht"), 
+                ReaduserinputString("schreibe eine fehlernachricht für ungültige eingaben"),
+                ReaduserinputString("schreibe eine anchricht die sagen soll wie viele Versuche man gebraucht hat (danach wird die zahl ausgegeben)"));
 
         }
 
@@ -28,12 +38,8 @@ namespace Simon.Week03
         public static String ReaduserinputString(String prompt)
         {
             Console.WriteLine(prompt);
-            while (true)
-            {
-
                 String input = Console.ReadLine();
                 return input;
-            }
         }
 
         //Aufgabe Zahl einlesen
@@ -56,20 +62,19 @@ namespace Simon.Week03
         }
 
         //Aufgabe Ratespiel
-        public static int Guessinggame(String promt1, String promt2, String hnumber, String lnumber, String won, String error)
+        public static void Guessinggame(String promt1, String promt2, String hnumber, String lnumber, String won, String error, String numberofguesses)
         {
             Console.WriteLine(promt1);
-            Console.WriteLine(promt2);
             int winningnumber = random.Next(0, 101);
+            int count = 0;
             while (true)
             {
                 try
                 {
-                    String input = Console.ReadLine();
-                    int output = Convert.ToInt32(input);
-                    if (output == winningnumber)
+                    int output = Readuserinputint(promt2, error);
+                    if (output > winningnumber)
                     {
-                        Console.WriteLine(won);
+                        Console.WriteLine(hnumber);
                     }
                     else if (output < winningnumber)
                     {
@@ -77,9 +82,11 @@ namespace Simon.Week03
                     }
                     else
                     {
-                        Console.WriteLine(hnumber);
+                        Console.WriteLine(won);
+                        Console.WriteLine(numberofguesses, count);
+                        return;
                     }
-                    return output;
+                    count ++;
                 }
                 catch
                 {
@@ -87,6 +94,8 @@ namespace Simon.Week03
                 }
             }
         }
+        //Aufgabe Erweitere die früheren Aufgaben um Benutzereingabe
+
 
 
     }
