@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,200 +12,335 @@ namespace Patrick.Week03
 
         public static void start()
         {
-            ///////////////////////////////////////////
-            //createArrayIncrease(10);
-            //Console.WriteLine("Increase");
-            //int[] test = createArrayIncrease(10);
-            //printArray(test);
-            //Console.WriteLine("------------------");
+            // AUFGABE 1
+            PrintArray(CreateArray(10));
+            PrintArray(CreateArray2(10));
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
 
-            //Console.WriteLine("Decrease");
-            //int[] test1 = createArrayDecrease(10);
-            //printArray(test1);
-            //Console.WriteLine("------------------");
-            ////////////////////////////////////////////
 
-            //RandomNumberArray(0, 101);
-            //RandomNumberArrayCrazyRange(-50, 50);
-            //randomNumberArrayZählen(0, 101);
-            //randomNumberArraySumme(0, 101);
-            //randomNumberArrayMin(0, 101);
+            //AUFGABE 2
+            int[] arrayUp = CreateArray(10);
+            int[] arrayCopy = MakeACopy(arrayUp);
+            Console.WriteLine("This is the original Array: ");
+            Console.WriteLine("[{0}]", string.Join(", ", arrayUp));
+            Console.WriteLine("This is the copy Array: ");
+            Console.WriteLine("[{0}]", string.Join(", ", arrayCopy));
+            arrayUp[0] = 200;
+            Console.WriteLine("change Array on Index 0");
+            Console.WriteLine("[{0}]", string.Join(", ", arrayUp));
+            Console.WriteLine("This is the copy of the Array: ");
+            Console.WriteLine("[{0}]", string.Join(", ", arrayCopy));
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
+
+
+            //AUFGABE 3
+            int[] array = RandomNumberArray(0, 101, 10);
+            PrintArrayForEach(array);                                                           //Gib es mit Hilfe einer Foreach Schleife aus
+            PrintArrayFor(array);                                                               //Gib es mit Hilfe einer For Schleife aus
+            Console.WriteLine("[{0}]", string.Join(", ", array[1], array[4], array[9]));        //Gib den 2. 5. und 10. Wert des Arrays aus
+            PrintArrayEverySec(array);                                                          //Gib jeden 2. Wert des Arrays mit hilfe einer Schleife aus
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
+
+
+            //AUFGABE 4
+            int[] array1 = RandomNumberCrazyRange(-50, 51, 10);
+            PrintArrayFor(array1);                                                              // Ich nehme hier eine ForSchleife da der Consolenoutput schöner ist
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
+
+
+            //AUFGABE 5
+            PrintArrayBigger30(array);                                                          //Erstelle eine Funktion die < 30 printed
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
+
+
+            //AUFGABE 6     
+            Console.WriteLine("The result of my Array is:  " + RandomNumberArraySumme(array));  //Erstelle eine Funktion, die die Summer der Werte zurückgibt
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
+
+
+            //AUFGABE 7
+            PrintArray(array);
+            Console.Write("The smallest number of the Array is:  ");
+            Console.WriteLine(RandomNumberArrayMin(array));                                     //Erstelle eine Methode für das Minimum
+            Console.Write("The biggest number of the Array is:  ");
+            Console.WriteLine(RandomNumberArrayMax(array));                                     //Erstelle eine Methode für das Maximum
+            Console.Write("The Average of the Array is:  ");
+            Console.WriteLine(RandomNumberArrayAvg(array));                                     //Erstelle eine Methode die Den Durchschnitt des Arrays berechnet
+            Console.Write("The smallest number of the Array is on Index:  ");
+            Console.WriteLine(RandomNumberMinIndex(array));                                     //Erstelle eine Methode, die den Index des Minimums zurückgibt
+            Console.Write("The biggest number of the Array is on Index:  ");
+            Console.WriteLine(RandomNumberMaxIndex(array));                                     //Erstelle eine Methode, die den Index des Maximums zurückgibt
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
+
+
+            //AUFGABE 8
+            PrintArrayFor(BubbleSortAscOrDesc(array, false));                                     //Bubblesort mit Zahlen aufsteigend und absteigend
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
         }
 
-        public static int[] createArrayIncrease(int count)
+
+        public static int[] CreateArray(int size)
         {
-            int[] array = new int[count];
-
-
-            for (int x = 0; x < count; x++)
-            {
-                array[x] = x + 1;
-                //Console.WriteLine(array[x]);
-            }
-
-            return array;
-        }
-
-
-        public static int[] createArrayDecrease(int count)
-        {
-            int[] array = new int[count];
-
-
-            for (int x = 0; x < count; x++)
-            {
-                array[x] = count - x;
-                // Console.WriteLine(array[x]);
-            }
-
-
-            return array;
-        }
-
-
-        public static void printArray(int[] array)
-        {
+            int[] array = new int[size];
 
             for (int x = 0; x < array.Length; x++)
             {
-                //Console.WriteLine(array[x]);
+                array[x] = x + 1;
             }
-
-            Console.WriteLine("[{0}]", string.Join(", ", array));           //gyula syntax
+            return array;
         }
 
-        public static int[] makeACopy(int[] originals)
+        public static int[] CreateArray2(int size)
         {
-            int[] arrayCopy = new int[originals.Length];
+            int[] array = new int[size];
 
-            for (int x = 0;x < originals.Length; x++)
+            for (int x = 0; x < array.Length; x++)
             {
-                arrayCopy[x] = originals[x];
+                array[x] = size - x;
             }
+            return array;
+        }
 
+        public static void PrintArray(int[] array)
+        {
+            Console.WriteLine("[{0}]", string.Join(", ", array));
+
+        }
+
+        public static int[] MakeACopy(int[] array)
+        {
+            int[] arrayCopy = new int[array.Length];
+
+            for(int x = 0;x < array.Length; x++)
+            {
+                arrayCopy[x] = array[x];
+            }
             return arrayCopy;
-
         }
 
-
-        public static int[] RandomNumberArray(int low, int up)
+        public static int[] RandomNumberArray(int low, int high, int size)
         {
-            int[] arrayRandom = new int[10];
+            int[] array = new int[size];
 
-
-            foreach (int x in arrayRandom)
+            for (int x = 0; x < array.Length; x++)
             {
-                arrayRandom[x] = random.Next(low, up);
-
-                Console.Write("[{0}]", arrayRandom[x].ToString());
+                int randomNumber = random.Next(low, high);
+                array[x] = randomNumber;
             }
-
-            Console.WriteLine("{0}", String.Join(";", arrayRandom));
-
-
-
-            Console.WriteLine();
-            Console.WriteLine("------------------");
-
-            for (int x = 0; x < 10; x++)
-            {
-                arrayRandom[x] = random.Next(low, up);
-                
-                Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
-
-            }
-            Console.WriteLine();
-            Console.WriteLine("[{0}]", string.Join(", ", arrayRandom[1], arrayRandom[4], arrayRandom[9]));                                      //gib den 2. 5.und 9. Wert des Arrays aus
-            Console.WriteLine("[{0}]", string.Join(", ", arrayRandom[1], arrayRandom[3], arrayRandom[5], arrayRandom[7], arrayRandom[9]));      // gib jeden 2. Wert des Arrays aus
-            Console.WriteLine();
-            Console.WriteLine("------------------");
-
-            return arrayRandom;
+            return array;
         }
 
-
-        public static int[] RandomNumberArrayCrazyRange(int low, int up)
+        public static void PrintArrayForEach(int[] array)
         {
-            int[] arrayRandom = new int[10];
-            
-            foreach ( int x in arrayRandom)
+            Console.Write("[");
+            foreach (int x in array)
             {
-                arrayRandom[x] = random.Next(low, up);
-
-                Console.Write("[{0}]", string.Join(", ", arrayRandom[x]));
+                Console.Write(x + ", ");
             }
-            return arrayRandom;
+            Console.WriteLine("]");
         }
 
-
-        public static int[] randomNumberArrayZählen (int low, int up)
+        public static void PrintArrayFor(int[] array)
         {
-            int[] randomNumber = new int[10];
-            Random random = new Random();
-
-            for( int x = 0; x < randomNumber.Length; x++)
+            Console.Write("[");
+            for (int x = 0; x < array.Length; x++)
             {
-                randomNumber[x] = random.Next(low, up);
-
-                if (randomNumber[x] >= 30)
+                if (x == array.Length - 1)
                 {
-                    Console.Write("[{0}]", randomNumber[x]);
+                    Console.Write(array[x]);
                 }
                 else
-                {                   
-                    Console.Write("XX");
+                {
+                    Console.Write(array[x] + ", ");
                 }
             }
-            return randomNumber;
+            Console.WriteLine("]");
+        }
+        public static void PrintArrayEverySec(int[] array)
+        {
+            Console.Write("[");
+            for (int x = 0; x < array.Length; x+=2)
+            {
+                if (x == 8)
+                {
+                    Console.Write(array[x]);
+                }
+                else
+                {
+                    Console.Write(array[x] + ", ");
+                }
+            }
+            Console.WriteLine("]");
         }
 
-
-        public static int[] randomNumberArraySumme (int low, int up)
+        public static int[] RandomNumberCrazyRange(int low, int high, int size)
         {
-            int[] randomNumber = new int[10];
-            Random random = new Random();
+            int[] array1 = new int[size];
+
+            for(int x = 0; x< array1.Length; x++)
+            {
+                int randomNumber = random.Next(low, high);
+                array1[x]= randomNumber;
+            }
+            return array1;
+        }
+
+        public static void PrintArrayBigger30(int[] array)
+        {
+            Console.Write("[");
+            for (int x = 0; x < array.Length; x++)
+            {
+                if (array[x] > 30)
+                {
+                    if (x == array.Length - 1)
+                    {
+                        Console.Write(array[x]);
+                    }
+                    else
+                    {
+                        Console.Write(array[x] + ", ");
+                    }
+                }
+                else
+                {
+                    if (x == array.Length - 1)
+                    {
+                        Console.Write("XX");
+                    }
+                    else
+                    {
+                        Console.Write("XX, ");
+                    }
+                }
+            }
+            Console.WriteLine("]");
+        }
+
+        public static int RandomNumberArraySumme(int[] array)
+        {
             int result = 0;
 
-            for ( int x = 0; x < randomNumber.Length; x++)
+            for(int x = 0; x < array.Length; x++)
             {
-                randomNumber[x] = random.Next(low, up);
-                result += randomNumber[x];
-
-                Console.Write("[{0}]", string.Join(", ", randomNumber[x]));
+                result += array[x]; 
             }
-            Console.WriteLine();
-            Console.WriteLine("Die Summe von den 10 Zahlen ist: " + result);
-
-            return randomNumber;
+            return result;
         }
 
-
-        public static int sum(int[] nums)
+        public static int RandomNumberArrayMin(int[] array)
         {
-            return 0;
+            int min = Int32.MaxValue;            
+            for (int x = 0; x < array.Length; x++)
+            {
+                if (array[x] < min)
+                {
+                    min = array[x];
+                }
+            }
+            return min;
         }
-
-
-        public static int[] randomNumberArrayMin(int low, int up)
+        
+        public static int RandomNumberArrayMax(int[] array)
         {
-            int[] randomNumber = new int[10];
-
-            return randomNumber;
+            int max  = Int32.MinValue;
+            for(int x = 0; x < array.Length; x++)
+            {
+                if (array[x] > max)
+                {
+                    max = array[x];
+                }
+            }
+            return max;
         }
 
-        public static int[] randomNumberArrayMax(int low, int up)
+        public static double RandomNumberArrayAvg(int[] array)
         {
-            int[] randomNumber = new int[10];
+            double summe = 0;
+            for(int x = 0;x < array.Length; x++)
+            {
+                  summe += array[x];
+            }
+            double avg = summe / array.Length;
 
-            return randomNumber;
+            return avg;
         }
 
-        public static int[] randomNumberArrayAvg(int low, int up)
+        public static int RandomNumberMinIndex(int[] array)
         {
-            int[] randomNumber = new int[10];
-
-            return randomNumber;
+            int min = Int32.MaxValue;
+            int minIndex = 0;
+            for (int x = 0; x < array.Length; x++)
+            {
+                if (array[x] < min)
+                {
+                    min = array[x];
+                    minIndex = x;
+                }
+            }            
+            return minIndex;
         }
- 
+
+        public static int RandomNumberMaxIndex(int[] array)
+        {
+            int max = Int32.MinValue;
+            int maxIndex = 0;
+            for (int x = 0; x < array.Length; x++)
+            {
+                if (array[x] > max)
+                {
+                    max = array[x];
+                    maxIndex = x;
+                }
+            }
+            return maxIndex;
+        }
+
+        public static int[] BubbleSortAscOrDesc(int[] array, bool ascOrDesc)
+        {
+            int temporaryMemoryAsc = 0;
+
+            if (ascOrDesc == true)
+            {
+                for (int x = 0; x < array.Length; x++)
+                {
+                    for (int y = 0; y < array.Length - 1; y++)
+                    {
+                        if (array[y] > array[y + 1])
+                        {
+                            temporaryMemoryAsc = array[y];
+                            array[y] = array[y + 1];
+                            array[y + 1] = temporaryMemoryAsc;
+                        }
+                    }
+                }
+                Console.WriteLine("The bool is true, the Array is ascending:");
+            }
+            else
+            {
+                int temporaryMemoryDesc = 0;
+                for (int x = 0; x < array.Length; x++)
+                {
+                    for (int y = 0; y < array.Length - 1; y++)
+                    {
+                        if (array[y] < array[y + 1])
+                        {
+                            temporaryMemoryDesc = array[y];
+                            array[y] = array[y + 1];
+                            array[y + 1] = temporaryMemoryDesc;
+                        }
+                    }
+                }
+                Console.WriteLine("The bool is false, the Array is descending:");
+            }
+            return array;
+        }
     }
 }
