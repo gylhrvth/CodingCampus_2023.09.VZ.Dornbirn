@@ -246,46 +246,52 @@ namespace Simon.Week03
         {
             Console.WriteLine("Willkommen beim Rechner ich kann für dich +,-,*,^ und / rechnen!");
             double result = 0;
-
+            double memory = 0;
             while (true)
             {
                 double userinput = Readuserinputlong(number1, error);
                 char userinputoperator = Readuserinputchar(chooseoperator, error);
+                while (true)
+                {
+                    if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.Write(error);
+                        userinputoperator = Readuserinputchar("", error);
+                    }
+                }
                 double userinput2 = Readuserinputlong(number2, error);
                 try
                 {
-                    while (true)
-                    {
-
-
-                        if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            Console.Write(error);
-                            userinputoperator = Readuserinputchar("", error);
-                        }
-                    }
                     if (userinputoperator == '+')
                     {
+                        Console.Write("Ergebnis: ");
                         result = userinput + userinput2;
+                        Console.WriteLine(result);
                     }
                     if (userinputoperator == '-')
                     {
+                        Console.Write("Ergebnis: ");
                         result = userinput - userinput2;
+                        Console.WriteLine(result);
                     }
                     if (userinputoperator == '*')
                     {
+                        Console.Write("Ergebnis: ");
                         result = userinput * userinput2;
+                        Console.WriteLine(result);
                     }
                     if (userinputoperator == '^')
                     {
 
                         for (int i = 0; i < userinput2; i++)
                         {
+                            Console.Write("Ergebnis: ");
                             result = userinput * userinput;
+                            Console.WriteLine(result);
                         }
                     }
                     if (userinputoperator == '/')
@@ -293,13 +299,16 @@ namespace Simon.Week03
                         if(userinput2 == 0)
                         {
                             Console.WriteLine("Eine Division durch 0 ist nicht möglich!");
+                            break;
                         }
                         else
                         {
+                            Console.Write("Ergebnis: ");
                             result = userinput / userinput2;
+                            Console.WriteLine(result);
                         }
                     }
-                    Console.WriteLine(result);
+                    //Console.WriteLine(result);
                 }
                 catch
                 {
@@ -320,41 +329,47 @@ namespace Simon.Week03
                     {
                         userinput2 = result;
                         userinputoperator = Readuserinputchar(chooseoperator, error);
+                        while (true)
+                        {
+                            if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.Write(error);
+                                userinputoperator = Readuserinputchar("", error);
+                            }
+                        }
                         userinput = Readuserinputlong("Bitte gib eine weithere Zahl ein mit welcher gerechnet werden soll", error);
                         try
                         {
-                            while (true)
-                            {
-
-
-                                if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
-                                {
-                                    break;
-                                }
-                                else
-                                {
-                                    Console.Write(error);
-                                    userinputoperator = Readuserinputchar("", error);
-                                }
-                            }
                             if (userinputoperator == '+')
                             {
+                                Console.Write("Zwischenergebnis: ");
                                 result = userinput + userinput2;
+                                Console.WriteLine(result);
                             }
                             if (userinputoperator == '-')
                             {
+                                Console.Write("Zwischenergebnis: ");
                                 result = userinput - userinput2;
+                                Console.WriteLine(result);
                             }
                             if (userinputoperator == '*')
                             {
+                                Console.Write("Zwischenergebnis: ");
                                 result = userinput * userinput2;
+                                Console.WriteLine(result);
                             }
                             if (userinputoperator == '^')
                             {
 
                                 for (int i = 0; i < userinput2; i++)
                                 {
+                                    Console.Write("Zwischenergebnis: ");
                                     result = userinput * userinput;
+                                    Console.WriteLine(result);
                                 }
                             }
                             if (userinputoperator == '/')
@@ -362,13 +377,16 @@ namespace Simon.Week03
                                 if (userinput2 == 0)
                                 {
                                     Console.WriteLine("Eine Division durch 0 ist nicht möglich!");
+                                    break;
                                 }
                                 else
                                 {
+                                    Console.Write("Zwischenergebnis: ");
                                     result = userinput / userinput2;
+                                    Console.WriteLine(result);
                                 }
                             }
-                            Console.WriteLine(result);
+                            //Console.WriteLine(result);
                         }
                         catch
                         {
