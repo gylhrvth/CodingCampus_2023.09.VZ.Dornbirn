@@ -1,2 +1,2 @@
-﻿Kerem.Exercises.RepetitionLoops.Start();
+﻿Kerem.Exercises.Methods_Loops.Start();
 

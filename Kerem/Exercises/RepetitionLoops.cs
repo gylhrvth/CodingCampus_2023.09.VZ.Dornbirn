@@ -31,6 +31,10 @@ namespace Kerem.Exercises
             {
                 Console.WriteLine("Der Zähler ist " + j);
             }
+            for( int h = 10; h >= -10; h--)
+            {
+                Console.WriteLine(h);
+            }
 
 
 
