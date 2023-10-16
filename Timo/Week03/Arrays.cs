@@ -304,7 +304,6 @@ namespace Timo.Week03
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe7.1 Min.
-        //ToDo 7.1 leeres Array!
         public static int Minimum(int[] arr)
         {
             int min = Int32.MaxValue;
@@ -330,9 +329,7 @@ namespace Timo.Week03
             }
         }
 
-        //Aufgabe7.2 Max.,
-        //ToDo 7.2 leeres Array!
-
+        //Aufgabe7.2 Max.
         public static int Maximum(int[] arr)
         {
             int max = Int32.MinValue;
@@ -353,8 +350,6 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.3 Avg
-        //ToDo 7.3 leeres Array!
-
         public static double Average(int[] arr)
         {
             double avg = (ArraySum(arr) * 1.00) / arr.Length;
@@ -368,8 +363,6 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.4 IndexMin
-        //ToDo 7.4 leeres Array!
-
         public static int IndexMinimum(int[] arr)
         {
             int indexMin = 0;
@@ -384,8 +377,6 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.5 IndexMax
-        //ToDo 7.5cd leeres Array!
-
         public static int IndexMaximum(int[] arr)
         {
             int indexMax = 0;
