@@ -1,3 +1,3 @@
 ﻿using Timo.Week03;
 
-Arrays.Start();
+ConsoleInputs.Start();
