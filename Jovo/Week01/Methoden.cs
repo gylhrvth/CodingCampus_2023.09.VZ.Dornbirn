@@ -130,7 +130,7 @@ namespace Jovo.Week01
 
 
         //Aufgabe Print Characters
-        static void PrintChars(String character, int times)
+        public static void PrintChars(String character, int times)
         {
             for (int i = 0; i < times; i++)
             {
