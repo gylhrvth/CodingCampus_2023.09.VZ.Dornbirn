@@ -7,12 +7,21 @@
     using System.Runtime.ConstrainedExecution;
     using System.Collections.Generic;
     using System.Drawing;
+    using System.Diagnostics.Metrics;
+    using System.Reflection.Emit;
+    using System.Windows;
+    using Microsoft.Win32.SafeHandles;
+
 
     internal class Array
     {
         public static Random rand = new Random();
+       
+
         public static void Start()
         {
+           
+
             // Aufagbe 1:
             Output("Number Array\n", ConsoleColor.Red);
             int size = ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
@@ -40,7 +49,7 @@
             randomArray = CreateRandomArray(size, 0, 101);  //macht Array mit random Zahlen von 0 bis 100
             OutputForUser(randomArray);     //Output für User
 
-            Console.WriteLine("\n\nJeder Zweiter Wert:");   //Gibt jeden zeiten Wert von dem Array aus
+            Console.WriteLine("\n\nJeder Zweiter Wert:");   //Gibt jeden zweiten Wert von dem Array aus
             for (int i = 1; i < randomArray.Length; i += 2)
             {
                 Console.Write("[{0}] ", string.Join(", ", randomArray[i]));
@@ -131,11 +140,44 @@
 
             //Aufagbe 9:
             Output("Aufgabe: 2D-Array\n", ConsoleColor.DarkMagenta);
-            int[,] randomArray2D= CreateRandomArray2D(size,0, 101);
-            OutputForUser2D(randomArray2D);
+            int[,] randomArray2D= CreateRandomArray2D(size,0, 101);     //macht Array2D mit random Zahlen von 0 bis 100
+            OutputForUser2D(randomArray2D);     //Output für User
             Console.WriteLine();
-            Summe2D(randomArray2D);
+            Summe2D(randomArray2D); //Output Summe für User
+            Console.WriteLine("\n----------------------------------------------------------");
 
+            //Aufagbe 10:
+            Output("Aufgabe: Pascal Dreieck\n", ConsoleColor.DarkCyan);
+            int [][] trinangel= GeneratePascalTriangle(size);
+            PrintPascalTriangle(trinangel);
+            Console.WriteLine("\n----------------------------------------------------------");
+
+            //Aufagbe 11:
+            Output("Aufgabe: Selection Sort \n", ConsoleColor.DarkYellow);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("ungeordnet: "); 
+            OutputForUser(randomArray);
+            SelectionSort(randomArray);     //ordnet Array 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("geordnet: "); 
+            OutputForUser(randomArray);     //Output für User
+            Console.ResetColor();
+            Console.WriteLine("\n----------------------------------------------------------");
+
+            //Aufagbe 12:
+            Output("Aufgabe: Insertion Sort \n", ConsoleColor.Cyan);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            InsertionSort(randomArray);  //ordnet Array
+            OutputForUser(randomArray); // Output für User
+            Console.WriteLine("\n----------------------------------------------------------");
+
+            //Aufagbe 13:
+            Output("Aufgabe: Gnome Sort \n", ConsoleColor.Magenta);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            GnomeSort(randomArray); //ordnet Array
+            OutputForUser(randomArray); //Output für User
+            Console.WriteLine("\n----------------------------------------------------------");
 
         }
 
@@ -156,6 +198,7 @@
                 }
             }
         }
+
         //Random Number:
         public static int[] CreateRandomArray(int size, int from, int to)
         {
@@ -217,7 +260,7 @@
         {
             Console.ForegroundColor = color;
             Console.WriteLine($"\n\nAufgabe: {output}");
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
 
             return output;
         }
@@ -238,6 +281,8 @@
             }
             Console.WriteLine("]");
         }
+
+
         public static void OutputForUser2D(int[,] randomArray)
         {
             for (int row = 0; row < randomArray.GetLength(0); row++)
@@ -249,6 +294,18 @@
                 Console.WriteLine();
             }
         }
+        public static void OutputForUser2D(int[][] randomArray)
+        {
+            for (int row = 0; row < randomArray.GetLength(0); row++)
+            {
+                for (int col = 0; col < randomArray.GetLength(1); col++)
+                {
+                    Console.Write($"{randomArray[row][col],-4}   ");
+                }
+                Console.WriteLine();
+            }
+        }
+
 
         // Aufgabe 1: Number Array
         public static int[] CreateArray2(int size)
@@ -326,7 +383,7 @@
             return avg;
         }
 
-        //Aufagbe 8:
+        //Aufagbe 8: Bubblesort mit Zahlen
         public static void Ascending(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -358,7 +415,7 @@
             }
         }
 
-        //Aufgabe 9:
+        //Aufgabe 9: Bubblesort mit Zahlen
         public static int Summe2D(int[,] randomArray)
         {
             int sum = 0;
@@ -370,12 +427,107 @@
                 {
                     sum = sum + randomArray[row, col];
                 }
-                Console.WriteLine($"Summe der Reihe {count}: {sum}");
+          
+                Console.WriteLine($"Summe der Reihe {count}:\x1B[4m{sum}\x1B[0m");
                 sum = 0;
                 count++;
             }
             return sum;
-            
+        }
+
+        //Aufagbe 10: Aufgabe: Pascal Dreieck --> funktioniert noch nicht
+        public static int[][] GeneratePascalTriangle(int size)
+        {
+            int[][] triangle = new int[size][];
+
+            for (int i = 0; i < size; i++)
+            {
+                triangle[i] = new int[i + 1];
+                triangle[i][0] = 1;
+
+                for (int j = 1; j < i; j++)
+                {
+                    triangle[i][j] = 1;
+                }
+            }
+         
+            return triangle;
+        }
+
+        public static void PrintPascalTriangle(int[][] triangle)
+        {
+            foreach (var row in triangle)
+            {
+                foreach (var number in row)
+                {
+                    Console.Write(number + " ");
+                }
+            }
+        }
+
+        //Aufagbe 11: The Sound of Sorting Algorithm Cheat Sheet
+        public static int[] SelectionSort(int[] randomArray)
+        {
+            for(int i=0; i < randomArray.Length -1 ; i++)
+            {
+                int min = i;
+                for(int j = i + 1; j < randomArray.Length; j++)
+                {
+                    if (randomArray[j] < randomArray[min])
+                    {
+                        min = j;
+                        int temp = randomArray[min];
+                        randomArray[min] = randomArray[i];
+                        randomArray[i] = temp;
+                    }
+                }
+            }
+            return randomArray;
+        }
+
+        //Aufage 12: The Sound of Sorting Algorithm Cheat Sheet
+        public static int[] InsertionSort(int[] randomArray)
+        {
+            for(int i= 1; i < randomArray.Length;i++)
+            {
+                int temp = randomArray[i];
+                int j = i - 1;
+
+                while (j >= 0 && randomArray[j] > temp)
+                {
+                    randomArray[j+1] = randomArray[j];
+                    j -= 1;
+                }
+                randomArray[j+1]= temp; 
+            }
+
+
+            return randomArray;
+        }
+
+        //Aufagbe 13: The Sound of Sorting Algorithm Cheat Sheet
+        public static int[] GnomeSort(int[] randomArray)
+        {
+            int index = 0;
+            while (index < randomArray.Length)
+            {
+                if (index == 0 || randomArray[index] >= randomArray[index - 1])
+                {
+                    index++;
+                }
+                else
+                {
+                    int temp = 0;
+                    temp = randomArray[index];
+                    randomArray[index] = randomArray[index - 1];
+                    randomArray[index - 1] = temp;
+                    index--;
+                }
+            }
+            return randomArray;
         }
     }
 }
+
+
+

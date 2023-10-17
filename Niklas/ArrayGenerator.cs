@@ -58,6 +58,31 @@ namespace Niklas
             }
             return arr;
         }
+        public static int[] CreateArrayRandomCustom(int size, int max, int min)
+        {
+            Console.WriteLine("How many random numbers do you wanna generate?");
+            size = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What should be the smallest number?");
+            min = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What should be the biggest number?");
+            max = Convert.ToInt32(Console.ReadLine());
+
+
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = rand.Next(101);
+            }
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i % 10 == 0)
+                {
+                    Console.WriteLine();
+                }
+                Console.Write(arr[i] + " ");
+            }
+            return arr;
+        }
     }
 }
 

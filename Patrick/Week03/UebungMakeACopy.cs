@@ -25,43 +25,43 @@ namespace Patrick.Week03
             // AUFGABE 2
             // AUFGABE 2
             // AUFGABE 2
-            //int[] array = createArrayIncrease(20);
-            //Console.WriteLine("Array mit aufsteigenden Zahlen");
-            //foreach (int i in array)
-            //{
-            //    Console.Write(i + " ");
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine("-----------------------");
+            int[] array = createArrayIncrease(20);
+            Console.WriteLine("Array mit aufsteigenden Zahlen");
+            foreach (int i in array)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("-----------------------");
 
 
-            //int[] arrayCopy = makeACopy(array);
-            //Console.WriteLine("Erstelle eine Kopie vom 1. Array");
-            //foreach (int i in arrayCopy)
-            //{
-            //    Console.Write(i + " ");
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine("-----------------------");
+            int[] arrayCopy = makeACopy(array);
+            Console.WriteLine("Erstelle eine Kopie vom 1. Array");
+            foreach (int i in arrayCopy)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("-----------------------");
 
 
-            //array[0] = 200;
+            array[0] = 200;
 
-            //Console.WriteLine("Den Arraywert an der 1. Stelle abgeändert");
-            //foreach (int i in array)
-            //{
-            //    Console.Write(i + " ");
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine("-----------------------");
+            Console.WriteLine("Den Arraywert an der 1. Stelle abgeändert");
+            foreach (int i in array)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("-----------------------");
 
-            //Console.WriteLine("Kopiertes Array nach der Änderung des Originals");
-            //foreach (int i in arrayCopy)
-            //{
-            //    Console.Write(i + " ");
-            //}
-            //Console.WriteLine();
-            //Console.WriteLine("-----------------------");
+            Console.WriteLine("Kopiertes Array nach der Änderung des Originals");
+            foreach (int i in arrayCopy)
+            {
+                Console.Write(i + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("-----------------------");
 
 
             //AUFGABE 3
@@ -100,11 +100,16 @@ namespace Patrick.Week03
             //printArray(array3);
 
             //AUFGABE 6
-            //RandomNumberArraySumme(1, 100, 10);
+            //RandomNumberArraySumme(1, 101, 10);
 
+            //AUFGABE 7
             //RandomNumberMin(randomNumberArray(0, 101, 100));
-            RandomNumberMax(randomNumberArray(0, 101, 100));
+            //RandomNumberMax(randomNumberArray(0, 101, 100));
             //RandomNumberAvg(randomNumberArray(0, 101, 5));
+
+            //AUFGABE 9 BUBBLESORT
+            printArray(BubbleSortAscending(randomNumberArray(0, 101, 10)));
+
 
         }
 
@@ -264,33 +269,33 @@ namespace Patrick.Week03
             //Console.WriteLine("  ....   ");
             int min = Int32.MaxValue;                                           // größt möglichste Zahl für den Datentyp int
             int howManyMin = 0;
-            int minNew = 0;
+            //int minNew = 0;
 
             for (int x = 0; x < array.Length; x++)
             {
                 if (array[x] < min)
-                {                   
+                {
                     //Console.WriteLine($"min ist aktuell = {min}");
                     min = array[x];
 
                     //Console.WriteLine($"neues min = {min}");
-                    howManyMin = 0;
+                    //howManyMin = 0;
                 }
-                if (min == array[x])
+                //if (min == array[x])
+                //{
+                //    minNew = array[x];                                      // Wie viele minimale Zahlen sind vorhanden --> mit nur einer  For-Schleife
+                //    howManyMin++;
+                //}
+            }
+            for (int x = 0; x < array.Length; x++)                        // Wie viele minimale Zahlen sind vorhanden --> mit einer seperaten For-Schleife
+            {
+                if (array[x] == min)
                 {
-                    minNew = array[x];                                      // Wie viele minimale Zahlen sind vorhanden --> mit nur einer  For-Schleife
-                    howManyMin++;
+                    ++howManyMin;
                 }
             }
-            //for (int x = 0; x < array.Length; x++)                        // Wie viele minimale Zahlen sind vorhanden --> mit einer seperaten For-Schleife
-            //{
-            //    if (array[x] == min)
-            //    {
-            //        ++howManyMin;                  
-            //    }
-            //}
             Console.WriteLine();
-            Console.WriteLine($"Die Zahl {minNew} wurde {howManyMin} mal ausgegeben");
+            Console.WriteLine($"Die Zahl {min} wurde {howManyMin} mal ausgegeben");
             return min;
         }
 
@@ -312,7 +317,7 @@ namespace Patrick.Week03
                     howManyMax = 0;
                 }
 
-                if ( max == array[x])
+                if (max == array[x])
                 {
                     maxNew = array[x];                                  // Wie viele Maximale Zahlen sind vorhanden --> in nur einer For-Schleife
                     howManyMax++;
@@ -333,24 +338,39 @@ namespace Patrick.Week03
         public static double RandomNumberAvg(int[] array)
         {
             printArrayFor(array);
-            
+
             double summe = 0;
 
-            for(int x = 0; x< array.Length; x++)
+            for (int x = 0; x < array.Length; x++)
             {
                 summe += array[x];
             }
 
             double avg = summe / array.Length;
-
+            Console.WriteLine();
             Console.WriteLine($"mein Average ist {avg}");
 
             return avg;
         }
 
+        public static int[] BubbleSortAscending(int[] array)
+        {
+            int temporaryMemory = 0;
 
-
-
+            for (int x = 0; x < array.Length; x++)
+            {
+                for (int y = 0; y < array.Length - 1; y++)
+                {
+                    if (array[y] > array[y + 1])
+                    {
+                        temporaryMemory = array[y];
+                        array[y] = array[y + 1];
+                        array[y + 1] = temporaryMemory;
+                    }
+                }
+            }         
+            return array;
+        }
 
 
     }

@@ -1,3 +1,2 @@
-﻿using Kerem.Week03;
+﻿Kerem.Week03.ArrayExamples.StartArrayExamples();
 
-ArrayExamples.StartArrayExamples();

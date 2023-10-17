@@ -126,11 +126,16 @@ namespace Jovo.Week01
             Console.WriteLine();
 
 
+            Console.WriteLine("PrintChristmasTree");
+            PrintChristmasTree(9, "x");
+            Console.WriteLine();
+
+
         }
 
 
         //Aufgabe Print Characters
-        static void PrintChars(String character, int times)
+        public static void PrintChars(String character, int times)
         {
             for (int i = 0; i < times; i++)
             {
@@ -623,13 +628,59 @@ namespace Jovo.Week01
         }
 
 
+        public static void PrintChristmasTree(int size, string symbol)
+        {
+            for (int x = 0; x < size; x++)
+            {
+                {
+                    for (int y = size - 1; y > x; y--)
+                    {
+                        Console.Write(" ");
+                    }
+                    for (int z = -1; z < x; z++)
+                    {
+                        Console.Write(symbol);
+                    }
+                    for (int z = 0; z < x; z++)
+                    {
+                        Console.Write(symbol);
+                    }
+                    for (int y = size; y > x; y--)
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            for (int y = 0; y < size; ++y)
+            {
+                Console.Write("O");
+                Console.Write(" ");
+            }
+            Console.WriteLine();
+            for (int y = 0; y < size / 4; ++y)
+            {
+                for (int x1 = 0; x1 < size - 3; ++x1)
+                {
+                    Console.Write(" ");
+                }
+                for (int x2 = 0; x2 < size - 4; ++x2)
+                {
+                    Console.Write("+");
+                }
+                for (int x3 = 0; x3 < size - 3; ++x3)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+        }
 
-        
-        
 
 
 
-        
+
+
 
     }
 
