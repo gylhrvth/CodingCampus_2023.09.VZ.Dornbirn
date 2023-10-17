@@ -1,3 +1,3 @@
 ﻿using Martin.Week03;
 
-Arrays.StartArrays();
+Martin.Week04.Algorithms.StartBubbleSort();
