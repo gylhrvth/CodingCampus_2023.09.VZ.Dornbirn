@@ -21,7 +21,7 @@ namespace Erik.Week03
 
         public static int GuessingGameUserIntro()
         {
-            Console.WriteLine("Welcome to the guessing Game! \n\nEnter a number to declare the maximum Range of the number to guess!");
+            Console.WriteLine("Welcome to the guessing Game! \n\nEnter a number to declare the maximum range of the number to guess!");
             Console.Write("Your Number: ");
             int userInput = Convert.ToInt32(Console.Read());
             Console.WriteLine("=======================================================================");
@@ -39,14 +39,14 @@ namespace Erik.Week03
         {
 
             Console.Write("Your Number: ");
-            int userGuessingNumbers = Convert.ToInt32(Console.Read());
+            int userGuessingNumbers = Convert.ToInt32(Console.Read()); //error not stop to reading linegit
 
             if (userGuessingNumbers != randomNumber)
             {
                 do
                 {
                     Console.WriteLine("Next Try");
-                    userGuessingNumbers = Convert.ToInt32(Console.Read());
+                    userGuessingNumbers = Convert.ToInt32(Console.ReadLine());
                 }
                 while (userGuessingNumbers != randomNumber);
 
