@@ -64,12 +64,13 @@ namespace Mohammed.Week03
 
 
 
-
-
             foreach (int element in copy)
             {
                 Console.Write(element + " ");
             }
+
+
+
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine("RandomNumber");
@@ -116,7 +117,6 @@ namespace Mohammed.Week03
             PrintMyArray(random);
             PrintMyArray(bubbleArray);
             PrintMyArray(Bubblesort(bubbleArray));
-
 
 
 
