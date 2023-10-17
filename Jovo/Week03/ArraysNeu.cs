@@ -136,9 +136,9 @@ namespace Jovo.Week03
             int[] array2 = SortArraysDescending(arr);
             Console.WriteLine("======================");
 
+            int[] randArrNew = RandomNumberArray(10);
 
-           
-
+        
         }
 
 
@@ -332,6 +332,8 @@ namespace Jovo.Week03
 
 
         }
+
+
 
 
 
