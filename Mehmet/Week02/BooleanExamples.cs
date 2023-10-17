@@ -147,15 +147,15 @@ namespace Mehmet.Week02
             Console.WriteLine();
             for ( int y = 0;y < size /4; ++y)
             {
-                for (int x1= 0; x1 < size -3 ; ++x1)
+                for (int x1= 0; x1 < size * 0.6 ; ++x1)
                 {
                     Console.Write(" ");
                 }
-                for (int x2 = 0; x2 < size - 4; ++x2)
+                for (int x2 = 0; x2 < size *0.8 ; ++x2)
                 {
                     Console.Write("+");
                 }
-                for (int x3 = 0; x3 < size - 3; ++x3)
+                for (int x3 = 0; x3 < size  ; ++x3)
                 {
                     Console.Write(" ");
                 }
