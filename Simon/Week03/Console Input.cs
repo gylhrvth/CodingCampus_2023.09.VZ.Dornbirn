@@ -173,7 +173,7 @@ namespace Simon.Week03
                     {
                         if (userinput == 1)
                         {
-                            Methoden___Schleifen.PrintChristmasTree(Readuserinputint(howbig + "Christbaum sein?", errormsg), ReaduserinputString(askzeichen));
+                            Methoden___Schleifen.PrintChristmasTree(Readuserinputint(howbig + "Christbaum sein?", errormsg), Readuserinputchar(askzeichen, errormsg));
                             askinput = false;
                         }
                         else if (userinput == 2)
@@ -299,7 +299,7 @@ namespace Simon.Week03
                         if(userinput2 == 0)
                         {
                             Console.WriteLine("Eine Division durch 0 ist nicht möglich!");
-                            break;
+                            
                         }
                         else
                         {
@@ -377,7 +377,7 @@ namespace Simon.Week03
                                 if (userinput2 == 0)
                                 {
                                     Console.WriteLine("Eine Division durch 0 ist nicht möglich!");
-                                    break;
+
                                 }
                                 else
                                 {
@@ -394,11 +394,8 @@ namespace Simon.Week03
                         }
                     }
                 }
-
-
-
-
             }
+            // beim weiterrechnen durch 0 bricht programm nicht ab
 
 
         }

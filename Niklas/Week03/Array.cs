@@ -15,64 +15,78 @@ namespace Niklas.Week03
         public static Random random = new Random();
         public static void Start()
         {
+            
 
             int[] arr1 = CreateArrayRandom(10, 0, 101);
             int[] arr2 = CreateArrayRandom(100, 0, 101);
 
-            Console.WriteLine("\nAscending: ");
-            int[] arr = new int[1];
-            CreateArrayAsc(arr1);
 
-            Console.WriteLine("\nDescending: ");
-            CreateArrayDesc(10);
 
-            Console.WriteLine("\nCopy: ");
-            int[] original = CreateArray(10);
-            int[] newArray = MakeACopy(original);
 
+            ////Console.WriteLine("How many random numbers do you wanna generate?");
+            ////int size = Convert.ToInt32(Console.ReadLine());
+            ////Console.WriteLine("What should be the smallest number?");
+            ////int min = Convert.ToInt32(Console.ReadLine());
+            ////Console.WriteLine("What should be the biggest number?");
+            ////int max = Convert.ToInt32(Console.ReadLine());
+
+            ////int[] arr3 = ArrayGenerator.CreateArrayRandomCustom(size, min, max);
+
+
+            //Console.WriteLine("\nAscending: ");
+            //int[] arr = new int[1];
+            //CreateArrayAsc(arr1);
+
+            //Console.WriteLine("\nDescending: ");
+            //CreateArrayDesc(10);
+
+            //Console.WriteLine("\nCopy: ");
+            //int[] original = CreateArray(10);
+            //int[] newArray = MakeACopy(original);
+
+            ////Console.WriteLine("[{0}]", string.Join(", ", original));
+            ////Console.WriteLine("[{0}]", string.Join(", ", newArray));
+            //PrintArray(original);
+            //PrintArray(newArray);
+            //Console.WriteLine("==================================");
+
+            //Console.WriteLine("\nRandom Number: ");
+            //RandomNumber();
+
+            //Console.WriteLine("\nSecond, fifth and thenth: ");
+            //PrintSecondFifthandTenth();
+
+            //Console.WriteLine("\nEvery second value: ");
+            //EverySecondValue();
+
+            ///*
+            //newArray[0] = -10;
+            //PrintArray(original);
+            //PrintArray(newArray);
+            ////Console.WriteLine("[{0}]", string.Join(", ", original));
+            ////Console.WriteLine("[{0}]", string.Join(", ", newArray));
+
+            //Console.WriteLine("=================================");
             //Console.WriteLine("[{0}]", string.Join(", ", original));
-            //Console.WriteLine("[{0}]", string.Join(", ", newArray));
-            PrintArray(original);
-            PrintArray(newArray);
-            Console.WriteLine("==================================");
+            //PrintArray(original); */
 
-            Console.WriteLine("\nRandom Number: ");
-            RandomNumber();
+            //Console.WriteLine("\nRandom Crazy Number: ");
+            //CrazyRandomNumber();
 
-            Console.WriteLine("\nSecond, fifth and thenth: ");
-            PrintSecondFifthandTenth();
+            //Console.WriteLine("......................");
+            //int treshhold = 30;
+            //int cnt = countBiggerThen(original, treshhold);
+            //Console.WriteLine("Count bigger then {0}: {1}", treshhold, cnt);
 
-            Console.WriteLine("\nEvery second value: ");
-            EverySecondValue();
+            //Console.WriteLine("[{0}]", string.Join(", ", arr1));
 
-            /*
-            newArray[0] = -10;
-            PrintArray(original);
-            PrintArray(newArray);
-            //Console.WriteLine("[{0}]", string.Join(", ", original));
-            //Console.WriteLine("[{0}]", string.Join(", ", newArray));
+            //Console.WriteLine("______________________");
+            //Console.WriteLine("Summe: {0,4}", ArraySumme(arr1));
 
-            Console.WriteLine("=================================");
-            Console.WriteLine("[{0}]", string.Join(", ", original));
-            PrintArray(original); */
-
-            Console.WriteLine("\nRandom Crazy Number: ");
-            CrazyRandomNumber();
-
-            Console.WriteLine("......................");
-            int treshhold = 30;
-            int cnt = countBiggerThen(original, treshhold);
-            Console.WriteLine("Count bigger then {0}: {1}", treshhold, cnt);
-
-            Console.WriteLine("[{0}]", string.Join(", ", arr1));
-
-            Console.WriteLine("______________________");
-            Console.WriteLine("Summe: {0,4}", ArraySumme(arr1));
-
-            Console.WriteLine("______________________");
-            Console.WriteLine("Average: {0,4}", ArrayAvg(arr1));
-            Console.WriteLine("Min: {0,4}", ArrayMin(arr1));
-            Console.WriteLine("Max: {0,4}", ArrayMax(arr1));
+            //Console.WriteLine("______________________");
+            //Console.WriteLine("Average: {0,4}", ArrayAvg(arr1));
+            //Console.WriteLine("Min: {0,4}", ArrayMin(arr1));
+            //Console.WriteLine("Max: {0,4}", ArrayMax(arr1));
 
             Console.WriteLine("______________________");
             Console.WriteLine("Unsorted: [{0}]", string.Join(", ", arr1));
@@ -81,12 +95,20 @@ namespace Niklas.Week03
             BubbleSortDesc(arr1);
             Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
 
-            Console.WriteLine("______________________");
-            TwoDArray(arr2);
+            //Console.WriteLine("CHoose the size of your random numbers!");
+            //int size = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("What should be the smallest number?");
+            //int min = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("What should be the biggest number?");
+            //int[] max = Convert.ToInt32(Console.ReadLine());
 
-        }
+            //BubbleSortCustom(size, min, max);
+            //Console.WriteLine("Bubblesort Custom: " + string.Join(", ", size, min, max));
 
+            //Console.WriteLine("______________________");
+            //TwoDArray(arr2);
 
+        }       
 
         public static void PrintArray(int[] array)
         {
@@ -293,6 +315,24 @@ namespace Niklas.Week03
 
         }
 
+        public static void BubbleSortCustom(int[] size, int[] min, int[] max)
+        {
+            int steps = 0;
+            for (int i = 0; i < size.Length - i - 1; i++)
+            {
+                for (int j = 0; j < size.Length - 1 - i; j++)
+                {
+                    if (min[j] > max[j + 1])
+                    {
+                        int temp = min[j];
+                        min[j] = max[j + 1];
+                        max[j + 1] = temp;
+                    }
+                    steps++;
+                }
+            }
+            Console.WriteLine("Size: " + size + " Steps: " + steps);
+        }
         public static void TwoDArray(int[] size)
         {
             int[] arr = new int[100];
@@ -308,6 +348,8 @@ namespace Niklas.Week03
                 foreach (int value in arr)
                 {
                     sum += value;
+                    Console.Write(arr[i] + " ");
+                    Console.Write(" | Summe = " + sum);
                 }
             }
 
@@ -315,9 +357,9 @@ namespace Niklas.Week03
             {
                 if (i % 10 == 0 && i > 0)
                 {
-                    Console.WriteLine(" | Summe = " + sum);
+
                 }
-                Console.Write(arr[i] + " ");
+
             }
             sum = 0;
         }

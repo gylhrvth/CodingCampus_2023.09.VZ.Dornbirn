@@ -59,11 +59,11 @@ namespace Niklas.Week01
             Console.WriteLine();
 
             Console.WriteLine("\n print Christmastree: ");
-            PrintTree(4);
+            PrintTree("*", 4);
             Console.WriteLine();
         }
 
-        static void PrintChars(String character, int times)
+        public static void PrintChars(String character, int times)
         {
             for (int i = 0; i < times; i++)
             {
@@ -74,7 +74,7 @@ namespace Niklas.Week01
 
 
 
-        static void PrintSquare(String character, int times)
+        public static void PrintSquare(String character, int times)
         {
             for (int k = 0; k < times; k++)
             {
@@ -86,7 +86,7 @@ namespace Niklas.Week01
             }
         }
 
-        static void PrintRect(String character, int times, int rows)
+        public static void PrintRect(String character, int times, int rows)
         {
             for (int l = 0; l < rows; l++)
             {
@@ -98,7 +98,7 @@ namespace Niklas.Week01
             }
         }
 
-        static void PrintTriangleBottomLeft(String character, int times)
+        public static void PrintTriangleBottomLeft(String character, int times)
         {
             for (int n = 0; n < times; n++)
             {
@@ -110,7 +110,7 @@ namespace Niklas.Week01
             }
         }
 
-        static void PrintTriangleTopLeft(String character, int times)
+        public static void PrintTriangleTopLeft(String character, int times)
         {
             for (int n = 0; n < times; n++)
             {
@@ -122,7 +122,7 @@ namespace Niklas.Week01
             }
         }
 
-        static void PrintTriangleTopRight(String character, int times)
+        public static void PrintTriangleTopRight(String character, int times)
         {
             for (int n = 0; n < times; n++)
             {
@@ -139,7 +139,7 @@ namespace Niklas.Week01
             }
         }
 
-        static void PrintTriangleBottomRight(String character, int times)
+        public static void PrintTriangleBottomRight(String character, int times)
         {
             for (int n = 0; n <= times; n++)
             {
@@ -155,7 +155,7 @@ namespace Niklas.Week01
                 }
             }
         }
-        static void PrintEmptySquare(String character, int times)
+        public static void PrintEmptySquare(String character, int times)
         {
             for (int i = 0; i < times; i++)
             {
@@ -178,7 +178,7 @@ namespace Niklas.Week01
                 Console.Write(character);
             }
         }
-        static void PrintSlash(String character, int times, bool cases)
+        public static void PrintSlash(String character, int times, bool cases)
         {
             if (cases == true)
             {
@@ -204,7 +204,7 @@ namespace Niklas.Week01
             }
         }
 
-        static void PrintTriangle(String character, int times)
+        public static void PrintTriangle(String character, int times)
         {
             int i, f, n = times;
             for (i = 0; i < n; i++)
@@ -225,7 +225,7 @@ namespace Niklas.Week01
 
         }
 
-        static void PrintRhombus(String character, int times)
+        public static void PrintRhombus(String character, int times)
         {
             int i, j, n = times / 2;
             for (i = 0; i < n; i++)
@@ -265,7 +265,7 @@ namespace Niklas.Week01
         }
 
 
-        static void PrintX(String character, int times)
+        public static void PrintX(String character, int times)
         {
             int i, j, n = times / 2 / 2;
             for (i = n; i >= 1; i--)
@@ -308,7 +308,7 @@ namespace Niklas.Week01
 
 
 
-        static void PrintTree(int times)
+        public static void PrintTree(String symbol, int times)
         {
             if (times % 2 == 0)
             {
@@ -326,7 +326,7 @@ namespace Niklas.Week01
 
                 for (j = 0; j <= 2 * i; j++)
                 {
-                    Console.Write("*");
+                    Console.Write(symbol);
                 }
                 Console.WriteLine();
 

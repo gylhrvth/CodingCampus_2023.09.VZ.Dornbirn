@@ -223,7 +223,7 @@ namespace Sven.Week02
         }
 
 
-        public static void SortAscending(int[] arr)
+        public static int[] SortAscending(int[] arr)
         {
             int temp = 0;
 
@@ -238,28 +238,32 @@ namespace Sven.Week02
                         arr[sort] = temp;
                     }
                 }
-                Console.Write("{0} ", arr[count]);
+                Console.WriteLine(String.Join(", ", arr));
+
 
             }
+            return arr;
 
         }
-        public static void SortDescending(int[] arr)
+
+        public static int[] SortDescending(int[] arr)
         {
             int temp = 0;
 
-            for (int count = 0; count < arr.Length ; count++)
+            for (int count = 0; count < arr.Length; count++)
             {
                 for (int sort = 0; sort < arr.Length - 1; sort++)
                 {
-                    if (arr[sort] > arr[sort + 1])
+                    if (arr[sort + 1] > arr[sort])
                     {
                         temp = arr[sort + 1];
                         arr[sort + 1] = arr[sort];
                         arr[sort] = temp;
                     }
                 }
-                Console.Write("{0} ", arr[count]);
+                Console.WriteLine(String.Join(", ", arr));
             }
+            return arr;
         }
     }
 }
