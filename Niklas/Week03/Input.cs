@@ -1,5 +1,6 @@
 ﻿using Niklas.Week01;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -30,15 +31,19 @@ namespace Niklas.Week03
 
             Console.WriteLine("______________________________________");
 
-            
+            Console.WriteLine("What do you wanna draw?");
+           // char[] n = {Char, Square};
+            Console.WriteLine();
+            int form = Convert.ToInt32(Console.ReadLine());
+
 
             Console.WriteLine("What size do you want? ");
             int size = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("What symbol do you want? ");
-            int symbol = Convert.ToInt32(Console.ReadLine());
+            char symbol = Convert.ToChar(Console.ReadLine());
 
 
-            Menu(size, symbol);
+            Menu(symbol, size, form);
         }
 
         static int StringEinlesen(string input)
@@ -164,15 +169,46 @@ namespace Niklas.Week03
         }
 
 
-        static int Menu(int symbol, int size)
+        static int Menu(char symbol, int size, int form)
         {
-            Methoden.PrintChars(Convert.ToString(size), symbol);
 
 
+            if (form == 1)
+            {
+                Methoden.PrintChars(Convert.ToString(symbol), size);
+            }
+            if (form == 2)
+            {
+                Methoden.PrintSquare(Convert.ToString(symbol), size);
+            }
+            if (form == 3)
+            {
 
+            }
+            if (form == 4)
+            {
 
+            }
+            if (form == 5)
+            {
 
+            }
+            if (form == 6)
+            {
 
+            }
+            if (form == 7)
+            {
+
+            }
+            if (form == 8)
+            {
+
+            }
+            if (form == 9)
+            {
+
+            }
 
 
 
