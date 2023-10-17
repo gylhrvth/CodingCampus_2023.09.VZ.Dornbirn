@@ -195,6 +195,7 @@ namespace Gheorghe.Week03
 
             {
                 Console.Write(element);
+                Console.Write(" , ");
             }
         }
 
