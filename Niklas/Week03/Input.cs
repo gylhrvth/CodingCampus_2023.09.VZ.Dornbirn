@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Niklas.Week01;
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -12,15 +15,35 @@ namespace Niklas.Week03
     {
         public static void Start()
         {
-            int readString = StringEinlesen("Please enter your a Number: ");
+            //  int readString = StringEinlesen("Please enter your a Number: ");
 
-            int readNumber = ZahlEinlesen("Please enter a number: ", "That's not a number! Try again: ");
-            Console.WriteLine("Your number is: " + readNumber);
+            // int readNumber = ZahlEinlesen("Please enter a number: ", "That's not a number! Try again: ");
+            //  Console.WriteLine("Your number is: " + readNumber);
 
-            RateSpiel();
+            //RateSpiel();
 
-            int max = RateSpielCustom(Convert.ToInt32("How large do you want the number to be?"));
 
+            Console.WriteLine("What is the min number? ");
+            int min = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What is the max number? ");
+            int max = Convert.ToInt32(Console.ReadLine());
+            RateSpielCustom(max, min);
+
+            Console.WriteLine("______________________________________");
+
+            Console.WriteLine("What do you wanna draw?");
+           // char[] n = {Char, Square};
+            Console.WriteLine();
+            int form = Convert.ToInt32(Console.ReadLine());
+
+
+            Console.WriteLine("What size do you want? ");
+            int size = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("What symbol do you want? ");
+            char symbol = Convert.ToChar(Console.ReadLine());
+
+
+            Menu(symbol, size, form);
         }
 
         static int StringEinlesen(string input)
@@ -94,43 +117,104 @@ namespace Niklas.Week03
 
         }
 
-        static int RateSpielCustom(int max)
+        static int RateSpielCustom(int maxnumber, int minnumber)
+        {
+            while (true)
+            {
+                Random rand = new Random();
+                int min = minnumber;
+                int max = maxnumber;
+                int guess;
+                int number;
+                string response;
+
+                guess = 0;
+                response = "";
+                number = rand.Next(min, max + 1);
+
+                try
+                {
+
+                    while (guess != number)
+                    {
+
+                        Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
+                        guess = Convert.ToInt32(Console.ReadLine());
+                        if (guess > number && guess <= max)
+                        {
+                            Console.WriteLine(guess + " is too big!");
+                        }
+                        if (guess < number && guess >= min)
+                        {
+                            Console.WriteLine(guess + " is too low!");
+                        }
+                        if (guess == number)
+                        {
+                            Console.WriteLine("You have won! The number was: " + number);
+                        }
+                        else if (guess < min || guess > max)
+                        {
+                            Console.WriteLine(guess + " is not a valid number!");
+                        }
+                    }
+
+
+                }
+                catch (FormatException exc)
+                {
+                    Console.Error.WriteLine("You can only write numbers!");
+                }
+                return number;
+            }
+        }
+
+
+        static int Menu(char symbol, int size, int form)
         {
 
-            Random rand = new Random();
-            int min = 0;
-            max = Convert.ToInt32(Console.ReadLine());
-            int guess;
-            int number;
-            string response;
 
-            guess = 0;
-            response = "";
-            number = rand.Next(min, max + 1);
-
-            while (guess != number)
+            if (form == 1)
             {
-                Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
-                guess = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Guess: " + guess);
-                if (guess > number && guess <= max)
-                {
-                    Console.WriteLine("Your number is too big!");
-                }
-                if (guess < number && guess >= min)
-                {
-                    Console.WriteLine("Your number is too low!");
-                }
-                if (guess == number)
-                {
-                    Console.WriteLine("You have won! The number was: " + number);
-                }
-                else if (guess < min || guess > max)
-                {
-                    Console.WriteLine(guess + " is not a valid number!");
-                }
+                Methoden.PrintChars(Convert.ToString(symbol), size);
             }
-            return number;
+            if (form == 2)
+            {
+                Methoden.PrintSquare(Convert.ToString(symbol), size);
+            }
+            if (form == 3)
+            {
+
+            }
+            if (form == 4)
+            {
+
+            }
+            if (form == 5)
+            {
+
+            }
+            if (form == 6)
+            {
+
+            }
+            if (form == 7)
+            {
+
+            }
+            if (form == 8)
+            {
+
+            }
+            if (form == 9)
+            {
+
+            }
+
+
+
+
+            return 1;
         }
+
     }
 }
