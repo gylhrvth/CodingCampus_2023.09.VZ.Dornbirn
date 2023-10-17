@@ -43,7 +43,6 @@ namespace Jovo.Week03
             Console.WriteLine("=========================");
 
 
-
             Console.WriteLine("OriginalVerändert");
             original[4] = 34;
             original[2] = 71;
@@ -55,8 +54,6 @@ namespace Jovo.Week03
             Console.WriteLine();
             Console.WriteLine("============================================");
             Console.WriteLine();
-
-
 
 
             Console.WriteLine("RandomNumberArray");
@@ -127,12 +124,21 @@ namespace Jovo.Week03
             Console.WriteLine("=========================");
 
 
-
+            Console.WriteLine("BubbleSortAscending");
             Console.WriteLine();
-            int[] array = SortArray(arr);
-            
+            //int[] newArr = RandomNumberArrayCrazyRange(100, 0, 100); so neue array angeben
+            int[] array = SortArrayAscending(arr); //warum kann ich keine Zahl eingeben
+            Console.WriteLine("=========================");
 
 
+            Console.WriteLine("BubbleSortDescending");
+            Console.WriteLine();
+            int[] array2 = SortArraysDescending(arr);
+            Console.WriteLine("======================");
+
+            int[] randArrNew = RandomNumberArray(10);
+
+        
         }
 
 
@@ -193,12 +199,12 @@ namespace Jovo.Week03
 
         public static int[] RandomNumberArrayCrazyRange(int size, int num1, int num2)
         {
-            int[] CrazyArr = new int[size];
-            for (int i = 0; i < CrazyArr.Length; i++)
+            int[] crazyArr = new int[size];
+            for (int i = 0; i < crazyArr.Length; i++)
             {
-                CrazyArr[i] = rand.Next(num1, num2);
+                crazyArr[i] = rand.Next(num1, num2);
             }
-            return CrazyArr;
+            return crazyArr;
         }
 
 
@@ -271,7 +277,7 @@ namespace Jovo.Week03
 
 
 
-        public static int[] SortArray(int[] array)
+        public static int[] SortArrayAscending(int[] array)
         {
             int length = array.Length;
 
@@ -279,16 +285,18 @@ namespace Jovo.Week03
 
             for (int i = 0; i < length; i++)
             {
-                for (int j = i + 1; j < length; j++)
+                for (int j = 0; j < length - 1; j++)
                 {
-                    if (array[i] > array[j])
+                    if (array[j] > array[j + 1])
                     {
-                        temp = array[i];
+                        temp = array[j + 1];
 
-                        array[i] = array[j];
+                        array[j + 1] = array[j];
 
                         array[j] = temp;
                     }
+                    //jeder Schritt wird ausgegeben
+                    Console.WriteLine(String.Join(", ", array));
                 }
             }
 
@@ -296,7 +304,40 @@ namespace Jovo.Week03
 
         }
 
-        
+
+
+        public static int[] SortArraysDescending(int[] array2)
+        {
+            int length = array2.Length;
+
+            int temp = array2[0];
+
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < length - 1; j++)
+                {
+                    if (array2[j + 1] > array2[j])
+                    {
+                        temp = array2[j + 1];
+
+                        array2[j + 1] = array2[j];
+
+                        array2[j] = temp;
+                    }
+                    //jeder Schritt wird ausgegeben
+                    Console.WriteLine(String.Join(", ", array2));
+                }
+            }
+            return array2;
+
+
+        }
+
+
+
+
+
+
 
     }
 }
