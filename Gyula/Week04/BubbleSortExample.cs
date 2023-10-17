@@ -1,5 +1,4 @@
 ﻿using System;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 using static Gyula.Week03.ArrayGenerator;
 using static Gyula.Week03.ArrayTasks;
 

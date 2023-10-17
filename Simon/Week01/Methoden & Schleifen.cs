@@ -59,8 +59,8 @@ namespace Simon.Week01
             PrintX('x', 5);
 
             Console.WriteLine("\nPrint Christmastree");
-            PrintChristmasTree(20, "*");
-            PrintChristmasTree(2, "*");
+            PrintChristmasTree(20, '*');
+            PrintChristmasTree(2, '*');
 
             Console.WriteLine("\nPrint circle Pythagoras");
             PrintCirclePythagoras(10);
@@ -357,7 +357,7 @@ namespace Simon.Week01
 
         //Aufgabe Print Christmastree
 
-        public static void PrintChristmasTree(int number, String symbol)
+        public static void PrintChristmasTree(int number, char symbol)
         {
             //if (number % 3 == 0)
             //{
@@ -370,7 +370,7 @@ namespace Simon.Week01
                 int space = number - 1;
                 if (row == number - 1)
                 {
-                    PrintCharsString(symbol, number * 2 - 1);
+                    PrintChars(symbol, number * 2 - 1);
                     Console.WriteLine();
                 }
                 else if (row == 0)
@@ -386,7 +386,7 @@ namespace Simon.Week01
                     int space2 = a;
                     PrintChars(' ', space1);
                     Console.Write(symbol);
-                    PrintCharsString(symbol, space2);
+                    PrintChars(symbol, space2);
                     Console.Write(symbol);
                     Console.WriteLine();
                     a = a + 2;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week04
 {
-    internal class name_me
+    internal class mergeSort
     {
         public static Random random = new();
         public static void Start()
@@ -15,6 +15,17 @@ namespace Simon.Week04
 
         }
 
+        //public static int[] MergeSort(int[] arr, int lo, int hi)
+        //{
+        //    if(arr.Length <= 1)
+        //    {
+        //        return arr;
+        //    }
+
+
+
+            
+        //}
 
 
     }

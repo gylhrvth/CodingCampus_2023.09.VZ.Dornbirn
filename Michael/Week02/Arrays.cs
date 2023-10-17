@@ -21,29 +21,6 @@ namespace Michael.Week02
         public static Random rnd = new Random();
 
 
-        public static void NumberArray()
-        {
-            int size = ConsoleInputs.IntInput("how big should our array be?");
-
-            int[] myArray = new int[size];
-            int[] myArrayReversed = new int[size];
-
-            for (int i = 0; i < size; i++)
-            {
-                myArray[i] = i + 1;
-                myArrayReversed[i] = size - i;
-            }
-
-            Console.WriteLine("normal array:");
-
-            printIntArray(myArray);
-
-            Console.WriteLine("\n\nreversed array:");
-
-            printIntArray(myArrayReversed);
-        }
-
-
         public static int[] ascendingArray(int length)
         {
             int[] array = new int[length];
@@ -137,20 +114,16 @@ namespace Michael.Week02
         }
 
 
-        public static void crazyArray()
+        public static int[] crazyArray(int size, int min, int max)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[40];
+            int[] randomIntegers = new int[size];
 
             for (int i = 0; i < randomIntegers.Length; i++)
             {
-                randomIntegers[i] = rnd.Next(-50, 51);
+                randomIntegers[i] = rnd.Next(min, max);
             }
 
-            foreach (int number in randomIntegers)
-            {
-                Console.Write(number + " ");
-            }
+            return randomIntegers;
         }
 
 
@@ -191,7 +164,7 @@ namespace Michael.Week02
         }
 
 
-        public static int randomNumberArrayMax(int[] array, int minRange, int maxRange)
+        public static int randomNumberArrayMax(int[] array)
         {
             int max = array[0];
 
@@ -203,10 +176,11 @@ namespace Michael.Week02
                 }
             }
             return max;
-        }
+        } 
 
 
-        public static int randomNumberArrayMin(int[] array, int minRange, int maxRange)
+
+        public static int randomNumberArrayMin(int[] array)
         {
             int min = array[0];
 
@@ -394,7 +368,7 @@ namespace Michael.Week02
                 }
             }
             return array;
-        }
+        } 
 
 
         public static int[] mergeSortAscending(int[] array)
@@ -424,6 +398,43 @@ namespace Michael.Week02
             }
 
             return result;
+        }
+
+
+        public static void BubbleMenu(int[] array)
+        {
+            bool correctInput = false;
+            bool ascending = false;
+            do
+            {
+                Console.WriteLine("do you want it ascending (a) or descending (d)?");
+                string? userInput = Console.ReadLine().ToLower();
+
+                switch (userInput)
+                {
+                    case "a":
+                    case "asc":
+                    case "ascending":
+                        ascending = true;
+                        correctInput = true;
+                        break;
+                    case "d":
+                    case "des":
+                    case "descending":
+                        ascending = false;
+                        correctInput = true;
+                        break;
+                }
+            } while (!correctInput);
+
+            if (ascending)
+            {
+                printIntArray(bubbleSortAscending(array));
+            }
+            else
+            {
+                printIntArray(bubbleSortDescending(array));
+            }
         }
 
 
@@ -1149,7 +1160,7 @@ namespace Michael.Week02
             var watch2 = System.Diagnostics.Stopwatch.StartNew();
             watch2.Stop();
 
-            TicTacToe();
+            BubbleMenu(createRandomArray(20, 0, 100));
 
             /*
 
