@@ -62,19 +62,30 @@ namespace David.Week03
             // Max
             int max = Max(test);
             Console.WriteLine(max);
-
+		
             //indMAX
             int MAXind = indMAX(test);
             Console.WriteLine(MAXind);
+
+            int MINind = indMIN(test);
+            Console.WriteLine("new " + MINind);
+            
 
             //Durchscnnitt
             Console.WriteLine();
             int Ave = average(randarray);
             Console.WriteLine(Ave + " = Durchschnitt");
+
+          
         }
 
-        //----------Random Array 1--------------
-        public static int[] RandomA(int size) // Hier wird die Methode und size abgerufen.
+
+
+
+
+
+            //----------Random Array 1--------------
+            public static int[] RandomA(int size) // Hier wird die Methode und size abgerufen.
         {
 
             int[] arrayRand1 = new int[size];// Hier wird der eigentliche Arr erstellt und Speicher Reserviert
@@ -188,8 +199,6 @@ namespace David.Week03
         public static int average(int[] arr)
         {
             int summe = 0;
-           
-
             for (int i = 0; i < arr.Length; i++)
             {
                 summe += arr[i];
@@ -197,7 +206,20 @@ namespace David.Week03
             summe /= arr.Length;
             return summe;
         }
-        
+
+        public static int indMIN(int[] arr)
+        {
+            int minimalwert = 0;
+
+            for (int i=0; i <arr.Length; i++)
+            {
+                if (arr[i] > minimalwert)
+                {
+                    minimalwert = arr[i];
+                }
+            }
+            return minimalwert;
+        }
 
     }
 }

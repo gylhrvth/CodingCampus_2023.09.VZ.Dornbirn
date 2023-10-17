@@ -1,4 +1,4 @@
-﻿using Patrick.Week03;
-ExamplesArrays.start();
+﻿using Patrick.Week04;
+ConsoleInput.start();
 
 //Patrick.Week03.ExamplesArrays.start();

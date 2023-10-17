@@ -81,7 +81,9 @@ namespace Patrick.Week03
 
 
             //AUFGABE 8
-            PrintArrayFor(BubbleSortAscending(array));                                          //Bubblesort mit Zahlen
+            PrintArrayFor(BubbleSortAscOrDesc(array, false));                                     //Bubblesort mit Zahlen aufsteigend und absteigend
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
         }
 
 
@@ -301,21 +303,42 @@ namespace Patrick.Week03
             return maxIndex;
         }
 
-        public static int[] BubbleSortAscending(int[] array)
+        public static int[] BubbleSortAscOrDesc(int[] array, bool ascOrDesc)
         {
-            int temporaryMemory = 0;
+            int temporaryMemoryAsc = 0;
 
-            for (int x = 0; x < array.Length; x++)
+            if (ascOrDesc == true)
             {
-                for (int y = 0; y < array.Length - 1; y++)
+                for (int x = 0; x < array.Length; x++)
                 {
-                    if (array[y] > array[y + 1])
+                    for (int y = 0; y < array.Length - 1; y++)
                     {
-                        temporaryMemory = array[y];
-                        array[y] = array[y + 1];
-                        array[y + 1] = temporaryMemory;
+                        if (array[y] > array[y + 1])
+                        {
+                            temporaryMemoryAsc = array[y];
+                            array[y] = array[y + 1];
+                            array[y + 1] = temporaryMemoryAsc;
+                        }
                     }
                 }
+                Console.WriteLine("The bool is true, the Array is ascending:");
+            }
+            else
+            {
+                int temporaryMemoryDesc = 0;
+                for (int x = 0; x < array.Length; x++)
+                {
+                    for (int y = 0; y < array.Length - 1; y++)
+                    {
+                        if (array[y] < array[y + 1])
+                        {
+                            temporaryMemoryDesc = array[y];
+                            array[y] = array[y + 1];
+                            array[y + 1] = temporaryMemoryDesc;
+                        }
+                    }
+                }
+                Console.WriteLine("The bool is false, the Array is descending:");
             }
             return array;
         }
