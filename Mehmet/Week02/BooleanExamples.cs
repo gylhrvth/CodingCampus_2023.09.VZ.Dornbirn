@@ -24,7 +24,7 @@ namespace Mehmet.Week02
             Console.WriteLine();
 
             Console.WriteLine("PrintChristmasTree");
-            PrintChristmasTree(9);
+            PrintChristmasTree(9,"x");
             Console.WriteLine();
 
 
@@ -115,7 +115,7 @@ namespace Mehmet.Week02
         }
 
 
-        public static void PrintChristmasTree(int size)
+        public static void PrintChristmasTree(int size, string symbol)
         {
             for (int x = 0; x < size; x++)
             {
@@ -126,11 +126,11 @@ namespace Mehmet.Week02
                     }
                     for (int z = -1; z < x; z++)
                     {
-                        Console.Write("*");
+                        Console.Write(symbol);
                     }
                     for (int z = 0; z < x; z++)
                     {
-                        Console.Write("*");
+                        Console.Write(symbol);
                     }
                     for (int y = size; y > x; y--)
                     {
