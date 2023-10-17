@@ -8,10 +8,9 @@ namespace David.Week04
         public static void StartDay01()
         {
             int[] arr = RandomA(20);
-            
 
-            BubbleSort(arr);
-            Console.WriteLine("Sorted:");
+            BubbleSort(arr, false);
+           
             for (int i = 0; i < 1; i++)
             {
                 Console.Write("[{0}]", string.Join(", ", arr));
@@ -21,25 +20,46 @@ namespace David.Week04
 
         }
 
-        public static int[] BubbleSort(int[] array)
+        public static int[] BubbleSort(int[] array, bool AscDesc)
         {
-            int i = 0;
-            int j = 0;
 
-            for (j = 0; j < array.Length; j++)
+            if (AscDesc == false)
             {
-                for (i = 0; i < array.Length - j - 1; i++)
+                for (int j = 0; j < array.Length; j++)
                 {
-                    if (array[i] > array[i + 1])
+                    for (int i = 0; i < array.Length - j - 1; i++)
                     {
-                        int temp = array[i];
-                        array[i] = array[i + 1];
-                        array[i + 1] = temp;
+                        if (array[i] > array[i + 1])
+                        {
+                            int temp = array[i];
+                            array[i] = array[i + 1];
+                            array[i + 1] = temp;
+                        }
                     }
                 }
+                Console.WriteLine("Sorted Ascending:");
             }
+            
+
+            else
+            {
+                for (int j = 0; j < array.Length; j++)
+                {
+                    for (int i = 0; i < array.Length - j - 1; i++)
+                    {
+                        if (array[i] < array[i + 1])
+                        {
+                            int temp = array[i];
+                            array[i] = array[i + 1];
+                            array[i + 1] = temp;
+                        }
+                    }
+                }
+                Console.WriteLine("Sorted Descending:");
+            }
+
             return array;
         }
     }
-    
+
 }
