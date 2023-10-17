@@ -17,6 +17,8 @@ namespace Riccardo.Week03
             Console.WriteLine();
             int[] original = CreateArray(10);
 
+            
+
             foreach (int element in original)
             {
                 Console.Write(element + " ");
@@ -101,7 +103,7 @@ namespace Riccardo.Week03
             Console.Write("=====================");
             Console.WriteLine();
 
-
+            BublesortAscending(100);
 
         }
 
@@ -201,7 +203,24 @@ namespace Riccardo.Week03
             return arry;
         }
 
+        public static int[] BublesortAscending(int size)
+        {
+            int[] arr = new int[size];
+            int swap = 0;
+            for(int i = 0;i < arr.Length;i++)
+            {
+                for(int j = 0; j < arr.Length - 1; j++)
+                {
+                    if (arr[i] > arr[j] + 1)
+                    {
+                        swap = (arr[j]);
 
+                    }
+                    
+                }                                               
+            }
+            return arr;
+        }
     }
 
 }
