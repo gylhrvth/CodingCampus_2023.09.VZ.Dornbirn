@@ -22,7 +22,7 @@ namespace Dimitri.Week03
             //int[] lustigesArray = { 1, 3, 5, 7, 9 };
             //Console.WriteLine MakeACopy(lustigesArray);
             //PrintArrayToString0(RandomNumberArray(0, 100));
-            PrintCrazyRangeArray(RandomNumberArray(-50, 50));
+            PrintCrazyRangeArray(RandomNumberArray(100, -50, 50));
             //PrintArrayZaehlen(RandomNumberArray(1, 100), 30);
             //Console.WriteLine(ReturnArraySumme(RandomNumberArray(1, 100)));
             //Console.WriteLine(ReturnArrayMin(RandomNumberArray(-50, 50)));
@@ -89,10 +89,10 @@ namespace Dimitri.Week03
             return arrNew;
         }
 
-        public static int[] RandomNumberArray(int lower, int upper)
+        public static int[] RandomNumberArray(int size, int lower, int upper)
         {
 
-            int[] arr = new int[(upper - lower)];
+            int[] arr = new int[size];
             if (lower == upper)
             {
                 return arr;
@@ -102,7 +102,7 @@ namespace Dimitri.Week03
                 Random random = new Random();
 
 
-                for (int i = 0; i < (upper - lower); i++)
+                for (int i = 0; i < size; i++)
                 {
                     arr[i] = random.Next(lower, upper);
                 }
@@ -113,7 +113,7 @@ namespace Dimitri.Week03
 
         }
 
-        public static void PrintArrayToString0(int[] arr)
+        public static void PrintArrayToStringForeachBad(int[] arr)
         {
             Console.Write("[");
 
@@ -130,8 +130,9 @@ namespace Dimitri.Week03
                 }
             }
             Console.Write("]");
+
         }
-        public static void PrintArrayToString1(int[] arr)
+        public static void PrintArrayToStringForI(int[] arr)
         {
             Console.Write("[");
             for (int i = 0; i < arr.Length; i++)
@@ -139,7 +140,7 @@ namespace Dimitri.Week03
 
                 if (i < arr.Length - 1)
                 {
-                    Console.Write(arr[i] + ",");
+                    Console.Write(arr[i] + ", ");
                 }
                 else
                 {
@@ -147,6 +148,7 @@ namespace Dimitri.Week03
                 }
             }
             Console.Write("]");
+            Console.WriteLine();
         }
 
         public static void PrintArrayToString2(int[] arr, int erster, int zweiter, int dritter)
@@ -196,7 +198,7 @@ namespace Dimitri.Week03
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] > 30)
+                if (arr[i] > from)
                 {
                     Console.WriteLine(arr[i]);
                 }
@@ -250,12 +252,12 @@ namespace Dimitri.Week03
             return max;
         }
 
-        public static int ReturnArrayAvg(int[] arr)
+        public static double ReturnArrayAvg(int[] arr)
         {
 
-            int sum = ReturnArraySumme(arr);
+            double sum = ReturnArraySumme(arr);
 
-            int avg = sum / arr.Length;
+            double avg = sum / arr.Length;
 
             return avg;
         }
@@ -560,6 +562,13 @@ namespace Dimitri.Week03
         //{
 
         //}
+
+        public static int[] MergeSort(int[] arr) 
+        {
+
+
+            return arr;
+        }
     }
 
 }

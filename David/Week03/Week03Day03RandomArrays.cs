@@ -75,10 +75,17 @@ namespace David.Week03
             Console.WriteLine();
             int Ave = average(randarray);
             Console.WriteLine(Ave + " = Durchschnitt");
+
+          
         }
 
-        //----------Random Array 1--------------
-        public static int[] RandomA(int size) // Hier wird die Methode und size abgerufen.
+
+
+
+
+
+            //----------Random Array 1--------------
+            public static int[] RandomA(int size) // Hier wird die Methode und size abgerufen.
         {
 
             int[] arrayRand1 = new int[size];// Hier wird der eigentliche Arr erstellt und Speicher Reserviert

@@ -239,9 +239,7 @@ namespace Dimitri.Week03
                     Console.WriteLine("Your input is not valid. Do you wanna continue calculating? (y/n)");
                     continueCalculating = StringRead();
                 }
-                if (continueCalculating == "n"){
-                    return;
-                }
+
             }
 
         }
