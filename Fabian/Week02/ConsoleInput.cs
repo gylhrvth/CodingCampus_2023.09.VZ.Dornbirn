@@ -23,7 +23,6 @@ namespace Fabian.Week02
 
             Console.WriteLine($"text = {text}");
         }
-
         public static void ReadInt()
         {
             int num = 0;
@@ -41,7 +40,6 @@ namespace Fabian.Week02
                 }
             }
         }
-
         public static void GuessGame()
         {
             int num = new Random().Next(100) + 1;
@@ -75,7 +73,6 @@ namespace Fabian.Week02
 
             }
         }
-
         public static void Menu()
         {
             bool playAgain = true;
@@ -124,7 +121,6 @@ namespace Fabian.Week02
                 }
             }
         }
-
         public static void Calculator()
         {
             bool playAgain = true;
@@ -162,7 +158,7 @@ namespace Fabian.Week02
                             Console.WriteLine($"{num1} * {num2} = {product}");
                             break;
                         case "^":
-                            float pow = (float)(Math.Pow(num1, num2));
+                            float pow = (float)Math.Pow(num1, num2);
                             Console.WriteLine($"{num1} ^ {num2} = {pow}");
                             break;
                         case "/":
@@ -194,7 +190,6 @@ namespace Fabian.Week02
                 }
             }
         }
-
         public static void CalculatorBonus()
         {
             bool playAgain = true;
@@ -402,8 +397,6 @@ namespace Fabian.Week02
             }
             Console.WriteLine();
         }
-
-
         public static void TheGameBegins()
         {
             
