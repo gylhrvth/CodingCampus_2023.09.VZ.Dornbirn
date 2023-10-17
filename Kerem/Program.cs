@@ -1,2 +1,2 @@
-﻿Kerem.Exercises.Methods_Loops.Start();
+﻿Kerem.Week03.ArrayExamples.StartArrayExamples();
 

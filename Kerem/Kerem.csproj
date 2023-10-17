@@ -10,4 +10,8 @@
   <ItemGroup>
     <None Remove="Week01\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Week04\" />
+  </ItemGroup>
 </Project>
