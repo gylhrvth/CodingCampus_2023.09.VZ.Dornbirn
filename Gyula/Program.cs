@@ -1,2 +1,1 @@
-﻿Gyula.Week03.ArrayExample.StartArrayExample();
-
+﻿Gyula.Week04.MergeSortExample.Start();
