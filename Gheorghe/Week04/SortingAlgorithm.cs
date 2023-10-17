@@ -4,18 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simon.Week04
+namespace Gheorghe.Week04
 {
-    internal class name_me
+    internal class SortingAlgorithm
     {
-        public static Random random = new();
         public static void Start()
         {
-
-
+            
         }
-
-
-
     }
 }

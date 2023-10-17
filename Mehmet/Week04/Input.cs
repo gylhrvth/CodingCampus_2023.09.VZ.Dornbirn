@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,9 @@ namespace Mehmet.Week04
 
             //int readNumber = ReadNumbner("Enter a Numero:", " EROR 404 : Try again : ");
 
-            int readRandomNumber = ReadRandomNumber("Las uns ein Spiel spielen ö_ö , tippe einen Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runter: ", "Richtig !!!");
+            //int readRandomNumber = ReadRandomNumber("Lass uns ein Spiel spielen ö_ö , tippe einen Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runter: ", "Richtig !!!");
             
-                    //int readNumberMenue = ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
+                    int readNumberMenue = ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
 
         
         }
@@ -97,9 +98,9 @@ namespace Mehmet.Week04
             Console.WriteLine("2 für = " + drawing2);
             Console.WriteLine("3 für = " + drawing3);
             Console.WriteLine();
-            int n1 = 1;
-            int n2 = 2;
-            int n3 = 3;
+           
+            string stage2 = " ";
+            
 
 
             while (true) 
@@ -110,7 +111,7 @@ namespace Mehmet.Week04
                     int myNumber = Convert.ToInt32(input);
                     
 
-                    if (myNumber == n1)
+                    if (myNumber == 1)
                     {
                         
                         Console.WriteLine(asksize);
@@ -118,20 +119,33 @@ namespace Mehmet.Week04
                         int size = Convert.ToInt32(inputsize);
                         int sizeOfDrawing = size;
 
-
-
-
-
-                        
                         Console.WriteLine(asksymbol);
                         String symbol = Console.ReadLine();
                         String symbolofDrawing = symbol;
-
-
-
-                       
+                      
                         Mehmet.Week02.BooleanExamples.PrintChristmasTree(sizeOfDrawing, symbolofDrawing);
-                        Mehmet.Week02.BooleanExamples.PrintRhombus(symbolofDrawing,sizeOfDrawing);
+                       
+
+                        Console.WriteLine("Nochmal?");
+                        Console.WriteLine("1 für  ja");
+                        Console.WriteLine("2 für nein");
+
+                        
+                        int myNumber2 = Convert.ToInt32(input);
+                        
+
+                        if (myNumber2  == 2)
+                        {
+                            ReadNumberMenue(stage2, questionDrawing, drawing1, drawing2, drawing3, asksize, asksymbol);
+                        }
+                        else
+                        {
+                            return 18437501;
+                        }
+
+
+
+
 
                     }
 
@@ -140,7 +154,7 @@ namespace Mehmet.Week04
                 }
                 catch
                 {
-
+                    
                 }
             }
         }

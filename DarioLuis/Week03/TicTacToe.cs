@@ -1,22 +1,39 @@
-﻿namespace DarioLuis.Week03
+﻿using System.Data;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
+
+namespace DarioLuis.Week03
 {
     class TicTacToe
     {
+        public static char[] makeACopyAlt(char[] original)
+        {
+            char[] myArray = new char[original.Length];
+
+            for (int i = 0; i < original.Length; i++)
+            {
+                myArray[i] = original[i];
+            }
+
+            return myArray;
+
+        }
+
+        static char[] arr2 = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         static int player = 1; // Spieler 1 startet
+        static int player2 = 1;
         static int choice; // Die Wahl des Spielers
 
         // Überspringt die Anfangsanweisungen
-        public static void Main(string[] args)
+        public static void Start()
         {
-            bool playAgain = true; 
+            String input = "";
             bool isGameOver = false;
-            while (playAgain) 
+            do
             {
                 while (!isGameOver)
-                { 
-                
-                    isGameOver = Solutions();
+                {
                     Console.Clear();
                     Console.WriteLine("Spieler 1: X und Spieler 2: O");
                     Console.WriteLine("\n");
@@ -38,8 +55,10 @@
                         choice = int.Parse(Console.ReadLine());
                         if (arr[choice] != 'X' && arr[choice] != 'O')
                         {
+                            
                             arr[choice] = 'O';
                             player++;
+                            
                         }
                         else
                         {
@@ -49,9 +68,10 @@
                     }
                     else
                     {
-                        choice = int.Parse(Console.ReadLine());
+                        int choice = Convert.ToInt32(Console.ReadLine());
                         if (arr[choice] != 'X' && arr[choice] != 'O')
                         {
+                            
                             arr[choice] = 'X';
                             player++;
                         }
@@ -62,42 +82,137 @@
                         }
 
                     }
+                    Board();
                     isGameOver = Solutions();
-                    
                 }
-                Console.WriteLine("Möchtest du nochmal spielen? y/n");
-                string answer = Console.ReadLine();
-                if(answer == "y") 
+                Console.WriteLine("Magst du nochmal spielen? (Y/Yes),(N/No");
+                input = Convert.ToString(Console.ReadLine().ToUpper());
+                if (input == "Y")
                 {
-                    playAgain = true;
-                } else
-                { 
-                    playAgain=false;
-                    Console.WriteLine("danke fürs spielen!");
-                }
-              
-            } 
-            
-                         
-            
+                    isGameOver = false;
+                    arr = makeACopyAlt(arr2);
+                    player = player2; // Spieler 1 startet
+                    Board();
 
-            Console.ReadLine();
+                }
+            }
+            while (input == "Y");
+            
         }
 
         // Board zeigt Brett Status an
         private static void Board()
         {
+
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[1], arr[2], arr[3]);
+            if (arr[1] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[1] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write("  {0}", arr[1]);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("  |  ");
+            if (arr[2] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[2] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write("{0}", arr[2]);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("  |  ");
+            if (arr[3] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[3] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.WriteLine("{0}", arr[3]);
+            Console.ForegroundColor= ConsoleColor.White;
             Console.WriteLine("_____|_____|_____ ");
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[4], arr[5], arr[6]);
+            if (arr[4] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[4] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write("  {0}  ", arr[4]);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("| ");
+            if (arr[1] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[5] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write(" {0} ", arr[5]);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" | ");
+            if (arr[6] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[6] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+
+            Console.WriteLine(" {0} ", arr[6]);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("_____|_____|_____ ");
+
             Console.WriteLine("     |     |      ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}", arr[7], arr[8], arr[9]);
+            if (arr[7] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[7] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write("  {0}", arr[7]);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("  | ");
+            if (arr[8] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[8] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.Write(" {0}", arr[8]);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("  |");
+            if (arr[9] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+            }
+            if (arr[9] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+            }
+            Console.WriteLine("  {0}", arr[9]);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("     |     |      ");
         }
-        public static bool Solutions()
+
+        
+
+    public static bool Solutions()
         {
             
             if (((arr[1] == arr[5]) && (arr[5] == arr[9]))    //Diagonale 1 bis 9
