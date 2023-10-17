@@ -66,17 +66,17 @@ namespace Gheorghe.Week04
             }
         }
 
-        public static void BubbleSort(int[] arr)
+        public static void BubbleSort(int[] arra)
         {
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arra.Length; i++)
             {
-                for (int j = 0; j < arr.Length - i - 1; j++)
+                for (int j = 0; j < arra.Length - i - 1; j++)
                 {
-                    if (arr[j] < arr[j + 1])
+                    if (arra[j] < arra[j + 1])
                     {
-                        int temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
+                        int temp = arra[j];
+                        arra[j] = arra[j + 1];
+                        arra[j + 1] = temp;
                     }
                 }
             }
