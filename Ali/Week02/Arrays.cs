@@ -58,7 +58,6 @@ namespace Ali.Week02
 
             //
             //Console.WriteLine("[{0}]", string.Join(", ", ArrayRandom1(10)));
-
             Console.WriteLine("");
             Console.WriteLine("Aufgabe 4: Random Number Array Crazy Range");
             int[] crazy = CrazyArray(10);
@@ -100,6 +99,15 @@ namespace Ali.Week02
             Console.WriteLine("Aufgabe: Bubblesort mit Zahlen");
             Console.WriteLine();
             Console.WriteLine("[{0}]", string.Join(", ", BubbleArray(random1)));
+
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", BubbleArray2(random1)));
+            Console.WriteLine();
+
+            Console.WriteLine("Aufgabe 2D Array");
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", TwoDimArray(random1)));
+
 
 
 
@@ -254,7 +262,7 @@ namespace Ali.Week02
         }
         public static int ArrayMin(int[] random1)
         {
-            int min = Int32.MaxValue;
+            int min = Int32.MaxValue; // int min = random1[0];
             foreach (int value in random1)
             {
                 if (value < min)
@@ -304,8 +312,30 @@ namespace Ali.Week02
                     }
                 }
             }
-            return random1-1;
+            return random1;
         }
+        public static int[] BubbleArray2(int[] random1)
+        {
+            for(int i =0; i<random1.Length-1; i++)
+            {
+                for (int j = 0; j < random1.Length - i - 1; j++)
+                {
+                    if (random1[j]> random1[j + 1])
+                    {
+                        int temp = random1[j];
+                        random1[j]= random1[j + 1];
+                        random1[j+1] = temp;
+                    }
+                   
+                }
+            }
+            return random1;
+        }
+        public static int[] TwoDimArray(int[] random1)
+        {
+            return random1;
+        }
+        
 
 
 
