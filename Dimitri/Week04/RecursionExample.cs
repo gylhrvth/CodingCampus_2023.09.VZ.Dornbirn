@@ -10,7 +10,8 @@ namespace Dimitri.Week04
     {
         public static void Main()
         {
-            //Console.WriteLine(RecursiveSum(10));
+            Console.WriteLine(RecursiveSum(10));
+            Console.WriteLine(RecursiveFac(10));
             Console.WriteLine(RecursiveFibunacci(7, ""));
 
         }
@@ -20,7 +21,7 @@ namespace Dimitri.Week04
 
             if (x == 0)
             {
-                return x;
+                return 0;
             }
             return x + RecursiveSum(x - 1);
         }
@@ -30,7 +31,7 @@ namespace Dimitri.Week04
 
             if (x == 0)
             {
-                return x;
+                return 1;
             }
             return x * RecursiveFac(x - 1);
         }
