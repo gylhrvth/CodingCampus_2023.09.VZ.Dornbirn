@@ -36,7 +36,7 @@ namespace Sven.Week04
         public static int StringRead2()
         {
 
-            Console.WriteLine("Bitte gib deinen Namen ein: ");
+            Console.WriteLine("Bitte gib deine alter ein: ");
 
             while (true)
             {
