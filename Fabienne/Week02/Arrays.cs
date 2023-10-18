@@ -80,12 +80,13 @@ namespace Fabienne.Week02
             //PrintArray(arr4);
             //InsertionSort(arr4);
 
-            //int[,] arr5 = new int[7, 8];
-            //int[,] rand2dArray = CreateRandom2DArray();
+            int[,] arr5 = new int[7, 8];
+            int[,] rand2dArray = CreateRandom2DArray();
 
-            //PrintTwoDeeArray(rand2dArray);
+            PrintTwoDeeArray(rand2dArray);
 
-            int[,] pascal =
+            int[,] arr6 = PascalDreieck();
+            PrintTwoDeeArray(arr6);
         }
         public static int[] NumberArray()
         {
@@ -399,7 +400,7 @@ namespace Fabienne.Week02
                 }
                 catch
                 {
-                    Console.WriteLine("That is it! May the gods strike you down and may your family be cursed for eternity you fool!");
+                    Console.WriteLine("That is it! May the gods strike you down and may your family be cursed for eternity you buffoon!");
                     Console.WriteLine();
                 }
             }
@@ -484,4 +485,4 @@ namespace Fabienne.Week02
         }
     }
 }
-}
+
