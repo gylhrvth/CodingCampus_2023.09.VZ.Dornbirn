@@ -100,7 +100,7 @@ namespace Kerem.Week03
 
 
 
-            Console.WriteLine("Array2D");
+            //Console.WriteLine("Array2D");
             //Array2D(2, 3, 4, 1);
 
 
@@ -359,15 +359,6 @@ namespace Kerem.Week03
 
                 }
             }
-        }
-
-        public static void Array2D()
-        {
-
-
-
-
-
         }
     }
 }
