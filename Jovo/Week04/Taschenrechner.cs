@@ -62,11 +62,14 @@ namespace Jovo.Week04
                 char oprt = ReadChar("gib ein ob du addieren willst: +, subtrahieren willst -, multiplizieren willst *, dividieren willst /, oder hoch rechnen willst ^:");
                 float num2 = ReadFloat("Gib die 2. Zahl ein:");
                 float num2new = 1;
+                char oprt2 = ReadChar("Möchtest du mit deinem Ergebnis weiter rechnen dann drücke j ansonstend n");
                 
 
                 if (oprt == '+')
                 {
                     Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1 + num2));
+                    float num3 = num1 + num2;
+                    num1 = num3;
                 }
                 else if (oprt == '-')
                 {
@@ -80,12 +83,13 @@ namespace Jovo.Week04
                 {
                     Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
                     float wahl = (num1 / num2);
-
-                    if (wahl == 'j')
+                    float newNum = ReadFloat("Gib die nächste zahl ein");
+                    if (oprt2 == 'j')
                     {
-                        Console.WriteLine("gib die nächste Zahl ein" ,wahl + num2 );
+                        Console.WriteLine("gib die nächste Zahl ein" ,wahl + newNum );
 
                     }
+                    
                 }
                 else
                 {
