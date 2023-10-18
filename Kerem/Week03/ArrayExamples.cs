@@ -329,10 +329,10 @@ namespace Kerem.Week03
             {
                 for (int j = 0; j < arr7.Length - 1; j++)
                 {
-                    if (arr7[j] < arr7[j + 1])
+                    if (arr7[j] > arr7[j + 1])
                     {
                         int temp = arr7[j];
-                        arr7[j + 1] = arr7[j];
+                        arr7[j] = arr7[j + 1];
                         arr7[j + 1] = temp;
                     }
 
@@ -363,86 +363,14 @@ namespace Kerem.Week03
 
         public static void Array2D()
         {
-            int zeilen = 5; // Anzahl der Zeilen
-            int spalten = 5; // Anzahl der Spalten
-            int maxZahl = 100; // Maximale Zufallszahl
 
-            int[][] zweidArray = new int[zeilen][];
-            Random zufall = new Random();
 
-            // 2D-Array erstellen und mit Zufallszahlen füllen
-            for (int i = 0; i < zeilen; i++)
-            {
-                zweidArray[i] = new int[spalten];
-                for (int j = 0; j < spalten; j++)
-                {
-                    zweidArray[i][j] = zufall.Next(0, maxZahl + 1);
-                }
-            }
 
-            // Array ausgeben
-            Console.WriteLine("2D-Array:");
-            for (int i = 0; i < zeilen; i++)
-            {
-                for (int j = 0; j < spalten; j++)
-                {
-                    Console.Write(zweidArray[i][j] + "\t");
-                }
-                Console.WriteLine();
-            }
 
-            // Benutzereingabe
-            Console.WriteLine("Möchten Sie die Summe pro Zeile oder pro Spalte berechnen? (Zeile/Spalte):");
-            string eingabe = Console.ReadLine();
 
-            if (eingabe.ToLower() == "zeile")
-            {
-                SummeProZeile(zweidArray);
-            }
-            else if (eingabe.ToLower() == "spalte")
-            {
-                SummeProSpalte(zweidArray);
-            }
-            else
-            {
-                Console.WriteLine("Ungültige Eingabe. Bitte 'Zeile' oder 'Spalte' eingeben.");
-            }
-        }
-
-        // Funktion zur Berechnung der Summe pro Zeile
-        static void SummeProZeile(int[][] array)
-        {
-            Console.WriteLine("Summen pro Zeile:");
-            for (int i = 0; i < array.Length; i++)
-            {
-                int zeilenSumme = 0;
-                for (int j = 0; j < array[i].Length; j++)
-                {
-                    zeilenSumme += array[i][j];
-                }
-                Console.WriteLine($"Zeile {i + 1}: {zeilenSumme}");
-            }
-        }
-
-        // Funktion zur Berechnung der Summe pro Spalte
-        static void SummeProSpalte(int[][] array)
-        {
-            Console.WriteLine("Summen pro Spalte:");
-            for (int j = 0; j < array[0].Length; j++)
-            {
-                int spaltenSumme = 0;
-                for (int i = 0; i < array.Length; i++)
-                {
-                    spaltenSumme += array[i][j];
-                }
-                Console.WriteLine($"Spalte {j + 1}: {spaltenSumme}");
-            }
         }
     }
-
 }
-    
-
 
 
 
