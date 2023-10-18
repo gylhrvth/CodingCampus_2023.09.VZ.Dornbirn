@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
@@ -12,7 +13,7 @@ namespace Timo.Week03
     public class Arrays
     {
         public static Random random = new Random();
-
+        public static Stopwatch stopwatch = new Stopwatch();
         public static void Start()
         {
 
@@ -108,12 +109,16 @@ namespace Timo.Week03
 
             //Aufgabe8 (Bubble)sort
             Console.WriteLine("\nAufgabe 8: (Bubble)sort mit Zahlen");
-            int[] testSort = RandomFor(20, 1, 100);
-            PrintString(testSort);
-            PrintString(Sort(testSort, true));              //use 'true' for ascending sorting, 'false' for descending sorting
-            PrintString(Sort(testSort, false));             //use 'true' for ascending sorting, 'false' for descending
-            PrintString(BubbleSort(testSort, true));
-            PrintString(BubbleSort(testSort, false));
+            int[] testSort = RandomFor(100000, 1, 100);
+            //PrintString(testSort);
+            //PrintString(Sort(testSort, true));              //use 'true' for ascending sorting, 'false' for descending sorting
+            //PrintString(Sort(testSort, false));             //use 'true' for ascending sorting, 'false' for descending
+            //PrintString(BubbleSort(testSort, true));
+            //PrintString(BubbleSort(testSort, false));
+            PrintString(BubbleSortTime(testSort, true));
+            PrintString(BubbleSortBetterTime(testSort, true));
+
+
 
             //testSort = RandomFor(50000, 1, 100);
             //BubbleSort(testSort, true);
@@ -391,7 +396,7 @@ namespace Timo.Week03
         }
         //------------------------------------------------------------------------------------------------------------------------------
 
-        //Aufgabe8 (Bubble)sort
+        //Aufgabe8 TimoSort
         public static int[] Sort(int[] arr, bool asc)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -441,6 +446,87 @@ namespace Timo.Week03
             return arr;
         }
 
+        //Aufgabe8 Bubblesort besser
+        public static int[] BubbleSortBetterTime(int[] arr, bool asc)
+        {
+            int[] penis = new int[0];
+
+            stopwatch.Start();
+            if (asc)
+            {
+                for (int i = arr.Length; i > 1; i--)
+                {
+                    for (int a = 0; a < i - 1; a++)
+                    {
+                        if (arr[a] > arr[a + 1])
+                        {
+                            int temp = arr[a + 1];
+                            arr[a + 1] = arr[a];
+                            arr[a] = temp;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = arr.Length; i > 1; i--)
+                {
+                    for (int a = 0; a < i - 1; a++)
+                    {
+                        if (arr[a] < arr[a + 1])
+                        {
+                            int temp = arr[a + 1];
+                            arr[a + 1] = arr[a];
+                            arr[a] = temp;
+                        }
+                    }
+                }
+            }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            Console.WriteLine("RunTime " + elapsedTime);
+            return penis;
+        }
+
+
+        //
+        //Aufgabe8 Bubblesort Zeit
+        public static int[] BubbleSortTime(int[] arr, bool asc)
+        {
+            int[] penis = new int[0];
+            stopwatch.Start();
+            for (int i = arr.Length; i > 1; i--)
+            {
+                for (int a = 0; a < i - 1; a++)
+                {
+                    if ((asc && arr[a] > arr[a + 1]) || (!asc && arr[a] < arr[a + 1]))
+                    {
+                        int temp = arr[a + 1];
+                        arr[a + 1] = arr[a];
+                        arr[a] = temp;
+                    }
+                }
+            }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            Console.WriteLine("RunTime " + elapsedTime);
+            return penis;
+        }
+
+
+
+
+        
 
         //------------------------------------------------------------------------------------------------------------------------------
 
@@ -489,7 +575,7 @@ namespace Timo.Week03
         //}
 
 
-     
+
 
 
 
@@ -525,5 +611,5 @@ namespace Timo.Week03
 
         */
     }
-    }
+}
 
