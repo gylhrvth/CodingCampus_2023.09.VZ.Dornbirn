@@ -10,12 +10,12 @@ using System.Xml.Schema;
 
 namespace Niklas.Week03
 {
-    internal class ArrayNumber
+    internal class Array
     {
         public static Random random = new Random();
         public static void Start()
         {
-            
+
 
             int[] arr1 = CreateArrayRandom(10, 0, 101);
             int[] arr2 = CreateArrayRandom(100, 0, 101);
@@ -105,10 +105,10 @@ namespace Niklas.Week03
             //BubbleSortCustom(size, min, max);
             //Console.WriteLine("Bubblesort Custom: " + string.Join(", ", size, min, max));
 
-            //Console.WriteLine("______________________");
-            //TwoDArray(arr2);
+            Console.WriteLine("______________________");
+            TwoDArray(arr2);
 
-        }       
+        }
 
         public static void PrintArray(int[] array)
         {
@@ -276,7 +276,7 @@ namespace Niklas.Week03
         public static int[] BubbleSortAsc(int[] arr)
         {
             int steps = 0;
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length -1; i++)
             {
                 for (int j = 0; j < arr.Length - 1 - i; j++)
                 {
@@ -318,7 +318,7 @@ namespace Niklas.Week03
         public static void BubbleSortCustom(int[] size, int[] min, int[] max)
         {
             int steps = 0;
-            for (int i = 0; i < size.Length - i - 1; i++)
+            for (int i = 0; i < size.Length; i++)
             {
                 for (int j = 0; j < size.Length - 1 - i; j++)
                 {

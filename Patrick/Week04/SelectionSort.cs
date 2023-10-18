@@ -5,41 +5,41 @@ namespace Patrick.Week04
 {
     internal class SelectionSort
     {
-        public static int[] array = RandomNumberArray(0, 101, 10);
 
-        public static void start()
+        public static void Start()
         {
+            int[] array = RandomNumberArray(0, 101, 10);
             Console.WriteLine("Array");
             Console.WriteLine("[{0}]", string.Join(", ", array));
-            PrintArrayFor(selectionSort(array));
+           
+            SelectionSort1(array);
 
         }
 
-        public static int[] selectionSort(int[] array)
+        public static int SearchMinPos(int[] array, int start)
         {
-
-            for (int x = 0; x < array.Length - 1; x++)
+            int min = start;
+            for (int i = min; i < array.Length; i++)
             {
-                int min = x;
-                for (int y = x + 1; y < array.Length; y++)
+                if (array[i] < array[min])
                 {
-                    if (array[y] < array[min])
-                    {
-                        min = y;
-
-                    }
-                }
-                if (min != array[x])
-                {
-                    int temporaryMemory = array[min];
-                    array[min] = array[x];
-                    array[x] = temporaryMemory;
-                }
-
-
+                    min = i;
+                }               
             }
-            Console.WriteLine("SelectionSort: ");
-            return array;
+            return min;
+        }
+
+        public static void SelectionSort1(int[] array)
+        {
+            for (int x = 0; x < array.Length; x++)
+            {
+                int minPos = SearchMinPos(array, x);
+
+                int temp = array[x];
+                array[x] = array[minPos];
+                array[minPos] = temp;
+                Console.WriteLine("[{0}]", string.Join(", ", array));
+            }
         }
     }
 }
