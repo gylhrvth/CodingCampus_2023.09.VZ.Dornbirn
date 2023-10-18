@@ -8,40 +8,84 @@ namespace Cemal.Week04
 {
     internal class ConsoleInput
     {
+        public static Random random = new Random();
         public static void StartInput()
         {
-            Console.WriteLine("String einlesen");
-            //stringEinlesen();
+
+            //// Name eingeben
+            //string userinput = Einlesen("Wie heißt du?");
+            //Console.WriteLine("Wilkommen " + userinput);
+            //Console.WriteLine();
+
+            ////Alter eingeben
+            //int userinputnumber = Zahleinlesen("Wie alt bist du?", "Gib nur Zahlen ein!");
+            //Console.WriteLine("Du bist " + userinputnumber + "Jahre alt.");
+            //Console.WriteLine();
+
+            //Ratespiel
             Console.WriteLine();
-            //Zahleinlesen("Deine Zahl ist: ");
-            //Console.WriteLine("Deine Zahl ist: " + userinput);
-
-
-
-
-
-
+            Ratespiel();
+            Console.WriteLine();
         }
 
-        public static string Einlesen()
+        public static string Einlesen(string prompt)
         {
+            Console.WriteLine(prompt);
             string input = Console.ReadLine();
             return input;
-            
+
         }
 
-        public static int Zahleinlesen(string ergebnis, string error)
+        public static int Zahleinlesen(string prompt, string error)
         {
-            
-            Console.WriteLine("Gib eine Zahl an");
+            Console.WriteLine(prompt);
 
-            string input = Console.ReadLine();
-            int userinput = Convert.ToInt32(input);
-            //int userInput = int.Parse(Console.ReadLine());
+            while (true)
+            {
+                try
+                {
+                    int userinput = int.Parse(Console.ReadLine());
+                    return userinput;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine(error);
+                }
+            }
+        }
 
+        public static void Ratespiel()
+        {
 
+            Console.WriteLine("Wilkommen beim super coolen Zahlen Ratespiel!");
+            Console.WriteLine("Errate die Zahl zwischen 0 und 100!");
+            Console.WriteLine("Jetzt gib eine Zahl ein: ");
+            int eingabe = 0;
+            int randomnumber = random.Next(101);
+            int counter = 0;
 
-            return userinput;
+            while (eingabe != randomnumber)
+            {
+            eingabe = int.Parse(Console.ReadLine());
+                counter++;
+
+                if (eingabe == randomnumber)
+                {
+                    Console.WriteLine("Hurraaa! Du hast die Zahl erraten!");
+                    Console.WriteLine("Du hast {0} versuche gebraucht!", counter);
+                }
+
+                else if (eingabe <= randomnumber)
+                {
+                    Console.WriteLine("Die Zahl ist zu niedrig!");
+                }
+
+                else if (eingabe > randomnumber)
+                {
+                    Console.WriteLine("Die Zahl ist zu hoch!");
+                }
+            }
+            Console.ReadKey();
         }
     }
 }

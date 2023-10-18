@@ -39,7 +39,7 @@ namespace Dimitri.Week04
             //Console.WriteLine("Merge Sorted array:");
             //PrintArrayToStringForI(result);
 
-            int [] arr = RandomNumberArray(5, -1, 0);
+            int [] arr = RandomNumberArray(5, 0, 10);
             Console.WriteLine("cocktailshaker sort:");
             int [] result = CocktailshakerSort(arr);
             PrintArrayToStringForI(result);
@@ -207,5 +207,26 @@ namespace Dimitri.Week04
 
             return arr;
         }
+
+        public static void HeapSort(int[] arr) 
+        {
+            
+        }
+
+        //private static int[] BuildHeap(int[] arr)
+        //{
+
+        //}
+
+        //private static int[] SiftDown(int i)
+        //{
+        //    if (2 * i >= arr.Length)
+        //    {
+        //        return arr;
+        //    }
+
+        //    int k = 2 * context;
+        //    if(2 * i <=  )
+        //}
     }
 }
