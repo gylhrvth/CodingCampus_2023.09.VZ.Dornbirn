@@ -56,8 +56,8 @@ namespace Fabian.Week03
             //int[,] pascal = CreatePascalTriangle();
             //PrintPascalTriangle(pascal);
 
-            //string formula = CreateFormula();
-            //PrintFormula(formula);
+            string formula = CreateFormula();
+            PrintFormula(formula);
         }
         public static void PrintArray(int[] arr)
         {
@@ -341,26 +341,6 @@ namespace Fabian.Week03
                 Console.WriteLine();
             }
         }
-        public static void Print2DArrayTTT(int[,] arr)
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    if (arr[i, j] == 1)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                    }
-                    else if (arr[i, j] == 2)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                    }
-                    Console.Write(arr[i, j] + " ");
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-                Console.WriteLine();
-            }
-        }
         public static int[] SumByColumn(int[,] arr)
         {
             int[] sum = new int[arr.GetLength(1)];
@@ -449,7 +429,6 @@ namespace Fabian.Week03
             }
 
             int[,] arr = CreatePascalTriangle(exponent);
-            //PrintPascalTriangle(arr);
 
             if (exponent == 1)
             {
@@ -484,9 +463,7 @@ namespace Fabian.Week03
         public static void PrintFormula(string formula)
         {
             Console.WriteLine(formula);
-        }
-      
-        
+        }        
     }
 
 }

@@ -1,123 +1,128 @@
 ﻿using System;
+using System.Linq;
 
 namespace DarioLuis.Week04
 {
-    public class TicTacToev2
-    {
-        static char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-        static int currentPlayer = 1; // Spieler 1 ist der menschliche Spieler
-        static int choice;
-        static bool isGameOver = false;
 
+
+    class TicTacToeAlgo
+    {
         public static void Main()
         {
-            do
+            char[] board = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' };
+            char humanPlayer = 'X';
+            char aiPlayer = 'O';
+
+            PrintBoard(board);
+
+            while (true)
             {
-                Console.Clear();
-                Console.WriteLine("Spieler 1: X und Spieler 2: O");
-                Console.WriteLine("\n");
+                Console.WriteLine("Dein Zug (0-8): ");
+                int move = int.Parse(Console.ReadLine());
 
-                if (currentPlayer % 2 == 0)
+                if (board[move] == ' ')
                 {
-                    Console.WriteLine("Spieler 2 ist an der Reihe (KI)");
-                    choice = GetComputerMove();
-                }
-                else
-                {
-                    Console.WriteLine("Spieler 1 ist an der Reihe (Mensch)");
-                    choice = GetPlayerMove();
-                }
-
-                char symbol = (currentPlayer % 2 == 0) ? 'O' : 'X';
-
-                if (IsValidMove(choice))
-                {
-                    board[choice - 1] = symbol;
-                    currentPlayer++;
-                }
-
-                isGameOver = CheckForWin() || CheckForDraw();
-
-            } while (!isGameOver);
-
-            Console.Clear();
-            Console.WriteLine("Das Spiel ist vorbei!");
-            DisplayBoard();
-        }
-
-        public static int GetPlayerMove()
-        {
-            DisplayBoard();
-            int move;
-            bool isValid = false;
-            do
-            {
-                Console.Write("Geben Sie eine Zahl (1-9) ein, um Ihr Zeichen zu platzieren: ");
-                if (int.TryParse(Console.ReadLine(), out move))
-                {
-                    if (IsValidMove(move))
+                    board[move] = humanPlayer;
+                    PrintBoard(board);
+                    if (CheckWin(board, humanPlayer))
                     {
-                        isValid = true;
+                        Console.WriteLine("Du hast gewonnen!");
+                        break;
                     }
-                    else
+
+                    if (IsBoardFull(board))
                     {
-                        Console.WriteLine("Ungültige Eingabe. Das Feld ist bereits belegt.");
+                        Console.WriteLine("Unentschieden!");
+                        break;
+                    }
+
+                    int aiMove = Minimax(board, aiPlayer).Move;
+                    board[aiMove] = aiPlayer;
+                    PrintBoard(board);
+
+                    if (CheckWin(board, aiPlayer))
+                    {
+                        Console.WriteLine("Der Computer hat gewonnen!");
+                        break;
+                    }
+
+                    if (IsBoardFull(board))
+                    {
+                        Console.WriteLine("Unentschieden!");
+                        break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Ungültige Eingabe. Bitte geben Sie eine Zahl zwischen 1 und 9 ein.");
-                }
-            } while (!isValid);
-            return move;
-        }
-
-        public static int GetComputerMove()
-        {
-            // Einfache KI-Logik: Die KI versucht, ein freies Feld zu finden und es zu belegen.
-            for (int i = 0; i < board.Length; i++)
-            {
-                if (IsValidMove(i + 1))
-                {
-                    return i + 1;
+                    Console.WriteLine("Ungültiger Zug. Das Feld ist bereits belegt.");
                 }
             }
-            return -1; // Fallback, sollte normalerweise nicht erreicht werden
         }
 
-        public static bool IsValidMove(int move)
+        public static void PrintBoard(char[] board)
         {
-            return move >= 1 && move <= 9 && board[move - 1] != 'X' && board[move - 1] != 'O';
+            Console.WriteLine(" {0} | {1} | {2} ", board[0], board[1], board[2]);
+            Console.WriteLine("-----------");
+            Console.WriteLine(" {0} | {1} | {2} ", board[3], board[4], board[5]);
+            Console.WriteLine("-----------");
+            Console.WriteLine(" {0} | {1} | {2} ", board[6], board[7], board[8]);
         }
 
-        public static bool CheckForWin()
+        public static bool CheckWin(char[] board, char player)
         {
-            // Überprüfen Sie auf Gewinnbedingungen (8 mögliche Wege zu gewinnen)
-            return (board[0] == board[1] && board[1] == board[2]) ||
-                   (board[3] == board[4] && board[4] == board[5]) ||
-                   (board[6] == board[7] && board[7] == board[8]) ||
-                   (board[0] == board[3] && board[3] == board[6]) ||
-                   (board[1] == board[4] && board[4] == board[7]) ||
-                   (board[2] == board[5] && board[5] == board[8]) ||
-                   (board[0] == board[4] && board[4] == board[8]) ||
-                   (board[2] == board[4] && board[4] == board[6]);
+            return (board[0] == player && board[1] == player && board[2] == player) ||
+                   (board[3] == player && board[4] == player && board[5] == player) ||
+                   (board[6] == player && board[7] == player && board[8] == player) ||
+                   (board[0] == player && board[3] == player && board[6] == player) ||
+                   (board[1] == player && board[4] == player && board[7] == player) ||
+                   (board[2] == player && board[5] == player && board[8] == player) ||
+                   (board[0] == player && board[4] == player && board[8] == player) ||
+                   (board[2] == player && board[4] == player && board[6] == player);
         }
 
-        public static bool CheckForDraw()
+        public static bool IsBoardFull(char[] board)
         {
-            return board[0] != '1' && board[1] != '2' && board[2] != '3' &&
-                   board[3] != '4' && board[4] != '5' && board[5] != '6' &&
-                   board[6] != '7' && board[7] != '8' && board[8] != '9';
+            return board.All(cell => cell != ' ');
         }
 
-        public static void DisplayBoard()
+        public static int Evaluate(char[] board)
         {
-            Console.WriteLine($" {board[0]} | {board[1]} | {board[2]} ");
-            Console.WriteLine("---+---+---");
-            Console.WriteLine($" {board[3]} | {board[4]} | {board[5]} ");
-            Console.WriteLine("---+---+---");
-            Console.WriteLine($" {board[6]} | {board[7]} | {board[8]} ");
+            if (CheckWin(board, 'O')) return 1;
+            if (CheckWin(board, 'X')) return -1;
+            return 0;
+        }
+
+        public static (int Score, int Move) Minimax(char[] board, char player)
+        {
+            if (CheckWin(board, 'O')) return (1, -1);
+            if (CheckWin(board, 'X')) return (-1, -1);
+            if (IsBoardFull(board)) return (0, -1);
+
+            int bestScore = (player == 'O') ? int.MinValue : int.MaxValue;
+            int bestMove = -1;
+
+            for (int i = 0; i < 9; i++)
+            {
+                if (board[i] == ' ')
+                {
+                    board[i] = player;
+                    int score = Minimax(board, (player == 'O') ? 'X' : 'O').Score;
+                    board[i] = ' ';
+
+                    if (player == 'O' && score > bestScore)
+                    {
+                        bestScore = score;
+                        bestMove = i;
+                    }
+                    else if (player == 'X' && score < bestScore)
+                    {
+                        bestScore = score;
+                        bestMove = i;
+                    }
+                }
+            }
+
+            return (bestScore, bestMove);
         }
     }
 }
-   
