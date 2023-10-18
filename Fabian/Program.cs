@@ -1,1 +1,1 @@
-﻿Fabian.Week04.GameOfLiveClass.Start();
+Fabian.Week04.TicTacToeAlgorithm.Start();

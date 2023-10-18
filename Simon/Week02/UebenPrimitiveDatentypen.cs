@@ -64,7 +64,7 @@ namespace Simon.Week02
             PrintSummeGanzzahlen(20, 25);
 
             Console.WriteLine("Aufgabe Faktorial");
-            PrintFaktorial(1, 20);
+            PrintFaktorial(1, 70);
 
             Console.WriteLine("Aufgabe count");
             PrintCount(0, 2);

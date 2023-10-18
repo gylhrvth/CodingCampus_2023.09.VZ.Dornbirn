@@ -39,7 +39,7 @@ namespace Dimitri.Week04
             //Console.WriteLine("Merge Sorted array:");
             //PrintArrayToStringForI(result);
 
-            int [] arr = RandomNumberArray(20, 0, 100);
+            int [] arr = RandomNumberArray(5, -1, 0);
             Console.WriteLine("cocktailshaker sort:");
             int [] result = CocktailshakerSort(arr);
             PrintArrayToStringForI(result);
@@ -180,7 +180,7 @@ namespace Dimitri.Week04
 
             while (lo < hi)
             {
-                for (int i = hi; i > lo + 1; i--)
+                for (int i = hi; i > lo; i--)
                 {
                     if (arr[i - 1] > arr[i])
                     {
@@ -193,7 +193,7 @@ namespace Dimitri.Week04
                 lo = mov;
                 for (int i = lo; i < hi; i++)
                 {
-                    if (arr[i] < arr[i + 1])
+                    if (arr[i] > arr[i + 1])
                     {
                         int temp = arr[i + 1];
                         arr[i + 1] = arr[i];

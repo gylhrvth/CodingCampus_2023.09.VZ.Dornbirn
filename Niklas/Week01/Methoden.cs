@@ -191,7 +191,7 @@ namespace Niklas.Week01
                     Console.WriteLine(character);
                 }
             }
-            else
+            if (cases == false)
             {
                 for (int n = 0; n < times; n++)
                 {

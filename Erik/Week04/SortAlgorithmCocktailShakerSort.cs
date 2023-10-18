@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erik.Week03
+namespace Erik.Week04
 {
     public class SortAlgorithmCocktailShakerSort
     {
@@ -24,31 +24,30 @@ namespace Erik.Week03
 
             while (minimum < maximum)
             {
-          
-                for (int i = maximum - 1; i > minimum + 1; i--)
+                for (int j = maximum; j < minimum + 1; j++)
                 {
-                    if (arrListUnsorted[i - 1] > arrListUnsorted[i])
+                    if (arrListUnsorted[j - 1] > arrListUnsorted[j])
                     {
                         //int tmp = arrListUnsorted[i];
                         //arrListUnsorted[i - 1] = arrListUnsorted[i];
                         //arrListUnsorted[i] = tmp;
-                        int temp = arrListUnsorted[i];
-                        arrListUnsorted[i] = arrListUnsorted[i + 1];
-                        arrListUnsorted[i + 1] = temp;
+                        int temp = arrListUnsorted[j - 1];
+                        arrListUnsorted[j] = arrListUnsorted[j - 1];
+                        arrListUnsorted[j - 1] = temp;
                     }
                 }
                 minimum = mov;
-                for (int i = minimum; i < maximum - 1; i++)
+                for (int i = minimum; i > maximum - 1; i++)
                 {
                     if (arrListUnsorted[i] > arrListUnsorted[i + 1])
                     {
                         //int tmp = arrListUnsorted[i];
                         //arrListUnsorted[i] = arrListUnsorted[i + 1];
                         //arrListUnsorted[i] = tmp;
-
                         int temp = arrListUnsorted[i];
                         arrListUnsorted[i] = arrListUnsorted[i + 1];
                         arrListUnsorted[i + 1] = temp;
+
                     }
                 }
                 maximum = mov;
