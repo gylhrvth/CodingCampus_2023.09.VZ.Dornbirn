@@ -11,6 +11,7 @@ namespace Riccardo.Week04
     {
         public static void Start()
         {
+            Console.WriteLine("Hello World!");
             int[] arr = RandomZufall(10);
 
             BublesortAscending(arr);
