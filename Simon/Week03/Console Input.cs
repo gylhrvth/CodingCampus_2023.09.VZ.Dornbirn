@@ -35,11 +35,11 @@ namespace Simon.Week03
             //    ReaduserinputString("schreibe eine fehlernachricht für ungültige eingaben"),
             //    ReaduserinputString("schreibe eine anchricht die sagen soll wie viele Versuche man gebraucht hat (danach wird die zahl ausgegeben)"));
 
-            //Console.WriteLine("Task - Menue");
-            //Menue("Bitte wählen Sie nun", "Falsche Eingabe bitte versuche es erneut", "Wie groß soll ", "Welches Zeichen soll verwendet werden?");
+            Console.WriteLine("Task - Menue");
+            Menue("Bitte wählen Sie nun", "Falsche Eingabe bitte versuche es erneut", "Wie groß soll ", "Welches Zeichen soll verwendet werden?");
 
-            Console.WriteLine("Task - Taschenrechner");
-            Taschenrechner("Falsche eingabe versuche es erneut!", "Bitte gib die erste Zahl an, mit welcher gerechnet werden soll", "Bitte gib die zweite Zahl an, mit welcher gerechnet werden soll", "Wähle einen Rechenoperator aus");
+            //Console.WriteLine("Task - Taschenrechner");
+            //Taschenrechner("Falsche eingabe versuche es erneut!", "Bitte gib die erste Zahl an, mit welcher gerechnet werden soll", "Bitte gib die zweite Zahl an, mit welcher gerechnet werden soll", "Wähle einen Rechenoperator aus");
 
 
 
