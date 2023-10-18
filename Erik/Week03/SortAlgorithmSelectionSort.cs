@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Erik.Week03
 {
@@ -27,14 +24,10 @@ namespace Erik.Week03
             }
             Console.WriteLine();
             return arrList;
-            
         }
 
         public static int[] selectionArrayListAlgorithm(int[] arrList)
         {
-            var tmpVar = 0;
-
-            
             for (int i = 0; i < arrList.Length; i++)
             {
                 int minimum = i;
@@ -45,12 +38,11 @@ namespace Erik.Week03
                         minimum = j;
                     }
                 }
-                tmpVar = arrList[minimum];
+                var tmpVar = arrList[minimum];
                 arrList[minimum] = arrList[i];
                 arrList[i] = tmpVar;
             }
             return arrList;
-
         }
         public static void printSortedArrayList(int[] sortedArrayList)
         {

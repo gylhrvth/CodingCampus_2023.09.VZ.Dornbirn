@@ -19,13 +19,14 @@ namespace Mohammed.Week04
 
             //BubbleSortAsc
 
-            BubbleSortAsc(arr);
-            Console.WriteLine("Sorted to - count");
-            PrintArrayForEach(arr);
-
             //int[]array  = CreateArrayAsc(10);
             // PrintArrayForEach(array); die sind genau die gleiche mit unten vergleich..
             // PrintArrayForEach(CreateArrayAsc(10));
+
+
+            Console.WriteLine("SelectionSort Example");
+            SelectionSort(arr);
+            PrintArrayForEach(arr);
 
 
         }
@@ -48,9 +49,9 @@ namespace Mohammed.Week04
                 Console.Write(value);
                 first = false;
             }
-            Console.WriteLine("]");
+            Console.WriteLine("]"); 
         }
-
+        public 
 
 
         public static int[] CreateArrayAsc(int size)
@@ -120,21 +121,29 @@ namespace Mohammed.Week04
             }
         }
 
-        public static void BubbleSortAsc(int[] arr)
+
+        public static void SelectionSort (int[] arr)
         {
-            for (int i = 0; i < arr.Length; i++)
+            for(int i = 0; i < arr.Length - 1; ++i)
             {
-                for (int a = 0; a < arr.Length; a++)
+                int minIndex = i;
+
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[a] > arr[a - 1])
+                    if (arr[j] < arr [minIndex])
                     {
-                        int temp = arr[a];
-                        arr[a] = arr[a - 1];
-                        arr[a - 1] = temp;
+                        minIndex = j; 
                     }
                 }
+
+                int temp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp;
             }
         }
+
+       
+
     }
 }
 

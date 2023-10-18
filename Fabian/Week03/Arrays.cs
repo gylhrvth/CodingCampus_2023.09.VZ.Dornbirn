@@ -1,4 +1,8 @@
-﻿namespace Fabian.Week03
+﻿using System.Diagnostics;
+using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
+
+namespace Fabian.Week03
 {
     public class Arrays
     {
@@ -52,10 +56,8 @@
             //int[,] pascal = CreatePascalTriangle();
             //PrintPascalTriangle(pascal);
 
-            //string formula = CreateFormula();
-            //PrintFormula(formula);
-
-            TicTacToe();
+            string formula = CreateFormula();
+            PrintFormula(formula);
         }
         public static void PrintArray(int[] arr)
         {
@@ -220,9 +222,9 @@
         public static void BubbleSortASC(int[] arr)
         {
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
@@ -234,9 +236,9 @@
         public static void BubbleSortDESC(int[] arr)
         {
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] < arr[j + 1])
                     {
@@ -267,7 +269,7 @@
         {
             int j;
             for (int i = 0; i < arr.Length; i++)
-               {
+            {
                 j = i;
                 while (j > 0 && arr[j - 1] > arr[j])
                 {
@@ -309,7 +311,7 @@
                     Console.WriteLine("Enter number of columns: ");
                     width = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch(FormatException)
                 {
                     Console.WriteLine("Enter a valid number!");
                 }
@@ -376,7 +378,7 @@
                     Console.WriteLine("Enter the size: ");
                     size = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch (FormatException)
                 {
                     Console.WriteLine("Enter a valid number!!");
                 }
@@ -420,14 +422,13 @@
                     Console.WriteLine("Enter an exponent: ");
                     exponent = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch(FormatException)
                 {
                     Console.WriteLine("Enter a valid number!");
                 }
             }
 
             int[,] arr = CreatePascalTriangle(exponent);
-            //PrintPascalTriangle(arr);
 
             if (exponent == 1)
             {
@@ -462,209 +463,8 @@
         public static void PrintFormula(string formula)
         {
             Console.WriteLine(formula);
-        }
-        public static void TicTacToe()
-        {
-            int count = 0;
-
-            int[,] playGround = new int[3, 3];
-
-            //fill array with 0's
-            for (int i = 0; i < playGround.GetLength(0); i++)
-            {
-                for (int j = 0; j < playGround.GetLength(1); j++)
-                {
-                    playGround[i, j] = 0;
-                }
-            }
-            Print2DArray(playGround);
-
-            while (true)
-            {
-                try
-                {
-                    //enter numbers
-                    int p1Row = UserInputTicTacToe("row", 1);
-                    int p1Col = UserInputTicTacToe("column", 1);
-
-                    //check if field is already taken
-                    while (playGround[p1Row - 1, p1Col - 1] != 1)
-                    {
-                        if (playGround[p1Row - 1, p1Col - 1] == 0)
-                        {
-                            playGround[p1Row - 1, p1Col - 1] = 1;
-                        }
-                        else
-                        {
-                            Console.WriteLine("This field is already taken!");
-                            Print2DArray(playGround);
-                            p1Row = UserInputTicTacToe("row", 1);
-                            p1Col = UserInputTicTacToe("column", 1);
-                        }
-                    }
-                    Print2DArray(playGround);
-                    count++;
-
-                    //check if player 1 won
-                    if (CheckWinHorizontally(playGround, 1) || CheckWinVertically(playGround, 1) || CheckWinDiagonally(playGround, 1))
-                    {
-                        Console.WriteLine("Player 1 won!");
-                        if (AskToPlayAgain())
-                        {
-                            TicTacToe();
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                    //check if draw
-                    else if (count == 9)
-                    {
-                        Console.WriteLine("its a draw!");
-                        if (AskToPlayAgain())
-                        {
-                            TicTacToe();
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    //enter numbers
-                    int p2Row = UserInputTicTacToe("row", 2);
-                    int p2Col = UserInputTicTacToe("column", 2);
-
-                    while (playGround[p2Row - 1, p2Col - 1] != 2)
-                    {
-                        //check if field is already taken
-                        if (playGround[p2Row - 1, p2Col - 1] == 0)
-                        {
-                            playGround[p2Row - 1, p2Col - 1] = 2;
-                        }
-                        else
-                        {
-                            Console.WriteLine("This field is already taken!");
-                            Print2DArray(playGround);
-                            p2Row = UserInputTicTacToe("row", 2);
-                            p2Col = UserInputTicTacToe("column", 2);
-                        }
-                    }
-                    Print2DArray(playGround);
-                    count++;
-
-                    //check if player 2 won
-                    if (CheckWinHorizontally(playGround, 2) || CheckWinVertically(playGround, 2) || CheckWinDiagonally(playGround, 2))
-                    {
-                        Console.WriteLine("Player 2 won!");
-                        if (AskToPlayAgain())
-                        {
-                            TicTacToe();
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-                    //check if draw
-                    else if (count == 9)
-                    {
-                        Console.WriteLine("its a draw!");
-                        if (AskToPlayAgain())
-                        {
-                            TicTacToe();
-                        }
-                        else
-                        {
-                            return;
-                        }
-                    }
-
-                    p1Row = 0;
-                    p1Col = 0;
-                    p2Row = 0;
-                    p2Col = 0;
-
-                }
-                catch{  }
-            }
-        }
-        public static bool AskToPlayAgain()
-        {
-            string playAgain = "";
-
-            while (playAgain != "Y" && playAgain != "N")
-            {
-                try
-                {
-                    Console.WriteLine("Do you want to play again?");
-                    playAgain = Console.ReadLine();
-                    playAgain = playAgain.ToUpper();
-
-                    if (playAgain == "Y")
-                    {
-                        return true;
-                    }
-                    else if (playAgain == "N")
-                    {
-                        return false;
-                    }
-                }
-                catch { }
-            }
-
-            return false;
-        }
-        public static int UserInputTicTacToe(string dimension, int player)
-        {
-            int num = 0;
-            while (num != 1 && num != 2 && num != 3)
-            {
-                try
-                {
-                    Console.WriteLine($"Enter {dimension} between 1-3 (player {player}): ");
-                    num = Convert.ToInt32(Console.ReadLine());
-                }
-                catch{  }
-            }
-
-
-            return num;
-        }
-        public static bool CheckWinHorizontally(int[,] arr, int player)
-        {
-            if ((arr[0, 0] == player && arr[0, 1] == player && arr[0, 2] == player) || (arr[1, 0] == player && arr[1, 1] == player && arr[1, 2] == player) || (arr[2, 0] == player && arr[2, 1] == player && arr[2, 2] == player))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public static bool CheckWinVertically(int[,] arr, int player)
-        {
-            if ((arr[0, 0] == player && arr[1, 0] == player && arr[2, 0] == player) || (arr[0, 1] == player && arr[1, 1] == player && arr[2, 1] == player) || (arr[0, 2] == player && arr[1, 2] == player && arr[2, 2] == player))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public static bool CheckWinDiagonally(int[,] arr, int player)
-        {
-            if ((arr[0, 0] == player && arr[1, 1] == player && arr[2, 2] == player) || (arr[0, 2] == player && arr[1, 1] == player && arr[2, 0] == player))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
+        }        
     }
+
 }
+

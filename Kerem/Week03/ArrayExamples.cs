@@ -91,13 +91,15 @@ namespace Kerem.Week03
             Console.WriteLine("[{0}]", string.Join(", ", SortArrayDescending(arr3)));
             Console.WriteLine();
 
+            //Console.WriteLine("BubbleSortConfig");
+            //int[] array = RandomNumberArray(20,0,100);
+
+
             Console.WriteLine("Array2D");
+            //Array2D(2, 3, 4, 1);
 
 
         }
-
-
-
         public static int[] CreateArray(int size)
         {
             int[] arr = new int[size];
@@ -310,18 +312,18 @@ namespace Kerem.Week03
         }
         public static int[] SortArrayDescending(int[] arr7)
         {
-            int length = arr7.Length;
-            int anfang = arr7[0];
 
-            for (int i = 0; i < length; i++)
+
+
+            for (int i = 0; i < arr7.Length; i++)
             {
-                for (int j = 0; j < length - 1; j++)
+                for (int j = 0; j < arr7.Length - 1; j++)
                 {
                     if (arr7[j] > arr7[j + 1])
                     {
-                        anfang = arr7[j + 1];
-                        arr7[j + 1] = arr7[j];
-                        arr7[j] = anfang;
+                        int temp = arr7[j];
+                        arr7[j] = arr7[j + 1];
+                        arr7[j + 1] = temp;
                     }
 
 
@@ -332,23 +334,26 @@ namespace Kerem.Week03
             return arr7;
 
         }
-        public static void Array2D()
+        public static void SortArrayConfig(int[] array)
         {
-            int[,] numbers = new int[3, 5];
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int i = 0; i < 3; i++)
+                for (int j = 0; j < array.Length - 1; j++)
                 {
-                    for (int j = 0; j < 5; j++)
+                    if (array[j] > array[i])
                     {
-                        numbers[i, j] = rand.Next(101);
-                        Console.WriteLine("{[0}, {1}] = {2}", i, j, numbers[i, j]);
-                        
-
+                        int temp = array[j];
+                        array[j + 1] = array[i];
+                        array[i + 1] = temp;
                     }
 
                 }
             }
         }
+        //public static int[] Array2D(int[] array)
+        //{
+            
+        //}
     }
 }
 

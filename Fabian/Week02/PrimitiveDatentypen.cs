@@ -46,8 +46,6 @@
             return fac;
         }
 
-
-
         public static void PrintDecimalNums(float minNum, float maxNum)
         {
             for (float i = minNum; i <= maxNum; i += 0.1f)

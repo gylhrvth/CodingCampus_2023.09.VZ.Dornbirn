@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Reflection.Metadata;
 
 namespace Erik.Week03
 {
@@ -7,31 +7,52 @@ namespace Erik.Week03
     {
         public static void StartSortAlgorithm()
         {
+            Console.WriteLine("Press F to start the program!");
+            while (true)
+            {
+                var userInput = Console.ReadKey();
+                if (userInput.Key == ConsoleKey.F)
+                {
+                    Console.WriteLine("\n");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Invalid input! \nPress F to start the program!");
+                }
+            }
             int[] arr = NumbersOutput(0, 100, 20);
             Console.WriteLine("Unsorted numbers:");
             PrintArrayWithIndex(arr);
             Console.WriteLine();
-            Console.WriteLine("< " + "for increasing sort /" + " >" + " for decreasing sort");
-            Console.Write("Your Input: ");
+            Console.WriteLine("< " + "for increasing sort or" + " >" + " for decreasing sort");
+            Console.Write("Your input (press enter): ");
             String userDecision = Console.ReadLine();
 
-
-
-            if (userDecision == "<")
+            while (true)
             {
-                Console.WriteLine("Sorted numbers increasing:");
-                SortAlgoBubblesortIncrease(arr);
-                PrintArrayWithIndex(arr);
-            }
-            else if (userDecision == ">")
-            {
-                Console.WriteLine("Sorted numbers decreasing:");
-                SortAlgoBubblesortDecrease(arr);
-                PrintArrayWithIndex(arr);
-            }
-            else
-            {
-                Console.WriteLine("Invalid input!");
+                if (userDecision == "<")
+                {
+                    Console.WriteLine("Sorted numbers increasing:");
+                    SortAlgoBubblesortIncrease(arr);
+                    PrintArrayWithIndex(arr);
+                    break;
+                }
+                else if (userDecision == ">")
+                {
+                    Console.WriteLine("Sorted numbers decreasing:");
+                    SortAlgoBubblesortDecrease(arr);
+                    PrintArrayWithIndex(arr);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input!\n");
+                    Console.Write("Your input: ");
+                    String NewUserDecision = Console.ReadLine();
+                    userDecision = NewUserDecision;
+                }
             }
         }
 
