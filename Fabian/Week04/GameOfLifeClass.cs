@@ -2,14 +2,14 @@
 
 namespace Fabian.Week04
 {
-    public class GameOfLiveClass
+    public class GameOfLifeClass
     {
         public static void Start()
         {
-            GameOfLive();
+            GameOfLife();
         }
 
-        public static void GameOfLive()
+        public static void GameOfLife()
         {
             int[,] arr = CreateRandom2DArray();
 

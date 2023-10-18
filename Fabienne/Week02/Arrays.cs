@@ -80,13 +80,13 @@ namespace Fabienne.Week02
             //PrintArray(arr4);
             //InsertionSort(arr4);
 
-            int[,] arr5 = new int[7, 8];
-            int[,] rand2dArray = CreateRandom2DArray();
+            //int[,] arr5 = new int[7, 8];
+            //int[,] rand2dArray = CreateRandom2DArray();
 
-            PrintTwoDeeArray(rand2dArray);
+            //PrintTwoDeeArray(rand2dArray);
 
-            int[,] arr6 = PascalDreieck();
-            PrintTwoDeeArray(arr6);
+            int[,] arr7 = CreatePascalDreieck();
+            PrintPascalTrinangle(arr7);
         }
         public static int[] NumberArray()
         {
@@ -463,11 +463,25 @@ namespace Fabienne.Week02
                 Console.WriteLine();
             }
         }
-        public static int[,] PascalDreieck(int size = 0)
+        public static int[,] CreatePascalDreieck(int size = 0)
         {
+            while (size < 1)
+            {
+                try
+                {
+                    Console.WriteLine("Hewwo, pwease entwer une number for ze size of ze Pascal Trinangle! Thank yew: ");
+                    size = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Oh no ma good sir or maam (or something inbetween), but thats not possible, sowwy :( ");
+                }
+            }
+
             int[,] arr = new int[size, size];           
             for (int i = 0; i < arr.GetLength(0); i++)
             {
+                arr[i, 0] = 1;
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
                     if (i == 0 || j == 0)
@@ -483,6 +497,19 @@ namespace Fabienne.Week02
             }
             return arr;
         }
+        public static void PrintPascalTrinangle(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write("{0, 10} ", arr[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+        
+        //uwu
     }
+    
 }
-

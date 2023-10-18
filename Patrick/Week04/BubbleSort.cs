@@ -9,12 +9,12 @@ namespace Patrick.Week04
 {
     internal class BubbleSort
     {
-        public static int[] array = RandomNumberArray(0, 101, 10);
-
+        
         public static void start()
         {
+            int[] array = RandomNumberArray(0, 101, 10);
             //AUFGABE 1
-            //PrintArrayFor(BubbleSortAscOrDesc(array, false));                           // Erstelle einen Bubblesort aufsteigend, absteigend und dieser soll durch einen Bool änderbar sein.
+            PrintArrayFor(BubbleSortAscOrDesc(array, false));                           // Erstelle einen Bubblesort aufsteigend, absteigend und dieser soll durch einen Bool änderbar sein.
             Console.WriteLine("===================================");
             Console.WriteLine("===================================");
             

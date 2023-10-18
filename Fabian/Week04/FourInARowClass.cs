@@ -24,7 +24,7 @@ namespace Fabian.Week04
                     playGround[i, j] = 0;
                 }
             }
-            Print2DArrayTTT(playGround);
+            Week03.TicTacToeClass.Print2DArray(playGround);
 
             while (true)
             {
@@ -57,7 +57,7 @@ namespace Fabian.Week04
                         }
                     } while (columnFull);
 
-                    Print2DArrayTTT(playGround);
+                    Week03.TicTacToeClass.Print2DArray(playGround);
 
                     if (CheckWinVertical4IR(playGround, 1) || CheckWinHorizontal4IR(playGround, 1) || CheckWinDiagonal4IR(playGround, 1))
                     {
@@ -99,7 +99,7 @@ namespace Fabian.Week04
                         }
                     } while (columnFull);
 
-                    Print2DArrayTTT(playGround);
+                    Week03.TicTacToeClass.Print2DArray(playGround);
                     count++;
 
                     if (CheckWinVertical4IR(playGround, 2) || CheckWinHorizontal4IR(playGround, 2) || CheckWinDiagonal4IR(playGround, 2))
