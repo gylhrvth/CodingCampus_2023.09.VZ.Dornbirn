@@ -1,1 +1,1 @@
-﻿Jovo.Week04.Menü.Start();
+﻿Jovo.Week04.Menü_Input.Start();

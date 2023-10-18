@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using static Mehmet.Week01.Rechnen;
+using static Mehmet.Week02.BooleanExamples;
+
 
 namespace Mehmet.Week04
 {
@@ -20,7 +24,7 @@ namespace Mehmet.Week04
             //Console.WriteLine("your input is: " + input);
 
 
-            //int readNumber = ReadNumbner("Enter a Numero:", " EROR 404 : Try again : ");
+            //int readNumberAufgabe = ReadNumberAufgabe("Enter a Numero:", " EROR 404 : Try again : ");
 
 
 
@@ -50,6 +54,23 @@ namespace Mehmet.Week04
                 }
         }
 
+        public static float ReadFloat(string msg)
+        {
+            while (true)
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    float myNumber = Convert.ToSingle(input);
+                    return myNumber;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Zahl- Hust");
+                }
+        }
+
+
         public static String ReadSymbol(string msg)
         {
             while (true)
@@ -66,11 +87,28 @@ namespace Mehmet.Week04
         }
 
          
-
+        public static Char ReadChar(string msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    char myChar = Convert.ToChar(input);
+                    return myChar;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Char- Hust");
+                }
+            }
+            
+        }
 
 
         
-        static int ReadNumbner(String stage1, String error)
+        static int ReadNumberAufgabe(String stage1, String error)
         {
             Console.WriteLine(stage1);
             while (true)
@@ -152,15 +190,15 @@ namespace Mehmet.Week04
 
                 if (myNumber == 1)
                 {
-                    Mehmet.Week02.BooleanExamples.PrintChristmasTree(size, symbol);
+                    PrintChristmasTree(size, symbol);
                 }
                 else if (myNumber == 2)
                 {
-                    Mehmet.Week01.Rechnen.PrintEmptySquare(symbol, size);
+                    PrintEmptySquare(symbol, size);
                 }
                 else
                 {
-                    Mehmet.Week02.BooleanExamples.PrintRhombus(symbol, size);
+                    PrintRhombus(symbol, size);
                 }
                 Console.WriteLine();
                 Console.WriteLine("1 für  Ja");
@@ -180,31 +218,26 @@ namespace Mehmet.Week04
             while (true)
             {
 
-                float num1 = ReadNumber("Gib ein Zahl ein");
-                float num2 = ReadNumber("Gib das 2. Zahl ein");
-                float num2new = num2;
-                
-                Console.WriteLine("1 für +");
-                Console.WriteLine("2 für -");
-                Console.WriteLine("3 für *");
-                Console.WriteLine("4 für /");
-                Console.WriteLine("5 für ^");
+                float num1 = ReadFloat("Gib ein Zahl ein");
+                char oprt = ReadChar("gib einen operator ein : + , - , * , / , ^ ");
+                float num2 = ReadFloat("Gib das 2. Zahl ein");
+                float num2new = 1;
 
-                int num3 = ReadNumber("Suche dir deinen Operator aus");
+                               
 
-                if (num3 == '+')
+                if (oprt == '+')
                 {
                     Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1+num2));
                 }
-                else if(num3 == 2)
+                else if(oprt == '-')
                 {
                     Console.WriteLine($"{num1}" + " - " + $"{num2}" + " = " + (num1 - num2));
                 }
-                else if (num3 == 3)
+                else if (oprt == '*')
                 {
                     Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));
                 }
-                else if( num3 == 4) 
+                else if(oprt == '/') 
                 {
                     Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
                 }
@@ -213,8 +246,7 @@ namespace Mehmet.Week04
                     for (float i = 0; i < num2; i++)
                     {
                         num2new *= 10;
-                    }
-                    
+                    }                   
                     Console.WriteLine($"{num1}" + " ^ " + $"10^{num2}" + " = " + (num1 * num2new));
                 }
 
