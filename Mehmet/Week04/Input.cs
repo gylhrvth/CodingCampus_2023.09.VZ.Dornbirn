@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using static Mehmet.Week01.Rechnen;
+using static Mehmet.Week02.BooleanExamples;
+
 
 namespace Mehmet.Week04
 {
@@ -50,6 +54,23 @@ namespace Mehmet.Week04
                 }
         }
 
+        public static double ReadDouble(string msg)
+        {
+            while (true)
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    double myNumber = Convert.ToDouble(input);
+                    return myNumber;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Zahl- Hust");
+                }
+        }
+
+
         public static String ReadSymbol(string msg)
         {
             while (true)
@@ -66,7 +87,24 @@ namespace Mehmet.Week04
         }
 
          
-
+        public static Char ReadChar(string msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    char myChar = Convert.ToChar(input);
+                    return myChar;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Char- Hust");
+                }
+            }
+            
+        }
 
 
         
@@ -152,15 +190,15 @@ namespace Mehmet.Week04
 
                 if (myNumber == 1)
                 {
-                    Mehmet.Week02.BooleanExamples.PrintChristmasTree(size, symbol);
+                    PrintChristmasTree(size, symbol);
                 }
                 else if (myNumber == 2)
                 {
-                    Mehmet.Week01.Rechnen.PrintEmptySquare(symbol, size);
+                    PrintEmptySquare(symbol, size);
                 }
                 else
                 {
-                    Mehmet.Week02.BooleanExamples.PrintRhombus(symbol, size);
+                    PrintRhombus(symbol, size);
                 }
                 Console.WriteLine();
                 Console.WriteLine("1 für  Ja");
@@ -181,30 +219,27 @@ namespace Mehmet.Week04
             {
 
                 float num1 = ReadNumber("Gib ein Zahl ein");
+                char num3 = ReadChar("Wähle einen operator: + , - , * , / , ^ ");
                 float num2 = ReadNumber("Gib das 2. Zahl ein");
-                float num2new = num2;
+                float num2new = 1;
                 
-                Console.WriteLine("1 für +");
-                Console.WriteLine("2 für -");
-                Console.WriteLine("3 für *");
-                Console.WriteLine("4 für /");
-                Console.WriteLine("5 für ^");
+                
 
-                int num3 = ReadNumber("Suche dir deinen Operator aus");
+                
 
                 if (num3 == '+')
                 {
                     Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1+num2));
                 }
-                else if(num3 == 2)
+                else if(num3 == '-')
                 {
                     Console.WriteLine($"{num1}" + " - " + $"{num2}" + " = " + (num1 - num2));
                 }
-                else if (num3 == 3)
+                else if (num3 == '*')
                 {
                     Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));
                 }
-                else if( num3 == 4) 
+                else if( num3 == '/') 
                 {
                     Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
                 }
@@ -213,8 +248,7 @@ namespace Mehmet.Week04
                     for (float i = 0; i < num2; i++)
                     {
                         num2new *= 10;
-                    }
-                    
+                    }                   
                     Console.WriteLine($"{num1}" + " ^ " + $"10^{num2}" + " = " + (num1 * num2new));
                 }
 
