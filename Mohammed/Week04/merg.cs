@@ -3,9 +3,14 @@ namespace Mohammed.Week04
 {
 	public class merg
 	{
-		public merg()
+		public static void Start()
 		{
+
+
 		}
+
+
+		
 	}
 }
 
