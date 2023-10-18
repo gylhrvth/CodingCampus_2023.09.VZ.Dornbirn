@@ -131,7 +131,30 @@ namespace Jovo.Week01
             Console.WriteLine();
 
 
+
+           
+
+            Console.WriteLine("\nPrint Characters");
+            PrintChars2('x', 10);
+
+            Console.WriteLine("PrintRhombus");
+            PrintRhombus("x", 7);
+            Console.WriteLine();
         }
+
+
+
+
+        public static void PrintChars2(char symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                Console.Write(symbol);
+            }
+        }
+
+
+
 
 
         //Aufgabe Print Characters
@@ -676,8 +699,39 @@ namespace Jovo.Week01
             }
         }
 
+        public static void PrintRhombus(string symbol, int size)
+        {
+            for (int row = 0; row < size; row++)
+            {
+                for (int col = 0; col < size; col++)
+                {
+                    if (row == col - size / 2)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (row - col == size / 2)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (size / 2 - col == row)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (row + 1 + col == size + size / 2)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
 
 
+            }
+
+        }
 
 
 
