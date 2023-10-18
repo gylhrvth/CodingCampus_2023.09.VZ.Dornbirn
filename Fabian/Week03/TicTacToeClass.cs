@@ -180,13 +180,19 @@ namespace Fabian.Week03
         }
         public static int UserInput(string dimension, int player)
         {
-            int num = 0;
-            while (num != 1 && num != 2 && num != 3)
+            int num = Int32.MinValue;
+            while (num == Int32.MinValue)
             {
                 try
                 {
                     Console.WriteLine($"Enter {dimension} between 1-3 (player {player}): ");
                     num = Convert.ToInt32(Console.ReadLine());
+
+                    if (num < 1 || num > 3)
+                    {
+                        Console.WriteLine($"{num} is not between 1 and 3");
+                        num = Int32.MinValue;
+                    }
                 }
                 catch (FormatException)
                 {

@@ -139,13 +139,19 @@ namespace Fabian.Week04
         }
         public static int UserInput4IR(int player)
         {
-            int num = 0;
-            while (num != 1 && num != 2 && num != 3 && num != 4 && num != 5 && num != 6)
+            int num = Int32.MinValue;
+            while (num == Int32.MinValue)
             {
                 try
                 {
                     Console.WriteLine($"Enter column between 1-6 (player {player}): ");
                     num = Convert.ToInt32(Console.ReadLine());
+
+                    if(num < 1 ||num > 6)
+                    {
+                        Console.WriteLine($"{num} is not between 1-6!");
+                        num = Int32.MinValue;
+                    }
                 }
                 catch (FormatException)
                 {
