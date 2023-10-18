@@ -49,9 +49,9 @@ namespace Mohammed.Week04
                 Console.Write(value);
                 first = false;
             }
-            Console.WriteLine("]");
+            Console.WriteLine("]"); 
         }
-
+        public 
 
 
         public static int[] CreateArrayAsc(int size)
