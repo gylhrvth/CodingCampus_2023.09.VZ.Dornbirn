@@ -15,9 +15,14 @@ namespace Sven.Week04
             RekursiveFaktorial(10);
             Console.WriteLine();
 
-            Console.WriteLine("Rekursive Fibonacci:");
-            RekursiveFibonacci(15);
-            Console.WriteLine();
+        
+            for (int i = 1; i <= 299; ++i)
+            {
+                Console.WriteLine("Rekursive Fibonacci({0}) = {1}", i, RekursiveFibonacci(i));
+
+            }
+
+
 
         }
 
@@ -48,7 +53,7 @@ namespace Sven.Week04
         }
         static int RekursiveFibonacci(int fib)
         {
-            if (fib == 1 || fib == 2)
+            if (fib <= 2)
             {
                 return 1;
             }
