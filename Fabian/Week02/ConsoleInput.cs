@@ -9,7 +9,7 @@ namespace Fabian.Week02
             //ReadString();
             //ReadInt();
             //GuessGame();
-            //Menu();
+            Menu();
             //Calculator();
             //CalculatorBonus();
             //BusinessCard();
