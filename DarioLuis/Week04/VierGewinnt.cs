@@ -5,7 +5,7 @@
     {
         static char[,] board = new char[6, 7];
         static char currentPlayer = 'R'; // Startspieler ist Rot (R)
-
+        
         public static void Start()
         {
             InitializeBoard();
