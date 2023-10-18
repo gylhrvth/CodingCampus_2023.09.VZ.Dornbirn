@@ -11,9 +11,10 @@ namespace Cemal.Week04
         public static void StartInput()
         {
             Console.WriteLine("String einlesen");
-            Einlesen();
+            //stringEinlesen();
             Console.WriteLine();
-            Zahleinlesen();
+            //Zahleinlesen("Deine Zahl ist: ");
+            //Console.WriteLine("Deine Zahl ist: " + userinput);
 
 
 
@@ -22,22 +23,25 @@ namespace Cemal.Week04
 
         }
 
-        public static void Einlesen()
+        public static string Einlesen()
         {
             string input = Console.ReadLine();
-
-            Console.WriteLine(input);
+            return input;
+            
         }
 
-        public static int Zahleinlesen()
+        public static int Zahleinlesen(string ergebnis, string error)
         {
             
             Console.WriteLine("Gib eine Zahl an");
-            int userInput = int.Parse(Console.ReadLine());
-            Console.WriteLine("Deine Zahl ist: " + userInput);
+
+            string input = Console.ReadLine();
+            int userinput = Convert.ToInt32(input);
+            //int userInput = int.Parse(Console.ReadLine());
 
 
-            return 0;
+
+            return userinput;
         }
     }
 }
