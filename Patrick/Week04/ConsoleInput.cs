@@ -10,20 +10,18 @@ namespace Patrick.Week04
     {
         public static void start() 
         {
-            //AUFGABE 1 
-            StringWrite(StringRead());                                          //Lies mit Hilfe von .... ein String des Benutzers ein und gib diesen aus
-
-
-        
+            //AUFGABE 1
+            Console.WriteLine("Write the input: ");
+            Console.WriteLine("The Inputstring = " + StringRead());
+                                                                        //Lies mit Hilfe von .... ein String des Benutzers ein und gib diesen aus
         }
 
         public static string StringRead()
         {
-            Console.WriteLine("Write the input: ");
             string Input = Console.ReadLine();
-            Console.Write("The Inputstring = ");
             return Input;
         }
+
         public static void StringWrite(string input) 
         {
             Console.WriteLine(input);
