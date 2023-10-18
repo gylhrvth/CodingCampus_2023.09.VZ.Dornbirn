@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week04
+namespace Riccardo.Week04
 {
-    internal class UserInputUebungen
+    internal class Recursive
     {
     }
 }

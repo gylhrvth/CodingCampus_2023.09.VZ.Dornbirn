@@ -1,16 +1,11 @@
 ﻿using System;
 namespace Mohammed.Week04
 {
-	public class merg
+	public class day02
 	{
-		public static void Start()
+		public day02()
 		{
-
-
 		}
-
-
-		
 	}
 }
 

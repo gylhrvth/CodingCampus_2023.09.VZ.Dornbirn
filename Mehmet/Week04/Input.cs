@@ -24,7 +24,7 @@ namespace Mehmet.Week04
             //Console.WriteLine("your input is: " + input);
 
 
-            //int readNumber = ReadNumbner("Enter a Numero:", " EROR 404 : Try again : ");
+            //int readNumberAufgabe = ReadNumberAufgabe("Enter a Numero:", " EROR 404 : Try again : ");
 
 
 
@@ -54,14 +54,14 @@ namespace Mehmet.Week04
                 }
         }
 
-        public static double ReadDouble(string msg)
+        public static float ReadFloat(string msg)
         {
             while (true)
                 try
                 {
                     Console.Write(msg);
                     string input = Console.ReadLine();
-                    double myNumber = Convert.ToDouble(input);
+                    float myNumber = Convert.ToSingle(input);
                     return myNumber;
                 }
                 catch
@@ -108,7 +108,7 @@ namespace Mehmet.Week04
 
 
         
-        static int ReadNumbner(String stage1, String error)
+        static int ReadNumberAufgabe(String stage1, String error)
         {
             Console.WriteLine(stage1);
             while (true)
@@ -218,28 +218,26 @@ namespace Mehmet.Week04
             while (true)
             {
 
-                float num1 = ReadNumber("Gib ein Zahl ein");
-                char num3 = ReadChar("Wähle einen operator: + , - , * , / , ^ ");
-                float num2 = ReadNumber("Gib das 2. Zahl ein");
+                float num1 = ReadFloat("Gib ein Zahl ein");
+                char oprt = ReadChar("gib einen operator ein : + , - , * , / , ^ ");
+                float num2 = ReadFloat("Gib das 2. Zahl ein");
                 float num2new = 1;
-                
-                
 
-                
+                               
 
-                if (num3 == '+')
+                if (oprt == '+')
                 {
                     Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1+num2));
                 }
-                else if(num3 == '-')
+                else if(oprt == '-')
                 {
                     Console.WriteLine($"{num1}" + " - " + $"{num2}" + " = " + (num1 - num2));
                 }
-                else if (num3 == '*')
+                else if (oprt == '*')
                 {
                     Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));
                 }
-                else if( num3 == '/') 
+                else if(oprt == '/') 
                 {
                     Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
                 }

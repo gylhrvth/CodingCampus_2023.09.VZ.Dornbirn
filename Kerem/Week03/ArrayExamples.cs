@@ -95,21 +95,11 @@ namespace Kerem.Week03
             //int[] array = RandomNumberArray(20,0,100);
 
 
-
-
-
-
-
             Console.WriteLine("Array2D");
             //Array2D(2, 3, 4, 1);
 
 
-
-
         }
-
-
-
         public static int[] CreateArray(int size)
         {
             int[] arr = new int[size];
@@ -360,15 +350,10 @@ namespace Kerem.Week03
                 }
             }
         }
-
-        public static void Array2D()
-        {
-
-
-
-
-
-        }
+        //public static int[] Array2D(int[] array)
+        //{
+            
+        //}
     }
 }
 
