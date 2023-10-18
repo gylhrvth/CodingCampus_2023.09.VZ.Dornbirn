@@ -5,17 +5,19 @@ namespace Mohammed.Week04
 	{
 		public static void Start()
 		{
+			Console.ForegroundColor = ConsoleColor.DarkBlue;
+
             Console.WriteLine("RekursiveSum");
             int sum = RekursiveSum(5);
 			Console.WriteLine("Die Rekursive Summe ist " + sum);
 
-
-			Console.WriteLine("RekursiveFakt");
-			int fakt = RekursiveFakt(4);
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("RekursiveFakt");
+			long fakt = RekursiveFakt(55);
 			Console.WriteLine("Die Rekursive fakt ist " + fakt);
 
-
-			Console.WriteLine("Fibonacci");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Fibonacci");
 			int fib = Fib(7);
 			Console.WriteLine("Die fibonacci ist " + fib);
 			
@@ -33,7 +35,7 @@ namespace Mohammed.Week04
 			
 		}
 
-		public static int RekursiveFakt(int x)
+		public static long RekursiveFakt(int x)
 		{
 			if ( x == 1)
 			{
@@ -49,7 +51,12 @@ namespace Mohammed.Week04
 				return 1;
 			}
 			return Fib (x - 1) + Fib(x -2);
+
 		}
+
+
+
+
 	}
 }
 
