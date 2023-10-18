@@ -19,9 +19,7 @@ namespace Mohammed.Week04
 
             //BubbleSortAsc
 
-            BubbleSortAsc(arr);
-            Console.WriteLine("Sorted to - count");
-            PrintArrayForEach(arr);
+            
 
             //int[]array  = CreateArrayAsc(10);
             // PrintArrayForEach(array); die sind genau die gleiche mit unten vergleich..
@@ -120,21 +118,7 @@ namespace Mohammed.Week04
             }
         }
 
-        public static void BubbleSortAsc(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int a = 0; a < arr.Length; a++)
-                {
-                    if (arr[a] > arr[a - 1])
-                    {
-                        int temp = arr[a];
-                        arr[a] = arr[a - 1];
-                        arr[a - 1] = temp;
-                    }
-                }
-            }
-        }
+        
     }
 }
 
