@@ -12,6 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link=".editorconfig" />
+    <Folder Include="Week04\" />
   </ItemGroup>
 </Project>
