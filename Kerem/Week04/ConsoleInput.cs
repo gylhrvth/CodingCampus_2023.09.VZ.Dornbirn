@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kerem.Week04
 {
-    internal class InputConsole
+    internal class ConsoleInput
     {
         public static void Start()
         {
@@ -17,7 +17,9 @@ namespace Kerem.Week04
 
             Console.WriteLine("Read Number");
             int userinputnumber = ReadNumber("Enter a number", "Please only numbers! Try again!");
-          
+            Console.WriteLine("Userinput was: " + userinputnumber);
+
+
 
         }
         public static string ReadString(string prompt)
@@ -37,7 +39,7 @@ namespace Kerem.Week04
                     string input = Console.ReadLine(); 
                     int output = Convert.ToInt32(input);
                     return output;
-
+                    
                 }
                 catch
                 {
