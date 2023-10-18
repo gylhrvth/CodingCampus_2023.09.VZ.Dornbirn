@@ -8,7 +8,7 @@ namespace David.Week04
 
             //Console.WriteLine(Summe(5));
 	    
-	   Console.WriteLine(Fibo(5));
+	   Console.WriteLine(Fibo(7));
 	        
 	    // Faktorial(5);
 
@@ -46,9 +46,9 @@ namespace David.Week04
 
             if (x == 1 || x == 2)
             {
-                return x = 0;
+                return x = 1;
             }
-            return x = ((x - 1) + (x - 2));
+            return Fibo(x - 1) + Fibo(x - 2);
         }
     }
 
