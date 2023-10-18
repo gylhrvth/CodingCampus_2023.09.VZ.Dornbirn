@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week04
+namespace Jovo.Week04
 {
-    internal class InputConsole
+    internal class Menü3
     {
     }
 }

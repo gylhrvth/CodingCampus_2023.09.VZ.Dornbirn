@@ -31,18 +31,18 @@ namespace Dimitri.Week04
             //BubbleSortSwitch(arr, false);
             //PrintArrayToStringForI(arr);
 
-            int size = 10;
-            int[] arr = RandomNumberArray(size, 0, 100);
-            PrintArrayToStringForI(arr);
-
-            int[] result = MergeSort(arr, 0, arr.Length);
-            Console.WriteLine("Merge Sorted array:");
-            PrintArrayToStringForI(result);
-
-            //arr = RandomNumberArray(20, 0, 100);
-            //Console.WriteLine("cocktailshaker sort:");
-            //CocktailshakerSort(arr);
+            //int size = 10;
+            //int[] arr = RandomNumberArray(size, 0, 100);
             //PrintArrayToStringForI(arr);
+
+            //int[] result = MergeSort(arr, 0, arr.Length);
+            //Console.WriteLine("Merge Sorted array:");
+            //PrintArrayToStringForI(result);
+
+            int [] arr = RandomNumberArray(20, 0, 100);
+            Console.WriteLine("cocktailshaker sort:");
+            int [] result = CocktailshakerSort(arr);
+            PrintArrayToStringForI(result);
 
         }
 
@@ -172,7 +172,7 @@ namespace Dimitri.Week04
 
         }
 
-        public static void CocktailshakerSort(int[] arr)
+        public static int[] CocktailshakerSort(int[] arr)
         {
             int lo = 0;
             int hi = arr.Length - 1;
@@ -204,6 +204,8 @@ namespace Dimitri.Week04
 
                 hi = mov;
             }
+
+            return arr;
         }
     }
 }

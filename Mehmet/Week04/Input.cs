@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using static Mehmet.Week01.Rechnen;
+using static Mehmet.Week02.BooleanExamples;
+
 
 namespace Mehmet.Week04
 {
@@ -20,19 +24,93 @@ namespace Mehmet.Week04
             //Console.WriteLine("your input is: " + input);
 
 
-            //int readNumber = ReadNumbner("Enter a Numero:", " EROR 404 : Try again : ");
+            //int readNumberAufgabe = ReadNumberAufgabe("Enter a Numero:", " EROR 404 : Try again : ");
 
-            //int readRandomNumber = ReadRandomNumber("Lass uns ein Spiel spielen ö_ö , tippe einen Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runter: ", "Richtig !!!");
-            
-                    int readNumberMenue = ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
 
-        
+
+            //ReadRandomNumber("Lass uns ein Spiel spielen ö_ö", "tippe eine Zahl ein :_[", " Versuchs doch mit einem Zahl: ", "höher: ", "runter: ", "Richtig !!!", "Min?", "Max?");
+
+            //ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
+
+            Calculator();
+
         }
 
         public static Random rand = new Random();
-        static int ReadNumbner(String yes, String no)
+
+        public static int ReadNumber(string msg)
         {
-            Console.WriteLine(yes);
+            while (true)
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    int myNumber = Convert.ToInt32(input);
+                    return myNumber;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Zahl- Hust");
+                }
+        }
+
+        public static float ReadFloat(string msg)
+        {
+            while (true)
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    float myNumber = Convert.ToSingle(input);
+                    return myNumber;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Zahl- Hust");
+                }
+        }
+
+
+        public static String ReadSymbol(string msg)
+        {
+            while (true)
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    return input;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Symbol- Hust");
+                }
+        }
+
+         
+        public static Char ReadChar(string msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    char myChar = Convert.ToChar(input);
+                    return myChar;
+                }
+                catch
+                {
+                    Console.WriteLine("Hust -Char- Hust");
+                }
+            }
+            
+        }
+
+
+        
+        static int ReadNumberAufgabe(String stage1, String error)
+        {
+            Console.WriteLine(stage1);
             while (true)
             {
                 try
@@ -43,175 +121,141 @@ namespace Mehmet.Week04
                 }
                 catch
                 {
-                    Console.Error.WriteLine(no);
-                }
-            }
-        }
-
-
-        static int ReadRandomNumber(String Stage1,String error ,String higher, String lower, String correct)
-        {
-            Console.WriteLine(Stage1);
-            int random = rand.Next(101);
-            int answer = random;
-            bool start = true;
-            while (true)
-            {
-                try
-                {
-                    String input = Console.ReadLine();
-                    int myNumber = Convert.ToInt32(input);
-                    if (answer < myNumber)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine(lower);
-                        Console.WriteLine("<--" + myNumber);
-                        Console.WriteLine();
-                    }
-                    else if (answer > myNumber)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine(higher);
-                        Console.WriteLine(myNumber + "-->");
-                        Console.WriteLine();
-                    }
-                    else if (answer == myNumber)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine(answer + " " + correct);
-                        Console.WriteLine();
-                        return answer;
-                    }                           
-                }
-                catch
-                {
                     Console.Error.WriteLine(error);
                 }
             }
         }
 
-        static int ReadNumberMenue(String stage1, String questionDrawing, String drawing1, String drawing2, String drawing3, String asksize, String asksymbol)
+
+        static void ReadRandomNumber(String stage1, String stage2, String error, String higher, String lower, String correct, String askmin, String askmax)
         {
-            Console.WriteLine(stage1);
-            Console.WriteLine(questionDrawing);
-            Console.WriteLine("1 für = " + drawing1);
-            Console.WriteLine("2 für = " + drawing2);
-            Console.WriteLine("3 für = " + drawing3);
-            Console.WriteLine();
-           
-            string stage2 = " ";
-            
 
+            bool end = false;
+            Console.WriteLine(stage1);          
+            int min = ReadNumber(askmin);
+            int max = ReadNumber(askmax);
+            int random = rand.Next(min, max);
+            int answer = random;
 
-            while (true) 
+            while (!end)
             {
-                try
+                int myNumber = ReadNumber(stage2);
+                if (answer < myNumber)
                 {
-                    String input = Console.ReadLine();
-                    int myNumber = Convert.ToInt32(input);
-                    
-
-                    if (myNumber == 1)
+                    Console.WriteLine();
+                    Console.WriteLine(lower);
+                    Console.WriteLine("<--" + myNumber);
+                    Console.WriteLine();
+                    if (myNumber > max)
                     {
-                        
-                        Console.WriteLine(asksize);
-                        String inputsize = Console.ReadLine();
-                        int size = Convert.ToInt32(inputsize);
-                        int sizeOfDrawing = size;
-
-                        Console.WriteLine(asksymbol);
-                        String symbol = Console.ReadLine();
-                        String symbolofDrawing = symbol;
-                      
-                        Mehmet.Week02.BooleanExamples.PrintChristmasTree(sizeOfDrawing, symbolofDrawing);
-                       
-
-                        Console.WriteLine("Nochmal?");
-                        Console.WriteLine("1 für  ja");
-                        Console.WriteLine("2 für nein");
-
-                        
-                        int myNumber2 = Convert.ToInt32(input);
-                        
-
-                        if (myNumber2  == 2)
-                        {
-                            ReadNumberMenue(stage2, questionDrawing, drawing1, drawing2, drawing3, asksize, asksymbol);
-                        }
-                        else
-                        {
-                            return 18437501;
-                        }
-
-
-
-
-
+                        Console.WriteLine("Achtung max: " + max);
                     }
-
-
-
                 }
-                catch
+                else if (answer > myNumber)
                 {
-                    
+                    Console.WriteLine();
+                    Console.WriteLine(higher);
+                    Console.WriteLine(myNumber + "-->");
+                    Console.WriteLine();
+                    if (myNumber < min)
+                    {
+                        Console.WriteLine("Achtung min: " + min);
+                    }
                 }
+                else if (answer == myNumber)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(answer + " " + correct);
+                    Console.WriteLine();
+                    end = true;
+                }
+            }
+        }
+
+
+        static void ReadNumberMenue(String stage1, String questionDrawing, String drawing1, String drawing2, String drawing3, String asksize, String asksymbol)
+        {
+            bool end = false;
+            while (!end)
+            {
+                Console.WriteLine(stage1);
+                Console.WriteLine("1 für = " + drawing1);
+                Console.WriteLine("2 für = " + drawing2);
+                Console.WriteLine("3 für = " + drawing3);
+                Console.WriteLine();
+
+                int myNumber = ReadNumber(questionDrawing);
+                int size = ReadNumber(asksize);
+                string symbol = ReadSymbol(asksymbol);
+
+                if (myNumber == 1)
+                {
+                    PrintChristmasTree(size, symbol);
+                }
+                else if (myNumber == 2)
+                {
+                    PrintEmptySquare(symbol, size);
+                }
+                else
+                {
+                    PrintRhombus(symbol, size);
+                }
+                Console.WriteLine();
+                Console.WriteLine("1 für  Ja");
+                Console.WriteLine("2 für Nein");
+                int again = ReadNumber("Sollen wir nochmal?");
+
+                if (again != 1)
+                {
+                    end = true;
+                }
+            }
+        }
+
+
+        public static void Calculator()
+        {
+            while (true)
+            {
+
+                float num1 = ReadFloat("Gib ein Zahl ein");
+                char oprt = ReadChar("gib einen operator ein : + , - , * , / , ^ ");
+                float num2 = ReadFloat("Gib das 2. Zahl ein");
+                float num2new = 1;
+
+                               
+
+                if (oprt == '+')
+                {
+                    Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1+num2));
+                }
+                else if(oprt == '-')
+                {
+                    Console.WriteLine($"{num1}" + " - " + $"{num2}" + " = " + (num1 - num2));
+                }
+                else if (oprt == '*')
+                {
+                    Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));
+                }
+                else if(oprt == '/') 
+                {
+                    Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
+                }
+                else
+                {
+                    for (float i = 0; i < num2; i++)
+                    {
+                        num2new *= 10;
+                    }                   
+                    Console.WriteLine($"{num1}" + " ^ " + $"10^{num2}" + " = " + (num1 * num2new));
+                }
+
             }
         }
 
 
 
 
-
-
-
-        //public static void PrintChristmasTree(int size,String symbol)
-        //{
-        //    for (int x = 0; x < size; x++)
-        //    {
-        //        {
-        //            for (int y = size - 1; y > x; y--)
-        //            {
-        //                Console.Write(" ");
-        //            }
-        //            for (int z = -1; z < x; z++)
-        //            {
-        //                Console.Write(symbol);
-        //            }
-        //            for (int z = 0; z < x; z++)
-        //            {
-        //                Console.Write(symbol);
-        //            }
-        //            for (int y = size; y > x; y--)
-        //            {
-        //                Console.Write(" ");
-        //            }
-        //        }
-        //        Console.WriteLine();
-        //    }
-        //    for (int y = 0; y < size; ++y)
-        //    {
-        //        Console.Write(symbol);
-        //        Console.Write(" ");
-        //    }
-        //    Console.WriteLine();
-        //    for (int y = 0; y < size / 4; ++y)
-        //    {
-        //        for (int x1 = 0; x1 < size - 3; ++x1)
-        //        {
-        //            Console.Write(" ");
-        //        }
-        //        for (int x2 = 0; x2 < size - 4; ++x2)
-        //        {
-        //            Console.Write(symbol);
-        //        }
-        //        for (int x3 = 0; x3 < size - 3; ++x3)
-        //        {
-        //            Console.Write(" ");
-        //        }
-        //        Console.WriteLine();
-        //    }
-        //}
 
 
     }
