@@ -9,32 +9,39 @@ namespace David.Week04
 		public static void Start2D()
 		{
 			int[][] arr = CreateArray2D(4, 6);
-			
-
-			
 
 		}
 
-		public static int[][] CreatedArray2D(int rows, int cols)
+
+		public static int[][] CreateArray2D(int rowNum, int colNum)
 		{
-			int[] rowArr = new int[rows];
-
             Random random = new Random();
+			int[][] arr2D = new int[rowNum][];
 
-            for (int i = 0; i < rows.Length; i++)
+
+            for (int row = 0; row < arr2D.Length; row++)
 			{
-				rowArr[i] = random.Next(0, 100);
+				arr2D[row] = new int[colNum];
 			}
-			foreach (int RowElement in rowArr)
+
+			for (int r = 0; r < arr2D.Length; r++)
 			{
-				Console.WriteLine(RowElement + " ");
+				for (int c = 0; c < arr2D[r].Length; c++)
+				{
+					arr2D[r][c] = random.Next(10, 100);
+				}
 			}
-			Console.WriteLine(rowArr);
-			return rowArr;
-			
+
+			for (int r = 0; r < arr2D.Length; r++)
+			{
+				for (int c = 0; c < arr2D[r].Length; c++)
+				{
+					Console.Write(arr2D[r][c]+ " ");
+				}
+				Console.WriteLine();
+			}
+			return arr2D;
 		}
-		
-		
 	}
 }
 

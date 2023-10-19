@@ -7,7 +7,4 @@
 //David.Week04.Day02.Start();
 //David.Week04.Day02.Start();
 //David.Week04.Day04.Start();
-//David.Week04.Rechner.StartRechner();
 David.Week04._D.Start2D();
-
-
