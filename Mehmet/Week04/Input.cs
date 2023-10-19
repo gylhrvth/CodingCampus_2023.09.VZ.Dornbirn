@@ -213,7 +213,7 @@ namespace Mehmet.Week04
 
         public static void Calculator()
         {
-            Console.WriteLine("Gib bei operator 'X' ein um zum Verlassen");
+            
             float num1 = ReadFloat("Gib ein Zahl ein:  ");
 
             bool end = false;
@@ -232,7 +232,8 @@ namespace Mehmet.Week04
                     num1 = num3;
                     Console.WriteLine("weiter?");
                  
-                    int again = ReadNumber("1 für Ja | 2 für Nein");
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
                     Console.WriteLine(num1);
                     if (again != 1)
                     {
@@ -248,7 +249,8 @@ namespace Mehmet.Week04
                     num1 = num3;
                     Console.WriteLine("weiter?");
                  
-                    int again = ReadNumber("1 für Ja | 2 für Nein");
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
                     Console.WriteLine(num1);
                     if (again != 1)
                     {
@@ -264,7 +266,8 @@ namespace Mehmet.Week04
                     num1 = num3;
                     Console.WriteLine("weiter?");
                    
-                    int again = ReadNumber("1 für Ja | 2 für Nein");
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
                     Console.WriteLine(num1);
                     if (again != 1)
                     {
@@ -279,7 +282,8 @@ namespace Mehmet.Week04
                     num1 = num3;
                     Console.WriteLine("weiter?");
                    
-                    int again = ReadNumber("1 für Ja | 2 für Nein");
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
                     Console.WriteLine(num1);
                     if (again != 1)
                     {
@@ -298,7 +302,8 @@ namespace Mehmet.Week04
                     num1 = num3;
                     Console.WriteLine("weiter?");
                     
-                    int again = ReadNumber("1 für Ja | 2 für Nein");
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
                     Console.WriteLine(num1);
                     if (again != 1)
                     {
