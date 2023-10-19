@@ -1,3 +1,1 @@
-﻿using Niklas.Week04;
-
-Input.Start();
+﻿Niklas.Week04.Input.Start();
