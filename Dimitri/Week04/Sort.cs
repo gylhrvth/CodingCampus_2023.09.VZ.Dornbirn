@@ -39,9 +39,16 @@ namespace Dimitri.Week04
             //Console.WriteLine("Merge Sorted array:");
             //PrintArrayToStringForI(result);
 
-            int [] arr = RandomNumberArray(5, 0, 10);
-            Console.WriteLine("cocktailshaker sort:");
-            int [] result = CocktailshakerSort(arr);
+            //int [] arr = RandomNumberArray(5, 0, 10);
+            //Console.WriteLine("cocktailshaker sort:");
+            //int [] result = CocktailshakerSort(arr);
+            //PrintArrayToStringForI(result);
+
+            int[] arr = RandomNumberArray(5, 0, 10);
+            Console.WriteLine("My Array:");
+            PrintArrayToStringForI(arr);
+            int[] result = HeapSort(arr);
+            Console.WriteLine("Sorted Array with HeapSort:");
             PrintArrayToStringForI(result);
 
         }
@@ -208,25 +215,51 @@ namespace Dimitri.Week04
             return arr;
         }
 
-        public static void HeapSort(int[] arr) 
+        public static int[] HeapSort(int[] arr) 
         {
-            
+            BuildHeap(arr);
+            int n = arr.Length - 1;
+            while(n > 0)
+            {
+                int temp = arr[0];
+                arr[0] = arr[n];
+                arr[n] = temp;
+                n -= 1;
+                SiftDown(arr, 0, n);
+            }
+            return arr;
         }
 
-        //private static int[] BuildHeap(int[] arr)
-        //{
+        private static int[] BuildHeap(int[] arr)
+        {
+            for(int i = (arr.Length - 1)/2; i >= 0; i--)
+            {
+                SiftDown(arr, i, arr.Length - 1);
+            }
+            return arr;
+        }
 
-        //}
+        private static int[] SiftDown(int[] arr, int i, int n)
+        {
+            if (2 * i >= n)
+            {
+                return arr;
+            }
 
-        //private static int[] SiftDown(int i)
-        //{
-        //    if (2 * i >= arr.Length)
-        //    {
-        //        return arr;
-        //    }
+            int k = 2 * i;
+            if (2 * i + 1 < arr.Length && arr[2*i] <= arr[2*i + 1])
+            {
+                k += 1;
+            }
+            if (arr[i] < arr[k])
+            {
+                int tmp = arr[i];
+                arr[i] = arr[k];
+                arr[k] = tmp;
+                SiftDown(arr, k, n);
+            }
 
-        //    int k = 2 * context;
-        //    if(2 * i <=  )
-        //}
+            return arr;
+        }
     }
 }

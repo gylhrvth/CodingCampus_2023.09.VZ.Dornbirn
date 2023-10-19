@@ -1,17 +1,32 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Globalization;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
+﻿using System;
+using System.IO.IsolatedStorage;
 
 namespace Fabienne.Week02
 {
     public class Arrays
     {
+        //private static String[] units = { "Zero", "One", "Two", "Three",
+        //    "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+        //    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+        //    "Seventeen", "Eighteen", "Nineteen" };
+        //private static String[] tens = { "", "", "Twenty", "Thirty", "Forty",
+        //    "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+
         public static Random rand = new Random();
         public static void Start()
         {
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+        //    Console.ForegroundColor = ConsoleColor.DarkBlue;
+        //    for (long i = 100000; i <= 10000000; i *= 10)
+        //    {
+        //        Console.WriteLine(MyConvert(i).ToLower());
+        //        Console.WriteLine(MyConvert(i + 1).ToLower());
+        //        Console.WriteLine(MyConvert(i + 10).ToLower());
+        //        Console.WriteLine(MyConvert(i + 11).ToLower());
+        //        Console.WriteLine(MyConvert(i + 100).ToLower());
+        //        Console.WriteLine(MyConvert(i + 110).ToLower());
+        //        Console.WriteLine(MyConvert(i + 111).ToLower());
+        //    }
+
 
             //int[] original = { 1, 7, 8 , 11, 32, 4, -5};         
             //Console.WriteLine("[{0}]", string.Join(", ", NumberArray()));          
@@ -463,18 +478,18 @@ namespace Fabienne.Week02
                 Console.WriteLine();
             }
         }
-        public static int[,] CreatePascalDreieck(int size = 0)
+        public static int[,] CreatePascalDreieck(int size = 0)          // - geht noch nicht und 0.irgendwas auch nicht
         {
             while (size < 1)
-            {
+            {                
                 try
                 {
-                    Console.WriteLine("Hewwo, pwease entwer une number for ze size of ze Pascal Trinangle! Thank yew: ");
+                    Console.WriteLine("Enter size for Array: ");
                     size = Convert.ToInt32(Console.ReadLine());
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Oh no ma good sir or maam (or something inbetween), but thats not possible, sowwy :( ");
+                    Console.WriteLine("Thats not a number ");
                 }
             }
 
@@ -508,8 +523,36 @@ namespace Fabienne.Week02
                 Console.WriteLine();
             }
         }
-        
+
         //uwu
+
+        //public static String MyConvert(long i)
+        //{
+        //    if (i < 20)
+        //    {
+        //        return units[i];
+        //    }
+        //    if (i < 100)
+        //    {
+        //        return tens[i / 10] + ((i % 10 > 0) ? " " + MyConvert(i % 10) : "");
+        //    }
+        //    if (i < 1000)
+        //    {
+        //        return units[i / 100] + " Hundred"
+        //                + ((i % 100 > 0) ? " And " + MyConvert(i % 100) : "");
+        //    }
+        //    if (i < 1000000)
+        //    {
+        //        return MyConvert(i / 1000) + " Thousand"
+        //                + ((i % 1000 > 0) ? " And " + MyConvert(i % 1000) : "");
+        //    }         
+        //    if (i < 1000000000)
+        //    {
+        //        return MyConvert(i / 1000000) + " Billion"
+        //                + ((i % 1000000 > 0) ? " And " + MyConvert(i % 1000000) : "");
+        //    }
+        //    return MyConvert(i / 1000000000) + " Trillion "
+        //            + ((i % 1000000000 > 0) ? " And " + MyConvert(i % 1000000000) : "");
+        }
     }
     
-}
