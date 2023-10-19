@@ -7,27 +7,22 @@ namespace Fabian.Week02
     {
         public static void Start()
         {
-            //ReadString();
-            //Console.WriteLine("Your text is: " + ReadString("Enter a text: "));
-            //Console.WriteLine("Your number is: "+ ReadInt("Enter a number: "));
             //GuessGame();
             //Menu();
             //Calculator();
             //CalculatorBonus();
             //BusinessCard();
-            TheGameBegins();
-
-
+            //TheGameBegins();
         }
 
         public static String ReadString(String msg, String pattern = @"^[a-zA-Z]+$")
         {
             while (true)
             {
-                Console.WriteLine(msg);
+                Console.Write(msg);
                 String text = Console.ReadLine();
 
-                if (text == "")
+                if (text.CompareTo("") == 0)
                 {
                     Console.WriteLine("Please enter something!");
                 }
@@ -48,7 +43,7 @@ namespace Fabian.Week02
             {
                 try
                 {
-                    Console.WriteLine(msg);
+                    Console.Write(msg);
                     num = Convert.ToInt32(Console.ReadLine());
                 }
                 catch (FormatException)
@@ -65,7 +60,7 @@ namespace Fabian.Week02
             {
                 try
                 {
-                    Console.WriteLine(msg);
+                    Console.Write(msg);
                     num = Convert.ToInt32(Console.ReadLine());
 
                     if (num < min || num > max)
@@ -88,7 +83,7 @@ namespace Fabian.Week02
             {
                 try
                 {
-                    Console.WriteLine(msg);
+                    Console.Write(msg);
                     num = Convert.ToDouble(Console.ReadLine());
                 }
                 catch (FormatException)
@@ -100,7 +95,7 @@ namespace Fabian.Week02
         }
         public static bool AskToPlayAgain()
         {
-            String restart = ReadString("Do you want to play again? (Y/N)", "^[yYnN]$");
+            String restart = ReadString("Do you want to play again? (Y/N): ", "^[yYnN]$");
             restart = restart.ToUpper();
 
             if (restart == "N")
@@ -187,12 +182,13 @@ namespace Fabian.Week02
                 try
                 {
 
-                    Console.WriteLine("Enter number 1: ");
+                    Console.Write("Enter number 1: ");
                     float num1 = float.Parse(Console.ReadLine());
-                    Console.WriteLine("What would you like to do?");
-                    String option = ReadString("*, + , -, /, ^", "^[*\\+\\-\\/\\^]$");
 
-                    Console.WriteLine("Enter number 2: ");
+                    Console.WriteLine("What would you like to do?");
+                    String option = ReadString("*, + , -, /, ^ : ", "^[*\\+\\-\\/\\^]$");
+
+                    Console.Write("Enter number 2: ");
                     float num2 = float.Parse(Console.ReadLine());
 
                     switch (option)
@@ -307,7 +303,7 @@ namespace Fabian.Week02
             }
 
         }
-        public static void BusinessCard()
+        public static void BusinessCard() 
         {
             double width = 49;
 
@@ -316,7 +312,7 @@ namespace Fabian.Week02
             String firstName = ReadString("Enter yout first name: ");
             String lastName = ReadString("Enter your last name: ");
             String phoneNumber = ReadString("Enter your phone number: ", "^[0-9\\+]+$");
-            String email = ReadString("Enter your email: ", "^[a-zA-Z\\@\\.]+$");
+            String email = ReadString("Enter your email (+xx xxx xxxxxxx): ", "^[a-zA-Z\\@\\.]+$");
 
 
 
