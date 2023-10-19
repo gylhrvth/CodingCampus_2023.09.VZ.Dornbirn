@@ -22,7 +22,7 @@ namespace Fabian.Week03
                     playGround[i, j] = 0;
                 }
             }
-            Print2DArrayTTT(playGround);
+            Print2DArray(playGround);
 
             while (true)
             {
@@ -34,25 +34,25 @@ namespace Fabian.Week03
                     int p2Col = 0;
 
                     //enter numbers
-                    p1Row = UserInputTTT("row", 1);
-                    p1Col = UserInputTTT("column", 1);
+                    p1Row = UserInput("row", 1);
+                    p1Col = UserInput("column", 1);
 
                     //check if field is taken
                     while (playGround[p1Row - 1, p1Col - 1] != 0)
                     {
                         Console.WriteLine("This field is already taken!");
-                        Print2DArrayTTT(playGround);
-                        p1Row = UserInputTTT("row", 1);
-                        p1Col = UserInputTTT("column", 1);
+                        Print2DArray(playGround);
+                        p1Row = UserInput("row", 1);
+                        p1Col = UserInput("column", 1);
                     }
                     //print the 1
                     playGround[p1Row - 1, p1Col - 1] = 1;
 
-                    Print2DArrayTTT(playGround);
+                    Print2DArray(playGround);
                     count++;
 
                     //check if player 1 won
-                    if (CheckWinTTT(playGround, 1))
+                    if (CheckWin(playGround, 1))
                     {
                         Console.WriteLine("Player 1 won!");
                         if (AskToPlayAgain())
@@ -79,25 +79,25 @@ namespace Fabian.Week03
                     }
 
                     //enter numbers
-                    p2Row = UserInputTTT("row", 2);
-                    p2Col = UserInputTTT("column", 2);
+                    p2Row = UserInput("row", 2);
+                    p2Col = UserInput("column", 2);
 
                     //check if field is taken
                     while (playGround[p2Row - 1, p2Col - 1] != 0)
                     {
                         Console.WriteLine("This field is already taken!");
-                        Print2DArrayTTT(playGround);
-                        p2Row = UserInputTTT("row", 2);
-                        p2Col = UserInputTTT("column", 2);
+                        Print2DArray(playGround);
+                        p2Row = UserInput("row", 2);
+                        p2Col = UserInput("column", 2);
                     }
                     //print the 2
                     playGround[p2Row - 1, p2Col - 1] = 2;
 
-                    Print2DArrayTTT(playGround);
+                    Print2DArray(playGround);
                     count++;
 
                     //check if player 2 won
-                    if (CheckWinTTT(playGround, 2))
+                    if (CheckWin(playGround, 2))
                     {
                         Console.WriteLine("Player 2 won!");
                         if (AskToPlayAgain())
@@ -158,15 +158,41 @@ namespace Fabian.Week03
 
             return false;
         }
-        public static int UserInputTTT(string dimension, int player)
+        public static void Print2DArray(int[,] arr)
         {
-            int num = 0;
-            while (num != 1 && num != 2 && num != 3)
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i, j] == 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    else if (arr[i, j] == 2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    Console.Write(arr[i, j] + " ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine();
+            }
+        }
+        public static int UserInput(string dimension, int player)
+        {
+            int num = Int32.MinValue;
+            while (num == Int32.MinValue)
             {
                 try
                 {
                     Console.WriteLine($"Enter {dimension} between 1-3 (player {player}): ");
                     num = Convert.ToInt32(Console.ReadLine());
+
+                    if (num < 1 || num > 3)
+                    {
+                        Console.WriteLine($"{num} is not between 1 and 3");
+                        num = Int32.MinValue;
+                    }
                 }
                 catch (FormatException)
                 {
@@ -175,7 +201,7 @@ namespace Fabian.Week03
             }
             return num;
         }
-        public static bool CheckWinTTT(int[,] arr, int player)
+        public static bool CheckWin(int[,] arr, int player)
         {
             //horizontal
             if ((arr[0, 0] == player && arr[0, 1] == player && arr[0, 2] == player) || (arr[1, 0] == player && arr[1, 1] == player && arr[1, 2] == player) || (arr[2, 0] == player && arr[2, 1] == player && arr[2, 2] == player))

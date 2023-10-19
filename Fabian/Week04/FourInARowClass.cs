@@ -24,7 +24,7 @@ namespace Fabian.Week04
                     playGround[i, j] = 0;
                 }
             }
-            Print2DArrayTTT(playGround);
+            Week03.TicTacToeClass.Print2DArray(playGround);
 
             while (true)
             {
@@ -57,7 +57,7 @@ namespace Fabian.Week04
                         }
                     } while (columnFull);
 
-                    Print2DArrayTTT(playGround);
+                    Week03.TicTacToeClass.Print2DArray(playGround);
 
                     if (CheckWinVertical4IR(playGround, 1) || CheckWinHorizontal4IR(playGround, 1) || CheckWinDiagonal4IR(playGround, 1))
                     {
@@ -99,7 +99,7 @@ namespace Fabian.Week04
                         }
                     } while (columnFull);
 
-                    Print2DArrayTTT(playGround);
+                    Week03.TicTacToeClass.Print2DArray(playGround);
                     count++;
 
                     if (CheckWinVertical4IR(playGround, 2) || CheckWinHorizontal4IR(playGround, 2) || CheckWinDiagonal4IR(playGround, 2))
@@ -139,13 +139,19 @@ namespace Fabian.Week04
         }
         public static int UserInput4IR(int player)
         {
-            int num = 0;
-            while (num != 1 && num != 2 && num != 3 && num != 4 && num != 5 && num != 6)
+            int num = Int32.MinValue;
+            while (num == Int32.MinValue)
             {
                 try
                 {
                     Console.WriteLine($"Enter column between 1-6 (player {player}): ");
                     num = Convert.ToInt32(Console.ReadLine());
+
+                    if(num < 1 ||num > 6)
+                    {
+                        Console.WriteLine($"{num} is not between 1-6!");
+                        num = Int32.MinValue;
+                    }
                 }
                 catch (FormatException)
                 {
