@@ -11,9 +11,9 @@ namespace Selina.Week04.Aufgabe
     {
         public static void PrintEmptySquare1()
         {
-            Console.WriteLine("\nWie Groß soll Ihr Quader sein?");
+            Console.Write("\nWie Groß soll Ihr Quader sein? ");
             int square = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine();
 
             for (int y = 1; y <= square; y++)
             {
