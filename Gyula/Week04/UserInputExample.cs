@@ -10,6 +10,8 @@ namespace Gyula.Week04
 			Console.WriteLine("Hello {0}! Ich gratuliere Ihnen zum {1}. Geburtstag", name, age);
 		}
 
+
+
         public static int ReadNumber(string msg, int minValid, int maxValid)
         {
             int result = Int32.MinValue;
