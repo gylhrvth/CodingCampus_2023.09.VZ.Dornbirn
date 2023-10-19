@@ -70,7 +70,6 @@ namespace Mehmet.Week04
                 }
         }
 
-
         public static String ReadSymbol(string msg)
         {
             while (true)
@@ -86,7 +85,6 @@ namespace Mehmet.Week04
                 }
         }
 
-         
         public static Char ReadChar(string msg)
         {
             while (true)
@@ -103,11 +101,11 @@ namespace Mehmet.Week04
                     Console.WriteLine("Hust -Char- Hust");
                 }
             }
-            
+
         }
 
 
-        
+
         static int ReadNumberAufgabe(String stage1, String error)
         {
             Console.WriteLine(stage1);
@@ -131,7 +129,7 @@ namespace Mehmet.Week04
         {
 
             bool end = false;
-            Console.WriteLine(stage1);          
+            Console.WriteLine(stage1);
             int min = ReadNumber(askmin);
             int max = ReadNumber(askmax);
             int random = rand.Next(min, max);
@@ -215,44 +213,107 @@ namespace Mehmet.Week04
 
         public static void Calculator()
         {
-            while (true)
+            
+            float num1 = ReadFloat("Gib ein Zahl ein:  ");
+
+            bool end = false;
+            while (!end)
             {
 
-                float num1 = ReadFloat("Gib ein Zahl ein");
-                char oprt = ReadChar("gib einen operator ein : + , - , * , / , ^ ");
-                float num2 = ReadFloat("Gib das 2. Zahl ein");
+                
+                char oprt = ReadChar("gib einen operator ein | + | - | * | / | ^ |:  ");
+                float num2 = ReadFloat("Gib das 2. Zahl ein:  ");
                 float num2new = 1;
-
-                               
 
                 if (oprt == '+')
                 {
-                    Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1+num2));
+                    Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1 + num2));
+                    float num3 = num1 + num2;
+                    num1 = num3;
+                    Console.WriteLine("weiter?");
+                 
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
+                    Console.WriteLine(num1);
+                    if (again != 1)
+                    {
+                        end = true;
+                    }
+
+                 
                 }
-                else if(oprt == '-')
+                else if (oprt == '-')
                 {
                     Console.WriteLine($"{num1}" + " - " + $"{num2}" + " = " + (num1 - num2));
+                    float num3 = num1 - num2;
+                    num1 = num3;
+                    Console.WriteLine("weiter?");
+                 
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
+                    Console.WriteLine(num1);
+                    if (again != 1)
+                    {
+                        end = true;
+                    }
+
+
                 }
                 else if (oprt == '*')
                 {
                     Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));
+                    float num3 = num1 * num2;
+                    num1 = num3;
+                    Console.WriteLine("weiter?");
+                   
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
+                    Console.WriteLine(num1);
+                    if (again != 1)
+                    {
+                        end = true;
+                    }
+
                 }
-                else if(oprt == '/') 
+                else if (oprt == '/')
                 {
                     Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
+                    float num3 = num1 / num2;
+                    num1 = num3;
+                    Console.WriteLine("weiter?");
+                   
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
+                    Console.WriteLine(num1);
+                    if (again != 1)
+                    {
+                        end = true;
+                    }
+
                 }
-                else
-                {
+                else if(oprt == '^')
+                {                    
                     for (float i = 0; i < num2; i++)
                     {
-                        num2new *= 10;
-                    }                   
-                    Console.WriteLine($"{num1}" + " ^ " + $"10^{num2}" + " = " + (num1 * num2new));
-                }
+                        num2new *= num1;
+                    }
+                    Console.WriteLine($"{num1}^{num2} = {num2new}");
+                    float num3 = num2new;
+                    num1 = num3;
+                    Console.WriteLine("weiter?");
+                    
+                    int again = ReadNumber("1 für Ja | 2 für Nein: ");
+                    Console.WriteLine();
+                    Console.WriteLine(num1);
+                    if (again != 1)
+                    {
+                        end = true;
+                    }
 
+                }
+              
             }
         }
-
 
 
 

@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Mohammed.Week04
 {
-	public class day02
+	public class consoleInput
 	{
-		public day02()
+		public consoleInput()
 		{
 		}
 	}

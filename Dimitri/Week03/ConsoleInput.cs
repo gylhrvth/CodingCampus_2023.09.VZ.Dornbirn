@@ -68,7 +68,7 @@ namespace Dimitri.Week03
                     int ourNumber = Convert.ToInt32(input);
                     return ourNumber;
                 }
-                catch (Exception e)
+                catch (FormatException e)
                 {
                     Console.WriteLine(onError);
                 }
@@ -189,9 +189,9 @@ namespace Dimitri.Week03
                         firstNumber = Convert.ToDouble(StringRead());
                         isNumber = true;
                     }
-                    catch (Exception e)
+                    catch (FormatException e)
                     {
-                        Console.WriteLine("Something is wrong with your number please. The full error is {0}. Reenter it: ", e);
+                        Console.WriteLine("Something is wrong with your number please.");
                     }
                 }
 
@@ -200,7 +200,7 @@ namespace Dimitri.Week03
                 string symbol = StringRead();
                 while (symbol.Length > 1 || (symbol != "%" && symbol != "/" && symbol != "*" && symbol != "+" && symbol != "-")) // only a single symbol and a set of symbols
                 {
-                    Console.WriteLine("Your operator has more than one charactere. Enter a new one:");
+                    Console.WriteLine("Your operator is not valid. Enter a new one:");
                     symbol = StringRead();
                 }
 
@@ -221,15 +221,15 @@ namespace Dimitri.Week03
                         }
                         isNumber = true;
                     }
-                    catch (Exception e)
+                    catch (FormatException e)
                     {
-                        Console.WriteLine("Something is wrong with your number please. The full error is {0}. Reenter it: ", e);
+                        Console.WriteLine("Something is wrong with your number please.");
                     }
                 }
 
                 double result = CalculateResult(firstNumber, symbol, secondNumber);
 
-                Console.WriteLine("Your result is: " + result);
+                Console.WriteLine("Your result is: {0:0.00000}", result);
 
 
                 Console.WriteLine("you wann do another calculation? (y/n)");

@@ -10,7 +10,8 @@ namespace Jovo.Week03
 
         public static void Start()
         {
-
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Increase");
             int[] original = Array(10);
             foreach (int element in original)
@@ -21,7 +22,8 @@ namespace Jovo.Week03
             Console.WriteLine("=========================");
 
 
-
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Decrease");
             int[] originalR = ArrayR(10);
             foreach (int element in originalR)

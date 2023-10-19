@@ -20,8 +20,7 @@
 
         public static void Start()
         {
-           
-
+          
             // Aufagbe 1:
             Output("Number Array\n", ConsoleColor.Red);
             int size = ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
@@ -476,11 +475,15 @@
                     if (randomArray[j] < randomArray[min])
                     {
                         min = j;
-                        int temp = randomArray[min];
-                        randomArray[min] = randomArray[i];
-                        randomArray[i] = temp;
                     }
                 }
+                if (min != randomArray[i])
+                {
+                    int temp = randomArray[min];
+                    randomArray[min] = randomArray[i];
+                    randomArray[i] = temp;
+                }
+
             }
             return randomArray;
         }
@@ -500,7 +503,6 @@
                 }
                 randomArray[j+1]= temp; 
             }
-
 
             return randomArray;
         }

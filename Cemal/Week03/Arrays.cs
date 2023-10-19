@@ -157,10 +157,12 @@ namespace Cemal.Week03
             Console.WriteLine("Bubblesort");
             int[] bubbleArray = RandomNumberArray(10);
             PrintMyArray(bubbleArray);
-
-
             PrintMyArray(Bubblesort(bubbleArray));
-            
+
+            Console.WriteLine("Wilkommen bei TicTacToe!");
+            Console.WriteLine("möchtest du Spieler 'X' oder Spieler 'O' werden");
+            Console.ReadLine();
+
 
 
 
@@ -330,6 +332,11 @@ namespace Cemal.Week03
                 }
             }
             return array;
+        }
+
+        public static void TicTacToe()
+        {
+            
         }
     }
 }
