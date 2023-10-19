@@ -12,7 +12,7 @@ namespace Gyula.Week04
             string text = ReadString("Type a char to print: ");
             int width = ReadNumber("What shall use as width? ", 1, 30);
             int height = ReadNumber("What shall we use as height? ", 1, 8);
-
+            
             PrintRect(text + " ", width, height);
 
 
