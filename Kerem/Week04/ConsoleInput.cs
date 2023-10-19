@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.WebSockets;
@@ -22,9 +23,7 @@ namespace Kerem.Week04
             //Console.WriteLine("Welcome to my super duper Guessgame");
             //Guessgame();
 
-            
-
-            Menu("Welcome to my Exercises!", "What do you wanna draw?","PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
+            //Menu("Welcome to my Exercises!", "What do you wanna draw?","PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
 
 
 
@@ -155,19 +154,7 @@ namespace Kerem.Week04
                         printTriangleTopRight(sign, size);
                     }
                 }
-
-                //if (number == 1)
-                //{
-                //    printEmptySquare(sign, size);
-                //}
-                //else if (number == 2)
-                //{
-                //    printSquare(sign, size);
-                //}
-                //else if (number == 3)
-                //{
-                //    printTriangleTopRight(sign, size);
-                //}
+ 
                 catch
                 {
                     Console.WriteLine("Unvalid Number!");
@@ -186,5 +173,20 @@ namespace Kerem.Week04
             }           
            
         }
+        public static int Char ReadChar(string msg)
+        {
+            while (true)
+            {
+                Console.WriteLine(msg);
+                string input = Console.ReadLine();
+                string mychar= Convert.ToChar(input);
+                return mychar;
+
+            }
+        }
+
+
+
+
     }
 }
