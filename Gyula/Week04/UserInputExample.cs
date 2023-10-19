@@ -5,10 +5,34 @@ namespace Gyula.Week04
 	{
 		public static void Start()
 		{
-			string name = ReadString("Bitte geben Sie ihre Vorname ein: ");
-            int age = ReadNumber("Bitte geben Sie ihre Alter ein: ", 0, 110);
-			Console.WriteLine("Hello {0}! Ich gratuliere Ihnen zum {1}. Geburtstag", name, age);
+            //string name = ReadString("Bitte geben Sie ihre Vorname ein: ");
+            //int age = ReadNumber("Bitte geben Sie ihre Alter ein: ", 0, 110);
+            //Console.WriteLine("Hello {0}! Ich gratuliere Ihnen zum {1}. Geburtstag", name, age);
+
+            string text = ReadString("Type a char to print: ");
+            int width = ReadNumber("What shall use as width? ", 1, 30);
+            int height = ReadNumber("What shall we use as height? ", 1, 8);
+
+            PrintRect(text + " ", width, height);
+
+
 		}
+
+
+<<<<<<< HEAD
+=======
+        public static void PrintRect(String t, int width, int height)
+        {
+            for (int i = 0; i < height; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    Console.Write(t);
+                }
+                Console.WriteLine();
+            }
+        }
+>>>>>>> ebe3d9ec8760f552f5c5593809e43ac634239f4c
 
         public static int ReadNumber(string msg, int minValid, int maxValid)
         {
