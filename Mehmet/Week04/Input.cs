@@ -32,8 +32,9 @@ namespace Mehmet.Week04
 
             //ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
 
-            Calculator();
+            //Calculator();
 
+            VisitenKarte();
         }
 
         public static Random rand = new Random();
@@ -212,15 +213,17 @@ namespace Mehmet.Week04
 
 
         public static void Calculator()
+
+
         {
-            
+
             float num1 = ReadFloat("Gib ein Zahl ein:  ");
 
             bool end = false;
             while (!end)
             {
 
-                
+
                 char oprt = ReadChar("gib einen operator ein | + | - | * | / | ^ |:  ");
                 float num2 = ReadFloat("Gib das 2. Zahl ein:  ");
                 float num2new = 1;
@@ -231,7 +234,7 @@ namespace Mehmet.Week04
                     float num3 = num1 + num2;
                     num1 = num3;
                     Console.WriteLine("weiter?");
-                 
+
                     int again = ReadNumber("1 für Ja | 2 für Nein: ");
                     Console.WriteLine();
                     Console.WriteLine(num1);
@@ -240,7 +243,7 @@ namespace Mehmet.Week04
                         end = true;
                     }
 
-                 
+
                 }
                 else if (oprt == '-')
                 {
@@ -248,7 +251,7 @@ namespace Mehmet.Week04
                     float num3 = num1 - num2;
                     num1 = num3;
                     Console.WriteLine("weiter?");
-                 
+
                     int again = ReadNumber("1 für Ja | 2 für Nein: ");
                     Console.WriteLine();
                     Console.WriteLine(num1);
@@ -265,7 +268,7 @@ namespace Mehmet.Week04
                     float num3 = num1 * num2;
                     num1 = num3;
                     Console.WriteLine("weiter?");
-                   
+
                     int again = ReadNumber("1 für Ja | 2 für Nein: ");
                     Console.WriteLine();
                     Console.WriteLine(num1);
@@ -281,7 +284,7 @@ namespace Mehmet.Week04
                     float num3 = num1 / num2;
                     num1 = num3;
                     Console.WriteLine("weiter?");
-                   
+
                     int again = ReadNumber("1 für Ja | 2 für Nein: ");
                     Console.WriteLine();
                     Console.WriteLine(num1);
@@ -291,8 +294,8 @@ namespace Mehmet.Week04
                     }
 
                 }
-                else if(oprt == '^')
-                {                    
+                else if (oprt == '^')
+                {
                     for (float i = 0; i < num2; i++)
                     {
                         num2new *= num1;
@@ -301,7 +304,7 @@ namespace Mehmet.Week04
                     float num3 = num2new;
                     num1 = num3;
                     Console.WriteLine("weiter?");
-                    
+
                     int again = ReadNumber("1 für Ja | 2 für Nein: ");
                     Console.WriteLine();
                     Console.WriteLine(num1);
@@ -311,12 +314,117 @@ namespace Mehmet.Week04
                     }
 
                 }
-              
+
             }
         }
 
 
+        public static void VisitenKarte()
+        {
 
+            string text1 = ReadSymbol("Name: ");
+            string text2 = ReadSymbol("Telefon: ");
+            string text3 = ReadSymbol("E-Mail: ");
+
+
+            int count1 = 60;
+            string symbol = "*";
+            PrintChars(symbol, count1 + 2);
+            Console.WriteLine();
+
+
+
+            int l1 = (count1/2) - (text1.Length / 2);
+            int l2 = (count1/2) - (text2.Length / 2);
+            int l3 = (count1/2) - (text3.Length / 2);
+
+            int l12 = text1.Length;
+            int l22 = text2.Length;
+            int l32 = text3.Length;
+
+
+
+
+
+
+            for (int i = 0; i < 15; i++)
+            {
+
+
+                if (i == 6)
+                {
+                    Console.Write(symbol);
+                    for (int j = 0; j < l1; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(text1);
+                    for (int y = 0; y < l1; y++)
+                    {
+                        if (y == l1 - 3 && text1.Length % 2 == 1)
+                        {
+                            l1--;
+                        }
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+
+                else if (i == 7)
+                {
+                    Console.Write(symbol);
+                    for (int j = 0; j < l2; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(text2);
+                    for (int y = 0; y < l2; y++)
+                    {
+                        if (y == l2 - 3 && text2.Length % 2 == 1)
+                        {
+                            l2--;
+                        }                       
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+
+                else if (i == 8)
+                {
+                    Console.Write(symbol);
+                    for (int j = 0; j < l3; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.Write(text3);
+                    for (int y = 0; y < l3; y++)
+                    {
+
+                        if (y == l3 - 3 && text3.Length % 2 == 1)
+                        {
+                            l3--;
+                        }
+                        Console.Write(" ");
+                    }
+                    Console.Write(symbol);
+                    Console.WriteLine();
+                }
+
+                else
+                {
+                    Console.Write(symbol);
+                    for (int j = 0; j < count1; j++)
+                    {
+                        Console.Write(" ");
+                    }
+                    Console.WriteLine(symbol);
+                }
+
+            }
+            PrintChars(symbol, count1 + 2);
+        }
 
 
     }
