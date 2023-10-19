@@ -1,1 +1,1 @@
-﻿Dimitri.Week04.Sort.Main();
+﻿Dimitri.Week03.ConsoleInput.Main();

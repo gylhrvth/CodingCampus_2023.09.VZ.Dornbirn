@@ -26,7 +26,7 @@ namespace Dimitri.Week03
             //string onError = "Input not allowed. Please enter an Integer:";
             //IntOutput(IntRead(prompt, onError));
 
-            //GuessingGame();
+            GuessingGame();
 
             //Menu();
 
@@ -195,10 +195,10 @@ namespace Dimitri.Week03
                     }
                 }
 
-                Console.WriteLine("Enter your operator:");
+                Console.WriteLine("Enter your operator ( '+' / '-' / '*' / '/' / '^' ):");
                 //read operator
                 string symbol = StringRead();
-                while (symbol.Length > 1 || (symbol != "%" && symbol != "/" && symbol != "*" && symbol != "+" && symbol != "-")) // only a single symbol and a set of symbols
+                while (symbol.Length > 1 || (symbol != "^" && symbol != "/" && symbol != "*" && symbol != "+" && symbol != "-")) // only a single symbol and a set of symbols
                 {
                     Console.WriteLine("Your operator is not valid. Enter a new one:");
                     symbol = StringRead();
@@ -248,34 +248,41 @@ namespace Dimitri.Week03
         public static double CalculateResult(double firstNumber, string Operator, double secondNumber)
         {
             double result = 0;
-            if (Operator == "+")
+            if (Operator == "+ ")
             {
                 result = firstNumber + secondNumber;
             }
 
-            else if (Operator == "-")
+            else if (Operator == "- ")
             {
                 result = firstNumber - secondNumber;
             }
 
-            else if (Operator == "*")
+            else if (Operator == "* ")
             {
                 result = firstNumber * secondNumber;
             }
 
-            else if (Operator == "/")
+            else if (Operator == "/ ")
             {
                 result = firstNumber / secondNumber;
             }
 
-            else if (Operator == "%")
+            else if (Operator == "^ ")
             {
-                result = firstNumber % secondNumber;
+                result = firstNumber;
+                for(int i = 1; i < secondNumber; i++)
+                {
+                    result *= firstNumber;
+                }
             }
 
             return result;
 
         }
+
+
+
 
     }
 
