@@ -22,6 +22,8 @@ namespace Jovo.Week04
             //int readNumber = ReadNumber("Please enter a number:", "Your number is bad. Please try again:");
             //Console.WriteLine("Read number is:" + readNumber);
 
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+
             GuessGame();
 
 

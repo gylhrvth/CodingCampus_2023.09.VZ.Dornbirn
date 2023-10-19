@@ -103,7 +103,7 @@ namespace Kerem.Week04
                 }
                 catch
                 {
-                    Console.WriteLine("Please enter valid numbers");
+                    Console.WriteLine("Please enter valid number");
                 }
      
             }
@@ -114,7 +114,7 @@ namespace Kerem.Week04
             {
                 try
                 {
-                    Console.Write(msg);
+                    Console.WriteLine(msg);
                     string input = Console.ReadLine();
                     return input;
                 }
@@ -124,27 +124,29 @@ namespace Kerem.Week04
                 }
             }
         }
-        public static void Menu(string greet, string askingdraw,string draw1,string draw2, string draw3, string asksize, string asksign)
+        static void Menu(string greet, string askingdraw,string draw1,string draw2, string draw3, string asksize, string asksign)
         {
-
-            int input = 0;
-            Console.WriteLine(greet);
-            Console.WriteLine("1 for : " + draw1);
-            Console.WriteLine("2 for : " + draw2);
-            Console.WriteLine("3 for : " + draw3);
-
-            int number = ReadChoices(askingdraw);
-            int size = ReadChoices(asksize);
-            string sign = ReadSymbol(asksign);
 
             bool end = false;
             while (!end)
             {
-                if(number == 1)
+                
+                Console.WriteLine(greet);
+                Console.WriteLine("1 for : " + draw1);
+                Console.WriteLine("2 for : " + draw2);
+                Console.WriteLine("3 for : " + draw3);
+                Console.WriteLine();
+
+                int number = ReadChoices(askingdraw);
+                int size = ReadChoices(asksize);
+                string sign = ReadSymbol(asksign);
+
+
+                if (number == 1)
                 {
-                    printEmptySquare( sign ,size);
+                    printEmptySquare(sign, size);
                 }
-                else if(number == 2)
+                else if (number == 2)
                 {
                     printSquare(sign, size);
                 }
@@ -157,19 +159,17 @@ namespace Kerem.Week04
                     Console.WriteLine("Unvalid Number!");
                 }
 
+                Console.WriteLine();
+                Console.WriteLine("1 for Yes");
+                Console.WriteLine("2 for No");
                 int again = ReadChoices("You wanna draw something else?");
-                Console.WriteLine("y/n");
-
-                if (again != 'y')
+                
+                if (again != 1)
                 {
                     end = true;
                 }
-                
-               
 
-
-
-            }
+            }           
            
         }
     }
