@@ -24,7 +24,20 @@ namespace Mohammed.Week04
 
                 //Nicht richtig
 
+
+
+
             }
+
+            
+            //zweite aufgabe 
+            int readNumber = ReadNumber("Please enter a number:", "Your number is bad. Please try again:");
+
+            Console.WriteLine("Read number is: " + readNumber);
+
+
+
+
 
 
         }
@@ -63,10 +76,33 @@ namespace Mohammed.Week04
 
         }
 
+        //zweite aufgabe
+        static int ReadNumber(String prompt, String onError)
+        {
+            Console.WriteLine(prompt);
 
-        
+            while (true)
+            {
+                try
+                {
+                    String input = Console.ReadLine();
 
-        
+                    int ourNumber = Convert.ToInt32(input);
+
+                    return ourNumber;
+                }
+                catch (FormatException exc)
+                {
+                    //Console.Error.WriteLine(exc.StackTrace);
+                    Console.Error.WriteLine(onError);
+                }
+            }
+        }
+
+
+
+
+
 
     }
 }
