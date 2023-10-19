@@ -19,6 +19,7 @@ namespace Gyula.Week04
 		}
 
 
+
         public static void PrintRect(String t, int width, int height)
         {
             for (int i = 0; i < height; i++)
@@ -30,6 +31,7 @@ namespace Gyula.Week04
                 Console.WriteLine();
             }
         }
+
 
         public static int ReadNumber(string msg, int minValid, int maxValid)
         {
