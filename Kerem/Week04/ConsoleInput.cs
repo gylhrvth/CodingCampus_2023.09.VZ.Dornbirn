@@ -136,35 +136,49 @@ namespace Kerem.Week04
                 Console.WriteLine("2 for : " + draw2);
                 Console.WriteLine("3 for : " + draw3);
                 Console.WriteLine();
-
+                
                 int number = ReadChoices(askingdraw);
                 int size = ReadChoices(asksize);
                 string sign = ReadSymbol(asksign);
+                try
+                {
+                    if (number == 1)
+                    {
+                        printEmptySquare(sign, size);
+                    }
+                    else if (number == 2)
+                    {
+                        printSquare(sign, size);
+                    }
+                    else if (number == 3)
+                    {
+                        printTriangleTopRight(sign, size);
+                    }
+                }
 
-
-                if (number == 1)
-                {
-                    printEmptySquare(sign, size);
-                }
-                else if (number == 2)
-                {
-                    printSquare(sign, size);
-                }
-                else if (number == 3)
-                {
-                    printTriangleTopRight(sign, size);
-                }
-                else
+                //if (number == 1)
+                //{
+                //    printEmptySquare(sign, size);
+                //}
+                //else if (number == 2)
+                //{
+                //    printSquare(sign, size);
+                //}
+                //else if (number == 3)
+                //{
+                //    printTriangleTopRight(sign, size);
+                //}
+                catch
                 {
                     Console.WriteLine("Unvalid Number!");
                 }
 
                 Console.WriteLine();
-                Console.WriteLine("1 for Yes");
-                Console.WriteLine("2 for No");
-                int again = ReadChoices("You wanna draw something else?");
+
+                Console.WriteLine("You wanna draw something else? (y/n)");
+                string again = Console.ReadLine();
                 
-                if (again != 1)
+                if (again != "y")
                 {
                     end = true;
                 }
