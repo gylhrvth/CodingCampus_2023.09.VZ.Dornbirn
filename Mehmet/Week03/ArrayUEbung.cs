@@ -138,7 +138,7 @@ namespace Mehmet.Week03
 
 
             Console.WriteLine("ZweiDArray");
-            ZweiDArray(randArrNew, randArrNew);
+            ZweiDArray();
 
 
 
@@ -318,12 +318,21 @@ namespace Mehmet.Week03
         }
 
 
-        public static void ZweiDArray(int[] arr1, int[] arr2)
+        public static void ZweiDArray()
         {
-            for (int i = 0; i < arr1.Length; i++)
+           
+            int[][] arr2d = new int[5][];
+
+            for (int row = 0;row < arr2d.Length; row++)
             {
-                Console.WriteLine("[{0}]", string.Join (" ,", arr1));
+                arr2d[row] = new int[5];
+
             }
+
+
+            
+
+
         }
 
 

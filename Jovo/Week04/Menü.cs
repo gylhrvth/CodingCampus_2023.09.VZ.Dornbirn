@@ -8,14 +8,14 @@ using static Jovo.Week01.Methoden;
 
 namespace Jovo.Week04
 {
-    internal class Menü3
+    internal class Menü
     {
         public static void Start()
         {
 
             ReadNumberMenue("Welcome", "Was möchten Sie zeichnen", "Christbaum", "Quader", "Rhombus", "Welche größe", "Welche Zeichen");
 
-
+            
 
 
         }
