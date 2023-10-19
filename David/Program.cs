@@ -4,4 +4,6 @@
 //David.Week03.Try.StartTry();
 //David.Week04.Day01.StartDay01();
 //Gyula.Week04.MergeSortExample.Start();
-David.Week04.Day02.Start();
+//David.Week04.Day02.Start();
+//David.Week04.Day02.Start();
+David.Week04.Day04.Start();
