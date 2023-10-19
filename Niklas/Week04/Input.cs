@@ -9,6 +9,8 @@ using System.Threading.Channels;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices;
+using System.Numerics;
 
 namespace Niklas.Week04
 {
@@ -16,19 +18,21 @@ namespace Niklas.Week04
     {
         public static void Start()
         {
-            //// int readString = StringEinlesen("Please enter your a Number: ");
+            //string readString = StringEinlesen("Please enter a Number: ");
 
-            //// int readNumber = ZahlEinlesen("Please enter a number: ", "That's not a number! Try again: ");
-            ////  Console.WriteLine("Your number is: " + readNumber);
+            //int readNumber = ZahlEinlesen("Please enter a number: ", "That's not a number! Try again: ");
+            //Console.WriteLine("Your number is: " + readNumber);
 
-            //////RateSpiel();
+            ////RateSpiel();
 
 
-            ////Console.WriteLine("What is the min number? "); 
-            ////int min = Convert.ToInt32(Console.ReadLine());
-            ////Console.WriteLine("What is the max number? ");
-            ////int max = Convert.ToInt32(Console.ReadLine());
-            ////RateSpielCustom(max, min);
+            //Console.WriteLine("What is the min number? ");
+            //Console.Write(">>>: ");
+            //int min = Convert.ToInt32(Console.ReadLine());
+            //Console.WriteLine("What is the max number? ");
+            //Console.Write(">>>: ");
+            //int max = Convert.ToInt32(Console.ReadLine());
+            //RateSpielCustom(max, min);
 
             //Console.WriteLine("______________________________________");
 
@@ -39,8 +43,9 @@ namespace Niklas.Week04
             //    try
             //    {
 
-            //            Console.WriteLine("What do you wanna draw?");
-            //            Console.WriteLine("1) Char\n2) Square\n3) Triangle Bottom Left\n4) Triangle Top Left\n5) Triangle Top Right\n6) Triangle Bottom Right\n7) Empty Square\n8) Slash\n9) Triangle\n10) Rhomnus\n11) X\n12) Christmas Tree");
+            //        Console.WriteLine("What do you wanna draw?");
+            //        Console.WriteLine("1) Char\n2) Square\n3) Triangle Bottom Left\n4) Triangle Top Left\n5) Triangle Top Right\n6) Triangle Bottom Right\n7) Empty Square\n8) Slash\n9) Triangle\n10) Rhomnus\n11) X\n12) Christmas Tree");
+            //        Console.Write(">>>:  ");
             //        int form = Convert.ToInt32(Console.ReadLine());
 
             //        while (x == 5)
@@ -50,8 +55,10 @@ namespace Niklas.Week04
             //        }
 
             //        Console.WriteLine("What size do you want? ");
+            //        Console.Write(">>>: ");
             //        int size = Convert.ToInt32(Console.ReadLine());
             //        Console.WriteLine("What symbol do you want? ");
+            //        Console.Write(">>>: ");
             //        char symbol = Convert.ToChar(Console.ReadLine());
             //        //Menu
             //        Menu(symbol, size, form, x);
@@ -60,6 +67,7 @@ namespace Niklas.Week04
             //        {
             //            Console.WriteLine("In what direction do you want the slash to be?");
             //            Console.WriteLine("1) = \\ \n2) = /");
+            //            Console.Write(">>>:  ");
             //            int input = Convert.ToInt32(Console.ReadLine());
             //            if (input == 1)
             //            {
@@ -72,6 +80,7 @@ namespace Niklas.Week04
             //        }
 
             //        Console.WriteLine("\nDo you wanna draw something else? [y/n (2x)]");
+            //        Console.Write(">>>:  ");
 
             //        x++;
 
@@ -98,56 +107,181 @@ namespace Niklas.Week04
 
 
 
-            Console.WriteLine("____________________________________");
+            //Console.WriteLine("____________________________________");
 
             ////Calculator
             //Console.WriteLine("Enter your fist number!");
+            //Console.Write(">>>:  ");
             //int num1 = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("What do you wanna calcualte the numbers with?");
             //Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+            //Console.Write(">>>:  ");
             //int i = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("Enter the second number you wanna calculate with!");
+            //Console.Write(">>>:  ");
             //int num2 = Convert.ToInt32(Console.ReadLine());
 
             //Calculator(num1, num2, i);
 
-            //Calculator2
-            int y = 0;
+            ////CalculatorExtended
 
-            while (y == 0)
+            //int y = 0;
+
+            //try
+            //{
+            //    while (y == 0)
+            //    {
+            //        Console.WriteLine("Enter your fist number!");
+            //        Console.Write(">>>:  ");
+            //        int number1 = Convert.ToInt32(Console.ReadLine());
+            //        Console.WriteLine("What do you wanna calcualte the numbers with?");
+            //        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+            //        Console.Write(">>>:  ");
+            //        int j = Convert.ToInt32(Console.ReadLine());
+            //        Console.WriteLine("Enter the second number you wanna calculate with!");
+            //        Console.Write(">>>:  ");
+            //        int number2 = Convert.ToInt32(Console.ReadLine());
+
+            //        CalculatorExtended(number1, number2, j);
+
+            //        y++;
+
+            //        while (y == 1)
+            //        {
+            //            Console.WriteLine("Do you wanna make a new calculation? (y/n [2x])");
+            //            Console.Write(">>>:  ");
+
+            //            if (Console.ReadLine() == "y")
+            //            {
+            //                y = 0;
+            //            }
+            //            else if (Console.ReadLine() == "n")
+            //            {
+            //                Console.WriteLine("Goodbye! The program is closing...");
+            //                y = 2;
+            //            }
+            //        }
+            //    }
+
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    y = 0;
+            //}
+
+            ////CalculatorInfinite
+            //int z = 0;
+            //try
+            //{
+            //    Console.WriteLine("Press '=' whenever you're done with the calculation!");
+            //    Console.WriteLine("******************************************************");
+
+            //    Console.WriteLine("Enter a number you wanna calculate with!");
+            //    Console.Write(">>>:  ");
+            //    long number1 = Convert.ToInt32(Console.ReadLine());
+
+            //    while (z == 0)
+            //    {
+            //        Console.WriteLine();
+            //        Console.WriteLine("What do you wanna calcualte the numbers with?");
+            //        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+            //        Console.Write(">>>: ");
+            //        int j = Convert.ToInt32(Console.ReadLine());
+
+            //        Console.WriteLine();
+            //        Console.WriteLine("Enter another number you wanna calculate with!");
+            //        Console.Write(">>>: ");
+            //        long number2 = Convert.ToInt32(Console.ReadLine());
+
+
+            //        number1 = CalculatorInfinite(number1, number2, j);
+
+
+            //        string end = Convert.ToString(Console.ReadLine());
+            //        if (end == "=")
+            //        {
+            //            Console.WriteLine("Your final result is: " + number1);
+            //            z = 2;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    z = 0;
+            //}
+
+            //CalculatorMemory
+            Console.WriteLine("_____________________________________________________");
+
+            int z = 2;
+
+            try
             {
-                Console.WriteLine("Enter your fist number!");
-                int number1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("What do you wanna calcualte the numbers with?");
-                Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
-                int j = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter the second number you wanna calculate with!");
-                int number2 = Convert.ToInt32(Console.ReadLine());
+                for (z = 2; z > 0; z--)
+                {
+                    Console.WriteLine("Press '=' whenever you're done with the calculation!");
+                    Console.WriteLine("_____________________________________________________");
+                    Console.WriteLine("Enter 'MC' to clear your memory \n Enter 'M+' to add memory \n Enter 'M-' to remove memory \n Enter 'MR' to print out your memory!");
+                    Console.WriteLine("*****************************************************");
+                }
+                for (z = 0; z < 1; z++)
+                {
+                    Console.WriteLine("Enter a number you wanna calculate with!");
+                    Console.Write(">>>:  ");
+                    long number1 = Convert.ToInt32(Console.ReadLine());
+                    while (z == 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("What do you wanna calcualte the numbers with?");
+                        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+                        Console.Write(">>>: ");
+                        int j = Convert.ToInt32(Console.ReadLine());
 
-                CalculatorExtended(number1, number2, j);
+                        Console.WriteLine();
+                        Console.WriteLine("Enter another number you wanna calculate with!");
+                        Console.Write(">>>: ");
+                        long number2 = Convert.ToInt32(Console.ReadLine());
 
-                y++;
+
+                        number1 = CalculatorMemory(number1, number2, j);
+
+
+                        string end = Convert.ToString(Console.ReadLine());
+                        end.ToUpper();
+                        end.ToLower();
+                        if (end == "=")
+                        {
+                            Console.WriteLine("Your final result is: " + number1);
+                            z = 2;
+                        }
+
+                        string Memory = Convert.ToString(Console.ReadLine());
+                        if (Memory == "MC")
+                        {
+                            number1 = 0;
+                            number2 = 0;
+                            j = 0;
+                            z = 1;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                z = 0;
             }
 
-            Console.WriteLine("Do you wanna make a new calculation? (y/n)");
-
-            while (y == 1)
-            {
-                if (Console.ReadLine() == "y")
-                {
-                    y = 0;
-                }
-            else if (Console.ReadLine() == "n") 
-                {
-                    Console.WriteLine("Goodbye! ");
-                    y++;
-                }
-            }
         }
 
         static string StringEinlesen(string input)
         {
             Console.WriteLine(input);
+            Console.Write(">>>:  ");
 
             input = Console.ReadLine();
             string number = Convert.ToString(input);
@@ -166,6 +300,7 @@ namespace Niklas.Week04
             {
                 try
                 {
+                    Console.Write(">>>:  ");
                     string input2 = Console.ReadLine();
                     int number = Convert.ToInt32(input2);
                     return number;
@@ -238,6 +373,7 @@ namespace Niklas.Week04
                     {
 
                         Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
+                        Console.Write(">>>:  ");
                         guess = Convert.ToInt32(Console.ReadLine());
                         if (guess > number && guess <= max)
                         {
@@ -417,6 +553,113 @@ namespace Niklas.Week04
                 num1 /= num2;
             }
             Console.WriteLine("Your result is: " + num1);
+        }
+
+        static long CalculatorInfinite(long num1, long num2, int i)
+        {
+            long result = 0; ;
+
+            if (i == 1)
+            {
+                num1 += num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            if (i == 2)
+            {
+                num1 -= num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            if (i == 3)
+            {
+                num1 *= num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            if (i == 4)
+            {
+                int c = 0;
+                long times = num1;
+                Console.WriteLine();
+                while (num2 > 1)
+                {
+                    num1 *= times;
+                    c++;
+                    num2--;
+                    Console.Write(">>>: ");
+                    Console.WriteLine($"Steps: {c}, Result = {num1}");
+                    result = num1;
+                }
+            }
+            if (i == 5)
+            {
+                num1 /= num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            return result;
+        }
+        static long CalculatorMemory(long num1, long num2, int i)
+        {
+            long result = 0; ;
+
+            if (i == 1)
+            {
+                num1 += num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            if (i == 2)
+            {
+                num1 -= num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            if (i == 3)
+            {
+                num1 *= num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            if (i == 4)
+            {
+                int c = 0;
+                long times = num1;
+                Console.WriteLine();
+                while (num2 > 1)
+                {
+                    num1 *= times;
+                    c++;
+                    num2--;
+                    Console.Write(">>>: ");
+                    Console.WriteLine($"Steps: {c}, Result = {num1}");
+                    result = num1;
+                }
+            }
+            if (i == 5)
+            {
+                num1 /= num2;
+                Console.WriteLine();
+                Console.Write(">>>: ");
+                Console.WriteLine($"{num1}");
+                result = num1;
+            }
+            return result;
         }
     }
 }
