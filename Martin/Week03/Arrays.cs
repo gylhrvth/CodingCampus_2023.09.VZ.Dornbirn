@@ -17,8 +17,8 @@ namespace Martin.Week03
             //CreateArray2(10);
             //RandomNumberArray();
             //RandomNumberArrayCount();
-            RandomNumberArraySumme();
-
+            //RandomNumberArraySumme();
+            Array2d();
         }
 
         //Aufgabe: Number Array
@@ -186,6 +186,71 @@ namespace Martin.Week03
             Console.WriteLine("Result is: " + result);
         }
 
+        public static void Array2d()
+        {
+            Random rand = new Random();
 
+            //create array 2d
+            int[][] arr2d = new int[4][];
+
+
+            for (int row = 0; row < arr2d.Length; row++)
+            {
+                //Random: arr2D[row] = new int[r.Next(0, 10)];
+                arr2d[row] = new int[4];
+            }
+
+            bool GameOver = false;
+
+            Console.WriteLine("Willkommen zum Feld errate Spiel!");
+            Console.WriteLine("Wähle eine 1 und siehe was sich dahinter versteckt, du darfst keine 7 finden! ;(");
+
+            while(GameOver == false)
+            {
+
+                Console.WriteLine();
+
+                Console.WriteLine("Gib die Zeile ein 0 bis 3");
+                int guessrow = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Gib die Stelle der Spalte ein 0 bis 3");
+                int guessCol = Convert.ToInt32(Console.ReadLine());
+
+                arr2d[guessrow][guessCol] = 1;
+
+                int computerguess = arr2d[rand.Next(4)][rand.Next(4)];
+
+                if(arr2d[guessrow][guessCol] == computerguess)
+                {
+                    Console.WriteLine("Verloren..");
+                    Console.WriteLine();
+
+                    for (int row = 0; row < arr2d.Length; row++)
+                    {
+                        for (int col = 0; col < arr2d[row].Length; col++)
+                        {
+                            Console.Write(arr2d[row][col] + " ");
+                        }
+                        Console.WriteLine();
+                    }
+
+                    computerguess = 7;
+
+                    break;
+                }
+
+
+                //Print
+                for (int row = 0; row < arr2d.Length; row++)
+                {
+                    for (int col = 0; col < arr2d[row].Length; col++)
+                    {
+                        Console.Write(arr2d[row][col] + " ");
+                    }
+                    Console.WriteLine();
+                }
+       
+            }
+        }
     }
 }
