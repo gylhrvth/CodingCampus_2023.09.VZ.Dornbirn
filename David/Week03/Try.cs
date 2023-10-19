@@ -66,8 +66,8 @@ namespace David.Week03{
 
             //do
             //{
-            //	Console.Write("Rate: ");
-            //	userGuess = int.Parse(Console.ReadLine());
+            //    Console.Write("Rate: ");
+            //    userGuess = int.Parse(Console.ReadLine());
             //}
 
             //while (userGuess != secretNumber);
@@ -228,23 +228,23 @@ namespace David.Week03{
             //    Console.WriteLine("kein Rabatt :-)");
             //}
 
-            int number = 6;
+            //int number = 6;
 
-            if (number > 0)
-            {
-                Console.WriteLine("Größer 0");
+            //if (number > 0)
+            //{
+            //    Console.WriteLine("Größer 0");
 
-                if (number > 5)
-                {
-                    Console.WriteLine("Größer 5");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Die Zahl ist exakt 0 oder kleiner");
-            }
+            //    if (number > 5)
+            //    {
+            //        Console.WriteLine("Größer 5");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Die Zahl ist exakt 0 oder kleiner");
+        //}
 
 
 
-        }
+    }
     }}
