@@ -1,3 +1,0 @@
-﻿internal static class RecursionExampleHelpers
-{
-}

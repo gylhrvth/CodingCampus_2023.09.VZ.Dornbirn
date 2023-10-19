@@ -23,34 +23,40 @@ namespace Erik.Week03
         {
             Console.WriteLine("Welcome to the guessing Game! \n\nEnter a number to declare the maximum range of the number to guess!");
             Console.Write("Your Number: ");
-            int userInput = Convert.ToInt32(Console.Read());
-            Console.WriteLine("=======================================================================");
-
+            try
+            {
+                int userInput = Convert.ToInt32(Console.Read());
+            }
+            catch (System.ArgumentException sae) 
+            {
+                Console.WriteLine("Number not acceptable. Try again!");
+            }
+            SeperateTheLines();
             Random random = new Random();
-            int randomNumber = random.Next(userInput);
+            int randomNumber = random.Next(100);
 
             Console.WriteLine("Random number generated! Start guessing the number!");
-            Console.WriteLine(randomNumber);
+            //Console.WriteLine(randomNumber);
             return randomNumber;
-
         }
 
         public static void GuessingGameUserGuess(int randomNumber)
         {
-
             Console.Write("Your Number: ");
-            int userGuessingNumbers = Convert.ToInt32(Console.Read()); //error not stop to reading linegit
+            int userGuessingNumbers = Convert.ToInt32(Console.ReadLine()); //error not stop to reading linegit
 
-            if (userGuessingNumbers != randomNumber)
+            while (userGuessingNumbers != randomNumber)
             {
-                do
-                {
-                    Console.WriteLine("Next Try");
-                    userGuessingNumbers = Convert.ToInt32(Console.ReadLine());
-                }
-                while (userGuessingNumbers != randomNumber);
-
+                userGuessingNumbers = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Number wrong!!!\n\nNext Try: ");
             }
+        }
+
+        public static string SeperateTheLines()
+        {
+            string lines = "=======================================================================";
+            return lines;
+            
         }
     }
 }
