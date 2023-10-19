@@ -36,6 +36,23 @@ namespace Jovo.Week04
             }
 
         }
+
+        //damit ich eine Zahl einlesen kann
+        public static int ReadNumber(string msg)
+        {
+            while (true)
+                try
+                {
+                    Console.Write(msg);
+                    string input = Console.ReadLine();
+                    int myNumber = Convert.ToInt32(input);
+                    return myNumber;
+                }
+                catch
+                {
+                    Console.WriteLine("Das war keine Zahl");
+                }
+        }
         //umwandeln in eine Zahl
         public static float ReadFloat(string msg)
         {
@@ -52,44 +69,77 @@ namespace Jovo.Week04
                     Console.WriteLine("Das war keine Zahl");      
                 }
         }
-
+        //Anfang Taschenrechner
         public static void Taschenrechner1()
         {
-            while (true)
+            Console.WriteLine("Willkommen ich helfe dir bei deinen Rechnungen!!!");
+            float num1 = ReadFloat("Gib die erste Zahl ein:");
+            
+            bool end = false;
+            while (!end)
             {
-
-                float num1 = ReadFloat("Gib die erste Zahl ein:");
                 char oprt = ReadChar("gib ein ob du addieren willst: +, subtrahieren willst -, multiplizieren willst *, dividieren willst /, oder hoch rechnen willst ^:");
                 float num2 = ReadFloat("Gib die 2. Zahl ein:");
                 float num2new = 1;
-                char oprt2 = ReadChar("Möchtest du mit deinem Ergebnis weiter rechnen dann drücke j ansonstend n");
-                
-
+                      
                 if (oprt == '+')
                 {
                     Console.WriteLine($"{num1}" + " + " + $"{num2}" + " = " + (num1 + num2));
                     float num3 = num1 + num2;
                     num1 = num3;
+                    Console.WriteLine("Wollen Sie mit dem Ergebnis weiter rechnen??");
+
+                    int weiter = ReadChar("j = ja / n = Nein");
+                    Console.WriteLine(num1);
+                    if(weiter != 1)
+                    {
+                        end = true;
+                    }
+                        
                 }
+
+
                 else if (oprt == '-')
                 {
                     Console.WriteLine($"{num1}" + " - " + $"{num2}" + " = " + (num1 - num2));
+                    float num3 = num1 - num2;
+                    num1 = num3;
+                    Console.WriteLine("Wollen Sie mit dem Ergebnis weiter rechnen??");
+
+                    int weiter = ReadChar("j = ja / n = Nein");
+                    Console.WriteLine(num1);
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
                 }
                 else if (oprt == '*')
                 {
-                    Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));   
+                    Console.WriteLine($"{num1}" + " * " + $"{num2}" + " = " + (num1 * num2));
+                    float num3 = num1 * num2;
+                    num1 = num3;
+                    Console.WriteLine("Wollen Sie mit dem Ergebnis weiter rechnen??");
+
+                    int weiter = ReadChar("j = ja / n = Nein");
+                    Console.WriteLine(num1);
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
                 }
                 else if (oprt == '/')
                 {
                     Console.WriteLine($"{num1}" + " / " + $"{num2}" + " = " + (num1 / num2));
-                    float wahl = (num1 / num2);
-                    float newNum = ReadFloat("Gib die nächste zahl ein");
-                    if (oprt2 == 'j')
-                    {
-                        Console.WriteLine("gib die nächste Zahl ein" ,wahl + newNum );
+                    float num3 = num1 / num2;
+                    num1 = num3;
+                    Console.WriteLine("Wollen Sie mit dem Ergebnis weiter rechnen??");
 
+                    int weiter = ReadChar("j = ja / n = Nein");
+                    Console.WriteLine(num1);
+                    if (weiter != 'j')
+                    {
+                        end = true;
                     }
-                    
                 }
                 else
                 {
@@ -98,7 +148,18 @@ namespace Jovo.Week04
                         num2new = num1 * num2new;
                     }
                     Console.WriteLine($"{num1}" + " ^ " + $"{num2}" + " = " + (num2new));
+                    num1 = num2new;
+                    Console.WriteLine("Wollen Sie mit dem Ergebnis weiter rechnen");
+
+                    int weiter = ReadChar("j = ja / n = Nein");
+                    Console.WriteLine(num1);
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
+
                 }
+               
             }
 
 
