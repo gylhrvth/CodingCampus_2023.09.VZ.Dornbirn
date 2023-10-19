@@ -1,1 +1,1 @@
-﻿DarioLuis.Week04.TicTacToeAlgo.Main();
+﻿DarioLuis.Week04.DarioDaten.Start();
