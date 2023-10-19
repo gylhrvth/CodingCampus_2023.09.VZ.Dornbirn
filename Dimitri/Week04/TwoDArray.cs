@@ -14,15 +14,18 @@ namespace Dimitri.Week04
             PrintArray2d(Array2dRandom(2));
         }
 
-        public static int[][] Array2dRandom(int row)
+        public static int[][] Array2dRandom(int rows)
         {
-            int[][] array = new int[row][];
+            int[][] array = new int[rows][];
 
             Random random = new Random();
 
-            for(int i = 0; i < array[row].Length; i++)
+            for (int row = 0; row < rows; row++)
             {
-                array[row][i] = random.Next(0, 101);
+                for (int col = 0; col < array[row].Length; col++)
+                {
+                    array[row][col] = random.Next(10, 100);
+                }
             }
 
             return array;
@@ -31,11 +34,14 @@ namespace Dimitri.Week04
         public static void PrintArray2d(int[][] array)
         {
 
-            foreach(int[] row in array)
+            for (int row = 0; row < array.Length; row++)
             {
-                Console.Write(row + " ");
+                for (int col = 0; col < array[row].Length; col++)
+                {
+                    Console.Write(array[row][col] + " ");
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
         }
     }
 
