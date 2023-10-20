@@ -350,10 +350,7 @@ namespace Kerem.Week03
                 }
             }
         }
-        //public static int[] Array2D(int[] array)
-        //{
-            
-        //}
+     
     }
 }
 

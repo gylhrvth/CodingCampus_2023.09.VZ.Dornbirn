@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Selina.Week04.Aufgabe
+namespace Selina.Week04.Arrays.Menü
 {
     internal class Quader
     {
