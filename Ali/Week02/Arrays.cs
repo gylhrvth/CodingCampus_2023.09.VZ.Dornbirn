@@ -106,7 +106,12 @@ namespace Ali.Week02
 
             Console.WriteLine("Aufgabe 2D Array");
             Console.WriteLine();
-            Console.WriteLine("[{0}]", string.Join(", ", TwoDimArray(random1)));
+            //int[][] walnut = TwoDimArray(10);
+            //foreach (int[] element in walnut)
+            //{
+               // Console.WriteLine(element + "a");
+            //}
+            //Console.WriteLine(walnut);
 
 
 
@@ -331,10 +336,9 @@ namespace Ali.Week02
             }
             return random1;
         }
-        public static int[] TwoDimArray(int[] random1)
-        {
-            return random1;
-        }
+        
+        
+        
         
 
 

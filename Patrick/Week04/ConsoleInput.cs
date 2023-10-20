@@ -144,9 +144,6 @@ namespace Patrick.Week04
         {
             Console.WriteLine("Welcome to the Example!");
 
-
-            string inputAgain = "yes";
-
             while (true)
             {
                 Console.WriteLine("What you want to print?");
