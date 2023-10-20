@@ -1,5 +1,4 @@
-﻿
-namespace Patrick.Week04
+﻿namespace Patrick.Week04.Array2D
 {
     internal class PascalTriangle
     {
