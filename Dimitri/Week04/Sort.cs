@@ -31,18 +31,25 @@ namespace Dimitri.Week04
             //BubbleSortSwitch(arr, false);
             //PrintArrayToStringForI(arr);
 
-            int size = 10;
-            int[] arr = RandomNumberArray(size, 0, 100);
-            PrintArrayToStringForI(arr);
-
-            int[] result = MergeSort(arr, 0, arr.Length);
-            Console.WriteLine("Merge Sorted array:");
-            PrintArrayToStringForI(result);
-
-            //arr = RandomNumberArray(20, 0, 100);
-            //Console.WriteLine("cocktailshaker sort:");
-            //CocktailshakerSort(arr);
+            //int size = 10;
+            //int[] arr = RandomNumberArray(size, 0, 100);
             //PrintArrayToStringForI(arr);
+
+            //int[] result = MergeSort(arr, 0, arr.Length);
+            //Console.WriteLine("Merge Sorted array:");
+            //PrintArrayToStringForI(result);
+
+            //int [] arr = RandomNumberArray(5, 0, 10);
+            //Console.WriteLine("cocktailshaker sort:");
+            //int [] result = CocktailshakerSort(arr);
+            //PrintArrayToStringForI(result);
+
+            int[] arr = RandomNumberArray(5, 0, 10);
+            Console.WriteLine("My Array:");
+            PrintArrayToStringForI(arr);
+            int[] result = HeapSort(arr);
+            Console.WriteLine("Sorted Array with HeapSort:");
+            PrintArrayToStringForI(result);
 
         }
 
@@ -172,7 +179,7 @@ namespace Dimitri.Week04
 
         }
 
-        public static void CocktailshakerSort(int[] arr)
+        public static int[] CocktailshakerSort(int[] arr)
         {
             int lo = 0;
             int hi = arr.Length - 1;
@@ -180,7 +187,7 @@ namespace Dimitri.Week04
 
             while (lo < hi)
             {
-                for (int i = hi; i > lo + 1; i--)
+                for (int i = hi; i > lo; i--)
                 {
                     if (arr[i - 1] > arr[i])
                     {
@@ -193,7 +200,7 @@ namespace Dimitri.Week04
                 lo = mov;
                 for (int i = lo; i < hi; i++)
                 {
-                    if (arr[i] < arr[i + 1])
+                    if (arr[i] > arr[i + 1])
                     {
                         int temp = arr[i + 1];
                         arr[i + 1] = arr[i];
@@ -204,6 +211,55 @@ namespace Dimitri.Week04
 
                 hi = mov;
             }
+
+            return arr;
+        }
+
+        public static int[] HeapSort(int[] arr) 
+        {
+            BuildHeap(arr);
+            int n = arr.Length - 1;
+            while(n > 0)
+            {
+                int temp = arr[0];
+                arr[0] = arr[n];
+                arr[n] = temp;
+                n -= 1;
+                SiftDown(arr, 0, n);
+            }
+            return arr;
+        }
+
+        private static int[] BuildHeap(int[] arr)
+        {
+            for(int i = (arr.Length - 1)/2; i >= 0; i--)
+            {
+                SiftDown(arr, i, arr.Length - 1);
+            }
+            return arr;
+        }
+
+        private static int[] SiftDown(int[] arr, int i, int n)
+        {
+            if (2 * i >= n)
+            {
+                return arr;
+            }
+
+            int k = 2 * i;
+            if (2 * i + 1 < arr.Length && arr[2*i] <= arr[2*i + 1])
+            {
+                k += 1;
+            }
+            if (arr[i] < arr[k])
+            {
+                int tmp = arr[i];
+                arr[i] = arr[k];
+                arr[k] = tmp;
+                SiftDown(arr, k, n);
+            }
+
+            return arr;
         }
     }
 }

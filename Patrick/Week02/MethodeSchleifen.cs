@@ -14,20 +14,20 @@ namespace Patrick.Week02
     {
         public static void start()
         {
-            //printChars("x", 10);
-            //printSquare("x", 10);
-            //printRect("x", 20, 8);
-            //printTriangleBottomLeft("x", 5);
-            //printTriangleTopLeft("x", 5);
-            //printTriangleTopRight("x", 5);
-            //printTriangleBottomRight("x", 5);
-            //printEmptySquare("x", 10);
-            //printEmptySquare1("A", 3);
-            //printSlash("x", 3, false);
-            //printPyramid("x", 5);
-            //printRhombus("x", 7);
-            //PrintX("x", 5);
-            printChristmasTree("*",10);
+            printChars("x", 10);
+            printSquare("x", 10);
+            printRect("x", 20, 8);
+            printTriangleBottomLeft("x", 5);
+            printTriangleTopLeft("x", 5);
+            printTriangleTopRight("x", 5);
+            printTriangleBottomRight("x", 5);
+            printEmptySquare("x", 10);
+            printEmptySquare1("A", 3);
+            printSlash("x", 3, false);
+            printPyramid("x", 5);
+            printRhombus("x", 7);
+            PrintX("x", 5);
+            printChristmasTree("*", 10);
         }
 
 
@@ -70,8 +70,8 @@ namespace Patrick.Week02
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("-----------");
-            Console.WriteLine("-----------");
+            //Console.WriteLine("-----------");
+            //Console.WriteLine("-----------");
         }
 
         public static void printTriangleBottomLeft(string symbol, int count)
@@ -318,13 +318,13 @@ namespace Patrick.Week02
                     }
                     else
                     {
-                        Console.Write(".");
+                        Console.Write(" ");
                     }
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("-----------");
-            Console.WriteLine("-----------");
+            //Console.WriteLine("-----------");
+            //Console.WriteLine("-----------");
 
         }
 
@@ -396,7 +396,7 @@ namespace Patrick.Week02
             {
                 for (int y = 0; y < count * 2 - 1; y++)
                 {
-                    if(y <= count - 4 || y >= count + 2)
+                    if (y <= count - 4 || y >= count + 2)
                     {
                         Console.Write(" ");
                     }

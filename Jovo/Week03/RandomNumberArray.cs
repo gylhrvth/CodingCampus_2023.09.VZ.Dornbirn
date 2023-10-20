@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week04
+namespace Jovo.Week03
 {
-    internal class InputConsole
+    internal class RandomNumberArray
     {
+        
     }
 }

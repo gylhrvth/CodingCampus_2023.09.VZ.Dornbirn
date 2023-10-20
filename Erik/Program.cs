@@ -1,2 +1,3 @@
-﻿Erik.Week03.SortAlgorithmBubblesortDecrease.StartSortAlgorithm();
+﻿using Erik.Week04;
 
+GuessingGame.startGuessingGame();

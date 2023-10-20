@@ -7,9 +7,6 @@ namespace Erik.Week03
     {
         public static void StartSortAlgorithm()
         {
-
-           
-
             Console.WriteLine("Press F to start the program!");
             while (true)
             {

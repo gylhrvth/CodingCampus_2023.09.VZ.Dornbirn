@@ -6,6 +6,31 @@ namespace DarioLuis.Week03
 {
     class TicTacToe
     {
+
+        public static int ReadNumber(string msg)
+        {
+            int result = 0;
+            Console.WriteLine(msg);
+            string line = Console.ReadLine();
+            result = int.Parse(line);
+            return result;
+        }
+        public static int OutofRange(string msg)
+        {
+            int res = 0;
+            Console.WriteLine(msg);
+            string line = Console.ReadLine();
+            try
+            {
+                res = int.Parse(line);
+            }catch (IndexOutOfRangeException iof)
+            {
+                Console.WriteLine("Bitte eine Zahl eingeben zwischen 1-9!!");
+            }
+
+            return res;
+        }
+
         public static char[] makeACopyAlt(char[] original)
         {
             char[] myArray = new char[original.Length];
@@ -150,7 +175,7 @@ namespace DarioLuis.Week03
             Console.Write("  {0}  ", arr[4]);
             Console.ForegroundColor = ConsoleColor.White;
             Console.Write("| ");
-            if (arr[1] == 'X')
+            if (arr[5] == 'X')
             {
                 Console.ForegroundColor = ConsoleColor.Red;
             }

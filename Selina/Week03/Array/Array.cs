@@ -12,6 +12,7 @@
     using System.Windows;
     using Microsoft.Win32.SafeHandles;
 
+
     internal class Array
     {
         public static Random rand = new Random();
@@ -19,8 +20,7 @@
 
         public static void Start()
         {
-           
-
+          
             // Aufagbe 1:
             Output("Number Array\n", ConsoleColor.Red);
             int size = ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
@@ -48,7 +48,7 @@
             randomArray = CreateRandomArray(size, 0, 101);  //macht Array mit random Zahlen von 0 bis 100
             OutputForUser(randomArray);     //Output für User
 
-            Console.WriteLine("\n\nJeder Zweiter Wert:");   //Gibt jeden zeiten Wert von dem Array aus
+            Console.WriteLine("\n\nJeder Zweiter Wert:");   //Gibt jeden zweiten Wert von dem Array aus
             for (int i = 1; i < randomArray.Length; i += 2)
             {
                 Console.Write("[{0}] ", string.Join(", ", randomArray[i]));
@@ -147,9 +147,35 @@
 
             //Aufagbe 10:
             Output("Aufgabe: Pascal Dreieck\n", ConsoleColor.DarkCyan);
-
             int [][] trinangel= GeneratePascalTriangle(size);
             PrintPascalTriangle(trinangel);
+            Console.WriteLine("\n----------------------------------------------------------");
+
+            //Aufagbe 11:
+            Output("Aufgabe: Selection Sort \n", ConsoleColor.DarkYellow);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("ungeordnet: "); 
+            OutputForUser(randomArray);
+            SelectionSort(randomArray);     //ordnet Array 
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("geordnet: "); 
+            OutputForUser(randomArray);     //Output für User
+            Console.ResetColor();
+            Console.WriteLine("\n----------------------------------------------------------");
+
+            //Aufagbe 12:
+            Output("Aufgabe: Insertion Sort \n", ConsoleColor.Cyan);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            InsertionSort(randomArray);  //ordnet Array
+            OutputForUser(randomArray); // Output für User
+            Console.WriteLine("\n----------------------------------------------------------");
+
+            //Aufagbe 13:
+            Output("Aufgabe: Gnome Sort \n", ConsoleColor.Magenta);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            GnomeSort(randomArray); //ordnet Array
+            OutputForUser(randomArray); //Output für User
             Console.WriteLine("\n----------------------------------------------------------");
 
         }
@@ -254,6 +280,8 @@
             }
             Console.WriteLine("]");
         }
+
+
         public static void OutputForUser2D(int[,] randomArray)
         {
             for (int row = 0; row < randomArray.GetLength(0); row++)
@@ -406,7 +434,7 @@
             return sum;
         }
 
-        //Aufagbe 10: Aufgabe: Pascal Dreieck
+        //Aufagbe 10: Aufgabe: Pascal Dreieck --> funktioniert noch nicht
         public static int[][] GeneratePascalTriangle(int size)
         {
             int[][] triangle = new int[size][];
@@ -423,20 +451,82 @@
             }
          
             return triangle;
-
         }
 
         public static void PrintPascalTriangle(int[][] triangle)
         {
-
             foreach (var row in triangle)
             {
                 foreach (var number in row)
                 {
                     Console.Write(number + " ");
                 }
-           
             }
+        }
+
+        //Aufagbe 11: The Sound of Sorting Algorithm Cheat Sheet
+        public static int[] SelectionSort(int[] randomArray)
+        {
+            for(int i=0; i < randomArray.Length -1 ; i++)
+            {
+                int min = i;
+                for(int j = i + 1; j < randomArray.Length; j++)
+                {
+                    if (randomArray[j] < randomArray[min])
+                    {
+                        min = j;
+                    }
+                }
+                if (min != randomArray[i])
+                {
+                    int temp = randomArray[min];
+                    randomArray[min] = randomArray[i];
+                    randomArray[i] = temp;
+                }
+
+            }
+            return randomArray;
+        }
+
+        //Aufage 12: The Sound of Sorting Algorithm Cheat Sheet
+        public static int[] InsertionSort(int[] randomArray)
+        {
+            for(int i= 1; i < randomArray.Length;i++)
+            {
+                int temp = randomArray[i];
+                int j = i - 1;
+
+                while (j >= 0 && randomArray[j] > temp)
+                {
+                    randomArray[j+1] = randomArray[j];
+                    j -= 1;
+                }
+                randomArray[j+1]= temp; 
+            }
+
+            return randomArray;
+        }
+
+        //Aufagbe 13: The Sound of Sorting Algorithm Cheat Sheet
+        public static int[] GnomeSort(int[] randomArray)
+        {
+            int index = 0;
+            while (index < randomArray.Length)
+            {
+                if (index == 0 || randomArray[index] >= randomArray[index - 1])
+                {
+                    index++;
+                }
+                else
+                {
+                    int temp = 0;
+                    temp = randomArray[index];
+                    randomArray[index] = randomArray[index - 1];
+                    randomArray[index - 1] = temp;
+                    index--;
+                }
+            }
+            return randomArray;
         }
     }
 }

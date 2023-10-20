@@ -14,7 +14,7 @@ namespace Gyula.Week04
 			BubbleSort(arr);
 			Console.WriteLine("Sorted:");
             PrintArrayForEach(arr);
-
+			Console.WriteLine();
         }
 
 
