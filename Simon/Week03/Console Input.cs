@@ -24,7 +24,8 @@ namespace Simon.Week03
 
             //Console.WriteLine("Task - Guessinggame");
             //Guessinggame("Willkommen beim super coolen Zahlen Ratespiel", "Errate die Zahl zwischen 0 und 100", "Die Zahl ist zu hoch!",
-            //    "Die zahl ist zu niedrig!", "Du hast gewonnen!!! DAS WAR DIE RICHTIGE ZAHL", "Please only input numbers! Try again!", "Your number of guesses was:");
+            //    "Die zahl ist zu niedrig!", "Du hast gewonnen!!! DAS WAR DIE RICHTIGE ZAHL", "Wieso versuchst du etwas anderes als eine Zahl einzugeben? Verwende etwas logik! Versuchs mal mit was schlauerem!", "Anzahl der Versuche:");
+
             //Guessing game Erweitert mit Benutzereingaben
             //Console.WriteLine("Input parameters for Guessing Game");
             //Guessinggame(ReaduserinputString("schreibe eine Willkommensnachricht"),
@@ -58,7 +59,7 @@ namespace Simon.Week03
 
 
         //Aufgabe Zahl einlesen
-        public static int Readuserinputint(String promt, String error)
+        public static int Readuserinputint(String promt, String error, int minNumber, int maxNumber)
         {
             Console.WriteLine(promt);
             while (true)
@@ -67,7 +68,15 @@ namespace Simon.Week03
                 {
                     String input = Console.ReadLine();
                     int output = Convert.ToInt32(input);
-                    return output;
+                    if (output < minNumber || output > maxNumber)
+                    {
+                        Console.WriteLine("{0} ist keine mögliche Auswahl zwischen {1} und {2}", output, minNumber, maxNumber);
+                    }
+                    else
+                    {
+                        return output;
+                    }
+
                 }
                 catch
                 {
@@ -80,33 +89,26 @@ namespace Simon.Week03
         public static void Guessinggame(String promt1, String promt2, String hnumber, String lnumber, String won, String error, String numberofguesses)
         {
             Console.WriteLine(promt1);
-            int winningnumber = random.Next(0, 5);
+            int winningnumber = random.Next(0, 100);
             int count = 1;
             while (true)
             {
-                try
+                int output = Readuserinputint(promt2, error, 0, 100);
+                if (output > winningnumber)
                 {
-                    int output = Readuserinputint(promt2, error);
-                    if (output > winningnumber)
-                    {
-                        Console.WriteLine(hnumber);
-                    }
-                    else if (output < winningnumber)
-                    {
-                        Console.WriteLine(lnumber);
-                    }
-                    else
-                    {
-                        Console.WriteLine(won);
-                        Console.WriteLine(numberofguesses + " " + count);
-                        return;
-                    }
-                    count++;
+                    Console.WriteLine(hnumber);
                 }
-                catch
+                else if (output < winningnumber)
                 {
-                    Console.WriteLine(error);
+                    Console.WriteLine(lnumber);
                 }
+                else
+                {
+                    Console.WriteLine(won);
+                    Console.WriteLine(numberofguesses + " " + count);
+                    return;
+                }
+                count++;
             }
         }
         //für Menue
@@ -153,13 +155,60 @@ namespace Simon.Week03
             }
         }
 
-        //Aufgabe Menue
+        //Aufgabe Menue neu
         public static void Menue(String askusernumber, String errormsg, String howbig, String askzeichen)
         {
             Console.WriteLine("Willkommen bei meinen Aufgaben!");
             Console.WriteLine("Was möchten Sie zeichnen?");
             Console.WriteLine("{0,-4}Christbaum\n{1,-4}Quader\n{2,-4}Rhombus\n", "1)", "2)", "3)");
-            int userinput = Readuserinputint(askusernumber, errormsg);
+            int userinput = Readuserinputint(askusernumber, errormsg, 1, 3);
+            bool askinput = true;
+
+            while (true)
+            {
+                while (true)
+                {
+                    if (userinput == 1)
+                    {
+                        Methoden___Schleifen.PrintChristmasTree(Readuserinputint(howbig + "Christbaum sein?", errormsg, 0, 1000), Readuserinputchar(askzeichen, errormsg));
+                        break;
+                    }
+                    else if (userinput == 2)
+                    {
+                        Methoden___Schleifen.PrintEmptySquare(Readuserinputchar(askzeichen, errormsg), Readuserinputint(howbig + "Quader sein?", errormsg, 0, 1000));
+                        break;
+                    }
+                    else if (userinput == 3)
+                    {
+                        Methoden___Schleifen.PrintRhombus(Readuserinputchar(askzeichen, errormsg), Readuserinputintonlynotsraight(howbig + "Rhombus sein? (verwende nur ungerade zahlen für eine schönes Bild)", errormsg));
+                        break;
+                    }
+                }
+                while (true)
+                {
+                    char ask = Readuserinputchar("Möchten Sie noch etwas zeichnen? (j/n)", errormsg);
+                    if (ask == 'n')
+                    {
+                        return;
+                    }
+                    else if (ask == 'j')
+                    {
+                        Console.WriteLine("Was möchten Sie zeichnen?");
+                        Console.WriteLine("{0,-4}Christbaum\n{1,-4}Quader\n{2,-4}Rhombus\n", "1)", "2)", "3)");
+                        userinput = Readuserinputint(askusernumber, errormsg, 1, 3);
+                        break;
+                    }
+                }
+            }
+        }
+
+        //Aufgabe Menue old
+        public static void Menue2(String askusernumber, String errormsg, String howbig, String askzeichen)
+        {
+            Console.WriteLine("Willkommen bei meinen Aufgaben!");
+            Console.WriteLine("Was möchten Sie zeichnen?");
+            Console.WriteLine("{0,-4}Christbaum\n{1,-4}Quader\n{2,-4}Rhombus\n", "1)", "2)", "3)");
+            int userinput = Readuserinputint(askusernumber, errormsg, 1, 3);
             bool askinput = true;
 
 
@@ -173,12 +222,12 @@ namespace Simon.Week03
                     {
                         if (userinput == 1)
                         {
-                            Methoden___Schleifen.PrintChristmasTree(Readuserinputint(howbig + "Christbaum sein?", errormsg), Readuserinputchar(askzeichen, errormsg));
+                            Methoden___Schleifen.PrintChristmasTree(Readuserinputint(howbig + "Christbaum sein?", errormsg, 0, 1000), Readuserinputchar(askzeichen, errormsg));
                             askinput = false;
                         }
                         else if (userinput == 2)
                         {
-                            Methoden___Schleifen.PrintEmptySquare(Readuserinputchar(askzeichen, errormsg), Readuserinputint(howbig + "Quader sein?", errormsg));
+                            Methoden___Schleifen.PrintEmptySquare(Readuserinputchar(askzeichen, errormsg), Readuserinputint(howbig + "Quader sein?", errormsg, 0, 1000));
                             askinput = false;
                         }
                         else if (userinput == 3)
@@ -188,8 +237,7 @@ namespace Simon.Week03
                         }
                         else if (userinput < 1 || userinput > 3)
                         {
-                            Console.WriteLine(errormsg);
-                            userinput = Readuserinputint(askusernumber, errormsg);
+                            userinput = Readuserinputint(askusernumber, errormsg, 1, 3);
                             askinput = false;
                         }
                     }
@@ -211,7 +259,7 @@ namespace Simon.Week03
                     {
                         Console.WriteLine("Was möchten Sie zeichnen?");
                         Console.WriteLine("{0,-4}Christbaum\n{1,-4}Quader\n{2,-4}Rhombus\n", "1)", "2)", "3)");
-                        userinput = Readuserinputint(askusernumber, errormsg);
+                        userinput = Readuserinputint(askusernumber, errormsg, 1, 3);
                         break;
                     }
                     else if (userinput == 1 || userinput == 2 || userinput == 3)
@@ -224,7 +272,7 @@ namespace Simon.Week03
 
         }
         //Methoden für Taschenerchner
-        public static double Readuserinputlong(String promt, String error)
+        public static double Readuserinputdouble(String promt, String error, double minNumber, double maxNumber)
         {
             Console.WriteLine(promt);
             while (true)
@@ -233,7 +281,15 @@ namespace Simon.Week03
                 {
                     String input = Console.ReadLine();
                     double output = Convert.ToDouble(input);
-                    return output;
+                    if (output < minNumber || output > maxNumber)
+                    {
+                        Console.WriteLine("{0} ist leider zu groß bitte wähle nur Zahlen zwischen {1} und {2}", output, minNumber, maxNumber);
+                    }
+                    else
+                    {
+                        return output;
+                    }
+
                 }
                 catch
                 {
@@ -241,15 +297,274 @@ namespace Simon.Week03
                 }
             }
         }
-        // Aufgabe: Taschenrechner
+        public static double Calcuserinput(double userinput, double userinput2, char userinputoperator)
+        {
+            double result = 0;
+            if (userinputoperator == '+')
+            {
+                result = userinput + userinput2;
+            }
+            if (userinputoperator == '-')
+            {
+                result = userinput - userinput2;
+            }
+            if (userinputoperator == '*')
+            {
+                result = userinput * userinput2;
+            }
+            if (userinputoperator == '^')
+            {
+                result = userinput;
+                for (int i = 0; i < userinput2; i++)
+                {
+                    result *= userinput;
+                }
+
+            }
+            if (userinputoperator == '/')
+            {
+                if (userinput2 == 0)
+                {
+                    Console.WriteLine("Eine Division durch 0 ist nicht möglich! Dies ist ein FATALER Fehler vielleicht lernst du indem das Programm jetzt abbricht und du neu starten musst!");
+                    throw new DivideByZeroException();  //absicht dass das Programm abgebrochen wird
+                }
+                else
+                {
+                    result = userinput / userinput2; ;
+                }
+            }
+            return result;
+        }
+        public static char Readuserinputmathchar(String chooseoperator, String error)
+        {
+            char userinputoperator = Readuserinputchar(chooseoperator, error);
+            while (true)
+            {
+                if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Write(error);
+                    userinputoperator = Readuserinputchar(" Wow du hast zwar einen String ausgewählt, jedoch ist dieser kein Rechenoperator DENK NACH!!!!!!", error);
+                }
+            }
+            return userinputoperator;
+        }
+        public static double Readuserinputdoublecalc(String promt, String error, double minNumber, double maxNumber)
+        {
+            Console.WriteLine(promt);
+            while (true)
+            {
+                try
+                {
+                    String input = Console.ReadLine();
+                    if (input.Contains("."))
+                    {
+                        input = input.Replace('.', ',');
+                    }
+                    double output = Convert.ToDouble(input);
+                    if (output < minNumber || output > maxNumber)
+                    {
+                        Console.WriteLine("{0} ist leider zu groß bitte wähle nur Zahlen zwischen {1} und {2}", output, minNumber, maxNumber);
+                    }
+                    else
+                    {
+                        return output;
+                    }
+
+                }
+                catch
+                {
+                    Console.WriteLine(error);
+                }
+            }
+        }
+
+        // Aufgabe: Taschenrechner var 1.0   . fixen zb. 10.2 == 10,2
         public static void Taschenrechner(String error, String number1, String number2, String chooseoperator)
+        {
+            Console.WriteLine("Willkommen beim Rechner ich kann für dich +,-,*,^ und / rechnen!");
+            double result = 0;
+            while (true)
+            {
+                double userinput = Readuserinputdoublecalc(number1, error, -10000000000000000, 10000000000000000);
+                char userinputoperator = Readuserinputmathchar(chooseoperator, error);
+                double userinput2 = Readuserinputdoublecalc(number2, error, -10000000000000000, 10000000000000000);
+
+                result = Calcuserinput(userinput, userinput2, userinputoperator);
+                Console.WriteLine("Ergebnis: {0}", result);
+                while (true)
+                {
+                    char ask = Readuserinputchar("Möchten Sie noch etwas rechnen? (j/n) Oder weiterrechnen? (w)", error);
+                    if (ask == 'n')
+                    {
+                        return;
+                    }
+                    else if (ask == 'j')
+                    {
+                        break;
+                    }
+                    else if (ask == 'w')
+                    {
+                        userinput = result;
+                        userinputoperator = Readuserinputmathchar(chooseoperator, error);
+                        userinput2 = Readuserinputdoublecalc("Bitte gib eine weithere Zahl ein mit welcher gerechnet werden soll", error, -10000000000000000, 10000000000000000);
+                        Console.WriteLine("Zwischenergebnis: {0}", Calcuserinput(userinput, userinput2, userinputoperator));
+                    }
+                }
+            }
+        }
+
+        // Aufgabe: Taschenrechner old
+        public static void Taschenrechner2(String error, String number1, String number2, String chooseoperator)
+        {
+            Console.WriteLine("Willkommen beim Rechner ich kann für dich +,-,*,^ und / rechnen!");
+            double result = 0;
+            while (true)
+            {
+                double userinput = Readuserinputdouble(number1, error, int.MaxValue, int.MinValue);
+                char userinputoperator = Readuserinputchar(chooseoperator, error);
+                while (true)
+                {
+                    if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.Write(error);
+                        userinputoperator = Readuserinputchar(" Wow du hast zwar einen String ausgewählt, jedoch ist dieser kein Rechenoperator DENK NACH!!!!!!", error);
+                    }
+                }
+                double userinput2 = Readuserinputdouble(number2, error, int.MaxValue, int.MinValue);
+                if (userinputoperator == '+')
+                {
+                    Console.Write("Ergebnis: ");
+                    result = userinput + userinput2;
+                    Console.WriteLine(result);
+                }
+                if (userinputoperator == '-')
+                {
+                    Console.Write("Ergebnis: ");
+                    result = userinput - userinput2;
+                    Console.WriteLine(result);
+                }
+                if (userinputoperator == '*')
+                {
+                    Console.Write("Ergebnis: ");
+                    result = userinput * userinput2;
+                    Console.WriteLine(result);
+                }
+                if (userinputoperator == '^')
+                {
+                    for (int i = 0; i < userinput2; i++)
+                    {
+                        Console.Write("Ergebnis: ");
+                        result = userinput * userinput;
+                        Console.WriteLine(result);
+                    }
+                }
+                if (userinputoperator == '/')
+                {
+                    if (userinput2 == 0)
+                    {
+                        Console.WriteLine("Eine Division durch 0 ist nicht möglich! Dies ist ein FATALER Fehler vielleicht lernst du indem das Programm jetzt abbricht und du neu starten musst!");
+                        return;
+                    }
+                    else
+                    {
+                        Console.Write("Ergebnis: ");
+                        result = userinput / userinput2;
+                        Console.WriteLine(result);
+                    }
+                }
+                while (true)
+                {
+                    char ask = Readuserinputchar("Möchten Sie noch etwas rechnen? (j/n) Oder weiterrechnen? (w)", error);
+                    if (ask == 'n')
+                    {
+                        return;
+                    }
+                    else if (ask == 'j')
+                    {
+                        break;
+                    }
+                    else if (ask == 'w')
+                    {
+                        userinput = result;
+                        userinputoperator = Readuserinputchar(chooseoperator, error);
+                        while (true)
+                        {
+                            if (userinputoperator == '+' || userinputoperator == '-' || userinputoperator == '*' || userinputoperator == '^' || userinputoperator == '/')
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.Write(error);
+                                userinputoperator = Readuserinputchar("", error);
+                            }
+                        }
+                        userinput2 = Readuserinputdouble("Bitte gib eine weithere Zahl ein mit welcher gerechnet werden soll", error, int.MaxValue, int.MinValue);
+                        if (userinputoperator == '+')
+                        {
+                            Console.Write("Ergebnis: ");
+                            result = userinput + userinput2;
+                            Console.WriteLine(result);
+                        }
+                        if (userinputoperator == '-')
+                        {
+                            Console.Write("Ergebnis: ");
+                            result = userinput - userinput2;
+                            Console.WriteLine(result);
+                        }
+                        if (userinputoperator == '*')
+                        {
+                            Console.Write("Ergebnis: ");
+                            result = userinput * userinput2;
+                            Console.WriteLine(result);
+                        }
+                        if (userinputoperator == '^')
+                        {
+                            for (int i = 0; i < userinput2; i++)
+                            {
+                                Console.Write("Ergebnis: ");
+                                result = userinput * userinput;
+                                Console.WriteLine(result);
+                            }
+                        }
+                        if (userinputoperator == '/')
+                        {
+                            if (userinput2 == 0)
+                            {
+                                Console.WriteLine("Eine Division durch 0 ist nicht möglich! Dies ist ein FATALER Fehler vielleicht lernst du indem das Programm jetzt abbricht und du neu starten musst!");
+                                return;
+                            }
+                            else
+                            {
+                                Console.Write("Ergebnis: ");
+                                result = userinput / userinput2;
+                                Console.WriteLine(result);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // catch wenn Zahl < 32 bit
+        // userinput und userinput 2 verwechselt nach der Frage!!! und oberer code als methode schreiben damit ich ihn unten wieder verwenden kann
+
+        // Aufgabe: Taschenrechner old v2
+        public static void Taschenrechner3(String error, String number1, String number2, String chooseoperator)
         {
             Console.WriteLine("Willkommen beim Rechner ich kann für dich +,-,*,^ und / rechnen!");
             double result = 0;
             double memory = 0;
             while (true)
             {
-                double userinput = Readuserinputlong(number1, error);
+                double userinput = Readuserinputdouble(number1, error, int.MaxValue, int.MinValue);
                 char userinputoperator = Readuserinputchar(chooseoperator, error);
                 while (true)
                 {
@@ -263,7 +578,7 @@ namespace Simon.Week03
                         userinputoperator = Readuserinputchar("", error);
                     }
                 }
-                double userinput2 = Readuserinputlong(number2, error);
+                double userinput2 = Readuserinputdouble(number2, error, int.MaxValue, int.MinValue);
                 try
                 {
                     if (userinputoperator == '+')
@@ -296,10 +611,10 @@ namespace Simon.Week03
                     }
                     if (userinputoperator == '/')
                     {
-                        if(userinput2 == 0)
+                        if (userinput2 == 0)
                         {
                             Console.WriteLine("Eine Division durch 0 ist nicht möglich!");
-                            
+
                         }
                         else
                         {
@@ -341,7 +656,7 @@ namespace Simon.Week03
                                 userinputoperator = Readuserinputchar("", error);
                             }
                         }
-                        userinput = Readuserinputlong("Bitte gib eine weithere Zahl ein mit welcher gerechnet werden soll", error);
+                        userinput = Readuserinputdouble("Bitte gib eine weithere Zahl ein mit welcher gerechnet werden soll", error, int.MaxValue, int.MinValue);
                         try
                         {
                             if (userinputoperator == '+')
@@ -396,9 +711,11 @@ namespace Simon.Week03
                 }
             }
             // beim weiterrechnen durch 0 bricht programm nicht ab
-
-
         }
-    }
 
+
+
+
+
+    }
 }
