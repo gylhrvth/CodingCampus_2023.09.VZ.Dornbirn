@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 
 namespace Mehmet.Week04
 {
-    internal class ArrayUEbungen2
+    internal class Array2DV1
     {
 
         public static void start()
         {
             Arr2D();
-
-
-
 
 
         }
@@ -94,7 +91,7 @@ namespace Mehmet.Week04
 
 
 
-            for (int col = 0; col < arr2d[col].Length; col++)
+            for (int col = 0; col < arr2d[0].Length; col++)
             {
                 int sumRow = 0;
 
