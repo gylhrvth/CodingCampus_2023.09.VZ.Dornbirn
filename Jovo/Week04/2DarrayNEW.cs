@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week04
+namespace Jovo.Week04
 {
-    internal class Array2DV1
+    internal class _2DArrayNew
     {
 
-        public static void start()
+        public static void Start()
         {
             Arr2D();
+
+
+
 
 
         }
@@ -33,32 +37,24 @@ namespace Mehmet.Week04
                 {
                     arr2d[row][col] = rand.Next(0, 100);
                 }
+                
             }
+            
 
-
-            //for (int row = 0; row < arr2d.Length; row++)
-            //{
-            //    for (int col = 0; col < arr2d[row].Length; col++)
-            //    {
-            //        Console.Write($"{arr2d[row][col],2:00}" + " ");
-            //    }
-            //    Console.WriteLine();
-
-            //}
-
+           
 
 
 
 
             for (int row = 0; row < arr2d.Length; row++)
             {
-                int sumCol = 0;
+                int sumrow1 = 0;
 
-                int[] currentRow = arr2d[row];
+                //int[] currentRow = arr2d[row];
 
                 for (int col = 0; col < arr2d[row].Length; col++)
                 {
-                    sumCol += currentRow[col];
+                    sumrow1 += arr2d[row][col]; //currentRow[col];
                 }
 
                 for (int col = 0; col < arr2d[row].Length; col++)
@@ -70,43 +66,30 @@ namespace Mehmet.Week04
                     else
                     {
                         Console.Write($"{arr2d[row][col],2:00}" + "");
-
                     }
+
                 }
-
-
-                Console.WriteLine(" = " + sumCol);
-
-
-                if (row == arr2d.Length - 1)
-                {
-                    Console.WriteLine("=    =    =    =    =");
-                }
-                else
-                {
-                    Console.WriteLine("+    +    +    +    +");
-                }
+                Console.WriteLine(" = " + sumrow1);
             }
 
 
+            Console.WriteLine("=    =    =    =    =");
 
-
-            for (int col = 0; col < arr2d[0].Length; col++)
+            for (int row = 0; row < arr2d[0].Length; ++row)
             {
-                int sumRow = 0;
+                int sum = 0;
 
-                for (int row = 0; row < arr2d.Length; row++)
+                for (int col = 0; col < arr2d.Length; col++)
                 {
-                    sumRow += arr2d[row][col];
+
+                    sum += arr2d[col][row];
+
                 }
-                Console.Write($"{sumRow,2:000}" + "  ");
-
-           
+                
+                Console.Write(sum + "  ");
             }
-           Console.WriteLine();
+
+
         }
-
-
-
     }
 }
