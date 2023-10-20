@@ -12,15 +12,14 @@ namespace Gyula.Week04
             string text = ReadString("Type a char to print: ");
             int width = ReadNumber("What shall use as width? ", 1, 30);
             int height = ReadNumber("What shall we use as height? ", 1, 8);
-
+            
             PrintRect(text + " ", width, height);
 
 
 		}
 
 
-<<<<<<< HEAD
-=======
+
         public static void PrintRect(String t, int width, int height)
         {
             for (int i = 0; i < height; i++)
@@ -32,7 +31,7 @@ namespace Gyula.Week04
                 Console.WriteLine();
             }
         }
->>>>>>> ebe3d9ec8760f552f5c5593809e43ac634239f4c
+
 
         public static int ReadNumber(string msg, int minValid, int maxValid)
         {

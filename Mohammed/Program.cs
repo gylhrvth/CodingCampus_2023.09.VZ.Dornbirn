@@ -1,1 +1,1 @@
-﻿Mohammed.Week04.day02.Start();
+﻿Mohammed.Week04.ConsoleInput.Start();
