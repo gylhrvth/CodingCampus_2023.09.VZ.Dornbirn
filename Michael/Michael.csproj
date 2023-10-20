@@ -12,6 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <Folder Include="Week03\" />
   </ItemGroup>
 </Project>
