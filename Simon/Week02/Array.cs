@@ -18,45 +18,71 @@ namespace Simon.Week02
             PrintArray(CreateArrayreverse(3));
             Console.WriteLine("\nMake a Copy");
             PrintArray(MakeACopy(CreateArray(3), 3));
-            Console.WriteLine("\nRandom Number foreach");
-            CreateRandomforeach(5);
-            Console.WriteLine("\nRandom Number for");
-            CreateRandom(5);
-            Console.WriteLine("\nRandom Number 2,5,10");
-            PrintRandom2(10);
-            Console.WriteLine("\nRandom Number print every 2. one");
-            PrintArrayevery2(CreateRandom3(5));
-            Console.WriteLine("\nRandom Number Crazy");
-            PrintCrazy(5);
-            Console.WriteLine("\nRandom Number Array Count");
-            PrintArrayCount(CreateArrayCount(20));
-            Console.WriteLine("\nRandom Number Array Summe");
-            PrintSumm(CreateArrayCount(3));
 
-
-            Console.WriteLine("\n\n");
-            int a = 7;
-            int b = a;
-
-            Console.WriteLine("{0} {1}", a, b);
-            b = 0;
-            Console.WriteLine("{0} {1}", a, b);
-
-
-            Console.WriteLine();
-            Console.WriteLine("TEST MAKE A COPY");
+            /*Console.WriteLine("\nTEST MAKE A COPY");
             int[] testArr = CreateArray(5);
             int[] copyArr = MakeACopy(testArr, 5); // Hier kommt die Kopie
 
             Console.WriteLine("[{0}]", string.Join(", ", CreateArray(5)));
             Console.WriteLine("[{0}]", string.Join(", ", copyArr));
-
             Console.WriteLine("===================================");
-
             testArr[0] = 99;
             Console.WriteLine("[{0}]", string.Join(", ", testArr));
             Console.WriteLine("[{0}]", string.Join(", ", copyArr));
+            */
+
+            Console.WriteLine("\nRandom Number Array:");
+            int[] rnarr = CreateRArray(0, 100, 10); //Array wird erstellt der für die Ganze Aufgabe Random Number Array verwendet wird
+            Console.WriteLine("[{0}]", string.Join(", ", rnarr));
+
+            Console.WriteLine("\nRandom Number foreach");
+            PrintRandomforeach(rnarr);
+            Console.WriteLine("\nRandom Number for");
+            PrintRandom(rnarr);
+            Console.WriteLine("\n\nRandom Number 2,5,10");
+            PrintRandom2(rnarr);
+            Console.WriteLine("\nRandom Number print every 2. one");
+            PrintRandomloop(rnarr);
+            Console.WriteLine("\nRandom Number Crazy");
+            int[] crazyarr = CreateRArray(-50, 50, 10);
+            PrintRandomforeach(crazyarr);
+            Console.WriteLine("\nRandom Number Array Zaehlen");
+            int[] calcarr = CreateRArray(1, 100, 10);
+            Console.WriteLine("[{0}]", string.Join(", ", calcarr));
+            PrintArrayCount(calcarr);
+            Console.WriteLine("\nRandom Number Array Summe");
+            PrintSumm(calcarr);
+            Console.WriteLine("Min:{0} Index: {3} Max: {1} Index: {4} Avg: {2}", CalcMin(calcarr), CalcMax(calcarr), CalcAvg(calcarr), IndexMin(calcarr), IndexMax(calcarr));
+            
+
+
+            /*
+            Console.WriteLine("\nRandom Number Array Summe");
+            PrintSumm(CreateArrayCount(3));
+            IndexMax(CreateArrayCount(3));
+            */
+            /*
+            Console.WriteLine("\n\n");
+            int a = 7;
+            int b = a;
+            Console.WriteLine("{0} {1}", a, b);
+            b = 0;
+            Console.WriteLine("{0} {1}", a, b);
+            */
+
+
         }
+        //Create Random Number Array
+        public static int[] CreateRArray(int lower, int upper, int length)
+        {
+            int[] arr = new int[length];
+            for (int i = 0; i < length; i++)
+            {
+                arr[i] = random.Next(lower, upper);
+            }
+            return arr;
+        }
+
         //Aufgabe Number Array
         public static int[] CreateArray(int arrlength)
         {
@@ -99,66 +125,66 @@ namespace Simon.Week02
         }
 
         //Aufgabe Random Number Array mit foreach
-        public static int[] CreateRandomforeach(int arrlength)
+        public static void PrintRandomforeach(int[] randomarr)
         {
-            int[] arr = new int[arrlength];
-            int a = 0;
-            foreach (int i in arr)
+            Console.Write("[");
+            bool first = true;
+            foreach (int value in randomarr)
             {
-                arr[i] = random.Next(0, 100);
-                Console.WriteLine("{0}. = {1}", a + 1, arr[i]);
-                a++;
+                if (!first)// ist das gleiche wie first == false
+                {
+                    Console.Write(", ");
+                }
+                Console.Write(value);
+                first = false;
             }
-            return arr;
+            Console.WriteLine("]");
         }
+        
         //Aufgabe Random Number Array mit for
-        public static int[] CreateRandom(int arrlength)
+        public static void PrintRandom(int[] randomarrfor)
         {
-            int[] arr = new int[arrlength];
-            for (int i = 0; i < arrlength; i++)
+            Console.Write("[");
+            for (int i = 0; i < randomarrfor.Length; i++)
             {
-                arr[i] = random.Next(0, 100);
+                if (i < randomarrfor.Length - 1)
+                {
+                    Console.Write(randomarrfor[i]);
+                    Console.Write(", ");
+                }
+                else
+                {
+                    Console.Write(randomarrfor[i]);
+                }
             }
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
-            return arr;
+            Console.Write("]");
         }
+
         //Aufgabe Random Number Array mit 2,5,10
-        public static int[] PrintRandom2(int arrlength)
+        public static void PrintRandom2(int[] arr)
         {
-            int[] arr = new int[arrlength];
-            for (int i = 0; i < arrlength; i++)
-            {
-                if (i == 1 || i == 4 || i == 9)
-                {
-                    arr[i] = random.Next(0, 100);
-                    Console.WriteLine(arr[i]);
-                }
-            }
-            return arr;
+            Console.Write("{0}, {1}, {2}", arr[1], arr[4], arr[9]);
         }
+
         //Aufgabe Random Number Array mit jedem 2. Wert
-        public static int[] CreateRandom3(int arrlength)
+        public static void PrintRandomloop(int[] arr)
         {
-            int[] arr = new int[arrlength];
-            Random random = new Random();
-            for (int i = 0; i < arrlength; i ++)
+            Console.Write("[");
+            for (int i = 0; i < arr.Length; i ++)
             {
-                if (i % 2 == 0)
+                if (i % 2 == 1 && i < arr.Length - 2)
                 {
-                    arr[i] = random.Next(0, 100);
-                    //Console.WriteLine(arr[i]);
+                    if (i > 1)
+                    {
+                        Console.Write(" ,");
+                    }
+                    Console.Write(arr[i]);
                 }
             }
-            return arr;
+            Console.WriteLine("]");
         }
-        //Print Array
-        public static void PrintArrayevery2(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i +=2)
-            {
-                Console.WriteLine("{0}. = {1}", i + 1, arr[i]);
-            }
-        }
+
+        /*
         //Aufgabe Random Number Array Crazy Range
         public static int[] PrintCrazy(int arrlength)
         {
@@ -172,21 +198,10 @@ namespace Simon.Week02
             }
             return arr;
         }
+        */
         //Aufgabe Random Number Array Count
-        public static int[] CreateArrayCount(int arrlength)
+        public static void PrintArrayCount(int[] arr)
         {
-            int[] arr = new int[arrlength];
-            for (int i = 0; i < arrlength; i++)
-            {
-                arr[i] = random.Next(1, 100);
-            }
-            return arr;
-        }
-
-        //Aufgabe Random Number Array Count
-        public static void PrintArrayCount(int[]arr)
-        {
-            PrintArray(arr);
             int count = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -197,10 +212,10 @@ namespace Simon.Week02
             }
             Console.WriteLine("Over 30 ammount: {0}", count);
         }
+
         //Aufgabe Random Number Array Summ
         public static void PrintSumm(int[] arr)
         {
-            PrintArray(arr);
             int a = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -208,10 +223,11 @@ namespace Simon.Week02
             }
             Console.WriteLine("Summe: {0}", a);
         }
+
         //Aufgabe Random Number Array Min
         public static int CalcMin(int[] arr)
         {
-            int min = 0;
+            int min = arr[0];
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] < min)
@@ -221,10 +237,11 @@ namespace Simon.Week02
             }
             return min;
         }
+
         //Aufgabe Random Number Array Max
         public static int CalcMax(int[] arr)
         {
-            int max = 0;
+            int max = arr[0];
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] > max)
@@ -234,6 +251,7 @@ namespace Simon.Week02
             }
             return max;
         }
+
         //Aufgabe Random Number Array Avg
         public static int CalcAvg(int[] arr)
         {
@@ -246,10 +264,11 @@ namespace Simon.Week02
             avg = a / arr.Length;
             return avg;
         }
+
         //Aufgabe Random Number Array Min Index
         public static int IndexMin(int[] arr)
         {
-            int min = 0;
+            int min = arr[0];
             int index = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -259,13 +278,12 @@ namespace Simon.Week02
                     index = i;
                 }
             }
-            Console.WriteLine(index);
             return index;
         }
         //Aufgabe Random Number Array Max Index
         public static int IndexMax(int[] arr)
         {
-            int max = 0;
+            int max = arr[0];
             int index = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -275,9 +293,7 @@ namespace Simon.Week02
                     index = i;
                 }
             }
-            return max;
+            return index;
         }
-
-
     }
 }

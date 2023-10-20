@@ -1,88 +1,93 @@
 ﻿namespace Selina.Week03
 {
+    using Selina.Week04.Ausagbe;
     using System;
-    using System.Linq;
+
 
     internal class Array
     {
         public static Random rand = new Random();
-        //Hallo
+
 
         public static void Start()
         {
+
             // Aufagbe 1:
-            Output("Number Array");
+            Ausgabe.Output("Number Array\n", ConsoleColor.Red);
+            int size = ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
+            int[] randomArray = new int[size];
 
-            Console.WriteLine("Geben Sie die Größe des Arrays ein:");
-            int size = Convert.ToInt32(Console.ReadLine());
-
-            int[] resultArray = CreateArray(size);
+            int[] resultArray1 = CreateArray1(size);    //Input User wird in einem Array gespeichert und geordnet ausgegeben 
             int[] resultArray2 = CreateArray2(size);
-   
-            Console.WriteLine("\nDas Array ist:");
-            foreach (int num in resultArray2)
-            {
-                Console.Write(num + " ");
-            }
-            Console.WriteLine();
-            foreach (int num in resultArray)
-            {
-                Console.Write(num + " ");
-            }
+
+            Console.WriteLine("\nDas Array ist:");  //Output für den User
+            Ausgabe.OutputForUser(resultArray1);
+            Ausgabe.OutputForUser(resultArray2);
+            Console.WriteLine("\n----------------------------------------------------------");
+
 
             // Aufagbe 2:
-            Output("Aufgabe: Kopie");
-            int[] copyArray = MakeCopy(resultArray);
-            MakeCopy(resultArray);
-            Console.WriteLine(string.Join(",", copyArray));
+            Ausgabe.Output("Kopie", ConsoleColor.Yellow);
+            int[] copyArray = MakeCopy(resultArray1);       //resultArray1 wird kopiert und in copyArray gespeichert
+            MakeCopy(resultArray1);
+            Ausgabe.OutputForUser(copyArray);   //Output für den User
+            Console.WriteLine("\n----------------------------------------------------------");
+
 
             // Aufagbe 3:
-            Output("Random Number Array");
-            int[] randomArray = RandomNumberArray(10, 0, 100, false);
+            Ausgabe.Output("Random Number Array", ConsoleColor.Green);
+            randomArray = CreateRandomArray(size, 0, 101);  //macht Array mit random Zahlen von 0 bis 100
+            Ausgabe.OutputForUser(randomArray);     //Output für User
 
-            Console.WriteLine("\nJeder Zweiter Wert:");
-            for (int i = 1; i < randomArray.Length; i = i + 2)
+            Console.WriteLine("\n\nJeder Zweiter Wert:");   //Gibt jeden zweiten Wert von dem Array aus
+            for (int i = 1; i < randomArray.Length; i += 2)
             {
                 Console.Write("[{0}] ", string.Join(", ", randomArray[i]));
             }
 
-            foreach (int num in randomArray)
+            Console.WriteLine("\n\nZweite Wert, Fünfte Wert und Zehnte Wert:");     //Gibt den 2, 5 und den 10 Wert eines Arrays aus
+            if (randomArray.Length >= 1)
             {
-                Console.Write("[{0}] ", string.Join(", ", num));
+                Console.Write($"Array 2  : [{randomArray[1]}]");
             }
+            if (randomArray.Length >= 5)
+            {
+                Console.WriteLine($"\nArray 5  : [{randomArray[4]}]");
+            }
+            if (randomArray.Length >= 9)
+            {
+                Console.WriteLine($"Array 10  : [{randomArray[9]}]");
+            }
+            else
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n----------------------------------------------------------");
 
-            Console.WriteLine("\n\nZweite Wert, Fünfte Wert und Zehnte Wert:");
-            Console.WriteLine($"Array 2: {randomArray[1]} \nArray 5: {randomArray[4]}\nArray 10: {randomArray[9]}");
 
             //Aufagbe 4:
-            Output("Random Number Array Crazy Range");
+            Ausgabe.Output("Random Number Array Crazy Range", ConsoleColor.Blue);
+            randomArray = CreateRandomArray(size, -50, 51);     //macht Array mit random Zahlen von -50 bis 50
+            Ausgabe.OutputForUser(randomArray);     //Output für User
+            Console.WriteLine("\n----------------------------------------------------------");
 
-            RandomNumberArray(10, -50, 50, false);
-            foreach (int num in randomArray)
-            {
-                Console.Write("[{0}] ", string.Join(", ", num));
-            }
 
             //Aufagbe 5:
-            Output("Random Number Array Zählen");
-
-            RandomNumberArray(10, 1, 100, true);
-            foreach (int num in randomArray)
-            {
-                Console.Write("[{0}] ", string.Join(", ", num));
-            }
-
-
+            Ausgabe.Output("Random Number Array Zählen\n", ConsoleColor.Magenta);
+            randomArray = CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
+            int count = CountOver30(randomArray);
+            Console.WriteLine($"{count} Werte sind über 30");
+            Ausgabe.OutputForUser(randomArray);     //Output für User
+            Console.WriteLine("\n----------------------------------------------------------");
 
 
             //Aufagbe 6:
-            Output("Random Number Array Summe");
-         
+            Ausgabe.Output("Random Number Array Summe", ConsoleColor.DarkBlue);
+            int[] randomArraySum = CreateRandomArray(size, 1, 101);     //macht Array mit random Zahlen von 1 bis 100
 
-
-            int[] randomArraySum = RandomNumberArray(10, 1, 100, false);
             bool first = true;
-            foreach (int num in randomArraySum)
+            Console.Write("\n[ ");
+            foreach (int num in randomArraySum)     //Output für User
             {
                 if (!first)
                 {
@@ -91,96 +96,98 @@
                 Console.Write(num);
                 first = false;
             }
-            Console.WriteLine(" = " + Summe(randomArraySum));
+            Console.Write(" ]");
+            Console.WriteLine(" = " + Summe(randomArraySum));   //Output Summe für User
+            Console.WriteLine("----------------------------------------------------------");
 
 
             //Aufgabe 7:
-            Output("Random Number Array Summe");
+            Ausgabe.Output("Random Number Array Min / Max / Avg\n", ConsoleColor.Cyan);
 
-
-            RandomNumberArray(10, 1, 100, false);
-            RandomNumberArrayMin(randomArray);
-
-
-            foreach (int num in randomArray)
-            {
-                Console.Write(num + " ");
-            }
+            randomArray = CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
+            int min = RandomNumberArrayMin(randomArray);     //RandomNumberArrayMin gibt das Min von Array
+            int max = RandomNumberArrayMax(randomArray);    //RandomNumberArrayMax gibt das Max von Array
+            double avg = RandomNumberArrayAvg(randomArray);  //RandomNumberArrayAvg gibt das Avg von Array
+            Ausgabe.OutputForUser(randomArray);
+            Console.Write($"Das Min ist = [{min}]\nDas Max ist = [{max}]\nDer Avg ist = [{avg}]"); //Output for User
+            Console.WriteLine("\n----------------------------------------------------------");
 
         }
 
-        public static int[] RandomNumberArray(int size, int random, int random1, bool countNumbers)
+        //User Input:
+        public static int ReadNumber(string prompt, string onError)
         {
-            int count = 0;
+            Console.WriteLine(prompt);
+            while (true)
+            {
+                try
+                {
+                    int ourNumber = Convert.ToInt32(Console.ReadLine());
+                    return ourNumber;
+                }
+                catch (Exception exc)
+                {
+                    Console.Error.WriteLine(onError);
+                }
+            }
+        }
+
+        //Random Number:
+        public static int[] CreateRandomArray(int size, int from, int to)
+        {
             int[] randomArray = new int[size];
             for (int i = 0; i < randomArray.Length; i++)
             {
-                randomArray[i] = rand.Next(random, random1);
-                if (randomArray[i] > 30)
+                randomArray[i] = rand.Next(from, to);
+            }
+            return randomArray;
+        }
+
+        public static int CountOver30(int[] arr)
+        {
+            int count = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > 30)
                 {
                     count++;
                 }
             }
-            if (countNumbers == true)
-            {
-                OutputCount(count);
-            }
-            return randomArray;
-        }
-        public static void OutputCount(int count)
-        {
-            Console.WriteLine($"{count} Zahlen sind über 30");
+            return count;
         }
 
-        public static string Output(string output)
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"\nAufgabe: {output}");
-            Console.ForegroundColor = ConsoleColor.White;
-
-            return output;
-        }
-
-        // Aufgabe 1:
+        // Aufgabe 1: Number Array
         public static int[] CreateArray2(int size)
         {
-
             int[] newArray = new int[size];
-
             for (int i = 0; i < size; i++)
             {
                 newArray[i] = size - i;
             }
-
             return newArray;
-
         }
-        public static int[] CreateArray(int size)
+        public static int[] CreateArray1(int size)
         {
             int[] newArray = new int[size];
-
             for (int i = 0; i < size; i++)
             {
                 newArray[i] = i + 1;
             }
-
             return newArray;
         }
 
-        //Aufagbe 2:
-        public static int[] MakeCopy(int[] resultArray)
+        //Aufagbe 2: KOPIE
+        public static int[] MakeCopy(int[] original)
         {
-            int[] copyArray = new int[resultArray.Length];
-
-            for (int i = 0; i < resultArray.Length; i++)
+            int[] copyArray = new int[original.Length];
+            for (int i = 0; i < original.Length; i++)
             {
-                copyArray[i] = resultArray[i];
+                copyArray[i] = original[i];
             }
-
             return copyArray;
         }
 
-        //Aufagbe 6:
+        //Aufagbe 6: Random Number Array Summe
         public static int Summe(int[] randomArraySum)
         {
             int sum = 0;
@@ -191,17 +198,42 @@
             return sum;
         }
 
-
-        public static int[] RandomNumberArrayMin(int[] randomArray1)
+        //Aufagbe 7: Random Number Array Min/Max/Avg
+        public static int RandomNumberArrayMin(int[] randomArray)
         {
-            int min = randomArray1.Min();
-            int max = randomArray1.Max();
+            int min = randomArray[0];
+            for (int i = 1; i < randomArray.Length; i++)
+            {
+                if (randomArray[i] < min)
+                {
+                    min = randomArray[i];
+                }
+            }
+            return min;
+        }
+        public static int RandomNumberArrayMax(int[] randomArray)
+        {
+            int max = randomArray[0];
+            for (int i = 1; i < randomArray.Length; i++)
+            {
+                if (randomArray[i] > max)
+                {
+                    max = randomArray[i];
+                }
+            }
 
-            Console.WriteLine("Kleinster Wert: " + min);
-            Console.WriteLine("Groesster Wert: " + max);
-
-            return randomArray1;
+            return max;
+        }
+        public static double RandomNumberArrayAvg(int[] randomArray)
+        {
+            double avg = 0.0;
+            int sum = Summe(randomArray);
+            avg = (double)sum / randomArray.Length;
+            return avg;
         }
 
     }
 }
+
+
+

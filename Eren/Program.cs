@@ -1,1 +1,1 @@
-﻿Eren.Week01.HelloWorld.Start();
+﻿Eren.Week04.PascalDreieck.StartTwoDArray();

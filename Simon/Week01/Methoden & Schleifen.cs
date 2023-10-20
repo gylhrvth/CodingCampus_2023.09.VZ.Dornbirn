@@ -59,8 +59,8 @@ namespace Simon.Week01
             PrintX('x', 5);
 
             Console.WriteLine("\nPrint Christmastree");
-            PrintChristmasTree(20);
-            PrintChristmasTree(2);
+            PrintChristmasTree(20, '*');
+            PrintChristmasTree(2, '*');
 
             Console.WriteLine("\nPrint circle Pythagoras");
             PrintCirclePythagoras(10);
@@ -346,10 +346,18 @@ namespace Simon.Week01
                 a = a + 2;
             }
         }
+        //benötigt für Christmastree
+        public static void PrintCharsString(String symbol, int zahl)
+        {
+            for (int i = 0; i < zahl; i++)
+            {
+                Console.Write(symbol);
+            }
+        }
 
         //Aufgabe Print Christmastree
 
-        public static void PrintChristmasTree(int number)
+        public static void PrintChristmasTree(int number, char symbol)
         {
             //if (number % 3 == 0)
             //{
@@ -362,13 +370,13 @@ namespace Simon.Week01
                 int space = number - 1;
                 if (row == number - 1)
                 {
-                    PrintChars('*', number * 2 - 1);
+                    PrintChars(symbol, number * 2 - 1);
                     Console.WriteLine();
                 }
                 else if (row == 0)
                 {
                     PrintChars(' ', space);
-                    Console.Write('*');
+                    Console.Write(symbol);
                     PrintChars(' ', space);
                     Console.WriteLine();
                 }
@@ -377,9 +385,9 @@ namespace Simon.Week01
                     int space1 = number - i - 1;
                     int space2 = a;
                     PrintChars(' ', space1);
-                    Console.Write('*');
-                    PrintChars('*', space2);
-                    Console.Write('*');
+                    Console.Write(symbol);
+                    PrintChars(symbol, space2);
+                    Console.Write(symbol);
                     Console.WriteLine();
                     a = a + 2;
                 }

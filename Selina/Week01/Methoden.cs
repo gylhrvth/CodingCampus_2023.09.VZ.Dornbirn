@@ -13,37 +13,37 @@ namespace Selina.Week01
         public static void Start()
         {
             //Aufgabe 1:
-            //PrintSquare();
+            PrintSquare();
 
             //Aufgabe 2:
-            //PrintRectangle();
+            PrintRectangle();
 
             //Aufgabe 3:
-            //PrintTrinangel();
+            PrintTrinangel();
 
             //Aufgabe 4:
-            //PrintTrinangel2();
+            PrintTrinangel2();
 
             //Aufgabe 5:
-            //PrintTrinangel3();
+            PrintTrinangel3();
 
             //Aufgabe 6:
-            //PrintTrinangel4();
+            PrintTrinangel4();
 
-            //PrintEmptySquare1();
+            PrintEmptySquare1();
 
             //Aufagbe 7:
-            //PrintEmptySquare2();
+            PrintEmptySquare2();
 
             //Aufgabe 8:
-            //PrintSlash();
+            PrintSlash();
 
             //Aufgabe 9:
-            //PrintTriangle();
+            PrintTriangle();
 
-            //PrintRhombus();
+            PrintRhombus();
             PrintX();
-           PrintChristmastree();
+            PrintChristmastree();
         }
 
 
