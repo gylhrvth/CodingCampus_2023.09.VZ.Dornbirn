@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Michael.Week02
         public static int[] ascendingArray(int length)
         {
             int[] array = new int[length];
-
+            
             for (int i = 0; i < length; i++)
             {
                 array[i] = i + 1;
@@ -527,7 +528,7 @@ namespace Michael.Week02
         }
 
 
-        public static void Swap(int[] array, int index1, int index2)
+        public static void Switch(int[] array, int index1, int index2)
         {
             int temp = array[index1];
             array[index1] = array[index2];
@@ -875,7 +876,7 @@ namespace Michael.Week02
         }
 
 
-        public static void Switch(int[] array, int index1, int index2)
+        public static void Swap(int[] array, int index1, int index2)
         {
             int temp = array[index1];
             array[index1] = array[index2];
@@ -1033,9 +1034,10 @@ namespace Michael.Week02
         }
 
 
-        public static int numberOfLivingNeighbors(int[,] field, int size, int xCoord, int yCoord)
+        public static int numberOfLivingNeighbors(int[,] field, int size, int xCoord, int yCoord, bool periodic = false)
         {
             int livingNeighbors = 0;
+
 
             for (int i = -1; i <= 1; i++)
             {
@@ -1052,6 +1054,26 @@ namespace Michael.Week02
                     }
                     catch
                     {
+                        if (periodic)
+                        {
+                            int xCoordAlt = xCoord + j;
+                            int yCoordAlt = yCoord + i;
+
+                            if (yCoordAlt == -1)
+                                yCoordAlt = size - 1;
+                            else if (yCoordAlt == size)
+                                yCoordAlt = 0;
+
+                            if (xCoordAlt == -1)
+                                xCoordAlt = size - 1;
+                            else if (xCoordAlt == size)
+                                xCoordAlt = 0;
+
+                            if (field[yCoordAlt, xCoordAlt] == 1)
+                            {
+                                livingNeighbors++;
+                            }
+                        }
                     }
                 }
             }
@@ -1067,15 +1089,17 @@ namespace Michael.Week02
             {
                 for (int x = 0; x < size; x++)
                 {
-                    if (field[y, x] == 0 && numberOfLivingNeighbors(field, 20, x, y) == 3)
+                    int livingNeighors = numberOfLivingNeighbors(field, size, x, y, true);
+
+                    if (field[y, x] == 0 && livingNeighors == 3)
                     {
                         tempField[y, x] = 1;
                     }
-                    else if (field[y, x] == 1 && numberOfLivingNeighbors(field, 20, x, y) < 2)
+                    else if (field[y, x] == 1 && livingNeighors < 2)
                     {
                         tempField[y, x] = 0;
                     }
-                    else if (field[y, x] == 1 && numberOfLivingNeighbors(field, 20, x, y) > 3)
+                    else if (field[y, x] == 1 && livingNeighors > 3)
                     {
                         tempField[y, x] = 0;
                     }
@@ -1134,7 +1158,7 @@ namespace Michael.Week02
 
             for (int i = 0; i < userInput.Length; i++)
             {
-                Switch(userInput, i, rnd.Next(i, userInput.Length));
+                Swap(userInput, i, rnd.Next(i, userInput.Length));
             }
         }
 
@@ -1160,7 +1184,7 @@ namespace Michael.Week02
             var watch2 = System.Diagnostics.Stopwatch.StartNew();
             watch2.Stop();
 
-            BubbleMenu(createRandomArray(20, 0, 100));
+            twoDArray(10);
 
             /*
 
