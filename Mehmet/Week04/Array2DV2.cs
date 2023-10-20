@@ -23,7 +23,7 @@ namespace Mehmet.Week04
             int[] sumCol = SumByCol(arr2d);
             Console.WriteLine(string.Join(" ", sumCol));
 
-        }
+        }       
 
 
         public static int[][] Create2DArrayRand(int row, int col)
@@ -73,9 +73,6 @@ namespace Mehmet.Week04
             {
                 return new int[0] { };
             }
-
-
-
             int[] result = new int[arr[0].Length];
             for (int i = 0; i < arr.Length; i++)
             {
