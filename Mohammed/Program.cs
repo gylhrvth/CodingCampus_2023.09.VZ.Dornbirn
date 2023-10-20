@@ -1,1 +1,1 @@
-﻿Mohammed.Week04.array2d.Start();
+﻿Mohammed.Week04.ConsoleInput.Start();
