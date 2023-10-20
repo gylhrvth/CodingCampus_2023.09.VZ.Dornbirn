@@ -80,9 +80,9 @@ namespace Patrick.Week03
             Console.WriteLine("====================================================");
 
 
-            //AUFGABE 8
-                
-            //Bubblesort mit Zahlen aufsteigend und absteigend
+            //AUFGABE 8 2D-Array
+
+
             Console.WriteLine("====================================================");
             Console.WriteLine("====================================================");
         }
@@ -309,6 +309,5 @@ namespace Patrick.Week03
             return maxIndex;
         }
 
-        
     }
 }

@@ -258,6 +258,7 @@ namespace Timo.Week03
                     string answer = ReadString("If you want to end the calculator press 'e'.\nIf you want to start a new calculation press 'n'. \nIf you want to continue with the current result enter 'c'. ");
                     if (answer == "n")
                     {
+                        w = false;
                         break;
                     }
                     else if (answer == "e")

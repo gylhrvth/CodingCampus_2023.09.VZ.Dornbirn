@@ -2,7 +2,7 @@
 
 namespace Mehmet.Week03
 {
-    internal class ArrayÜbung
+    internal class ArrayUEbung
     {
 
 
@@ -137,8 +137,7 @@ namespace Mehmet.Week03
             int[] randArrNew = RandomNumberArray(10);
 
 
-            Console.WriteLine("ZweiDArray");
-            ZweiDArray();
+            
 
 
 
@@ -318,22 +317,7 @@ namespace Mehmet.Week03
         }
 
 
-        public static void ZweiDArray()
-        {
-           
-            int[][] arr2d = new int[5][];
-
-            for (int row = 0;row < arr2d.Length; row++)
-            {
-                arr2d[row] = new int[5];
-
-            }
-
-
-            
-
-
-        }
+        
 
 
 

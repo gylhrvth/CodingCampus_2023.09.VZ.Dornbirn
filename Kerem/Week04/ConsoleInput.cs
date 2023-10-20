@@ -23,7 +23,7 @@ namespace Kerem.Week04
             //Console.WriteLine("Welcome to my super duper Guessgame");
             //Guessgame();
 
-            //Menu("Welcome to my Exercises!", "What do you wanna draw?","PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
+            Menu("Welcome to my Exercises!", "What do you wanna draw?","PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
 
 
 
@@ -92,19 +92,16 @@ namespace Kerem.Week04
         {
             while(true)
             {
-                try
-                {
+               
+                
                     Console.WriteLine(msg);
                     string input = Console.ReadLine();
                     int output = Convert.ToInt32(input);
-                    return output;
+                    
 
-                }
-                catch
-                {
-                    Console.WriteLine("Please enter valid number");
-                }
-     
+
+
+
             }
         }
         public static String ReadSymbol(string msg)
@@ -139,9 +136,24 @@ namespace Kerem.Week04
                 int number = ReadChoices(askingdraw);
                 int size = ReadChoices(asksize);
                 string sign = ReadSymbol(asksign);
-                try
+
+                while (true)
                 {
-                    if (number == 1)
+                    
+
+                    if (number == 1 || number == 2 || number == 3)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unvalid Number!");
+                    }
+                }
+
+                while (true)
+                {
+                    if(number ==1)
                     {
                         printEmptySquare(sign, size);
                     }
@@ -153,12 +165,11 @@ namespace Kerem.Week04
                     {
                         printTriangleTopRight(sign, size);
                     }
+
+
                 }
- 
-                catch
-                {
-                    Console.WriteLine("Unvalid Number!");
-                }
+                 
+                
 
                 Console.WriteLine();
 
@@ -173,20 +184,74 @@ namespace Kerem.Week04
             }           
            
         }
-        public static int Char ReadChar(string msg)
+        public static Char ReadChar(string msg)
+        {
+            while (true)
+
+            {
+                try
+                {
+                    Console.WriteLine(msg);
+                    string input = Console.ReadLine();
+                    char mychar = Convert.ToChar(input);
+                    return mychar;
+
+                }
+                catch
+                {
+                    Console.WriteLine("Please only Operator like +, -, *, / or ^");
+                }
+          
+            }
+            
+        }
+        public static int Readnumber(string msg)
         {
             while (true)
             {
-                Console.WriteLine(msg);
-                string input = Console.ReadLine();
-                string mychar= Convert.ToChar(input);
-                return mychar;
+                try
+                {
+                    Console.WriteLine(msg);
+                    string input = Console.ReadLine();
+                    int mynumber = Convert.ToInt32(input);
+                    return mynumber;
 
+                }
+                catch
+                {
+                    Console.WriteLine("That's not a number");
+                }
+           
             }
         }
+        public static float Readfloat(string msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(msg);
+                    string input = Console.ReadLine();
+                    float mynumber = Convert.ToInt32(input);
+                    return mynumber;
+                }
+                catch
+                {
+                    Console.WriteLine("That's not a number!");
+                }
+            }
+        }
+        public static void Taschenrechner()
+        {
+            Console.WriteLine("Welcome to my Calculator!");
+            float num1 = Readfloat("Choose your first number");
+
+            
+        }
+        
 
 
-
+        
 
     }
 }
