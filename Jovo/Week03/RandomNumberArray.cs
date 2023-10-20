@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Week04
+namespace Jovo.Week03
 {
-    internal class Menü3
+    internal class RandomNumberArray
     {
+        
     }
 }

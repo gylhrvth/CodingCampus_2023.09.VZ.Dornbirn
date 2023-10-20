@@ -1,1 +1,1 @@
-Fabian.Week04.TicTacToeAlgorithm.Start();
+﻿Fabian.Week02.ConsoleInput.Start();

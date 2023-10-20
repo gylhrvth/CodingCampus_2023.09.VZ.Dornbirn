@@ -1,7 +1,5 @@
 ﻿using Patrick.Week04;
+Array2D.Start();
 
-SelectionSort.Start();
-
-//RecursionExample.Start();
 
 //Patrick.Week03.ExamplesArrays.start();

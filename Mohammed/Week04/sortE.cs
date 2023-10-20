@@ -27,7 +27,7 @@ namespace Mohammed.Week04
             Console.WriteLine("SelectionSort Example");
             SelectionSort(arr);
             PrintArrayForEach(arr);
-
+            
 
         }
 
@@ -51,7 +51,7 @@ namespace Mohammed.Week04
             }
             Console.WriteLine("]"); 
         }
-        public 
+
 
 
         public static int[] CreateArrayAsc(int size)

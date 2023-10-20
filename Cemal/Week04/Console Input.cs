@@ -1,48 +1,164 @@
-﻿using System;
+﻿using Cemal.Week01;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Cemal.Week04
 {
     internal class ConsoleInput
     {
+        public static Random random = new Random();
+
         public static void StartInput()
         {
-            Console.WriteLine("String einlesen");
-            //stringEinlesen();
+            string error = ("Gib nur Zahlen ein!");
+
+            //// Name eingeben
+            //string userinput = Einlesen("Wie heißt du?");
+            //Console.WriteLine("Wilkommen " + userinput);
+            //Console.WriteLine();
+
+            //Alter eingeben
+            //int userinputnumber = Zahleinlesen("Wie alt bist du?", error);
+            //Console.WriteLine("Du bist " + userinputnumber + "Jahre alt.");
+            //Console.WriteLine();
+
+            //Ratespiel
+            //Console.WriteLine();
+            //Ratespiel(error);
+            //Console.WriteLine();
+
+            //Menü
             Console.WriteLine();
-            //Zahleinlesen("Deine Zahl ist: ");
-            //Console.WriteLine("Deine Zahl ist: " + userinput);
-
-
-
-
-
-
+            Menü();
         }
 
-        public static string Einlesen()
+        public static string Einlesen(string prompt, string error)
         {
-            string input = Console.ReadLine();
-            return input;
-            
+            Console.WriteLine(prompt);
+            while (true)
+            {
+                try
+                {
+                    string userinput = Console.ReadLine();
+                    return userinput;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine(error);
+                }
+            }
         }
 
-        public static int Zahleinlesen(string ergebnis, string error)
+        public static int Zahleinlesen(string prompt, string error)
         {
-            
-            Console.WriteLine("Gib eine Zahl an");
-
-            string input = Console.ReadLine();
-            int userinput = Convert.ToInt32(input);
-            //int userInput = int.Parse(Console.ReadLine());
-
-
-
-            return userinput;
+            Console.WriteLine(prompt);
+            while (true)
+            {
+                try
+                {
+                    int userinput = int.Parse(Console.ReadLine());
+                    return userinput;
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine(error);
+                }
+            }
         }
+
+        public static void Ratespiel(string error)
+        {
+
+            Console.WriteLine("Wilkommen beim super coolen Zahlen Ratespiel!");
+            Console.WriteLine("Errate die Zahl zwischen 0 und 100!");
+            Console.WriteLine("Jetzt gib eine Zahl ein: ");
+
+            int randomnumber = random.Next(101);
+            int eingabe = 0;
+            int counter = 0;
+
+            while (eingabe != randomnumber)
+            {
+                eingabe = Zahleinlesen("", "Gib nur Zahlen ein!");
+                counter++;
+
+                if (eingabe == randomnumber)
+                {
+                    Console.WriteLine("Hurraaa! Du hast die Zahl {0} erraten!", randomnumber);
+                    Console.WriteLine("Du hast {0} versuche gebraucht!", counter);
+                }
+
+                else if (eingabe <= randomnumber)
+                {
+                    Console.WriteLine("Die Zahl ist zu niedrig!");
+                }
+
+                else if (eingabe > randomnumber)
+                {
+                    Console.WriteLine("Die Zahl ist zu hoch!");
+                }
+            }
+            Console.ReadKey();
+        }
+
+        public static void Menü()
+        {
+            int eingabe = 0;
+            int groese = 0;
+            bool restart = false;
+            Console.WriteLine("Willkommen bei meinen Aufgaben!");
+
+            while (restart == false)
+            {
+                Console.WriteLine("Was möchten sie zeichnen?");
+                Console.WriteLine(" 1. Square \n 2. Empty Square \n 3. Trinangle");
+                Console.Write("Bitte wählen sie aus");
+
+                eingabe = Zahleinlesen("", "Du kannst nur Zahlen von 1 - 3 eingeben!");
+                groese = Zahleinlesen("Wie groß soll der {0} sein?", "Du kannst nur Zahlen eingeben!");
+                string symbol = Einlesen("Welches Zeichen soll verwendet werden?", "Du kannst nur zeichen eingeben!");
+
+                if (eingabe == 1)
+                {
+                    Methoden_Schleifen.PrintSquare(symbol, groese);
+                }
+
+                else if (eingabe == 2)
+                {
+                    Methoden_Schleifen.PrintEmptySquare(symbol, groese);
+                }
+
+                else if (eingabe == 3)
+                {
+                    Methoden_Schleifen.PrintTrinangle3(symbol, groese);
+                }
+                Console.WriteLine();
+                Console.WriteLine();
+
+                Console.WriteLine("Möchten sie noch etwas zeichen? (j / n)");
+                string restartJorN = Console.ReadLine();
+
+                if (restartJorN == "j")
+                {
+                    restart = false;
+                }
+
+                if (restartJorN == "n")
+                {
+                    restart = true;
+                }
+
+                Console.WriteLine();
+            }
+        }
+
+
     }
 }
 

@@ -1,17 +1,32 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Globalization;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
+﻿using System;
+using System.IO.IsolatedStorage;
 
 namespace Fabienne.Week02
 {
     public class Arrays
     {
+        //private static String[] units = { "Zero", "One", "Two", "Three",
+        //    "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+        //    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+        //    "Seventeen", "Eighteen", "Nineteen" };
+        //private static String[] tens = { "", "", "Twenty", "Thirty", "Forty",
+        //    "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+
         public static Random rand = new Random();
         public static void Start()
         {
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+        //    Console.ForegroundColor = ConsoleColor.DarkBlue;
+        //    for (long i = 100000; i <= 10000000; i *= 10)
+        //    {
+        //        Console.WriteLine(MyConvert(i).ToLower());
+        //        Console.WriteLine(MyConvert(i + 1).ToLower());
+        //        Console.WriteLine(MyConvert(i + 10).ToLower());
+        //        Console.WriteLine(MyConvert(i + 11).ToLower());
+        //        Console.WriteLine(MyConvert(i + 100).ToLower());
+        //        Console.WriteLine(MyConvert(i + 110).ToLower());
+        //        Console.WriteLine(MyConvert(i + 111).ToLower());
+        //    }
+
 
             //int[] original = { 1, 7, 8 , 11, 32, 4, -5};         
             //Console.WriteLine("[{0}]", string.Join(", ", NumberArray()));          
@@ -80,13 +95,13 @@ namespace Fabienne.Week02
             //PrintArray(arr4);
             //InsertionSort(arr4);
 
-            int[,] arr5 = new int[7, 8];
-            int[,] rand2dArray = CreateRandom2DArray();
+            //int[,] arr5 = new int[7, 8];
+            //int[,] rand2dArray = CreateRandom2DArray();
 
-            PrintTwoDeeArray(rand2dArray);
+            //PrintTwoDeeArray(rand2dArray);
 
-            int[,] arr6 = PascalDreieck();
-            PrintTwoDeeArray(arr6);
+            int[,] arr7 = CreatePascalDreieck();
+            PrintPascalTrinangle(arr7);
         }
         public static int[] NumberArray()
         {
@@ -463,11 +478,25 @@ namespace Fabienne.Week02
                 Console.WriteLine();
             }
         }
-        public static int[,] PascalDreieck(int size = 0)
+        public static int[,] CreatePascalDreieck(int size = 0)          // - geht noch nicht und 0.irgendwas auch nicht
         {
+            while (size < 1)
+            {                
+                try
+                {
+                    Console.WriteLine("Enter size for Array: ");
+                    size = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Thats not a number ");
+                }
+            }
+
             int[,] arr = new int[size, size];           
             for (int i = 0; i < arr.GetLength(0); i++)
             {
+                arr[i, 0] = 1;
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
                     if (i == 0 || j == 0)
@@ -483,6 +512,47 @@ namespace Fabienne.Week02
             }
             return arr;
         }
-    }
-}
+        public static void PrintPascalTrinangle(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write("{0, 10} ", arr[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
 
+        //uwu
+
+        //public static String MyConvert(long i)
+        //{
+        //    if (i < 20)
+        //    {
+        //        return units[i];
+        //    }
+        //    if (i < 100)
+        //    {
+        //        return tens[i / 10] + ((i % 10 > 0) ? " " + MyConvert(i % 10) : "");
+        //    }
+        //    if (i < 1000)
+        //    {
+        //        return units[i / 100] + " Hundred"
+        //                + ((i % 100 > 0) ? " And " + MyConvert(i % 100) : "");
+        //    }
+        //    if (i < 1000000)
+        //    {
+        //        return MyConvert(i / 1000) + " Thousand"
+        //                + ((i % 1000 > 0) ? " And " + MyConvert(i % 1000) : "");
+        //    }         
+        //    if (i < 1000000000)
+        //    {
+        //        return MyConvert(i / 1000000) + " Billion"
+        //                + ((i % 1000000 > 0) ? " And " + MyConvert(i % 1000000) : "");
+        //    }
+        //    return MyConvert(i / 1000000000) + " Trillion "
+        //            + ((i % 1000000000 > 0) ? " And " + MyConvert(i % 1000000000) : "");
+        }
+    }
+    

@@ -12,15 +12,7 @@ namespace DarioLuis.Week03
             int result = 0;
             Console.WriteLine(msg);
             string line = Console.ReadLine();
-            try
-            {
-                result = int.Parse(line);
-            } catch (FormatException fe)
-            {
-                Console.WriteLine("Gib bitte eine erlaubte Zahl ein!");
-            }
-
-
+            result = int.Parse(line);
             return result;
         }
         public static int OutofRange(string msg)
