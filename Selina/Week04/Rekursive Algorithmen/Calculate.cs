@@ -8,7 +8,7 @@ using System.Text;
 using MessageBox = System.Console;
 
 
-namespace Selina.Week04
+namespace Selina.Week04.Taschenrechner
 {
     internal class Calculate
     {
@@ -24,21 +24,19 @@ namespace Selina.Week04
                 Output("Das Ergebnis vom Faktorial ist: ", Faktorial(number1), ConsoleColor.Magenta);
                 Output("Das Ergebnis von Fibonacci ist: ", Fibonacci(number1), ConsoleColor.DarkCyan);
 
-                Console.WriteLine("\n\nMöchten Sie nochmal rechnen? (J/j)?");   // speichert Text in userInput
-                userInput= ReadText();
+                MessageBox.WriteLine("\n\nMöchten Sie nochmal rechnen? (J/j)?");   // speichert Text in userInput
+                userInput = ReadText();
 
-            } while (userInput == 'j' || userInput =='J');  // so lange bis userInput != J/j
+            } while (userInput == 'j' || userInput == 'J');  // so lange bis userInput != J/j
 
-            Console.Clear();  
-
-
+            MessageBox.Clear();
 
         }
-       
+
         //Aufagbe 1:
         public static int Summe(int number1)
         {
-            if (number1==0)
+            if (number1 == 0)
             {
                 return 0;
             }
@@ -64,7 +62,7 @@ namespace Selina.Week04
         //Aufagbe 3:
         public static int Fibonacci(int number1)
         {
-            if (number1 == 1 || number1 ==2) 
+            if (number1 == 1 || number1 == 2)
             {
                 return 1;
             }
@@ -77,21 +75,21 @@ namespace Selina.Week04
         //Output für User
         public static void Output(string output, int number1, ConsoleColor color)
         {
-            Console.BackgroundColor = color;
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.Write($"\n{output} \u001b[4m{number1,3}\u001b[0m ");
-            Console.ResetColor();
+            MessageBox.BackgroundColor = color;
+            MessageBox.ForegroundColor = ConsoleColor.Black;
+            MessageBox.Write($"\n{output} \u001b[4m{number1,3}\u001b[0m ");
+            MessageBox.ResetColor();
         }
 
         //speichtert Number wenn der User richtiges Datentype eingeben hat
         public static int ReadNumber(string prompt)
         {
-            Console.Write(prompt);
+            MessageBox.Write(prompt);
             while (true)
             {
                 try
                 {
-                    int ourNumber = Convert.ToInt32(Console.ReadLine());
+                    int ourNumber = Convert.ToInt32(MessageBox.ReadLine());
                     return ourNumber;
                 }
                 catch (Exception exc)
@@ -109,7 +107,7 @@ namespace Selina.Week04
             {
                 try
                 {
-                    char userInput = Convert.ToChar(Console.ReadLine());
+                    char userInput = Convert.ToChar(MessageBox.ReadLine());
                     return userInput;
                 }
                 catch (Exception exc)

@@ -1,3 +1,3 @@
 ﻿
-    Selina.Week04.ConsoleInput.Start();
+    Selina.Week03.Array.Start();
 
