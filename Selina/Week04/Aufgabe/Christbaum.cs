@@ -12,8 +12,9 @@ namespace Selina.Week04.Aufgabe
 
         public static void PrintChristmastree()
         {
-            Console.WriteLine("\nWie Groß soll Ihr Christmastree sein sein?");
+            Console.Write("\nWie Groß soll Ihr Christmastree sein sein? ");
             int tree = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine();
 
             int count = 0;
             count = tree - 1;

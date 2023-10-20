@@ -44,7 +44,7 @@ namespace Kerem.Week04
                 return 1;
                 
             }
-            return k = RecurisveFibonacci(k - 1) + RecurisveFibonacci(k - 2);
+            return  RecurisveFibonacci(k - 1) + RecurisveFibonacci(k - 2);
         }
 
 

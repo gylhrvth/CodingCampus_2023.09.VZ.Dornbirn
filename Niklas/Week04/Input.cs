@@ -79,22 +79,21 @@ namespace Niklas.Week04
             //            }
             //        }
 
-            //        Console.WriteLine("\nDo you wanna draw something else? [y/n (2x)]");
-            //        Console.Write(">>>:  ");
-
-            //        x++;
-
             //        while (x == 1)
             //        {
-            //            if (Console.ReadLine() == "y")
+            //            Console.WriteLine("Do you wanna make a new calculation? (y/n)");
+            //            Console.Write(">>>:  ");
+            //            string yesOrNo = Console.ReadLine();
+            //            if (yesOrNo == "y")
             //            {
             //                x = 0;
             //            }
-            //            else if (Console.ReadLine() == "n")
+            //            else if (yesOrNo == "n")
             //            {
             //                Console.WriteLine("Goodbye! The program is closing...");
             //                x = 2;
             //            }
+            //        }
 
             //        }
             //    }
@@ -107,7 +106,7 @@ namespace Niklas.Week04
 
 
 
-            //Console.WriteLine("____________________________________");
+            Console.WriteLine("____________________________________");
 
             ////Calculator
             //Console.WriteLine("Enter your fist number!");
@@ -148,14 +147,14 @@ namespace Niklas.Week04
 
             //        while (y == 1)
             //        {
-            //            Console.WriteLine("Do you wanna make a new calculation? (y/n [2x])");
+            //            Console.WriteLine("Do you wanna make a new calculation? (y/n)");
             //            Console.Write(">>>:  ");
-
-            //            if (Console.ReadLine() == "y")
+            //            string yesOrNo = Console.ReadLine();
+            //            if (yesOrNo == "y")
             //            {
             //                y = 0;
             //            }
-            //            else if (Console.ReadLine() == "n")
+            //            else if (yesOrNo == "n")
             //            {
             //                Console.WriteLine("Goodbye! The program is closing...");
             //                y = 2;
@@ -214,68 +213,68 @@ namespace Niklas.Week04
             //    z = 0;
             //}
 
-            //CalculatorMemory
-            Console.WriteLine("_____________________________________________________");
+            ////CalculatorMemory
+            //Console.WriteLine("_____________________________________________________");
 
-            int z = 2;
+            //int a = 0;
 
-            try
-            {
-                for (z = 2; z > 0; z--)
-                {
-                    Console.WriteLine("Press '=' whenever you're done with the calculation!");
-                    Console.WriteLine("_____________________________________________________");
-                    Console.WriteLine("Enter 'MC' to clear your memory \n Enter 'M+' to add memory \n Enter 'M-' to remove memory \n Enter 'MR' to print out your memory!");
-                    Console.WriteLine("*****************************************************");
-                }
-                for (z = 0; z < 1; z++)
-                {
-                    Console.WriteLine("Enter a number you wanna calculate with!");
-                    Console.Write(">>>:  ");
-                    long number1 = Convert.ToInt32(Console.ReadLine());
-                    while (z == 0)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("What do you wanna calcualte the numbers with?");
-                        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
-                        Console.Write(">>>: ");
-                        int j = Convert.ToInt32(Console.ReadLine());
+            //try
+            //{
 
-                        Console.WriteLine();
-                        Console.WriteLine("Enter another number you wanna calculate with!");
-                        Console.Write(">>>: ");
-                        long number2 = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine("Press '=' whenever you're done with the calculation!");
+            //    Console.WriteLine("_____________________________________________________");
+            //    Console.WriteLine("Enter 'MC' to clear your memory \n Enter 'M+' to add memory \n Enter 'M-' to remove memory \n Enter 'MR' to print out your memory!");
+            //    Console.WriteLine("*****************************************************");
+
+            //    Console.WriteLine("Enter a number you wanna calculate with!");
+            //    Console.Write(">>>:  ");
+            //    long number1 = Convert.ToInt32(Console.ReadLine());
+            //    while (a == 0)
+            //    {
+            //        Console.WriteLine();
+            //        Console.WriteLine("What do you wanna calcualte the numbers with?");
+            //        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+            //        Console.Write(">>>: ");
+            //        int j = Convert.ToInt32(Console.ReadLine());
+
+            //        Console.WriteLine();
+            //        Console.WriteLine("Enter another number you wanna calculate with!");
+            //        Console.Write(">>>: ");
+            //        long number2 = Convert.ToInt32(Console.ReadLine());
 
 
-                        number1 = CalculatorMemory(number1, number2, j);
+            //        number1 = CalculatorMemory(number1, number2, j);
 
 
-                        string end = Convert.ToString(Console.ReadLine());
-                        end.ToUpper();
-                        end.ToLower();
-                        if (end == "=")
-                        {
-                            Console.WriteLine("Your final result is: " + number1);
-                            z = 2;
-                        }
+            //        string end = Convert.ToString(Console.ReadLine());
+            //        if (end == "=")
+            //        {
+            //            Console.WriteLine("Your final result is: " + number1);
+            //            a = 2;
+            //        }
 
-                        string Memory = Convert.ToString(Console.ReadLine());
-                        if (Memory == "MC")
-                        {
-                            number1 = 0;
-                            number2 = 0;
-                            j = 0;
-                            z = 1;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                z = 0;
-            }
+            //        string Memory = Convert.ToString(Console.ReadLine());
+            //        Memory.ToUpper();
+            //        Memory.ToLower();
+            //        if (Memory == "MC")
+            //        {
+            //            number1 = 0;
+            //            number2 = 0;
+            //            j = 0;
+            //        }
+            //    }
 
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine(ex.Message);
+            //    z = 0;
+            //}
+
+            Console.WriteLine("___________________________________");
+            //Visitenkarte
+
+            Visitenkarte();
         }
 
         static string StringEinlesen(string input)
@@ -661,5 +660,59 @@ namespace Niklas.Week04
             }
             return result;
         }
+        static void Visitenkarte()
+        {
+            Console.Write("Please enter your full name here: ");
+            string name = Convert.ToString(Console.ReadLine());
+
+            Console.Write("Please enter your e-mail addres here: ");
+            string mail = Convert.ToString(Console.ReadLine());
+
+            Console.Write("Please enter your phone number here: ");
+            int phone = Convert.ToInt32(Console.ReadLine());
+            for (int sideleft = 5; sideleft < 10; sideleft++)
+            {
+
+            }
+
+            for (int lenght = 0; lenght < 42.5; lenght++)
+            {
+                Console.Write("*");
+            }
+
+            for (int sideleft = 2; sideleft < 3; sideleft++)
+            {
+                for (int i = 15; i < 42; i++)
+                {
+                    Console.Write(name);
+                }
+                for (int i = 15; i < 42; i++)
+                {
+                    Console.Write(mail);
+                }
+                for (int i = 15; i < 42; i++)
+                {
+                    Console.Write(phone);
+                }
+            }
+
+            for (int sideleft = 2; sideleft < 15; sideleft++)
+            {
+                Console.WriteLine();
+                Console.Write("*");
+
+                for (int i = 2; i < 42.5; i++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("*");
+            }
+            Console.WriteLine();
+            for (int lenghtdown = 0; lenghtdown < 42.5; lenghtdown++)
+            {
+                Console.Write("*");
+            }
+        }
+
     }
 }

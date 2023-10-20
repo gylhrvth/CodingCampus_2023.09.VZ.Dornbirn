@@ -18,6 +18,7 @@ namespace Jovo.Week04
 
             for (int row = 0; row < arr2D.Length; row++)
             {
+                
                 for (int col = 0; col < arr2D[row].Length; col++)
                 {
                     Console.Write(arr2D[row][col] + " ");
