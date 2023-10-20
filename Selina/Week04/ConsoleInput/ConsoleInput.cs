@@ -1,6 +1,7 @@
-﻿using Selina.Week04.Aufgabe;
+﻿using Selina.Week04.Arrays.Menü;
+using Selina.Week04.Aufgabe;
 
-namespace Selina.Week04
+namespace Selina.Week04.ConsoleInput
 {
     internal class ConsoleInput
     {
@@ -15,27 +16,27 @@ namespace Selina.Week04
             float result = 0;
 
 
-            // Aufgabe 1:
-            Output("String einlesen", ConsoleColor.Blue);
-            string input = ReadText("Bitte gib einen Text ein:");
-            Console.WriteLine($"Du hast diesen Text eingeben: {input}");
-            Console.WriteLine("\n----------------------------------------------------------");
+            //// Aufgabe 1:
+            //Output("String einlesen", ConsoleColor.Blue);
+            //string input = ReadText("Bitte gib einen Text ein:");
+            //Console.WriteLine($"Du hast diesen Text eingeben: {input}");
+            //Console.WriteLine("\n----------------------------------------------------------");
 
 
-            //Aufgabe 2:
-            Output("Zahl einlesen", ConsoleColor.Cyan);
-            int number1 = ReadNumber("Gib eine Zahl ein:  ", "Du musst eine Zahl eingeben!  ");
-            Console.Write($"Du hast diese Zahl eingeben: {number1}");
-            Console.WriteLine("\n----------------------------------------------------------");
+            ////Aufgabe 2:
+            //Output("Zahl einlesen", ConsoleColor.Cyan);
+            //int number1 = ReadNumber("Gib eine Zahl ein:  ", "Du musst eine Zahl eingeben!  ");
+            //Console.Write($"Du hast diese Zahl eingeben: {number1}");
+            //Console.WriteLine("\n----------------------------------------------------------");
 
-            //Aufagbe 3:
-            Output("Willkommen beim super coolen Zahlen Ratespiel!", ConsoleColor.Magenta);
-            Ratespiel(guessNumber, timer);
+            ////Aufagbe 3:
+            //Output("Willkommen beim super coolen Zahlen Ratespiel!", ConsoleColor.Magenta);
+            //Ratespiel(guessNumber, timer);
 
-            //Aufgabe 4:
-            Output("Willkommen bei meinen Aufgaben ", ConsoleColor.Magenta);
-            Menü(); // Programm Aufagbe 4
-            Text(); // Text: Auf Wiedersehen!
+            ////Aufgabe 4:
+            //Output("Willkommen bei meinen Aufgaben ", ConsoleColor.Magenta);
+            //Menü(); // Programm Aufagbe 4
+            //Text(); // Text: Auf Wiedersehen!
 
             //Aufageb 5:
             Output("Taschenrechner von Selina", ConsoleColor.Cyan);
@@ -256,7 +257,7 @@ namespace Selina.Week04
                     memory = result + result;
                     break;
                 case "M-":
-                    memory = result  ;
+                    memory = result;
                     break;
                 case "MR":
                     memory = result;
@@ -289,7 +290,7 @@ namespace Selina.Week04
                 }
 
                 string type = ReadText("Bitte gib eine  ein Operator ein: (+,-,*,^,/) ");
-                if (type == "MC" || type == "M+" || type== "M-" || type == "MR")
+                if (type == "MC" || type == "M+" || type == "M-" || type == "MR")
                 {
                     type = ReadText("Bitte gib ein weiteren Operator ein: (+,-,*,^,/) ");
                 }
@@ -299,6 +300,7 @@ namespace Selina.Week04
                 Console.WriteLine($"\nDas Ergebnis ist {result}");    // output Ergebnis
 
                 repeat = ReadText("\nMöchten Sie nochmal rechnen (j/n)? ");   // Wiederholung
+
                 if (repeat == "N" || repeat == "n")
                 {
                     Console.Clear();
@@ -307,9 +309,11 @@ namespace Selina.Week04
                 {
                     repeat = ReadText("Gib j oder n ein!");
                 }
-
-                repeatResult = ReadText("Möchten Sie das Ergebnis weiterverwenden? (j/n)");
-                Console.WriteLine();
+                if (repeat == "J" || repeat == "j")
+                {
+                    repeatResult = ReadText("Möchten Sie das Ergebnis weiterverwenden? (j/n)");
+                    Console.WriteLine();
+                }
 
             } while (repeat == "j" || repeat == "J");
 
