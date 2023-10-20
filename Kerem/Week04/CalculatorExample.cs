@@ -52,6 +52,7 @@ namespace Kerem.Week04
             }
         }
         public static void Calculator()
+
         {
             Console.WriteLine("Welcome to my Calculator!");
             double num1 = Readfloat("Enter your first number");
