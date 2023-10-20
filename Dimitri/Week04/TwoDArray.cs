@@ -28,6 +28,9 @@ namespace Dimitri.Week04
             //Console.WriteLine(string.Join(" ", sumCol));
             int[][] arr = PascalTriangle(10);
             PrintPascalTriangle(arr);
+            Console.WriteLine();
+            PrintArray(BinomialFormula(), "+");
+
 
         }
 
@@ -197,5 +200,51 @@ namespace Dimitri.Week04
                 Console.WriteLine();
             }
         }
+
+        public static string[] BinomialFormula() 
+        {
+            int input = IntRead("What binomial formula do you want?", "Input is not an integer, please try again integer:");
+            string[] formula  =  new string[input];
+
+            Console.WriteLine(string.Join(" ", formula));
+
+            int[][] pascalTriangle = PascalTriangle(input);
+
+            for(int i = 0; i <=input; i++)
+            {
+                for(int j = input; j <= 0; j++)
+                {
+                    //int intFormulaPart0 = pascalTriangle[i][j];
+                    //string stringFormulaPart0 = Convert.ToString(intFormulaPart0);
+                    //formula[i] = BuildString(intFormulaPart0, intFormulaPart0...)
+                }
+            }
+
+            return formula;
+        }
+
+        public static void PrintArray(string[] arr, string delimiter)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (i < arr.Length - 1)
+                {
+                    Console.Write("{0} {1} ", arr[i], delimiter);
+                }
+                else
+                {
+                    Console.Write(arr[i]);
+                }
+            }
+            Console.WriteLine();
+            /* For some reason this only returns a 0 if you have an array with only one element */
+        }
+
+    //    public static void BuildBinomialString(???)
+    //    {
+    //        for blabla until ende ++ {
+    //            string + string + string .Compare()...
+    //        }
+    //    }
     }
 }

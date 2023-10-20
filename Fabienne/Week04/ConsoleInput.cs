@@ -215,24 +215,19 @@ namespace Fabienne.Week04
                     }
                 string tryAgain = "";
 
-                while (tryAgain != "y" || tryAgain != "n")
+                while (tryAgain != "y" && tryAgain != "n")
                 {
                     Console.WriteLine("Would you like to draw something else as well?(y/n) ");
                     tryAgain = Console.ReadLine();
-
-                    if (tryAgain == "y")
-                    {
-                        Menue();
-                    }
-                    else if (tryAgain == "n")
-                    {
-                        Console.WriteLine("Good bye!");
-                    }
-                    else
-                    {
-                        Console.WriteLine("No.");
-
-                    }
+                }
+                if (tryAgain == "y")
+                {
+                    doAgain = true;
+                }
+                else
+                {
+                    Console.WriteLine("Good bye!");
+                    doAgain = false;
                 }
             }
         }    

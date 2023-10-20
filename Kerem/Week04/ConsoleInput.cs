@@ -14,7 +14,7 @@ namespace Kerem.Week04
     {
         public static void Start()
         {
-            //string userinput = ReadString("Enter a String");
+            //string userinput = ReadString("Enter a String"a
             //Console.WriteLine("Userinput was: " + userinput);
 
             //int userinputnumber = ReadNumber("Enter a number", "Please only numbers! Try again!");
