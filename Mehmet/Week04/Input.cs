@@ -228,8 +228,11 @@ namespace Mehmet.Week04
 
 
                 char oprt = ReadChar("gib einen operator ein | + | - | * | / | ^ |:  ");
+                
+                
                 float num2 = ReadFloat("Gib das 2. Zahl ein:  ");
                 float num2new = 1;
+                
 
                 if (oprt == '+')
                 {
@@ -318,8 +321,11 @@ namespace Mehmet.Week04
 
                 }
 
+
+
             }
         }
+
 
 
         public static void VisitenKarte()
@@ -337,9 +343,9 @@ namespace Mehmet.Week04
 
 
 
-            int l1 = (count1/2) - (text1.Length / 2);
-            int l2 = (count1/2) - (text2.Length / 2);
-            int l3 = (count1/2) - (text3.Length / 2);
+            int l1 = (count1 / 2) - (text1.Length / 2);
+            int l2 = (count1 / 2) - (text2.Length / 2);
+            int l3 = (count1 / 2) - (text3.Length / 2);
 
 
 
@@ -381,7 +387,7 @@ namespace Mehmet.Week04
                         if (y == l2 - 3 && text2.Length % 2 == 1)
                         {
                             l2--;
-                        }                       
+                        }
                         Console.Write(" ");
                     }
                     Console.Write(symbol);
@@ -426,7 +432,7 @@ namespace Mehmet.Week04
 
         public static void DasSpielBeginnt()
         {
-            Random rand =new Random();
+            Random rand = new Random();
             int value = rand.Next(10000);
             Console.WriteLine(value);
 

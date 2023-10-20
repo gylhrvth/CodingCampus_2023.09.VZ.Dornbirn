@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Selina.Week04.Aufgabe
+namespace Selina.Week04.Arrays.Menü
 {
     internal class Rhombus
     {
@@ -15,7 +15,7 @@ namespace Selina.Week04.Aufgabe
             Console.Write("\nWie Groß soll Ihr Rhombus sein sein? ");
             int rhombus = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine();
-   
+
 
             int i, j, n = rhombus / 2;
 

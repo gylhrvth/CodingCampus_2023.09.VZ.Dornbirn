@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Ali.Week01;
@@ -37,9 +38,14 @@ namespace Ali.Week04
             //RateSpiel();
             //Console.WriteLine();
 
-            Console.WriteLine("Aufgabe Menü");
+            //Console.WriteLine("Aufgabe Menü");
+            //Console.WriteLine();
+            //Menu();
+
+            Console.WriteLine("Taschenrechner");
             Console.WriteLine();
-            Menu();
+            Taschenrechner();
+
 
 
 
@@ -169,18 +175,123 @@ namespace Ali.Week04
                 Console.WriteLine();
             }
         }
+        public static Char ReadChars(string msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(msg);
+                    string input = Console.ReadLine();
+                    char mychar = Convert.ToChar(input);
+                    
+                    return mychar;
+                }
+                catch
+                {
+                    Console.WriteLine("Please only Operators like +, -, /, * or ^");
+                }
+            }
 
 
 
 
+        }
+        public static int ReadNumber2(string msg)
+
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(msg);
+                    string input = Console.ReadLine();
+                    int mynumber = Convert.ToInt32(input);
+                    return mynumber;
+
+                }
+                catch
+                {
+                    Console.WriteLine("That's not a number");
+
+                }
 
 
 
+            }
+            
+
+        }
+        public static float ReadFloat(string msg)
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine(msg);
+                    string input = Console.ReadLine();
+                    float mynumber = Convert.ToInt32(input);
+                    return mynumber;
+                }
+                catch
+                {
+                    Console.WriteLine("That's not a number!");
+                }
+            }
+        }
+        public static void Taschenrechner()
+        {
+            Console.WriteLine("Welcome to my Calculator!");
+            float num1 = ReadFloat("Choose your first number");
+
+            bool end = false;
+            while (!end)
+            {
+                char oprt = ReadChars("Enter which operator you wanna use +,-,*,/ or ^");
+                double num2 = ReadFloat("Choose your second number");
+                float num2new = 1;
+
+                if(oprt == '+')
+                {
+                    Console.WriteLine($"{ num1}"+ "+"+$"{ num2}" +" ="+(num1 + num2));
+
+
+                }
+                else if(oprt== '-')
+                {
+                    Console.WriteLine($"{num1}"+"-"+$"{num2}"+"="+(num1-num2));
+                }
+                else if (oprt == '*')
+                {
+                    Console.WriteLine($"{num1}" + "*" + $"{num2}" + "=" + (num1 * num2));
+                }
+                else if (oprt == '/')
+                {
+                    Console.WriteLine($"{num1}" + "/" + $"{num2}" + "=" + (num1 / num2));
+                }
+                else
+                {
+                    for (float i =0; i < num2; i++)
+                    {
+                        num2new *= num1;
+                        Console.WriteLine($"{num1}" + " ^ " + $"{num2}" + " = " + (num2new));
+                        num2new = num1;
+                        Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
+
+                        int weiter = ReadChars("j = ja / n = Nein");
+                       
+                        if (weiter != 'j')
+                        {
+                            end = true;
+                        }
+                    }
+                }
 
 
 
-
-
+            }
+           
+        }
     }
 }
 

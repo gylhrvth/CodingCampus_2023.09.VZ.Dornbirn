@@ -1,24 +1,50 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Erik.Week04
 {
     public class GuessingGame
     {
+        public static int startCounterTrys = 10;
+        private static bool firstGuess = true;          //speichert die erste zahl zum vergleichen ob höher
+        private static int firstNumber;
         public static void startGuessingGame()
         {
             GuessingGameUserGuess(GuessingGameUserIntro());
         }
 
+        public static int ReadNumber(string msg, int minValid, int maxValid)
+        {
+            int result = Int32.MinValue;
+            while (result == Int32.MinValue)
+            {
+                Console.Write("{0}zwischen {1} und {2}: ", msg, minValid, maxValid);
+                string line = Console.ReadLine();
+
+                try
+                {
+                    result = Convert.ToInt32(line);
+                    if (result < minValid || result > maxValid)
+                    {
+                        Console.WriteLine("{0} ist nicht im Bereich zwischen {1} und {2}", result, minValid, maxValid);
+                        result = Int32.MinValue;
+                    }
+                }
+                catch (FormatException fe)
+                {
+                    Console.WriteLine("\"{0}\" ist keine gültige Zahl.", line);
+                }
+            }
+
+            return result;
+        }
+
+
         public static int GuessingGameUserIntro()
         {
-            Console.WriteLine("Welcome to the guessing Game! \n\nEnter a number to declare the maximum range of the number to guess!");
+            Console.WriteLine("                         ╔═════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine("                         ║ Welcome to the guessing Game!                                           ║\n                         ║First enter a number to declare the maximum range of the number to guess!║");
+            Console.WriteLine("                         ╚═════════════════════════════════════════════════════════════════════════╝");
             int randomNumber = GenerateRandomNumber();
             Console.WriteLine("Random number generated! Start guessing the number!");
             Console.WriteLine(randomNumber);
@@ -28,13 +54,12 @@ namespace Erik.Week04
         public static void GuessingGameUserGuess(int randomNumber)
         {
             int userGuessingNumbers;
-            int counterTrys = CounterTrys();
+            int counterTrys = startCounterTrys;
 
-            MathMiniGame(counterTrys, randomNumber);
+            //MathMiniGame(counterTrys, randomNumber);
             while (counterTrys != -1)
             {
-             
-                RandomJoker(randomNumber, counterTrys);
+                RandomJoker(counterTrys, randomNumber);
 
                 if (counterTrys == 0)
                 {
@@ -71,21 +96,46 @@ namespace Erik.Week04
             string lines = "=======================================================================";
             return lines;
         }
-
         public static int ReadValidNumber()
         {
+
             while (true)
             {
                 try
                 {
                     Console.Write("Your Number: ");
                     int userInput = Convert.ToInt32(Console.ReadLine());
+
+                    while (true)
                     {
-                        Console.WriteLine("\n");
-                        return userInput;
+                        if (userInput <= 10)                         //check if number is smaller or equal 10(random Number Parameter)
+                        {
+                            Console.WriteLine("Invalid Input! Number cant be less than ten!");
+                            Console.Write("Your Number: ");
+                            userInput = Convert.ToInt32(Console.ReadLine());
+                        }
+                        else if (firstGuess)
+                        {
+                            firstNumber = userInput;
+                            firstGuess = false;
+                        }
+
+                        else if (userInput > firstNumber)             //vergleich ob numer höher ist als die erste nummer
+                        {
+                            Console.WriteLine("Invalid Input! Number cant be greater then the random number!");
+                            Console.Write("Your Number: ");
+                            userInput = Convert.ToInt32(Console.ReadLine());
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
+                    Console.WriteLine("\n");
+                    return userInput;
                 }
-                catch (Exception ex) when (ex is System.FormatException)
+                catch (Exception ex) when (ex is System.FormatException ||
+                                           ex is System.OverflowException)
                 {
                     Console.WriteLine("Invalid Input! Try again!");
                 }
@@ -95,49 +145,36 @@ namespace Erik.Week04
 
         public static int GenerateRandomNumber()
         {
-            while (true)
-            {
-                try
-                {
-                    int userInputRandomNumber = ReadValidNumber();
-                    Console.WriteLine(SeperateTheLines());
-                    Random random = new Random();
-                    int randomNumber = random.Next(11, userInputRandomNumber);
-                    return randomNumber;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Number must be greater than 10!\nEnter a new Number!");
-                }
-            }
+            int userInputRandomNumber = ReadValidNumber();
+            Console.WriteLine(SeperateTheLines());
+            Random random = new Random();
+            int randomNumber = random.Next(11, userInputRandomNumber);
+            return randomNumber;
+
         }
 
         public static void RandomJoker(int counterTrys, int randomNumber)
         {
             Random ran = new Random();
-            int randomJoker = ran.Next(7);
-            if (randomJoker == 2 && counterTrys < 4 && randomNumber.ToString().Length > 1)
+            int randomJoker = ran.Next(5);
+            if (randomJoker == 2 && counterTrys < 8 && randomNumber.ToString().Length > 1)
             {
                 Console.WriteLine("The number has " + randomNumber.ToString().Length + " digits!");
             }
-            else if (randomJoker == 2 && counterTrys < 4 && randomNumber.ToString().Length <= 1)
+            else if (randomJoker == 2 && counterTrys < 8 && randomNumber.ToString().Length < 1)
             {
                 Console.WriteLine("The number has " + randomNumber.ToString().Length + " digit!");
             }
         }
 
-        public static int CounterTrys()
-        {
-            return 10;
-        }
+
 
         public static void MathMiniGame(int counterTrys, int randomNumber)
         {
             Console.Clear();
             Random ran = new Random();
-            int randomJokerMiniGame = ran.Next(1,2);
-            int timeCounter = 10;
-            
+            int randomJokerMiniGame = ran.Next(1, 2);
+
 
             while (randomJokerMiniGame == 1)
             {
@@ -165,9 +202,20 @@ namespace Erik.Week04
                 }
             }
         }
+
+        public static int RandomMathExercice()
+        {
+            Random ran = new Random();
+            int randomNumber1 = ran.Next(1, 100);
+            int randomNumber2 = ran.Next(1, 100);
+            int randomChar = ran.Next(1, 4);
+            int sum = 0;
+
+            return sum;
+
+        }
     }
 }
 
-//todo:
-//mini game mathe aufgabe lösen um eine Zahl zu erhalten!
+
 

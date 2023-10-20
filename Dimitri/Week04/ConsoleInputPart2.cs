@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Dimitri.Week03.ConsoleInput;
 using static Dimitri.Week03.Array;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Dimitri.Week04
 {
@@ -63,12 +64,12 @@ namespace Dimitri.Week04
 
                 //continue calcualting
                 Console.WriteLine("Do you wanna continue calculating? (y/n)");
-                continueCalculating = AskYN(StringRead());
+                continueCalculating = AskYN(StringRead(), "y", "n");
 
                 if (continueCalculating == "y")
                 {
                     Console.WriteLine("Do you wanna continue to calculate with your above result? (y/n)");
-                    string keepResult = AskYN(StringRead());
+                    string keepResult = AskYN(StringRead(), "y", "n");
 
                     if (keepResult == "n")
                     {
@@ -88,9 +89,9 @@ namespace Dimitri.Week04
 
         }
 
-        private static string AskYN(string input)
+        public static string AskYN(string input, string option0, string option1)
         {
-            while (input.Length > 1 && (input != "n" || input != "y")) // only a single symbol and a set of symbols
+            while (input.Length > 1 && (input != "option0" || input != "option1")) // only a single symbol and a set of symbols
             {
                 Console.WriteLine("Your input is not valid. Do you wanna continue calculating? (y/n)");
                 input = StringRead();

@@ -1,15 +1,13 @@
 ﻿using System;
 namespace Mohammed.Week04
 {
-    public class consoleInput
+    public class ConsoleInput
     {
-        public static Random random = new Random();
+        public static Random rand = new Random();
         public static void Start()
         {
 
             //erste Aufgabe
-
-            Random rand = new Random();
             int random = rand.Next(1, 10);
 
             bool winer = false;
@@ -18,28 +16,24 @@ namespace Mohammed.Week04
                 int value = ReadNumber("please guess a number between 1 and 10", 1, 10);
 
                 //Prüfen
-
-                //Richtig
-                winer = true;
-
-                //Nicht richtig
-
-
-
-
+                if (value == random)
+                {
+                    //Richtig
+                    Console.WriteLine("Correct.");
+                    winer = true;
+                } else if (value > random)
+                {
+                    Console.WriteLine("toooooo big");
+                } else
+                {
+                    Console.WriteLine("toooooo small");
+                }
             }
 
             
             //zweite aufgabe 
-            int readNumber = ReadNumber("Please enter a number:", "Your number is bad. Please try again:");
-
-            Console.WriteLine("Read number is: " + readNumber);
-
-
-
-
-
-
+            //int readNumber = ReadNumber("Please enter a number:", "Your number is bad. Please try again:");
+            //Console.WriteLine("Read number is: " + readNumber);
         }
 
         public static int ReadNumber(string msg, int min, int max)
