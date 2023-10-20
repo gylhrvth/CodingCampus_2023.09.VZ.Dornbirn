@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,10 +15,10 @@ namespace Jovo.Week04
 
         public static void Start()
         {
-            int[][] arr = PascalDreieck1(10, 20);
+            int[][] arr = PascalDreieck1(10, 10);
             PrintPascalDreieck(arr);
 
-
+           
         }
 
         public static int[][] PascalDreieck1(int Rowvalue, int Colvalue)
@@ -45,13 +46,18 @@ namespace Jovo.Week04
                     }
                 }
             }
+            
             string stringline = Convert.ToString(arr2D[Rowvalue - 1][Colvalue - 1]);
-            Console.WriteLine("Unsere größte Zahl ist: " + stringline);
-            Console.WriteLine("Die Länge dieser Zahl ist: " + stringline.Length);
-
+           //Console.WriteLine("Unsere größte Zahl ist: " + stringline);
+            //Console.WriteLine("Die Länge dieser Zahl ist: " + stringline.Length);
+           
             return arr2D;
-
+           
         }
+
+
+
+       
 
         public static void PrintPascalDreieck(int[][] arr2D)
         {
