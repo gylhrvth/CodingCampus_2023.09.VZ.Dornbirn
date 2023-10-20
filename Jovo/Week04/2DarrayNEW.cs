@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week04
+namespace Jovo.Week04
 {
-    internal class ArrayUEbungen2
+    internal class _2DArrayNew
     {
 
-        public static void start()
+        public static void Start()
         {
             Arr2D();
 
@@ -36,19 +37,11 @@ namespace Mehmet.Week04
                 {
                     arr2d[row][col] = rand.Next(0, 100);
                 }
+                
             }
+            
 
-
-            //for (int row = 0; row < arr2d.Length; row++)
-            //{
-            //    for (int col = 0; col < arr2d[row].Length; col++)
-            //    {
-            //        Console.Write($"{arr2d[row][col],2:00}" + " ");
-            //    }
-            //    Console.WriteLine();
-
-            //}
-
+           
 
 
 
@@ -57,11 +50,11 @@ namespace Mehmet.Week04
             {
                 int sumrow1 = 0;
 
-                int[] currentRow = arr2d[row];
+                //int[] currentRow = arr2d[row];
 
                 for (int col = 0; col < arr2d[row].Length; col++)
                 {
-                    sumrow1 += currentRow[col];
+                    sumrow1 += arr2d[row][col]; //currentRow[col];
                 }
 
                 for (int col = 0; col < arr2d[row].Length; col++)
@@ -80,60 +73,23 @@ namespace Mehmet.Week04
             }
 
 
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
+            Console.WriteLine("=    =    =    =    =");
 
-
-
-            for (int col = 0; col < arr2d.Length; col++)
+            for (int row = 0; row < arr2d[0].Length; ++row)
             {
-                int sumCol = 0;
+                int sum = 0;
 
-                int[] currentCol = arr2d[col];
-
-                for (int row = 0; row < arr2d[col].Length; row++)
+                for (int col = 0; col < arr2d.Length; col++)
                 {
-                    sumCol += currentCol[col];
-                }
 
-                for (int row = 0; row < arr2d[col].Length; row++)
-                {
-                    if (row < arr2d[col].Length - 1)
-                    {
-                        Console.Write($"{arr2d[row][col],2:00}" + " + ");
-                    }
-                    else
-                    {
-                        Console.Write($"{arr2d[row][col],2:00}" + "");
-                    }
+                    sum += arr2d[col][row];
 
                 }
-                Console.WriteLine(" = " + sumCol);
+                
+                Console.Write(sum + "  ");
             }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
-
-
-
     }
 }

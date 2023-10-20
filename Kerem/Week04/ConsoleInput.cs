@@ -23,61 +23,36 @@ namespace Kerem.Week04
             //Console.WriteLine("Welcome to my super duper Guessgame");
             //Guessgame();
 
-            //Menu("Welcome to my Exercises!", "What do you wanna draw?","PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
-
+            Menu("Welcome to my Exercises!", "What do you wanna draw?", "PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
 
 
         }
-        public static string ReadString(string prompt)
-        {
-            Console.WriteLine(prompt);
-            string input = Console.ReadLine();
-            return input;
-        }
-        public static int ReadNumber(string prompt, string error)
-        {
-            Console.WriteLine(prompt);
-
-            while (true)
-            {
-                try
-                {
-                    string input = Console.ReadLine(); 
-                    int output = Convert.ToInt32(input);
-                    return output;
-                    
-                }
-                catch
-                {
-                    Console.WriteLine(error);
-                }
-            }
-        }
+ 
         public static void Guessgame()
         {
             int num = new Random().Next(101);
             int guess = 0;
 
-            while(num!= guess)
+            while (num != guess)
             {
                 try
                 {
                     Console.WriteLine("Enter a number between 1 and 100!!");
                     guess = Convert.ToInt32(Console.ReadLine());
 
-                    if(guess > 100 || guess < 1)
+                    if (guess > 100 || guess < 1)
                     {
                         Console.WriteLine("Functionable only between 1 and 100!!");
                     }
-                    else if(guess == num)
+                    else if (guess == num)
                     {
                         Console.WriteLine("Good job jackass!");
                     }
-                    else if(guess > num)
+                    else if (guess > num)
                     {
                         Console.WriteLine("Your number is too high!!");
                     }
-                    else if(guess < num)
+                    else if (guess < num)
                     {
                         Console.WriteLine("Your number is too low!!");
                     }
@@ -90,26 +65,29 @@ namespace Kerem.Week04
         }
         public static int ReadChoices(string msg)
         {
-            while(true)
+            while (true)
             {
                 try
                 {
+
                     Console.WriteLine(msg);
                     string input = Console.ReadLine();
                     int output = Convert.ToInt32(input);
                     return output;
 
+
+
+
                 }
                 catch
                 {
-                    Console.WriteLine("Please enter valid number");
+                    Console.WriteLine("Enter a number");
                 }
-     
             }
         }
         public static String ReadSymbol(string msg)
         {
-            while(true)
+            while (true)
             {
                 try
                 {
@@ -123,24 +101,23 @@ namespace Kerem.Week04
                 }
             }
         }
-        static void Menu(string greet, string askingdraw,string draw1,string draw2, string draw3, string asksize, string asksign)
+        public static void Menu(string greet, string askingdraw, string draw1, string draw2, string draw3, string asksize, string asksign)
         {
 
             bool end = false;
             while (!end)
             {
-                
+
                 Console.WriteLine(greet);
                 Console.WriteLine("1 for : " + draw1);
                 Console.WriteLine("2 for : " + draw2);
                 Console.WriteLine("3 for : " + draw3);
                 Console.WriteLine();
-                
+
                 int number = ReadChoices(askingdraw);
                 int size = ReadChoices(asksize);
                 string sign = ReadSymbol(asksign);
-                try
-                {
+
                     if (number == 1)
                     {
                         printEmptySquare(sign, size);
@@ -153,40 +130,27 @@ namespace Kerem.Week04
                     {
                         printTriangleTopRight(sign, size);
                     }
-                }
- 
-                catch
-                {
-                    Console.WriteLine("Unvalid Number!");
-                }
+                    else
+                    {
+                        Console.WriteLine("Unvalid Number!");
+                    }
 
-                Console.WriteLine();
 
-                Console.WriteLine("You wanna draw something else? (y/n)");
-                string again = Console.ReadLine();
+                    Console.WriteLine();
+
+                    Console.WriteLine("You wanna draw something else? (y/n)");
+                    string again = Console.ReadLine();
+
+                    if (again != "y")
+                    {
+                        end = true;
+                    }
+
                 
-                if (again != "y")
-                {
-                    end = true;
-                }
-
-            }           
-           
-        }
-        public static int Char ReadChar(string msg)
-        {
-            while (true)
-            {
-                Console.WriteLine(msg);
-                string input = Console.ReadLine();
-                string mychar= Convert.ToChar(input);
-                return mychar;
 
             }
+
         }
-
-
-
 
     }
 }

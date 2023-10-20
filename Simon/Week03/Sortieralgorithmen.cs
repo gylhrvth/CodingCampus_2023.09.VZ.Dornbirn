@@ -100,32 +100,7 @@ namespace Simon.Week03
             }
             return arr;
         }
-        //public static int[][] Matrix2(int width, int height, int upper, int lower)
-        //{
-        //    int[][] arr = new int[height][];
-        //    int[] summeSpalten = new int[width];
-
-        //    for (int row = 0; row < height; row++)
-        //    {
-        //        arr[row] = new int[width];
-
-        //        for (int col = 0; col < width; col++)
-        //        {
-        //            arr[row][col] = random.Next(upper, lower);
-        //            summeSpalten[col] += arr[row][col];
-        //        }
-
-        //        Console.WriteLine("Summe Zeile {0} = {1,3}", row + 1, arr[row].Sum());
-        //    }
-
-        //    for (int col = 0; col < width; col++)
-        //    {
-        //        Console.WriteLine("Summe Spalte {0} = {1,3}", col + 1, summeSpalten[col]);
-        //    }
-
-        //    return arr;
-        //}
-        //Aufgabe 2D-Array Spalten gezählt
+       
         public static int[][] Matrixworking(int width, int height, int upper, int lower)
         {
             int[][] arr = new int[height][];
