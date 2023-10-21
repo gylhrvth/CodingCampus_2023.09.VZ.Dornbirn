@@ -80,8 +80,11 @@ namespace Patrick.Week03
             Console.WriteLine("====================================================");
 
 
-            //AUFGABE 8
-            PrintArrayFor(BubbleSortAscending(array));                                          //Bubblesort mit Zahlen
+            //AUFGABE 8 2D-Array
+
+
+            Console.WriteLine("====================================================");
+            Console.WriteLine("====================================================");
         }
 
 
@@ -117,7 +120,7 @@ namespace Patrick.Week03
         {
             int[] arrayCopy = new int[array.Length];
 
-            for(int x = 0;x < array.Length; x++)
+            for (int x = 0; x < array.Length; x++)
             {
                 arrayCopy[x] = array[x];
             }
@@ -153,7 +156,8 @@ namespace Patrick.Week03
             {
                 if (x == array.Length - 1)
                 {
-                    Console.Write(array[x]);
+                    Console
+                        .Write(array[x]);
                 }
                 else
                 {
@@ -165,7 +169,7 @@ namespace Patrick.Week03
         public static void PrintArrayEverySec(int[] array)
         {
             Console.Write("[");
-            for (int x = 0; x < array.Length; x+=2)
+            for (int x = 0; x < array.Length; x += 2)
             {
                 if (x == 8)
                 {
@@ -183,10 +187,10 @@ namespace Patrick.Week03
         {
             int[] array1 = new int[size];
 
-            for(int x = 0; x< array1.Length; x++)
+            for (int x = 0; x < array1.Length; x++)
             {
                 int randomNumber = random.Next(low, high);
-                array1[x]= randomNumber;
+                array1[x] = randomNumber;
             }
             return array1;
         }
@@ -226,16 +230,17 @@ namespace Patrick.Week03
         {
             int result = 0;
 
-            for(int x = 0; x < array.Length; x++)
+            for (int x = 0; x < array.Length; x++)
             {
-                result += array[x]; 
+                result += array[x];
             }
             return result;
         }
 
         public static int RandomNumberArrayMin(int[] array)
         {
-            int min = Int32.MaxValue;            
+            int min = Int32.MaxValue;
+            int howManyMin = 0;
             for (int x = 0; x < array.Length; x++)
             {
                 if (array[x] < min)
@@ -243,13 +248,14 @@ namespace Patrick.Week03
                     min = array[x];
                 }
             }
+
             return min;
         }
-        
+
         public static int RandomNumberArrayMax(int[] array)
         {
-            int max  = Int32.MinValue;
-            for(int x = 0; x < array.Length; x++)
+            int max = Int32.MinValue;
+            for (int x = 0; x < array.Length; x++)
             {
                 if (array[x] > max)
                 {
@@ -262,11 +268,12 @@ namespace Patrick.Week03
         public static double RandomNumberArrayAvg(int[] array)
         {
             double summe = 0;
-            for(int x = 0;x < array.Length; x++)
+            for (int x = 0; x < array.Length; x++)
             {
-                  summe += array[x];
+                summe += array[x];
             }
             double avg = summe / array.Length;
+
 
             return avg;
         }
@@ -275,6 +282,7 @@ namespace Patrick.Week03
         {
             int min = Int32.MaxValue;
             int minIndex = 0;
+
             for (int x = 0; x < array.Length; x++)
             {
                 if (array[x] < min)
@@ -282,7 +290,7 @@ namespace Patrick.Week03
                     min = array[x];
                     minIndex = x;
                 }
-            }            
+            }
             return minIndex;
         }
 
@@ -301,23 +309,5 @@ namespace Patrick.Week03
             return maxIndex;
         }
 
-        public static int[] BubbleSortAscending(int[] array)
-        {
-            int temporaryMemory = 0;
-
-            for (int x = 0; x < array.Length; x++)
-            {
-                for (int y = 0; y < array.Length - 1; y++)
-                {
-                    if (array[y] > array[y + 1])
-                    {
-                        temporaryMemory = array[y];
-                        array[y] = array[y + 1];
-                        array[y + 1] = temporaryMemory;
-                    }
-                }
-            }
-            return array;
-        }
     }
 }

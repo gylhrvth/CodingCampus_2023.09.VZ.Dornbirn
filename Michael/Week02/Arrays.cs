@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
 using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
@@ -21,33 +22,10 @@ namespace Michael.Week02
         public static Random rnd = new Random();
 
 
-        public static void NumberArray()
-        {
-            int size = ConsoleInputs.IntInput("how big should our array be?");
-
-            int[] myArray = new int[size];
-            int[] myArrayReversed = new int[size];
-
-            for (int i = 0; i < size; i++)
-            {
-                myArray[i] = i + 1;
-                myArrayReversed[i] = size - i;
-            }
-
-            Console.WriteLine("normal array:");
-
-            printIntArray(myArray);
-
-            Console.WriteLine("\n\nreversed array:");
-
-            printIntArray(myArrayReversed);
-        }
-
-
         public static int[] ascendingArray(int length)
         {
             int[] array = new int[length];
-
+            
             for (int i = 0; i < length; i++)
             {
                 array[i] = i + 1;
@@ -137,20 +115,16 @@ namespace Michael.Week02
         }
 
 
-        public static void crazyArray()
+        public static int[] crazyArray(int size, int min, int max)
         {
-            Random rnd = new Random();
-            int[] randomIntegers = new int[40];
+            int[] randomIntegers = new int[size];
 
             for (int i = 0; i < randomIntegers.Length; i++)
             {
-                randomIntegers[i] = rnd.Next(-50, 51);
+                randomIntegers[i] = rnd.Next(min, max);
             }
 
-            foreach (int number in randomIntegers)
-            {
-                Console.Write(number + " ");
-            }
+            return randomIntegers;
         }
 
 
@@ -191,7 +165,7 @@ namespace Michael.Week02
         }
 
 
-        public static int randomNumberArrayMax(int[] array, int minRange, int maxRange)
+        public static int randomNumberArrayMax(int[] array)
         {
             int max = array[0];
 
@@ -203,10 +177,11 @@ namespace Michael.Week02
                 }
             }
             return max;
-        }
+        } 
 
 
-        public static int randomNumberArrayMin(int[] array, int minRange, int maxRange)
+
+        public static int randomNumberArrayMin(int[] array)
         {
             int min = array[0];
 
@@ -394,7 +369,7 @@ namespace Michael.Week02
                 }
             }
             return array;
-        }
+        } 
 
 
         public static int[] mergeSortAscending(int[] array)
@@ -424,6 +399,43 @@ namespace Michael.Week02
             }
 
             return result;
+        }
+
+
+        public static void BubbleMenu(int[] array)
+        {
+            bool correctInput = false;
+            bool ascending = false;
+            do
+            {
+                Console.WriteLine("do you want it ascending (a) or descending (d)?");
+                string? userInput = Console.ReadLine().ToLower();
+
+                switch (userInput)
+                {
+                    case "a":
+                    case "asc":
+                    case "ascending":
+                        ascending = true;
+                        correctInput = true;
+                        break;
+                    case "d":
+                    case "des":
+                    case "descending":
+                        ascending = false;
+                        correctInput = true;
+                        break;
+                }
+            } while (!correctInput);
+
+            if (ascending)
+            {
+                printIntArray(bubbleSortAscending(array));
+            }
+            else
+            {
+                printIntArray(bubbleSortDescending(array));
+            }
         }
 
 
@@ -516,7 +528,7 @@ namespace Michael.Week02
         }
 
 
-        public static void Swap(int[] array, int index1, int index2)
+        public static void Switch(int[] array, int index1, int index2)
         {
             int temp = array[index1];
             array[index1] = array[index2];
@@ -864,7 +876,7 @@ namespace Michael.Week02
         }
 
 
-        public static void Switch(int[] array, int index1, int index2)
+        public static void Swap(int[] array, int index1, int index2)
         {
             int temp = array[index1];
             array[index1] = array[index2];
@@ -1022,9 +1034,10 @@ namespace Michael.Week02
         }
 
 
-        public static int numberOfLivingNeighbors(int[,] field, int size, int xCoord, int yCoord)
+        public static int numberOfLivingNeighbors(int[,] field, int size, int xCoord, int yCoord, bool periodic = false)
         {
             int livingNeighbors = 0;
+
 
             for (int i = -1; i <= 1; i++)
             {
@@ -1041,6 +1054,26 @@ namespace Michael.Week02
                     }
                     catch
                     {
+                        if (periodic)
+                        {
+                            int xCoordAlt = xCoord + j;
+                            int yCoordAlt = yCoord + i;
+
+                            if (yCoordAlt == -1)
+                                yCoordAlt = size - 1;
+                            else if (yCoordAlt == size)
+                                yCoordAlt = 0;
+
+                            if (xCoordAlt == -1)
+                                xCoordAlt = size - 1;
+                            else if (xCoordAlt == size)
+                                xCoordAlt = 0;
+
+                            if (field[yCoordAlt, xCoordAlt] == 1)
+                            {
+                                livingNeighbors++;
+                            }
+                        }
                     }
                 }
             }
@@ -1056,15 +1089,17 @@ namespace Michael.Week02
             {
                 for (int x = 0; x < size; x++)
                 {
-                    if (field[y, x] == 0 && numberOfLivingNeighbors(field, 20, x, y) == 3)
+                    int livingNeighors = numberOfLivingNeighbors(field, size, x, y, true);
+
+                    if (field[y, x] == 0 && livingNeighors == 3)
                     {
                         tempField[y, x] = 1;
                     }
-                    else if (field[y, x] == 1 && numberOfLivingNeighbors(field, 20, x, y) < 2)
+                    else if (field[y, x] == 1 && livingNeighors < 2)
                     {
                         tempField[y, x] = 0;
                     }
-                    else if (field[y, x] == 1 && numberOfLivingNeighbors(field, 20, x, y) > 3)
+                    else if (field[y, x] == 1 && livingNeighors > 3)
                     {
                         tempField[y, x] = 0;
                     }
@@ -1123,7 +1158,7 @@ namespace Michael.Week02
 
             for (int i = 0; i < userInput.Length; i++)
             {
-                Switch(userInput, i, rnd.Next(i, userInput.Length));
+                Swap(userInput, i, rnd.Next(i, userInput.Length));
             }
         }
 
@@ -1149,7 +1184,7 @@ namespace Michael.Week02
             var watch2 = System.Diagnostics.Stopwatch.StartNew();
             watch2.Stop();
 
-            TicTacToe();
+            twoDArray(10);
 
             /*
 

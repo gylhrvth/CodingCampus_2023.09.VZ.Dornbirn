@@ -69,7 +69,7 @@ namespace Gheorghe.Week03
 
             int[] arr = NumberArray(7);
             int[] cp = MakeaACopy(arr);
-            //Console.WriteLine("[{0}]", string.Join(", ", arr));
+             //Console.WriteLine("[{0}]", string.Join(", ", arr));
             PrintArray(arr);
             Console.WriteLine("Random Arry original");
             Console.WriteLine("=======================");
@@ -195,6 +195,7 @@ namespace Gheorghe.Week03
 
             {
                 Console.Write(element);
+                Console.Write(" , ");
             }
         }
 

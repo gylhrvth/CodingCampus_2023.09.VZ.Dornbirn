@@ -83,13 +83,15 @@
             Console.WriteLine("[{0}]", string.Join(", ", SortArrayDescending(arr3)));
             Console.WriteLine();
 
+            //Console.WriteLine("BubbleSortConfig");
+            //int[] array = RandomNumberArray(20,0,100);
+
+
             Console.WriteLine("Array2D");
+            //Array2D(2, 3, 4, 1);
 
 
         }
-
-
-
         public static int[] CreateArray(int size)
         {
             int[] arr = new int[size];
@@ -302,18 +304,18 @@
         }
         public static int[] SortArrayDescending(int[] arr7)
         {
-            int length = arr7.Length;
-            int anfang = arr7[0];
 
-            for (int i = 0; i < length; i++)
+
+
+            for (int i = 0; i < arr7.Length; i++)
             {
-                for (int j = 0; j < length - 1; j++)
+                for (int j = 0; j < arr7.Length - 1; j++)
                 {
                     if (arr7[j] > arr7[j + 1])
                     {
-                        anfang = arr7[j + 1];
-                        arr7[j + 1] = arr7[j];
-                        arr7[j] = anfang;
+                        int temp = arr7[j];
+                        arr7[j] = arr7[j + 1];
+                        arr7[j + 1] = temp;
                     }
 
 
@@ -324,6 +326,7 @@
             return arr7;
 
         }
+<<<<<<< HEAD
         public static int[,] Array2D(int row = 3, int cols = 3)
         {
             while (row < 4 || cols < 4)
@@ -351,12 +354,27 @@
                 {
                     arr[i, j] = rand.Next(101);
                     //Console.WriteLine("{[0}, {1}] = {2}", i, j, arr[i, j]);
+=======
+        public static void SortArrayConfig(int[] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array.Length - 1; j++)
+                {
+                    if (array[j] > array[i])
+                    {
+                        int temp = array[j];
+                        array[j + 1] = array[i];
+                        array[i + 1] = temp;
+                    }
+>>>>>>> 6d17209c15ca17996915fb0d8643f8e2ccb765b8
 
                 }
             }
             return arr;
 
         }
+     
     }
 }
 

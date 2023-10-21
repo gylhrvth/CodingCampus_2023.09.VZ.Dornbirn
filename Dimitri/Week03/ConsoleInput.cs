@@ -4,10 +4,14 @@ using System.ComponentModel.Design;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Numerics;
+using System.Reflection.Metadata;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Dimitri.Week03
 {
@@ -22,9 +26,11 @@ namespace Dimitri.Week03
             //string onError = "Input not allowed. Please enter an Integer:";
             //IntOutput(IntRead(prompt, onError));
 
-            //GuessingGame();
+            GuessingGame();
 
-            Menu();
+            //Menu();
+
+            Calculator();
         }
 
         public static string StringRead()
@@ -62,7 +68,7 @@ namespace Dimitri.Week03
                     int ourNumber = Convert.ToInt32(input);
                     return ourNumber;
                 }
-                catch (Exception e)
+                catch (FormatException e)
                 {
                     Console.WriteLine(onError);
                 }
@@ -109,13 +115,13 @@ namespace Dimitri.Week03
             Console.WriteLine("2) Quader");
             Console.WriteLine("3) Rhombus");
             int num = IntRead("Bitte wählen Sie nun(1/2/3):", "Input not allowed. Please enter an Integer:");
-            while(num > 3)
+            while (num > 3)
             {
                 Console.WriteLine("Please Enter a valid Number.");
                 num = IntRead("Bitte wählen Sie nun(1/2/3):", "Input not allowed. Please enter an Integer:");
             }
             {
-                
+
             }
             if (num == 1)
             {
@@ -166,6 +172,117 @@ namespace Dimitri.Week03
             }
 
         }
+
+        public static void Calculator()
+        {
+            string continueCalculating = "y";
+            while (continueCalculating == "y")
+            {
+                //read first number
+                double firstNumber = 0;
+                bool isNumber = false;
+                while (!isNumber)
+                {
+                    try
+                    {
+                        Console.WriteLine("Enter your first number:");
+                        firstNumber = Convert.ToDouble(StringRead());
+                        isNumber = true;
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Something is wrong with your number please.");
+                    }
+                }
+
+                Console.WriteLine("Enter your operator ( '+' / '-' / '*' / '/' / '^' ):");
+                //read operator
+                string symbol = StringRead();
+                while (symbol.Length > 1 || (symbol != "^" && symbol != "/" && symbol != "*" && symbol != "+" && symbol != "-")) // only a single symbol and a set of symbols
+                {
+                    Console.WriteLine("Your operator is not valid. Enter a new one:");
+                    symbol = StringRead();
+                }
+
+
+                //read second number
+                double secondNumber = 0;
+                isNumber = false;
+                while (!isNumber)
+                {
+                    try
+                    {
+                        Console.WriteLine("Enter your second number:");
+                        secondNumber = Convert.ToDouble(StringRead());
+                        while (secondNumber == 0 && (symbol == "/" || symbol == "%")) // prevent division by zero
+                        {
+                            Console.WriteLine("Division by zero not possible choose a new second Number:");
+                            secondNumber = Convert.ToDouble(StringRead());
+                        }
+                        isNumber = true;
+                    }
+                    catch (FormatException e)
+                    {
+                        Console.WriteLine("Something is wrong with your number please.");
+                    }
+                }
+
+                double result = CalculateResult(firstNumber, symbol, secondNumber);
+
+                Console.WriteLine("Your result is: {0:0.00000}", result);
+
+
+                Console.WriteLine("you wann do another calculation? (y/n)");
+                continueCalculating = StringRead();
+                while (continueCalculating.Length > 1 && (continueCalculating != "n" || continueCalculating != "y")) // only a single symbol and a set of symbols
+                {
+                    Console.WriteLine("Your input is not valid. Do you wanna continue calculating? (y/n)");
+                    continueCalculating = StringRead();
+                }
+
+            }
+
+        }
+
+        // simple method to calculate the result
+        public static double CalculateResult(double firstNumber, string Operator, double secondNumber)
+        {
+            double result = 0;
+            if (Operator == "+ ")
+            {
+                result = firstNumber + secondNumber;
+            }
+
+            else if (Operator == "- ")
+            {
+                result = firstNumber - secondNumber;
+            }
+
+            else if (Operator == "* ")
+            {
+                result = firstNumber * secondNumber;
+            }
+
+            else if (Operator == "/ ")
+            {
+                result = firstNumber / secondNumber;
+            }
+
+            else if (Operator == "^ ")
+            {
+                result = firstNumber;
+                for(int i = 1; i < secondNumber; i++)
+                {
+                    result *= firstNumber;
+                }
+            }
+
+            return result;
+
+        }
+
+
+
 
     }
 

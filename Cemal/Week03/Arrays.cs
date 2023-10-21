@@ -158,33 +158,47 @@ namespace Cemal.Week03
             int[] bubbleArray = RandomNumberArray(10);
             PrintMyArray(bubbleArray);
             PrintMyArray(Bubblesort(bubbleArray));
-            
+
+            Console.WriteLine("Wilkommen bei TicTacToe!");
+            Console.WriteLine("möchtest du Spieler 'X' oder Spieler 'O' werden");
+            Console.ReadLine();
+
 
 
 
         }
         ///////////////////////////////////////////////////////////////////////////////////
 
-        public static void PrintMyArray(int[] array) {
-            int count = 0;
-            Console.Write("[");
+        //public static void PrintMyArray(int[] array) {
+        //    int count = 0;
+        //    Console.Write("[");
+        //    foreach (var element in array)
+        //    {
+        //        count ++;
+        //        if (count == array.Length)
+        //        {
+        //            Console.Write(element);
+        //        }
+        //        else
+        //        {
+        //            Console.Write(element + ", ");
+        //        }
+        //    }
+        //    Console.Write("]");
+        //    Console.WriteLine();
+        //}
+
+        public static void PrintMyArray(int[] array)
+        {
             foreach (var element in array)
             {
-                count ++;
-                if (count == array.Length)
-                {
-                    Console.Write(element);
-                }
-                else
-                {
-                    Console.Write(element + ", ");
-                }
+                Console.Write(element + " ");
             }
-            Console.Write("]");
             Console.WriteLine();
         }
 
-        public static int[] CreateArray(int size)
+
+            public static int[] CreateArray(int size)
         {
             int[] numbers = new int[size];
 
@@ -314,11 +328,15 @@ namespace Cemal.Week03
                         temp = array[j+1];
                         array[j + 1] = array[j];
                         array[j] = temp;
-                        //PrintMyArray(array);
                     }
                 }
             }
             return array;
+        }
+
+        public static void TicTacToe()
+        {
+            
         }
     }
 }
