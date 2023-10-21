@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kerem.Week02
+﻿namespace Kerem.Week02
 {
     internal class BooleanExamples
     {
@@ -26,8 +20,8 @@ namespace Kerem.Week02
             printX("x", 5);
             Console.WriteLine();
         }
-    
-    
+
+
         public static void printSlash(string symbol, int size, bool Slash)
         {
             for (int i = 0; i < size; i++)
@@ -63,19 +57,19 @@ namespace Kerem.Week02
         }
         public static void printPyramid(string symbol, int size)
         {
-            for(int rows = 0; rows<size; rows++)
+            for (int rows = 0; rows < size; rows++)
             {
-                for(int cols = 0; cols< size * 2 - 1 ; cols++)
+                for (int cols = 0; cols < size * 2 - 1; cols++)
                 {
-                    if (rows == cols-size*2)
+                    if (rows == cols - size * 2)
                     {
                         Console.Write(".");
                     }
-                    else if( rows + cols == 4 )
+                    else if (rows + cols == 4)
                     {
                         Console.Write("x");
                     }
-                    else if (rows == cols )
+                    else if (rows == cols)
                     {
                         Console.Write("x");
                     }
@@ -83,7 +77,7 @@ namespace Kerem.Week02
                     {
                         Console.Write(".");
                     }
-                   
+
                 }
                 Console.WriteLine();
             }
@@ -111,12 +105,12 @@ namespace Kerem.Week02
                     {
                         Console.Write(" ");
                     }
-              
+
                 }
                 Console.WriteLine();
 
             }
-                          
+
         }
 
 

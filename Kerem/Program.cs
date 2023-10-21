@@ -1,3 +1,4 @@
-﻿using Kerem.Week03;
+﻿Kerem.Exercises.RepetitionVariables.Start();
 
-ArrayExamples.StartArrayExamples();
+
+

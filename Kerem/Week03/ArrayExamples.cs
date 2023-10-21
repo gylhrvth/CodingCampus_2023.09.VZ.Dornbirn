@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Kerem.Week03
+﻿namespace Kerem.Week03
 {
     internal class ArrayExamples
     {
@@ -332,22 +324,38 @@ namespace Kerem.Week03
             return arr7;
 
         }
-        public static void Array2D()
+        public static int[,] Array2D(int row = 3, int cols = 3)
         {
-            int[,] numbers = new int[3, 5];
+            while (row < 4 || cols < 4)
             {
-                for (int i = 0; i < 3; i++)
+                try
                 {
-                    for (int j = 0; j < 5; j++)
-                    {
-                        numbers[i, j] = rand.Next(101);
-                        Console.WriteLine("{[0}, {1}] = {2}", i, j, numbers[i, j]);
-                        
+                    Console.WriteLine("Enter number of rows: ");
+                    row = Convert.ToInt32(Console.ReadLine());
 
-                    }
+                    Console.WriteLine("Enter number of columns: ");
+                    cols = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("Enter a valid number!");
+                }
+            }
+
+
+            int[,] arr = new int[row, cols];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    arr[i, j] = rand.Next(101);
+                    //Console.WriteLine("{[0}, {1}] = {2}", i, j, arr[i, j]);
 
                 }
             }
+            return arr;
+
         }
     }
 }
