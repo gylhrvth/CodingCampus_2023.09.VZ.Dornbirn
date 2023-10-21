@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Kerem.Week01
+﻿namespace Kerem.Week01
 {
     internal class Methoden
     {
