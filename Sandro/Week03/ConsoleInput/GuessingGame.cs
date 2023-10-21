@@ -106,7 +106,7 @@ namespace Sandro.Week03.ConsoleInput
                     String input = Console.ReadLine();
 
                     string ourText = input;
-
+                    ourText = ourText.Trim();
                     return ourText;
                 }
                 catch (FormatException exc)

@@ -5,15 +5,15 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Selina.Week04.Aufgabe
+namespace Selina.Week04.Arrays.Menü
 {
     internal class Quader
     {
         public static void PrintEmptySquare1()
         {
-            Console.WriteLine("\nWie Groß soll Ihr Quader sein?");
+            Console.Write("\nWie Groß soll Ihr Quader sein? ");
             int square = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine();
 
             for (int y = 1; y <= square; y++)
             {

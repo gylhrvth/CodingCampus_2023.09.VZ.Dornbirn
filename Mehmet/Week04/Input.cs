@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Mehmet.Week01.Rechnen;
 using static Mehmet.Week02.BooleanExamples;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 namespace Mehmet.Week04
@@ -34,7 +35,9 @@ namespace Mehmet.Week04
 
             //Calculator();
 
-            VisitenKarte();
+            //VisitenKarte();
+
+            //DasSpielBeginnt();
         }
 
         public static Random rand = new Random();
@@ -71,7 +74,7 @@ namespace Mehmet.Week04
                 }
         }
 
-        public static String ReadSymbol(string msg)
+        public static string ReadSymbol(string msg)
         {
             while (true)
                 try
@@ -107,14 +110,14 @@ namespace Mehmet.Week04
 
 
 
-        static int ReadNumberAufgabe(String stage1, String error)
+        static int ReadNumberAufgabe(string stage1, string error)
         {
             Console.WriteLine(stage1);
             while (true)
             {
                 try
                 {
-                    String input = Console.ReadLine();
+                    string input = Console.ReadLine();
                     int myNumber = Convert.ToInt32(input);
                     return myNumber;
                 }
@@ -126,7 +129,7 @@ namespace Mehmet.Week04
         }
 
 
-        static void ReadRandomNumber(String stage1, String stage2, String error, String higher, String lower, String correct, String askmin, String askmax)
+        static void ReadRandomNumber(string stage1, string stage2, string error, string higher, string lower, string correct, string askmin, string askmax)
         {
 
             bool end = false;
@@ -172,7 +175,7 @@ namespace Mehmet.Week04
         }
 
 
-        static void ReadNumberMenue(String stage1, String questionDrawing, String drawing1, String drawing2, String drawing3, String asksize, String asksymbol)
+        static void ReadNumberMenue(string stage1, string questionDrawing, string drawing1, string drawing2, string drawing3, string asksize, string asksymbol)
         {
             bool end = false;
             while (!end)
@@ -225,8 +228,11 @@ namespace Mehmet.Week04
 
 
                 char oprt = ReadChar("gib einen operator ein | + | - | * | / | ^ |:  ");
+                
+                
                 float num2 = ReadFloat("Gib das 2. Zahl ein:  ");
                 float num2new = 1;
+                
 
                 if (oprt == '+')
                 {
@@ -315,8 +321,11 @@ namespace Mehmet.Week04
 
                 }
 
+
+
             }
         }
+
 
 
         public static void VisitenKarte()
@@ -334,15 +343,9 @@ namespace Mehmet.Week04
 
 
 
-            int l1 = (count1/2) - (text1.Length / 2);
-            int l2 = (count1/2) - (text2.Length / 2);
-            int l3 = (count1/2) - (text3.Length / 2);
-
-            int l12 = text1.Length;
-            int l22 = text2.Length;
-            int l32 = text3.Length;
-
-
+            int l1 = (count1 / 2) - (text1.Length / 2);
+            int l2 = (count1 / 2) - (text2.Length / 2);
+            int l3 = (count1 / 2) - (text3.Length / 2);
 
 
 
@@ -384,7 +387,7 @@ namespace Mehmet.Week04
                         if (y == l2 - 3 && text2.Length % 2 == 1)
                         {
                             l2--;
-                        }                       
+                        }
                         Console.Write(" ");
                     }
                     Console.Write(symbol);
@@ -427,5 +430,24 @@ namespace Mehmet.Week04
         }
 
 
+        public static void DasSpielBeginnt()
+        {
+            Random rand = new Random();
+            int value = rand.Next(10000);
+            Console.WriteLine(value);
+
+            int myNumber1 = ReadNumber("Gib dein 1.Ziffer ein: ");
+            int myNumber2 = ReadNumber("Gib dein 2.Ziffer ein: ");
+            int myNumber3 = ReadNumber("Gib dein 3.Ziffer ein: ");
+            int myNumber4 = ReadNumber("Gib dein 4.Ziffer ein: ");
+
+
+            int[] arrRand = { value };
+            int[] arrMyNum = { myNumber1, myNumber2, myNumber3, myNumber4 };
+
+
+
+
+        }
     }
 }
