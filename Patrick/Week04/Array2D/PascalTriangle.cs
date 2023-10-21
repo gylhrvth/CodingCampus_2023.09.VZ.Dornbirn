@@ -1,4 +1,6 @@
-﻿namespace Patrick.Week04.Array2D
+﻿using Patrick.Week04.ConsoleInputs;
+
+namespace Patrick.Week04.Array2D
 {
     internal class PascalTriangle
     {
