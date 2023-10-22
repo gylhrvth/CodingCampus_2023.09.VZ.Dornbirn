@@ -9,6 +9,7 @@ namespace Fabian.Week04
         public static void Start()
         {
             GameOfLife();
+
         }
 
         public static void GameOfLife()
