@@ -1,22 +1,21 @@
-﻿using System.Diagnostics;
-using System.Text;
+﻿using System.Text;
 
 namespace Fabian.Week04
 {
     public class GameOfLifeClass
     {
 
-        private static Random random = new();
+        private static readonly Random random = new();
 
         public static void Start()
         {
-            Thread gameThread = new Thread(GameOfLife);
+            Thread gameThread = new(GameOfLife);
             gameThread.Start();
         }
 
         public static void GameOfLife()
         {
-            int[,] matrix = new int[40, 100];
+            int[,] matrix = new int[100, 100];
 
             //fill array with 0's
             /*for (int i = 0; i < matrix.GetLength(0); i++)
@@ -89,7 +88,7 @@ namespace Fabian.Week04
                         {
                             changedMatrix[i, j] = 1;
                         }
-                    }
+                    }                
                 }
             }
             return changedMatrix;
@@ -119,14 +118,13 @@ namespace Fabian.Week04
 
         public static int[,] PrintMatrix(int[,] matrix)
         {
-            StringBuilder sb = new StringBuilder();
+            StringBuilder sb = new();
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i, j] == 0)
                     {
-                        //Console.ForegroundColor = ConsoleColor.Black;
                         sb.Append("  ");
                     }
                     else
@@ -138,11 +136,8 @@ namespace Fabian.Week04
 
                         sb.Append((char)9632 + " ");
                     }
-                    //Console.Write((char)9632 + " ");
-
                 }
-                //Console.WriteLine();
-                sb.Append('\n');
+                sb.AppendLine();
             }
             Console.WriteLine(sb.ToString());
 
