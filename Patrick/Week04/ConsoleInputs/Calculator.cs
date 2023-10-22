@@ -11,11 +11,20 @@ namespace Patrick.Week04.ConsoleInputs
     {
         public static void Start()
         {
-            //Console.WriteLine("The result = " + Calculators());
+            //AUFGABE 1 Taschenrechner 
+            //Console.WriteLine("The result = " + Calculations());
             float result = Calculations();
 
-            CalculatorExtended(result);
+            //AUFGABE 2 Taschenrechner extended
+            //CalculatorExtended();
+
+            //AUFGABE 3 Taschenrechner weiterrechnen
+            //CalculationsResult(Calculations());
+
+            //AUFGABE 4 Taschenrechner mit Memory Funktion         
+            CalculatorAdvanced(result);
         }
+
 
 
         public static float ReadNumber()
@@ -60,55 +69,119 @@ namespace Patrick.Week04.ConsoleInputs
 
         public static float Calculations()
         {
+
+            float result = 0;
+
+            Console.Write("Please enter a Number: >>>>>  ");
+            float inputNumber1 = ReadNumber();
+
+            Console.Write("Please enter a Operator: +, -, *, / >>>>>>  ");
+            string math = ReadOperator();
+
+            Console.Write("Please enter a Number again: >>>>>  ");
+            float inputNumber2 = ReadNumber();
+            Console.WriteLine("===============================================");
+
+            if (math == "+")
+            {
+                result = inputNumber1 + inputNumber2;
+                Console.WriteLine("The result =  " + result);
+            }
+
+            else if (math == "-")
+            {
+                result = inputNumber1 - inputNumber2;
+                Console.WriteLine("The result =  " + result);
+            }
+            else if (math == "*")
+            {
+                result = inputNumber1 * inputNumber2;
+                Console.WriteLine("The result =  " + result);
+            }
+
+            else if (math == "/")
+            {
+                result = inputNumber1 / inputNumber2;
+                Console.WriteLine("The result =  " + result);
+            }
+            return result;
+        }
+
+        public static float CalculationsResult(float result)
+        {
+            float resultTotal = 0;
             while (true)
             {
-                float result = 0;
-
-                Console.Write("Please enter a Number: >>>>>  ");
-                float inputNumber1 = ReadNumber();
-
+                Console.WriteLine(" Your interim result = " + result);
                 Console.Write("Please enter a Operator: +, -, *, / >>>>>>  ");
                 string math = ReadOperator();
 
                 Console.Write("Please enter a Number again: >>>>>  ");
                 float inputNumber2 = ReadNumber();
                 Console.WriteLine("===============================================");
-                Console.WriteLine("===============================================");
 
                 if (math == "+")
                 {
-                    result = inputNumber1 + inputNumber2;
-                    return result;
+                    result += inputNumber2;
+                    Console.WriteLine("The result =  " + result);
+                    break;
                 }
 
                 else if (math == "-")
                 {
-                    result = inputNumber1 - inputNumber2;
-                    return result;
+                    result -= inputNumber2;
+                    Console.WriteLine("The result =  " + result);
+                    break;
                 }
                 else if (math == "*")
                 {
-                    result = inputNumber1 * inputNumber2;
-                    return result;
+                    result *= inputNumber2;
+                    Console.WriteLine("The result =  " + result);
+                    break;
                 }
 
                 else if (math == "/")
                 {
-                    result = inputNumber1 / inputNumber2;
-                    return result;
+                    result /= inputNumber2;
+                    Console.WriteLine("The result =  " + result);        
+                    break;
                 }
+            }
+            return result;
+        }
+
+
+        public static void CalculatorExtended()
+        {
+            while (true)
+            {
+                
+                Console.WriteLine("Do you want to calculate again? Tip \"yes\" or \"no\"");
+
+                if (StringReadYesOrNo() == false)
+                {
+                    break;
+                }
+
+                Console.WriteLine("===============================================");
+                Console.WriteLine("===============================================");
+
             }
         }
 
-        public static void CalculatorExtended(float result)
+        public static void CalculatorAdvanced(float result)
         {
-            while (StringReadYesOrNo() == true)
+            while (true)
             {
-                Console.WriteLine("The result =  " + result);
-                Console.WriteLine("===============================================");
-                Console.WriteLine("===============================================");
-                Console.WriteLine("Do you want to calculate again? Tip \"yes\" or \"no\"");
+                Console.WriteLine("Do you want a interim result? ");
 
+                if (StringReadYesOrNo() == false)
+                {
+                    break;
+                }
+                Console.WriteLine("===============================================");
+                Console.WriteLine("===============================================");
+                CalculationsResult(result);
             }
         }
     }

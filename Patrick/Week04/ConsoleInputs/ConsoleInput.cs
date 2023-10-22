@@ -15,7 +15,7 @@ namespace Patrick.Week04.ConsoleInputs
         public static void Start()
         {
             //AUFGABE 1
-            Console.WriteLine("Write the input: ")
+            Console.WriteLine("Write the input: ");
             Console.WriteLine("The Inputstring = " + StringRead());                       //Lies mit Hilfe von .... ein String des Benutzers ein und gib diesen aus          
 
 
