@@ -1,11 +1,15 @@
-﻿using System.Text;
+﻿using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Text;
 
 namespace Fabian.Week04
 {
     public class GameOfLifeClass
     {
 
-        private static readonly Random random = new();
+        private static readonly Random random = new Random();
 
         public static void Start()
         {
@@ -118,7 +122,7 @@ namespace Fabian.Week04
 
         public static int[,] PrintMatrix(int[,] matrix)
         {
-            StringBuilder sb = new();
+            StringBuilder sb = new StringBuilder();
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
