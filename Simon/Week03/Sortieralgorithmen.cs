@@ -76,7 +76,7 @@ namespace Simon.Week03
             return arr;
         }
         
-        //Aufgabe 2D-Array
+        //Aufgabe 2D-Array old Version
         public static int[][] Matrix2(int width, int height, int upper, int lower)
         {
             int summcol = 0;
