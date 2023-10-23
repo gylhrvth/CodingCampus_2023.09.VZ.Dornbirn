@@ -14,26 +14,38 @@ namespace David.Week04
             Console.WriteLine("Bitte gib eine Wert zwischen 1-10 ein!");
             int UserIn = Convert.ToInt32(Console.ReadLine());
 
-            int[][] arr =  Array2D(UserIn);
+            int[][] arr =  CreateArray2D(UserIn);
+            FillArray(arr);
             ArrayPrint(arr);
 
         }
 
-        public static int[][] Array2D(int size)
+        public static int[][] CreateArray2D(int size)
         {
-            int[][] arrayOuter = new int[size][];
+            int[][] arr2D = new int[size][];
 
-            for (int i = 0; i < arrayOuter.Length; i++)
+            for (int i = 0; i < arr2D.Length; i++)
             {
-                int[] arrayInner = new int[size];
+                arr2D[i] = new int[size];
 
-                for (int j = 0; j < arrayInner.Length; j++)
-                {
-                    arrayInner[j] = i;
-                }
             }
-            return arrayOuter;
+            return arr2D;
         }
+
+        public static int[][] FillArray(int[][] arrP)
+        {
+            for (int i = 0; i < arrP.Length; i++)
+            {
+                for (int j = 0; j < arrP.Length; j++)
+                {
+                    arrP[i][j] = i + j;
+                }
+                
+            }
+            return arrP;
+        }                                                                           
+
+
 
         public static void ArrayPrint(int[][] arr)
         {
@@ -41,6 +53,7 @@ namespace David.Week04
             {
                 for (int j = 0; j < arr.Length; j++)
                 {
+
                     Console.Write(arr[i][j]);
                 }
                 Console.WriteLine();
