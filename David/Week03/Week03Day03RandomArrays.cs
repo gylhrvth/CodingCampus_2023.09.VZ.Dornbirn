@@ -62,21 +62,20 @@ namespace David.Week03
             // Max
             int max = Max(test);
             Console.WriteLine(max);
-		
+
             //indMAX
             int MAXind = indMAX(test);
             Console.WriteLine(MAXind);
 
             int MINind = indMIN(test);
             Console.WriteLine("new " + MINind);
-            
+
 
             //Durchscnnitt
             Console.WriteLine();
             int Ave = average(randarray);
             Console.WriteLine(Ave + " = Durchschnitt");
 
-          
         }
 
 
@@ -84,8 +83,8 @@ namespace David.Week03
 
 
 
-            //----------Random Array 1--------------
-            public static int[] RandomA(int size) // Hier wird die Methode und size abgerufen.
+        //----------Random Array 1--------------
+        public static int[] RandomA(int size) // Hier wird die Methode und size abgerufen.
         {
 
             int[] arrayRand1 = new int[size];// Hier wird der eigentliche Arr erstellt und Speicher Reserviert
@@ -100,6 +99,7 @@ namespace David.Week03
             Console.WriteLine();
             return arrayRand1;// Hier gitbt "return" den Wert von arrayRanjd1 an die Methode oben zurück.
         }
+
 
         // BSP.: Crazy Range -50 - 50
 
@@ -211,7 +211,7 @@ namespace David.Week03
         {
             int minimalwert = 0;
 
-            for (int i=0; i <arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] > minimalwert)
                 {
