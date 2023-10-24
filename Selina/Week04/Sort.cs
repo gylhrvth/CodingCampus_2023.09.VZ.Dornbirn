@@ -12,12 +12,12 @@ namespace Selina.Week04.Sort
     {
         public static void Start()
         {
-            int size = Week03.Array.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");
+            int size = CreateArray.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");
             int[] randomArray = new int[size];
 
             //Aufgabe 8:
             Ausgabe.Output("Bubblesort mit Zahlen\n", ConsoleColor.DarkRed);
-            randomArray = Week03.Array.CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
+            randomArray = CreateArray.CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
             Console.Write("Array ungeordnet:            ");
             Ausgabe.OutputForUser(randomArray);     //Output für User => UNGEORDNET ARRAY
 
@@ -32,7 +32,7 @@ namespace Selina.Week04.Sort
 
             //Aufagbe 11:
             Ausgabe.Output("Aufgabe: Selection Sort \n", ConsoleColor.DarkYellow);
-            randomArray = Week03.Array.CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            randomArray = CreateArray.CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("ungeordnet: ");
             Ausgabe.OutputForUser(randomArray);
@@ -45,14 +45,14 @@ namespace Selina.Week04.Sort
 
             //Aufagbe 12:
             Ausgabe.Output("Aufgabe: Insertion Sort \n", ConsoleColor.Cyan);
-            randomArray = Week03.Array.CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            randomArray = CreateArray.CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
             InsertionSort(randomArray);  //ordnet Array
             Ausgabe.OutputForUser(randomArray); // Output für User
             Console.WriteLine("\n----------------------------------------------------------");
 
             //Aufagbe 13:
             Ausgabe.Output("Aufgabe: Gnome Sort \n", ConsoleColor.Magenta);
-            randomArray = Week03.Array.CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
+            randomArray = CreateArray.CreateRandomArray(size, 1, 101);  //macht randomArray von 1 bis 100 
             GnomeSort(randomArray); //ordnet Array
             Ausgabe.OutputForUser(randomArray); //Output für User
             Console.WriteLine("\n----------------------------------------------------------");
