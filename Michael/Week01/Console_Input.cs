@@ -13,11 +13,11 @@ namespace Michael.Week01
     public class ConsoleInputs
     {
 
-        public static string StringInput(String text = "")
+        public static string StringInput(String initialText = "")
         {
-            if (text != "")
+            if (initialText != "")
             {
-                Console.WriteLine(text);
+                Console.WriteLine(initialText);
             }
 
             Console.WriteLine("enter a string");
@@ -27,14 +27,12 @@ namespace Michael.Week01
         }
 
 
-        public static int IntInput(String text = "")
+        public static int IntInput(String initialText = "", String errorText = "", String successText = "", bool repeatValue = false)
         {
-            if (text != "")
+            if (initialText != "")
             {
-                Console.WriteLine(text);
+                Console.WriteLine(initialText);
             }
-
-            Console.WriteLine("enter an integer");
 
             while (true)
             {
@@ -46,12 +44,25 @@ namespace Michael.Week01
                 }
                 catch
                 {
-                    Console.WriteLine("invalid input, try again");
-                    continue;
+                    if (errorText != "")
+                    {
+                        Console.WriteLine(errorText);
+                        continue;
+                    }
+
                 }
 
-                Console.WriteLine($"Thank you! \nYour input was: {userInput}\n");
-                return userInput;
+                if (successText != "")
+                {
+                    Console.Write(successText);
+                    if (repeatValue)
+                    {
+                        Console.WriteLine(userInput);
+                    }
+
+                    return userInput;
+                }
+
 
             }
         }
