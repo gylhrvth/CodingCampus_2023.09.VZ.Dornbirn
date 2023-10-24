@@ -11,10 +11,9 @@
 
         public static void Start()
         {
-
             // Aufagbe 1:
             Ausgabe.Output("Number Array\n", ConsoleColor.Red);
-            int size = ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
+            int size = CreateArray.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");     //Input User wir in size gespeichert
             int[] randomArray = new int[size];
 
             int[] resultArray1 = CreateArray1(size);    //Input User wird in einem Array gespeichert und geordnet ausgegeben 
@@ -36,7 +35,7 @@
 
             // Aufagbe 3:
             Ausgabe.Output("Random Number Array", ConsoleColor.Green);
-            randomArray = CreateRandomArray(size, 0, 101);  //macht Array mit random Zahlen von 0 bis 100
+            randomArray = CreateArray.CreateRandomArray(size, 0, 101 );  //macht Array mit random Zahlen von 0 bis 100
             Ausgabe.OutputForUser(randomArray);     //Output für User
 
             Console.WriteLine("\n\nJeder Zweiter Wert:");   //Gibt jeden zweiten Wert von dem Array aus
@@ -67,15 +66,15 @@
 
             //Aufagbe 4:
             Ausgabe.Output("Random Number Array Crazy Range", ConsoleColor.Blue);
-            randomArray = CreateRandomArray(size, -50, 51);     //macht Array mit random Zahlen von -50 bis 50
+            randomArray = CreateArray.CreateRandomArray(size, -50, 51);     //macht Array mit random Zahlen von -50 bis 50
             Ausgabe.OutputForUser(randomArray);     //Output für User
             Console.WriteLine("\n----------------------------------------------------------");
 
 
             //Aufagbe 5:
             Ausgabe.Output("Random Number Array Zählen\n", ConsoleColor.Magenta);
-            randomArray = CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
-            int count = CountOver30(randomArray);
+            randomArray = CreateArray.CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
+            int count = CreateArray.CountOver30(randomArray);
             Console.WriteLine($"{count} Werte sind über 30");
             Ausgabe.OutputForUser(randomArray);     //Output für User
             Console.WriteLine("\n----------------------------------------------------------");
@@ -83,7 +82,7 @@
 
             //Aufagbe 6:
             Ausgabe.Output("Random Number Array Summe", ConsoleColor.DarkBlue);
-            int[] randomArraySum = CreateRandomArray(size, 1, 101);     //macht Array mit random Zahlen von 1 bis 100
+            int[] randomArraySum = CreateArray.CreateRandomArray(size, 1, 101);     //macht Array mit random Zahlen von 1 bis 100
 
             bool first = true;
             Console.Write("\n[ ");
@@ -104,7 +103,7 @@
             //Aufgabe 7:
             Ausgabe.Output("Random Number Array Min / Max / Avg\n", ConsoleColor.Cyan);
 
-            randomArray = CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
+            randomArray = CreateArray.CreateRandomArray(size, 1, 101);  //macht Array mit random Zahlen von 1 bis 100
             int min = RandomNumberArrayMin(randomArray);     //RandomNumberArrayMin gibt das Min von Array
             int max = RandomNumberArrayMax(randomArray);    //RandomNumberArrayMax gibt das Max von Array
             double avg = RandomNumberArrayAvg(randomArray);  //RandomNumberArrayAvg gibt das Avg von Array
@@ -113,49 +112,6 @@
             Console.WriteLine("\n----------------------------------------------------------");
 
         }
-
-        //User Input:
-        public static int ReadNumber(string prompt, string onError)
-        {
-            Console.WriteLine(prompt);
-            while (true)
-            {
-                try
-                {
-                    int ourNumber = Convert.ToInt32(Console.ReadLine());
-                    return ourNumber;
-                }
-                catch (Exception exc)
-                {
-                    Console.Error.WriteLine(onError);
-                }
-            }
-        }
-
-        //Random Number:
-        public static int[] CreateRandomArray(int size, int from, int to)
-        {
-            int[] randomArray = new int[size];
-            for (int i = 0; i < randomArray.Length; i++)
-            {
-                randomArray[i] = rand.Next(from, to);
-            }
-            return randomArray;
-        }
-
-        public static int CountOver30(int[] arr)
-        {
-            int count = 0;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] > 30)
-                {
-                    count++;
-                }
-            }
-            return count;
-        }
-
         // Aufgabe 1: Number Array
         public static int[] CreateArray2(int size)
         {
@@ -231,7 +187,6 @@
             avg = (double)sum / randomArray.Length;
             return avg;
         }
-
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using Selina.Week04.Ausagbe;
+﻿using Selina.Week04.Arrays;
+using Selina.Week04.Ausagbe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,8 @@ namespace Selina.Week04.TikTakToe
         static Random rand = new Random();
         public static void Start()
         {
-          
-          Ausgabe.Output("Aufgabe: TicTacToe \n", ConsoleColor.DarkMagenta);
+
+            Ausgabe.Output("Aufgabe: TicTacToe \n", ConsoleColor.DarkMagenta);
 
             char[,] board = new char[3, 3];
             const char PLAYER = 'X';

@@ -1,1 +1,1 @@
-﻿Simon.Week05.TicTacToe.Start();
+﻿Simon.Week05.UebungenString.Start();
