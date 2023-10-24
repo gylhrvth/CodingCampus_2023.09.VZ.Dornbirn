@@ -22,13 +22,13 @@ namespace Patrick.Week04.Sort_Algorithm
 
         public static int[] CocktailShakerSoort(int[] arrayRandom)
         {
-            int low = 1;
+            int low = 0;
             int move = low;
             int high = arrayRandom.Length - 1;
 
             while (low < high)
             {
-                for (int i = high; i > low + 1; i--)
+                for (int i = high; i > low; i--)
                 {
                     if (arrayRandom[i - 1] > arrayRandom[i])
                     {
@@ -36,11 +36,11 @@ namespace Patrick.Week04.Sort_Algorithm
                         arrayRandom[i - 1] = arrayRandom[i];
                         arrayRandom[i] = tempMemoryUp;
                         move = i;
-                    }
-                    low = move;
+                    }                    
                 }
-                
-                for (int j = 1; j < high; j++)
+                low = move;
+
+                for (int j = 0; j < high; j++)
                 {
                     if (arrayRandom[j] > arrayRandom[j + 1])
                     {

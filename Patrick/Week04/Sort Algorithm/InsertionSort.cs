@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Patrick.Week03.ExamplesArrays;
 
 namespace Patrick.Week04
 {
@@ -10,8 +11,10 @@ namespace Patrick.Week04
     {
         public static void Start()
         {
-            //PrintArray(CreateRandomArray(10));
-            PrintArray(InsertionSortPatrick(CreateRandomArray(10)));
+            Console.WriteLine("Unsorted Array ");
+            PrintArrayFor(CreateRandomArray(10));
+            Console.WriteLine("Sorted Array ");
+            PrintArrayFor(InsertionSortPatrick(CreateRandomArray(10)));
 
         }
 
