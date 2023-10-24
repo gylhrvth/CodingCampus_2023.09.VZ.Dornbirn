@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 using System.Security.Cryptography;
@@ -88,12 +89,12 @@ namespace Niklas.Week03
             //Console.WriteLine("Min: {0,4}", ArrayMin(arr1));
             //Console.WriteLine("Max: {0,4}", ArrayMax(arr1));
 
-            Console.WriteLine("______________________");
-            Console.WriteLine("Unsorted: [{0}]", string.Join(", ", arr1));
-            BubbleSortAsc(arr1);
-            Console.WriteLine("Bubblesort Ascending: " + string.Join(", ", arr1));
-            BubbleSortDesc(arr1);
-            Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
+            //Console.WriteLine("______________________");
+            //Console.WriteLine("Unsorted: [{0}]", string.Join(", ", arr1));
+            //BubbleSortAsc(arr1);
+            //Console.WriteLine("Bubblesort Ascending: " + string.Join(", ", arr1));
+            //BubbleSortDesc(arr1);
+            //Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
 
             //Console.WriteLine("CHoose the size of your random numbers!");
             //int size = Convert.ToInt32(Console.ReadLine());
@@ -106,7 +107,19 @@ namespace Niklas.Week03
             //Console.WriteLine("Bubblesort Custom: " + string.Join(", ", size, min, max));
 
             Console.WriteLine("______________________");
-            TwoDArray(arr2);
+            int[][] arr2d = TwoDArray(10, 10);
+            Print2Darray(arr2d);
+
+            int[] sumRow = SumByRow(arr2d);
+            Console.Write("Sum of row: ");
+            Console.WriteLine(string.Join(" ", sumRow));
+
+            int[] sumCol = SumByCol(arr2d);
+            Console.Write("Sum of col: ");
+            Console.WriteLine(string.Join(" ", sumCol));
+
+            Console.WriteLine("______________________");
+            TicTacToe(3, 3);
 
         }
 
@@ -276,7 +289,7 @@ namespace Niklas.Week03
         public static int[] BubbleSortAsc(int[] arr)
         {
             int steps = 0;
-            for (int i = 0; i < arr.Length -1; i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 for (int j = 0; j < arr.Length - 1 - i; j++)
                 {
@@ -333,38 +346,138 @@ namespace Niklas.Week03
             }
             Console.WriteLine("Size: " + size + " Steps: " + steps);
         }
-        public static void TwoDArray(int[] size)
+        public static int[][] TwoDArray(int rows, int columns)
         {
-            int[] arr = new int[100];
-            int sum = 0;
-            Random random = new Random();
-
+            int[][] arr = new int[rows][];
             for (int i = 0; i < arr.Length; i++)
             {
-                int randomNumber = random.Next(10, 100);
-                arr[i] = randomNumber;
-
-                sum = 0;
-                foreach (int value in arr)
+                arr[i] = new int[columns];
+                for (int j = 0; j < arr[i].Length; j++)
                 {
-                    sum += value;
-                    Console.Write(arr[i] + " ");
-                    Console.Write(" | Summe = " + sum);
+                    arr[i][j] = random.Next(0, 101);
                 }
             }
-
-            for (int i = 0; i < arr.Length + 1; i++)
-            {
-                if (i % 10 == 0 && i > 0)
-                {
-
-                }
-
-            }
-            sum = 0;
+            return arr;
         }
 
-        //===================================================================================================================================================================\\
+        public static int[][] TicTacToe(int rows, int columns)
+        {
+            int player1;
+            int player2;
+            int field = 1;
+
+            int[][] arr = new int[rows][];
+            for (int i = 0; i < rows; i++)
+            {
+                Console.Write("|" + field);
+                for (int j = 1; j < columns; j++)
+                {
+                    if (j == 1)
+                    {
+                        Console.Write("|" + (field + 3));
+                    }
+                    else if (j == 2)
+                    {
+                        Console.Write("|" + (field + 6) + "|");
+                    }
+                }
+                Console.WriteLine();
+                field++;
+            }
+
+            Console.Write("Player 1 has to choose a number from 1 to 9 from the field above: ");
+            player1 = Convert.ToInt32(Console.ReadLine());
+            if (Convert.ToInt32(player1) == 1)
+            {
+                field = 1;
+                for (int i = 0; i < rows; i++)
+                {
+                    if (field == 1)
+                    {
+                        field++;
+                        Console.Write("|x|" + field);
+                        field++;
+                    }
+                    else if (field > 1)
+                    {
+                        Console.Write("|" + field);
+                        for (int j = 1; j < columns; j++)
+                        {
+                            if (j == 1)
+                            {
+                                field++;
+                                //field = 4;
+                                Console.Write("|" + field);
+                                field++;
+                            }
+                            else if (j == 2)
+                            {
+                                //field = 7;
+                                Console.Write("|" + (field) + "|");
+                            }
+                        }
+                    }
+                    Console.WriteLine();
+                    field++;
+                }
+
+            }
+            Console.WriteLine();
+            return arr;
+        }
+
+
+
+        //==================================================================================================================================================================\\
+
+        public static void Print2Darray(int[][] array)
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = 0; j < array[i].Length; j++)
+                {
+                    Console.Write("{0,4}", array[i][j]);
+                }
+                Console.WriteLine();
+            }
+
+        }
+        public static int[] SumByRow(int[][] arr)
+        {
+            if (arr.Length == 0)
+            {
+                return new int[] { };
+            }
+
+            int[] result = new int[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i].Length; j++)
+                {
+                    result[i] += arr[i][j];
+                }
+            }
+
+            return result;
+        }
+
+        public static int[] SumByCol(int[][] arr)
+        {
+            if (arr.Length == 0)
+            {
+                return new int[] { };
+            }
+
+            int[] result = new int[arr[0].Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i].Length; j++)
+                {
+                    result[j] += arr[i][j];
+                }
+            }
+            return result;
+        }
 
         public static int[] CreateArray(int size)
         {
@@ -439,5 +552,4 @@ namespace Niklas.Week03
             return arr;
         }
     }
-
 }

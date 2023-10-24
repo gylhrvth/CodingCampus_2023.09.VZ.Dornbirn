@@ -1,1 +1,1 @@
-﻿Gyula.Week04.UserInputExample.Start();
+﻿Gyula.Week05.StringExample.Start();

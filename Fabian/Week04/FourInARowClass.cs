@@ -1,5 +1,4 @@
-﻿using static Fabian.Week03.Arrays;
-using static Fabian.Week03.TicTacToeClass;
+﻿using static Fabian.Week03.TicTacToeClass;
 
 namespace Fabian.Week04
 {
@@ -24,7 +23,7 @@ namespace Fabian.Week04
                     playGround[i, j] = 0;
                 }
             }
-            Week03.TicTacToeClass.Print2DArray(playGround);
+            Print2DArray(playGround);
 
             while (true)
             {
