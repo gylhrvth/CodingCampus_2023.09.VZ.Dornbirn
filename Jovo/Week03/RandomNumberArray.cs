@@ -8,5 +8,6 @@ namespace Jovo.Week03
 {
     internal class RandomNumberArray
     {
+        
     }
 }

@@ -28,14 +28,18 @@ namespace Cemal.Week04
             //Console.WriteLine("Du bist " + userinputnumber + "Jahre alt.");
             //Console.WriteLine();
 
-            //Ratespiel
-            //Console.WriteLine();
-            //Ratespiel(error);
-            //Console.WriteLine();
+            //////Ratespiel
+            ////Console.WriteLine();
+            ////Ratespiel(error);
+            ////Console.WriteLine();
 
-            //Menü
+            ////Menü
             Console.WriteLine();
             Menü();
+
+            //Taschenrechner
+            //Taschenrechner();
+            //Console.WriteLine();
         }
 
         public static string Einlesen(string prompt, string error)
@@ -65,7 +69,7 @@ namespace Cemal.Week04
                     int userinput = int.Parse(Console.ReadLine());
                     return userinput;
                 }
-                catch (Exception)
+                catch (FormatException)
                 {
                     Console.WriteLine(error);
                 }
@@ -107,21 +111,33 @@ namespace Cemal.Week04
             Console.ReadKey();
         }
 
+
+
         public static void Menü()
         {
             int eingabe = 0;
             int groese = 0;
             bool restart = false;
+            string[] name = { "", "Square", "Empty Square", "Triangle", "Christbaum" };
             Console.WriteLine("Willkommen bei meinen Aufgaben!");
 
             while (restart == false)
             {
                 Console.WriteLine("Was möchten sie zeichnen?");
-                Console.WriteLine(" 1. Square \n 2. Empty Square \n 3. Trinangle");
+                for (int i = 1; i < name.Length; ++i)
+                {
+                    Console.WriteLine(" {0}. {1}", i, name[i]);
+                }
+
                 Console.Write("Bitte wählen sie aus");
 
+                while(eingabe == name.Length)
+                {
                 eingabe = Zahleinlesen("", "Du kannst nur Zahlen von 1 - 3 eingeben!");
-                groese = Zahleinlesen("Wie groß soll der {0} sein?", "Du kannst nur Zahlen eingeben!");
+                string prompt = string.Format("Wie groß soll der {0} sein?", name[eingabe]);
+                groese = Zahleinlesen(prompt, "Du kannst nur Zahlen eingeben!");
+                }                
+
                 string symbol = Einlesen("Welches Zeichen soll verwendet werden?", "Du kannst nur zeichen eingeben!");
 
                 if (eingabe == 1)
@@ -144,11 +160,6 @@ namespace Cemal.Week04
                 Console.WriteLine("Möchten sie noch etwas zeichen? (j / n)");
                 string restartJorN = Console.ReadLine();
 
-                if (restartJorN == "j")
-                {
-                    restart = false;
-                }
-
                 if (restartJorN == "n")
                 {
                     restart = true;
@@ -156,6 +167,13 @@ namespace Cemal.Week04
 
                 Console.WriteLine();
             }
+        }
+
+
+
+        public static void Taschenrechner()
+        {
+            Console.WriteLine();
         }
 
 
