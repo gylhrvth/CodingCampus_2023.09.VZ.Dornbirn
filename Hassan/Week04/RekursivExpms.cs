@@ -20,7 +20,7 @@ namespace Hassan.Week04
             Console.WriteLine("Fakt(5) = " + faktorialResult);
 
             // Teste die Fibonacci-Funktion
-            int fibonacciResult = Fibonacci(6);
+            int fibonacciResult = Fibonacci(20);
             Console.WriteLine("Fibonacci(6) = " + fibonacciResult);
 
         }

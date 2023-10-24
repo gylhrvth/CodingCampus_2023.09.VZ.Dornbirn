@@ -20,10 +20,10 @@ namespace Kerem.Week04
             //int userinputnumber = ReadNumber("Enter a number", "Please only numbers! Try again!");
             //Console.WriteLine("Userinput was: " + userinputnumber);
 
-            //Console.WriteLine("Welcome to my super duper Guessgame");
-            //Guessgame();
+            Console.WriteLine("Welcome to my super duper Guessgame");
+            Guessgame();
 
-            Menu("Welcome to my Exercises!", "What do you wanna draw?", "PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
+            //Menu("Welcome to my Exercises!", "What do you wanna draw?", "PrintEmptySquare", "PrintSquare", "PrintTriangleTopRight", "How big should it be?", "Which sign you wanna use?");
 
 
         }
@@ -32,6 +32,7 @@ namespace Kerem.Week04
         {
             int num = new Random().Next(101);
             int guess = 0;
+            int tries = 0;
 
             while (num != guess)
             {
@@ -39,6 +40,7 @@ namespace Kerem.Week04
                 {
                     Console.WriteLine("Enter a number between 1 and 100!!");
                     guess = Convert.ToInt32(Console.ReadLine());
+                    tries++;
 
                     if (guess > 100 || guess < 1)
                     {
@@ -46,7 +48,7 @@ namespace Kerem.Week04
                     }
                     else if (guess == num)
                     {
-                        Console.WriteLine("Good job jackass!");
+                        Console.WriteLine($"Good job jackass! You needed {tries}");
                     }
                     else if (guess > num)
                     {

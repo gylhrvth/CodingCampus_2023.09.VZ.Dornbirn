@@ -38,7 +38,8 @@ namespace Kerem.Exercises
                     Console.WriteLine("Der Zähler ist gerade " + m);
 
                 }
-                
+                Console.WriteLine();
+
             }
 
 

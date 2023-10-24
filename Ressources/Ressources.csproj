@@ -7,11 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Week01\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Ressources\Ressources.csproj" />
-  </ItemGroup>
 </Project>

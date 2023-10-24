@@ -29,7 +29,7 @@ namespace Mehmet.Week04
                 {
                     if (j == 0 || i == 0)
                     {
-                        arr[i][j] += 1;
+                        arr[i][j] = 1;
                     }
 
                     else
