@@ -8,5 +8,8 @@ namespace Sven.Week05
 {
     internal class StringUebungen
     {
+
+
+
     }
 }
