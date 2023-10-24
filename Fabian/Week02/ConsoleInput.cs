@@ -1,4 +1,5 @@
 ﻿using Fabian.Week01;
+using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
 
 namespace Fabian.Week02
@@ -10,9 +11,9 @@ namespace Fabian.Week02
             //GuessGame();
             //Menu();
             //Calculator();
-            CalculatorBonus();
+            //CalculatorBonus();
             //BusinessCard();
-            //TheGameBegins();
+            TheGameBegins();
         }
 
         public static String ReadString(String msg, String pattern = @"^[a-zA-Z]+$")
@@ -73,6 +74,10 @@ namespace Fabian.Week02
                 {
                     Console.WriteLine("only numbers!");
                 }
+                catch(OverflowException)
+                {
+                    Console.WriteLine("number is too high!");
+                }
             }
             return num;
         }
@@ -89,6 +94,10 @@ namespace Fabian.Week02
                 catch (FormatException)
                 {
                     Console.WriteLine("only numbers!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("number is too high!");
                 }
             }
             return num;
@@ -186,36 +195,33 @@ namespace Fabian.Week02
             {
                 try
                 {
-
-                    Console.Write("Enter number 1: ");
-                    float num1 = float.Parse(Console.ReadLine());
+                    double num1 = ReadDouble("Enter number 1 : ");
 
                     Console.WriteLine("What would you like to do?");
-                    String option = ReadString("*, + , -, /, ^ : ", "^[*\\+\\-\\/\\^]$");
+                    String option = ReadString("*, + , -, /, ^ : ", @"^[*\+\-\/\^]$");
 
-                    Console.Write("Enter number 2: ");
-                    float num2 = float.Parse(Console.ReadLine());
+                    double num2 = ReadDouble("Enter number 2: ");
 
                     switch (option)
                     {
                         case "+":
-                            float sum = num1 + num2;
+                            double sum = num1 + num2;
                             Console.WriteLine($"{num1} + {num2} = {sum}");
                             break;
                         case "-":
-                            float difference = num1 - num2;
+                            double difference = num1 - num2;
                             Console.WriteLine($"{num1} - {num2} = {difference}");
                             break;
                         case "*":
-                            float product = num1 * num2;
+                            double product = num1 * num2;
                             Console.WriteLine($"{num1} * {num2} = {product}");
                             break;
                         case "^":
-                            float pow = (float)Math.Pow(num1, num2);
+                            double pow = Math.Pow(num1, num2);
                             Console.WriteLine($"{num1} ^ {num2} = {pow}");
                             break;
                         case "/":
-                            float quotient = num1 / num2;
+                            double quotient = num1 / num2;
                             if (num2 == 0)
                             {
                                 Console.WriteLine("cant divide by 0!");
@@ -254,7 +260,7 @@ namespace Fabian.Week02
             {
 
                 Console.WriteLine("What would you like to do?");
-                String option = ReadString("*, + , -, /, ^, = : ", "^[*\\+\\-\\/\\^\\=]$"); ;
+                String option = ReadString("*, + , -, /, ^, = : ", @"^[*\+\-\/\^\=]$"); ;
 
 
                 if (option == "=")
@@ -427,18 +433,7 @@ namespace Fabian.Week02
                     int thirdNumber2 = tmp2 / 10;
                     tmp2 -= thirdNumber2 * 10;
                     int fourthNumber2 = tmp2;
-
-
-                    if (guess == value)
-                    {
-                        Console.WriteLine("You won!");
-                        Console.WriteLine($"you needed {tries} tries");
-
-                        if (!AskToPlayAgain())
-                        {
-                            return;
-                        }
-                    }
+                    
 
                     if (firstNumber == firstNumber2)
                     {
@@ -476,6 +471,17 @@ namespace Fabian.Week02
                     if (wrongPlaceNumbers > 0)
                     {
                         Console.WriteLine($"{wrongPlaceNumbers} numbers are on the wrong place");
+                    }
+
+                    if (guess == value)
+                    {
+                        Console.WriteLine("You won!");
+                        Console.WriteLine($"you needed {tries} tries");
+
+                        if (!AskToPlayAgain())
+                        {
+                            return;
+                        }
                     }
                 }
             }
