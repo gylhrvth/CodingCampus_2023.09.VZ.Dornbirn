@@ -82,32 +82,36 @@ namespace Kerem.Week04
             }
             return result;
         }
-        public static int[][] PascalDreieck(int rows, int cols)
-        {
-            int[][] arr = new int[rows][];
+        //public static int[][] PascalDreieck(int rows, int cols)
+        //{
+        //    int[][] arr = new int[rows][];
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = new int[cols];
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        arr[i] = new int[cols];
 
-            }
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    arr[i][j] = 1;
-                }
+        //    }
+        //    for (int i = 0; i < rows; i++)
+        //    {
+        //        for (int j = 0; j < cols; j++)
+        //        {
+        //            arr[i][j] = 1;
+        //        }
 
-                return null;
+        //        return null;
 
-            }
+        //    }
 
-        }
     }
-} 
+<<<<<<< HEAD
+}
+
+
+=======
+ 
+>>>>>>> 2e57e2a1419ed8a992400ab2a8c28989dcb5c5ea
 
 
 
-    
 
 

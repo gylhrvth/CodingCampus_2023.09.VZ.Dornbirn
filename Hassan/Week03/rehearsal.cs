@@ -8,11 +8,12 @@ namespace Hassan.Week03
 {
     public class rehearsal
     {
+        public static  Random rand = new Random();
 
         public static void Start()
         {
 
-
+/*
             Console.WriteLine("Orginal");
             int[] orginal = Array(10);
 
@@ -36,14 +37,11 @@ namespace Hassan.Week03
 
             Console.WriteLine("[{0}]", string.Join(", ", copy));
             Console.WriteLine();
+*/
+            int[] arr = GenerateRandomArray(10);
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
 
-           
 
-            int[] array = Array(31);
-            int[] array2 = Array(49);
-            int[] array3 = Array(3);
-            int[] array4 = Array(51);
-            int[] array5 = Array(41);
 
 
 
@@ -73,6 +71,18 @@ namespace Hassan.Week03
 
         }
 
+        public static int[] GenerateRandomArray(int size)
+        {
+            int[] randomArr = new int[size];
 
+            for (int i = 0; i < size; i++)
+            {
+                randomArr[i] = rand.Next(-50, 51);
+            }
+
+            return randomArr;
+        }
+
+        
     }
 }

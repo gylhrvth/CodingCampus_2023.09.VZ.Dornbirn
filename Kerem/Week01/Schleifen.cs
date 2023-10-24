@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kerem.Week01
+﻿namespace Kerem.Week01
 {
     internal class Schleifen
     {
@@ -17,7 +11,7 @@ namespace Kerem.Week01
                 Console.WriteLine(i);
             }
             int x = 0;
-            while(x < 10)
+            while (x < 10)
             {
                 Console.WriteLine(x);
                 x = x + 1;
@@ -32,13 +26,13 @@ namespace Kerem.Week01
             {
                 if (j % 2 == 0)
                 {
-                    Console.WriteLine( j + " ist gerade ");
-                }    
+                    Console.WriteLine(j + " ist gerade ");
+                }
             }
             for (int a = 10; a >= -10; --a)
             {
                 Console.WriteLine("Der Zähler ist " + a);
-              
+
             }
 
 
