@@ -18,9 +18,29 @@ namespace Simon.Week05
             //Print2darr(Tac(Tic()));
             //PrintTicTacToe(Tic());
             //Tac(Tic());
-            Toe(Tic());
+            Toe(Create2darrTic());
         }
         //print TicTacToe
+        public static void Toe(int[][] arr)
+        {
+            while (true)
+            {
+                PrintTicTacToe(Create2darrTic());
+                Tac(Create2darrTic());
+                char ask = Readuserinputchar_yn("Möchten Sie noch einmal spielen? (j/n)", "Bitte wähle nur j oder n aus für JA bzw NEIN");
+                if (ask == 'n')
+                {
+                    return;
+                }
+                else if (ask != 'n' || ask != 'j') //abfrage funktioniert noch nicht ganz
+                {
+
+                }
+            }
+
+
+        }
+
         public static void PrintTicTacToe(int[][] arr)
         {
             //for (int i = 0; i < arr.Length; i++)
@@ -46,8 +66,7 @@ namespace Simon.Week05
             }
         }
 
-
-        public static int[][] Tic()
+        public static int[][] Create2darrTic()
         {
             int[][] arr = new int[3][];
             for (int i = 0; i < arr.Length; i++)
@@ -60,7 +79,7 @@ namespace Simon.Week05
             }
             return arr;
         }
-        public static char Readuserinputchar(string prompt, string error)
+        public static char Readuserinputchar_yn(string prompt, string error)
         {
             Console.WriteLine(prompt);
             while (true)
@@ -85,26 +104,7 @@ namespace Simon.Week05
                 }
             }
         }
-        public static void Toe(int[][] arr)
-        {
-            while (true)
-            {
-                PrintTicTacToe(Tic());
-                Tac(Tic());
-                char ask = Readuserinputchar("Möchten Sie noch einmal spielen? (j/n)", "Bitte wähle nur j oder n aus für JA bzw NEIN");
-                if (ask == 'n')
-                {
-                    return;
-                }
-                else if (ask != 'n' || ask != 'j') //abfrage funktioniert noch nicht ganz
-                {
-
-                }
-            }
-
-
-        }
-
+        
         public static int[][] Tac(int[][] arr)
         {
             int count = 0;
@@ -150,227 +150,31 @@ namespace Simon.Week05
         {
 
             int input = Console_Input.Readuserinputint("\nVerwende das Numpad um die Zahl zu plazieren. 7 entspricht hierbei links oben!", "Verwende das Numpad um die Zahl zu plazieren. 7 entspricht hierbei links oben!", 1, 9);
+            input -= 1;
             if (count % 2 == 0)
             {
-                if (input == 7)
+                if (arr[input % 3][input / 3] == empty)
                 {
-                    if (arr[0][0] == empty)
-                    {
-                        arr[0][0] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
+                    arr[input % 3][input / 3] = userinput1;
+                    PrintTicTacToe(arr);
                 }
-                else if (input == 8)
+                else
                 {
-                    if (arr[0][1] == empty)
-                    {
-                        arr[0][1] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 9)
-                {
-                    if (arr[0][2] == empty)
-                    {
-                        arr[0][2] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 4)
-                {
-                    if (arr[1][0] == empty)
-                    {
-                        arr[1][0] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 5)
-                {
-                    if (arr[1][1] == empty)
-                    {
-                        arr[1][1] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 6)
-                {
-                    if (arr[1][2] == empty)
-                    {
-                        arr[1][2] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 1)
-                {
-                    if (arr[2][0] == empty)
-                    {
-                        arr[2][0] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 2)
-                {
-                    if (arr[2][1] == empty)
-                    {
-                        arr[2][1] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 3)
-                {
-                    if (arr[2][2] == empty)
-                    {
-                        arr[2][2] = userinput1;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
+                    Console.WriteLine(warning);
                 }
             }
             else
             {
-                if (input == 7)
+                if (arr[input % 3][input / 3] == empty)
                 {
-                    if (arr[0][0] == empty)
-                    {
-                        arr[0][0] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
+                    arr[input % 3][input / 3] = userinput2;
+                    PrintTicTacToe(arr);
                 }
-                else if (input == 8)
+                else
                 {
-                    if (arr[0][1] == empty)
-                    {
-                        arr[0][1] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
+                    Console.WriteLine(warning);
                 }
-                else if (input == 9)
-                {
-                    if (arr[0][2] == empty)
-                    {
-                        arr[0][2] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 4)
-                {
-                    if (arr[1][0] == empty)
-                    {
-                        arr[1][0] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 5)
-                {
-                    if (arr[1][1] == empty)
-                    {
-                        arr[1][1] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 6)
-                {
-                    if (arr[1][2] == empty)
-                    {
-                        arr[1][2] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 1)
-                {
-                    if (arr[2][0] == empty)
-                    {
-                        arr[2][0] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 2)
-                {
-                    if (arr[2][1] == empty)
-                    {
-                        arr[2][1] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
-                else if (input == 3)
-                {
-                    if (arr[2][2] == empty)
-                    {
-                        arr[2][2] = userinput2;
-                        PrintTicTacToe(arr);
-                    }
-                    else
-                    {
-                        Console.WriteLine(warning);
-                    }
-                }
+
             }
         }
 
