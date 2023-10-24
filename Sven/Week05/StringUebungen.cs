@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Sven.Week05
 {
@@ -11,7 +13,7 @@ namespace Sven.Week05
 
         public static void Start()
         {
-
+            
             String[] names = new String[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina",
                 "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula",
                 "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal",
@@ -29,7 +31,24 @@ namespace Sven.Week05
             Console.WriteLine("{0}", string.Join(", ", LexicoAscend(names)));
             Console.WriteLine();
 
-            
+            Console.WriteLine("Bubblesort String Lexicographic Ascending:");
+            Console.WriteLine("{0}", string.Join(", ", LexicoDescend(names)));
+            Console.WriteLine();
+
+            Console.WriteLine("Bubblesort String Bool:");
+            bool boolean = false;
+            Console.WriteLine("{0}", string.Join(", ", SortNamesBool(names, boolean)));
+            Console.WriteLine();
+
+            Console.WriteLine("Bubblesort String Bool:");
+            Console.WriteLine("{0}", string.Join(", ", SortIndex(names)));
+            Console.WriteLine();
+
+            Console.WriteLine("Bubblesort String Bool:");
+            Reverse();
+            Console.WriteLine();
+
+
 
         }
         public static string[] AscendNames(string[] arr)
@@ -68,8 +87,8 @@ namespace Sven.Week05
             return arr;
         }
         public static string[] LexicoAscend(string[] arr)
-        { 
-            
+        {
+
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = 0; j < arr.Length - 1; j++)
@@ -81,12 +100,97 @@ namespace Sven.Week05
                         arr[j + 1] = temp;
                     }
                 }
-      
-                
+
+            }
+            return arr;
+        }
+        public static string[] LexicoDescend(string[] arr)
+        {
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    if (string.Compare(arr[j], arr[j + 1]) < 0)
+                    {
+                        string temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+
+            }
+            return arr;
+        }
+        public static string[] SortNamesBool(string[] arr, bool boolean)
+        {
+            string temp;
+
+            if (boolean == true)
+            {
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    for (int j = 0; j < arr.Length - 1; j++)
+                    {
+                        if (arr[j].Length > arr[j + 1].Length)
+                        {
+                            temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+
+            else if (boolean == false)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    for (int j = 0; j < arr.Length - 1; j++)
+                    {
+                        if (arr[j].Length < arr[j + 1].Length)
+                        {
+                            temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+            return arr;
+
+        }
+        public static string[] SortIndex(string[] arr)
+        {
+            string temp;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    if (arr[j][2] > arr[j + 1][2])
+                    {
+                        temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
             }
             return arr;
         }
 
+        public static void Reverse()
+        {   
+            Console.WriteLine("Wilkommen zum ReverseProgramm!");
+            string input = Console.ReadLine();
+            char[] mychar = input.ToCharArray();
+            
+            
+            Array.Reverse(mychar);
+
+            Console.WriteLine(mychar);
+
+        }
 
     }
 }
