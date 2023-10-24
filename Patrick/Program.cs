@@ -1,6 +1,7 @@
-﻿using Patrick.Week04;
-//ConsoleInput.Start();
+﻿using Patrick.Week04.Array2D;
+using Patrick.Week04.ConsoleInputs;
+using Patrick.Week04.Sort_Algorithm;
 
-Array2D.Start();
+Calculator.Start();
 
 //Patrick.Week03.ExamplesArrays.start();

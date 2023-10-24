@@ -1,1 +1,1 @@
-﻿Simon.Week03.Console_Input.Start();
+﻿Simon.Week05.UebungenString.Start();

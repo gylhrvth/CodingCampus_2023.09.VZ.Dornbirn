@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Kerem.Week03
+﻿namespace Kerem.Week03
 {
     internal class ArrayExamples
     {
@@ -334,25 +326,6 @@ namespace Kerem.Week03
             return arr7;
 
         }
-        public static void SortArrayConfig(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                for (int j = 0; j < array.Length - 1; j++)
-                {
-                    if (array[j] > array[i])
-                    {
-                        int temp = array[j];
-                        array[j + 1] = array[i];
-                        array[i + 1] = temp;
-                    }
-
-                }
-            }
-        }
-     
     }
 }
-
-
 
