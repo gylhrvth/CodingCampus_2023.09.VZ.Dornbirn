@@ -13,7 +13,7 @@ namespace Sven.Week04
         public static void Start()
         {
             Console.WriteLine("Create 2DArray:");
-            int[][] arr2d = Create2DArray(3,5);
+            int[][] arr2d = Create2DArray();
             Print2DArray(arr2d);
             Console.WriteLine();
 
@@ -31,7 +31,7 @@ namespace Sven.Week04
 
         }
 
-        public static int [][] Create2DArray( int rows, int columns)
+        public static int [][] Create2DArray()
         {
 
             Random random = new Random();

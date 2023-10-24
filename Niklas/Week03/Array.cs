@@ -364,26 +364,67 @@ namespace Niklas.Week03
         {
             int player1;
             int player2;
+            int field = 1;
 
             int[][] arr = new int[rows][];
             for (int i = 0; i < rows; i++)
             {
-                Console.Write("| ");
-                for (int j = 0; j < columns; j++)
+                Console.Write("|" + field);
+                for (int j = 1; j < columns; j++)
                 {
-                    Console.Write("| ");
+                    if (j == 1)
+                    {
+                        Console.Write("|" + (field + 3));
+                    }
+                    else if (j == 2)
+                    {
+                        Console.Write("|" + (field + 6) + "|");
+                    }
                 }
                 Console.WriteLine();
+                field++;
             }
 
-            Console.Write("Player 1 has to choose a field from 1 to 9: ");
+            Console.Write("Player 1 has to choose a number from 1 to 9 from the field above: ");
             player1 = Convert.ToInt32(Console.ReadLine());
-            if (1 == 1 )
+            if (Convert.ToInt32(player1) == 1)
+            {
+                field = 1;
+                for (int i = 0; i < rows; i++)
+                {
+                    if (field == 1)
+                    {
+                        field++;
+                        Console.Write("|x|" + field);
+                        field++;
+                    }
+                    else if (field > 1)
+                    {
+                        Console.Write("|" + field);
+                        for (int j = 1; j < columns; j++)
+                        {
+                            if (j == 1)
+                            {
+                                field++;
+                                //field = 4;
+                                Console.Write("|" + field);
+                                field++;
+                            }
+                            else if (j == 2)
+                            {
+                                //field = 7;
+                                Console.Write("|" + (field) + "|");
+                            }
+                        }
+                    }
+                    Console.WriteLine();
+                    field++;
+                }
 
+            }
             Console.WriteLine();
             return arr;
         }
-
 
 
 
