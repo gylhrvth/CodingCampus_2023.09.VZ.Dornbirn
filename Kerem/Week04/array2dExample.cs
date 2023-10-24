@@ -102,12 +102,16 @@ namespace Kerem.Week04
 
         //    }
 
-        }
     }
+<<<<<<< HEAD
+}
+
+
+=======
  
+>>>>>>> 2e57e2a1419ed8a992400ab2a8c28989dcb5c5ea
 
 
 
-    
 
 

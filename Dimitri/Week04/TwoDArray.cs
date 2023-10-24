@@ -166,7 +166,7 @@ namespace Dimitri.Week04
                 array[i] = new int[input];
             }
 
-            // fill first 3 values
+            // fill everything with ones
 
             for (int j = 0; j < input; j++)
             {
@@ -201,18 +201,18 @@ namespace Dimitri.Week04
             }
         }
 
-        public static string[] BinomialFormula() 
+        public static string[] BinomialFormula()
         {
             int input = IntRead("What binomial formula do you want?", "Input is not an integer, please try again integer:");
-            string[] formula  =  new string[input];
+            string[] formula = new string[input];
 
             Console.WriteLine(string.Join(" ", formula));
 
             int[][] pascalTriangle = PascalTriangle(input);
 
-            for(int i = 0; i <=input; i++)
+            for (int i = 0; i <= input; i++)
             {
-                for(int j = input; j <= 0; j++)
+                for (int j = input; j <= 0; j++)
                 {
                     //int intFormulaPart0 = pascalTriangle[i][j];
                     //string stringFormulaPart0 = Convert.ToString(intFormulaPart0);
@@ -240,11 +240,11 @@ namespace Dimitri.Week04
             /* For some reason this only returns a 0 if you have an array with only one element */
         }
 
-    //    public static void BuildBinomialString(???)
-    //    {
-    //        for blabla until ende ++ {
-    //            string + string + string .Compare()...
-    //        }
-    //    }
+        //    public static void BuildBinomialString(???)
+        //    {
+        //        for blabla until ende ++ {
+        //            string + string + string .Compare()...
+        //        }
+        //    }
     }
 }
