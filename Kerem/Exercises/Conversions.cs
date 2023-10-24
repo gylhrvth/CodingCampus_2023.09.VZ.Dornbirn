@@ -10,7 +10,7 @@ namespace Kerem.Exercises
     {
         public static void main()
         {
-            //implizite Kovertierung
+            //implizite Konvertierung
             int num = 213902;
             long mylong = num;
 
