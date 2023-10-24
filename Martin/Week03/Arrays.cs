@@ -203,14 +203,25 @@ namespace Martin.Week03
             bool GameOver = false;
 
             Console.WriteLine("Willkommen zum Feld errate Spiel!");
-            Console.WriteLine("Wähle eine 1 und siehe was sich dahinter versteckt, du darfst keine 7 finden! ;(");
+            Console.WriteLine("Wähle eine 0 und siehe was sich dahinter versteckt, du darfst keine 7 finden! ;(");
 
-            while(GameOver == false)
+            Console.WriteLine();
+
+            for (int row = 0; row < arr2d.Length; row++)
+            {
+                for (int col = 0; col < arr2d[row].Length; col++)
+                {
+                    Console.Write(arr2d[row][col] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            while (GameOver == false)
             {
 
                 Console.WriteLine();
 
-                Console.WriteLine("Gib die Zeile ein 0 bis 3");
+                Console.WriteLine("Gib die Spalte ein 0 bis 3");
                 int guessrow = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Gib die Stelle der Spalte ein 0 bis 3");
@@ -222,7 +233,14 @@ namespace Martin.Week03
 
                 if(arr2d[guessrow][guessCol] == computerguess)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    arr2d[guessrow][guessCol] = 7;
+
                     Console.WriteLine("Verloren..");
+
+                    Console.ResetColor();
+
                     Console.WriteLine();
 
                     for (int row = 0; row < arr2d.Length; row++)
@@ -233,8 +251,6 @@ namespace Martin.Week03
                         }
                         Console.WriteLine();
                     }
-
-                    computerguess = 7;
 
                     break;
                 }

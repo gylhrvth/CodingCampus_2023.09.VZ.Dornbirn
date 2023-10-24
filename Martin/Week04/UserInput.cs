@@ -226,42 +226,53 @@ namespace Martin.Week04
 
         public static void Calculator(string msg)
         {
-            Console.WriteLine(msg);
-
-            Console.WriteLine("Gieb die erste Zahl ein:");
-            double FirstNumber = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Gieb die zweite Zahl ein:");
-            double SecondNumber = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Wähle bitte mit den Operator aus (+,-,*,^,/");
-            Char symbol = Convert.ToChar(Console.ReadLine());
-
             int result = 0;
-
-            switch(symbol)
+            string antwort;
+            do
             {
-                case '+':
-                Console.WriteLine("Result: " + ((FirstNumber + SecondNumber)));
-                break;
+                Console.WriteLine(msg);
 
-                case '-':
-                Console.WriteLine("Result: " + ((FirstNumber - SecondNumber)));
-                break;
+                Console.WriteLine("Gieb die erste Zahl ein:");
+                float FirstNumber = Convert.ToSingle(Console.ReadLine());
 
-                case '*':
-                Console.WriteLine("Result: " + ((FirstNumber * SecondNumber)));
-                break;
+                Console.WriteLine("Gieb die zweite Zahl ein:");
+                float SecondNumber = Convert.ToSingle(Console.ReadLine());
 
-                case '^':
-                Console.WriteLine("Result: " + (Math.Pow(FirstNumber,SecondNumber)));
-                break;
+                Console.WriteLine("Wähle bitte mit den Operator aus (+,-,*,^,/");
+                Char symbol = Convert.ToChar(Console.ReadLine());
 
-                case '/':
-                Console.WriteLine("Result: " + ((FirstNumber/SecondNumber)));
-                break;
+          
 
-            }
+          
+
+                switch (symbol)
+                {
+                    case '+':
+                        Console.WriteLine("Result: " + ((FirstNumber + SecondNumber)));
+                        break;
+
+                    case '-':
+                        Console.WriteLine("Result: " + ((FirstNumber - SecondNumber)));
+                        break;
+
+                    case '*':
+                        Console.WriteLine("Result: " + ((FirstNumber * SecondNumber)));
+                        break;
+
+                    case '^':
+                        Console.WriteLine("Result: " + (Math.Pow(FirstNumber, SecondNumber)));
+                        break;
+
+                    case '/':
+                        Console.WriteLine("Result: " + ((FirstNumber / SecondNumber)));
+                        break;
+
+                }
+                Console.WriteLine("Willst du nochmal etwas ausrechnen? Y/N");
+                antwort = Console.ReadLine();
+            } 
+            while (antwort.ToUpper() == "Y");
+
 
         }
     }
