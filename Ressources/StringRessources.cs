@@ -17,6 +17,9 @@ namespace Ressources
 				The importance of Mme. Curie’s work is reflected in the numerous awards bestowed on her. She received many honorary science, medicine and law degrees and honorary memberships of learned societies throughout the world. Together with her husband, she was awarded half of the Nobel Prize for Physics in 1903, for their study into the spontaneous radiation discovered by Becquerel, who was awarded the other half of the Prize. In 1911 she received a second Nobel Prize, this time in Chemistry, in recognition of her work in radioactivity. She also received, jointly with her husband, the Davy Medal of the Royal Society in 1903 and, in 1921, President Harding of the United States, on behalf of the women of America, presented her with one gram of radium in recognition of her service to science.
 				""";
 		}
+
+
+
 	}
 }
 

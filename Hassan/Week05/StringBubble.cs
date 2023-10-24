@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ressources;
+
 
 namespace Hassan.Week05
 {
@@ -11,11 +13,12 @@ namespace Hassan.Week05
     {
         public static void Start()
         {
+            Console.WriteLine(StringRessources.getText());
+
             string[] names = new string[]
-                {
-            "Joachim", "Mert", "Eric", "Marie Christine", "Benjamin",
-            "Sandro", "Aygün", "Hassan", "Ämer", "Lukas", "Gyula"
-                 };
+                
+            {"Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
+            
             // Sortiere die Namen nach Länge aufsteigend (Ascending)
             BubbleSort(names);
             Console.WriteLine("Sortiert nach Länge aufsteigend:");
