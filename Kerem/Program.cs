@@ -2,6 +2,7 @@
 //Kerem.Week04.ConsoleInput.Start();
 //Kerem.Week04.Recursive.Start();
 //Kerem.Week04.CalculatorExample.Start();
-Kerem.Week04.array2dExample.Start();
+//Kerem.Week04.array2dExample.Start();
+Kerem.Exercises.Parsing.main();
 
 
