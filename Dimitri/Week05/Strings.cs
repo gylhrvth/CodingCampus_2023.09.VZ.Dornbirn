@@ -283,6 +283,43 @@ namespace Dimitri.Week05
             Console.WriteLine(Ressources.StringRessources.getText());
         }
 
+        public static void PrintTable()
+        {
+            String[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
+            String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
+            int[] age = { 40, 78, 5, 18, 81 };
+            String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
+            float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
+
+            string[][] table = new string[firstName.Length][];
+
+            for(int i = 0; i < firstName.Length; i++)
+            {
+                table[i][0] = firstName[i];
+            }
+
+            for (int i = 0; i < lastName.Length; i++)
+            {
+                table[i][1] = lastName[i];
+            }
+
+            for (int i = 0; i < age.Length; i++)
+            {
+                table[i][2] = int.ToString(age[i]);
+            }
+
+            for (int i = 0; i < place.Length; i++)
+            {
+                table[i][3] = place[i];
+            }
+
+            for (int i = 0; i < distanceFromCapital.Length; i++)
+            {
+                table[i][4] = float.ToString(distanceFromCapital[i]);
+            }
+
+            Week04.TwoDArray.PrintArray(table, "|");
+        }
 
     }
 }
