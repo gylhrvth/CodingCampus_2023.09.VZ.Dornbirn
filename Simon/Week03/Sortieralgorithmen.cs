@@ -11,24 +11,26 @@ namespace Simon.Week03
         public static Random random = new Random();
         public static void Start()
         {
-            int[] rarr = Week02.Array.CreateRArray(0, 100, 10);
-            Console.WriteLine("[{0}]", string.Join(", ", rarr));
-            Week02.Array.PrintArray(BubbleSortasc(rarr));
-            Console.WriteLine("Bubblesort Ascending");
-            PrintArrnice(BubbleSortasc(rarr));
-            Console.WriteLine("Bubblesort Descending");
-            PrintArrnice(BubbleSortdesc(rarr));
-            PrintArrnice3(Matrix2(4, 3, 0, 5));
+            //Console.WriteLine("Random Array");
+            //int[] rarr = Week02.Array.CreateRArray(0, 100, 10);
+            //Console.WriteLine("[{0}]", string.Join(", ", rarr));
+
+            //Console.WriteLine("Bubblesort Ascending");
+            //PrintArrnice(BubbleSortasc(rarr));
+            //Console.WriteLine("Bubblesort Descending");
+            //PrintArrnice(BubbleSortdesc(rarr));
+
+            //Console.WriteLine("Matrix");
+            //PrintMatrix(Matrixworking(4, 3, 0, 5));
+            
+
+
         }
         public static void PrintArrnice(int[] arr)
         {
             Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
-        public static void PrintArrnice2(int[,] arr)
-        {
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
-        }
-        public static void PrintArrnice3(int[][] arr)
+        public static void PrintMatrix(int[][] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
@@ -44,7 +46,7 @@ namespace Simon.Week03
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length  -i - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
@@ -61,7 +63,7 @@ namespace Simon.Week03
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length -i - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] < arr[j + 1])
                     {
@@ -73,7 +75,8 @@ namespace Simon.Week03
             }
             return arr;
         }
-        //Aufgabe 2D-Array
+        
+        //Aufgabe 2D-Array old Version
         public static int[][] Matrix2(int width, int height, int upper, int lower)
         {
             int summcol = 0;
@@ -100,7 +103,7 @@ namespace Simon.Week03
             }
             return arr;
         }
-       
+
         public static int[][] Matrixworking(int width, int height, int upper, int lower)
         {
             int[][] arr = new int[height][];
@@ -137,7 +140,6 @@ namespace Simon.Week03
             }
             return sum;
         }
-
     }
 
 }

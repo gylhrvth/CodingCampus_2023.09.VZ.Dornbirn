@@ -14,6 +14,7 @@ using System.Numerics;
 
 namespace Niklas.Week04
 {
+
     internal class Input
     {
         public static void Start()
@@ -25,16 +26,25 @@ namespace Niklas.Week04
 
             ////RateSpiel();
 
+            //int e = 0;
 
-            //Console.WriteLine("What is the min number? ");
-            //Console.Write(">>>: ");
-            //int min = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("What is the max number? ");
-            //Console.Write(">>>: ");
-            //int max = Convert.ToInt32(Console.ReadLine());
-            //RateSpielCustom(max, min);
+            //while (e == 0)
+            //{
+            //    Console.WriteLine("Enter a min number: ");
+            //    Console.Write(">>>: ");
+            //    int min = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine("Enter a max number: ");
+            //    Console.Write(">>>: ");
+            //    int max = Convert.ToInt32(Console.ReadLine());
 
-            //Console.WriteLine("______________________________________");
+            //    Console.WriteLine("How many tries do you want?");
+            //    int tries = Convert.ToInt32(Console.ReadLine());
+
+            //    RateSpielCustom(max, min, tries);
+            //    e++;
+            //}
+
+            ////Console.WriteLine("______________________________________");
 
             //int x = 0;
 
@@ -48,20 +58,17 @@ namespace Niklas.Week04
             //        Console.Write(">>>:  ");
             //        int form = Convert.ToInt32(Console.ReadLine());
 
-            //        while (x == 5)
-            //        {
-            //            Console.WriteLine("Wrong number!");
-            //            x = 1;
-            //        }
-
             //        Console.WriteLine("What size do you want? ");
             //        Console.Write(">>>: ");
             //        int size = Convert.ToInt32(Console.ReadLine());
             //        Console.WriteLine("What symbol do you want? ");
             //        Console.Write(">>>: ");
             //        char symbol = Convert.ToChar(Console.ReadLine());
-            //        //Menu
+            //        
+
+            //Menu
             //        Menu(symbol, size, form, x);
+            //        x = 1;
 
             //        if (form == 8)
             //        {
@@ -78,10 +85,9 @@ namespace Niklas.Week04
             //                Methoden.PrintSlash(Convert.ToString(symbol), size, false);
             //            }
             //        }
-
             //        while (x == 1)
             //        {
-            //            Console.WriteLine("Do you wanna make a new calculation? (y/n)");
+            //            Console.WriteLine("Do you wanna draw something else? (y/n)");
             //            Console.Write(">>>:  ");
             //            string yesOrNo = Console.ReadLine();
             //            if (yesOrNo == "y")
@@ -91,12 +97,11 @@ namespace Niklas.Week04
             //            else if (yesOrNo == "n")
             //            {
             //                Console.WriteLine("Goodbye! The program is closing...");
-            //                x = 2;
+            //                x = 11;
             //            }
             //        }
-
-            //        }
             //    }
+
             //    catch (Exception ex)
             //    {
             //        Console.WriteLine(ex.Message);
@@ -105,71 +110,70 @@ namespace Niklas.Week04
             //}
 
 
+            ////Console.WriteLine("____________________________________");
 
-            Console.WriteLine("____________________________________");
+            //////Calculator
+            ////Console.WriteLine("Enter your fist number!");
+            ////Console.Write(">>>:  ");
+            ////int num1 = Convert.ToInt32(Console.ReadLine());
+            ////Console.WriteLine("What do you wanna calcualte the numbers with?");
+            ////Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+            ////Console.Write(">>>:  ");
+            ////int i = Convert.ToInt32(Console.ReadLine());
+            ////Console.WriteLine("Enter the second number you wanna calculate with!");
+            ////Console.Write(">>>:  ");
+            ////int num2 = Convert.ToInt32(Console.ReadLine());
 
-            ////Calculator
-            //Console.WriteLine("Enter your fist number!");
-            //Console.Write(">>>:  ");
-            //int num1 = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("What do you wanna calcualte the numbers with?");
-            //Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
-            //Console.Write(">>>:  ");
-            //int i = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine("Enter the second number you wanna calculate with!");
-            //Console.Write(">>>:  ");
-            //int num2 = Convert.ToInt32(Console.ReadLine());
+            ////Calculator(num1, num2, i);
 
-            //Calculator(num1, num2, i);
+            //////CalculatorExtended
 
-            ////CalculatorExtended
+            ////int y = 0;
 
-            //int y = 0;
+            ////try
+            ////{
+            ////    while (y == 0)
+            ////    {
+            ////        Console.WriteLine("Enter your fist number!");
+            ////        Console.Write(">>>:  ");
+            ////        int number1 = Convert.ToInt32(Console.ReadLine());
+            ////        Console.WriteLine("What do you wanna calcualte the numbers with?");
+            ////        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
+            ////        Console.Write(">>>:  ");
+            ////        int j = Convert.ToInt32(Console.ReadLine());
+            ////        Console.WriteLine("Enter the second number you wanna calculate with!");
+            ////        Console.Write(">>>:  ");
+            ////        int number2 = Convert.ToInt32(Console.ReadLine());
 
-            //try
-            //{
-            //    while (y == 0)
-            //    {
-            //        Console.WriteLine("Enter your fist number!");
-            //        Console.Write(">>>:  ");
-            //        int number1 = Convert.ToInt32(Console.ReadLine());
-            //        Console.WriteLine("What do you wanna calcualte the numbers with?");
-            //        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
-            //        Console.Write(">>>:  ");
-            //        int j = Convert.ToInt32(Console.ReadLine());
-            //        Console.WriteLine("Enter the second number you wanna calculate with!");
-            //        Console.Write(">>>:  ");
-            //        int number2 = Convert.ToInt32(Console.ReadLine());
+            ////        CalculatorExtended(number1, number2, j);
 
-            //        CalculatorExtended(number1, number2, j);
+            ////        y++;
 
-            //        y++;
-
-            //        while (y == 1)
-            //        {
-            //            Console.WriteLine("Do you wanna make a new calculation? (y/n)");
-            //            Console.Write(">>>:  ");
-            //            string yesOrNo = Console.ReadLine();
-            //            if (yesOrNo == "y")
-            //            {
-            //                y = 0;
-            //            }
-            //            else if (yesOrNo == "n")
-            //            {
-            //                Console.WriteLine("Goodbye! The program is closing...");
-            //                y = 2;
-            //            }
-            //        }
-            //    }
-
+            ////        while (y == 1)
+            ////        {
+            ////            Console.WriteLine("Do you wanna make a new calculation? (y/n)");
+            ////            Console.Write(">>>:  ");
+            ////            string yesOrNo = Console.ReadLine();
+            ////            if (yesOrNo == "y")
+            ////            {
+            ////                y = 0;
+            ////            }
+            ////            else if (yesOrNo == "n")
+            ////            {
+            ////                Console.WriteLine("Goodbye! The program is closing...");
+            ////                y = 2;
+            ////            }
+            ////        }
+            ////    }
 
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //    y = 0;
-            //}
+
+            ////}
+            ////catch (Exception ex)
+            ////{
+            ////    Console.WriteLine(ex.Message);
+            ////    y = 0;
+            ////}
 
             ////CalculatorInfinite
             //int z = 0;
@@ -180,7 +184,7 @@ namespace Niklas.Week04
 
             //    Console.WriteLine("Enter a number you wanna calculate with!");
             //    Console.Write(">>>:  ");
-            //    long number1 = Convert.ToInt32(Console.ReadLine());
+            //    double number1 = Convert.ToInt32(Console.ReadLine());
 
             //    while (z == 0)
             //    {
@@ -188,12 +192,12 @@ namespace Niklas.Week04
             //        Console.WriteLine("What do you wanna calcualte the numbers with?");
             //        Console.WriteLine("1) +\n2) -\n3) *\n4) ^\n5) /");
             //        Console.Write(">>>: ");
-            //        int j = Convert.ToInt32(Console.ReadLine());
+            //        double j = Convert.ToInt32(Console.ReadLine());
 
             //        Console.WriteLine();
             //        Console.WriteLine("Enter another number you wanna calculate with!");
             //        Console.Write(">>>: ");
-            //        long number2 = Convert.ToInt32(Console.ReadLine());
+            //        double number2 = Convert.ToInt32(Console.ReadLine());
 
 
             //        number1 = CalculatorInfinite(number1, number2, j);
@@ -271,10 +275,24 @@ namespace Niklas.Week04
             //    z = 0;
             //}
 
-            Console.WriteLine("___________________________________");
-            //Visitenkarte
+            //Console.WriteLine("___________________________________");
+            ////Visitenkarte
 
-            Visitenkarte();
+            //Visitenkarte();
+
+            Console.WriteLine("___________________________________");
+            int h = 0;
+
+            while (h == 0)
+            {
+                int min = 0;
+                int max = 10000;
+                int tries = 20;
+
+                Game(max, min, tries);
+                h++;
+            }
+
         }
 
         static string StringEinlesen(string input)
@@ -313,50 +331,11 @@ namespace Niklas.Week04
 
         static void RateSpiel()
         {
-            Random rand = new Random();
-            int min = 0;
-            int max = 100;
-            int guess;
-            int number;
-            string response;
-
-            guess = 0;
-            response = "";
-            number = rand.Next(min, max + 1);
-
-            while (guess != number)
-            {
-                Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
-                guess = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Guess: " + guess);
-                if (guess > number && guess < max)
-                {
-                    Console.WriteLine("Your number is too big!");
-                }
-                if (guess < number && guess > min)
-                {
-                    Console.WriteLine("Your number is too low!");
-                }
-                if (guess == number)
-                {
-                    Console.WriteLine("You have won! The number was: " + number);
-                }
-                else if (guess < min || guess > max)
-                {
-                    Console.WriteLine(guess + " is not a valid number!");
-                }
-            }
-
-
-        }
-
-        static int RateSpielCustom(int maxnumber, int minnumber)
-        {
-            while (true)
+            try
             {
                 Random rand = new Random();
-                int min = minnumber;
-                int max = maxnumber;
+                int min = 0;
+                int max = 100;
                 int guess;
                 int number;
                 string response;
@@ -365,41 +344,137 @@ namespace Niklas.Week04
                 response = "";
                 number = rand.Next(min, max + 1);
 
+                if (guess % 1 != 0)
+                {
+                    Console.WriteLine("You can only enter full numbers! Try again.");
+                    min = 0;
+                    max = 0;
+                    number = 0;
+                    guess = 0;
+                }
+
+                while (guess != number)
+                {
+                    Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Guess: " + guess);
+                    if (guess > number && guess < max)
+                    {
+                        Console.WriteLine("Your number is too big!");
+                    }
+                    if (guess < number && guess > min)
+                    {
+                        Console.WriteLine("Your number is too low!");
+                    }
+                    if (guess == number)
+                    {
+                        Console.WriteLine("You have won! The number was: " + number);
+                    }
+                    else if (guess < min || guess > max)
+                    {
+                        Console.WriteLine(guess + " is not a valid number!");
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc);
+            }
+
+        }
+
+        static int RateSpielCustom(int maxnumber, int minnumber, int tries)
+        {
+            int x = 0;
+            int g = 0;
+            while (x == 0)
+            {
+                Random rand = new Random();
+                int min = minnumber;
+                int max = maxnumber;
+                int guess;
+                int number;
+                int playertries = tries;
+                string response;
+
+                guess = 0;
+                response = "";
+                number = rand.Next(min, max + 1);
+
                 try
                 {
+                    if (guess % 1 != 0)
+                    {
+
+                        Console.WriteLine("You can only enter full numbers! Try again.");
+                        min = 0;
+                        max = 0;
+                        number = 0;
+                        guess = 0;
+                        x = 1;
+                    }
 
                     while (guess != number)
                     {
-
                         Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
                         Console.Write(">>>:  ");
                         guess = Convert.ToInt32(Console.ReadLine());
+
+                        if (guess > min && guess < max)
+                        {
+                            playertries--;
+                            if (playertries == 0)
+                            {
+                                Console.WriteLine("You are out of tries!");
+                                return g;
+                            }
+                        }
+
                         if (guess > number && guess <= max)
                         {
-                            Console.WriteLine(guess + " is too big!");
+                            Console.WriteLine(guess + " is too big! Tries: " + "Tries left: " + playertries);
                         }
                         if (guess < number && guess >= min)
                         {
-                            Console.WriteLine(guess + " is too low!");
+                            Console.WriteLine(guess + " is too low!" + "Tries left: " + playertries);
                         }
                         if (guess == number)
                         {
-                            Console.WriteLine("You have won! The number was: " + number);
+                            Console.WriteLine("You have won! The number was: " + number + " Tries left: " + playertries);
                         }
                         else if (guess < min || guess > max)
                         {
                             Console.WriteLine(guess + " is not a valid number!");
                         }
                     }
-
-
                 }
+
                 catch (FormatException exc)
                 {
-                    Console.Error.WriteLine("You can only write numbers!");
+                    Console.Error.WriteLine("You can only write full numbers!");
+
                 }
+
+                while (x == 1)
+                {
+                    Console.WriteLine("Do you wanna play again? (y/n)");
+                    Console.Write(">>>:  ");
+                    string yesOrNo = Console.ReadLine();
+                    if (yesOrNo == "y")
+                    {
+                        x = 0;
+                    }
+                    else if (yesOrNo == "n")
+                    {
+                        Console.WriteLine("Goodbye! The program is closing...");
+                        x = 11;
+                    }
+                }
+
                 return number;
+
             }
+            return 1;
         }
 
 
@@ -490,10 +565,14 @@ namespace Niklas.Week04
                     Methoden.PrintTree(Convert.ToString(symbol), size);
                     x++;
                 }
-
+                if (form >= 13 || form <= 0)
+                {
+                    Console.WriteLine("Error! Invalid print!");
+                    x++;
+                }
             }
         }
-        static void Calculator(long num1, long num2, int i)
+        static void Calculator(double num1, double num2, int i)
         {
             if (i == 1)
             {
@@ -510,7 +589,7 @@ namespace Niklas.Week04
             if (i == 4)
             {
 
-                long times = num1;
+                double times = num1;
                 while (num2 > 1)
                 {
                     num1 *= times;
@@ -554,9 +633,9 @@ namespace Niklas.Week04
             Console.WriteLine("Your result is: " + num1);
         }
 
-        static long CalculatorInfinite(long num1, long num2, int i)
+        static double CalculatorInfinite(double num1, double num2, double i)
         {
-            long result = 0; ;
+            double result = 0; ;
 
             if (i == 1)
             {
@@ -585,7 +664,7 @@ namespace Niklas.Week04
             if (i == 4)
             {
                 int c = 0;
-                long times = num1;
+                double times = num1;
                 Console.WriteLine();
                 while (num2 > 1)
                 {
@@ -680,19 +759,16 @@ namespace Niklas.Week04
                 Console.Write("*");
             }
 
-            for (int sideleft = 2; sideleft < 3; sideleft++)
+            for (int sideleft = 5; sideleft < 6; sideleft++)
             {
-                for (int i = 15; i < 42; i++)
+
+                for (int i = 1; i < 2; i++)
                 {
-                    Console.Write(name);
+                    Console.Write($"\n{mail}");
                 }
-                for (int i = 15; i < 42; i++)
+                for (int i = 1; i < 2; i++)
                 {
-                    Console.Write(mail);
-                }
-                for (int i = 15; i < 42; i++)
-                {
-                    Console.Write(phone);
+                    Console.Write($"\n{phone}");
                 }
             }
 
@@ -714,5 +790,100 @@ namespace Niklas.Week04
             }
         }
 
+        static int Game(int maxnumber, int minnumber, int tries)
+        {
+            int x = 0;
+            int g = 0;
+            while (x == 0)
+            {
+                Random rand = new Random();
+                int min = minnumber;
+                int max = maxnumber;
+                int number;
+                int playertries = tries;
+                string response;
+                int guess;
+
+                guess = 0;
+                response = "";
+                number = rand.Next(min, max + 1);
+
+                Console.WriteLine(number);
+                try
+                {
+                    if (guess % 1 != 0)
+                    {
+
+                        Console.WriteLine("You can only enter full numbers! Try again.");
+                        min = 0;
+                        max = 0;
+                        number = 0;
+                        x = 1;
+                    }
+
+                    while (guess != number)
+                    {
+                        Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
+                        Console.Write(">>>:  ");
+                        guess = Convert.ToInt32(Console.ReadLine());
+
+                        if (guess > min && guess < max)
+                        {
+                            playertries--;
+                            if (playertries == 0)
+                            {
+                                Console.WriteLine("You are out of tries!");
+                                x++;
+                            }
+                        }
+
+                        if (guess > number && guess <= max)
+                        {
+                            Console.WriteLine(guess + " is wrong. " + "Tries left: " + playertries);
+                        }
+                        if (guess < number && guess >= min)
+                        {
+                            Console.WriteLine(guess + " is wrong. " + "Tries left: " + playertries);
+                        }
+                        if (guess == number)
+                        {
+                            Console.WriteLine("You have won! The number was: " + number + " Tries left: " + playertries);
+                            x++;
+                        }
+                        else if (guess < min || guess > max)
+                        {
+                            Console.WriteLine(guess + " is not a valid number!");
+                        }
+                    }
+                }
+
+                catch (FormatException exc)
+                {
+                    Console.Error.WriteLine("You can only write full numbers!");
+
+                }
+
+                while (x == 1)
+                {
+                    Console.WriteLine("Do you wanna play again? (y/n)");
+                    Console.Write(">>>:  ");
+                    string yesOrNo = Console.ReadLine();
+                    if (yesOrNo == "y")
+                    {
+                        Game(maxnumber, minnumber, tries);
+
+                    }
+                    else if (yesOrNo == "n")
+                    {
+                        Console.WriteLine("Goodbye! The program is closing...");
+                        x = 11;
+                    }
+                }
+
+                return number;
+
+            }
+            return 1;
+        }
     }
 }

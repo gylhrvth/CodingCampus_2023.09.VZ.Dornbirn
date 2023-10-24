@@ -7,4 +7,9 @@
 //David.Week04.Day02.Start();
 //David.Week04.Day02.Start();
 //David.Week04.Day04.Start();
-David.Week04._D.Start2D();
+//David.Week04._D.Start2D();
+//David.Week04.Array2D2.Start();
+//David.Week04.arrayWE.Start();
+//David.Week04.Day02CocktailShakerSort.Start();
+David.Week05.Strings.StartDay01();
+

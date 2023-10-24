@@ -35,7 +35,7 @@ namespace Mohammed.Week04
 				arr2d[i] = new int[sizeColumn];
 				for (int j = 0; j < arr2d[i].Length; j++)
 				{
-					arr2d[i][j] = randomGenerator.Next(0, 1000);
+					arr2d[i][j] = randomGenerator.Next(0, 100);
 				}
 			}
 			return arr2d;
@@ -53,7 +53,8 @@ public static void PrintArray(int[][] arr)
 				Console.WriteLine();
 			}
 		}
-		
+
+
 	}
 }
 

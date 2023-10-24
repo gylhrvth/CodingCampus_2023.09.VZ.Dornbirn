@@ -129,7 +129,7 @@ namespace Jovo.Week03
             Console.WriteLine("BubbleSortAscending");
             Console.WriteLine();
             //int[] newArr = RandomNumberArrayCrazyRange(100, 0, 100); so neue array angeben
-            int[] array = SortArrayAscending(arr); //warum kann ich keine Zahl eingeben
+            int[] array = SortArrayAscending(arr);
             Console.WriteLine("=========================");
 
 

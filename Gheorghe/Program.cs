@@ -1,2 +1,2 @@
-﻿Gheorghe.Week04.RekursiveAlgorithm.Start();
+﻿Gheorghe.Week04.UserInput.Start();
 
