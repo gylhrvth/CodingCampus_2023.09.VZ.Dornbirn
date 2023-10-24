@@ -10,8 +10,8 @@ namespace Fabian.Week02
             //GuessGame();
             //Menu();
             //Calculator();
-            //CalculatorBonus();
-            BusinessCard();
+            CalculatorBonus();
+            //BusinessCard();
             //TheGameBegins();
         }
 
@@ -109,12 +109,13 @@ namespace Fabian.Week02
         {
             int num = new Random().Next(100) + 1;
             int tries = 0;
+            int guess = -1;
 
             Console.WriteLine("Welcome to my cool guess game! :)");
 
-            while (true)
+            while (guess != num)
             {
-                int guess = ReadInt("Enter a number between 1-100: ", 1, 100);
+                guess = ReadInt("Enter a number between 1-100: ", 1, 100);
                 tries++;
 
                 if (guess == num)
@@ -131,9 +132,13 @@ namespace Fabian.Week02
                 }
             }
 
-            if (!AskToPlayAgain())
+            if (AskToPlayAgain())
             {
                 GuessGame();
+            }
+            else
+            {
+                return;
             }
         }
         public static void Menu()
@@ -147,9 +152,9 @@ namespace Fabian.Week02
                 Console.WriteLine("2) empty square");
                 Console.WriteLine("3) rhombus");
 
-                int option = ReadInt("\nWhat would you like to draw?", 1, 3);
+                int option = ReadInt("\nWhat would you like to draw? ", 1, 3);
 
-                int size = ReadInt("How big should it be?");
+                int size = ReadInt("How big should it be? ");
 
                 switch (option)
                 {
@@ -249,7 +254,7 @@ namespace Fabian.Week02
             {
 
                 Console.WriteLine("What would you like to do?");
-                String option = ReadString("*, + , -, /, ^, =", "^[*\\+\\-\\/\\^\\=]$"); ;
+                String option = ReadString("*, + , -, /, ^, = : ", "^[*\\+\\-\\/\\^\\=]$"); ;
 
 
                 if (option == "=")
