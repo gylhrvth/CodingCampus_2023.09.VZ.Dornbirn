@@ -12,7 +12,7 @@ namespace Selina.Week04.Pascal_Dreieck
     {
         public static void Start()
         {
-            int size = Week03.Array.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");
+            int size = CreateArray.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");
 
             //Aufagbe 10:
             Ausgabe.Output("Aufgabe: Pascal Dreieck\n", ConsoleColor.DarkCyan);

@@ -184,7 +184,7 @@ namespace Ali.Week04
                     Console.WriteLine(msg);
                     string input = Console.ReadLine();
                     char mychar = Convert.ToChar(input);
-                    
+
                     return mychar;
                 }
                 catch
@@ -219,7 +219,7 @@ namespace Ali.Week04
 
 
             }
-            
+
 
         }
         public static float ReadFloat(string msg)
@@ -248,49 +248,95 @@ namespace Ali.Week04
             while (!end)
             {
                 char oprt = ReadChars("Enter which operator you wanna use +,-,*,/ or ^");
-                double num2 = ReadFloat("Choose your second number");
+                float num2 = ReadFloat("Choose your second number");
                 float num2new = 1;
 
-                if(oprt == '+')
+                if (oprt == '+')
                 {
-                    Console.WriteLine($"{ num1}"+ "+"+$"{ num2}" +" ="+(num1 + num2));
+                    Console.WriteLine($"{num1}" + "+" + $"{num2}" + " =" + (num1 + num2));
+                    float num3 = num1 + num2;
+                    num1 = num3;
+
+                    Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
+
+                    int weiter = ReadChars("j = ja / n = Nein");
+                  
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
+
 
 
                 }
-                else if(oprt== '-')
+                else if (oprt == '-')
                 {
-                    Console.WriteLine($"{num1}"+"-"+$"{num2}"+"="+(num1-num2));
+                    Console.WriteLine($"{num1}" + "-" + $"{num2}" + "=" + (num1 - num2));
+                    float num3 = num1 - num2;
+                    num1 = num3;
+
+                    Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
+
+                    int weiter = ReadChars("j = ja / n = Nein");
+                  
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
                 }
                 else if (oprt == '*')
                 {
                     Console.WriteLine($"{num1}" + "*" + $"{num2}" + "=" + (num1 * num2));
+                    float num3 = num1 * num2;
+                    num1 = num3;
+
+                    Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
+
+                    int weiter = ReadChars("j = ja / n = Nein");
+                  
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
                 }
                 else if (oprt == '/')
                 {
                     Console.WriteLine($"{num1}" + "/" + $"{num2}" + "=" + (num1 / num2));
+                    float num3 = num1 / num2;
+                    num1 = num3;
+
+                    Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
+
+                    int weiter = ReadChars("j = ja / n = Nein");
+                    
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
                 }
                 else
                 {
-                    for (float i =0; i < num2; i++)
+                    for (double i = 0; i < num2; i++)
                     {
-                        num2new *= num1;
-                        Console.WriteLine($"{num1}" + " ^ " + $"{num2}" + " = " + (num2new));
-                        num2new = num1;
-                        Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
-
-                        int weiter = ReadChars("j = ja / n = Nein");
-                       
-                        if (weiter != 'j')
-                        {
-                            end = true;
-                        }
+                        num2new = num1 * num2new;
                     }
+                    Console.WriteLine($"{num1}" + " ^ " + $"{num2}" + " = " + (num2new));
+                    num1 =num2new;
+                    Console.WriteLine("Möchten Sie mit dem Ergebnis weitermachen?");
+
+                    int weiter = ReadChars("j = ja / n = Nein");
+                    
+                    if (weiter != 'j')
+                    {
+                        end = true;
+                    }
+
                 }
 
 
 
             }
-           
+
         }
     }
 }
