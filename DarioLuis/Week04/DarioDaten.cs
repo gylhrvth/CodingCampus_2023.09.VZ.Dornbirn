@@ -15,19 +15,19 @@ namespace DarioLuis.Week04
             String str2 = "Chronist-Frick Weg 3";
             String plz = "6800";
 
-            Console.Write("Hallo wie heißt du?");
+            Console.Write("Hallo wie heißt du? ");
             string name = Console.ReadLine();
 
             if (name == "Dario")
             {
-                Console.Write("Hallo " + name + ", wie alt bist du?");
+                Console.Write("Hallo " + name + ", wie alt bist du? ");
                 int age = Convert.ToInt32(Console.ReadLine());
 
                 if(age == 17)
                 {
-                    Console.WriteLine("Gib bitte noch dein geheimes Passwort ein:");
+                    Console.WriteLine("Gib bitte noch dein geheimes Passwort ein: ");
                     String pas = Console.ReadLine();
-                    if (pas == "penis")
+                    if (pas == "Passwort")
                     {
                     Console.WriteLine("Hallo " + name + "(" + age + "), schön von dir zu hören, hier sind deine Daten");
                     Console.WriteLine(Name);
