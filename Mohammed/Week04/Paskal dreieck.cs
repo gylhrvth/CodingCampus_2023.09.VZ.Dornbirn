@@ -5,7 +5,7 @@ namespace Mohammed.Week04
     {
         public static void Start()
         {
-            int[][] arr = PascalDreieck(10, 20);
+            int[][] arr = PascalDreieck(10, 10);
             PrintPascalDreieck (arr);
 
 
