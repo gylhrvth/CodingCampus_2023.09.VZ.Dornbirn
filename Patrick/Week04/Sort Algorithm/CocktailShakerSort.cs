@@ -1,28 +1,34 @@
-﻿using static David.Week03.Week03Day03RandomArrays;
-namespace David.Week04
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static Patrick.Week04.InsertionSort;
+
+namespace Patrick.Week04.Sort_Algorithm
 {
-	internal class Day02CocktailShakerSort
-	{
-		public static void Start()
-		{
+    internal class CocktailShakerSort
+    {
 
-			int[] arrayRandom = crazyR(10);
-			PrintArray(arrayRandom);
-            Console.WriteLine();
-            Console.WriteLine("------");
-            PrintArray(CocktailShakerSort(arrayRandom));
-
-		}
-
-        public static int[] CocktailShakerSort(int[] arrayRandom)
+        public static void Start()
         {
-            int low = 1;
+            int[] arrayRandom = CreateRandomArray(10);
+            PrintArray(arrayRandom);
+            Console.WriteLine();
+            Console.WriteLine("===================================");
+            PrintArray(CocktailShakerSoort(arrayRandom));
+
+        }
+
+        public static int[] CocktailShakerSoort(int[] arrayRandom)
+        {
+            int low = 0;
             int move = low;
             int high = arrayRandom.Length - 1;
 
             while (low < high)
             {
-                for (int i = high; i > low + 1; i--)
+                for (int i = high; i > low; i--)
                 {
                     if (arrayRandom[i - 1] > arrayRandom[i])
                     {
@@ -30,11 +36,11 @@ namespace David.Week04
                         arrayRandom[i - 1] = arrayRandom[i];
                         arrayRandom[i] = tempMemoryUp;
                         move = i;
-                    }
-                    low = move;
+                    }                    
                 }
+                low = move;
 
-                for (int j = 1; j < high; j++)
+                for (int j = 0; j < high; j++)
                 {
                     if (arrayRandom[j] > arrayRandom[j + 1])
                     {
@@ -46,16 +52,7 @@ namespace David.Week04
                 move = high;
             }
             return arrayRandom;
-        }
 
-        public static void PrintArray(int[] array)
-        {
-            foreach (int item in array)
-            {
-                Console.Write(item + " ");
-            }
         }
     }
 }
-
-

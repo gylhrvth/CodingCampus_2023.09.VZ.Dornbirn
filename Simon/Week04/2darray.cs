@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Simon.Week03;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,14 +16,25 @@ namespace Simon.Week04
             int[][] arr2d = Twodarr(10, 4, 0, 101);
             Print2darr(arr2d);
 
-            int[] sumrow = Sumrow(arr2d);
-            Console.WriteLine(string.Join(" ", sumrow));
+            Console.WriteLine("Summe Reihen");
+            Sortieralgorithmen.PrintArrnice(Sumrow(arr2d));
+            PrintArray(Sumrow(arr2d));
+            Console.WriteLine();
 
-            int[] sumCol = Sumcol(arr2d);
-            Console.WriteLine(string.Join(" ", sumCol));
+            Console.WriteLine("Summe Spalten");
+            Console.WriteLine(string.Join(" ", Sumcol(arr2d)));
 
+            Console.WriteLine("\nPascal Dreieck");
             Print2darr(CalcPascalarr(5, 7));
 
+        }
+        //Print arr Summ
+        public static void PrintArray(int[] arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write("Reihe {0} Summe = {1} ", i + 1, arr[i]);
+            }
         }
         //print Funktion für 2D Array
         public static void Print2darr(int[][] arr)
@@ -81,12 +93,12 @@ namespace Simon.Week04
             return result;
         }
         // PascalDreieck
-        public static int[][] CalcPascalarr(int row, int col)
+        public static int[][] CalcPascalarr(int col, int row)
         {
-            int[][] arr = new int[row][];
+            int[][] arr = new int[col][];
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = new int[col];
+                arr[i] = new int[row];
                 for (int j = 0; j < arr[i].Length; j++)
                 {
                     if (i == 0 || j == 0)

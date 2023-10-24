@@ -50,7 +50,7 @@ namespace Hassan.Week03
         }
     
 
-        static int[] CreateArray(int size)
+        public static int[] CreateArray(int size)
         {
             int[] array = new int[size];
             for (int i = 0; i < size; i++)

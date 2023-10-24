@@ -46,6 +46,7 @@ namespace Patrick.Week04
                     for (int y = 0; y < array.Length - (x + 1); y++)
                     {
 
+
                         if (array[y] < array[y + 1])
                         {
                             int temporaryMemoryDesc = array[y];

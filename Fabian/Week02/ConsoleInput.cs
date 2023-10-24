@@ -11,7 +11,7 @@ namespace Fabian.Week02
             //Menu();
             //Calculator();
             //CalculatorBonus();
-            //BusinessCard();
+            BusinessCard();
             //TheGameBegins();
         }
 
@@ -311,8 +311,8 @@ namespace Fabian.Week02
 
             String firstName = ReadString("Enter yout first name: ");
             String lastName = ReadString("Enter your last name: ");
-            String phoneNumber = ReadString("Enter your phone number: ", "^[0-9\\+]+$");
-            String email = ReadString("Enter your email (+xx xxx xxxxxxx): ", "^[a-zA-Z\\@\\.]+$");
+            String phoneNumber = ReadString("Enter your phone number (+xx xxx xxxxxxx): ", "^[0-9\\+]+$");
+            String email = ReadString("Enter your email: ", "^[a-zA-Z\\@\\.]+$");
 
 
 
