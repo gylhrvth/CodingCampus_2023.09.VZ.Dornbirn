@@ -229,7 +229,7 @@ namespace Dimitri.Week04
             {
                 if (i < arr.Length - 1)
                 {
-                    Console.Write("{0} {1} ", arr[i], delimiter);
+                    Console.Write("{0}{1} ", arr[i], delimiter);
                 }
                 else
                 {
