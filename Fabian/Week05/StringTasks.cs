@@ -1,6 +1,5 @@
 ﻿using Ressources;
 using System.Globalization;
-using System.Runtime.ExceptionServices;
 using static Fabian.Week02.ConsoleInput;
 
 namespace Fabian.Week05
@@ -13,7 +12,7 @@ namespace Fabian.Week05
                 "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo",
                 "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren"
             };
-            //Console.WriteLine("[{0}]", string.Join(", ", BubbleSortIndex(names, 2, true)));
+            Console.WriteLine("[{0}]", string.Join(", ", BubbleSortIndex(names, 2, true)));
 
             // PrintCountedChars(StringRessources.getText());
 
@@ -31,7 +30,6 @@ namespace Fabian.Week05
 
             return copy;
         }
-
 
         public static String[] BubbleSortStringLengthASC(String[] arr)
         {
@@ -159,13 +157,13 @@ namespace Fabian.Week05
             {
                 charArray[i] = textToChars[textToChars.Length - 1 - i];
             }
-            String reverse = new String(charArray);
+            String reverse = new (charArray);
 
             return reverse;
         }
         public static String RandomizeWord()
         {
-            Random random = new Random();
+            Random random = new();
 
             String text = ReadString(">>>");
             char[] textToChars = text.ToCharArray();
@@ -177,7 +175,7 @@ namespace Fabian.Week05
                 (textToChars[i], textToChars[index]) = (textToChars[index], textToChars[i]);
             }
 
-            String randomize = new String(textToChars);
+            String randomize = new(textToChars);
 
             return randomize;
         }
@@ -200,8 +198,6 @@ namespace Fabian.Week05
                 }
 
             }
-        }
-
-        
+        }        
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace Fabian.Week05
+﻿namespace Fabian.Week05
 {
     public class DataTable
     {
@@ -16,121 +15,64 @@ namespace Fabian.Week05
 
         public static void PrintDataInTable(String[] firstNames, String[] lastNames, int[] ages, String[] places, float[] distancesFromCapital)
         {
-            String fNameSpaces = GetSpacesFName(firstNames);
-            String lNameSpaces = GetSpacesLName(lastNames);
-            String ageSpaces = GetSpacesAge(ages);
-            String placeSpaces = GetSpacesPlace(places);
-            String distanceSpaces = GetSpacesDistance(distancesFromCapital);
-            
+            // if the length of the highest value is bigger than the length of the name of the column = take the length of the highest value
+            // else = take the length of the name of the column
+            int firstNameMaxLength = Math.Max(9, GetMaxLength(firstNames));
+            int lastNameMaxLength = Math.Max(8, GetMaxLength(lastNames));
+            int ageMaxLength = Math.Max(3, GetMaxLength(ages));
+            int placeMaxLength = Math.Max(5, GetMaxLength(places));
+            int distanceMaxLength = Math.Max(21, GetMaxLength(distancesFromCapital));
+         
+            int totalLength = firstNameMaxLength + lastNameMaxLength + ageMaxLength + placeMaxLength + distanceMaxLength + 12;
+            string line = new('-', totalLength);
 
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
-            Console.WriteLine($"Firstname{fNameSpaces} | Lastname{lNameSpaces} | Age{ageSpaces} | Place{placeSpaces} | Distance from Capital{distanceSpaces}");
-            Console.WriteLine("----------------------------------------------------------------------------------------------------------------------");
+            // print table
+            Console.WriteLine(line);
+            Console.WriteLine($"Firstname{new string(' ', firstNameMaxLength - 9)} | Lastname{new string(' ', lastNameMaxLength - 8)} | Age{new string(' ', ageMaxLength - 3)} | Place{new string(' ', placeMaxLength - 5)} | Distance from Capital");
+            Console.WriteLine(line);
             for (int i = 0; i < firstNames.Length; i++)
             {
-                Console.WriteLine($"{firstNames[i]}{fNameSpaces} | {lastNames[i]}{lNameSpaces} | {ages[i]}{ageSpaces} | {places[i]}{placeSpaces} | {distancesFromCapital[i]}{distanceSpaces}");
+                Console.WriteLine($"{firstNames[i]}{new string(' ', firstNameMaxLength - firstNames[i].Length)} | {lastNames[i]}{new string(' ', lastNameMaxLength - lastNames[i].Length)} | {ages[i]}{new string(' ', ageMaxLength - ages[i].ToString().Length)} | {places[i]}{new string(' ', placeMaxLength - places[i].Length)} | {distancesFromCapital[i]}");
             }
-
         }
-
-        public static String GetSpacesFName(String[] firstNames)
+        // get length of the highest values
+        public static int GetMaxLength(String[] arr)
         {
-            String spaces = "";
             int max = 0;
-            for (int i = 0; i < firstNames.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (firstNames[i].Length > max)
+                if (arr[i].Length > max)
                 {
-                    max = firstNames[i].Length;
+                    max = arr[i].Length;
                 }
             }
-
-            for (int i = 0; i < max; i++)
-            {
-                spaces += " ";
-            }
-
-            return spaces;
+            return max;
         }
-
-        public static String GetSpacesLName(String[] lastNames)
+        public static int GetMaxLength(int[] arr)
         {
-            String spaces = "";
             int max = 0;
-            for (int i = 0; i < lastNames.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (lastNames[i].Length > spaces.Length)
+                if (arr[i].ToString().Length > max)
                 {
-                    max = lastNames[i].Length;
+                    max = arr[i].ToString().Length;
                 }
             }
-
-            for (int i = 0; i < max; i++)
-            {
-                spaces += " ";
-            }
-
-            return spaces;
+            return max;
         }
-
-        public static String GetSpacesAge(int[] ages)
+        public static int GetMaxLength(float[] arr)
         {
-            String spaces = "";
             int max = 0;
-            for (int i = 0; i < ages.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (ages[i].ToString().Length > max)
+                if (arr[i].ToString().Length > max)
                 {
-                    max = ages[i].ToString().Length;
+                    max = arr[i].ToString().Length;
                 }
             }
-
-            for (int i = 0; i < max; i++)
-            {
-                spaces += " ";
-            }
-
-            return spaces;
+            return max;
         }
 
-        public static String GetSpacesPlace(String[] places)
-        {
-            String spaces = "";
-            int max = 0;
-            for (int i = 0; i < places.Length; i++)
-            {
-                if (places[i].Length > max)
-                {
-                    max = places[i].Length;
-                }
-            }
-
-            for (int i = 0; i < max; i++)
-            {
-                spaces += " ";
-            }
-
-            return spaces;
-        }
-
-        public static String GetSpacesDistance(float[] distances)
-        {
-            String spaces = "";
-            float max = 0;
-            for (int i = 0; i < distances.Length; i++)
-            {
-                if (distances[i].ToString().Length > max)
-                {
-                    max = distances[i].ToString().Length;
-                }
-            }
-
-            for (int i = 0; i < max; i++)
-            {
-                spaces += " ";
-            }
-
-            return spaces;
-        }
+ 
     }
 }
