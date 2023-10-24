@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
-using static Dimitri.Week04.TwoDArray;
+using Ressources;
 
 namespace Dimitri.Week05
 {
     internal class Strings
     {
+        public static Random random = new Random();
         public static void Main()
         {
             //string string1 = "Today is " + DateTime.Now.ToString("t") + ".";
@@ -60,11 +62,13 @@ namespace Dimitri.Week05
             //BubbleSortStringLexIndex(names6, false, 0);
             //PrintArray(names6, ",");
 
-            string word = Reverse("Words");
-            Console.WriteLine(word);
+            //string word = Reverse("Nicht");
+            //Console.WriteLine(word);
 
-            string randomWord = Random("Blumen");
-            Console.WriteLine(randomWord);
+            //string randomWord = Random("Nicht");
+            //Console.WriteLine(randomWord);
+
+            ListLetterCount();
         }
 
         public static string[] BubbleSortStringLength(string[] arr, bool asc)
@@ -73,19 +77,12 @@ namespace Dimitri.Week05
             {
                 for (int j = 0; j < arr.Length - i - 1; j++)
                 {
-                    if (arr[j].Length > arr[j + 1].Length && asc == true)
+                    if ((arr[j].Length > arr[j + 1].Length) == asc)
                     {
                         string temp = arr[j];
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
                     }
-                    else if (arr[j].Length < arr[j + 1].Length && asc == false)
-                    {
-                        string temp = arr[j];
-                        arr[j] = arr[j + 1];
-                        arr[j + 1] = temp;
-                    }
-
                 }
             }
 
@@ -117,7 +114,7 @@ namespace Dimitri.Week05
             return arr;
         }
 
-        public static string CompareCharAtIndex(string stringAtIndex, int indexLetter)
+        public static string CharAtIndex(string stringAtIndex, int indexLetter)
         {
             string result = "";
 
@@ -127,7 +124,6 @@ namespace Dimitri.Week05
             }
             catch (ArgumentOutOfRangeException aoore)
             {
-
                 return result;
             }
 
@@ -135,6 +131,10 @@ namespace Dimitri.Week05
             return result;
         }
 
+        public static string CharAtIndexByGyula(string stringAtIndex, int indexLetter)
+        {
+            return char.ToString(stringAtIndex[indexLetter]);
+        }
 
         public static string[] BubbleSortStringLexIndex(string[] arr, bool asc, int index)
         {
@@ -142,9 +142,10 @@ namespace Dimitri.Week05
             string check = "";
             for (int i = 0; i < arr.Length; i++)
             {
-                if (check.CompareTo(CompareCharAtIndex(arr[i], index)) == 0)
+                if (check.CompareTo(CharAtIndex(arr[i], index)) == 0)
                 {
                     Console.WriteLine("Index out of range.");
+                    Console.WriteLine();
                     return arr;
                 }
             }
@@ -157,13 +158,13 @@ namespace Dimitri.Week05
                 {
 
 
-                    if (CompareCharAtIndex(arr[j], index).CompareTo(CompareCharAtIndex(arr[j + 1], index)) > 0 && asc == true)
+                    if (CharAtIndex(arr[j], index).CompareTo(CharAtIndex(arr[j + 1], index)) > 0 && asc == true)
                     {
                         string temp = arr[j];
                         arr[j] = arr[j + 1];
                         arr[j + 1] = temp;
                     }
-                    if (CompareCharAtIndex(arr[j], index).CompareTo(CompareCharAtIndex(arr[j + 1], index)) < 0 && asc == false)
+                    if (CharAtIndex(arr[j], index).CompareTo(CharAtIndex(arr[j + 1], index)) < 0 && asc == false)
                     {
                         string temp = arr[j];
                         arr[j] = arr[j + 1];
@@ -176,6 +177,29 @@ namespace Dimitri.Week05
             return arr;
 
         }
+
+
+        public static string[] BubbleSortStringLexIndexByGyula(string[] arr, bool asc, int index)
+        {
+            //bubblesort with Letter at index
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length - i - 1; j++)
+                {
+                    if (arr[j+1].Length <= index || (arr[j].Length > index && arr[j][index] > arr[j + 1][index]))
+                    {
+                        string temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            return arr;
+
+        }
+
 
         public static string ReverseOwn(string str)
         {
@@ -216,8 +240,9 @@ namespace Dimitri.Week05
             while (new string(charArr).CompareTo(str) == 0)
             {
 
-                for (int i = charArr.Length - 1; i >= charArr.Length / 2; i--)
+                for (int i = charArr.Length - 1; i > charArr.Length; i--)
                 {
+
                     int j = random.Next(charArr.Length);
                     char tmp = charArr[i];
                     charArr[i] = charArr[j];
@@ -229,8 +254,33 @@ namespace Dimitri.Week05
 
         }
 
-        public static void ListLetterCount(string str)
+        public static string RandomByGyula(string str)
         {
+            char[] charArr = str.ToCharArray();
+
+
+                for (int i = 0; i < 3 * charArr.Length; i++)
+                {
+                    int t1 = random.Next(charArr.Length);
+                    int t2 = random.Next(charArr.Length);
+                    char tmp = charArr[t1];
+                    charArr[t1] = charArr[t2];
+                    charArr[t2] = tmp;
+                }
+
+
+            return new string(charArr);
+
+        }
+
+
+        public static void ListLetterCount()
+        {
+            int[] arr = new int[char.MaxValue];
+
+            Console.WriteLine(arr.Length);
+
+            Console.WriteLine(Ressources.StringRessources.getText());
         }
 
 

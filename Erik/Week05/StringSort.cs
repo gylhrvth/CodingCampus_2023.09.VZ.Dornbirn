@@ -68,6 +68,7 @@ namespace Erik.Week05
                 }
             }
         }
+
         public static void SortNamesAlphabetAscending(String[] names)
         {
             int n = names.Length;
