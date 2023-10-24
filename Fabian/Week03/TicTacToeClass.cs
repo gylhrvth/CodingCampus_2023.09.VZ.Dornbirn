@@ -6,7 +6,7 @@ namespace Fabian.Week03
     {
         public static void Start()
         {
-
+            TicTacToe();
         }
 
         public static void TicTacToe()

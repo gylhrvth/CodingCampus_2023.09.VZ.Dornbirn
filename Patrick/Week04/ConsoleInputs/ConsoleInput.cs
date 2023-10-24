@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Patrick.Week02.MethodeSchleifen;
 
-namespace Patrick.Week04
+namespace Patrick.Week04.ConsoleInputs
 {
     internal class ConsoleInput
     {
@@ -15,20 +15,22 @@ namespace Patrick.Week04
         public static void Start()
         {
             //AUFGABE 1
-            //Console.WriteLine("Write the input: ")
-            //Console.WriteLine("The Inputstring = " + StringRead());                       //Lies mit Hilfe von .... ein String des Benutzers ein und gib diesen aus          
+            Console.WriteLine("Write the input: ");
+            Console.WriteLine("The Inputstring = " + StringRead());                       //Lies mit Hilfe von .... ein String des Benutzers ein und gib diesen aus          
 
 
             //AUFGABE 2
-            //Console.WriteLine("Write the inputNumber: ");
-            //Console.WriteLine("The inputNumber = " + IntegerRead());                      //Frage so lange nach einer Zahl, bis eine eingegeben wurde, das Programm darf bei Fehleingabe nicht abstürtzen!!
+            Console.WriteLine("Write the inputNumber: ");
+            Console.WriteLine("The inputNumber = " + IntegerRead());                      //Frage so lange nach einer Zahl, bis eine eingegeben wurde, das Programm darf bei Fehleingabe nicht abstürtzen!!
 
 
             //AUFGABE 4
-            //int low = ReadNumber(0, int.MaxValue-1);                                        //Erweitere deine frühere Lösung so, dass die Parameter über die Konsole eingegeben werden können
-            //int high = ReadNumber(low + 1, int.MaxValue);
+            Console.Write("Was wäre das Minimum? >>> ");
+            int low = ReadNumber(0, int.MaxValue-1);                                        //Erweitere deine frühere Lösung so, dass die Parameter über die Konsole eingegeben werden können
+            Console.Write("Was wäre das Maximum? >>> ");
+            int high = ReadNumber(low + 1, int.MaxValue);
             //AUFGABE 3
-            //Console.WriteLine(QuizGame(low, high));                                         //Nun soll die Zahl durch Eingabe über die Konsole erraten werden. Ist die Zahl zu hoch oder zu niedrig, so soll diese Information ausgegeben werden. Wurde die Zahl getroffen, so ist das Spiel gewonnen und das Programm wird beendet.
+            Console.WriteLine(QuizGame(low, high));                                         //Nun soll die Zahl durch Eingabe über die Konsole erraten werden. Ist die Zahl zu hoch oder zu niedrig, so soll diese Information ausgegeben werden. Wurde die Zahl getroffen, so ist das Spiel gewonnen und das Programm wird beendet.
 
 
             //AUFGABE 5
@@ -61,11 +63,9 @@ namespace Patrick.Week04
 
         public static bool StringReadYesOrNo()
         {
-            string input = "";
-
             while (true)
             {
-                input = Console.ReadLine();
+                string input = Console.ReadLine();
                 if (input == "yes")
                 {
                     return true;
@@ -76,7 +76,7 @@ namespace Patrick.Week04
                 }
                 else
                 {
-                    Console.WriteLine("Please select Yes or No!");
+                    Console.WriteLine("Please select yes or no!");
                 }
             }
         }
@@ -84,8 +84,8 @@ namespace Patrick.Week04
 
         public static int ReadNumber(int low, int high)
         {
-            int result = Int32.MinValue;
-            while (result == Int32.MinValue)
+            int result = int.MinValue;
+            while (result == int.MinValue)
             {
                 string line = Console.ReadLine();
 
@@ -96,7 +96,7 @@ namespace Patrick.Week04
                     if (result < low || result > high)
                     {
                         Console.WriteLine("the Number \"{0}\" is not in the range", line);
-                        result = Int32.MinValue;
+                        result = int.MinValue;
                     }
                 }
                 catch (FormatException)
@@ -189,12 +189,11 @@ namespace Patrick.Week04
 
                 Console.WriteLine("Do you want to print something again? (tip yes or no)");
 
-                if(!StringReadYesOrNo())
+                if (!StringReadYesOrNo())
                 {
                     break;
                 }
             }
         }
-
     }
 }

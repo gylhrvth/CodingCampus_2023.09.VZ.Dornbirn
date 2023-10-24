@@ -29,19 +29,19 @@ namespace Sven.Week04
         }
 
 
-        //public static string StringRead()
-        //{
-        //    string name;
+        public static string StringRead()
+        {
+            string name;
 
-        //    Console.WriteLine("Bitte gib deinen Namen ein: ");
+            Console.WriteLine("Bitte gib deinen Namen ein: ");
 
-        //    name = Console.ReadLine();
+            name = Console.ReadLine();
 
-        //    Console.WriteLine("Dein Name ist: " + name);
+            Console.WriteLine("Dein Name ist: " + name);
 
-        //    return name;
+            return name;
 
-        //}
+        }
 
         //public static int StringRead2()
         //{
