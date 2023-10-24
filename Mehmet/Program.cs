@@ -1,1 +1,1 @@
-﻿Mehmet.Week04.PascalDreieck.start();
+﻿Mehmet.Week04.Input.Start();

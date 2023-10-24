@@ -11,6 +11,7 @@ namespace Michael.Week04
     {
         public static void Start(int goal)
         {
+            successQueen = false;
             switch (goal)
             {
                 case 4:
