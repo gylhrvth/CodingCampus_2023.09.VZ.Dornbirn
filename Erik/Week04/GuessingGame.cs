@@ -79,7 +79,7 @@ namespace Erik.Week04
 
                 if (userGuessingNumbers < randomNumber)
                 {
-                    Console.WriteLine("The number is bigger!");
+                    Console.WriteLine( "The number is bigger!");
                 }
                 else if (userGuessingNumbers > randomNumber)
                 {
@@ -88,8 +88,7 @@ namespace Erik.Week04
             }
             Console.WriteLine("Game Over!");
         }
-
-
+        
 
         public static string SeperateTheLines()
         {
