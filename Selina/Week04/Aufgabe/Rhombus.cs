@@ -12,9 +12,10 @@ namespace Selina.Week04.Aufgabe
 
         public static void PrintRhombus()
         {
-            Console.WriteLine("\nWie Groß soll Ihr Rhombus sein sein?");
+            Console.Write("\nWie Groß soll Ihr Rhombus sein sein? ");
             int rhombus = Convert.ToInt32(Console.ReadLine());
-
+            Console.WriteLine();
+   
 
             int i, j, n = rhombus / 2;
 
@@ -53,7 +54,6 @@ namespace Selina.Week04.Aufgabe
                 }
                 Console.WriteLine("x");
             }
-            Console.WriteLine();
 
         }
     }
