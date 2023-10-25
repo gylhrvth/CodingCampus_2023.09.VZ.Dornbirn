@@ -323,7 +323,7 @@ namespace Fabian.Week02
             String firstName = ReadString("Enter yout first name: ");
             String lastName = ReadString("Enter your last name: ");
             String phoneNumber = ReadString("Enter your phone number (+xx xxx xxxxxxx): ", "^[0-9\\+]+$");
-            String email = ReadString("Enter your email: ", "^[a-zA-Z\\@\\.]+$");
+            String email = ReadString("Enter your email: ", "^[a-zA-Z0-9\\@\\.]+$");
 
 
 
