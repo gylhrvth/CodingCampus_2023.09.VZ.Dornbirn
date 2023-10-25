@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace DarioLuis.Week05
 {
-    internal class Tabelariesche_Ausgabe
+    public class Tabelariesche_Ausgabe
     {
+        public static void Start()
+        {
+
+        }
+
+        public static void Namen()
+        {
+            string[] nam1 = (Dario);
+        }
     }
 }
