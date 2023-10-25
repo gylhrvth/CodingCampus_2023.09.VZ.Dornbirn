@@ -9,11 +9,11 @@ namespace Simon.Week05
         {
             string[] names = new string[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
 
-            //Console.WriteLine("Bubblesort mit Strings");
-            //PrintArrnice(BubbleSortasc(names));
+            Console.WriteLine("Bubblesort mit Strings");
+            PrintArrnice(BubbleSortasc(names));
 
-            //Console.WriteLine("\nBubblesort desc");
-            //PrintArrnice(BubbleSortdesc(names));
+            Console.WriteLine("\nBubblesort desc");
+            PrintArrnice(BubbleSortdesc(names));
 
             Console.WriteLine("\nBubblesort Alphabet asc");
             PrintArrnice(BubbleSortascabc(names));
@@ -27,14 +27,14 @@ namespace Simon.Week05
             Console.WriteLine("\nBubblesort mit Strings und Character Index");
             PrintArrnice(BubbleSortdescindex(names, 2));
 
-            Console.WriteLine("\nAufgabe Reverse");
-            Console.WriteLine(ReverseString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches umgedreht werden soll.")));
+            //Console.WriteLine("\nAufgabe Reverse");
+            //Console.WriteLine(ReverseString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches umgedreht werden soll.")));
 
-            Console.WriteLine("\nAufgabe Randomize");
-            Console.WriteLine(RandomString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches random ausgegeben wird.")));
+            //Console.WriteLine("\nAufgabe Randomize");
+            //Console.WriteLine(RandomString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches random ausgegeben wird.")));
 
-            Console.WriteLine("Test");
-            Console.WriteLine();
+            //Console.WriteLine("Test");
+            //Console.WriteLine();
 
         }
         //Aufgabe Bubblesort mit Strings
