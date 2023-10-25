@@ -160,16 +160,16 @@ namespace Kerem.Week05
 
             Console.WriteLine(myChar);
         }
-        public static void Randomize()
+        /*public static void Randomize()
         {
-            //Random rnd = new Random(inputText);
+            Random rnd = new Random();
             Console.WriteLine("Wilkommen zum Zufallshuffle Programm!");
             string inputText = Console.ReadLine();
             char[] myChar = inputText.ToCharArray();
-            char[] myChar2 = inputText.ToCharArray();
-            Array.Reverse(myChar2);
+            char[] myChar2 = new String(CharArray);
+            Array.Reverse(myChar);
 
-            Console.WriteLine(myChar2);
-        }
+            Console.WriteLine(myChar);
+        }*/
     }
 }
