@@ -1,4 +1,4 @@
 ﻿using Erik.Week05;
 
 
-Emailregex.Start();
+CheckEmailRegex.Start();
