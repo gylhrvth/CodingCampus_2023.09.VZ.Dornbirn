@@ -2,47 +2,68 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
-using Ressources;
 
-
-namespace Hassan.Week05
+namespace Gheorghe.Week05
 {
-    public class StringBubble
+    internal class StringsExample
     {
+
         public static void Start()
         {
-            Console.WriteLine(StringRessources.getText());
 
-            string[] names = new string[]
-                
-            {"Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
-            
+
+            string[] names = new string[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
+
+
+            /*
+
             // Sortiere die Namen nach Länge aufsteigend (Ascending)
             BubbleSort(names);
             Console.WriteLine("Sortiert nach Länge aufsteigend:");
             PrintArray(names);
+
 
             // Sortiere die Namen nach Länge absteigend (Descending)
             BubbleSortDescending(names);
             Console.WriteLine("\nSortiert nach Länge absteigend:");
             PrintArray(names);
 
+
             // Sortiere die Namen lexikographisch aufsteigend (Ascending)
             BubbleSortLexiAscending(names);
             Console.WriteLine("\nSortiert lexikographisch aufsteigend:");
             PrintArray(names);
+
 
             // Sortiere die Namen lexikographisch absteigend (Descending)
             BubbleSortLexiDescending(names);
             Console.WriteLine("\nSortiert lexikographisch absteigend:");
             PrintArray(names);
 
+            */
 
-            Console.WriteLine("\nSortiert nach char index:");
-            BubbleSortCharInd(names, ascending: true, 4);
+            // Bubblesort mit  String und Character Index 
+
+            BubbleSortIndexCharacter(names, 5);
+            Console.WriteLine("Character Index");
             PrintArray(names);
+
+
+
+            // Reversed index
+            Console.WriteLine("Reverse=======");
+
+           
+
+
+
+
+
+
+
         }
 
 
@@ -128,17 +149,14 @@ namespace Hassan.Week05
 
 
 
-        static void BubbleSortCharInd(string[] arr, bool ascending, int charIndex)
+        static void BubbleSort(string[] arr, CultureInfo culture, bool ascending)
         {
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
                 {
-                    char char1 = arr[j][charIndex];
-                    char char2 = arr[j + 1][charIndex];
-
-                    int comparisonResult = string.Compare(char1.ToString(), char2.ToString());
+                    int comparisonResult = string.Compare(arr[j], arr[j + 1], culture, CompareOptions.IgnoreNonSpace);
 
                     if ((ascending && comparisonResult > 0) || (!ascending && comparisonResult < 0))
                     {
@@ -151,11 +169,40 @@ namespace Hassan.Week05
         }
 
 
-        
+
+        static void BubbleSortIndexCharacter(string[] arr, int index)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - i - 1; j++)
+                {
+                    if (arr[j + 1].Length <= index || (arr[j].Length > index && (arr[j][index] > arr[j + 1][index])))
+                    {
+                        string temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
 
 
 
 
+                static void Reverse(string [] arr )
+                {
+                    string text = Console.ReadLine();
 
+
+
+                }
+            }
+
+
+        }
     }
 }
+
+
+
+
+
+
