@@ -18,7 +18,8 @@
             //BubbleSortNachBuchstabeAbsteigend(names);
             //PrintArray(names);
 
-            ReverseProgram();
+            //ReverseProgram();
+            //Randomize(); 
         }
         public static void BubbleSortAufsteigend(string[] names)
         {
@@ -141,34 +142,15 @@
 
                 Console.WriteLine("Hallo und willkomen beim Reverseprogram!");
                 Console.WriteLine("Was für ein Wort magst du verkehrtherum schreiben?");
-                String input = Console.ReadLine();
 
-                String Gespiegelt = "";
-                String[] Zerlegt = input.Select(bs => bs.ToString()).ToArray();
-
-                Char[] chararray = input.ToCharArray();
-
-                //Array.Reverse(Zerlegt);
-
-                for (int i = Zerlegt.Length - 1; i >= 0; i--)
-                {
-                    Gespiegelt += Zerlegt[i];
-                }
-
-                Console.WriteLine(Gespiegelt);
+                //Rechnet siehe Zeile 175
+                Calculate();
 
                 //Abfrage ob man ein zweites mal scheirben möchte
                 Console.WriteLine("Magst du nocheinmal schreiben?(Y/N)");
                 String ans = Console.ReadLine();
-                if (ans == "y")
-                {
-
-                }
-                else if (ans == "Y")
-                {
-
-                }
-                else if (ans == "n")
+                
+                if (ans == "n")
                 {
                     Console.WriteLine("Danke es hat mich gefreut.");
                     again = false;
@@ -181,6 +163,20 @@
 
             }
 
+        }
+
+        public static void Calculate()
+        {
+            String input = Console.ReadLine();
+            String[] Zerlegt = input.Select(bs => bs.ToString()).ToArray();
+            String Gespiegelt = "";
+            Char[] chararray = input.ToCharArray();
+
+            for (int i = Zerlegt.Length - 1; i >= 0; i--)
+            {
+                Gespiegelt += Zerlegt[i];
+            }
+            Console.WriteLine(Gespiegelt);
         }
     }
 }
