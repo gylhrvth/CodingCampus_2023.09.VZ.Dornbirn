@@ -169,7 +169,6 @@ namespace Mehmet.Week05
         {
             Console.WriteLine($"Sortieren nach Buchstabe stelle:  {index+1}");    
             Console.WriteLine();
-            a = true;
             while (a)
             {
                 int mynumber = ReadNumber("Type 1 for Ascending Lexikographisch | Type 2 for Descending Lexikographisch:  ");
