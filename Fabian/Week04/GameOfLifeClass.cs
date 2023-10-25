@@ -67,7 +67,7 @@ namespace Fabian.Week04
                     if (matrix[i, j] == 1)
                     {
                         // rule 2, 3, 4
-                        if (alive < 2 || alive > 3)
+                        if (alive < 3 || alive > 3)
                         {
                             changedMatrix[i, j] = 0;
                         }
@@ -127,8 +127,8 @@ namespace Fabian.Week04
                     }
                     else
                     { 
-                        /*ConsoleColor randomColor = (ConsoleColor)random.Next(1, 15); // random color without black(0)
-                        Console.ForegroundColor = randomColor;*/
+                        ConsoleColor randomColor = (ConsoleColor)random.Next(1, 15); // random color without black(0)
+                        Console.ForegroundColor = randomColor;
 
                         sb.Append((char)9632 + " ");
                     }

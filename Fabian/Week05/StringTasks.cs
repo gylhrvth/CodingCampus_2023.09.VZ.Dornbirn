@@ -1,7 +1,7 @@
-﻿using Ressources;
-using System.Globalization;
+﻿using static Fabian.Week02.ConsoleInput;
+using static Fabian.Week05.StringTasksToEmail;
 using System.Text.RegularExpressions;
-using static Fabian.Week02.ConsoleInput;
+using System.Text;
 
 namespace Fabian.Week05
 {
@@ -9,217 +9,129 @@ namespace Fabian.Week05
     {
         public static void Start()
         {
-            String[] names = new String[] {
-                "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo",
-                "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren"
-            };
-            //Console.WriteLine("[{0}]", string.Join(", ", BubbleSortIndex(names, 2, true)));
+            // Console.WriteLine(ReplaceAll("Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!", "wird", "war und ist"));
+            //ReplaceAll2("Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!");
+            //ReplaceAll3("749813247132984712039487123049871204398712039487");
+            //LongestCommonSubstring
 
-             PrintCountedChars(CountChars(StringRessources.getText()));
+            //String[] words = WordSplit("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!", "Tag");
+            //Console.WriteLine(string.Join("\n", words));
 
-            //CheckEmail();
 
-            
+            String[] words2 = WordSplitAndSort("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!");
+            Console.WriteLine("[{0}]", string.Join("-", words2));
         }
 
-        public static String[] MakeACopy(String[] array)
+        public static String ReplaceAll(String text, String oldValue, String newValue)
         {
-            String[] copy = new String[array.Length];
+            text = text.Replace(oldValue, newValue);
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                copy[i] = array[i]; 
-            }
-
-            return copy;
+            return text;
         }
-
-        public static String[] BubbleSortStringLengthASC(String[] arr)
+        public static void ReplaceAll2(String text)
         {
-            String[] sorted = MakeACopy(arr);
+            String text1 = Regex.Replace(text, "[a-z]", "");
+            Console.WriteLine(text1);
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = 0; j < arr.Length - i - 1; j++)
-                {
-                    if (sorted[j].Length > sorted[j + 1].Length)
-                    {
-                        (sorted[j], sorted[j + 1]) = (sorted[j + 1], sorted[j]);
-                    }
-                }
-            }
-            return sorted;
+            String text2 = Regex.Replace(text, "[A-Z]", "");
+            Console.WriteLine("\n" + text2);
+
+            String text3 = text.Replace(" ", "");
+            Console.WriteLine("\n" + text3);
+
+            String text4 = text.Replace("!", "");
+            Console.WriteLine("\n" + text4);
         }
-        public static String[] BubbleSortStringLengthDESC(String[] arr)
+        public static void ReplaceAll3(String text)
         {
-            String[] sorted = MakeACopy(arr);
+            String text1 = Regex.Replace(text, "[0-9]", "");
+            Console.WriteLine(text1);
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = 0; j < arr.Length - i - 1; j++)
-                {
-                    if (sorted[j].Length < sorted[j + 1].Length)
-                    {
-                        (sorted[j], sorted[j + 1]) = (sorted[j + 1], sorted[j]);
-                    }
-                }
-            }
-            return sorted;
-        }      
-        public static String[] BubbleSortStringAlphabeticallyASC(String[] arr)
-        {
-            String[] sorted = MakeACopy(arr);
+            String text2 = Regex.Replace(text, "[1-9]", "");
+            Console.WriteLine("\n" + text2);
 
-            for (int i = 0; i < sorted.Length; i++)
-            {
-                for (int j = 0; j < sorted.Length - i - 1; j++)
-                {
-                    if (string.Compare(sorted[j], sorted[j + 1], CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) > 0 )
-                    {
-                        (sorted[j], sorted[j + 1]) = (sorted[j + 1], sorted[j]);
-                    }
-                }
-            }
-            return sorted;
+            String text3 = Regex.Replace(text, "[2-4]", "");
+            Console.WriteLine("\n" + text3);
+
+            String text4 = Regex.Replace(text, "[1-36-9]", "");
+            Console.WriteLine("\n" + text4);
         }
-        public static String[] BubbleSortStringAlphabeticallyDESC(String[] arr)
+        public static void LongestCommonSubstring(String text1 = "", String text2 = "")
         {
-            String[] sorted = MakeACopy(arr);
+            String longerStr;
+            String shorterStr;
 
-            for (int i = 0; i < sorted.Length; i++)
+
+            if (text1 == "")
             {
-                for (int j = 0; j < sorted.Length - i - 1; j++)
-                {
-                    if (string.Compare(sorted[j], sorted[j + 1], CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) < 0)
-                    {
-                        (sorted[j], sorted[j + 1]) = (sorted[j + 1], sorted[j]);
-                    }
-                }
+                text1 = ReadString("Enter text 1: ", "^[a-zA-Z ]+$");
             }
-            return sorted;
-        }
-        public static String[] BubbleSortLength(String[] arr, bool asc)
-        {
-            if (asc)
+            if (text2 == "")
             {
-                return BubbleSortStringLengthASC(arr);
+                text2 = ReadString("Enter text 2: ", "^[a-zA-Z ]+$");
+            }
+
+            if (text1.Length > text2.Length)
+            {
+                longerStr = text1;
+                shorterStr = text2;
             }
             else
             {
-                return BubbleSortStringLengthDESC(arr);
+                longerStr = text2;
+                shorterStr = text1;
             }
-           
-        }
-        public static String[] BubbleSortAlphabetically(String[] arr, bool asc)
-        {
-            if (asc)
-            {
-                return BubbleSortStringAlphabeticallyASC(arr);
-            }
-            else
-            {
-                return BubbleSortStringAlphabeticallyDESC(arr);
-            }
-            
-        }
-        public static String[] BubbleSortIndex(String[] arr, int index, bool asc)
-        {
-            String[] sorted = MakeACopy(arr);
 
-            for (int i = 0; i < arr.Length; i++)
+            int maxLength = 0;
+            string longestSub = "";
+
+
+            for (int i = 0; i < shorterStr.Length; i++)
             {
-                for (int j = 0; j < arr.Length - i - 1; j++)
+                for (int j = i + 1; j <= shorterStr.Length; j++)
                 {
-  
-                    if (index >= sorted[j + 1].Length)
-                    {
-                        Console.WriteLine("The index was too high!");
-                        return sorted;
-                    }
+                    String subString = shorterStr.Substring(i, j - i);
 
-                    char char1 = sorted[j][index];
-                    char char2 = sorted[j + 1][index];
-
-                    if (asc && string.Compare(char1.ToString(), char2.ToString(), CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) > 0 || !asc && string.Compare(char1.ToString(), char2.ToString(), CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) < 0)
+                    if (longerStr.Contains(subString) && subString.Length > maxLength)
                     {
-                        (sorted[j], sorted[j + 1]) = (sorted[j + 1], sorted[j]);
+                        maxLength = subString.Length;
+                        longestSub = subString;
                     }
                 }
             }
-            return sorted;
+
+
+            Console.WriteLine("Longest common word: " + longestSub);
+
         }
-
-
-        public static String ReverseWord()
+        public static String[] WordSplit(String text, String seperator)
         {
-            String text = ReadString(">>>");
-            char[] textToChars = text.ToCharArray();
-            char[] charArray = new char[textToChars.Length];
+            String[] words = text.Split(seperator);
 
-            for (int i = 0; i < textToChars.Length; i++)
+            StringBuilder sb = new();
+
+            foreach (string word in words)
             {
-                charArray[i] = textToChars[textToChars.Length - 1 - i];
-            }
-            String reverse = new (charArray);
-
-            return reverse;
-        }
-        public static String RandomizeWord()
-        {
-            Random random = new();
-
-            String text = ReadString(">>>");
-            char[] textToChars = text.ToCharArray();
-
-            for (int i = 0; i < textToChars.Length; i++)
-            {
-                int index = random.Next(i, textToChars.Length);
-
-                (textToChars[i], textToChars[index]) = (textToChars[index], textToChars[i]);
+                sb.AppendLine(word);
+                
             }
 
-            String randomize = new(textToChars);
-
-            return randomize;
+            return sb.ToString().Split(seperator);
         }
-        public static void PrintCountedChars(int[] arr)
+        public static String[] WordSplitAndSort(String text)
         {
-                    
-            for (int i = 0; i < arr.Length; i++)
+            StringBuilder sb = new();
+            String[] words = text.Split();
+
+            words = BubbleSortStringAlphabeticallyASC(words);
+
+            foreach (string word in words)
             {
-                if (arr[i] > 0)
-                {
-                    Console.WriteLine($"{(char)i} : {arr[i]}");
-                }
-
+                sb.AppendLine(word);
             }
-        }        
-        public static int[] CountChars(String text)
-        {
-            int[] chars = new int[char.MaxValue];
+            String[] result = sb.ToString().Split();
 
-            for (int i = 0; i < text.Length; i++)
-            {
-                char c = text[i];
-                ++chars[c];
-            }
-            return chars;
+            return result; 
         }
-
-        public static void CheckEmail()
-        {
-            String regex = @"[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z0-9_])*@[a-zA-Z0-9]+(\.[a-zA-Z0-9])*(\.[a-zA-Z]{2,})";
-
-            Console.WriteLine(Regex.IsMatch("alfons@drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("rambina..alfons@drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("rambina1.1alfons@drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("1rambina1.alfons@drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("@drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("asdf@drlue", regex));
-            Console.WriteLine(Regex.IsMatch("asdf@microsoft.c", regex));
-        }
-
-        
     }
 }
