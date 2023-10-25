@@ -38,7 +38,7 @@ internal class StringSort
         Console.WriteLine("===============================================================");
 
         Console.WriteLine("Aufgabe 5: Randomize:");
-        Console.WriteLine(RandomString("HalloDuSchöner"));
+        Console.WriteLine(RandomString("Hallo"));
     }
     //--------------------------------------------------------------
     public static void PrintStringArray(string[] arr)
@@ -142,7 +142,5 @@ internal class StringSort
 
         return input;
     }
-
-    public static void 
 }
 
