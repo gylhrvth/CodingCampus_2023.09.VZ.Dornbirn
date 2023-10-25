@@ -9,6 +9,9 @@ using Ressources;
 using static Dimitri.Week04.ConsoleInputPart2;
 using static Dimitri.Week04.TwoDArray;
 using static Dimitri.Week03.Array;
+using System.Text.RegularExpressions;
+using System.Runtime.ExceptionServices;
+using System.Threading.Channels;
 
 namespace Dimitri.Week05
 {
@@ -77,12 +80,32 @@ namespace Dimitri.Week05
 
             //ListLetterCount
 
-            string text = Ressources.StringRessources.getText();
+            //string text = Ressources.StringRessources.getText();
 
             //PrintArrayToStringForI(ListLetterCount(text));
 
-            PrintLetterCount(ListLetterCount(text));
-        }
+            //PrintLetterCount(ListLetterCount(text));
+
+            //PrintTable();
+
+            //string regex = "^[a-z]+[0-9]?[.]?[a-z0-9]*[@]{1}[a-z]+[.]{1}[a-z]{2}";
+            //Regbert(regex);
+
+            //Hesse
+            //string text = Ressources.StringRessources.getHesse();
+            //SearchForHesse(text, "Hesse");
+            //Console.WriteLine();
+
+            //string toMark = WordToUppercase(text, "Hesse");
+            //Console.WriteLine(toMark);
+
+            //Replace all
+            string textReplace0 = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
+            Console.WriteLine(ReplaceAll(textReplace0, "wird", "war"));
+            Console.WriteLine();
+            string textReplace1 = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
+            Console.WriteLine(ReplaceAll(textReplace1, "wird", "ist"));
+        }   
 
         public static string[] BubbleSortStringLength(string[] arr, bool asc)
         {
@@ -324,43 +347,131 @@ namespace Dimitri.Week05
             return arr;
         }
 
-        //public static void PrintTable()
-        //{
-        //    String[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
-        //    String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
-        //    int[] age = { 40, 78, 5, 18, 81 };
-        //    String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
-        //    float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
 
-        //    string[][] table = new string[firstName.Length][];
+        public static void PrintTable()
+        {
+            //strings in table
+            String[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
+            String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
+            int[] age = { 40, 78, 5, 18, 81 };
+            String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
+            float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
+            //calculate max width
 
-        //    for(int i = 0; i < firstName.Length; i++)
-        //    {
-        //        table[i][0] = firstName[i];
-        //    }
+            //table
+            //create arr for header
+            string[] header = new string[] { "first name", "last name", "age", "place", "distance from capital" };
 
-        //    for (int i = 0; i < lastName.Length; i++)
-        //    {
-        //        table[i][1] = lastName[i];
-        //    }
+            //Console.Write(new string('-', header.Length));
+            //Console.WriteLine();
+            //Console.Write(header);
+            //Console.WriteLine();
+            //Console.Write(new string('-', header.Length));
+            //Console.WriteLine();
 
-        //    for (int i = 0; i < age.Length; i++)
-        //    {
-        //        table[i][2] = int.ToString(age[i]);
-        //    }
+            //create table
+            string[][] table = new string[6][];
 
-        //    for (int i = 0; i < place.Length; i++)
-        //    {
-        //        table[i][3] = place[i];
-        //    }
+            //fill 2d array with strin arr
+            for (int i = 0; i < table.Length; i++)
+            {
+                string[] row = new string[5];
+                table[i] = row;
+            }
+            //fill header row
 
-        //    for (int i = 0; i < distanceFromCapital.Length; i++)
-        //    {
-        //        table[i][4] = float.ToString(distanceFromCapital[i]);
-        //    }
+            for (int i = 0; i < table[0].Length; i++)
+            {
+                table[0][i] = header[i];
+            }
+            //fill table
+            for (int i = 0; i < table[0].Length; i++)
+            {
 
-        //    Week04.TwoDArray.PrintArray(table, "|");
-        //}
+                table[i + 1][0] = firstName[i];
+                table[i + 1][1] = lastName[i];
+                table[i + 1][2] = age[i].ToString();
+                table[i + 1][3] = place[i];
+                table[i + 1][4] = distanceFromCapital[i].ToString();
+            }
+
+            PrintArray2dTable(table);
+        }
+
+        public static void PrintArray2dTable(string[][] array)
+        {
+
+            for (int row = 0; row < array.Length; row++)
+            {
+                Console.Write("|");
+                for (int col = 0; col < array[row].Length; col++)
+                {
+                    Console.Write(" {0} |", array[row][col]);
+                }
+                Console.WriteLine();
+
+            }
+        }
+
+        public static void Regbert(string regex)
+        {
+
+            Console.WriteLine(Regex.IsMatch("alfons@drlue.at", regex));
+
+            Console.WriteLine(Regex.IsMatch("rambina.alfons@drlue.at", regex));
+
+            Console.WriteLine(Regex.IsMatch("rambina1.1alfons@drlue.at", regex));
+
+            Console.WriteLine(Regex.IsMatch("1rambina1.alfons@drlue.at", regex));
+
+            Console.WriteLine(Regex.IsMatch("@drlue.at", regex));
+
+            Console.WriteLine(Regex.IsMatch("drlue.at", regex));
+
+            Console.WriteLine(Regex.IsMatch("asdf@drlue", regex));
+
+            Console.WriteLine(Regex.IsMatch("asdf@microsoft.c", regex));
+        }
+
+        public static void SearchForHesseEasy(string text, string word)
+        {
+
+            Console.WriteLine(Regex.Count(text, word));
+
+        }
+
+        public static void SearchForHesse(string text, string word)
+        {
+            int count = 0;
+
+            MatchCollection matches = Regex.Matches(text, word);
+
+            Console.WriteLine("{0} matches of the word {1} found.", matches.Count, word);
+
+            Console.WriteLine("Indices of the matches of the word {0} are: ", word);
+            bool first = true;
+            foreach (Match match in matches)
+            {
+                if (!first)
+                {
+                    Console.Write(", ");
+                }
+                Console.Write("{0}", match.Index );
+                first = false;
+            }
+            Console.WriteLine();
+
+        }
+
+        public static string WordToUppercase(string text, string word)
+        {
+            return Regex.Replace(text, word, word.ToUpper());
+        }
+
+        public static string ReplaceAll(string text, string replace, string replaceWith)
+        {
+            return Regex.Replace(text, replace, replaceWith);
+        }
 
     }
 }
