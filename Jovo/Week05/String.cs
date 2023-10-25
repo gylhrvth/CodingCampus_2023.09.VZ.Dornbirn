@@ -16,7 +16,7 @@ namespace Jovo.Week05
         {
 
 
-            /*   
+             
                string[] names = new string[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Öli", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
 
                BubbleSortAscending(names);
@@ -63,13 +63,13 @@ namespace Jovo.Week05
                Console.WriteLine("==================================");
                Console.WriteLine(names[0][0]);
                Console.WriteLine("=======================");
-               */
+               
 
 
-            Console.WriteLine("Hallo");
+               Console.WriteLine("Hallo");
 
-            string reverse= StringReverse("Hallo"); // nicht benutzen
-            Console.WriteLine(reverse);
+               string reverse= StringReverse("Hallo"); // nicht benutzen
+               Console.WriteLine(reverse);
 
         }
 
@@ -219,6 +219,8 @@ namespace Jovo.Week05
             }
         }
 
+
+       
 
     }
 }

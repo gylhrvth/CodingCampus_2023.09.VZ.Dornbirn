@@ -8,7 +8,6 @@ namespace Erik.Week05
         public static void Start()
         {
             PointOut("Hesse");
-
         }
         public static void PointOut(String wordToPointOut)
         {

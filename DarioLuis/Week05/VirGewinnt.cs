@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-/*
-namespace DarioLuis.Week05
+﻿namespace DarioLuis.Week05
 {
     public class VierGewinnt
     {
@@ -13,11 +7,47 @@ namespace DarioLuis.Week05
         public static void Start()
         {
             InitializeBoard();
+            DisplayBoard();
 
 
         }
-        public static void Board()
+
+        static int GetPlayerMove()
         {
+            int column;
+            bool validInput = false;
+
+            do
+            {
+                Console.WriteLine($"{currentPlayer}, wählen Sie eine Spalte. (1-7)");
+                string input = Console.ReadLine();
+
+                if (int.TryParse(input, out column) && column >= 1 && column <= 7)
+                {
+                    column--; // Adjust to 0-based index
+                    if (IsValidMove(column))
+                    {
+                        validInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Diese Spalte ist bereits voll. Bitte wählen Sie eine andere.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Ungültige Eingabe. Bitte geben Sie eine Zahl zwischen 1 und 7 ein.");
+                }
+
+            } while (!validInput);
+            return column;
+        }
+
+                static bool IsValidMove(int column)
+            {
+                return board[0, column] == ' ';
+            }
+
             static void DisplayBoard()
             {
                 Console.Clear();
@@ -43,7 +73,11 @@ namespace DarioLuis.Week05
                 }
             }
 
-        }
+
+
+
+        
     }
 }
-*/
+
+
