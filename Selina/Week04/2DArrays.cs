@@ -10,12 +10,12 @@ namespace Selina.Week04._2D_Array
 {
     internal class _2DArray
     {
-     
+
         public static void Start()
         {
             Random rand = new Random();
 
-            int size = Week03.Array.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");
+            int size = CreateArray.ReadNumber("Geben Sie die Größe des Arrays ein:", "Sie müssen eine Zahl eingeben!");
 
             //Aufagbe 9:
             Ausgabe.Output("Aufgabe: 2D-Array\n", ConsoleColor.DarkMagenta);
@@ -66,7 +66,7 @@ namespace Selina.Week04._2D_Array
                 Console.WriteLine();
             }
         }
-        public static int[,] CreateRandomArray2D(int size, int from, int to , Random rand)
+        public static int[,] CreateRandomArray2D(int size, int from, int to, Random rand)
         {
             int[,] randomArray = new int[size, size];
             for (int i = 0; i < size; i++)
