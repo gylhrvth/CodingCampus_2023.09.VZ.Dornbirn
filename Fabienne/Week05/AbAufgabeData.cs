@@ -10,16 +10,17 @@ namespace Fabienne.Week05
     {
         public static void Start()
         {
-            DataTabelle();
-        }
-
-        public static void DataTabelle()
-        {
             String[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
             String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
             int[] age = { 40, 78, 5, 18, 81 };
             String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
             float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
+
+            DataTabelle(firstName, lastName, age, place, distanceFromCapital);
+        }
+
+        public static void DataTabelle(String[] firstName, String[] lastName, int[] age, String[] place, float[] distanceFromCapital)
+        {
 
 
             Console.WriteLine("____________________________________________________________");
@@ -35,9 +36,14 @@ namespace Fabienne.Week05
             }
 
         }
-        public static int GetMaxLenght()
+        public static int GetMaxLenght(String[] MaxLength)
         {
-            
+            int max = 0;
+
+            for (int i = 0; i > MaxLength.Length; i++)
+            {
+
+            }
             return 0;
         }
     }
