@@ -13,6 +13,6 @@
 //David.Week04.Day02CocktailShakerSort.Start();
 //David.Week05.Strings.StartDay01();
 //David.Week05.ReverseProgramm.StartReverseProgramm();
-David.Week05.Randomize.Start();
-
+//David.Week05.Randomize.Start(); 
+David.Week05.CountLetters.Start();
 
