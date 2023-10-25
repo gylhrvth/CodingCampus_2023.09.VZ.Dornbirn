@@ -5,24 +5,25 @@ namespace David.Week05
 	{
 		public static void StartReverseProgramm()
 		{
-
-			string word = InputRev();
-			ReverseP(word);
-
+            Reverse();
 		}
 
-		public static string InputRev()
-		{
-			Console.WriteLine("Please enter your word of choice:");
-			string word = Console.ReadLine();
+        public static void Reverse()
+        {
+            Console.WriteLine("Gib ein Wort ein");
+            string input = Console.ReadLine();
 
-			return word;
-		}
+            char[] FirstInput = input.ToCharArray();
+            char[] reverse = new char[FirstInput.Length];
 
-		public static void ReverseP(string name)
-		{
+            for (int i = 0; i < FirstInput.Length; i++)
+            {
+                reverse[FirstInput.Length - 1 - i] = FirstInput[i];
+            }
+            string word = new string(reverse);
 
-		}
-	}
+            Console.WriteLine(word);
+        }
+    }
 	
 }

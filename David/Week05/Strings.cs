@@ -152,13 +152,13 @@ namespace David.Week05
             {
                 reverse[FirstInput.Length - 1 - i] = FirstInput[i];
             }
-                string word = new string(reverse);
+            string word = new string(reverse);
 
-               Console.WriteLine(word);
+            Console.WriteLine(word);
 
 
-                    }
-    
+        }
+
     }
 }
 
