@@ -56,6 +56,7 @@ namespace Fabian.Week04
                         }
                     } while (columnFull);
 
+                    Console.Clear();
                     Week03.TicTacToeClass.Print2DArray(playGround);
 
                     if (CheckWinVertical4IR(playGround, 1) || CheckWinHorizontal4IR(playGround, 1) || CheckWinDiagonal4IR(playGround, 1))
@@ -97,7 +98,7 @@ namespace Fabian.Week04
                             p2 = UserInput4IR(2); //input for the new column
                         }
                     } while (columnFull);
-
+                    Console.Clear();
                     Week03.TicTacToeClass.Print2DArray(playGround);
                     count++;
 

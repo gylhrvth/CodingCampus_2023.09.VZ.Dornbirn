@@ -1,1 +1,1 @@
-﻿DarioLuis.Week05.BubbleSortnames.Print();
+﻿DarioLuis.Week05.StringAufgaben.StartStringAufgaben();
