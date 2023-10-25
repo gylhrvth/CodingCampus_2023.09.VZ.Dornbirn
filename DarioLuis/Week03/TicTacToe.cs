@@ -1,8 +1,4 @@
-﻿using System.Data;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-
-namespace DarioLuis.Week03
+﻿namespace DarioLuis.Week03
 {
     class TicTacToe
     {
@@ -23,7 +19,8 @@ namespace DarioLuis.Week03
             try
             {
                 res = int.Parse(line);
-            }catch (IndexOutOfRangeException iof)
+            }
+            catch (IndexOutOfRangeException iof)
             {
                 Console.WriteLine("Bitte eine Zahl eingeben zwischen 1-9!!");
             }
@@ -77,13 +74,13 @@ namespace DarioLuis.Week03
                     // Überprüfung, welcher Spieler gewonnen hat
                     if (player % 2 == 0)
                     {
-                        choice = int.Parse(Console.ReadLine());
+                        choice = Readnumber("Spieler 2 wähle bitte dein gewünschtes Feld!");
                         if (arr[choice] != 'X' && arr[choice] != 'O')
                         {
-                            
+
                             arr[choice] = 'O';
                             player++;
-                            
+
                         }
                         else
                         {
@@ -93,10 +90,10 @@ namespace DarioLuis.Week03
                     }
                     else
                     {
-                        int choice = Convert.ToInt32(Console.ReadLine());
+                        int choice = Readnumber("Spieler 1 wähle bitte dein gewünschtes Feld!");
                         if (arr[choice] != 'X' && arr[choice] != 'O')
                         {
-                            
+
                             arr[choice] = 'X';
                             player++;
                         }
@@ -122,7 +119,7 @@ namespace DarioLuis.Week03
                 }
             }
             while (input == "Y");
-            
+
         }
 
         // Board zeigt Brett Status an
@@ -161,7 +158,7 @@ namespace DarioLuis.Week03
                 Console.ForegroundColor = ConsoleColor.Blue;
             }
             Console.WriteLine("{0}", arr[3]);
-            Console.ForegroundColor= ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("_____|_____|_____ ");
             Console.WriteLine("     |     |      ");
             if (arr[4] == 'X')
@@ -235,19 +232,18 @@ namespace DarioLuis.Week03
             Console.WriteLine("     |     |      ");
         }
 
-        
 
-    public static bool Solutions()
+        public static bool Solutions()
         {
-            
-            if (((arr[1] == arr[5]) && (arr[5] == arr[9]))    //Diagonale 1 bis 9
-            || ((arr[3] == arr[5]) && (arr[5] == arr[7]))     //Diagonale 3 bis 7
-            || ((arr[1] == arr[4]) && (arr[4] == arr[7]))     //Abwärts 1 bis 7
-            || ((arr[2] == arr[5]) && (arr[5] == arr[8]))     //Abwärts 2 bis 8
-            || ((arr[3] == arr[6]) && (arr[6] == arr[9]))     //Abwärts 3 bis 9
-            || ((arr[1] == arr[2]) && (arr[2] == arr[3]))     //Horizontal von 1 bis 3
-            || ((arr[4] == arr[5]) && (arr[5] == arr[6]))     //Horizontal von 4 bis 6
-            || ((arr[7] == arr[8]) && (arr[8] == arr[9])))   //Horizontal von 7 bis 9
+
+            if (((arr[1] == arr[5]) && (arr[5] == arr[9]))      //Diagonale 1 bis 9
+            || ((arr[3] == arr[5]) && (arr[5] == arr[7]))       //Diagonale 3 bis 7
+            || ((arr[1] == arr[4]) && (arr[4] == arr[7]))       //Abwärts 1 bis 7
+            || ((arr[2] == arr[5]) && (arr[5] == arr[8]))       //Abwärts 2 bis 8
+            || ((arr[3] == arr[6]) && (arr[6] == arr[9]))       //Abwärts 3 bis 9
+            || ((arr[1] == arr[2]) && (arr[2] == arr[3]))       //Horizontal von 1 bis 3
+            || ((arr[4] == arr[5]) && (arr[5] == arr[6]))       //Horizontal von 4 bis 6
+            || ((arr[7] == arr[8]) && (arr[8] == arr[9])))      //Horizontal von 7 bis 9
             {
                 if (player % 2 == 0)
                 {
@@ -263,6 +259,34 @@ namespace DarioLuis.Week03
             {
                 Console.WriteLine("Es hat noch keiner gewonnen!!");
                 return false;
+            }
+        }
+        static int Readnumber(String message)
+        {
+            while (true)
+            {
+                Console.WriteLine(message);
+                try
+                {
+                    String input = Console.ReadLine();
+                    int ourNumb = Convert.ToInt32(input);
+                    if (ourNumb >= 1 && ourNumb <= 9)
+                    {
+                        return ourNumb;
+                    }    
+                    else
+                    {
+                        Console.WriteLine("Gib bitte eine gültige Zahl ein!!");
+                    }
+                }
+                catch (FormatException fe) 
+                {
+                    Console.WriteLine("Bitte eine gültige zahl eingeben!!");
+                }
+                catch (OverflowException ofe)
+                {
+                    Console.WriteLine("Gib bitte eine Zahl zwischen 1-9 ein!!!");
+                }
             }
         }
     }
