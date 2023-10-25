@@ -1,5 +1,6 @@
 ﻿using Ressources;
 using System.Globalization;
+using System.Text.RegularExpressions;
 using static Fabian.Week02.ConsoleInput;
 
 namespace Fabian.Week05
@@ -12,9 +13,11 @@ namespace Fabian.Week05
                 "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo",
                 "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren"
             };
-            Console.WriteLine("[{0}]", string.Join(", ", BubbleSortIndex(names, 2, true)));
+            //Console.WriteLine("[{0}]", string.Join(", ", BubbleSortIndex(names, 2, true)));
 
-            // PrintCountedChars(StringRessources.getText());
+             PrintCountedChars(CountChars(StringRessources.getText()));
+
+            //CheckEmail();
 
             
         }
@@ -179,25 +182,44 @@ namespace Fabian.Week05
 
             return randomize;
         }
-        public static void PrintCountedChars(String text)
+        public static void PrintCountedChars(int[] arr)
         {
-            int[] chars = new int[300];
-
-            foreach (char c in text)
+                    
+            for (int i = 0; i < arr.Length; i++)
             {
-                if((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+                if (arr[i] > 0)
                 {
-                    chars[c]++;
-                }
-            }
-            for (int i = 0; i < chars.Length; i++)
-            {
-                if (chars[i] > 0)
-                {
-                    Console.WriteLine($"{(char)i} : {chars[i]}");
+                    Console.WriteLine($"{(char)i} : {arr[i]}");
                 }
 
             }
         }        
+        public static int[] CountChars(String text)
+        {
+            int[] chars = new int[char.MaxValue];
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                ++chars[c];
+            }
+            return chars;
+        }
+
+        public static void CheckEmail()
+        {
+            String regex = @"[a-zA-Z][a-zA-Z0-9_]*(\.[a-zA-Z0-9_])*@[a-zA-Z0-9]+(\.[a-zA-Z0-9])*(\.[a-zA-Z]{2,})";
+
+            Console.WriteLine(Regex.IsMatch("alfons@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("rambina..alfons@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("rambina1.1alfons@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("1rambina1.alfons@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("asdf@drlue", regex));
+            Console.WriteLine(Regex.IsMatch("asdf@microsoft.c", regex));
+        }
+
+        
     }
 }

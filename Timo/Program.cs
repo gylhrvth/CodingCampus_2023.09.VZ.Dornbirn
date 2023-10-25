@@ -2,4 +2,4 @@
 using Timo.Week04;
 using Timo.Week05;
 
-StringSort.Start();
+BuchstabenCount.Start();

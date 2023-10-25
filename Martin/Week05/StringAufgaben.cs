@@ -13,7 +13,7 @@ namespace Martin.Week05
         {
             String[] names = new String[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
 
-            //BubbleSortAufsteigend(names);
+            BubbleSortAufsteigend(names);
             //PrintArray(names);
 
             //BubbleSortAbsteigend(names);
@@ -24,6 +24,8 @@ namespace Martin.Week05
 
             //BubbleSortNachBuchstabeAbsteigend(names);
             //PrintArray(names);
+<<<<<<< HEAD
+=======
 
             //BubbleSortMitStringsExtended(names, true);
 
@@ -32,6 +34,7 @@ namespace Martin.Week05
 
             Reverse(names);
 
+>>>>>>> dd6e6f487f3b940712de11a284d85df1726ce6ff
         }
         public static void BubbleSortAufsteigend(string[] names)
         {
