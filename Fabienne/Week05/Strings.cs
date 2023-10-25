@@ -58,6 +58,7 @@ namespace Fabienne.Week05
             {
                 copy[i] = arr[i];
             }
+
             return copy;
         }
         public static String[] BubblesortAmountOfNumbersAscending(String[] arr) 
@@ -76,6 +77,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             return sorted;
         }
         public static String[] BubblesortAmountOfNumbersDescending(String[] arr)
@@ -94,6 +96,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             return sorted;
         }
         public static String[] BubblesortAlphabeticalAscending(String[] arr)
@@ -153,6 +156,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             else
             {
                 for (int i = 0; i < arr.Length; i++)
@@ -168,6 +172,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             return sorted;
         }
         public static String[] BubblesortAlgorythmAlphabetical(String[] arr, bool abc)
@@ -189,6 +194,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             else
             {
                 for (int i = 0; i < arr.Length; i++)
@@ -204,6 +210,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             return sorted;
         }
         public static String[] BubblesortStringCharacterIndex(String[] arr, int index)
@@ -222,6 +229,7 @@ namespace Fabienne.Week05
                     }
                 }
             }
+
             return sorted;
         }
         public static string Reverse()
@@ -238,6 +246,7 @@ namespace Fabienne.Week05
                 arr[i] = chars[word.Length - i - 1];
             }
             string abc = new string(arr);
+
             return abc;
         }
         public static string Random()
@@ -256,8 +265,8 @@ namespace Fabienne.Week05
                 arr[i] = chars[word.Length - i - 1];
             }
             string abc = new string(arr);
-            return abc;
-        }
 
+            return abc;
+        }     
     }
 }
