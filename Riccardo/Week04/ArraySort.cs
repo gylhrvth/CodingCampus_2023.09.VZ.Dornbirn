@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Riccardo.Week03.ArraysUebung;
 
-namespace Riccardo.Week04
+namespace Riccardo.Week05
 {
     public class ArraySort
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Riccardo.Week04
+namespace Riccardo.Week05
 {
     internal class Recursive
     {   

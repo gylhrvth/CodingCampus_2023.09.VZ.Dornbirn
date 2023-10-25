@@ -6,7 +6,7 @@ namespace Fabian.Week03
 {
     public class Arrays
     {
-        public static Random rand = new Random(123);
+        public static Random rand = new(123);
         public static int[] arr = CreateRandomNumberArray();
 
         public static void Start()

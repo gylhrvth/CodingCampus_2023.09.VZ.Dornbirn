@@ -163,7 +163,10 @@ namespace Niklas.Week05
             input.ToCharArray();
 
             String first = Convert.ToString(input[0]);
-            String last = Convert.ToString(input[input.Length-1]);
+            String last = Convert.ToString(input[input.Length - 1]);
+
+            String lastpos = last;
+            String firstpos = first;
 
 
             Console.WriteLine(first + last);
@@ -188,7 +191,7 @@ namespace Niklas.Week05
 
             new String(charArray);
 
-            
+
             Console.WriteLine("Reversed input: " + charArray);
         }
         public static void PrintArray(String[] names)
