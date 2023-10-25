@@ -9,7 +9,7 @@ namespace Erik.Week05
         public static void Start()
         {
 
-            String[] firstName = { "Alfonso", "Beatrix-Eleonoro", "Cecil", "Daniel", "Elmar" };
+            String[] firstName = { "Alfonso", "Beatrix-Eleonos", "Cecil", "Dafghgfdghjgfdfghjgfdfghjniel", "Elmar" };
             String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
             int[] age = { 40, 75, 5, 18, 81 };
             String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
@@ -19,7 +19,6 @@ namespace Erik.Week05
         }
         public static void ToSort(String[] firstName, String[] lastName, int[] age, String[] place, float[] distanceFromCapital, int longestWordDigit)
         {
-
             MiddleLines(longestWordDigit);
 
             //Console.WriteLine($"|{"FIRSTNAME",-16}|{"LASTNAME",-20} |{"AGE",-14} |{"PLACE",-17}|{"DISTANCE FROM CAPITAL",-31}|");
