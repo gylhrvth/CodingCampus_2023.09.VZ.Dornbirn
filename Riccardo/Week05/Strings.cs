@@ -24,15 +24,16 @@ namespace Riccardo.Week05
             Bubblesortabsteigend(names);
             Console.WriteLine("Namen nach Länge absteigend sortieren");
             PrintArray(names);
-            /*
+            
             //Die Namen lexikographisch aufsteigend sortieren
             Bubblesortlexigraphischauf(names);
             Console.WriteLine("Namen nach lexikographisch aufsteigend");
             PrintArray(names);
-            
+            /*
             //Die Namen lexikographisch absteigend sortieren
             Bubblesortlexikab("Namen nach lexikographisch absteigend");
             Console.WriteLine(names);
+            PrintArray(names);
             */
 
         }
@@ -70,12 +71,12 @@ namespace Riccardo.Week05
                 }
             }
         }
-        /*
+        
         static void Bubblesortlexigraphischauf(string[] arr)
         {
 
         }
-        */
+        
 
         static void PrintArray(string[] arr)
         {
