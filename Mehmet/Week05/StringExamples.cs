@@ -62,8 +62,7 @@ namespace Mehmet.Week05
             //Console.WriteLine();
 
             Console.WriteLine("BubbleSortNamesIndex");
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine();
+            Console.WriteLine("------------------------------------\n");
             BubbleSortNamesIndex(namesarr,2,true);
             Console.WriteLine();
             Console.WriteLine("====================================");
