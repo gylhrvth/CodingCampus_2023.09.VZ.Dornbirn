@@ -10,6 +10,8 @@ using static Dimitri.Week04.ConsoleInputPart2;
 using static Dimitri.Week04.TwoDArray;
 using static Dimitri.Week03.Array;
 using System.Text.RegularExpressions;
+using System.Runtime.ExceptionServices;
+using System.Threading.Channels;
 
 namespace Dimitri.Week05
 {
@@ -86,9 +88,24 @@ namespace Dimitri.Week05
 
             //PrintTable();
 
-            string regex = "^[a-z]+[0-9]?[.]?[a-z0-9]*[@]{1}[a-z]+[.]{1}[a-z]{2}";
-            Regbert(regex);
-        }
+            //string regex = "^[a-z]+[0-9]?[.]?[a-z0-9]*[@]{1}[a-z]+[.]{1}[a-z]{2}";
+            //Regbert(regex);
+
+            //Hesse
+            //string text = Ressources.StringRessources.getHesse();
+            //SearchForHesse(text, "Hesse");
+            //Console.WriteLine();
+
+            //string toMark = WordToUppercase(text, "Hesse");
+            //Console.WriteLine(toMark);
+
+            //Replace all
+            string textReplace0 = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
+            Console.WriteLine(ReplaceAll(textReplace0, "wird", "war"));
+            Console.WriteLine();
+            string textReplace1 = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
+            Console.WriteLine(ReplaceAll(textReplace1, "wird", "ist"));
+        }   
 
         public static string[] BubbleSortStringLength(string[] arr, bool asc)
         {
@@ -414,6 +431,46 @@ namespace Dimitri.Week05
             Console.WriteLine(Regex.IsMatch("asdf@drlue", regex));
 
             Console.WriteLine(Regex.IsMatch("asdf@microsoft.c", regex));
+        }
+
+        public static void SearchForHesseEasy(string text, string word)
+        {
+
+            Console.WriteLine(Regex.Count(text, word));
+
+        }
+
+        public static void SearchForHesse(string text, string word)
+        {
+            int count = 0;
+
+            MatchCollection matches = Regex.Matches(text, word);
+
+            Console.WriteLine("{0} matches of the word {1} found.", matches.Count, word);
+
+            Console.WriteLine("Indices of the matches of the word {0} are: ", word);
+            bool first = true;
+            foreach (Match match in matches)
+            {
+                if (!first)
+                {
+                    Console.Write(", ");
+                }
+                Console.Write("{0}", match.Index );
+                first = false;
+            }
+            Console.WriteLine();
+
+        }
+
+        public static string WordToUppercase(string text, string word)
+        {
+            return Regex.Replace(text, word, word.ToUpper());
+        }
+
+        public static string ReplaceAll(string text, string replace, string replaceWith)
+        {
+            return Regex.Replace(text, replace, replaceWith);
         }
 
     }
