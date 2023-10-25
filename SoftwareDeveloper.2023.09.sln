@@ -118,6 +118,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lukas", "Lukas", "{22961130
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lukas", "Lukas\Lukas\Lukas.csproj", "{1C3078E6-1FC3-4B0F-847B-2BAA69D9C39F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{07614DEC-9E73-499C-B360-79ED388E7A8C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ressources", "Ressources\Ressources.csproj", "{729329F8-B7FC-458E-B3D4-D28C3F05D7A0}"
 EndProject
 Global

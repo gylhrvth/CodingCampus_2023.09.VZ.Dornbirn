@@ -62,8 +62,7 @@ namespace Mehmet.Week05
             //Console.WriteLine();
 
             Console.WriteLine("BubbleSortNamesIndex");
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine();
+            Console.WriteLine("------------------------------------\n");
             BubbleSortNamesIndex(namesarr,2,true);
             Console.WriteLine();
             Console.WriteLine("====================================");
@@ -169,7 +168,6 @@ namespace Mehmet.Week05
         {
             Console.WriteLine($"Sortieren nach Buchstabe stelle:  {index+1}");    
             Console.WriteLine();
-            a = true;
             while (a)
             {
                 int mynumber = ReadNumber("Type 1 for Ascending Lexikographisch | Type 2 for Descending Lexikographisch:  ");
