@@ -524,35 +524,47 @@ namespace Dimitri.Week05
 
         public static string LongestMatchingSubstring(string userString0, string userString1)
         {
+            //string subString = "";
+            //int wordcount0 = Regex.Count(userString0, "\\w");
+
+            //int wordcount1 = Regex.Count(userString1, "\\w");
+
+            //string[] text0 = new string[wordcount0];
+            //// write userString0 to array
+
+            //string[] text1 = new string[wordcount1];
+            //// write usertstring1 to array
+
+            //BubbleSortStringLength(text0, false);
+
+            //BubbleSortStringLength(text1, false);
+
+            //for (int i = 0; i < text0.Length; i++)
+            //{
+            //    for (int j = 0; j < text1.Length; j++)
+            //    {
+            //        if (text0[i] == text1[j] && text0[i].Length > text1[j].Length)
+            //        { 
+            //            return text0[i]; 
+            //        }
+            //        else if (text0[i] == text1[j] && text0[i].Length < text1[j].Length) 
+            //        { 
+            //            return text0[i]; 
+            //        }
+            //    }
+            //}
+
             string subString = "";
-            int wordcount0 = Regex.Count(userString0, "\\w");
+            string word = "";
 
-            int wordcount1 = Regex.Count(userString1, "\\w");
-
-            string[] text0 = new string[wordcount0];
-            // write userString0 to array
-
-            string[] text1 = new string[wordcount1];
-            // write usertstring1 to array
-
-            BubbleSortStringLength(text0, false);
-
-            BubbleSortStringLength(text1, false);
-
-            for (int i = 0; i < text0.Length; i++)
+            for(int i = 0; i < userString0.Length; i++) 
             {
-                for (int j = 0; j < text1.Length; j++)
+                while (userString0[i].CompareTo(' ') != 0)
                 {
-                    if (text0[i] == text1[j] && text0[i].Length > text1[j].Length)
-                    { 
-                        return text0[i]; 
-                    }
-                    else if (text0[i] == text1[j] && text0[i].Length < text1[j].Length) 
-                    { 
-                        return text0[i]; 
-                    }
+                    word += userString0[i];
                 }
             }
+            return word;
         }
     }
 }
