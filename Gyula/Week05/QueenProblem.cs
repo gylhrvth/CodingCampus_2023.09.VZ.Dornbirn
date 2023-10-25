@@ -9,7 +9,7 @@ namespace Gyula.Week05
 			int[] table = new int[size];
 
 			counter = 0;
-			SolveQueen(size, 0, table);
+			SolveQueen(0, table);
 			Console.WriteLine("Anzahl Lösungen: " + counter);
 		}
 
@@ -51,20 +51,19 @@ namespace Gyula.Week05
             return true;
         }
 
-        public static void SolveQueen(int size, int col, int[] tbl)
+        public static void SolveQueen(int col, int[] tbl)
 		{
 			while (tbl[col] < tbl.Length)
 			{
 				if (CheckPosition(col, tbl))
 				{
-					if (col < size - 1)
+					if (col < tbl.Length - 1)
 					{
-						SolveQueen(size, col + 1, tbl);
+						SolveQueen(col + 1, tbl);
 					}
 					else
 					{
 						Console.WriteLine("\nSolution:");
-						Console.WriteLine("SolveQueen({0}, {1}, [{2}])", size, col, string.Join(", ", tbl));
 						PrintTbl(col, tbl);
 						++counter;
 					}
