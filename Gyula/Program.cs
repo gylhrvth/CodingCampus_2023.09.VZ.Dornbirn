@@ -1,1 +1,1 @@
-﻿Gyula.Week05.Randomize.Start();
+﻿Gyula.Week05.TableExample.Start();
