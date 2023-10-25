@@ -34,7 +34,7 @@ namespace Hassan.Week05
 
             //printtabel
             Console.WriteLine(line);
-            Console.WriteLine($"Firstname  {new string(' ', firstNameLength - 9)} | Lastname{new string(' ', lastNameLength - 8)} | Age{new string(' ', ageMaxLength - 3)} | Place{new string(' ', placeMacLenght - 5)} | Distance from Capital");
+            Console.WriteLine($"Firstname{new string(' ', firstNameLength - 9)} | Lastname{new string(' ', lastNameLength - 8)} | Age{new string(' ', ageMaxLength - 3)} | Place{new string(' ', placeMacLenght - 5)} | Distance from Capital");
             Console.WriteLine(line);
             for (int i = 0; i < firstNames.Length; i++)
             {
