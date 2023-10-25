@@ -12,6 +12,7 @@ using static Dimitri.Week03.Array;
 using System.Text.RegularExpressions;
 using System.Runtime.ExceptionServices;
 using System.Threading.Channels;
+using System.ComponentModel.Design;
 
 namespace Dimitri.Week05
 {
@@ -100,12 +101,37 @@ namespace Dimitri.Week05
             //Console.WriteLine(toMark);
 
             //Replace all
-            string textReplace0 = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
-            Console.WriteLine(ReplaceAll(textReplace0, "wird", "war"));
-            Console.WriteLine();
-            string textReplace1 = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
-            Console.WriteLine(ReplaceAll(textReplace1, "wird", "ist"));
-        }   
+            //string textReplace = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
+            //Console.WriteLine(ReplaceAll(textReplace, "wird", "war"));
+            //Console.WriteLine();
+            //Console.WriteLine(ReplaceAll(textReplace, "wird", "ist"));
+            //Console.WriteLine();
+            ////Delete all;
+            //Console.WriteLine(DeleteAll(textReplace, "[a-z]"));
+            //Console.WriteLine();
+            ////Delete all;
+            //Console.WriteLine(DeleteAll(textReplace, "[A-Z]"));
+            //Console.WriteLine();
+            ////Delete all;
+            //Console.WriteLine(DeleteAll(textReplace, "[\\s]"));
+            //Console.WriteLine();
+            ////Delete all;
+            //Console.WriteLine(DeleteAll(textReplace, "[!]"));
+            //Console.WriteLine();
+            //Delete all
+            //string numbersReplace = "749813247132984712039487123049871204398712039487";
+            //Console.WriteLine(DeleteAll(numbersReplace, "[0-9]"));
+            //Console.WriteLine();
+            //Console.WriteLine(DeleteAll(numbersReplace, "[1-9]"));
+            //Console.WriteLine();
+            //Console.WriteLine(DeleteAll(numbersReplace, "[2-4]"));
+            //Console.WriteLine();
+            //Console.WriteLine(DeleteAll(numbersReplace, "[1-36-9]"));
+            //Console.WriteLine();
+
+            FindLongestMatchingSubstring();
+
+        }
 
         public static string[] BubbleSortStringLength(string[] arr, bool asc)
         {
@@ -456,7 +482,7 @@ namespace Dimitri.Week05
                 {
                     Console.Write(", ");
                 }
-                Console.Write("{0}", match.Index );
+                Console.Write("{0}", match.Index);
                 first = false;
             }
             Console.WriteLine();
@@ -473,5 +499,61 @@ namespace Dimitri.Week05
             return Regex.Replace(text, replace, replaceWith);
         }
 
+        public static string DeleteAll(string text, string replace)
+        {
+            return Regex.Replace(text, replace, "");
+        }
+
+        public static void FindLongestMatchingSubstring()
+        {
+            Console.WriteLine("Bitte gib Wort 1 ein:");
+            Console.Write(">>>");
+            string string0 = InputString();
+            Console.WriteLine("Bitte gib Wort 2 ein:");
+            Console.Write(">>>");
+            string string1 = InputString();
+            Console.WriteLine("längster gemeinsamer Substring:");
+            Console.WriteLine(LongestMatchingSubstring(string0, string1));
+        }
+
+        public static string InputString()
+        {
+            string input = Console.ReadLine();
+            return input;
+        }
+
+        public static string LongestMatchingSubstring(string userString0, string userString1)
+        {
+            string subString = "";
+            int wordcount0 = Regex.Count(userString0, "\\w");
+
+            int wordcount1 = Regex.Count(userString1, "\\w");
+
+            string[] text0 = new string[wordcount0];
+            // write userString0 to array
+
+            string[] text1 = new string[wordcount1];
+            // write usertstring1 to array
+
+            BubbleSortStringLength(text0, false);
+
+            BubbleSortStringLength(text1, false);
+
+            for (int i = 0; i < text0.Length; i++)
+            {
+                for (int j = 0; j < text1.Length; j++)
+                {
+                    if (text0[i] == text1[j] && text0[i].Length > text1[j].Length)
+                    { 
+                        return text0[i]; 
+                    }
+                    else if (text0[i] == text1[j] && text0[i].Length < text1[j].Length) 
+                    { 
+                        return text0[i]; 
+                    }
+                }
+            }
+        }
     }
 }
+
