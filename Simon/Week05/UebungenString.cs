@@ -156,7 +156,7 @@ namespace Simon.Week05
             char[] arr = input.ToCharArray();
             for (int i = 0; i < arr.Length; i++)
             {
-                int j = random.Next(i, arr.Length);
+                int j = random.Next(0, arr.Length);
                 (arr[j], arr[i]) = (arr[i], arr[j]);
             }
             string output = new(arr);
