@@ -48,6 +48,6 @@ namespace Martin.Week04
             if(x == 1 || x == 2) { return 1;}
 
             return Fibonacci(x - 1) + Fibonacci(x - 2);
-        }
+        }  
     }
 }

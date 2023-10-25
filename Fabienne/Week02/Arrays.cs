@@ -84,8 +84,8 @@ namespace Fabienne.Week02
             //BubblesortDescending(arr);
             //PrintArray(arr);
 
-            ////int[] arr2 = CreateRandomArray(12);
-            ////GnomeSort(arr2);
+            //int[] arr2 = CreateRandomArray(12);
+            //GnomeSort(arr2);
 
             //int[] arr3 = CreateRandomArray(12);
             //PrintArray(arr3);
@@ -100,8 +100,8 @@ namespace Fabienne.Week02
 
             //PrintTwoDeeArray(rand2dArray);
 
-            int[,] arr7 = CreatePascalDreieck();
-            PrintPascalTrinangle(arr7);
+           // int[,] arr7 = CreatePascalDreieck();
+           // PrintPascalTrinangle(arr7);
         }
         public static int[] NumberArray()
         {
@@ -353,7 +353,7 @@ namespace Fabienne.Week02
             {
                 if (arr[i] >= arr[i - 1])
                 {
-                    i = i + 1;
+                    i += 1;
                 }
                 else
                 {
