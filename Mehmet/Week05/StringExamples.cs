@@ -199,7 +199,6 @@ namespace Mehmet.Week05
                                 a = false;
                             }
                         }
-
                     }
                 }
             }
