@@ -1,1 +1,1 @@
-﻿Gyula.Week05.QueenProblem.Start(8);
+﻿Gyula.Week05.Randomize.Start();
