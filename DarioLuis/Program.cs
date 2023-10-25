@@ -1,1 +1,1 @@
-﻿DarioLuis.Week05.StringAufgaben.StartStringAufgaben();
+﻿DarioLuis.Week05.VierGewinnt.Start();
