@@ -33,6 +33,8 @@ namespace David.Week05
             StringArrayBubbleAT2(names, 1, true);
             Console.WriteLine(string.Join(", ", names));
 
+            Console.WriteLine();
+            Reverse();
         }
 
         public static void StringArrayBubbleASC(string[] names, bool asc)
@@ -134,6 +136,29 @@ namespace David.Week05
                 }
             }
         }
+
+
+
+
+        public static void Reverse()
+        {
+            Console.WriteLine("Gib ein Wort ein");
+            string input = Console.ReadLine();
+
+            char[] FirstInput = input.ToCharArray();
+            char[] reverse = new char[FirstInput.Length];
+
+            for (int i = 0; i < FirstInput.Length; i++)
+            {
+                reverse[FirstInput.Length - 1 - i] = FirstInput[i];
+            }
+                string word = new string(reverse);
+
+               Console.WriteLine(word);
+
+
+                    }
+    
     }
 }
 
