@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -26,12 +27,12 @@ namespace Kerem.Week05
             Console.WriteLine("[{0}]", string.Join(", ", SortNamesCompareDESC(names)));
 
             Console.WriteLine("\nSortCharIndex");
-            Console.WriteLine("[{0}]", string.Join(", ", SortNamesbyIndex(names)));
+            Console.WriteLine("[{0}]", string.Join(", ", SortNamesbyIndex(names, 1)));
 
             Console.WriteLine();
             Reverse();
 
-
+           
 
         }
         public static string[] SortNamesASC(string[] arr, bool asc)
@@ -130,7 +131,7 @@ namespace Kerem.Week05
             }
             return arr;
         }
-        public static string[] SortNamesbyIndex(string[] arr)
+        public static string[] SortNamesbyIndex(string[] arr, int index)
         {
 
             string temp;
@@ -138,7 +139,7 @@ namespace Kerem.Week05
             {
                 for (int j = 0; j < arr.Length - 1; j++)
                 {
-                    if (arr[j][2].CompareTo (arr[j + 1][2]) > 0)
+                    if (arr[j][index].CompareTo (arr[j + 1][index]) > 0)
                     {
                         temp = arr[j];
                         arr[j] = arr[j + 1];
@@ -157,8 +158,9 @@ namespace Kerem.Week05
             string inputText = Console.ReadLine();
             char[] myChar = inputText.ToCharArray();
             Array.Reverse(myChar);
-
+    
             Console.WriteLine(myChar);
+
         }
         /*public static void Randomize()
         {
@@ -171,5 +173,10 @@ namespace Kerem.Week05
 
             Console.WriteLine(myChar);
         }*/
-    }
+
+
+
+
+       
+        }
 }
