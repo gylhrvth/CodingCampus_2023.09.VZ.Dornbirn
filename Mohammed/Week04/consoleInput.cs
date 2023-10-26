@@ -31,9 +31,7 @@ namespace Mohammed.Week04
             }
 
             
-            //zweite aufgabe 
-            //int readNumber = ReadNumber("Please enter a number:", "Your number is bad. Please try again:");
-            //Console.WriteLine("Read number is: " + readNumber);
+            
         }
 
         public static int ReadNumber(string msg, int min, int max)

@@ -69,7 +69,7 @@ namespace Cemal.Week04
                     int userinput = int.Parse(Console.ReadLine());
                     return userinput;
                 }
-                catch (Exception)
+                catch (FormatException)
                 {
                     Console.WriteLine(error);
                 }
@@ -131,9 +131,13 @@ namespace Cemal.Week04
 
                 Console.Write("Bitte wählen sie aus");
 
+                while(eingabe == name.Length)
+                {
                 eingabe = Zahleinlesen("", "Du kannst nur Zahlen von 1 - 3 eingeben!");
-                string prompt = string.Format("Wie groß soll der {0} sein?", name[eingabe]);                
+                string prompt = string.Format("Wie groß soll der {0} sein?", name[eingabe]);
                 groese = Zahleinlesen(prompt, "Du kannst nur Zahlen eingeben!");
+                }                
+
                 string symbol = Einlesen("Welches Zeichen soll verwendet werden?", "Du kannst nur zeichen eingeben!");
 
                 if (eingabe == 1)
