@@ -33,9 +33,9 @@ namespace Mehmet.Week04
 
             //ReadNumberMenue("Ola Willkomen!", "was soll ich dir zeichnen?", "Christbaum", "Quader", "Rhombus", "Wie groß soll es sein?", "und welches Symbol soll es haben?");
 
-            Calculator();
+            //Calculator();
 
-            //VisitenKarte();
+            VisitenKarte();
 
             //DasSpielBeginnt();
         }

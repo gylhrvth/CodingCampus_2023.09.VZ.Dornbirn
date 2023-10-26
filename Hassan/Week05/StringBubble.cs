@@ -39,6 +39,10 @@ namespace Hassan.Week05
             Console.WriteLine("\nSortiert lexikographisch absteigend:");
             PrintArray(names);
 
+
+            Console.WriteLine("\nSortiert nach char index:");
+            BubbleSortCharInd(names, ascending: true, 4);
+            PrintArray(names);
         }
 
 
@@ -124,14 +128,17 @@ namespace Hassan.Week05
 
 
 
-        static void BubbleSort(string[] arr, CultureInfo culture, bool ascending)
+        static void BubbleSortCharInd(string[] arr, bool ascending, int charIndex)
         {
             int n = arr.Length;
             for (int i = 0; i < n - 1; i++)
             {
                 for (int j = 0; j < n - i - 1; j++)
                 {
-                    int comparisonResult = string.Compare(arr[j], arr[j + 1], culture, CompareOptions.IgnoreNonSpace);
+                    char char1 = arr[j][charIndex];
+                    char char2 = arr[j + 1][charIndex];
+
+                    int comparisonResult = string.Compare(char1.ToString(), char2.ToString());
 
                     if ((ascending && comparisonResult > 0) || (!ascending && comparisonResult < 0))
                     {
@@ -142,6 +149,9 @@ namespace Hassan.Week05
                 }
             }
         }
+
+
+        
 
 
 

@@ -15,26 +15,26 @@ namespace Simon.Week05
             //Console.WriteLine("\nBubblesort desc");
             //PrintArrnice(BubbleSortdesc(names));
 
-            Console.WriteLine("\nBubblesort Alphabet asc");
-            PrintArrnice(BubbleSortascabc(names));
+            //Console.WriteLine("\nBubblesort Alphabet asc");
+            //PrintArrnice(BubbleSortascabc(names));
 
-            Console.WriteLine("\nBubblesort Alphabet desc");
-            PrintArrnice(BubbleSortdescabc(names));
+            //Console.WriteLine("\nBubblesort Alphabet desc");
+            //PrintArrnice(BubbleSortdescabc(names));
 
             //Console.WriteLine("Bubblesort mit Strings Extended");
             //ChooseBubbleSort(names, true);
 
-            Console.WriteLine("\nBubblesort mit Strings und Character Index");
-            PrintArrnice(BubbleSortdescindex(names, 2));
+            //Console.WriteLine("\nBubblesort mit Strings und Character Index");
+            //PrintArrnice(BubbleSortdescindex(names, 2));
 
-            Console.WriteLine("\nAufgabe Reverse");
-            Console.WriteLine(ReverseString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches umgedreht werden soll.")));
+            //Console.WriteLine("\nAufgabe Reverse");
+            //Console.WriteLine(ReverseString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches umgedreht werden soll.")));
 
             Console.WriteLine("\nAufgabe Randomize");
             Console.WriteLine(RandomString(Console_Input.ReaduserinputString("Gib ein Belibiges Wort ein, welches random ausgegeben wird.")));
 
-            Console.WriteLine("Test");
-            Console.WriteLine();
+            //Console.WriteLine("Test");
+            //Console.WriteLine();
 
         }
         //Aufgabe Bubblesort mit Strings
@@ -147,7 +147,7 @@ namespace Simon.Week05
             {
                 (arr[arr.Length - i - 1], arr[i]) = (arr[i], arr[arr.Length - i - 1]);
             }
-            string output = new(arr);
+            string output = new string(arr);
             return output;
         }
         //Aufgabe Randomize
@@ -156,13 +156,13 @@ namespace Simon.Week05
             char[] arr = input.ToCharArray();
             for (int i = 0; i < arr.Length; i++)
             {
-                int j = random.Next(i, arr.Length);
+                int j = random.Next(0, arr.Length);
                 (arr[j], arr[i]) = (arr[i], arr[j]);
             }
             string output = new(arr);
             return output;
         }
-
+        
         
         
     }

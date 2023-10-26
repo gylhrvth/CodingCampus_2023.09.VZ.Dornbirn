@@ -1,14 +1,12 @@
-
-//﻿Kerem.Exercises.RepetitionVariables.Start();
-<<<<<<< HEAD
-Kerem.Week03.ArrayExamples.StartArrayExamples();
-=======
+Kerem.Exercises.Operators.Start();
 //Kerem.Week03.ArrayExamples.StartArrayExamples();
->>>>>>> 28a79191dedff06a8eac1d802cfa03257e4bd80a
+//Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week04.ConsoleInput.Start();
 //Kerem.Week04.Recursive.Start();
 //Kerem.Week04.CalculatorExample.Start();
 //Kerem.Week04.array2dExample.Start();
-Kerem.Week05.StringExamples.Start();
+//Kerem.Week05.StringExamples.Start();
+//Kerem.Week05.StringExamples2.Start();
+//Kerem.Week05.DataTableExample.Start();
 
 

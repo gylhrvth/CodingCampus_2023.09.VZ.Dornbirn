@@ -9,12 +9,27 @@ namespace Fabian.Week04
         public static void Start()
         {
             GameOfLife();
-
         }
 
         public static void GameOfLife()
         {
-            int[,] matrix = new int[100, 100];
+            int[,] matrix = new int[70, 100];
+
+            /*for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = 0;
+                }
+            }
+            // glider
+            matrix[0, 1] = 1;
+            matrix[1, 2] = 1;
+            matrix[2, 0] = 1;
+            matrix[2, 1] = 1;
+            matrix[2, 2] = 1;*/
+
+
 
             // fill array with random nums between 0 - 1
             for (int i = 0; i < matrix.GetLength(0); i++)
@@ -32,15 +47,13 @@ namespace Fabian.Week04
                 PrintMatrix(matrix);
                 try
                 {
-                    Thread.Sleep(10);
+                    Thread.Sleep(100);
                 }
                 catch (ThreadInterruptedException) { }
 
 
             }
         }
-
-
         public static int[,] ChangeMatrix(int[,] matrix)
         {
             int[,] changedMatrix = new int[matrix.GetLength(0), matrix.GetLength(1)];
@@ -48,12 +61,13 @@ namespace Fabian.Week04
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
-                {
+                {                                    
                     int alive = CheckAliveNeighbors(matrix, i, j);
 
                     if (matrix[i, j] == 1)
                     {
-                        if (alive < 2 || alive > 3)
+                        // rule 2, 3, 4
+                        if (alive < 3 || alive > 3)
                         {
                             changedMatrix[i, j] = 0;
                         }
@@ -70,10 +84,10 @@ namespace Fabian.Week04
                             changedMatrix[i, j] = 1;
                         }
                     }
+
+                  
                 }
             }
-
-
             return changedMatrix;
         }
 
@@ -112,10 +126,8 @@ namespace Fabian.Week04
                         sb.Append("  ");
                     }
                     else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-
-                        ConsoleColor randomColor = (ConsoleColor)random.Next(1, 15);
+                    { 
+                        ConsoleColor randomColor = (ConsoleColor)random.Next(1, 15); // random color without black(0)
                         Console.ForegroundColor = randomColor;
 
                         sb.Append((char)9632 + " ");
@@ -123,7 +135,6 @@ namespace Fabian.Week04
                 }
                 sb.AppendLine();
             }
-
             Console.SetCursorPosition(0, 0);
             Console.Write(sb.ToString());
         }

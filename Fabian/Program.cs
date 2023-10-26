@@ -1,1 +1,1 @@
-﻿Fabian.Week04.GameOfLifeClass.Start();
+﻿Fabian.Week05.StringTasks.Start();
