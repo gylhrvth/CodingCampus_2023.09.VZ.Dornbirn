@@ -6,6 +6,7 @@ namespace David.Week05
 		public static void StartReverseProgramm()
 		{
             Reverse();
+
 		}
 
         public static void Reverse()
@@ -13,12 +14,12 @@ namespace David.Week05
             Console.WriteLine("Gib ein Wort ein");
             string input = Console.ReadLine();
 
-            char[] FirstInput = input.ToCharArray();
-            char[] reverse = new char[FirstInput.Length];
+            //char[] FirstInput = input.ToCharArray();
+            char[] reverse = new char[input.Length];
 
-            for (int i = 0; i < FirstInput.Length; i++)
+            for (int i = 0; i < input.Length; i++)
             {
-                reverse[FirstInput.Length - 1 - i] = FirstInput[i];
+                reverse[input.Length - 1 - i] = input[i];
             }
             string word = new string(reverse);
 
