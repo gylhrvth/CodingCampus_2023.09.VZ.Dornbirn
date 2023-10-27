@@ -8,7 +8,7 @@ namespace Kerem.Exercises
 {
     internal class Conversions
     {
-        public static void main()
+        public static void Start()
         {
             //implizite Konvertierung
             int num = 213902;
