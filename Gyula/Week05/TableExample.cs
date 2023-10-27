@@ -45,8 +45,7 @@ namespace Gyula.Week05
         public static void PrintTable(string[][] table, bool[] alignLeft)
         {
             int[] widthPerColum = MaxLenghtPerColumn(table);
-            Console.WriteLine(string.Join(", ", widthPerColum));
-
+        
             for (int i = 0; i < table.Length; i++)
             {
                 for (int j = 0; j < table[i].Length; j++)

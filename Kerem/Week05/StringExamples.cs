@@ -166,6 +166,19 @@ namespace Kerem.Week05
             Console.WriteLine(myChar);
 
         }
+        public static void Randomize()
+        {
+            Random rnd = new Random();
+            Console.WriteLine("Wilkommen zum Zufallshuffle Programm!");
+            string inputText = Console.ReadLine();
+            char[] myChar = inputText.ToCharArray();
+
+            
+            char[] myChar2 = inputText.ToCharArray();
+            Array.Reverse(myChar2);
+
+
+        }
         public static string RandomizeString(string text)
         {
             char[] arr = text.ToCharArray();

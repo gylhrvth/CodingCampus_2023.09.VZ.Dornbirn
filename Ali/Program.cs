@@ -1,1 +1,1 @@
-﻿Ali.Week04.ConsoleInput.Start();
+﻿Ali.Week05.Strings.Start();

@@ -131,6 +131,9 @@ namespace Dimitri.Week05
 
             FindLongestMatchingSubstring();
 
+
+
+
         }
 
         public static string[] BubbleSortStringLength(string[] arr, bool asc)
@@ -524,35 +527,166 @@ namespace Dimitri.Week05
 
         public static string LongestMatchingSubstring(string userString0, string userString1)
         {
-            string subString = "";
-            int wordcount0 = Regex.Count(userString0, "\\w");
+            //string subString = "";
+            //int wordcount0 = Regex.Count(userString0, "\\w");
 
-            int wordcount1 = Regex.Count(userString1, "\\w");
+            //int wordcount1 = Regex.Count(userString1, "\\w");
 
-            string[] text0 = new string[wordcount0];
-            // write userString0 to array
+            //string[] text0 = new string[wordcount0];
+            //// write userString0 to array
 
-            string[] text1 = new string[wordcount1];
-            // write usertstring1 to array
+            //string[] text1 = new string[wordcount1];
+            //// write usertstring1 to array
 
+            //BubbleSortStringLength(text0, false);
+
+            //BubbleSortStringLength(text1, false);
+
+            //for (int i = 0; i < text0.Length; i++)
+            //{
+            //    for (int j = 0; j < text1.Length; j++)
+            //    {
+            //        if (text0[i] == text1[j] && text0[i].Length > text1[j].Length)
+            //        { 
+            //            return text0[i]; 
+            //        }
+            //        else if (text0[i] == text1[j] && text0[i].Length < text1[j].Length) 
+            //        { 
+            //            return text0[i]; 
+            //        }
+            //    }
+            //}
+
+
+            string word = string.Empty;
+
+            //int text0Length = 0;
+
+            int text0Length = Regex.Count(userString0, "[\\s]");
+
+            int text1Length = Regex.Count(userString1, "[\\s]");
+
+            //int text1Length = 0;
+
+            //for (int i = 0; i < userString1.Length; i++)
+            //{
+            //    if (!char.IsLetter(userString1[i]))
+            //    {
+            //        text1Length++;
+            //    }
+
+            //}
+
+
+            string[] text0 = new string[text0Length];
+
+            int count = 0;
+
+            for (int i = 0; i < text0.Length; i++)
+            {
+                for (int j = count; j < userString0.Length; j++)
+                {
+                    if (char.IsLetter(userString0[j]))
+                    {
+                        word += userString0[j];
+                        count++;
+
+                    }
+                    else
+                    {
+                        count++;
+                        text0[i] = word;
+                        word = string.Empty;
+                        break;
+
+                    }
+                }
+            }
+
+            string[] text1 = new string[text1Length];
+
+            count = 0;
+
+            for (int i = 0; i < text1.Length; i++)
+            {
+                for (int j = count; j < userString1.Length; j++)
+                {
+
+                    if (char.IsLetter(userString1[j]))
+                    {
+                        word += userString1[j];
+                        count++;
+
+                    }
+                    else
+                    {
+                        count++;
+                        text1[i] = word;
+                        word = string.Empty;
+                        break;
+
+                    }
+                }
+            }
+
+            // find index of array that is null
+            //int endOfText0 = 0;
+            //for (int i = 0; i < text0.Length; i++)
+            //{
+            //    if (text0[i] == null)
+            //    {
+            //        endOfText0 = i;
+            //        break;
+            //    }
+            //}
+
+            //int endOfText1 = 0;
+            //for (int i = 0; i < text1.Length; i++)
+            //{
+            //    if (text1[i] == null)
+            //    {
+            //        endOfText1 = i;
+            //        break;
+            //    }
+            //}
+
+            ////make a shorter array
+
+            //string[] cleanedText0 = CopyArrayUntilIndex(text0, endOfText0);
+            //string[] cleanedText1 = CopyArrayUntilIndex(text1, endOfText1);
+
+            //order array by length
             BubbleSortStringLength(text0, false);
 
             BubbleSortStringLength(text1, false);
 
             for (int i = 0; i < text0.Length; i++)
             {
-                for (int j = 0; j < text1.Length; j++)
+                for (int j = 0; j < text0.Length; j++)
                 {
-                    if (text0[i] == text1[j] && text0[i].Length > text1[j].Length)
-                    { 
-                        return text0[i]; 
+                    if (text0[i] == text1[j])
+                    {
+                        return text0[i];
                     }
-                    else if (text0[i] == text1[j] && text0[i].Length < text1[j].Length) 
-                    { 
-                        return text0[i]; 
-                    }
+
+                    return "No matching substrings";
                 }
             }
+
+            return "Wow";
+
+        }
+
+        public static string[] CopyArrayUntilIndex(string[] text, int index)
+        {
+            string[] result = new string[index];
+
+            for (int i = 0; i < index; i++)
+            {
+                result[i] = text[i];
+            }
+
+            return result;
         }
     }
 }
