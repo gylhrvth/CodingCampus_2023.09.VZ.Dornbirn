@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using static Fabian.Week02.ConsoleInput;
 
 namespace Fabian.Week05
@@ -11,7 +12,7 @@ namespace Fabian.Week05
             //NextSunday();
             //GetSundays(2023, 11);
             //GetWorkDays(2023, 11);
-            Calendar(2023, 10, 1);
+            Calendar(2023, 10, 27);
         }
 
         public static void TimeNow()
@@ -108,7 +109,11 @@ namespace Fabian.Week05
         }
         public static void PrintCalendar(int year, int month, int day, string[,] calendar)
         {
+            GregorianCalendar g = new();
+            
+            int lastDay = DateTime.DaysInMonth(year, month);
             int count = 1;
+
             for (int i = 0; i < calendar.GetLength(0); i++)
             {
                 for (int j = 0; j < calendar.GetLength(1); j++)
@@ -119,9 +124,13 @@ namespace Fabian.Week05
                         {
                             Console.Write("| {0, 3}", count++ + "*");
                         }
-                        else if (count == DateTime.DaysInMonth(year, month))
+                        else if (count == lastDay)
                         {
-                            Console.WriteLine();
+                            for (int k = 0; k < 7 - j; k++)
+                            {
+                                Console.Write("| {0, 2} ", " ");
+                            }
+                            Console.WriteLine("|");
                             return;
                         }
                         else
