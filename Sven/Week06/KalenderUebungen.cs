@@ -14,8 +14,16 @@ namespace Sven.Week06
         {
 
             WhereAndWhen();
-            DateOfBirth();
+            Console.WriteLine();
 
+            //DateOfBirth();
+            //Console.WriteLine();
+
+            WhenSunday();
+            Console.WriteLine();
+
+            CountSundays();
+            Console.WriteLine();
 
         }
 
@@ -25,23 +33,49 @@ namespace Sven.Week06
             CultureInfo austrian = new CultureInfo("de-AT");
 
             Console.WriteLine(t.ToString("d", austrian));
+            Console.WriteLine();
             Console.WriteLine(t.ToString("T", austrian));
+            Console.WriteLine();
             Console.WriteLine(t.ToString("g", austrian));
+            Console.WriteLine();
 
             Console.WriteLine(t.ToString("yyyy.MM.dd"));
         }
 
         public static void DateOfBirth()
         {
-            string brth = "";
+            string datevalue = "";
 
             Console.WriteLine("Please tell me your date of birth: ");
-            brth = Console.ReadLine();
+            datevalue = Console.ReadLine();
 
-            DateTime.Parse(brth);
+            DateTime dateValue = DateTime.Parse(datevalue);
+            GregorianCalendar cal = new GregorianCalendar();
+            Console.WriteLine(cal.GetDayOfWeek(dateValue));
+        }
+
+        public static void WhenSunday()
+        {
+            GregorianCalendar gcal = new GregorianCalendar();
+           
+            DateTime currentDate = DateTime.Now;
+
+            int currentDayOfWeek = (int)currentDate.DayOfWeek;
+            int daysUntilNextSunday = 7 - currentDayOfWeek;
+
+            DateTime nextSunday = currentDate.AddDays(daysUntilNextSunday);
+
+            Console.WriteLine("Das Datum des nächsten Sonntags ist: " + nextSunday.ToString("yyyy-MM-dd"));
+        }
+
+        public static void CountSundays()
+        {
 
 
 
         }
     }
+
 }
+
+

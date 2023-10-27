@@ -29,7 +29,7 @@ namespace Fabian.Week02
                 }
                 else if (!Regex.IsMatch(text, pattern))
                 {
-                    Console.WriteLine("Not a valid text!");
+                    Console.WriteLine("Not a valid input!");
                 }
                 else
                 {
