@@ -13,6 +13,7 @@ namespace Fabian.Week05
             //GetSundays(2023, 11);
             //GetWorkDays(2023, 11);
             Calendar(2023, 10, 27);
+
         }
 
         public static void TimeNow()
