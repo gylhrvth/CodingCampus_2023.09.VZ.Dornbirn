@@ -1,5 +1,5 @@
-
-//﻿Kerem.Exercises.RepetitionVariables.Start();
+//Kerem.Exercises.Conversions.Start();
+//Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week04.ConsoleInput.Start();
 //Kerem.Week04.Recursive.Start();
@@ -8,4 +8,6 @@
 //Kerem.Week05.StringExamples.Start();
 //Kerem.Week05.StringExamples2.Start();
 Kerem.Week05.DataTableExample.Start();
+//Kerem.Week05.CountHesse.Start();
+
 

@@ -2,6 +2,7 @@
 using static Fabian.Week05.StringTasksToEmail;
 using System.Text.RegularExpressions;
 using System.Text;
+using Ressources;
 
 namespace Fabian.Week05
 {
@@ -9,17 +10,19 @@ namespace Fabian.Week05
     {
         public static void Start()
         {
-            // Console.WriteLine(ReplaceAll("Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!", "wird", "war und ist"));
+            //Console.WriteLine(ReplaceAll("Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!", "wird", "war und ist"));
             //ReplaceAll2("Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!");
             //ReplaceAll3("749813247132984712039487123049871204398712039487");
-            //LongestCommonSubstring
+            //Console.WriteLine(LongestCommonSubstring());
 
             //String[] words = WordSplit("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!", "Tag");
             //Console.WriteLine(string.Join("\n", words));
+            LongestCommonSubstring();
 
+            //String[] words2 = WordSplitAndSort("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!");
+            //Console.WriteLine("[{0}]", string.Join(" ", words2));
 
-            String[] words2 = WordSplitAndSort("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!");
-            Console.WriteLine("[{0}]", string.Join("-", words2));
+            Console.WriteLine(WordAnalysisLongestWord(StringRessources.getHesse(), StringRessources.getText()));
         }
 
         public static String ReplaceAll(String text, String oldValue, String newValue)
@@ -56,11 +59,10 @@ namespace Fabian.Week05
             String text4 = Regex.Replace(text, "[1-36-9]", "");
             Console.WriteLine("\n" + text4);
         }
-        public static void LongestCommonSubstring(String text1 = "", String text2 = "")
+        public static String LongestCommonSubstring(String text1 = "", String text2 = "")
         {
             String longerStr;
             String shorterStr;
-
 
             if (text1 == "")
             {
@@ -100,38 +102,46 @@ namespace Fabian.Week05
                 }
             }
 
-
-            Console.WriteLine("Longest common word: " + longestSub);
+            return longestSub;
 
         }
         public static String[] WordSplit(String text, String seperator)
         {
             String[] words = text.Split(seperator);
-
             StringBuilder sb = new();
 
             foreach (string word in words)
             {
                 sb.AppendLine(word);
-                
             }
+            String[] result = sb.ToString().Split(seperator);
 
-            return sb.ToString().Split(seperator);
+            return result;
         }
         public static String[] WordSplitAndSort(String text)
         {
-            StringBuilder sb = new();
             String[] words = text.Split();
+            StringBuilder sb = new();
 
             words = BubbleSortStringAlphabeticallyASC(words);
 
             foreach (string word in words)
             {
-                sb.AppendLine(word);
+                sb.Append(word);
+                sb.Append(", ");
             }
             String[] result = sb.ToString().Split();
 
-            return result; 
+            return result;
+        }
+        public static String WordAnalysisLongestWord(String text1, String text2)
+        {
+            StringBuilder sb = new();
+            sb.Append(text1);
+            sb.Append(text2);
+
+
+            return sb.ToString();
         }
     }
 }

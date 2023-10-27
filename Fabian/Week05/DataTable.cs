@@ -5,7 +5,6 @@
         public static void Start()
         {
             String[] headline = { "Firstname", "Lastname", "Age", "Place", "Distance from Capital" };
-
             String[] firstNames = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
             String[] lastNames = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
             int[] ages = { 40, 78, 5, 18, 81 };
@@ -27,7 +26,7 @@
 
             int totalLength = firstNameMaxLength + lastNameMaxLength + ageMaxLength + placeMaxLength + distanceMaxLength + 12;
             string line = new('-', totalLength);
-            String formatString = string.Format("{{0,{0}}} | {{1,{1}}} | {{2,{2}}} | {{3,{3}}} | {{4,{4}}}", -1 * firstNameMaxLength, -1 * lastNameMaxLength, ageMaxLength, -1 * placeMaxLength, distanceMaxLength);
+            String formatString = string.Format("{{0,{0}}} | {{1,{1}}} | {{2,{2}}} | {{3,{3}}} | {{4,{4}} }", -1 * firstNameMaxLength, -1 * lastNameMaxLength, ageMaxLength, -1 * placeMaxLength, distanceMaxLength);
 
             Console.WriteLine(line);
             Console.WriteLine(formatString, headline[0], headline[1], headline[2], headline[3], headline[4]);
