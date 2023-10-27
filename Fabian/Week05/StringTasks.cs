@@ -16,10 +16,10 @@ namespace Fabian.Week05
 
             //String[] words = WordSplit("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!", "Tag");
             //Console.WriteLine(string.Join("\n", words));
+            LongestCommonSubstring();
 
-
-            String[] words2 = WordSplitAndSort("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!");
-            Console.WriteLine("[{0}]", string.Join("-", words2));
+            //String[] words2 = WordSplitAndSort("Heute wird ein guter Tag! Heute wird der beste Tag überhaupt! Heute wird ein spitzen super Tag!");
+            //Console.WriteLine("[{0}]", string.Join("-", words2));
         }
 
         public static String ReplaceAll(String text, String oldValue, String newValue)
@@ -60,7 +60,6 @@ namespace Fabian.Week05
         {
             String longerStr;
             String shorterStr;
-
 
             if (text1 == "")
             {
