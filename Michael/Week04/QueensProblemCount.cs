@@ -33,8 +33,8 @@ namespace Michael.Week04
             if (nthQueen == toPlaceQueens)
             {
                 numberOfSolutions++;
-                //PrintField(field);
-                //Console.WriteLine();
+                PrintField(field);
+                Console.WriteLine();
                 return true;
             }
 
@@ -46,7 +46,7 @@ namespace Michael.Week04
                 {
                     if(PlaceNext(field, currentPosition, nthQueen + 1))
                     {
-                        currentPosition.Item2++;
+                        //currentPosition.Item2++;
                     }
                     else
                     {

@@ -5,6 +5,7 @@ using System.Threading.Channels;
 using Ressources;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace Niklas.Week05
 {
@@ -40,10 +41,12 @@ namespace Niklas.Week05
 
             //tabellen();
 
-            RegexEmail();
+            //RegexEmail();
 
             //string gethesse = Ressources.StringRessources.getHesse();
-            Hesse();
+            //Hesse();
+            //Console.WriteLine();
+            //Hesse2();
 
             String text = "Heute wird ein guter Tag! Heute wird ein noch guterer Tag! Heute wird ein spitzen guter Tag!";
 
@@ -52,6 +55,7 @@ namespace Niklas.Week05
             Replace3();
 
             LongestSubstring();
+            LongestWord();
         }
         public static void BubblesortAsc(String[] names)
         {
@@ -240,7 +244,7 @@ namespace Niklas.Week05
             Console.WriteLine(underscore);
             for (int i = 0; i < age.Length; i++)
             {
-                Console.Write("|{0}", string.Join(space, $"{firstName[i],-24}") + $"{"|"}" + string.Join(space, $"{lastName[i],-12}") + space + $"{"|",16}" + string.Join(space, $"{age[i],-2}") + space + $"{"|",21}" + string.Join(space, $"{place[i],-22}") + space + "|" + string.Join(space, $"{distanceFromCapital[i],-8}") + "\n");
+                Console.Write("|{0}", string.Join(space, $"{firstName[i],-25}") + $"{"|"}" + string.Join(space, $"{lastName[i],-12}") + space + $"{"|",16}" + string.Join(space, $"{age[i],-2}") + space + $"{"|",21}" + string.Join(space, $"{place[i],-22}") + space + "|" + string.Join(space, $"{distanceFromCapital[i],-8}") + "\n");
             }
             Console.WriteLine(underscore);
         }
@@ -252,18 +256,30 @@ namespace Niklas.Week05
             Console.WriteLine(Regex.IsMatch("alfons@drlue.at", regex));
             Console.WriteLine(Regex.IsMatch("rambina.alfons@drlue.at", regex));
             Console.WriteLine(Regex.IsMatch("rambina1.1alfons@drlue.at", regex));
-            Console.WriteLine(Regex.IsMatch("1rambina1.alfons@drlue.at", regex = Convert.ToString(false)));
-            Console.WriteLine(Regex.IsMatch("@drlue.at", regex = Convert.ToString(false)));
-            Console.WriteLine(Regex.IsMatch("drlue.at", regex = Convert.ToString(false)));
-            Console.WriteLine(Regex.IsMatch("asdf@drlue", regex = Convert.ToString(false)));
-            Console.WriteLine(Regex.IsMatch("asdf@microsoft.c", regex = Convert.ToString(false)));
+            Console.WriteLine(Regex.IsMatch("1rambina1.alfons@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("@drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("drlue.at", regex));
+            Console.WriteLine(Regex.IsMatch("asdf@drlue", regex));
+            Console.WriteLine(Regex.IsMatch("asdf@microsoft.c", regex));
             Console.WriteLine();
             //?
+            Regex reg = new Regex(regex);
         }
 
         public static void Hesse()
         {
+            String text = Ressources.StringRessources.getHesse();
+            Console.WriteLine(text);
+            Console.WriteLine("Count \"Hesse\" int text: {0}", countSubstring(text, "Hesse"));
+        }
 
+        public static void Hesse2()
+        {
+            String text = Ressources.StringRessources.getHesse();
+            string replace = text.Replace("Hesse", "HESSE");
+            Console.WriteLine("Count \"Hesse\" int text: {0}", countSubstring(text, "Hesse"));
+            replace.ToUpper();
+            Console.WriteLine(text);
         }
 
         public static void Replace(String text)
@@ -312,12 +328,12 @@ namespace Niklas.Week05
             Console.WriteLine(regex2.Replace(text, ""));
             Console.WriteLine();
 
-            Regex regex3 = new Regex("[^2-4]");
+            Regex regex3 = new Regex("[^0-1][^5-9]");
             Console.Write("Remove 2 to 4: ");
             Console.WriteLine(regex3.Replace(text, ""));
             Console.WriteLine();
 
-            Regex regex4 = new Regex(@"[^4-5][^0-1]");
+            Regex regex4 = new Regex(@"[^0-1][^4-5]");
             Console.Write("Remove 1 to 3 and 6 to 9: ");
             Console.WriteLine(regex4.Replace(text, ""));
             Console.WriteLine();
@@ -325,28 +341,30 @@ namespace Niklas.Week05
 
         public static void LongestSubstring()
         {
-            Console.Write("Enter a sentence: ");
-            String input = Console.ReadLine();
-            Regex regex = new Regex($"@[^{input}]");
-            Console.Write("Enter another sentence: ");
-            String input2 = Console.ReadLine();
-            //Regex regex = new Regex;
+            Console.Write("Enter your first sentence: ");
+            String text1 = Convert.ToString(Console.ReadLine());
+            Console.Write("Enter your second sentence: ");
+            String text2 = Convert.ToString(Console.ReadLine());
 
-            char[] charArray = input.ToCharArray();
-            char[] charArray2 = input2.ToCharArray();
+            string longest = GetLongestSubstring(text1, text2);
 
-            if (charArray == charArray2)
-            {
-                Console.WriteLine("The longest substring is: " + charArray);
-            }
+            Console.WriteLine("{0}\n{1}\n{2}", text1, text2, longest);
+            Console.WriteLine(text2);
 
-            Console.WriteLine(Regex.IsMatch(input, input2));
-
-            //if (input == input2)
-            //{
-            //    Console.WriteLine("längster gemeinsamer substring: " + regex);
-            //}
+            Console.WriteLine(Regex.IsMatch(text1, text2));
         }
+
+        public static void LongestWord()
+        {
+            Console.Write("Enter your first sentence: ");
+            String text1 = Convert.ToString(Console.ReadLine());
+            Console.Write("Enter your second sentence: ");
+            String text2 = Convert.ToString(Console.ReadLine());
+            string longestWord = GetLongestWord(text1, text2);
+            Console.WriteLine("Longest word: {0}", longestWord);
+        }
+
+
 
         public static void PrintArray(String[] names)
         {
@@ -365,6 +383,60 @@ namespace Niklas.Week05
                 ++count[c];
             }
             return count;
+        }
+        public static int countSubstring(string text, string searchfor)
+        {
+            int count = 0;
+            int startpos = text.IndexOf(searchfor, 0);
+
+            while (startpos > -1)
+            {
+                ++count;
+                startpos = text.IndexOf(searchfor, 1 + startpos);
+            }
+            return count;
+        }
+        public static string GetLongestSubstring(string longText, string shortText)
+        {
+            if (longText.Length < shortText.Length)
+            {
+                return GetLongestSubstring(shortText, longText);
+            }
+
+            string result = "";
+            int targetLength = shortText.Length;
+            while (targetLength > 0 && result.Length == 0)
+            {
+                for (int startPos = 0; startPos <= shortText.Length - targetLength; ++startPos)
+                {
+                    string textForSearch = shortText.Substring(startPos, targetLength);
+
+                    if (longText.Contains(textForSearch))
+                    {
+                        result = textForSearch;
+                    }
+                }
+                --targetLength;
+            }
+            return result;
+        }
+        public static string GetLongestWord(string text1, string text2)
+        {
+            string[] words1 = text1.Split(" ");
+            string[] words2 = text2.Split(" ");
+
+            string result = "";
+            for (int i = 0; i < words1.Length; i++)
+            {
+                for (int j = 0; j < words2.Length; j++)
+                {
+                    if (words1[i] == words2[j] && words1[i].Length > result.Length)
+                    {
+                        result = words1[i];
+                    }
+                }
+            }
+            return result;
         }
     }
 }
