@@ -49,14 +49,13 @@ namespace Sven.Week05
             //ReverseString();
             //Console.WriteLine();
 
-            //Console.WriteLine("String Randomize:");
-            //Console.WriteLine("Wilkommen zum Randomize Programm!");
-            //string text = Console.ReadLine();
-            //RandomizeString(text);
-            //Console.WriteLine();
+            Console.WriteLine("String Randomize:");
+            Console.WriteLine("Wilkommen zum Randomize Programm!");
+            string text = Console.ReadLine();
+            RandomizeString(text);
+            Console.WriteLine();
 
-            String s = new String[] ( "Jovo", "Mehmet", "Sven", "Martin", "Selina",
-                "Niklas", "Ali", "Fabienne", "Lukas", "Sandro" );
+            String s = StringRessources.getText();
             Console.WriteLine(s);
             int[] count = countLetters(s);
             PrintResult(count);
