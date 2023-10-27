@@ -4,8 +4,9 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 using Ressources;
+using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Sven.Week05
 {
@@ -49,17 +50,18 @@ namespace Sven.Week05
             //ReverseString();
             //Console.WriteLine();
 
-            //Console.WriteLine("String Randomize:");
-            //Console.WriteLine("Wilkommen zum Randomize Programm!");
-            //string text = Console.ReadLine();
-            //RandomizeString(text);
-            //Console.WriteLine();
+            Console.WriteLine("String Randomize:");
+            Console.WriteLine("Wilkommen zum Randomize Programm!");
+            string text = Console.ReadLine();
+            RandomizeString(text);
+            Console.WriteLine();
 
-            String s = new String[] ( "Jovo", "Mehmet", "Sven", "Martin", "Selina",
-                "Niklas", "Ali", "Fabienne", "Lukas", "Sandro" );
+            String s = StringRessources.getText();
             Console.WriteLine(s);
+
             int[] count = countLetters(s);
             PrintResult(count);
+
             Console.WriteLine();
 
 
