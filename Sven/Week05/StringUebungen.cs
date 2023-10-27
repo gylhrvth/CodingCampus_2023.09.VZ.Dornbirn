@@ -4,8 +4,9 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 using Ressources;
+using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Sven.Week05
 {
@@ -57,8 +58,10 @@ namespace Sven.Week05
 
             String s = StringRessources.getText();
             Console.WriteLine(s);
+
             int[] count = countLetters(s);
             PrintResult(count);
+
             Console.WriteLine();
 
 
