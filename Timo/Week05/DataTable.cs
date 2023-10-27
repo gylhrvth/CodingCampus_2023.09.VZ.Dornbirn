@@ -15,8 +15,9 @@ public class DataTable
         string[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
         float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
         string[] origin = { "Austria", "Cuba", "Columbien", "Nigeria", "Hungary" };
+        string[] gender = { "Male", "NULL", "Female", "Male", "Attackhelicopter" };
         
-        int columns = 6;
+        int columns = 7;
         bool[] isAlignedLeft = new bool[columns];
         string[][] table = Create2DStringArray(1 + firstName.Length, columns);
         AddColumn(table, isAlignedLeft, 0, "First name", firstName);
@@ -25,6 +26,7 @@ public class DataTable
         AddColumn(table, isAlignedLeft, 3, "Place", place);
         AddColumn(table, isAlignedLeft, 4, "Distance", distanceFromCapital);
         AddColumn(table, isAlignedLeft, 5, "Origin", origin);
+        AddColumn(table, isAlignedLeft, 6, "Gender", gender);
 
         int totalMaxLength = Arrays.ArraySum(MaxLenghtPerColumn(table))+4*columns+1;
 
@@ -51,8 +53,9 @@ public class DataTable
     public static void PrintTable(string[][] table, bool[] alignLeft, int totalMaxLength)
     {
         string tableTopLine = new string('_', totalMaxLength);
-        string tableTopUnderLine = new string('\u203E', totalMaxLength);
-        string tableLine = new string('-', totalMaxLength);
+        string tableTopUnderLine = new string('=', totalMaxLength-3);
+        string tableLine = new string('-', totalMaxLength-3);
+        string tableEndLine = new string('\u203E', totalMaxLength);
 
         Console.WriteLine(tableTopLine);
         int[] widthPerColum = MaxLenghtPerColumn(table);
@@ -73,11 +76,15 @@ public class DataTable
             Console.WriteLine("|");
             if (i == 0)
             {
-                Console.WriteLine(tableTopUnderLine);
+                Console.WriteLine("||"+tableTopUnderLine+"|");
+            }
+            else if (i == table.Length-1)
+            {
+                Console.WriteLine(tableEndLine);
             }
             else
             {
-                Console.WriteLine(tableLine);
+                Console.WriteLine("||"+tableLine+"|");
             }
         }
     }
