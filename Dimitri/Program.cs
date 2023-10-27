@@ -1,1 +1,1 @@
-﻿Dimitri.Week05.Strings.Main();
+﻿Dimitri.Week05.Date.Main();

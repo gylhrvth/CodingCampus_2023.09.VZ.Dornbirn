@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics.Metrics;
-using System.Linq.Expressions;
-using static System.Net.Mime.MediaTypeNames;
+using Ressources;
 
 namespace Erik.Week05
 {
@@ -9,25 +7,25 @@ namespace Erik.Week05
     {
         public static void Start()
         {
-            SearchForWord("Hesse");
+            String randomText = StringRessources.getHesse();
+            SearchForWord(randomText, "Hesse");
         }
-
-        public static void SearchForWord(String wordToSearch)
+        
+        public static void SearchForWord(String text, String wordToSearch)
         {
-            String randomText = Ressources.StringRessources.getHesse();
-            int wordCounter = 0;
-            int index = randomText.IndexOf(wordToSearch);
 
+            int wordCounter = 0;
+            int index = text.IndexOf(wordToSearch);
 
             while (index != -1)
             {
                 wordCounter++;
                 Console.Write("Word counter: " + wordCounter + "\n>>>at the position: " + index + "\n" + "");
-                index = randomText.IndexOf(wordToSearch, index + 1);
+                index = text.IndexOf(wordToSearch, index + 1);
             }
             if (wordCounter == 0)
             {
-                Console.WriteLine("No word found!");
+                Console.WriteLine("No word was found!");
             }
         }
     }

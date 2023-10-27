@@ -129,7 +129,27 @@ namespace Dimitri.Week05
             //Console.WriteLine(DeleteAll(numbersReplace, "[1-36-9]"));
             //Console.WriteLine();
 
-            FindLongestMatchingSubstring();
+            //FindLongestMatchingSubstring();
+
+            //String text = Ressources.StringRessources.getHesse();
+            //Console.WriteLine(text);
+            //Console.WriteLine("Count \"Hesse\" in text: {0}", CountSubstringGyula(text, "Hesse"));
+
+
+            //longest Substring by gyula
+
+            String text1 = "Hello World!";
+            String text2 = "Hello Patrick!";
+
+            string longest = GetLongestSubstringGyula(text1, text2 );
+            Console.WriteLine("{0}\n{1}\n{2}", text1, text2, longest);
+
+            Console.WriteLine("=============================================");
+            string longestWord = GetLongestWordGyula(text1, text2);
+            Console.WriteLine("longest common word: " + longestWord);
+
+
+
 
         }
 
@@ -468,7 +488,6 @@ namespace Dimitri.Week05
 
         public static void SearchForHesse(string text, string word)
         {
-            int count = 0;
 
             MatchCollection matches = Regex.Matches(text, word);
 
@@ -554,17 +573,198 @@ namespace Dimitri.Week05
             //    }
             //}
 
-            string subString = "";
-            string word = "";
 
-            for(int i = 0; i < userString0.Length; i++) 
+            string word = string.Empty;
+
+            //int text0Length = 0;
+
+            int text0Length = Regex.Count(userString0, "[\\s]");
+
+            int text1Length = Regex.Count(userString1, "[\\s]");
+
+            //int text1Length = 0;
+
+            //for (int i = 0; i < userString1.Length; i++)
+            //{
+            //    if (!char.IsLetter(userString1[i]))
+            //    {
+            //        text1Length++;
+            //    }
+
+            //}
+
+
+            string[] text0 = new string[text0Length + 1];
+
+            int count = 0;
+
+            for (int i = 0; i < text0.Length; i++)
             {
-                while (userString0[i].CompareTo(' ') != 0)
+                for (int j = count; j < userString0.Length; j++)
                 {
-                    word += userString0[i];
+                    if (char.IsLetter(userString0[j]))
+                    {
+                        word += userString0[j];
+                        count++;
+
+                    }
+                    else
+                    {
+                        count++;
+                        text0[i] = word;
+                        word = string.Empty;
+                        break;
+                    }
                 }
             }
-            return word;
+
+            string[] text1 = new string[text1Length + 1];
+
+            count = 0;
+
+            for (int i = 0; i < text1.Length; i++)
+            {
+                for (int j = count; j < userString1.Length; j++)
+                {
+
+                    if (char.IsLetter(userString1[j]))
+                    {
+                        word += userString1[j];
+                        count++;
+
+                    }
+                    else
+                    {
+                        count++;
+                        text1[i] = word;
+                        word = string.Empty;
+                        break;
+                    }
+
+                }
+            }
+
+            // find index of array that is null
+            //int endOfText0 = 0;
+            //for (int i = 0; i < text0.Length; i++)
+            //{
+            //    if (text0[i] == null)
+            //    {
+            //        endOfText0 = i;
+            //        break;
+            //    }
+            //}
+
+            //int endOfText1 = 0;
+            //for (int i = 0; i < text1.Length; i++)
+            //{
+            //    if (text1[i] == null)
+            //    {
+            //        endOfText1 = i;
+            //        break;
+            //    }
+            //}
+
+            ////make a shorter array
+
+            //string[] cleanedText0 = CopyArrayUntilIndex(text0, endOfText0);
+            //string[] cleanedText1 = CopyArrayUntilIndex(text1, endOfText1);
+
+            //order array by length
+            BubbleSortStringLength(text0, false);
+
+            BubbleSortStringLength(text1, false);
+
+            for (int i = 0; i < text0.Length; i++)
+            {
+                for (int j = 0; j < text0.Length; j++)
+                {
+                    if (text0[i] == text1[j])
+                    {
+                        return text0[i];
+                    }
+
+                    return "No matching substrings";
+                }
+            }
+
+            return "Wow";
+
+        }
+
+        public static string[] CopyArrayUntilIndex(string[] text, int index)
+        {
+            string[] result = new string[index];
+
+            for (int i = 0; i < index; i++)
+            {
+                result[i] = text[i];
+            }
+
+            return result;
+        }
+
+        public static int CountSubstringGyula(string text, string searchFor)
+        {
+            int count = 0;
+            int startPos = text.IndexOf(searchFor, 0);
+
+            while (startPos > -1)
+            {
+                ++count;
+                startPos = text.IndexOf(searchFor, 1 + startPos);
+            }
+
+            return count;
+        }
+
+        public static string GetLongestWordGyula(string text1, string text2)
+        {
+            string[] words1 = text1.Split(" ");
+            string[] words2 = text2.Split(" ");
+
+
+            string result = "";
+
+            for (int i = 0; i < words1.Length; i++)
+            {
+                for (int j = 0; j < words2.Length; j++)
+                {
+                    if (words1[i] == words2[j] && words1[i].Length > result.Length)
+                    {
+                        result = words1[i];
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static string GetLongestSubstringGyula(string longText, string shortText)
+        {
+
+            if(longText.Length < shortText.Length)
+            {
+                return GetLongestSubstringGyula(shortText, longText);
+            }
+
+            string result = "";
+
+            int targetLength = shortText.Length;
+            while (targetLength > 0)
+            {
+                for (int startPos = 0; startPos <= shortText.Length - targetLength; ++startPos)
+                {
+                    string textForSearch = shortText.Substring(startPos, targetLength);
+                    if (longText.Contains(textForSearch))
+                    {
+                        result = textForSearch;
+                    }
+                }
+
+                --targetLength;
+            }
+
+            return result;
         }
     }
 }
