@@ -1,1 +1,1 @@
-﻿Riccardo.Week05.TableExample.Start();
+﻿Riccardo.Week05.Strings.Start();
