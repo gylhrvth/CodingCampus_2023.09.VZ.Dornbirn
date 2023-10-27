@@ -13,9 +13,8 @@ namespace DarioLuis.Week05
 
         }
 
-        public static void Namen()
-        {
-            string[] nam1 = (Dario);
-        }
+        
+            
+        
     }
 }
