@@ -1,1 +1,1 @@
-﻿Gyula.Week05.CountHesse.Start();
+﻿Gyula.Week05.LongestSubstring.Start();
