@@ -12,7 +12,7 @@ namespace Kerem.Exercises
         {
             //implizite Konvertierung
             int num = 213902;
-            long mylong = num;
+            long longnum = num;
 
             float myfloat = 13.37f;
             double mynewdouble = myfloat;

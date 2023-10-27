@@ -140,7 +140,8 @@ namespace Fabian.Week05
                     char char1 = sorted[j][index];
                     char char2 = sorted[j + 1][index];
 
-                    if (asc && string.Compare(char1.ToString(), char2.ToString(), CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) > 0 || !asc && string.Compare(char1.ToString(), char2.ToString(), CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) < 0)
+                    if (asc && string.Compare(char1.ToString(), char2.ToString(), CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) > 0 ||
+                       !asc && string.Compare(char1.ToString(), char2.ToString(), CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) < 0)
                     {
                         (sorted[j], sorted[j + 1]) = (sorted[j + 1], sorted[j]);
                     }

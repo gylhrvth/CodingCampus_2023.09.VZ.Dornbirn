@@ -29,10 +29,10 @@ namespace Kerem.Week05
                 
             }
         }
-        public static int AddColumn(string[][] table, int columns, string headline, string[] values)
-        {
+       // public static int AddColumn(string[][] table, int columns, string headline, string[] values)
+        //{
 
-        } 
+        //} 
         
   
     }
