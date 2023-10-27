@@ -5,7 +5,6 @@
         public static void Start()
         {
             String[] headline = { "Firstname", "Lastname", "Age", "Place", "Distance from Capital" };
-
             String[] firstNames = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
             String[] lastNames = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
             int[] ages = { 40, 78, 5, 18, 81 };

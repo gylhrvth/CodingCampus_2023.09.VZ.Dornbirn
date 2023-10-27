@@ -18,7 +18,7 @@
             //BubbleSortNachBuchstabeAbsteigend(names);
             //PrintArray(names);
 
-            //ReverseProgram();
+            ReverseProgram();
             //Randomize(); 
         }
         public static void BubbleSortAufsteigend(string[] names)

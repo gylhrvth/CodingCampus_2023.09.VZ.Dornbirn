@@ -1,18 +1,23 @@
 ﻿using System;
-namespace Gyula.Week05
-{
-	public class TableExample
-	{
-		public static void Start()
-		{
-            string[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
-            string[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
-            int[] age = { 40, 78, 5, 18, 81 };
-            string[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
-            float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
-            string[] origin = { "Austria", "Cuba", "Columbien", "Nigeria", "Hungary" };
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 
-            int columns = 6;
+namespace Kerem.Week05
+{
+    internal class DataTableExample
+    {
+        public static void Start()
+        {
+            String[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
+            String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
+            int[] age = { 40, 78, 5, 18, 81 };
+            String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
+            float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
+
+            int columns = 5;
             bool[] isAlignedLeft = new bool[columns];
             string[][] table = Create2DStringArray(1 + firstName.Length, columns);
             AddColumn(table, isAlignedLeft, 0, "First name", firstName);
@@ -20,11 +25,10 @@ namespace Gyula.Week05
             AddColumn(table, isAlignedLeft, 2, "Age", age);
             AddColumn(table, isAlignedLeft, 3, "Place", place);
             AddColumn(table, isAlignedLeft, 4, "Distance", distanceFromCapital);
-            AddColumn(table, isAlignedLeft, 5, "Origin", origin);
 
             PrintTable(table, isAlignedLeft);
-        }
 
+        }
         public static int[] MaxLenghtPerColumn(string[][] table)
         {
             int[] maxWidth = new int[table[0].Length];
@@ -41,11 +45,11 @@ namespace Gyula.Week05
             }
             return maxWidth;
         }
-
         public static void PrintTable(string[][] table, bool[] alignLeft)
         {
             int[] widthPerColum = MaxLenghtPerColumn(table);
-        
+            Console.WriteLine(string.Join(", ", widthPerColum));
+
             for (int i = 0; i < table.Length; i++)
             {
                 for (int j = 0; j < table[i].Length; j++)
@@ -62,45 +66,46 @@ namespace Gyula.Week05
             }
         }
 
+
         public static string[][] Create2DStringArray(int rows, int columns)
         {
             string[][] result = new string[rows][];
-            for (int i = 0; i < result.Length; ++i)
+
+            for (int i = 0; i < result.Length; i++)
             {
                 result[i] = new string[columns];
+
             }
             return result;
         }
-
-        public static void AddColumn(string[][] table, bool[] alignLeft, int column, string headline, string[] values)
+        public static void AddColumn(string[][] table, bool[] alignLeft, int columns, string headline, string[] values)
         {
-            table[0][column] = headline;
-            alignLeft[column] = true;
+            table[0][columns] = headline;
+            alignLeft[columns] = true;
             for (int i = 0; i < values.Length; ++i)
             {
-                table[1 + i][column] = values[i];
+                table[1 + i][columns] = values[i];
+            }
+        }
+        public static void AddColumn(string[][] table, bool[] alignLeft, int columns, string headline, int[] values)
+        {
+            table[0][columns] = headline;
+            alignLeft[columns] = false;
+            for (int i = 0; i < values.Length; ++i)
+            {
+                table[1 + i][columns] = string.Format("{0}", values[i]);
+            }
+        }
+        public static void AddColumn(string[][] table, bool[] alignLeft, int columns, string headline, float[] values)
+        {
+            table[0][columns] = headline;
+            alignLeft[columns] = false;
+            for (int i = 0; i < values.Length; ++i)
+            {
+                table[1 + i][columns] = string.Format("{0:N1}", values[i]);
             }
         }
 
-        public static void AddColumn(string[][] table, bool[] alignLeft, int column, string headline, int[] values)
-        {
-            table[0][column] = headline;
-            alignLeft[column] = false;
-            for (int i = 0; i < values.Length; ++i)
-            {
-                table[1 + i][column] = string.Format("{0}", values[i]);
-            }
-        }
 
-        public static void AddColumn(string[][] table, bool[] alignLeft, int column, string headline, float[] values)
-        {
-            table[0][column] = headline;
-            alignLeft[column] = false;
-            for (int i = 0; i < values.Length; ++i)
-            {
-                table[1 + i][column] = string.Format("{0:N1}", values[i]);
-            }
-        }
     }
 }
-

@@ -11,24 +11,25 @@ namespace David.Week05
             // new Arr
             // schleife zählen
 
+
             string marie = StringRessources.getText();
-            Console.WriteLine(marie);
+            Console.WriteLine("This is the text of Marie Curie....");
 
             int[] count = CountLetter(marie);
             PrintResult(count);
 
         }
 
+
         public static int[] CountLetter(string text)
         {
             int[] count = new int[char.MaxValue];
-            for (int i = 0; i < text.Length; i++)
+            for (int i = 0;  i < text.Length;  i++)
             {
                 char c = text[i];
                 ++count[c];
             }
-
-
+         
             return count;
         }
         
