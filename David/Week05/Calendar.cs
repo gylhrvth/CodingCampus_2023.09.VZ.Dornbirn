@@ -1,31 +1,33 @@
 ﻿using System;
 using System.Globalization;
 
-
 namespace David.Week05
 {
-	public class Calendar
-	{
-		public static void Start()
-		{
+    public class Calendar
+    {
+        public static void Start()
+        {
             DateTime time = DateTime.Now;
             CultureInfo austria = new CultureInfo("de-AT");
 
-			OnlyTheDate(austria, time);
+            //OnlyTheDate(austria, time);
 
-			OnlyTheTime(austria, time);
+            //OnlyTheTime(austria, time);
 
-            DateNTime(austria, time);
+            //DateNTime(austria, time);
 
-            MyBirthday(austria, time);
+            //MyBirthday(austria, time);
 
-            WhenIsSunday(austria, time);
+            //WhenIsSunday(austria, time);
 
+            int result = HowManySundays(2023, 9);
+            Console.WriteLine(result);
+            Console.WriteLine(HowManySundays(2023, 10));
 
         }
 
-		public static void OnlyTheDate(CultureInfo austria, DateTime time)
-		{
+        public static void OnlyTheDate(CultureInfo austria, DateTime time)
+        {
 
             //Datum
             Console.WriteLine("Nur das Datum:");
@@ -34,8 +36,8 @@ namespace David.Week05
 
         }
 
-		public static void OnlyTheTime(CultureInfo austria, DateTime time)
-		{
+        public static void OnlyTheTime(CultureInfo austria, DateTime time)
+        {
             //Uhrzeit
             Console.WriteLine("Nur die Uhrzeit:");
             Console.WriteLine(time.ToString("t", austria));
@@ -43,7 +45,7 @@ namespace David.Week05
         }
 
         public static void DateNTime(CultureInfo austria, DateTime time)
-		{
+        {
             //Datum und Uhrzeit
             Console.WriteLine("Datum und Uhrzeit:");
             Console.WriteLine(time.ToString("s", austria));
@@ -65,7 +67,7 @@ namespace David.Week05
             }
             catch (FormatException)
             {
-             
+
                 Console.WriteLine("Please re-enter (dd.mm.yyyy):");
             }
         }
@@ -74,31 +76,50 @@ namespace David.Week05
         {
 
             //Wann ist Sonntag?
+            // Erstelle eine neue GregorianCalendar Instanz
+            // Bekomme das Datum des heutigen Tages
+            // Berechne den Tag der Woche des heutigen Tages
+            // Berechne die Anzahl der Tage bis zum nächsten Sonntag
+            // Berechne das Datum des nächsten Sonntags
+            // Gebe das Datum des nächsten Sonntags aus
+
             Console.WriteLine();
             Console.WriteLine("Wann ist Sonntag?");
 
-            // Erstelle eine neue GregorianCalendar Instanz
             GregorianCalendar calendar = new GregorianCalendar();
 
-            // Bekomme das Datum des heutigen Tages
             DateTime today = DateTime.Now;
 
-            // Berechne den Tag der Woche des heutigen Tages
             DayOfWeek dayOfWeek = today.DayOfWeek;
             Console.WriteLine(dayOfWeek);
 
-            // Berechne die Anzahl der Tage bis zum nächsten Sonntag
             int daysToNextSunday = 7 - (int)dayOfWeek;
             Console.WriteLine(daysToNextSunday);
-
-            // Berechne das Datum des nächsten Sonntags
+            Console.WriteLine((int)dayOfWeek);
             DateTime nextSunday = today.AddDays(daysToNextSunday);
 
-            // Gebe das Datum des nächsten Sonntags aus
             Console.WriteLine("Der nächste Sonntag ist: " + nextSunday.ToString("d", austria));
         }
 
-        
+        public static int HowManySundays(int year, int month)
+        {
+            GregorianCalendar calendar = new GregorianCalendar();
+            int count = 0;
+            int monthLength = DateTime.DaysInMonth(year, month);
+
+            DateTime firstOfMonth = new DateTime(year, month, 1);
+
+            for (int i = 0; i < monthLength; i++)
+            {
+                if (calendar.GetDayOfWeek(firstOfMonth.AddDays(i)) == DayOfWeek.Sunday)
+                {
+                    count++;
+                }
+            }
+            return count;
+
+
+
+        }
     }
 }
-

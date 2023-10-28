@@ -19,5 +19,5 @@
 //David.Week05.ToDoListe.Start();
 //David.Week05.Hesse.Start();
 //David.Week05.count2.Start();
-//David.Week05.Calendar.Start();
-David.Week05.Selftest.Start();
+David.Week05.Calendar.Start();
+//David.Week05.Selftest.Start();
