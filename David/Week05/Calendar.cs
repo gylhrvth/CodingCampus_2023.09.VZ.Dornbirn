@@ -61,11 +61,12 @@ namespace David.Week05
             try
             {
                 DateTime userBday = DateTime.Parse(Console.ReadLine());
+                Console.WriteLine();
             }
             catch (FormatException)
             {
-                return;
-                Console.WriteLine("FALSCH FALSCH FALSCH!!!! :D :D :D");
+             
+                Console.WriteLine("Please re-enter (dd.mm.yyyy):");
             }
         }
 
