@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Xml.Serialization;
 
 namespace David.Week05
 {
@@ -20,9 +24,20 @@ namespace David.Week05
 
             //WhenIsSunday(austria, time);
 
-            int result = HowManySundays(2023, 9);
-            Console.WriteLine(result);
+            
             Console.WriteLine(HowManySundays(2023, 10));
+
+            Console.WriteLine(HowManySaturdays(2023, 10));
+            Console.WriteLine(DateTime.DaysInMonth(2023, 10));
+           
+
+            int days = HowManyWorkdays(2023, 10);
+            Console.WriteLine(HowManyWorkdays(2023, 10));
+
+            Console.WriteLine(Workdays(2023, 10));
+
+           
+           // PrintCalendar(FillArrayCalendar(CreateArrayCalendar(2023, 10, 28)));
 
         }
 
@@ -117,9 +132,106 @@ namespace David.Week05
                 }
             }
             return count;
+        }
 
+        //Version I:
+        public static int HowManyWorkdays(int year, int month)
+        {
+            GregorianCalendar calendar = new GregorianCalendar();
+            int count = 0;
+            int monthLength = DateTime.DaysInMonth(year, month);
 
+            DateTime firstOfMonth = new DateTime(year, month, 1);
+
+            for (int i = 0; i < monthLength; i++)
+            {
+                if (calendar.GetDayOfWeek(firstOfMonth.AddDays(i)) != DayOfWeek.Sunday && calendar.GetDayOfWeek(firstOfMonth.AddDays(i)) != DayOfWeek.Saturday)
+                    count++;
+            }
+
+            return count;
 
         }
+
+        //VersionII:
+        public static int HowManySaturdays(int year, int month)
+        {
+            GregorianCalendar calendar = new GregorianCalendar();
+            int count = 0;
+            int monthLength = DateTime.DaysInMonth(year, month);
+
+            DateTime firstOfMonth = new DateTime(year, month, 1);
+
+            for (int i = 0; i < monthLength; i++)
+            {
+                if (calendar.GetDayOfWeek(firstOfMonth.AddDays(i)) == DayOfWeek.Saturday)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        public static int Workdays(int year, int month)
+        {
+            return DateTime.DaysInMonth(year, month) - HowManySundays(year, month) - HowManySaturdays(year, month);
+        }
+
+
+
+        public static void PrintCalendar(string[][] month, DateTime date)
+        {
+            
+            Console.WriteLine(date.ToString("yyyy mmmm"));
+           // string[] header = new string[7] {}
+            Console.WriteLine("Mo | Di | Mi | Do | Fr | Sa | So |");
+            Print2DStringArray(month);
+          
+        }
+
+        public static string[][] CreateArrayCalendar(int year, int month)
+        {
+            string[][] calendar = new string[4][];
+
+            for (int i = 0; i < calendar.Length; i++)
+            {
+                calendar[i] = new string[7];
+            }
+            return calendar;
+        }
+
+        //public static string[][] FillArrayCalendar(string[][] month)
+        //{
+        //    string[][] arr = CreateArrayCalendar();
+        //    int day = 0;
+
+        //    for (int i = 0; i < arr.Length; i++)
+        //    {
+        //        for (int j = 0; j < arr[0].Length; j++)
+        //        {
+        //            arr[i][j] = day.ToString();
+        //            day++;
+        //        }
+        //    }
+        //}
+
+        public static void Print2DStringArray(string[][] month)
+        {
+            for (int i = 0; i < month.Length; i++)
+            {
+                Console.WriteLine("| ");
+                for (int j = 0; j < month[i].Length; j++)
+                {
+                    Console.Write("{0}" + month[i][j]);
+                }
+                Console.Write(" |");
+                Console.WriteLine();
+            }
+        }
+
     }
 }
+
+        
+    
+
