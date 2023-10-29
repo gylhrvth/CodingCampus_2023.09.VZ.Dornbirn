@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.IO.Compression;
+using Microsoft.VisualBasic;
+using Dimitri.Week01;
 
 namespace Dimitri.Week05
 {
@@ -26,7 +28,15 @@ namespace Dimitri.Week05
 
             //Console.WriteLine(DateOfNextWeekday(day).ToString("d"));
 
-            Console.WriteLine(CountDays(2023, 09));
+            //Console.WriteLine(GetSundays(2023, 10));
+
+            //Console.WriteLine(GetWorkdays(2023,10));
+
+            //Console.WriteLine(GetWorkdays(2021, 3));
+
+            //Console.WriteLine(GetWorkdays(2021, 2));
+
+            PrintCalendar(FillArrayCalandar(CreateArrayCalendar()), DateTime.Now);
         }
 
         public static void FormatTime()
@@ -85,11 +95,12 @@ namespace Dimitri.Week05
             for (int i = 0; i < 7; i++)
             {
                 //Console.WriteLine(dateOfToday.ToString("f"));
-                if (dateOfToday.AddDays(i).ToString("f").Contains(day)) {
+                if (dateOfToday.AddDays(i).ToString("f").Contains(day))
+                {
                     nextDay = dateOfToday.AddDays(i);
                     return nextDay.ToString("d");
                 }
- 
+
             }
 
             return DateTime.Now.ToString("d");
@@ -112,13 +123,132 @@ namespace Dimitri.Week05
             return DateTime.Now;
         }
 
-        public static int CountDays(int year, int month)
+        public static int GetSundays(int year, int month)
         {
 
             int count = 0;
 
+            GregorianCalendar calendar = new GregorianCalendar();
 
-            return count; 
+            int daysInMonth = DateTime.DaysInMonth(year, month);
+
+            DateTime firstDayOfMonth = new DateTime(year, month, 1);
+
+            for (int i = 0; i < daysInMonth; i++)
+            {
+                if (calendar.GetDayOfWeek(firstDayOfMonth.AddDays(i)) == DayOfWeek.Sunday)
+                {
+                    count++;
+                }
+
+            }
+
+            return count;
+        }
+
+        public static int GetSaturdays(int year, int month)
+        {
+
+            int count = 0;
+
+            GregorianCalendar calendar = new GregorianCalendar();
+
+            int daysInMonth = DateTime.DaysInMonth(year, month);
+
+            DateTime firstDayOfMonth = new DateTime(year, month, 1);
+
+            for (int i = 0; i < daysInMonth; i++)
+            {
+                if (calendar.GetDayOfWeek(firstDayOfMonth.AddDays(i)) == DayOfWeek.Saturday)
+                {
+                    count++;
+                }
+
+            }
+
+            return count;
+        }
+
+        public static int GetWorkdays(int year, int month)
+        {
+            return DateTime.DaysInMonth(year, month) - GetSaturdays(year, month) - GetSundays(year, month);
+        }
+
+        public static void PrintCalendar(string[][] month, DateTime date)
+        {
+            Console.WriteLine(date.ToString("yyyy MMMM"));
+            string[] header = new string[7] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
+            PrintArrayHeader(header, "|");
+            Print2DStringArray(month);
+        }
+
+
+        public static string[][] CreateArrayCalendar()
+        {
+            string[][] arr = new string[4][];
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = new string[7];
+            }
+
+            return arr;
+        }
+
+        public static string[][] FillArrayCalandar(string[][] month)
+        {
+            string[][] arr = CreateArrayCalendar();
+
+            int day = 1;
+
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[0].Length; j++)
+                {
+                    arr[i][j] = day.ToString();
+                    day++;
+                }
+            }
+
+            return arr;
+        }
+
+        public static void Print2DStringArray(string[][] month)
+        {
+            for (int i = 0; i < month.Length; i++)
+            {
+                Console.Write("|");
+                for (int j = 0; j < month[i].Length; j++)
+                {
+                    if (month[i][j].Length == 1)
+                    {
+                        Console.Write("  {0:1} |", month[i][j]);
+                    }
+                    else
+                    {
+                        Console.Write(" {0} |", month[i][j]);
+                    }
+
+                }
+                Console.WriteLine();
+            }
+
+
+        }
+
+        public static void PrintArrayHeader(string[] arr, string delimiter)
+        {
+
+
+            Console.Write("{0}", delimiter);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+
+                Console.Write(" {0} {1}", arr[i], delimiter);
+            }
+            Console.WriteLine();
         }
     }
 }
