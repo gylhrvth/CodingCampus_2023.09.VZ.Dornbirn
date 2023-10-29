@@ -179,7 +179,7 @@ namespace Dimitri.Week05
             Console.WriteLine(date.ToString("yyyy MMMM"));
             string[] header = new string[7] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
             PrintArrayHeader(header, "|");
-            Print2DStringArray(month);
+            Print2DStringArrayCalendar(month);
         }
 
 
@@ -214,7 +214,7 @@ namespace Dimitri.Week05
             return arr;
         }
 
-        public static void Print2DStringArray(string[][] month)
+        public static void Print2DStringArrayCalendar(string[][] month)
         {
             for (int i = 0; i < month.Length; i++)
             {

@@ -1,1 +1,1 @@
-﻿Dimitri.Week05.Date.Main();
+﻿Dimitri.Week05.SelfTest.Main();
