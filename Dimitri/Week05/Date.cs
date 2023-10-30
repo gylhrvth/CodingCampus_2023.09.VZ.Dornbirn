@@ -36,7 +36,7 @@ namespace Dimitri.Week05
 
             //Console.WriteLine(GetWorkdays(2021, 2));
 
-            DateTime date = new DateTime(2024, 02, 29);
+            DateTime date = new DateTime(1991, 11, 24);
 
             PrintCalendar(date);
         }
@@ -259,7 +259,6 @@ namespace Dimitri.Week05
   
             }
 
-            int count = 0;
             int emptyBeginning = 0;
 
             switch (calendar.GetDayOfWeek(firstOfMonth))
@@ -292,14 +291,13 @@ namespace Dimitri.Week05
             emptyEnd = numberOfFields - (emptyBeginning + daysInMonth);
 
 
-            //while (count < numberOfFields)
-            //{
+
                 int i = 0;
                 while (i < emptyBeginning)
                 {
                     calendarTable[0][i] = "";
                     i++;
-                    //count++;
+
                 }
 
                 int days = 1;
@@ -315,7 +313,7 @@ namespace Dimitri.Week05
                             {
                                 calendarTable[k][l] = days.ToString();
                                 days++;
-                                //count++;
+
                             }
                         } else
                         {
@@ -323,7 +321,7 @@ namespace Dimitri.Week05
                             {
                                 calendarTable[k][l] = days.ToString();
                                 days++;
-                                //count++;
+
                             }
                         }
 
@@ -338,7 +336,7 @@ namespace Dimitri.Week05
                     {
                         calendarTable[5][6 - j] = "";
                         j++;
-                        //count++;
+
                     }
                 } else if(calendarTable.Length == 5)
                 {
@@ -346,12 +344,12 @@ namespace Dimitri.Week05
                     {
                         calendarTable[4][6 - j] = "";
                         j++;
-                        //count++;
+
                     }
 
                 }
 
-            //}
+
 
             string today = calendar.GetDayOfMonth(date).ToString();
 
