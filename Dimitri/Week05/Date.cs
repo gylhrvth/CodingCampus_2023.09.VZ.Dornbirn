@@ -204,8 +204,8 @@ namespace Dimitri.Week05
                 }
                 return arr;
 
-            } 
-            else if((daysInMonth == 30 ||daysInMonth == 31) && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Sunday)
+            }
+            else if ((daysInMonth == 30 || daysInMonth == 31) && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Sunday)
             {
                 string[][] arr = new string[6][];
 
@@ -214,8 +214,8 @@ namespace Dimitri.Week05
                     arr[i] = new string[7];
                 }
                 return arr;
-            } 
-            else if(daysInMonth == 31 && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Saturday) 
+            }
+            else if (daysInMonth == 31 && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Saturday)
             {
                 string[][] arr = new string[6][];
 
@@ -250,13 +250,13 @@ namespace Dimitri.Week05
 
             int numberOfFields = 0;
 
-            foreach(string[] field in calendarTable)
+            foreach (string[] field in calendarTable)
             {
-                foreach(string field2 in field)
+                foreach (string field2 in field)
                 {
                     numberOfFields++;
                 }
-  
+
             }
 
             int emptyBeginning = 0;
@@ -292,62 +292,64 @@ namespace Dimitri.Week05
 
 
 
-                int i = 0;
-                while (i < emptyBeginning)
+            int i = 0;
+            while (i < emptyBeginning)
+            {
+                calendarTable[0][i] = "";
+                i++;
+
+            }
+
+            int days = 1;
+
+            while (days <= daysInMonth)
+            {
+
+                for (int k = 0; k < calendarTable.Length; k++)
                 {
-                    calendarTable[0][i] = "";
-                    i++;
-
-                }
-
-                int days = 1;
-
-                while (days <= daysInMonth)
-                {
-
-                    for (int k = 0; k < calendarTable.Length; k++)
+                    if (k == 0)
                     {
-                        if (k == 0)
+                        for (int l = emptyBeginning; l < calendarTable[k].Length; l++)
                         {
-                            for (int l = emptyBeginning; l < calendarTable[k].Length; l++)
-                            {
-                                calendarTable[k][l] = days.ToString();
-                                days++;
+                            calendarTable[k][l] = days.ToString();
+                            days++;
 
-                            }
-                        } else
-                        {
-                            for (int l = 0; l < calendarTable[k].Length; l++)
-                            {
-                                calendarTable[k][l] = days.ToString();
-                                days++;
-
-                            }
                         }
+                    }
+                    else
+                    {
+                        for (int l = 0; l < calendarTable[k].Length; l++)
+                        {
+                            calendarTable[k][l] = days.ToString();
+                            days++;
 
+                        }
                     }
 
                 }
 
-                int j = 0;
-                if (calendarTable.Length == 6)
-                {
-                    while (j < emptyEnd)
-                    {
-                        calendarTable[5][6 - j] = "";
-                        j++;
+            }
 
-                    }
-                } else if(calendarTable.Length == 5)
+            int j = 0;
+            if (calendarTable.Length == 6)
+            {
+                while (j < emptyEnd)
                 {
-                    while (j < emptyEnd)
-                    {
-                        calendarTable[4][6 - j] = "";
-                        j++;
-
-                    }
+                    calendarTable[5][6 - j] = "";
+                    j++;
 
                 }
+            }
+            else if (calendarTable.Length == 5)
+            {
+                while (j < emptyEnd)
+                {
+                    calendarTable[4][6 - j] = "";
+                    j++;
+
+                }
+
+            }
 
 
 
@@ -355,9 +357,9 @@ namespace Dimitri.Week05
 
 
 
-            for(int m = 0; m < calendarTable.Length; m++)
+            for (int m = 0; m < calendarTable.Length; m++)
             {
-                for(int n = 0; n < calendarTable[m].Length; n++)
+                for (int n = 0; n < calendarTable[m].Length; n++)
                 {
                     if (calendarTable[m][n].CompareTo(today) == 0)
                     {
@@ -380,10 +382,12 @@ namespace Dimitri.Week05
                     if (month[i][j].Length == 1)
                     {
                         Console.Write("  {0:1} |", month[i][j]);
-                    } else if (month[i][j].CompareTo("") == 0)
+                    }
+                    else if (month[i][j].CompareTo("") == 0)
                     {
                         Console.Write("    |", month[i][j]);
-                    } else if (month[i][j].Contains("*"))
+                    }
+                    else if (month[i][j].Contains("*"))
                     {
                         Console.Write(" {0}|", month[i][j]);
                     }
