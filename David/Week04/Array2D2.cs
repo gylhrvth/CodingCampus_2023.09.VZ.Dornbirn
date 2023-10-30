@@ -27,11 +27,9 @@ namespace David.Week04
             for (int i = 0; i < arr2D.Length; i++)
             {
                 arr2D[i] = new int[size];
-
             }
             return arr2D;
         }
-
         public static int[][] FillArray(int[][] arrP)
         {
             for (int i = 0; i < arrP.Length; i++)
@@ -40,29 +38,20 @@ namespace David.Week04
                 {
                     arrP[i][j] = i + j;
                 }
-                
             }
             return arrP;
         }                                                                           
-
-
-
         public static void ArrayPrint(int[][] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = 0; j < arr.Length; j++)
                 {
-
                     Console.Write(arr[i][j]);
                 }
                 Console.WriteLine();
             }
-            
         }
-        
-
     }
-
 }
 

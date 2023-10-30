@@ -48,7 +48,7 @@ namespace Kerem.Week04
                     }
                     else if (guess == num)
                     {
-                        Console.WriteLine($"Good job jackass! You needed {tries}");
+                        Console.WriteLine($"Good job jackass! You needed {tries} tries");
                     }
                     else if (guess > num)
                     {

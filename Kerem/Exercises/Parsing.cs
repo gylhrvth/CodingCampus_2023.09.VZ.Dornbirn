@@ -30,6 +30,8 @@ namespace Kerem.Exercises
             int i = Int32.Parse(stringForInt);
 
             Console.WriteLine("Int = {0}, Float = {1}", i, f);
+
+            
         }
     }
 }

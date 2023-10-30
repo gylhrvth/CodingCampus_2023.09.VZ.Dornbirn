@@ -1,3 +1,3 @@
 ﻿using Erik.Week05;
 
-StringSort.StartStringSort();
+DateTimeEx.Start();

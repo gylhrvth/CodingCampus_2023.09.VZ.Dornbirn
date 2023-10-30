@@ -33,7 +33,7 @@ namespace Jovo.Week04
         }
 
 
-        public static int ReadNumber(String prompt, String onError)
+        public static int ReadNumber(String prompt)
         {
             Console.WriteLine(prompt);
 
@@ -52,7 +52,7 @@ namespace Jovo.Week04
                 }
                 catch (FormatException exc)
                 {
-                    Console.Error.WriteLine(onError);
+                    Console.Error.WriteLine("Error");
                 }
 
 
