@@ -15,10 +15,11 @@ namespace Niklas.Week05
         {
             //When();
             //Console.WriteLine();
-            Birthday();
-            Console.WriteLine();
-            Sunday();
+            //Birthday();
+            //Console.WriteLine();
+            //Sunday();
             HowManySundays();
+            HowManyWorkdays();
         }
         public static void When()
         {
@@ -103,27 +104,81 @@ namespace Niklas.Week05
             Console.Write("What month do you choose? ");
             int m = Convert.ToInt32(Console.ReadLine());
 
-            //DateTime myDateTime = new DateTime y;
-
-            //Console.WriteLine(myDateTime.Year);
-
             DateTime date = new DateTime(y, m, 1);
             int sundays = 0;
 
             GregorianCalendar cal = new GregorianCalendar();
-            int lastDay = cal.GetDayOfMonth(date);
-            if (cal.GetDayOfWeek(date) == DayOfWeek.Sunday)
+
+            while (cal.GetMonth(date) == m)
             {
-                sundays++;
-
-
-                date = cal.AddDays(date, 1);
-
+                if (cal.GetDayOfWeek(date) == DayOfWeek.Sunday)
+                {
+                    sundays++;
+                    date = cal.AddDays(date, 7);
+                }
+                else
+                {
+                    while (cal.GetDayOfWeek(date) != DayOfWeek.Sunday)
+                    {
+                        date = cal.AddDays(date, 1);
+                    }
+                }
             }
-
             Console.WriteLine("Your month has: " + sundays + " sundays");
+        }
+        public static void HowManyWorkdays()
+        {
+            Console.Write("What year do you choose? ");
+            int y = Convert.ToInt32(Console.ReadLine());
 
+            Console.Write("What month do you choose? ");
+            int m = Convert.ToInt32(Console.ReadLine());
 
+            DateTime date = new DateTime(y, m, 1);
+            int workdays = 0;
+
+            GregorianCalendar cal = new GregorianCalendar();
+
+            while (cal.GetMonth(date) == m)
+            {
+                string[] days = new string[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday" };
+
+                string work = days[0];
+
+                if (cal.GetDayOfWeek(date) == DayOfWeek.Monday)
+                {
+                    workdays++;
+                    date = cal.AddDays(date, 1);
+                }
+                else if (cal.GetDayOfWeek(date) == DayOfWeek.Tuesday)
+                {
+                    workdays++;
+                    date = cal.AddDays(date, 1);
+                }
+                else if (cal.GetDayOfWeek(date) == DayOfWeek.Wednesday)
+                {
+                    workdays++;
+                    date = cal.AddDays(date, 1);
+                }
+                else if (cal.GetDayOfWeek(date) == DayOfWeek.Thursday)
+                {
+                    workdays++;
+                    date = cal.AddDays(date, 1);
+                }
+                else if (cal.GetDayOfWeek(date) == DayOfWeek.Friday)
+                {
+                    workdays++;
+                    date = cal.AddDays(date, 1);
+                }
+                else
+                {
+                    while (cal.GetDayOfWeek(date) == DayOfWeek.Sunday || cal.GetDayOfWeek(date) == DayOfWeek.Saturday)
+                    {
+                        date = cal.AddDays(date, 1);
+                    }
+                }
+            }
+            Console.WriteLine("Your month has: " + workdays + " workdays");
         }
     }
 }
