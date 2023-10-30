@@ -22,7 +22,7 @@ namespace Dimitri.Week03
             //int[] lustigesArray = { 1, 3, 5, 7, 9 };
             //Console.WriteLine MakeACopy(lustigesArray);
             //PrintArrayToString0(RandomNumberArray(0, 100));
-            PrintCrazyRangeArray(RandomNumberArray(100, -50, 50));
+            //PrintCrazyRangeArray(RandomNumberArray(100, -50, 50));
             //PrintArrayZaehlen(RandomNumberArray(1, 100), 30);
             //Console.WriteLine(ReturnArraySumme(RandomNumberArray(1, 100)));
             //Console.WriteLine(ReturnArrayMin(RandomNumberArray(-50, 50)));

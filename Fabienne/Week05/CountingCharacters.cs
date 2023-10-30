@@ -34,7 +34,7 @@ namespace Fabienne.Week05
         {
             for (int i = 0; i < counting.Length; ++i)
             {
-                if (counting[i] > 0)
+                if (counting[i] > 0)    
                 {
                     char abc = (char)i;
 

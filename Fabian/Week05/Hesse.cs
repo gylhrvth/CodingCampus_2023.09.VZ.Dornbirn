@@ -6,9 +6,8 @@ namespace Fabian.Week05
     {
         public static void Start()
         {
-           // SearchForWord("Hesse", StringRessources.getHesse());
-            String newText = SetWordInTextToUpper("Hesse", StringRessources.getHesse());
-            Console.WriteLine(newText);
+            // SearchForWord("Hesse", StringRessources.getHesse());
+            // Console.WriteLine(SetWordInTextToUpper("Hesse", StringRessources.getHesse()););
         }
 
         public static void SearchForWord(String word, String text)
@@ -37,14 +36,13 @@ namespace Fabian.Week05
         }
 
         public static String SetWordInTextToUpper(String word, String text)
-        {
+        {          
 
-            for (int i = 0; i < text.Length; i++)
-            {
-                text.Replace(word, word.ToUpper());
-            }
-
+            text = text.Replace(word, word.ToUpper());
+            
             return text;
         }
+
     }
+
 }

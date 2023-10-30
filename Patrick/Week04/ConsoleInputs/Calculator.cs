@@ -13,7 +13,7 @@ namespace Patrick.Week04.ConsoleInputs
         {
             //AUFGABE 1 Taschenrechner 
             //Console.WriteLine("The result = " + Calculations());
-            float result = Calculations();
+            //float result = Calculations();
 
             //AUFGABE 2 Taschenrechner extended
             //CalculatorExtended();
@@ -22,7 +22,7 @@ namespace Patrick.Week04.ConsoleInputs
             //CalculationsResult(Calculations());
 
             //AUFGABE 4 Taschenrechner mit Memory Funktion         
-            CalculatorAdvanced(result);
+            CalculatorAdvanced();
         }
 
 
@@ -107,11 +107,11 @@ namespace Patrick.Week04.ConsoleInputs
             return result;
         }
 
-        public static float CalculationsResult(float result)
+        public static void CalculationsResult(float result)
         {
-            float resultTotal = 0;
+            float resultNew = result;
             while (true)
-            {
+            {               
                 Console.WriteLine(" Your interim result = " + result);
                 Console.Write("Please enter a Operator: +, -, *, / >>>>>>  ");
                 string math = ReadOperator();
@@ -122,7 +122,7 @@ namespace Patrick.Week04.ConsoleInputs
 
                 if (math == "+")
                 {
-                    result += inputNumber2;
+                    resultNew += inputNumber2;
                     Console.WriteLine("The result =  " + result);
                     break;
                 }
@@ -145,17 +145,16 @@ namespace Patrick.Week04.ConsoleInputs
                     result /= inputNumber2;
                     Console.WriteLine("The result =  " + result);        
                     break;
-                }
+                }                
             }
-            return result;
+            //return resultNew;
         }
 
 
         public static void CalculatorExtended()
         {
             while (true)
-            {
-                
+            {                
                 Console.WriteLine("Do you want to calculate again? Tip \"yes\" or \"no\"");
 
                 if (StringReadYesOrNo() == false)
@@ -169,8 +168,11 @@ namespace Patrick.Week04.ConsoleInputs
             }
         }
 
-        public static void CalculatorAdvanced(float result)
+        public static float CalculatorAdvanced()
         {
+            float resultNew = 0;
+            float result = Calculations();
+            
             while (true)
             {
                 Console.WriteLine("Do you want a interim result? ");
@@ -179,10 +181,14 @@ namespace Patrick.Week04.ConsoleInputs
                 {
                     break;
                 }
-                Console.WriteLine("===============================================");
-                Console.WriteLine("===============================================");
-                CalculationsResult(result);
+                else
+                {
+                    Console.WriteLine("===============================================");
+                    Console.WriteLine("===============================================");
+                    CalculationsResult(result);                    
+                }
             }
+            return resultNew;
         }
     }
 }

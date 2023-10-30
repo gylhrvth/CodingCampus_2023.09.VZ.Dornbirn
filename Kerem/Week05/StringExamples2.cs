@@ -22,6 +22,8 @@ namespace Kerem.Week05
 
             int[] count = countLetters(t);
             PrintResult(count);
+
+
         }
         public static void PrintResult(int[] count)
         {
@@ -44,5 +46,9 @@ namespace Kerem.Week05
             }
             return count;
         }
+   
+        
+
+        
     }
 }

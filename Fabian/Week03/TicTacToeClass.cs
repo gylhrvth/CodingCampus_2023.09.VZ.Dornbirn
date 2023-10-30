@@ -1,5 +1,4 @@
-﻿using static Fabian.Week03.Arrays;
-
+﻿using static Fabian.Week02.ConsoleInput;
 namespace Fabian.Week03
 {
     public class TicTacToeClass
@@ -34,16 +33,16 @@ namespace Fabian.Week03
                     int p2Col = 0;
 
                     //enter numbers
-                    p1Row = UserInput("row", 1);
-                    p1Col = UserInput("column", 1);
+                    p1Row = UserInput("row", 1, 1, 6);
+                    p1Col = UserInput("column", 1, 1, 6);
 
                     //check if field is taken
                     while (playGround[p1Row - 1, p1Col - 1] != 0)
                     {
                         Console.WriteLine("This field is already taken!");
                         Print2DArray(playGround);
-                        p1Row = UserInput("row", 1);
-                        p1Col = UserInput("column", 1);
+                        p1Row = UserInput("row", 1, 1, 6);
+                        p1Col = UserInput("column", 1, 1, 6);
                     }
                     //print the 1
                     playGround[p1Row - 1, p1Col - 1] = 1;
@@ -52,7 +51,7 @@ namespace Fabian.Week03
                     count++;
 
                     //check if player 1 won
-                    if (CheckWin(playGround, 1))
+                    if (CheckWin(playGround))
                     {
                         Console.WriteLine("Player 1 won!");
                         if (AskToPlayAgain())
@@ -79,16 +78,16 @@ namespace Fabian.Week03
                     }
 
                     //enter numbers
-                    p2Row = UserInput("row", 2);
-                    p2Col = UserInput("column", 2);
+                    p2Row = UserInput("row", 2, 1, 6);
+                    p2Col = UserInput("column", 2, 1, 6);
 
                     //check if field is taken
                     while (playGround[p2Row - 1, p2Col - 1] != 0)
                     {
                         Console.WriteLine("This field is already taken!");
                         Print2DArray(playGround);
-                        p2Row = UserInput("row", 2);
-                        p2Col = UserInput("column", 2);
+                        p2Row = UserInput("row", 2, 1, 6);
+                        p2Col = UserInput("column", 2, 1, 6);
                     }
                     //print the 2
                     playGround[p2Row - 1, p2Col - 1] = 2;
@@ -97,7 +96,7 @@ namespace Fabian.Week03
                     count++;
 
                     //check if player 2 won
-                    if (CheckWin(playGround, 2))
+                    if (CheckWin(playGround))
                     {
                         Console.WriteLine("Player 2 won!");
                         if (AskToPlayAgain())
@@ -129,37 +128,9 @@ namespace Fabian.Week03
                 }
             }
         }
-        public static bool AskToPlayAgain()
-        {
-            string playAgain = "";
-
-            while (playAgain != "Y" && playAgain != "N")
-            {
-                try
-                {
-                    Console.WriteLine("Do you want to play again? (Y/N)");
-                    playAgain = Console.ReadLine();
-                    playAgain = playAgain.ToUpper();
-
-                    if (playAgain == "Y")
-                    {
-                        return true;
-                    }
-                    else if (playAgain == "N")
-                    {
-                        return false;
-                    }
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Enter a valid character");
-                }
-            }
-
-            return false;
-        }
         public static void Print2DArray(int[,] arr)
         {
+            Console.Clear();
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
@@ -178,19 +149,19 @@ namespace Fabian.Week03
                 Console.WriteLine();
             }
         }
-        public static int UserInput(string dimension, int player)
+        public static int UserInput(string text, int player, int min, int max)
         {
             int num = Int32.MinValue;
             while (num == Int32.MinValue)
             {
                 try
                 {
-                    Console.WriteLine($"Enter {dimension} between 1-3 (player {player}): ");
+                    Console.WriteLine($"Enter a {text} between {min}-{max} (player {player}): ");
                     num = Convert.ToInt32(Console.ReadLine());
 
-                    if (num < 1 || num > 3)
+                    if (num < min || num > max)
                     {
-                        Console.WriteLine($"{num} is not between 1 and 3");
+                        Console.WriteLine($"{num} is not between {min} and {max}");
                         num = Int32.MinValue;
                     }
                 }
@@ -198,25 +169,53 @@ namespace Fabian.Week03
                 {
                     Console.WriteLine("Enter a valid number!");
                 }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("number was too high!");
+                }
+
             }
             return num;
         }
-        public static bool CheckWin(int[,] arr, int player)
+        private static bool CheckWin(int[,] arr)
         {
             //horizontal
-            if ((arr[0, 0] == player && arr[0, 1] == player && arr[0, 2] == player) || (arr[1, 0] == player && arr[1, 1] == player && arr[1, 2] == player) || (arr[2, 0] == player && arr[2, 1] == player && arr[2, 2] == player))
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                return true;
+                for (int j = 0; j < arr.GetLength(1) - 2; j++)
+                {
+                    if (arr[i, j] != 0 && arr[i, j] == arr[i, j + 1] && arr[i, j + 1] == arr[i, j + 2])
+                    {
+                        return true;
+                    }
+                }
             }
             //vertical
-            else if ((arr[0, 0] == player && arr[1, 0] == player && arr[2, 0] == player) || (arr[0, 1] == player && arr[1, 1] == player && arr[2, 1] == player) || (arr[0, 2] == player && arr[1, 2] == player && arr[2, 2] == player))
+            for (int i = 0; i < arr.GetLength(0) - 2; i++)
             {
-                return true;
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i, j] != 0 && arr[i, j] == arr[i + 1, j] && arr[i + 1, j] == arr[i + 2, j])
+                    {
+                        return true;
+                    }
+                }
             }
             //diagonal
-            else if ((arr[0, 0] == player && arr[1, 1] == player && arr[2, 2] == player) || (arr[0, 2] == player && arr[1, 1] == player && arr[2, 0] == player))
+            for (int i = 0; i < arr.GetLength(0) - 2; i++)
             {
-                return true;
+                for (int j = 0; j < arr.GetLength(1) - 2; j++)
+                {
+                    if (arr[i, j] != 0 && arr[i, j] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j + 2])
+                    {
+                        return true;
+                    }
+
+                    if (arr[i, j + 2] != 0 && arr[i, j + 2] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j])
+                    {
+                        return true;
+                    }
+                }
             }
             return false;
         }
