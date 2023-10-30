@@ -9,7 +9,7 @@ namespace Patrick.Week05
 {
     internal class BubblesortString
     {
-        public static void start()
+        public static void Start()
         {
             string[] names = { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
             //Console.WriteLine("Bubblesort Asc: ");
