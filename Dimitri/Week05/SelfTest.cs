@@ -545,6 +545,10 @@ namespace Dimitri.Week05
             Console.WriteLine(today.ToString("dddd", currentCulture));
 
         }
+
+        //Regex Bonus
+
+
     }
 }
 

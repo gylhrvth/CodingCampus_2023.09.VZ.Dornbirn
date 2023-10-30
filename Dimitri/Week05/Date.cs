@@ -36,7 +36,9 @@ namespace Dimitri.Week05
 
             //Console.WriteLine(GetWorkdays(2021, 2));
 
-            PrintCalendar(FillArrayCalandar(CreateArrayCalendar()), DateTime.Now);
+            DateTime date = new DateTime(2024, 02, 29);
+
+            PrintCalendar(date);
         }
 
         public static void FormatTime()
@@ -174,44 +176,200 @@ namespace Dimitri.Week05
             return DateTime.DaysInMonth(year, month) - GetSaturdays(year, month) - GetSundays(year, month);
         }
 
-        public static void PrintCalendar(string[][] month, DateTime date)
+        public static void PrintCalendar(DateTime date)
         {
             Console.WriteLine(date.ToString("yyyy MMMM"));
             string[] header = new string[7] { "Mo", "Di", "Mi", "Do", "Fr", "Sa", "So" };
             PrintArrayHeader(header, "|");
-            Print2DStringArrayCalendar(month);
+
+            Print2DStringArrayCalendar(FillArrayCalandar(CreateArrayCalendar(date), date));
         }
 
 
-        public static string[][] CreateArrayCalendar()
+        public static string[][] CreateArrayCalendar(DateTime date)
         {
-            string[][] arr = new string[4][];
+            int month = calendar.GetMonth(date);
+            int year = calendar.GetYear(date);
+            int daysInMonth = calendar.GetDaysInMonth(year, month);
+            DateTime firstOfMonth = new DateTime(year, month, 1);
 
-            for (int i = 0; i < arr.Length; i++)
+
+            if (daysInMonth == 28 && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Monday)
             {
-                arr[i] = new string[7];
+                string[][] arr = new string[4][];
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i] = new string[7];
+                }
+                return arr;
+
+            } 
+            else if((daysInMonth == 30 ||daysInMonth == 31) && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Sunday)
+            {
+                string[][] arr = new string[6][];
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i] = new string[7];
+                }
+                return arr;
+            } 
+            else if(daysInMonth == 31 && calendar.GetDayOfWeek(firstOfMonth) == DayOfWeek.Saturday) 
+            {
+                string[][] arr = new string[6][];
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i] = new string[7];
+                }
+                return arr;
+            }
+            else
+            {
+                string[][] arr = new string[5][];
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i] = new string[7];
+                }
+                return arr;
             }
 
-            return arr;
+
         }
 
-        public static string[][] FillArrayCalandar(string[][] month)
+        public static GregorianCalendar calendar = new GregorianCalendar();
+
+        public static string[][] FillArrayCalandar(string[][] calendarTable, DateTime date)
         {
-            string[][] arr = CreateArrayCalendar();
+            int month = calendar.GetMonth(date);
+            int year = calendar.GetYear(date);
+            int daysInMonth = calendar.GetDaysInMonth(year, month);
+            DateTime firstOfMonth = new DateTime(year, month, 1);
 
-            int day = 1;
+            int numberOfFields = 0;
 
-
-            for (int i = 0; i < arr.Length; i++)
+            foreach(string[] field in calendarTable)
             {
-                for (int j = 0; j < arr[0].Length; j++)
+                foreach(string field2 in field)
                 {
-                    arr[i][j] = day.ToString();
-                    day++;
+                    numberOfFields++;
+                }
+  
+            }
+
+            int count = 0;
+            int emptyBeginning = 0;
+
+            switch (calendar.GetDayOfWeek(firstOfMonth))
+            {
+                case DayOfWeek.Monday:
+                    emptyBeginning = 0;
+                    break;
+                case DayOfWeek.Tuesday:
+                    emptyBeginning = 1;
+                    break;
+                case DayOfWeek.Wednesday:
+                    emptyBeginning = 2;
+                    break;
+                case DayOfWeek.Thursday:
+                    emptyBeginning = 3;
+                    break;
+                case DayOfWeek.Friday:
+                    emptyBeginning = 4;
+                    break;
+                case DayOfWeek.Saturday:
+                    emptyBeginning = 5;
+                    break;
+                case DayOfWeek.Sunday:
+                    emptyBeginning = 6;
+                    break;
+            }
+
+            int emptyEnd = 0;
+
+            emptyEnd = numberOfFields - (emptyBeginning + daysInMonth);
+
+
+            //while (count < numberOfFields)
+            //{
+                int i = 0;
+                while (i < emptyBeginning)
+                {
+                    calendarTable[0][i] = "";
+                    i++;
+                    //count++;
+                }
+
+                int days = 1;
+
+                while (days <= daysInMonth)
+                {
+
+                    for (int k = 0; k < calendarTable.Length; k++)
+                    {
+                        if (k == 0)
+                        {
+                            for (int l = emptyBeginning; l < calendarTable[k].Length; l++)
+                            {
+                                calendarTable[k][l] = days.ToString();
+                                days++;
+                                //count++;
+                            }
+                        } else
+                        {
+                            for (int l = 0; l < calendarTable[k].Length; l++)
+                            {
+                                calendarTable[k][l] = days.ToString();
+                                days++;
+                                //count++;
+                            }
+                        }
+
+                    }
+
+                }
+
+                int j = 0;
+                if (calendarTable.Length == 6)
+                {
+                    while (j < emptyEnd)
+                    {
+                        calendarTable[5][6 - j] = "";
+                        j++;
+                        //count++;
+                    }
+                } else if(calendarTable.Length == 5)
+                {
+                    while (j < emptyEnd)
+                    {
+                        calendarTable[4][6 - j] = "";
+                        j++;
+                        //count++;
+                    }
+
+                }
+
+            //}
+
+            string today = calendar.GetDayOfMonth(date).ToString();
+
+
+
+            for(int m = 0; m < calendarTable.Length; m++)
+            {
+                for(int n = 0; n < calendarTable[m].Length; n++)
+                {
+                    if (calendarTable[m][n].CompareTo(today) == 0)
+                    {
+                        calendarTable[m][n] = calendarTable[m][n] + "*";
+                    }
                 }
             }
 
-            return arr;
+
+            return calendarTable;
         }
 
         public static void Print2DStringArrayCalendar(string[][] month)
@@ -224,6 +382,12 @@ namespace Dimitri.Week05
                     if (month[i][j].Length == 1)
                     {
                         Console.Write("  {0:1} |", month[i][j]);
+                    } else if (month[i][j].CompareTo("") == 0)
+                    {
+                        Console.Write("    |", month[i][j]);
+                    } else if (month[i][j].Contains("*"))
+                    {
+                        Console.Write(" {0}|", month[i][j]);
                     }
                     else
                     {
