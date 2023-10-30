@@ -2,7 +2,7 @@
 using Timo.Week04;
 using Timo.Week05;
 
-Datum.Start();
+Timo.Selbsttest_Strukto.Kalender.Start();
 
 //string text = "Hello!";
 //int width = 15;
