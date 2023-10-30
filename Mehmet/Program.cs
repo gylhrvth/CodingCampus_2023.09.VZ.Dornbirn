@@ -1,1 +1,1 @@
-﻿Mehmet.Week05.StringExamples.Start();
+﻿Mehmet.Week06.Date.Start();

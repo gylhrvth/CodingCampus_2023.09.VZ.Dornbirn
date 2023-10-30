@@ -47,7 +47,7 @@ namespace Fabian.Week04
                 PrintMatrix(matrix);
                 try
                 {
-                    Thread.Sleep(100);
+                    Thread.Sleep(10);
                 }
                 catch (ThreadInterruptedException) { }
 
@@ -67,7 +67,7 @@ namespace Fabian.Week04
                     if (matrix[i, j] == 1)
                     {
                         // rule 2, 3, 4
-                        if (alive < 3 || alive > 3)
+                        if (alive < 2 || alive > 3)
                         {
                             changedMatrix[i, j] = 0;
                         }
