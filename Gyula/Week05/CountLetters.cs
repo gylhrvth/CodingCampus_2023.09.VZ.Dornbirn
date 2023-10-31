@@ -19,7 +19,7 @@ namespace Gyula.Week05
 		{
 			for (int i = 0; i < count.Length; ++i)
 			{
-				if (count[i] > 0) {
+				if (count[i] >= 0) {
 					char c = (char)i;
                     Console.WriteLine(c + " " + count[i]);
                 }

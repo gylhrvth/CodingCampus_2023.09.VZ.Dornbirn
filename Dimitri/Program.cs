@@ -1,1 +1,1 @@
-﻿Dimitri.Week05.Date.Main();
+﻿Dimitri.Week06.Course.CourseMain.Main();
