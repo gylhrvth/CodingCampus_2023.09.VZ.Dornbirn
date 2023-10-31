@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week06OOP
+namespace Fabienne.Week06
 {
-    internal class OOPUebung
+    public class AufgabenOO
     {
+        public static void Start()
+        {
+
+        }
     }
 }
