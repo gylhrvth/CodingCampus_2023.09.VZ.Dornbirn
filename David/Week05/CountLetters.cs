@@ -20,7 +20,6 @@ namespace David.Week05
 
         }
 
-
         public static int[] CountLetter(string text)
         {
             int[] count = new int[char.MaxValue];
