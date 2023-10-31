@@ -153,12 +153,8 @@ namespace Fabian.Week04
             {
                 for (int j = 0; j < arr.GetLength(1) - 3; j++)
                 {
-                    if (arr[i, j] != 0 && arr[i, j] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j + 2] && arr[i + 2, j + 2] == arr[i + 3, j + 3])
-                    {
-                        return true;
-                    }
-
-                    if (arr[i, j + 3] != 0 && arr[i, j + 3] == arr[i + 1, j + 2] && arr[i + 1, j + 2] == arr[i + 2, j + 1] && arr[i + 2, j + 1] == arr[i + 3, j])
+                    if ((arr[i, j] != 0 && arr[i, j] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j + 2] && arr[i + 2, j + 2] == arr[i + 3, j + 3]) || // top left to bottom right
+                        arr[i, j + 3] != 0 && arr[i, j + 3] == arr[i + 1, j + 2] && arr[i + 1, j + 2] == arr[i + 2, j + 1] && arr[i + 2, j + 1] == arr[i + 3, j]) // top right to bottom left
                     {
                         return true;
                     }
@@ -166,7 +162,27 @@ namespace Fabian.Week04
             }
             return false;
         }
-
+        public static void Print2DArray(int[,] arr)
+        {
+            Console.Clear();
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (arr[i, j] == 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    else if (arr[i, j] == 2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    Console.Write(arr[i, j] + " ");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                Console.WriteLine();
+            }
+        }
 
 
     }
