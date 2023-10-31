@@ -18,7 +18,8 @@ namespace Simon.Week05.Kalender
 
             //Console.WriteLine(Dayofweekuserinput());
 
-            //Console.WriteLine(WhenisnextSunnday());
+            Console.WriteLine("Next Sunday is:");
+            Console.WriteLine(WhenisnextSunnday());
 
             Console.WriteLine("\nWieviele Sonntage hat der Monat?");
             Console.WriteLine(GetSundays(2023, 10));
