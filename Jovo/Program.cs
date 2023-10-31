@@ -1,2 +1,4 @@
 
-﻿Jovo.Üben._2DArrays.Start();
+using Jovo.Week06.Kurse_und_Trainer;
+
+KurseUndTrainerMain.Start();

@@ -12,7 +12,7 @@ namespace Gyula.Week06.Book
 			set
 			{
 				Console.WriteLine("Book Title is changing to: " + value);
-				_Title = value;
+				_Title = value; 
 			}
 		}
 
