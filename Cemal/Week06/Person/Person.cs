@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cemal.Week06.Person
+namespace Cemal.Week06.NmsPerson
 {
     public class Person
     {
@@ -16,38 +16,27 @@ namespace Cemal.Week06.Person
         public string Name
         {
             get => _Name;
-            set
-            {
-                _Name = value;
-            } 
+            set => _Name = value;
         }
 
         public int Alter
         {
             get => _Alter;
-            set
-            {
-                _Alter = value;
-            }
+            set => _Alter = value;
         }
 
         public double Groeße
         {
             get => _Groeße;
-            set
-            {
-                _Groeße = value;
-            }
+            set => _Groeße = value;
         }
 
         public double Gewicht
         {
             get => _Gewicht;
-            set
-            {
-                _Gewicht = value;
-            }
+            set => _Gewicht = value;
         }
+
         public Person(string name, int alter, double groeße, double gewicht)
         {
             _Name = name;

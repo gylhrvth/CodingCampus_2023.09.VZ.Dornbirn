@@ -15,4 +15,4 @@ using Kerem.Week06;
 
 //PersonExample.Start();
 //Kurse_TrainerExample.Start();
-List.Start();
+ListExample.Start();
