@@ -14,11 +14,13 @@
     <None Remove="Week04\" />
     <None Remove="Week05\" />
     <None Remove="Week06\" />
+    <None Remove="Week06\Book\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week03\" />
     <Folder Include="Week05\" />
     <Folder Include="Week06\" />
+    <Folder Include="Week06\Book\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
