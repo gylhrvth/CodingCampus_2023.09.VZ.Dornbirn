@@ -18,8 +18,8 @@ namespace Simon.Week05
             //Console.WriteLine("\nBubblesort Alphabet asc");
             //PrintArrnice(BubbleSortascabc(names));
 
-            //Console.WriteLine("\nBubblesort Alphabet desc");
-            //PrintArrnice(BubbleSortdescabc(names));
+            Console.WriteLine("\nBubblesort Alphabet desc");
+            PrintArrnice(BubbleSortdescabc(names));
 
             //Console.WriteLine("Bubblesort mit Strings Extended");
             //ChooseBubbleSort(names, true);

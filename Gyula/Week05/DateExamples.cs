@@ -14,6 +14,8 @@ namespace Gyula.Week05
 		{
 			DateTime t = DateTime.Now;
 			CultureInfo austrian = new CultureInfo("de-AT");
+            DayOfWeek dow = austrian.DateTimeFormat.FirstDayOfWeek;
+            Console.WriteLine(dow);
 
             Console.WriteLine(t.ToString("d"));
             Console.WriteLine(t.ToString("d", austrian));
@@ -23,6 +25,9 @@ namespace Gyula.Week05
             Console.WriteLine(t.ToString("F", austrian));
 
 			Console.WriteLine(t.ToString("yyyy.MM.dd"));
+
+			GregorianCalendar cal = new GregorianCalendar();
+			Console.WriteLine(cal.GetDayOfWeek(t));
 
         }
     }
