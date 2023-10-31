@@ -6,4 +6,4 @@ using Simon.Week05;
 using Simon.Week05.Kalender;
 using Simon.Selbsttest;
 
-Input.Start();
+Time_outputs.Start();
