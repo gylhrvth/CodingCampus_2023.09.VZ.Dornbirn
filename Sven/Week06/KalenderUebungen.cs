@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Dynamic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -16,8 +17,8 @@ namespace Sven.Week06
             WhereAndWhen();
             Console.WriteLine();
 
-            //DateOfBirth();
-            //Console.WriteLine();
+            DateOfBirth();
+            Console.WriteLine();
 
             WhenSunday();
             Console.WriteLine();
@@ -45,13 +46,25 @@ namespace Sven.Week06
         public static void DateOfBirth()
         {
             string datevalue = "";
-
+            
             Console.WriteLine("Please tell me your date of birth: ");
             datevalue = Console.ReadLine();
 
-            DateTime dateValue = DateTime.Parse(datevalue);
-            GregorianCalendar cal = new GregorianCalendar();
-            Console.WriteLine(cal.GetDayOfWeek(dateValue));
+            
+            try
+            {
+                DateTime dateValue = DateTime.Parse(datevalue);
+                GregorianCalendar cal = new GregorianCalendar();
+                Console.WriteLine(cal.GetDayOfWeek(dateValue));
+            }
+            catch (FormatException)
+            {
+
+                Console.WriteLine("Please enter a valid Date!");
+
+            }
+
+
         }
 
         public static void WhenSunday()
@@ -70,7 +83,14 @@ namespace Sven.Week06
 
         public static void CountSundays()
         {
+            DateTime currentDate = DateTime.Now;
 
+            int currentDayOfMonth = currentDate.Month;
+            int sundaysInMonth = 7 - currentDayOfMonth;
+
+            DateTime GetSundays = currentDate.AddDays(sundaysInMonth);
+
+            Console.WriteLine(GetSundays);
 
 
         }

@@ -50,7 +50,7 @@ namespace Gheorghe.Week05
             // Reversed index
 
             Console.WriteLine("Revers=======");
-            string reversed = Reverse("asdfbuvctz");
+            string reversed = Reverse("Hallo");
             Console.WriteLine(reversed);
 
 
@@ -208,6 +208,10 @@ namespace Gheorghe.Week05
             return new string(charArr);
 
         }
+
+
+
+          
     }
 }
 

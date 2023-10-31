@@ -59,7 +59,7 @@ namespace Kerem.Week05
                     {
                         width *= -1;
                     }
-                    string formatString = string.Format("|| {{0,{0}}} ", width);
+                    string formatString = string.Format("| {{0,{0}}}  ", width);
                     Console.Write(formatString, table[i][j]);
                 }
                 Console.WriteLine("|");
