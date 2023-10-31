@@ -13,7 +13,11 @@ namespace Mehmet.Week06.CoursesAndTrainers
         private int _NumberOfCourrses;
         private int _Cost;
         private Person _Trainer;
-
+        public Person Trainer 
+        { 
+            get => _Trainer; 
+            set => _Trainer = value;
+        }
 
 
 
@@ -26,19 +30,22 @@ namespace Mehmet.Week06.CoursesAndTrainers
             _Trainer = Trainer;
         }
             
+
+
         
         public override string ToString()
         {
-            return (string.Format(
-                "Title: {0}\nStart: {1}\nNumber of Courses: {2}\nCost: {3}\nTrainer:\n{4}",
+            return string.Format(
+                "Title: {0}\nStart: {1}\nNumber of Courses: {2}\nCost: {3}\nTrainer: {4} ({5})",
                 _Title,
                 _Start,
                 _NumberOfCourrses,
                 _Cost,
-                _Trainer));           
+                _Trainer.Name,
+                _Trainer.Age);
         }
 
 
-
+        
     }
 }
