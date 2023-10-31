@@ -16,8 +16,15 @@ namespace Simon.Selbsttest
 
             int[] arr3 = new int[] { 478199, 7812973, 12387123, 12, 3, 123, 12, 3, 1, 3, 1, 3, 1, 8, 9, 15, 1, 5, 1, 5, 1, 5, 15, 1, 5, 0 };
 
+            Console.WriteLine(FirstAndLast(arr));
+            Console.WriteLine(FirstAndLast(arr2));
+            Console.WriteLine(FirstAndLast(arr3));
         }
 
+        public static string FirstAndLast(int[] arr)
+        {
+            return "First: " + arr[0] + ", Last: " + arr[arr.Length - 1];
+        }
 
 
 
