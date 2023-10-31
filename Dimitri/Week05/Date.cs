@@ -36,7 +36,7 @@ namespace Dimitri.Week05
 
             //Console.WriteLine(GetWorkdays(2021, 2));
 
-            DateTime date = new DateTime(1991, 11, 24);
+            DateTime date = new DateTime(1991, 11, 10);
 
             PrintCalendar(date);
         }
