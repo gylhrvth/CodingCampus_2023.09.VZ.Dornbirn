@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dimitri.Week06._01Person;
 
-namespace Dimitri.Week06.Course
+namespace Dimitri.Week06._02Course
 {
     public class Course
     {
@@ -12,7 +13,7 @@ namespace Dimitri.Week06.Course
         private string _Start;
         private int _CourseHours;
         private double _Price = 7840;
-        private Person.Person _Trainer;
+        private Person _Trainer;
 
         public string Title
         {
@@ -25,7 +26,7 @@ namespace Dimitri.Week06.Course
             }
         }
 
-        public Course(string Title, string Start, int CourseHours, double Price, Person.Person trainer)
+        public Course(string Title, string Start, int CourseHours, double Price, Person trainer)
         {
             _Title = Title;
             _Start = Start;
@@ -34,7 +35,7 @@ namespace Dimitri.Week06.Course
             _Trainer = trainer;
         }
 
-        public Course(string Title, string Start, int CourseHours, Person.Person trainer)
+        public Course(string Title, string Start, int CourseHours, Person trainer)
         {
             _Title = Title;
             _Start = Start;

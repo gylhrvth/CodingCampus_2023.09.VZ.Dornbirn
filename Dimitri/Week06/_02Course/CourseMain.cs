@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dimitri.Week06._01Person;
 
-namespace Dimitri.Week06.Course
+namespace Dimitri.Week06._02Course
 {
     internal class CourseMain
     {
         public static void Main()
         {
-            Person.Person p = new(174, 31, "Dimitri", 64);
+            Person p = new(174, 31, "Dimitri", 64);
             Course c = new("Softwareentwickler", "26.09.2023", 500, 7840.99, p);
-            Course c1 = new Course("Softwareentwickler", "26.09.2023", 500, p);
+            Course c1 = new("Softwareentwickler", "26.09.2023", 500, p);
 
             Console.WriteLine(c);
             Console.WriteLine();
