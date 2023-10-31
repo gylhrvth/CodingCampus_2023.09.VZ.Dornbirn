@@ -1,1 +1,1 @@
-﻿Sven.Week06.OOPPerson.Personexample.Start();
+﻿Sven.Week06.OOPKurse.KurseEX.Start();
