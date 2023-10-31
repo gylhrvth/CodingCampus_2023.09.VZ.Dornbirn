@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sven.Week06.OOPKurse
 {
-    internal class Kurse
+    internal class Person
     {
     }
 }
