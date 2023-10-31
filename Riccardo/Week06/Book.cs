@@ -9,10 +9,9 @@ namespace Riccardo.Week06.
 {
     internal class Book
     {
-      
-        private string _Autor;
+
+        private string _Author;
         private string _Title;
-        
 
         public string Title
         {
@@ -20,16 +19,27 @@ namespace Riccardo.Week06.
 
             set
             {
-                Console.WriteLine("Book Title ist chaning to: " + value);
+                Console.WriteLine("Book Title is changing to: " + value);
                 _Title = value;
             }
         }
 
         public int CountPages;
 
-        public Book(string Autor, string Title)
+
+        public Book(string Author, string Title)
         {
-            _Autor = Autor;
+            _Author = Author;
+            _Title = Title;
+            CountPages = -1;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Author: {0}\nTitle: {1}\nCount Pages: {2}",
+                _Author,
+                _Title,
+                CountPages);
         }
     }
 }
