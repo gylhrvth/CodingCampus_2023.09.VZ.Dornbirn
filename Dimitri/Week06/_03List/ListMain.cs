@@ -13,6 +13,27 @@ namespace Dimitri.Week06._03List
         {
             List<int> list = CreateRandomList(20, 0, 100);
             PrintList(list);
+            Console.WriteLine();
+            Console.WriteLine(CountEvenNumbersList(list));
+            Console.WriteLine();
+            Console.WriteLine(FindSmallestNumber(list));
+            Console.WriteLine();
+            Console.WriteLine(FindMaxValueList(list));
+            Console.WriteLine();
+
+            //easy
+            /*
+            list.Sort();
+            PrintList(list);
+            list.Reverse();
+            PrintList(list);
+            */
+
+            PrintList(BubbleSortList(list));
+
+            DeleteAllOddNumbersList(list);
+
+            PrintList(list);
         }
     }
 }
