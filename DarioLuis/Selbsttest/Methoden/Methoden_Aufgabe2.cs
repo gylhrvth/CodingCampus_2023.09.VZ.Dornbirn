@@ -14,9 +14,7 @@ namespace DarioLuis.Selbsttest.Methoden
         }
         public static void PrintRowTrippleX()
         {
-            Console.WriteLine("Welches Symbol soll gedruckt werden? ");
-            string symbol = Console.ReadLine();
-            Console.WriteLine(symbol + " wird jetzt 3 mal gedruck!");
+            char symbol = 'X';
             int amount = 3;
 
             for (int i = 0; i <= amount - 1; i++) 

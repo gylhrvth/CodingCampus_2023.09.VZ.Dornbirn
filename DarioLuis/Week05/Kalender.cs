@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace DarioLuis.Week05
     {
         public static void Start()
         {
+            
             Time();
             Day();
             Both();
@@ -17,7 +19,7 @@ namespace DarioLuis.Week05
 
         public static void Time()
         {
-             Console.WriteLine(TimeOnly.FromDateTime(DateTime.Now));
+            Console.WriteLine(TimeOnly.FromDateTime(DateTime.Now));
         }
         public static void Day()
         {

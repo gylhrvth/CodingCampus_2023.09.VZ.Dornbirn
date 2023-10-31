@@ -13,15 +13,15 @@ namespace Kerem.Week05
         public static void Start()
         {
 
-            /*String[] names = new String[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
-            string s = String.Join(" ", names);
-            Console.WriteLine(names);
+            //String[] names = new String[] { "Jovo", "Mehmet", "Sven", "Martin", "Selina", "Niklas", "Ali", "Fabienne", "Lukas", "Sandro", "Hassan", "Berna", "Gyula", "Dimitri", "Patrick", "Kerem", "Timo", "Gheorghe", "Mohammed", "Cemal", "Simon", "Fabian", "Dario", "Michael", "Erik", "David", "Riccardo", "Eren" };
+            //string s = String.Join(" ", names);
+            //Console.WriteLine(names);
 
             String t = StringRessources.getText();
             Console.WriteLine(t);
 
             int[] count = countLetters(t);
-            PrintResult(count);*/
+            PrintResult(count);
 
 
         }

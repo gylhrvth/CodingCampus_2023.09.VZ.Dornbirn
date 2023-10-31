@@ -129,7 +129,24 @@ namespace Dimitri.Week05
             //Console.WriteLine(DeleteAll(numbersReplace, "[1-36-9]"));
             //Console.WriteLine();
 
-            FindLongestMatchingSubstring();
+            //FindLongestMatchingSubstring();
+
+            //String text = Ressources.StringRessources.getHesse();
+            //Console.WriteLine(text);
+            //Console.WriteLine("Count \"Hesse\" in text: {0}", CountSubstringGyula(text, "Hesse"));
+
+
+            //longest Substring by gyula
+
+            String text1 = "Hello World!";
+            String text2 = "Hello Patrick!";
+
+            string longest = GetLongestSubstringGyula(text1, text2 );
+            Console.WriteLine("{0}\n{1}\n{2}", text1, text2, longest);
+
+            Console.WriteLine("=============================================");
+            string longestWord = GetLongestWordGyula(text1, text2);
+            Console.WriteLine("longest common word: " + longestWord);
 
 
 
@@ -471,7 +488,6 @@ namespace Dimitri.Week05
 
         public static void SearchForHesse(string text, string word)
         {
-            int count = 0;
 
             MatchCollection matches = Regex.Matches(text, word);
 
@@ -578,7 +594,7 @@ namespace Dimitri.Week05
             //}
 
 
-            string[] text0 = new string[text0Length];
+            string[] text0 = new string[text0Length + 1];
 
             int count = 0;
 
@@ -598,12 +614,11 @@ namespace Dimitri.Week05
                         text0[i] = word;
                         word = string.Empty;
                         break;
-
                     }
                 }
             }
 
-            string[] text1 = new string[text1Length];
+            string[] text1 = new string[text1Length + 1];
 
             count = 0;
 
@@ -624,8 +639,8 @@ namespace Dimitri.Week05
                         text1[i] = word;
                         word = string.Empty;
                         break;
-
                     }
+
                 }
             }
 
@@ -684,6 +699,69 @@ namespace Dimitri.Week05
             for (int i = 0; i < index; i++)
             {
                 result[i] = text[i];
+            }
+
+            return result;
+        }
+
+        public static int CountSubstringGyula(string text, string searchFor)
+        {
+            int count = 0;
+            int startPos = text.IndexOf(searchFor, 0);
+
+            while (startPos > -1)
+            {
+                ++count;
+                startPos = text.IndexOf(searchFor, 1 + startPos);
+            }
+
+            return count;
+        }
+
+        public static string GetLongestWordGyula(string text1, string text2)
+        {
+            string[] words1 = text1.Split(" ");
+            string[] words2 = text2.Split(" ");
+
+
+            string result = "";
+
+            for (int i = 0; i < words1.Length; i++)
+            {
+                for (int j = 0; j < words2.Length; j++)
+                {
+                    if (words1[i] == words2[j] && words1[i].Length > result.Length)
+                    {
+                        result = words1[i];
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static string GetLongestSubstringGyula(string longText, string shortText)
+        {
+
+            if(longText.Length < shortText.Length)
+            {
+                return GetLongestSubstringGyula(shortText, longText);
+            }
+
+            string result = "";
+
+            int targetLength = shortText.Length;
+            while (targetLength > 0)
+            {
+                for (int startPos = 0; startPos <= shortText.Length - targetLength; ++startPos)
+                {
+                    string textForSearch = shortText.Substring(startPos, targetLength);
+                    if (longText.Contains(textForSearch))
+                    {
+                        result = textForSearch;
+                    }
+                }
+
+                --targetLength;
             }
 
             return result;
