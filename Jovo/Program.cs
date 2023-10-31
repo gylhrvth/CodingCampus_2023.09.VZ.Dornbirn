@@ -1,4 +1,4 @@
 
-using Jovo.Week06.Kurse_und_Trainer;
+using Jovo.Week06;
 
-KurseUndTrainerMain.Start();
+ListeAuswerten.Start();
