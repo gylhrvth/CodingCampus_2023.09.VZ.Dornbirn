@@ -1,3 +1,8 @@
-﻿using Martin.Week03;
+﻿using Martin.Week06;
 
-Martin.Week05.StringAufgaben.StartStringAufgaben();
+OOP.Start();
+
+OOP ooe = new OOP("Martin");
+OOP ooeTest = new OOP("Lukas");
+
+Console.WriteLine(ooeTest.GetHello());
