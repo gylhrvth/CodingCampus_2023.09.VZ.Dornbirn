@@ -1,4 +1,5 @@
-﻿using static Fabian.Week02.ConsoleInput;
+﻿using static Fabian.Week04.FourInARowClass;
+using static Fabian.Week02.ConsoleInput;
 namespace Fabian.Week03
 {
     public class TicTacToeClass
@@ -33,16 +34,16 @@ namespace Fabian.Week03
                     int p2Col = 0;
 
                     //enter numbers
-                    p1Row = UserInput("row", 1, 1, 6);
-                    p1Col = UserInput("column", 1, 1, 6);
+                    p1Row = UserInput("row", 1, 1, 3);
+                    p1Col = UserInput("column", 1, 1, 3);
 
                     //check if field is taken
                     while (playGround[p1Row - 1, p1Col - 1] != 0)
                     {
                         Console.WriteLine("This field is already taken!");
                         Print2DArray(playGround);
-                        p1Row = UserInput("row", 1, 1, 6);
-                        p1Col = UserInput("column", 1, 1, 6);
+                        p1Row = UserInput("row", 1, 1, 3);
+                        p1Col = UserInput("column", 1, 1, 3);
                     }
                     //print the 1
                     playGround[p1Row - 1, p1Col - 1] = 1;
@@ -78,16 +79,16 @@ namespace Fabian.Week03
                     }
 
                     //enter numbers
-                    p2Row = UserInput("row", 2, 1, 6);
-                    p2Col = UserInput("column", 2, 1, 6);
+                    p2Row = UserInput("row", 2, 1, 3);
+                    p2Col = UserInput("column", 2, 1, 3);
 
                     //check if field is taken
                     while (playGround[p2Row - 1, p2Col - 1] != 0)
                     {
                         Console.WriteLine("This field is already taken!");
                         Print2DArray(playGround);
-                        p2Row = UserInput("row", 2, 1, 6);
-                        p2Col = UserInput("column", 2, 1, 6);
+                        p2Row = UserInput("row", 2, 1, 3);
+                        p2Col = UserInput("column", 2, 1, 3);
                     }
                     //print the 2
                     playGround[p2Row - 1, p2Col - 1] = 2;
@@ -128,27 +129,7 @@ namespace Fabian.Week03
                 }
             }
         }
-        public static void Print2DArray(int[,] arr)
-        {
-            Console.Clear();
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    if (arr[i, j] == 1)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                    }
-                    else if (arr[i, j] == 2)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                    }
-                    Console.Write(arr[i, j] + " ");
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-                Console.WriteLine();
-            }
-        }
+       
         public static int UserInput(string text, int player, int min, int max)
         {
             int num = Int32.MinValue;
@@ -206,15 +187,11 @@ namespace Fabian.Week03
             {
                 for (int j = 0; j < arr.GetLength(1) - 2; j++)
                 {
-                    if (arr[i, j] != 0 && arr[i, j] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j + 2])
+                    if ((arr[i, j] != 0 && arr[i, j] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j + 2]) || // top left to bottom right
+                        (arr[i, j + 2] != 0 && arr[i, j + 2] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j])) // top right to bottom left
                     {
                         return true;
-                    }
-
-                    if (arr[i, j + 2] != 0 && arr[i, j + 2] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j])
-                    {
-                        return true;
-                    }
+                    }                  
                 }
             }
             return false;
