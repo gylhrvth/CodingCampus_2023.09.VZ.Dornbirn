@@ -265,7 +265,7 @@ namespace Mehmet.Week05
             string[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
             float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
 
-            int col = 5;
+            //int col = 5;
 
             //string[][col] columnds = Add2DArray();
             
