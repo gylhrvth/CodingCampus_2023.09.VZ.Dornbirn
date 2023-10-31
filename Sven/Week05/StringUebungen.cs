@@ -4,13 +4,15 @@ using System.Diagnostics.Tracing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ressources;
 using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Sven.Week05
 {
     internal class StringUebungen
     {
-
+        public static Random Random = new Random();
         public static void Start()
         {
             
@@ -44,8 +46,22 @@ namespace Sven.Week05
             Console.WriteLine("{0}", string.Join(", ", SortIndex(names)));
             Console.WriteLine();
 
-            Console.WriteLine("Bubblesort String Bool:");
-            Reverse();
+            //Console.WriteLine("String Reverse:");
+            //ReverseString();
+            //Console.WriteLine();
+
+            Console.WriteLine("String Randomize:");
+            Console.WriteLine("Wilkommen zum Randomize Programm!");
+            string text = Console.ReadLine();
+            RandomizeString(text);
+            Console.WriteLine();
+
+            String s = StringRessources.getText();
+            Console.WriteLine(s);
+
+            int[] count = countLetters(s);
+            PrintResult(count);
+
             Console.WriteLine();
 
 
@@ -179,21 +195,61 @@ namespace Sven.Week05
             return arr;
         }
 
-        public static void Reverse()
-        {   
-            Console.WriteLine("Wilkommen zum ReverseProgramm!");
+        public static void ReverseString()
+        {
+            Console.WriteLine("Wilkommen zum Reverse Programm!");
             string input = Console.ReadLine();
             char[] mychar = input.ToCharArray();
-            
-            
+
+
             Array.Reverse(mychar);
 
             Console.WriteLine(mychar);
 
         }
 
+        public static void RandomizeString(string text)
+        {            
+            
+            char[] arr = text.ToCharArray();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int posA = Random.Next(arr.Length);
+                int posB = Random.Next(arr.Length);
+                char temp = arr[posA];
+                arr[posA] = arr[posB];
+                arr[posB] = temp;
+            }
+            Console.WriteLine(arr);
+
+        }
+        public static void PrintResult(int[] count)
+        {
+            for (int i = 0; i < count.Length; ++i)
+            {
+                if (count[i] > 0)
+                {
+                    char c = (char)i;
+                    Console.WriteLine(c + " " + count[i]);
+                }
+            }
+        }
+
+        public static int[] countLetters(string text)
+        {
+            int[] count = new int[char.MaxValue];
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                ++count[c];
+            }
+
+            return count;
+        }
     }
 }
+
 
 
 

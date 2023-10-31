@@ -1,4 +1,3 @@
 ﻿using Erik.Week05;
 
-
-StringTableSort.Start();
+DateTimeEx.Start();

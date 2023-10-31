@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace Gheorghe.Week05
 {
@@ -47,16 +41,27 @@ namespace Gheorghe.Week05
 
             // Bubblesort mit  String und Character Index 
 
-            BubbleSortIndexCharacter(names, 5);
-            Console.WriteLine("Character Index");
-            PrintArray(names);
+            /* BubbleSortIndexCharacter(names, 5);
+             Console.WriteLine("Character Index");
+             PrintArray(names); */
 
 
 
             // Reversed index
-            Console.WriteLine("Reverse=======");
 
-           
+            Console.WriteLine("Revers=======");
+            string reversed = Reverse("Hallo");
+            Console.WriteLine(reversed);
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -183,23 +188,35 @@ namespace Gheorghe.Week05
                         arr[j + 1] = temp;
                     }
                 }
-
-
-
-
-                static void Reverse(string [] arr )
-                {
-                    string text = Console.ReadLine();
-
-
-
-                }
             }
+        }
 
+
+        public static string Reverse(string text)
+        {
+
+            char[] charArr = text.ToCharArray();
+
+
+            for (int i = 0; i < charArr.Length / 2; i++)
+            {
+                char temp = charArr[i];
+                charArr[i] = charArr[charArr.Length - i - 1];
+                charArr[charArr.Length - i - 1] = temp;
+
+            }
+            return new string(charArr);
 
         }
+
+
+
+          
     }
 }
+
+
+
 
 
 

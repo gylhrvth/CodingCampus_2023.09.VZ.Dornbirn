@@ -1,2 +1,2 @@
-﻿Gheorghe.Week05.StringsExample.Start();
+﻿Gheorghe.Week05.DateExample.Start();
 

@@ -1,1 +1,1 @@
-﻿Hassan.Week05.TabellarischeAusgabe.Start();
+﻿Hassan.Week06.Person.Start();

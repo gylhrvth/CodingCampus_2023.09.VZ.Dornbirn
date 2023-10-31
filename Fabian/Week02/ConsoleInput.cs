@@ -29,7 +29,7 @@ namespace Fabian.Week02
                 }
                 else if (!Regex.IsMatch(text, pattern))
                 {
-                    Console.WriteLine("Not a valid text!");
+                    Console.WriteLine("Not a valid input!");
                 }
                 else
                 {
@@ -105,9 +105,8 @@ namespace Fabian.Week02
         public static bool AskToPlayAgain()
         {
             String restart = ReadString("Do you want to play again? (Y/N): ", "^[yYnN]$");
-            restart = restart.ToUpper();
 
-            if (restart == "N")
+            if (restart == "N" || restart == "n")
             {
                 Console.WriteLine("Bye, have a nice day! :)");
                 return false;
@@ -323,7 +322,7 @@ namespace Fabian.Week02
             String firstName = ReadString("Enter yout first name: ");
             String lastName = ReadString("Enter your last name: ");
             String phoneNumber = ReadString("Enter your phone number (+xx xxx xxxxxxx): ", "^[0-9\\+]+$");
-            String email = ReadString("Enter your email: ", "^[a-zA-Z\\@\\.]+$");
+            String email = ReadString("Enter your email: ", "^[a-zA-Z0-9\\@\\.]+$");
 
 
 

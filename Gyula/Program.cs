@@ -1,1 +1,3 @@
-﻿Gyula.Week05.Randomize.Start();
+﻿using Gyula.Week06.Book;
+
+BookExample.Start();

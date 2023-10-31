@@ -10,4 +10,20 @@
   <ItemGroup>
     <None Remove="Week01\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\NILA\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Niklas\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\NILA\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Niklas\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ressources\Ressources.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Week06\" />
+  </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ namespace Hassan.Week05
         public static void Start()
         {
             
-/*
+
             Console.WriteLine("Willkommen zum Reverseprogramm!!!111");
 
             string eingabe = Console.ReadLine();
@@ -21,11 +21,11 @@ namespace Hassan.Week05
             string umgedreht = RandomizeString(eingabe);
 
             Console.WriteLine(">>> " + umgedreht);
-*/
 
 
-            string text = StringRessources.getText();
-            CountAndPrintCharacters(text);
+
+           // string text = StringRessources.getText();
+           // CountAndPrintCharacters(text);
 
 
 
@@ -37,7 +37,7 @@ namespace Hassan.Week05
             char[] charArray = text.ToCharArray();
             int length = charArray.Length;
 
-            for (int i = 0; i < length / 2; i++)
+            for (int i = 0; i < length; i++)
             {
                 char temp = charArray[i];
                 charArray[i] = charArray[length - i - 1];
@@ -56,7 +56,7 @@ namespace Hassan.Week05
             // Zufällige Anordnung des Char-Arrays
             Random rand = new Random();
 
-            for (int i = charArray.Length - 1; i > 0; i--)
+            for (int i =0; i < charArray.Length; i++)
             {
                 int j = rand.Next(i + 1);
                 char temp = charArray[i];
