@@ -1,1 +1,1 @@
-﻿Dimitri.Week06.Course.CourseMain.Main();
+﻿Dimitri.Week06._03List.ListMain.Main();

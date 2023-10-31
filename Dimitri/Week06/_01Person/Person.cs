@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dimitri.Week06.Person
+namespace Dimitri.Week06._01Person
 {
     public class Person
     {
