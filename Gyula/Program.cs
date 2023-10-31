@@ -1,3 +1,3 @@
-﻿using Gyula.Week06.CourseList;
+﻿using Gyula.Week06;
 
-CourseExample.Start();
+ListExample.Start();
