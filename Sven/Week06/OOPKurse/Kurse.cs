@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week06OOP
+namespace Sven.Week06.OOPKurse
 {
-    internal class OOP
+    internal class Kurse
     {
     }
 }
