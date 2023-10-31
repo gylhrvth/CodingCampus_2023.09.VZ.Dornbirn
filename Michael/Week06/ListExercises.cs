@@ -60,7 +60,7 @@ namespace Michael.Week06
             return count;
         }
 
-        public static int CountEven(List<int> list)
+        public static int CountEvenAlt(List<int> list)
         {
             int count = 0;
             foreach (int num in list)
