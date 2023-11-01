@@ -129,7 +129,51 @@ namespace Dimitri.Week06._03List
             }
         }
 
+        public static List<int> MergeOrderedLists(List<int> list1, List<int> list2)
+        {
+            List<int> result = new List<int>();
 
+            int i = 0;
+            int j = 0;
+            int k = 0;
+            while (i < list1.Count && j < list2.Count)
+            {
+                if (list1[i] < list2[j])
+                {
+
+                    result.Add(list1[i]);
+                    ++k;
+                    ++i;
+                }
+                else
+                {
+
+                    result.Add(list2[j]);
+                    ++k;
+                    ++j;
+                }
+            }
+
+            while (i < list1.Count)
+            {
+
+                result.Add(list1[i]);
+                ++k;
+                ++i;
+            }
+
+            while (j < list2.Count)
+            {
+
+                result.Add(list2[j]);
+                ++k;
+                ++j;
+            }
+
+  
+
+            return result;
+        }
 
     }
 }
