@@ -14,6 +14,8 @@
     <None Remove="Week04\" />
     <None Remove="Week05\" />
     <None Remove="Week06\" />
+    <None Remove="Week06\Person\" />
+    <None Remove="Week06\KurseTrainer\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -22,6 +24,8 @@
     <Folder Include="Week04\" />
     <Folder Include="Week05\" />
     <Folder Include="Week06\" />
+    <Folder Include="Week06\Person\" />
+    <Folder Include="Week06\KurseTrainer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
