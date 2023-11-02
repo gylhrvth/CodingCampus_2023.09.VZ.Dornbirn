@@ -16,4 +16,10 @@ Console.WriteLine(max);
 
 DynamicDatastructure.Start();
 */
-DynamicDatastructureByGyulaMain.Start();
+//DynamicDatastructureByGyulaMain.Start();
+
+
+string text = "Hello World";
+
+string result = string.Format("apfel {0}", 5);
+bool b = text.Contains("lo");

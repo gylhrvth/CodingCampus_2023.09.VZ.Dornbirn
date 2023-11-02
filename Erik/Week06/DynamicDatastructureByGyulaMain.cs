@@ -11,8 +11,9 @@ namespace Erik.Week06
         public static void Start()
         {
             DynamicDatastructureByGyula dds = new DynamicDatastructureByGyula(0, 100, -100);
+            DynamicDatastructureByGyula dds2 = new DynamicDatastructureByGyula(20, 0, 10);
             dds.Print();
-            Console.WriteLine("Maximum: {0}", dds.GetMaximum());
+            Console.WriteLine("Maximum: {0}", dds2.GetMaximum());
         }
     }
 }
