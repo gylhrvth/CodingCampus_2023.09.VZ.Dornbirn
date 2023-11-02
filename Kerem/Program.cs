@@ -11,9 +11,6 @@
 //Kerem.Week05.CountHesse.Start();
 //Kerem.Week06.DateTimeExamples.Start();  
 
-
-
-
 using Kerem.Week06;
 
 //PersonExample.Start();
