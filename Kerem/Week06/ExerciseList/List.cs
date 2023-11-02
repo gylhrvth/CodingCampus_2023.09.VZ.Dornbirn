@@ -10,16 +10,19 @@ namespace Kerem
     {
         private static Random rand = new Random();
 
-        public static void Start()
+        public static void CreateRandomList()
         {
             List<int> values = new List<int>();
 
             for( int i = 0; i < 20; i++ )
             {
                 values.Add(rand.Next(0, 100));
+                
             }
-            Console.WriteLine("[{0}]", string.Join(", ", values));
+            Console.WriteLine(string.Join (", ", values));
+
 
         }
+
     }
 }

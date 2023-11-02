@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,13 +10,13 @@ namespace Dimitri.Week06._03List
 {
     public class List
     {
-        public static Random random = new Random();
+        private static Random random = new Random();
 
         public static List<int> CreateListRandomFirst()
         {
             List<int> list = new List<int>();
 
-            for(int i = 0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 list.Add(random.Next(0, 100));
             }
@@ -49,11 +51,129 @@ namespace Dimitri.Week06._03List
                 list.Add(random.Next(min, max));
             }
 
+
             return list;
 
         }
 
+        public static int CountEvenNumbersList(List<int> list)
+        {
+            int count = 0;
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] % 2 == 0)
+                {
+                    count++;
+                }
 
+            }
+            return count;
+        }
+
+        public static int FindSmallestNumber(List<int> list)
+        {
+            int result = int.MaxValue;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] < result)
+                {
+                    result = list[i];
+                }
+            }
+
+            return result;
+        }
+
+        public static int FindMaxValueList(List<int> list)
+        {
+            int result = int.MinValue;
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i] > result)
+                {
+                    result = list[i];
+                }
+            }
+
+            return result;
+        }
+
+        public static List<int> BubbleSortList(List<int> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = i + 1; j < list.Count; j++)
+                {
+                    if (list[i] < list[j])
+                    {
+                        int temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                    }
+                }
+            }
+            return list;
+        }
+
+        public static void DeleteAllOddNumbersList(List<int> list)
+        {
+            for(int i = 0; i < list.Count; i++)
+            {
+                if (list[i] % 2 != 0)
+                {
+                    list.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        public static List<int> MergeOrderedLists(List<int> list1, List<int> list2)
+        {
+            List<int> result = new List<int>();
+
+            int i = 0;
+            int j = 0;
+            int k = 0;
+            while (i < list1.Count && j < list2.Count)
+            {
+                if (list1[i] < list2[j])
+                {
+
+                    result.Add(list1[i]);
+                    ++k;
+                    ++i;
+                }
+                else
+                {
+
+                    result.Add(list2[j]);
+                    ++k;
+                    ++j;
+                }
+            }
+
+            while (i < list1.Count)
+            {
+
+                result.Add(list1[i]);
+                ++k;
+                ++i;
+            }
+
+            while (j < list2.Count)
+            {
+
+                result.Add(list2[j]);
+                ++k;
+                ++j;
+            }
+
+  
+
+            return result;
+        }
 
     }
 }

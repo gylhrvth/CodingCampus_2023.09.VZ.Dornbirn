@@ -11,8 +11,37 @@ namespace Dimitri.Week06._03List
     {
         public static void Main()
         {
-            List<int> list = CreateRandomList(20, 0, 100);
-            PrintList(list);
+            //List<int> list = CreateRandomList(20, 0, 100);
+            //PrintList(list);
+            //Console.WriteLine();
+            //Console.WriteLine(CountEvenNumbersList(list));
+            //Console.WriteLine();
+            //Console.WriteLine(FindSmallestNumber(list));
+            //Console.WriteLine();
+            //Console.WriteLine(FindMaxValueList(list));
+            //Console.WriteLine();
+
+            ////easy
+            ///*
+            //list.Sort();
+            //PrintList(list);
+            //list.Reverse();
+            //PrintList(list);
+            //*/
+
+            //PrintList(BubbleSortList(list));
+
+            //DeleteAllOddNumbersList(list);
+
+            //PrintList(list);
+
+            List<int> list1 = CreateRandomList(20, 0, 100);
+            List<int> list2 = CreateRandomList(20, 0, 100);
+
+            list1.Sort();
+            list2.Sort();
+
+            PrintList(MergeOrderedLists(list1, list2));
         }
     }
 }

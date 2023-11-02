@@ -1,0 +1,20 @@
+﻿using System;
+namespace David.Week06.Person
+{
+	public class Person
+	{
+		private string _Name;
+		private string _Alter;
+
+
+
+		public Person(string Name, string Alter)
+		{
+			_Name = Name;
+			_Alter = Alter;
+		}
+
+
+	}
+}
+

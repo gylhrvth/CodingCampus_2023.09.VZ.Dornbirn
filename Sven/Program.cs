@@ -1,1 +1,1 @@
-﻿Sven.Week06.OOPKurse.KurseEX.Start();
+﻿Sven.Week06.OOPList.List.Start();
