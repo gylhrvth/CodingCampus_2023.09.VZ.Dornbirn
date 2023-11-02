@@ -3,18 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Kerem.Week06;
+using static Kerem.Week06.CreateAndSortyMyList;
 
-namespace Kerem
+namespace Kerem.Week06;
+
+public class ListExample
 {
-    public class ListExample
+    public static void Start()
     {
-        public static void Start()
-        {
-            //List<int> values = CreateRandomList(0, 100);
-            List<int> list = new List<int>();
-            Console.WriteLine();
+       
+        List<int> list = CreateRandomList(20);
+        Console.WriteLine("Print My Random Number List:");
+        PrintList(list);
 
-        }
+        Console.Write("Count Even Numbers:" + CountEvenNumbers(list));
+
+        Console.Write("\nSmallest Numbers:" + SearchSmallestNumber(list));
+     
+        Console.WriteLine("\nBiggest Number:" + SearchBiggestNumber(list));
+        
+        Console.WriteLine("Sort My Numbers:");
+        PrintList(SortListDesc(list));
+
+        Console.WriteLine("Odd Numbers deleted:");
+        RemoveOddNumber(list);
+
+        PrintList(list);
     }
 }

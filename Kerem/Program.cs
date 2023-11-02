@@ -1,4 +1,4 @@
-Kerem.Exercises.IfStatement.Start();
+//Kerem.Exercises.IfStatement.Start();
 //Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week04.ConsoleInput.Start();
@@ -12,9 +12,9 @@ Kerem.Exercises.IfStatement.Start();
 //Kerem.Week06.DateTimeExamples.Start();
 
 
-//using Kerem;
-//using Kerem.Week06;
+
+using Kerem.Week06;
 
 //PersonExample.Start();
 //Kurse_TrainerExample.Start();
-//ListExample.Start();
+ListExample.Start();
