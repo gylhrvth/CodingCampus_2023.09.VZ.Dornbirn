@@ -29,14 +29,17 @@ public class CreateAndSortyMyList
         Console.Write("[");
         foreach (int element in list)
         {
-          
+
             if (first)
             {
 
                 Console.Write(element);
                 first = false;
             }
-            Console.Write(", " + element);
+            else { 
+                Console.Write(", " + element);
+            }
+            
 
 
         }
@@ -81,7 +84,6 @@ public class CreateAndSortyMyList
     }
     public static List<int> SortListDesc(List<int> list)
     {
-        //List<int> desc = new List<int>();
 
         for(int i = 0; i< list.Count;i++ )
         {
