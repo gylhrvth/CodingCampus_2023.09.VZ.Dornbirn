@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+namespace Riccardo.Week06.Book;
 
-namespace Riccardo.Week06.
-{
     internal class Book
     {
 
@@ -43,4 +37,5 @@ namespace Riccardo.Week06.
         }
     }
 }
+
 

@@ -1,1 +1,1 @@
-﻿Dimitri.Week06._03List.ListMain.Main();
+﻿Dimitri.Week06._04Person2.Person2Main.Main();
