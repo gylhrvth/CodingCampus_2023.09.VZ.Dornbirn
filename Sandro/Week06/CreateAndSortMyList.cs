@@ -46,11 +46,8 @@ namespace Sandro.Week06
             return bigNumber;
         
         }
-        public static List<int> SortListAsc(List<int> list) {
-            List<int> SortedList = new List<int>();
-
-
-            return SortedList;
+        public static void SortListAsc(List<int> list) {
+           
 
         }
         public static void RemoveOddNumbers(List<int> list)
