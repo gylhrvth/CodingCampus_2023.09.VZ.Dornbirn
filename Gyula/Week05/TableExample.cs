@@ -16,7 +16,7 @@ namespace Gyula.Week05
             bool[] isAlignedLeft = new bool[columns];
             string[][] table = Create2DStringArray(1 + firstName.Length, columns);
             AddColumn(table, isAlignedLeft, 0, "First name", firstName);
-            AddColumn(table, isAlignedLeft, 1, "Last name", lastName);
+            AddColumn(table, isAlignedLeft, 1, "Las lastName);
             AddColumn(table, isAlignedLeft, 2, "Age", age);
             AddColumn(table, isAlignedLeft, 3, "Place", place);
             AddColumn(table, isAlignedLeft, 4, "Distance", distanceFromCapital);

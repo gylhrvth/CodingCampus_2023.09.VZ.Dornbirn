@@ -16,7 +16,7 @@ namespace Martin.Week06
         
         public static void Start()
         {
-            ShowWatch();
+            //ShowWatch();
             //Birthday();
             //Sonntag();
             //CounterMonthSunday(2023, 10);

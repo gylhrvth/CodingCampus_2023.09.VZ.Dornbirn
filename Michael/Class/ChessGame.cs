@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week06OOP
+namespace Michael.Class
 {
-    internal class OOPUebung
+    internal class ChessGame
     {
     }
 }

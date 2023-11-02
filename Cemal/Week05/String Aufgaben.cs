@@ -33,10 +33,15 @@ namespace Cemal.Week05
 
             Console.WriteLine("Bubblesort alphabetisch absteigend");
             Console.WriteLine();
-            BubblesortALPHAabsteigend(names);
+            //BubblesortALPHAabsteigend(names);
             Console.WriteLine(string.Join(", ", names));
             Console.WriteLine();
 
+            Console.WriteLine("Bubblesort Extended");
+            Console.WriteLine();
+            BubblesortExtended(names);
+            Console.WriteLine(string.Join(", ", names));
+            Console.WriteLine();
 
 
 
@@ -90,7 +95,7 @@ namespace Cemal.Week05
             }
         }
 
-        public static void BubblesortALPHAabsteigend(string[] names)
+        public static void BubblesortExtended(string[] names)
         {
             for (int i = 0; i < names.Length; i++)
             {

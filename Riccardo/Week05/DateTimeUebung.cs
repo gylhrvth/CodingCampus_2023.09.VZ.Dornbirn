@@ -23,9 +23,9 @@ namespace Riccardo.Week05
 
             Console.WriteLine(t.ToString("yyyy.MM.dd"));
 
-            Console.WriteLine(t.ToString("t"));
+            Console.WriteLine(t.ToString(""));
 
-            Console.WriteLine(t.ToString("yyyy.MM.dd t"));
+            Console.WriteLine(t.ToString("f", austrian));
         }
 
     }

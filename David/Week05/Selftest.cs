@@ -142,10 +142,10 @@ namespace David.Week05
 
             Console.WriteLine("Aufgabe1:");
 
-            string Word1 = "apfel";
-            string Word2 = "regallager";
-            string Word3 = "hanna";
-            string Word4 = "reittier";
+            string Word1 = "Apfel";
+            string Word2 = "Regallager";
+            string Word3 = "Hanna";
+            string Word4 = "Reittier";
 
             bool tf1 = Aufgabe1StringPalindrom(Word1);
             PrintPallindrom(Word1, tf1);
@@ -513,6 +513,7 @@ namespace David.Week05
 
         public static bool Aufgabe1StringPalindrom(string W1)
         {
+            W1 = W1.ToLower();
             for (int i = 0; i < W1.Length / 2; i++)
             {
                 if (W1[i] != W1[W1.Length - 1 - i])
@@ -556,7 +557,7 @@ namespace David.Week05
         { 
             string text = hesseText + " " + marieText;
 
-            text = text.Replace("@"+"["+","+"."+"!"+"?"+":"+";"+"("+")"+"'"+"/"+"+"+"]", "");
+            text = text.Replace("@"+"["+","+"."+"!"+"?"+":"+";"+"("+")"+"'"+"/"+"+"+"]"+"" + "\n", "");
 
             string longestWord = "";
             string[] words = text.Split(" ");

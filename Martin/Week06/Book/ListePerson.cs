@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week06OOP
+namespace Martin.Week06.Book
 {
-    internal class OOP
+    public class ListePerson
     {
+        
     }
 }
