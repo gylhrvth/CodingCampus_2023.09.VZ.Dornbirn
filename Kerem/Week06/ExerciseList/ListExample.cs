@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Kerem.Week06.CreateAndSortyMyList;
+using static Kerem.Week06.ExerciseList.MergeList;
 
 namespace Kerem.Week06;
 
@@ -29,5 +30,16 @@ public class ListExample
         RemoveOddNumber(list);
 
         PrintList(list);
+        Console.WriteLine("MergeSortList");
+        List<int> list1 = CreateRandomList(20);
+        List<int> list2 = CreateRandomList(20);
+        SortListDesc(list1);
+        SortListDesc(list2);
+
+        PrintList(list1);
+        Console.WriteLine("================================================================================");
+        PrintList(list2);
+        Console.WriteLine("================================================================================");
+        PrintList(MergeSort(list1, list2));
     }
 }
