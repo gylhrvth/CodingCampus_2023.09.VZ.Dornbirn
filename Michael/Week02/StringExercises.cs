@@ -537,14 +537,17 @@ namespace Michael.Week02
         {
             int index = text.IndexOf(seperator);
 
+            //end of recursion
             if (index == -1)
             {
                 return new string[] { text };
-            }
+            } 
 
+            //create recursive split half and full return array
             string[] secondHalf = wordSplit(text.Substring(index + seperator.Length), seperator);
             string[] returnStrings = new string[secondHalf.Length + 1];
 
+            //add new element and old elements to full return string
             returnStrings[0] = text.Substring(0, index);
 
             for (int i = 0; i < secondHalf.Length; i++)

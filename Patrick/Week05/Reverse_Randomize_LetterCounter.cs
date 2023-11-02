@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ressources;
 
 namespace Patrick.Week05
 {
@@ -23,11 +24,14 @@ namespace Patrick.Week05
             //    Console.WriteLine("Dein eingegebener Text wurde \"random\" sortiert: ");
             //    Console.Write(">>>>>");
             //    Console.WriteLine(Randomize(inputRandom));
-
+            /*
             Console.WriteLine("Willkommen zum Buchstabenzählen deines Textes, Geben sie einen Text ein: ");
             Console.Write(">>>>>");
             string text = Console.ReadLine();
             Console.WriteLine("Dein Ergebnis lautet: ");
+            LetterCounter(text);
+            */
+            string text = StringRessources.getText();
             LetterCounter(text);
         }
 

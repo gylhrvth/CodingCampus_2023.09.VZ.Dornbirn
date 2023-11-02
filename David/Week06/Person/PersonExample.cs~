@@ -1,0 +1,17 @@
+﻿using System;
+using System.Runtime.Intrinsics.X86;
+
+namespace David.Week06.Person
+{
+	public class PersonExample
+	{
+		public static void Start()
+		{
+			Person p1 = new Person("David", "35");
+			Person p2 = new Person("Gyula", "40");
+
+			Console.WriteLine(p1);
+			Console.WriteLine(p2);
+		}
+	}
+}

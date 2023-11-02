@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cemal.Week06.Person
+namespace Cemal.Week06.NmsPerson
 {
     internal class PersonMain
     {
