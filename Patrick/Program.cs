@@ -1,6 +1,4 @@
-﻿
-using Patrick;
-using Patrick.Week06.Listen;
+﻿using Patrick.Week06.Listen;
 
-ListCreate.Start();
+Connect2Lists.Start();
 
