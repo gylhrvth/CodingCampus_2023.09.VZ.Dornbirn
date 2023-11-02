@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dimitri.Week06._04Person2;
+using Dimitri.Week06._01Person;
+using static Dimitri.Week06._03List.List;
 
 namespace Dimitri.Week06._04Person2
 {
@@ -11,18 +13,41 @@ namespace Dimitri.Week06._04Person2
     {
         public static void Main()
         {
-            Person2 p0 = new Person2(181, 24, "Dimitri", 80);
+            Person p0 = new Person(181, 24, "Dimitri", 80);
 
-            Person2 p1 = new Person2(113, 10, "Dimitri", 25);
+            Person p1 = new Person(113, 10, "Dimitra", 25);
 
-            Person2 p2 = new Person2(115, 12, "Dimitri", 27);
+            Person p2 = new Person(115, 12, "Damitra", 27);
 
-            Person2 p3 = new Person2(190, 18, "Dimitri", 98);
+            Person p3 = new Person(190, 18, "damitra", 98);
 
-            List<Person2> personList = new List<Person2>() { p0, p1, p2, p3 };
+            List<Person> personList = new List<Person>() { p0, p1, p2, p3 };
 
-            Person2.PrintMinMaxAvg(personList);
+            //Console.WriteLine("Weight statistics:");
+            //Console.WriteLine("Person mit dem minimalen Gewicht ist: {0}", PersonStatistics.MinWeight(personList).Name);
+            //Console.WriteLine("Person mit dem maximalen Gewicht ist: {0}", PersonStatistics.MaxWeight(personList).Name);
+            //Console.WriteLine("Das durchschnittliche Gewicht ist: {0} kg", PersonStatistics.AvgWeight(personList));
+            //Console.WriteLine();
+            //Console.WriteLine("Height statistics:");
+            //Console.WriteLine("Person mit dem minimalen Höhe ist: {0}", PersonStatistics.MinHeight(personList).Name);
+            //Console.WriteLine("Person mit dem maximalen Höhe ist: {0}", PersonStatistics.MaxHeight(personList).Name);
+            //Console.WriteLine("Das durchschnittliche Höhe ist: {0} cm", PersonStatistics.AvgHeight(personList));
+            //Console.WriteLine();
+            //Console.WriteLine("Age statistics:");
+            //Console.WriteLine("Person mit dem minimalen Alter ist: {0}", PersonStatistics.MinAge(personList).Name);
+            //Console.WriteLine("Person mit dem maximalen Alter ist: {0}", PersonStatistics.MaxAge(personList).Name);
+            //Console.WriteLine("Das durchschnittliche Alter ist: {0} Jahre", PersonStatistics.AvgAge(personList));
+
+            PersonStatistics.ListToString(personList, "Unsorted List:");
+
+            PersonStatistics.ListToString(PersonStatistics.Sort(personList, 0), "List sorted by Age:");
+
+            PersonStatistics.ListToString(PersonStatistics.Sort(personList, PersonStatistics.SortingValues.Height), "List sorted by Height:");
+
+            PersonStatistics.ListToString(PersonStatistics.Sort(personList, PersonStatistics.SortingValues.Weight), "List sorted by Weight:");
+
+            PersonStatistics.ListToString(PersonStatistics.Sort(personList, PersonStatistics.SortingValues.Name), "List sorted by Name:");
         }
-
     }
 }
+

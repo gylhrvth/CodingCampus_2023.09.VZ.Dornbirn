@@ -35,13 +35,24 @@ namespace Dimitri.Week06._03List
 
             //PrintList(list);
 
-            List<int> list1 = CreateRandomList(20, 0, 100);
-            List<int> list2 = CreateRandomList(20, 0, 100);
+            //List<int> list1 = CreateRandomList(20, 0, 100);
+            //List<int> list2 = CreateRandomList(20, 0, 100);
 
-            list1.Sort();
-            list2.Sort();
+            //list1.Sort();
+            //list2.Sort();
 
-            PrintList(MergeOrderedLists(list1, list2));
+            //PrintList(MergeOrderedLists(list1, list2));
+
+
+            List<char> list = new() { 'a', 'b', 'c'};
+
+            foreach (char c in list)
+            {
+                Console.Write("{0} ", c);
+            }
+            Console.WriteLine();
+
+            heapPermutationList(list.Count, list);
         }
     }
 }

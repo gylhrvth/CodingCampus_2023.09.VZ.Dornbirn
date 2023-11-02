@@ -175,5 +175,50 @@ namespace Dimitri.Week06._03List
             return result;
         }
 
+        public static List<char> heapPermutationList(int k, List<char> charList)
+        {
+            int count = 0;
+            if (k <= 1)
+            {
+                return charList;
+            } else
+            {
+
+                heapPermutationList(k - 1, charList);
+                for(int i = 0; i < k-1; i++)
+                {
+                    if(k % 2 == 0)
+                    {
+                        char temp = charList[i];
+                        charList[i] = charList[k - 1];
+                        charList[k - 1] = temp;
+
+                    } else
+                    {
+                        char temp = charList[0];
+                        charList[0] = charList[k - 1];
+                        charList[k - 1] = temp;
+
+                    }
+
+                    count++;
+
+                    foreach (char c in charList)
+                    {
+                        Console.Write("{0} ", c);
+                    }
+                    Console.WriteLine();
+
+
+                    heapPermutationList(k - 1, charList);
+
+
+                }
+
+                return charList;
+
+            }
+        }
+
     }
 }
