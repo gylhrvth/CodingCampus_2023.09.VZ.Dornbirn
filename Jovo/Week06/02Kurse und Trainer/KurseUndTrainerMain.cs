@@ -15,8 +15,9 @@ namespace Jovo.Week06.Kurse_und_Trainer
             KurseUndTrainer k1 = new KurseUndTrainer("Master",DateTime.Now, 500, 7850, new Person("Gyula", 40, 180,80));
 
             Console.WriteLine(k1);
-            
-            
+            Console.WriteLine(k1.Stunden);
+
+
         }
     }
 }
