@@ -11,9 +11,9 @@ namespace Gheorghe.Week01
     {
         public static void Start()
         {
-            // PrintExercitii("x", 10);
+            PrintExercitii("x", 10);
             //  PrintQuadrat("$", 10);
-            PrintRect("€", 10, 3);
+           // PrintRect("€", 10, 3);
         }
 
          public static void PrintExercitii(string symbol, int count)
