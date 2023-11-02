@@ -1,22 +1,14 @@
-﻿using System;
-namespace Riccardo.Week06.Book;
-
-    internal class Book
+﻿using Riccardo.Week06.Book;
+using System;
+namespace Riccardo.Week06
     {
-
-        private string _Author;
-        private string _Title;
-
-        public string Title
+    public class Person
         {
-            get => _Title;
 
-            set
-            {
-                Console.WriteLine("Book Title is changing to: " + value);
-                _Title = value;
-            }
-        }
+        private int _Height;
+        private int _Age;
+        private string _Name;
+        private int _Weight;
 
         public int CountPages;
 
