@@ -13,7 +13,10 @@ namespace Martin.Week06.Book
 
         public string Title
         {
-            get => _Title;
+            get
+            {
+                return "\"" + _Title + "\"";
+            }
 
             set
             {
@@ -27,7 +30,18 @@ namespace Martin.Week06.Book
         public Book(string Author,string Title) 
         {
             _Author = Author;
+            _Title = Title;
+            CountPages = -1;
 
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Author: {0}\n Title:{1}\n Count pages: {2}",
+                _Author,
+                _Title,
+                CountPages
+                );
         }
     }
 }
