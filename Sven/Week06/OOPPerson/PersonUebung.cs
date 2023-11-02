@@ -49,5 +49,6 @@ namespace Sven.Week06.OOPPerson
                 _Name,
                 _Gewicht);
         }
+
     }
 }

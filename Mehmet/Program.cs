@@ -1,1 +1,1 @@
-﻿Mehmet.Week06.CoursesAndTrainers.CoursesAndTrainersExamples.Start();
+﻿Mehmet.Week06.List.List.Start();

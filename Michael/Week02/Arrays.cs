@@ -1176,6 +1176,24 @@ namespace Michael.Week02
         }
 
 
+        public static int findMinRec(int[] list)
+        {
+            if (list.Length == 1)
+            {
+                return list[0];
+            }
+
+            int[] shorterLIst = makeACopyAlt(list);
+            Array.Resize(ref shorterLIst, shorterLIst.Length - 1);
+            int currentMin = findMinRec(shorterLIst);
+
+            int newElement = list[list.Length - 1];
+
+            if (currentMin < newElement) return currentMin;
+            else return newElement;
+        }
+
+
         public static void Start()
         {
             var watch1 = System.Diagnostics.Stopwatch.StartNew();
