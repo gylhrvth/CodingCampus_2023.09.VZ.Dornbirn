@@ -1,33 +1,25 @@
 ﻿using Riccardo.Week06.Book;
 using System;
 namespace Riccardo.Week06
-    {
+{
     public class Person
-        {
+    {
 
         private int _Height;
         private int _Age;
         private string _Name;
         private int _Weight;
 
-        public int CountPages;
+        public string Name { get => _Name; }
 
+        public int Age { get => _Age; }
 
-        public Book(string Author, string Title)
+        public Person(int height, int age, string name, int weight)
         {
-            _Author = Author;
-            _Title = Title;
-            CountPages = -1;
-        }
-
-        public override string ToString()
-        {
-            return string.Format("Author: {0}\nTitle: {1}\nCount Pages: {2}",
-                _Author,
-                _Title,
-                CountPages);
+            _Height = height;
+            _Age = age;
+            _Name = name;
+            _Weight = weight;
         }
     }
 }
-
-
