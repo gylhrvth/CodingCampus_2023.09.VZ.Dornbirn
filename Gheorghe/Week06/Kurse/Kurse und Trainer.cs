@@ -17,7 +17,7 @@ namespace Gheorghe
         {
 
 
-            Kurs Kurs1 = new Kurs("Programmierunug", DateTime.Now, 100, 840,new Mensch(188,21,"Hassan",80));
+            Kurs Kurs1 = new Kurs("Programmierunug", DateTime.Now, 100, 840,new Mensch(188,21,"Luca",80));
 
             Console.WriteLine(Kurs1);
 
