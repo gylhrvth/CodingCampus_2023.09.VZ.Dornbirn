@@ -9,4 +9,11 @@
 //CourseAndTrainer course = new CourseAndTrainer("Schach Kurs", 15, 10, 500, person);
 //Console.WriteLine(course);
 
+/*
+List<int> list = DynamicDatastructure.CreatRandomList(100, 50);
+int max = DynamicDatastructure.GetMaximum(list);
+Console.WriteLine(max);
+
 DynamicDatastructure.Start();
+*/
+DynamicDatastructureByGyulaMain.Start();
