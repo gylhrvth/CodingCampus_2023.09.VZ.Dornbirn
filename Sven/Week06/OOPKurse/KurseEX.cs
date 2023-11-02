@@ -16,7 +16,7 @@ namespace Sven.Week06.OOPKurse
         public static void Start()
         {
             Person p = new Person("McMahone", 99, 216, 89);
-            KurseBasis k1 = new KurseBasis("Jonglier Kurs", DateTime.Today, 1200, 586, p );
+            KurseBasis k1 = new KurseBasis("Jonglier Kurs",new  DateTime(2023,09,26), 1200, 586, p );
 
             Console.WriteLine(k1);
 
