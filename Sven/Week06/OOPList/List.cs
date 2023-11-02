@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace Sven.Week06.OOPList
 {
-    internal class ListEX
+
+    
+    internal class List
     {
+        public static void Start()
+        {
+
+            List value = new List();
+
+            Console.WriteLine(value);
+            
+        }
+
     }
 }
