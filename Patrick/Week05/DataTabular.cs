@@ -16,18 +16,16 @@ namespace Patrick.Week05
             String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
             float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
 
-            PrintString(firstName);
-            PrintString(lastName);
-
-        }
-
-        public static void PrintString(string[] array)
-        {
-            foreach(string element in array)
+            Console.WriteLine("----------------------------------------------------------------------");
+            Console.WriteLine("| FirstName       | LastName     | Age | Place          | Distance   |");
+            Console.WriteLine("----------------------------------------------------------------------");
+            for (int i = 0; i < firstName.Length; i++)
             {
-                Console.Write(element + " |");
+                Console.WriteLine($"| {firstName[i], -15} | {lastName[i] ,-12} | {age[i], -3} | {place[i], -14} | {distanceFromCapital[i], -10} |");
             }
-            Console.WriteLine();
+
+            Console.WriteLine("----------------------------------------------------------------------");
         }
     }
 }
+

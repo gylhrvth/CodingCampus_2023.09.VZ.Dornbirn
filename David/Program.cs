@@ -1,4 +1,5 @@
-﻿//David.Week03.Week03Day02Arrays.Week03Day02();
+﻿using David.Week06;
+//David.Week03.Week03Day02Arrays.Week03Day02();
 //David.Week03.Week03Day03RandomArrays.StartWeek03Day03RandomArrays();
 //David.Week03.Random2.Start();
 //David.Week03.Try.StartTry();
@@ -20,4 +21,9 @@
 //David.Week05.Hesse.Start();
 //David.Week05.count2.Start();
 //David.Week05.Calendar.Start();
-David.Week05.Selftest.Start();
+//David.Week05.Selftest.Start();
+//David.Week06.PersonExample.PersonExample.Start();
+//David.Week06.KurseTrainer.KurseUndTrainerExample.Start();
+List1.Start();
+
+
