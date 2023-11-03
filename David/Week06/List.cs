@@ -12,16 +12,16 @@ namespace David.Week06
         public static void Start()
         {
             Console.WriteLine("Create List with random Numbers: ");
-            CreateList(20);
-            List<int> list = CreateList(20);
+            CreateList(20, 1, 101);
+            List<int> list = CreateList(20, -20, -10);
             PrintList(list);
 
             Console.WriteLine("List with even Numbers: ");
             List<int> evenNum = PrintEvenNumber(list);
             PrintList(evenNum);
 
-            Console.WriteLine("List with UNeven Numbers: ");
-            List<int> unEven = PrintUnEvenNumber(list);
+            Console.WriteLine("List with odd Numbers: ");
+            List<int> unEven = PrintOddNumber(list);
             PrintList(unEven);
 
             Console.WriteLine("Biggest Number: ");
@@ -33,16 +33,25 @@ namespace David.Week06
             Print(countOfEven);
 
             Console.WriteLine("Zahlen absteigend sortiert: ");
+            List<int> listDesc = SortListDes(list);
+            PrintList(listDesc);
+
             List<int> desList = SortBySizeDes(list);
             PrintList(desList);
 
             Console.WriteLine("Liste mit gelöschten ungeraden Zahlen: ");
-            List<int> remList = SortRemove(list);
-            List<int> sortRem = PrintSortRemove(remList);
+            List<int> remList = SortRemove1(list);
             PrintList(remList);
 
-            List<int> newSortRem = SortRem(list);
+            List<int> sortRem = SortRemove2(remList);
+            PrintList(sortRem);
+
+            List<int> newSortRem = SortRemove3(list);
             PrintList(newSortRem);
+
+            List<int> jointList = JoinList(list, desList);
+            PrintList(jointList);
+
         }
 
         public static void PrintList(List<int> value)
@@ -54,13 +63,13 @@ namespace David.Week06
             Console.WriteLine("[{0}]", value);
         }
 
-        public static List<int> CreateList(int size)
+        public static List<int> CreateList(int size, int boundMin, int boundMax)
         {
             List<int> list = new List<int>();
 
             for (int i = 0; i < size; i++)
             {
-                list.Add(random.Next(0, 100));
+                list.Add(random.Next(boundMin, boundMax));
             }
             return list;
         }
@@ -91,7 +100,7 @@ namespace David.Week06
             }
             return count;
         }
-        public static List<int> PrintUnEvenNumber(List<int> list)
+        public static List<int> PrintOddNumber(List<int> list)
         {
             List<int> evenUnNumbers = new List<int>();
 
@@ -108,7 +117,7 @@ namespace David.Week06
         public static int BiggestNumber(List<int> list)
         {
             List<int> evenUnNumbers = new List<int>();
-            int biggest = 0;
+            int biggest = int.MinValue;
 
             foreach (var number in list)
             {
@@ -121,6 +130,23 @@ namespace David.Week06
         }
 
 
+        public static List<int> SortListDes(List<int> list)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = 0; j < list.Count -i - 1; j++)
+                {
+                    if (list[j] > list[j + 1])
+                    {
+                        int temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                    }
+                }
+            }
+            return list;
+        }
+
         public static int Compare(int a, int b)
         {
             return b - a;
@@ -129,15 +155,10 @@ namespace David.Week06
         {
             list.Sort(Compare);
 
-            foreach (var number in list)
-            {
-
-            }
             return list;
         }
 
-
-        public static List<int> SortRemove(List<int> list)
+        public static List<int> SortRemove1(List<int> list)
         {
             List<int> remList = new List<int>(list);
 
@@ -146,25 +167,34 @@ namespace David.Week06
                 if (list[i] % 2 != 0)
                 {
                     list.RemoveAt(i);
+                    i--;
                 }
             }
-        
             return list;
         }
 
-        public static List<int> PrintSortRemove(List<int> list)
+        public static List<int> SortRemove2(List<int> list)
         {
-            List<int> evenNumbers = SortRemove(list);
+            List<int> evenNumbers = SortRemove1(list);
             foreach (var number in evenNumbers)
             {
             }
             return evenNumbers;
         }
 
-        public static List<int> SortRem(List<int> list)
+        public static List<int> SortRemove3(List<int> list)
         {
             list.Where(number => number % 2 == 0);
+
             return list;
+        }
+
+        public static List<int> JoinList(List<int> randomList, List<int> sortedList)
+        {
+            List<int> jointList = new List<int>(randomList);
+            randomList.AddRange(sortedList);
+
+            return randomList;
         }
     }
 }

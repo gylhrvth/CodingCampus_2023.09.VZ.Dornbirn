@@ -13,14 +13,15 @@ namespace David.Week06.KurseTrainer
 
       
 
-        public KurseUndTrainer(string Titel, string Start, string Preis, int AnzahlKursstunden)
+        public KurseUndTrainer(string Titel, string Start, string Preis, int AnzahlKursstunden, Person trainer)
 		{
             _Titel = Titel;
             _Start = Start;
             _Preis = Preis;
             _AnzahlKursstunden = AnzahlKursstunden;
-            
+            _Trainer = trainer;
 		}
+
         public override string ToString()
         {
             return string.Format("Titel: {0}\nStart: {1}\nPreis: {2}\nAnzahl Kursstunden: {3}\nTrainer: {4}",
@@ -28,7 +29,7 @@ namespace David.Week06.KurseTrainer
                 _Start,
                 _Preis,
                 _AnzahlKursstunden,
-                _Trainer);
+                _Trainer.Name);
         }
     }
 }
