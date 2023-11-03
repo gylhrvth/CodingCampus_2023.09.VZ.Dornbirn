@@ -1,4 +1,5 @@
-﻿using Erik.Week06;
+﻿using Erik.Week05;
+using Erik.Week06;
 
 //Person person = new Person(140, 16, "Martin", 2);
 ////Console.WriteLine(person);
@@ -18,8 +19,5 @@ DynamicDatastructure.Start();
 */
 //DynamicDatastructureByGyulaMain.Start();
 
+MergeTwoLists.Start();
 
-string text = "Hello World";
-
-string result = string.Format("apfel {0}", 5);
-bool b = text.Contains("lo");

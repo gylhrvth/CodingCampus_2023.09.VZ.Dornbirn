@@ -52,7 +52,7 @@ namespace Cemal.Week06.Kurse_und_Trainer
 
         public override string ToString()
         {
-            return string.Format("Titel: {0}\nDatum: {1}\nPreis: {2}\nKursstunden: {3}\nTrainer: {4}");
+            return string.Format("Titel: {0}\nDatum: {1}\nPreis: {2}\nKursstunden: {3}\nTrainer: {4}", _Titel, _Start, _Preis, _Kursstunden, Trainer);
         }
     }
 }
