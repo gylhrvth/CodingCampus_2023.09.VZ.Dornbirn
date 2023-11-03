@@ -27,10 +27,8 @@
             List<int> newList = RemoveNumbers(listRandomNumbers);
             PrintList(newList);
 
-
             // Zwei Listen:
 
-           
             List<int> list1 = new List<int>();
             List<int> list2 = new List<int>();
             List<int> list3 = new List<int>();
