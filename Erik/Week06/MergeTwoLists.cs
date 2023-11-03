@@ -6,40 +6,89 @@ namespace Erik.Week06
     public class MergeTwoLists
     {
         private static Random randomNumber = new Random();
-        private List<int> _Values; 
+
+
         public static void Start()
         {
             List<int> RandomList1 = CreateRandomList(10, 1, 100);
-            int maxx = GetStaticMaximum(RandomList1);
+            List<int> RandomList2 = CreateRandomList(10, 1, 100);
 
+            RandomList1 = SortRandomList(RandomList1);
+            PrintListWithIndex(RandomList1);
 
-            MergeTwoLists mtl = new MergeTwoLists(20);
-            int maxx2 = mtl.GetMaximum();
+            RandomList2 = SortRandomList(RandomList2);
+            PrintListWithIndex(RandomList2);
+
+            List<int> finalList = MergeList(RandomList1 ,RandomList2);
+            PrintListWithIndex(finalList);
         }
 
-        public MergeTwoLists(int size)
-        {
-            _Values = CreateRandomList(size, 0, 100);
-        }
 
         private static List<int> CreateRandomList(int size, int min, int max)
         {
             List<int> RandomList = new List<int>();
             for (int i = 0; i < size; i++)
             {
-                RandomList[i] = randomNumber.Next(min, max);
+                RandomList.Add(randomNumber.Next(min, max));
             }
             return RandomList;
         }
 
-        public static int GetStaticMaximum(List<int> values)
+        public static List<int> SortRandomList(List<int> unsortedList)
         {
-            return -123;
+            int n = unsortedList.Count;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n - 1 - i; j++)
+                {
+                    if (unsortedList[j] < unsortedList[j + 1])
+                    {
+                        int tmp = unsortedList[j];
+                        unsortedList[j] = unsortedList[j + 1];
+                        unsortedList[j + 1] = tmp;
+                    }
+                }
+            }
+            List<int> sortedList = unsortedList;
+            return sortedList;
         }
 
-        public int GetMaximum()
+        public static void PrintListWithIndex(List<int> list)
         {
-            return -124;
+            Console.Write("[");
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (i > 0)
+                {
+                    Console.Write(", ");
+                }
+                Console.Write(list[i]);
+            }
+            Console.WriteLine("]");
+        }
+
+        public static List<int> MergeList(List<int> sortedList1, List<int> sortedList2)
+        {
+            int j = 0;
+            int k = 0;
+            List<int> finalList = new List<int>();
+            for (int i = 0; i < sortedList1.Count + sortedList2.Count; i++)
+            {
+                if (sortedList1[j] > sortedList2[k])
+                {
+                    finalList.Add(sortedList1[j]);
+                    j++;
+                }
+                else
+                {
+                    finalList.Add(sortedList2[k]);
+                    k++;
+                }
+                
+            }
+
+            return finalList;
         }
     }
 }

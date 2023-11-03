@@ -1,3 +1,4 @@
 ﻿using Gyula.Week06;
 
-ListExample.Start();
+EnumExample.Start();
+DictionaryExample.Start();

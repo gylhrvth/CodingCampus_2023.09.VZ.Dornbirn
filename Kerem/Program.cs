@@ -11,11 +11,10 @@
 //Kerem.Week05.CountHesse.Start();
 //Kerem.Week06.DateTimeExamples.Start();  
 
-
-
-
 using Kerem.Week06;
+using Kerem.Week06.ExercisePerson2;
+
 
 //PersonExample.Start();
 //Kurse_TrainerExample.Start();
-ListExample.Start();
+Person2Example.Start();
