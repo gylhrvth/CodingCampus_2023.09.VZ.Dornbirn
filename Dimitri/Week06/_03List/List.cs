@@ -48,7 +48,7 @@ namespace Dimitri.Week06._03List
             //PrintList(MergeOrderedLists(list1, list2));
 
 
-            List<char> list = new() { 'a', 'b', 'c' };
+            List<char> list = new() { 'a', 'b', 'c', 'd' };
 
             foreach (char c in list)
             {
@@ -57,6 +57,7 @@ namespace Dimitri.Week06._03List
             Console.WriteLine();
 
             heapPermutationList(list.Count, list);
+            Console.WriteLine("Anzahl der Permutationen ist {0}", count);
         }
 
         public static List<int> CreateListRandomFirst()
@@ -222,9 +223,10 @@ namespace Dimitri.Week06._03List
             return result;
         }
 
+        public static int count = 0;
+
         public static List<char> heapPermutationList(int k, List<char> charList)
         {
-            int count = 0;
             if (k <= 1)
             {
                 return charList;
@@ -248,8 +250,6 @@ namespace Dimitri.Week06._03List
 
                     }
 
-                    count++;
-
                     foreach (char c in charList)
                     {
                         Console.Write("{0} ", c);
@@ -259,7 +259,7 @@ namespace Dimitri.Week06._03List
 
                     heapPermutationList(k - 1, charList);
 
-
+                    count++;
                 }
 
                 return charList;

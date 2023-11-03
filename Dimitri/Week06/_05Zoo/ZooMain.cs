@@ -13,21 +13,33 @@ namespace Dimitri.Week06._05Zoo
         {
             List<Gehege> gehegeList = new List<Gehege>();
             Zoo myZoo = new("Zoo Goefis", 1991, gehegeList);
-            Gehege katzenGehege = new("Katzengehege");
-            Gehege schmetterlingsGehege = new("Schmetterlingsgehege");
-            Gehege vogelGehege = new("Vogelgehege");
+
+            List<Tier> katzenGehegeList = new();
+            List<Tier> schmetterlingsGehegeList = new();
+            List<Tier> vogelGehegeList = new();
+            Gehege katzenGehege = new("Katzengehege", katzenGehegeList);
+            Gehege schmetterlingsGehege = new("Schmetterlingsgehege", schmetterlingsGehegeList);
+            Gehege vogelGehege = new("Vogelgehege", vogelGehegeList);
 
             Zoo.AddGehege(myZoo, katzenGehege);
             Zoo.AddGehege(myZoo, schmetterlingsGehege);
             Zoo.AddGehege(myZoo, vogelGehege);
 
-            //Console.WriteLine(myZoo);
-            //Console.WriteLine(katzenGehege);
+            Futter Hühnchen = new("Hühnchen", "kg", 5.99);
 
-            //foreach(string gehege in myZoo.Gehege.Name)
-            //{
+            Tier emil = new("Emil", "Mitteleuropäische Kurzhaar", Hühnchen, 1);
+            Gehege.AddTier(katzenGehege, emil);
+            Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75);
+            Gehege.AddTier(katzenGehege, sandy);
 
-            //}
+            Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter");
+            Gehege.AddTier(schmetterlingsGehege, sauerFlatter);
+
+
+            Tier rotKehle = new("Mitrotemhals", "Rotkehlchen");
+            Gehege.AddTier(vogelGehege, rotKehle);
+
+            Zoo.AddGehege(myZoo, new Gehege("Terrarium", new List<Tier>()));
 
             myZoo.PrintZoo();
 
