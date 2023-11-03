@@ -14,6 +14,7 @@ namespace Patrick.Week04.ConsoleInputs
 
         public static void Start()
         {
+            /*
             //AUFGABE 1
             Console.WriteLine("Write the input: ");
             Console.WriteLine("The Inputstring = " + StringRead());                       //Lies mit Hilfe von .... ein String des Benutzers ein und gib diesen aus          
@@ -23,18 +24,19 @@ namespace Patrick.Week04.ConsoleInputs
             Console.WriteLine("Write the inputNumber: ");
             Console.WriteLine("The inputNumber = " + IntegerRead());                      //Frage so lange nach einer Zahl, bis eine eingegeben wurde, das Programm darf bei Fehleingabe nicht abstürtzen!!
 
-
+            */
             //AUFGABE 4
             Console.Write("Was wäre das Minimum? >>> ");
             int low = ReadNumber(0, int.MaxValue-1);                                        //Erweitere deine frühere Lösung so, dass die Parameter über die Konsole eingegeben werden können
             Console.Write("Was wäre das Maximum? >>> ");
             int high = ReadNumber(low + 1, int.MaxValue);
+            
             //AUFGABE 3
             Console.WriteLine(QuizGame(low, high));                                         //Nun soll die Zahl durch Eingabe über die Konsole erraten werden. Ist die Zahl zu hoch oder zu niedrig, so soll diese Information ausgegeben werden. Wurde die Zahl getroffen, so ist das Spiel gewonnen und das Programm wird beendet.
 
 
             //AUFGABE 5
-            Menu("", 1, 3);
+            //Menu("", 1, 3);
         }
 
 

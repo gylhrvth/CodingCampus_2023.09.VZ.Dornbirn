@@ -1,7 +1,10 @@
-﻿namespace Selina.Week05
+﻿using System;
+
+namespace Selina.Week05
 {
     internal class Reverse
     {
+        public static Random random = new Random();
         public static void Start()
         {
             string reversWord;
@@ -10,7 +13,7 @@
 
             //Aufgabe 1:
             Output("Aufgabe: Reverse", ConsoleColor.Red);
-            input = ReadNumber("Willkommen zum Reverseprogramm\n");     //User gibt Text ein
+            input = ReadText("Willkommen zum Reverseprogramm\n");     //User gibt Text ein
 
             reversWord = ReverseText(input);    //Text wird umgekehrt              
             PrintText(reversWord);              //Text wird ausgeben 
@@ -18,38 +21,71 @@
 
             //Aufagbe 2:
             Output("Aufgabe: Randomize", ConsoleColor.Yellow);
-            input = ReadNumber("Willkommen zum Zufallsshuffle Programm\n");
+            input = ReadText("Willkommen zum Zufallsshuffle Programm\n");
             shuffledWord = Randomize(input);
             PrintText(shuffledWord);
-        }
 
+            //Aufagbe 3:
+            Output("Aufgabe: Buchstaben zählen", ConsoleColor.Green);
+            string text = Ressources.StringRessources.getText();
+            Console.WriteLine(text);
+
+            int[]count = CountLetters(text);
+            PrintBuchstaben(count);
+
+            for(int i = 2; i < 10; i++)
+            {
+                if(i % 2 == 0)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+        }
+    
+
+        public static void PrintBuchstaben(int[] count)
+        {
+            for (int i = 0; i < count.Length; i++)
+            {
+                if (count[i] > 0)
+                {
+                    Console.WriteLine($"{(char)i}: {count[i]}");
+                }
+            }
+        }
+        public static int[] CountLetters(string text)
+        {
+            int[] count = new int[char.MaxValue];
+            for (int i = 0; i < text.Length; i++)
+            {
+                char c = text[i];
+                ++count[c];
+            }
+            return count;
+        }
         public static string Randomize(string input)
         {
             char[] charArray = input.ToCharArray();
-            Random random = new Random();
-
             for (int i = 0; i < charArray.Length; i++)
-            {
+            {   
                 int randomIndex = random.Next(charArray.Length);
                 char temp = charArray[i];
                 charArray[i] = charArray[randomIndex];
                 charArray[randomIndex] = temp;
             }
-
-            string shuffledWord = new String(charArray);
-          
-            return shuffledWord;
+            return new String(charArray);
         }
-
         public static string ReverseText(string input)
         {
             char[] charArray = input.ToCharArray();
-            Array.Reverse(charArray);
-            string reversedWord = new String(charArray);
-
-            return reversedWord;
+            char[] arr = new char[charArray.Length];
+            for (int i = 0; i < charArray.Length; i++)
+            {
+                arr[i] = charArray[input.Length - i - 1];
+            }
+            return new String(arr);
         }
-        public static string ReadNumber(string prompt)
+        public static string ReadText(string prompt)
         {
             Console.Write(prompt);
             while (true)
@@ -76,7 +112,7 @@
         public static void Output(string output, ConsoleColor color)
         {
             Console.ForegroundColor = color;
-            Console.WriteLine($"\n\nAufgabe: {output}");
+            Console.WriteLine($"\n\n {output}");
             Console.ResetColor();
         }
     }

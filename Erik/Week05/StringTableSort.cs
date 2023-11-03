@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq.Expressions;
-using System.Security;
 
 namespace Erik.Week05
 {

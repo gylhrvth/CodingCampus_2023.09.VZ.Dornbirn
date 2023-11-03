@@ -1,1 +1,3 @@
-﻿Sandro.Week03.ConsoleInput.GuessingGame.Start();
+﻿using Sandro.Week06;
+
+CreateAndSortMyList.Start();

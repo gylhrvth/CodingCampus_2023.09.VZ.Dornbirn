@@ -25,8 +25,7 @@ namespace Martin.Week05
 
             //BubbleSortNachBuchstabeAbsteigend(names);
             //PrintArray(names);
-<<<<<<< HEAD
-=======
+
 
             //BubbleSortMitStringsExtended(names, true);
 
@@ -44,8 +43,6 @@ namespace Martin.Week05
 
             Tabelle2d(2, 3);
             
-
->>>>>>> dd6e6f487f3b940712de11a284d85df1726ce6ff
         }
         public static void BubbleSortAufsteigend(string[] names)
         {

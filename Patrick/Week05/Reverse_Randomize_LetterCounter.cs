@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ressources;
 
 namespace Patrick.Week05
 {
@@ -10,12 +11,12 @@ namespace Patrick.Week05
     {
         public static void Start()
         {
-            //    Console.WriteLine("Willkommen zum Reverseprogramm, Geben Sie einen Text ein: ");
-            //    Console.Write(">>>>>");
-            //    string input = Console.ReadLine();
-            //    Console.WriteLine("Dein eingegebener Text wurde umgedreht: ");
-            //    Console.Write("<<<<<");
-            //    Console.WriteLine(Reverse(input));
+            //Console.WriteLine("willkommen zum reverseprogramm, geben sie einen text ein: ");
+            //Console.Write(">>>>>");
+            //string input = Console.ReadLine();
+            //Console.WriteLine("dein eingegebener text wurde umgedreht: ");
+            //Console.Write("<<<<<");
+            //Console.WriteLine(Reverse(input));
 
             //    Console.WriteLine("Willkommen zum Zufallsshuffle Programm, Geben Sie einen Text ein: ");
             //    Console.Write(">>>>>");
@@ -23,12 +24,15 @@ namespace Patrick.Week05
             //    Console.WriteLine("Dein eingegebener Text wurde \"random\" sortiert: ");
             //    Console.Write(">>>>>");
             //    Console.WriteLine(Randomize(inputRandom));
-
+            
             Console.WriteLine("Willkommen zum Buchstabenzählen deines Textes, Geben sie einen Text ein: ");
             Console.Write(">>>>>");
             string text = Console.ReadLine();
             Console.WriteLine("Dein Ergebnis lautet: ");
             LetterCounter(text);
+            
+            //string text = StringRessources.getText();
+            //LetterCounter(text);
         }
 
         public static string Reverse(string input)
@@ -64,14 +68,13 @@ namespace Patrick.Week05
 
         public static int[] LetterCounter(string input)
         {
-            int[] counter = new int[500];
+            int[] counter = new int[Char.MaxValue];
 
-            foreach (int i in input)
+            for(int i = 0; i< input.Length; i++)
             {
-                if ((i >= 'A' && i <= 'Z') || i >= 'a' && i <= 'z' || i >= '0' && i <= '9' || i == ' ' || i == '+' || i == '-' || i == '*' || i == '/')
-                {
-                    counter[i]++;
-                }
+               
+                    ++counter[input[i]];
+                
             }
             for (int i = 0; i < counter.Length; i++)
             {
