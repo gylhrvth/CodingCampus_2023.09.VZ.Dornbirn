@@ -16,6 +16,7 @@ namespace Sven.Week06.OOPPerson
                         
 
             Console.WriteLine(p1);
+            Console.WriteLine(p1.Name);
 
         }
     }

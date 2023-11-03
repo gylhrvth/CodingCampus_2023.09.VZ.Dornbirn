@@ -14,26 +14,26 @@ namespace Sven.Week06.OOPPerson
         private string _Name;
         private float _Gewicht;
 
-        public float Größe
-        {
-            get => _Größe;
+        //public float Größe
+        //{
+        //    get => _Größe;
 
-        }
-        public int Alter
-        {
-            get => _Alter;
+        //}
+        //public int Alter
+        //{
+        //    get => _Alter;
 
-        }
+        //}
         public string Name
         {
             get => _Name;
 
         }
-        public float Gewicht
-        {
-            get => _Gewicht;
+        //public float Gewicht
+        //{
+        //    get => _Gewicht;
 
-        }
+        //}
         public Person(float Größe, int Alter, string Name, float Gewicht)
         {
             _Größe = Größe;

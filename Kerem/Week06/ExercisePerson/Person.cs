@@ -21,7 +21,6 @@
                     Console.WriteLine("Name cannot be empty");
                 }
             }
-
         }
         public int Age  { 
             get => _Age;
@@ -31,11 +30,7 @@
                 _Age = value;
 
             }
-
         }
-
-
-
         public Person(string name, int age, int height, float weight)
         {
             _Name = name;
@@ -43,7 +38,6 @@
             _Height = height;
             _Weight = weight;
         }
-
         public override string ToString()
         {
             return string.Format("Name: {0}\nAge: {1}\nHeight {2}\nWeight: {3}", _Name, _Age, _Height, _Weight);
