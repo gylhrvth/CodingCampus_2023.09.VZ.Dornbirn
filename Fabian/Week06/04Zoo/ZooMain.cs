@@ -5,36 +5,50 @@
         public static void Start()
         {
             Zoo zoo = new("Tiergarten Dornbirn", 2022);
+
+            Food wheat = new("Wheat", "kg", 0.23);
+            Food straw = new("Straw", "kg", 1.65);
+
             Enclosure enclosure1 = new("Alpenwiese");
-            enclosure1.Animals.Add(new("Rijska", "Kuh"));
-
             Enclosure enclosure2 = new("Ried");
-            enclosure2.Animals.Add(new("Garmond", "Storh"));
-            enclosure2.Animals.Add(new("Hugo", "Storh"));
-            enclosure2.Animals.Add(new("Idaxis", "Storh"));
-
             Enclosure enclosure3 = new("Terrarium (warm)");
+
+            ZooKeeper franz = new("Franz", new List<Enclosure>{ enclosure1, enclosure2});
+            ZooKeeper hubert = new("Hubert", new List<Enclosure>{ enclosure2, enclosure3 });
+
+            Animal rijska = new("Rijska", "Cow", wheat, 5);
+            Animal garmond = new("Garmond", "Horse", straw, 5);
+            Animal hugo = new("Hugo", "Horse", straw, 8);
+            Animal idaxis = new("Idaxis", "Horse", straw, 2);
+
             zoo.Enclosures.Add(enclosure1);
             zoo.Enclosures.Add(enclosure2);
             zoo.Enclosures.Add(enclosure3);
+            zoo.ZooKeepers.Add(franz);
+            zoo.ZooKeepers.Add(hubert);
 
-            PrintStructure(zoo);
+            enclosure1.Animals.Add(rijska);
+            enclosure2.Animals.Add(garmond);
+            enclosure2.Animals.Add(hugo);
+            enclosure2.Animals.Add(idaxis);
+
+            rijska.FoodList.Add(wheat);                    
+            garmond.FoodList.Add(straw);
+            hugo.FoodList.Add(straw);                       
+            idaxis.FoodList.Add(straw);
+
+            zoo.PrintStructure();
+            Console.WriteLine();
+            zoo.PrintZooStatistic();
+            Console.WriteLine();
+            franz.Feed();
+            Console.WriteLine();
+            hubert.Feed();
+
 
         }
-        public static void PrintStructure(Zoo zoo)
-        {
-            Console.WriteLine($"├── Zoo: {zoo.Name}, founded: {zoo.FoundingYear}");
-            foreach (var enclosure in zoo.Enclosures)
-            {
-                Console.WriteLine($"│   ├── Enclosure: {enclosure.Name}");
-                foreach (var animal in enclosure.Animals)
-                {
-                    Console.WriteLine($"│       ├── {animal.Name}, {animal.Type}");
-                }
-            }
-
-
-        }
+        
+        
     }
 }
 
