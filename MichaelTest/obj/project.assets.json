@@ -2319,32 +2319,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/gyula.horvath/.nuget/packages/": {}
+    "C:\\Users\\juens\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "projectUniqueName": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
       "projectName": "MichaelTest",
-      "projectPath": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
-      "packagesPath": "/Users/gyula.horvath/.nuget/packages/",
-      "outputPath": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/obj/",
+      "projectPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\juens\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gyula.horvath/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\juens\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
-              "projectPath": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+            "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
             }
           }
         }
@@ -2392,7 +2394,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
