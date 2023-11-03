@@ -147,6 +147,97 @@ namespace Kerem.Week06.ExercisePerson2
             Console.WriteLine("Average weight is {0}", avgweight);
 
         }
+        public enum SortingValues
+        {
+            Age,
+            Height,
+            Weight,
+            Name
+        }
+        public static List<Person2> Sort(List<Person2> personList, SortingValues sort)
+        {
+            if (sort == 0)
+            {
+                for (int i = 0; i < personList.Count; i++)
+                {
+                    for (int j = i + 1; j < personList.Count; j++)
+                    {
+                        if (personList[i].Age > personList[j].Age)
+                        {
+                            Person2 tempPerson = personList[i];
+                            personList[i] = personList[j];
+                            personList[j] = tempPerson;
+                        }
+                    }
+                }
+                return personList;
+
+            }
+            else
+            if (sort == SortingValues.Height)
+            {
+                for (int i = 0; i < personList.Count; i++)
+                {
+                    for (int j = i + 1; j < personList.Count; j++)
+                    {
+                        if (personList[i].Height > personList[j].Height)
+                        {
+                            Person2 tempPerson = personList[i];
+                            personList[i] = personList[j];
+                            personList[j] = tempPerson;
+                        }
+                    }
+                }
+                return personList;
+
+            }
+            else if (sort == SortingValues.Weight)
+            {
+                for (int i = 0; i < personList.Count; i++)
+                {
+                    for (int j = i + 1; j < personList.Count; j++)
+                    {
+                        if (personList[i].Weight > personList[j].Weight)
+                        {
+                            Person2 tempPerson = personList[i];
+                            personList[i] = personList[j];
+                            personList[j] = tempPerson;
+                        }
+                    }
+                }
+                return personList;
+            }
+            else if (sort == SortingValues.Name)
+            {
+                for (int i = 0; i < personList.Count; i++)
+                {
+                    for (int j = i + 1; j < personList.Count; j++)
+                    {
+                        if (personList[i].Name.CompareTo(personList[j].Name) > 0)
+                        {
+                            Person2 tempPerson = personList[i];
+                            personList[i] = personList[j];
+                            personList[j] = tempPerson;
+                        }
+                    }
+                }
+                return personList;
+
+            }
+
+
+            return personList;
+        }
+
+        public static void ListToString(List<Person2> personList, string firstLine)
+        {
+            Console.WriteLine(firstLine);
+            foreach (Person2 person in personList)
+            {
+                Console.WriteLine(person.ToString());
+                Console.WriteLine();
+            }
+        }
 
     }
  
