@@ -8,12 +8,12 @@ namespace Timo.Week06._01Person
 {
     public class Person
     {
-        private double _Height;
+        private int _Height;
         private int _Age;
         private string _Name;
         private double _Weight;
 
-        public Person(double Height, int Age, string Name, double Weight)
+        public Person(int Height, int Age, string Name, double Weight)
         {
             _Height = Height;
             _Age = Age;
@@ -21,11 +21,11 @@ namespace Timo.Week06._01Person
             _Weight = Weight;
         }
 
-        public double Height
+        public int Height
         {
             get { return _Height; }
             set { if (value > 0) { Console.WriteLine("Height is changing to: " + value); _Height = value; }
-                else { Console.WriteLine("Age can't be lower than 0"); }
+                else { Console.WriteLine("Height can't be lower than 0"); }
             }
         }
         public int Age
@@ -41,21 +41,17 @@ namespace Timo.Week06._01Person
         public double Weight
         {
             get { return _Weight; }
-            set { if (value > 0) { Console.WriteLine("Weight is changing to: " + value); _Height = value; }
-                else { Console.WriteLine("Age can't be lower than 0"); }
+            set { if (value > 0) { Console.WriteLine("Weight is changing to: " + value); _Weight = value; }
+                else { Console.WriteLine("Weight can't be lower than 0"); }
             }
         }
-
-
         public override string ToString()
         {
-            return string.Format("Name: \t\t{0}\nAge: \t\t{1} Years\nHeight: \t{2} cm\nWeight: \t{3} kg",
+            return string.Format("Name is: {0,-10} -\tAge is: {1,-10} - \tHeight is: {2,-8} -\tWeight is: {3}",
                 _Name,
-                _Age,
-                _Height,
-                _Weight);
+                _Age + " Years",
+                _Height + " cm",
+                _Weight + " kg");
         }
     }
-
-
 }
