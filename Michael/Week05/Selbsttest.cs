@@ -309,6 +309,7 @@ namespace Michael.Week05
         }
 
 
+        /*
         public static void PrintX(int length, char character)
         {
             for (int row = 0; row < length; row++)
@@ -327,11 +328,14 @@ namespace Michael.Week05
                 Console.WriteLine();
             }
         }
+        */
 
 
         public static void FünfEinsPrint(int[][] array)
         {
-            double amountOfEntries = (double) array[array.Length - 1][array[array.Length - 1].Length - 1];
+            int[] lastLine = array[array.Length - 1];
+            double amountOfEntries = (double)lastLine[lastLine.Length - 1];
+
             int digits = (int) Math.Floor(Math.Log10(amountOfEntries));
 
             foreach (int[] row in array)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Michael.Week06
 {
-    internal class ListExercises
+    public class ListExercises
     {
 
         public static void Start()
