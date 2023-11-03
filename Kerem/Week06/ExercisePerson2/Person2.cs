@@ -27,8 +27,6 @@ namespace Kerem.Week06.ExercisePerson2
         {
             get => _weight;
         }
-
-
         public Person2(string name, int age, int height, int weight)
         {
             _name = name;
@@ -110,8 +108,6 @@ namespace Kerem.Week06.ExercisePerson2
             }
 
             Console.WriteLine("maximum height is {0}", maxheight);
-
-
         }
         public static void PrintAvgheight(List<Person2> personlist)
         {
@@ -150,21 +146,8 @@ namespace Kerem.Week06.ExercisePerson2
             Console.WriteLine("Average weight is {0}", avgweight);
         }
 
-
-
-
-        public enum SortingValues
-        {
-            Age,
-            Height,
-            Weight,
-            Name
-        }
         public static void SortAge(List<Person2> personList)
-
         {
-
-
             for (int i = 0; i < personList.Count; i++)
             {
                 for (int j = 0; j < personList.Count - i - 1; j++)
@@ -177,16 +160,9 @@ namespace Kerem.Week06.ExercisePerson2
                     }
                 }
             }
-
-
-
-
         }
         public static void SortWeight(List<Person2> personList)
-
         {
-
-
             for (int i = 0; i < personList.Count; i++)
             {
                 for (int j = 0; j < personList.Count - i - 1; j++)
@@ -199,16 +175,9 @@ namespace Kerem.Week06.ExercisePerson2
                     }
                 }
             }
-
-
-
-
         }
         public static void SortHeight(List<Person2> personList)
-
         {
-
-
             for (int i = 0; i < personList.Count; i++)
             {
                 for (int j = 0; j < personList.Count - i - 1; j++)
@@ -221,16 +190,9 @@ namespace Kerem.Week06.ExercisePerson2
                     }
                 }
             }
-
-
-
-
         }
         public static void SortName(List<Person2> personList)
-
         {
-
-
             for (int i = 0; i < personList.Count; i++)
             {
                 for (int j = 0; j < personList.Count - i - 1; j++)
@@ -243,17 +205,11 @@ namespace Kerem.Week06.ExercisePerson2
                     }
                 }
             }
-
-
-
-
         }
         public override string ToString()
         {
             return string.Format("{0}", _name);
-
         }
 
     }
-
 }
