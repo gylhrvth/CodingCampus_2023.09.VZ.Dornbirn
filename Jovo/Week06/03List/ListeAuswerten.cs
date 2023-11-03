@@ -21,14 +21,12 @@ namespace Jovo.Week06._03List
             Console.Write("[ ");
             foreach (int element in list)
             {
-                if (first)
+                if (!first)
                 {
-                    Console.Write(element);
-                    first = false;
+                    Console.Write(", ");
                 }
-                Console.Write(", " + element);
-              
-
+                Console.Write(element);
+                first = false;
             }
             Console.Write(" ]");
             Console.WriteLine();
@@ -105,7 +103,7 @@ namespace Jovo.Week06._03List
 
         //simple bubblesort to sort everything 
         //depends which way you wanna sort just change what has to be bigger/smaller
-        public static List<int> BubbleSortList(List<int> list)
+        public static void BubbleSortList(List<int> list)
         {
             for (int i = 0; i < list.Count; i++)
             {
@@ -119,7 +117,6 @@ namespace Jovo.Week06._03List
                     }
                 }
             }
-            return list;
         }
 
 
