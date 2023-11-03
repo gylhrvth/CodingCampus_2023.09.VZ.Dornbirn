@@ -16,7 +16,7 @@ namespace Gyula.Week06
 
 		public static void Start()
 		{
-			WeekDays w = 22;
+			WeekDays w = WeekDays.MONDAY;
 			for (int i = 0; i < 7; i++)
 			{
 				PrintName(w);
