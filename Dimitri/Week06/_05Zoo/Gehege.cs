@@ -11,6 +11,7 @@ namespace Dimitri.Week06._05Zoo
     {
 
         private string _Name;
+        private List<Tier> _Animals;
 
         //public string Name
         //{
@@ -32,6 +33,10 @@ namespace Dimitri.Week06._05Zoo
         public void PrintGehege()
         {
             Console.WriteLine("│   ├── Gehege: {0}", _Name);
+            foreach(Tier animals in _Animals)
+            {
+                animals.PrintTier();
+            }
         }
 
     }

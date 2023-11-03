@@ -1,3 +1,4 @@
-﻿using Dimitri.Week06._05Zoo;
+﻿using Dimitri.Week06._03List;
+using Dimitri.Week06._04Person2;
 
-ZooMain.Main();
+Person2Main.Main();

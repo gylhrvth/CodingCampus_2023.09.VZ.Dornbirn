@@ -155,10 +155,10 @@ namespace Dimitri.Week06._04Person2
         }
         public enum SortingValues
         {
-            Age = 0,
-            Height = 1,
-            Weight = 2,
-            Name = 3
+            Age,
+            Height,
+            Weight,
+            Name
         }
 
         public static List<Person> Sort(List<Person> personList, SortingValues sort)

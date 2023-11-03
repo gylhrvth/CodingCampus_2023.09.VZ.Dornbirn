@@ -13,9 +13,9 @@ namespace Dimitri.Week06._04Person2
     {
         public static void Main()
         {
-            Person p0 = new Person(181, 24, "Dimitri", 80);
+            Person p0 = new Person(181, 24, "Bimitri", 80);
 
-            Person p1 = new Person(113, 10, "Dimitra", 25);
+            Person p1 = new Person(113, 10, "aimitri", 25);
 
             Person p2 = new Person(115, 12, "Damitra", 27);
 
