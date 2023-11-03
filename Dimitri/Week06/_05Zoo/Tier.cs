@@ -19,7 +19,7 @@ namespace Dimitri.Week06._05Zoo
 
         public void PrintTier()
         {
-            Console.WriteLine("public Tier(string name, string gattung)\r\n    {\r\n\r\n    }");
+            Console.WriteLine("│       ├── {0}, {1}", _Name, _Gattung);
         }
     }
 

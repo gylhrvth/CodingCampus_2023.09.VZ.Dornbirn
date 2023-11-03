@@ -19,9 +19,16 @@ namespace Dimitri.Week06._05Zoo
         //    set => _Name = value;
         //}
 
-        public Gehege(string name)
+        public Gehege(string name, List<Tier> tierListe)
         {
             _Name = name;
+            _Animals = tierListe;
+        }
+
+        public List<Tier> Animals
+        {
+            get => _Animals;
+            set => _Animals = value;
         }
 
 
@@ -33,10 +40,22 @@ namespace Dimitri.Week06._05Zoo
         public void PrintGehege()
         {
             Console.WriteLine("│   ├── Gehege: {0}", _Name);
-            foreach(Tier animals in _Animals)
+            if (_Animals.Count != 0)
             {
-                animals.PrintTier();
+                foreach (Tier animals in _Animals)
+                {
+                    animals.PrintTier();
+                }
+            } else
+            {
+                Console.WriteLine("│       ├── Gehege ist leer!");
             }
+        }
+
+        public static Gehege AddTier(Gehege gehege, Tier tier) 
+        {
+            gehege.Animals.Add(tier);
+            return gehege;
         }
 
     }
