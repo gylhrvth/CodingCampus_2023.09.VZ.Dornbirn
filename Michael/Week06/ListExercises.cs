@@ -11,17 +11,33 @@ namespace Michael.Week06
 
         public static void Start()
         {
-            Person michael = new Person(180, 26, "Michael", 52.4);
-            Person erik = new Person(170, 20, "Erik", 68);
+            Person person1 = new Person(160, 20, "test1", 85);
+            Person person2 = new Person(177, 24, "test2", 70);
+            List<Person> list = new List<Person>() { person1, person2 };
 
-            List<Person> people = new List<Person>();
+            Console.WriteLine(person1);
 
-            people.Add(michael);
-            people.Add(erik);
+            Console.WriteLine();
 
-            Console.WriteLine(AverageAge(people));
-            Console.WriteLine(AverageSize(people));
-            Console.WriteLine(AverageWeight(people));
+            Console.WriteLine(person2);
+
+            Console.WriteLine();
+
+            Console.WriteLine(AverageAge(list));
+
+        }
+
+
+        public static List<string> CopyStringList(List<string> input)
+        {
+            List<string> returnList = new List<string>();
+
+            foreach (string element in input)
+            {
+                returnList.Add(element);
+            }
+
+            return returnList;
         }
 
 
@@ -38,7 +54,7 @@ namespace Michael.Week06
         public static List<int> CreateRandomList(int length, int min, int max)
         {
             Random rnd = new Random();
-            var list = new List<int>();
+            List<int> list = new List<int>();
 
             for (int i = 0; i < length; i++)
             {
@@ -55,17 +71,6 @@ namespace Michael.Week06
             foreach (int num in list)
             {
                 if (num % 2 == 0) count++;
-            }
-
-            return count;
-        }
-
-        public static int CountEvenAlt(List<int> list)
-        {
-            int count = 0;
-            foreach (int num in list)
-            {
-                count += (num + 1) % 2;
             }
 
             return count;
@@ -128,13 +133,14 @@ namespace Michael.Week06
 
         public static List<int> SortedMerge(List<int> list1, List<int> list2)
         {
-            int i = 0;
-            int j = 0;
+            int i = 0; //index for list1
+            int j = 0; //index for list2
             List<int> result = new List<int>();
+
 
             while (i < list1.Count && j < list2.Count) 
             { 
-                if (list1[i] < list2[j])
+                if (list1[i] > list2[j])
                 {
                     result.Add(list1[i]);
                     i++;
@@ -365,6 +371,35 @@ namespace Michael.Week06
         }
 
 
+        public static List<List<string>> PermuteList(List<string> input)
+        {
+            //recursion end, all permutations of 1 element are just that 1 element
+            if (input.Count == 1)
+            {
+                return new List<List<string>> { input };
+            }
 
+
+            //creates permutations of the smaller 'list without the first element'
+            List<List<string>> rightPart = PermuteList(input.GetRange(1, input.Count - 1));
+            List<List<string>> returnList = new List<List<string>>();
+
+
+            //creates all permutations with the first element and each individual permutation from the smaller list
+            for (int i = 0; i < rightPart.Count; i++)
+            {
+                for (int j = 0; j <= rightPart[i].Count; j++)
+                {
+                    List<string> addList = CopyStringList(rightPart[i]);
+
+                    addList.Insert(j, input[0]);
+
+                    returnList.Add(addList);
+                }
+            }
+
+            return returnList;
+
+        }
     }
 }
