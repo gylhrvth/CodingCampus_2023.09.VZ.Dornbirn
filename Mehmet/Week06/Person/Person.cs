@@ -44,12 +44,12 @@ namespace Mehmet
         }
 
 
-        public Person(int Height, int Age, string Name, int Weight)
+        public Person(int height, int age, string name, int weight)
         {
-            _Height = Height;
-            _Age = Age;
-            _Name = Name;
-            _Weight = Weight;
+            _Height = height;
+            _Age = age;
+            _Name = name;
+            _Weight = weight;
         }
 
 
