@@ -13,9 +13,10 @@ namespace MichaelTest.Week06
             List<int> emptyList = new List<int>();
 
             // act
-            
+            int count = ListExercises.CountEven(emptyList);
 
             // assert
+            Assert.AreEqual(0, count, "CountEven doesn't work properly with empty list");
         }
     }
 }
