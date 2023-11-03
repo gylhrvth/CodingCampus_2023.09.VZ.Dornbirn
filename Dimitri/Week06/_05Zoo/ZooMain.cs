@@ -25,9 +25,11 @@ namespace Dimitri.Week06._05Zoo
             Zoo.AddGehege(myZoo, schmetterlingsGehege);
             Zoo.AddGehege(myZoo, vogelGehege);
 
-            Tier emil = new("Emil", "Mitteleuropäische Kurzhaar");
+            Futter Hühnchen = new("Hühnchen", "kg", 5.99);
+
+            Tier emil = new("Emil", "Mitteleuropäische Kurzhaar", Hühnchen, 1);
             Gehege.AddTier(katzenGehege, emil);
-            Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar");
+            Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75);
             Gehege.AddTier(katzenGehege, sandy);
 
             Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter");

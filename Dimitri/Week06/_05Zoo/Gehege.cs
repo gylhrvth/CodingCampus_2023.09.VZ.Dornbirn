@@ -13,12 +13,6 @@ namespace Dimitri.Week06._05Zoo
         private string _Name;
         private List<Tier> _Animals;
 
-        //public string Name
-        //{
-        //    get => _Name;
-        //    set => _Name = value;
-        //}
-
         public Gehege(string name, List<Tier> tierListe)
         {
             _Name = name;
@@ -28,7 +22,6 @@ namespace Dimitri.Week06._05Zoo
         public List<Tier> Animals
         {
             get => _Animals;
-            set => _Animals = value;
         }
 
 

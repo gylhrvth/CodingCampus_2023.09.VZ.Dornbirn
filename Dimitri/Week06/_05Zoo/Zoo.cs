@@ -15,7 +15,6 @@ namespace Dimitri.Week06._05Zoo
         public List<Gehege> Gehege
         {
             get => _Gehege;
-            set => _Gehege = value;
         }
 
         public Zoo(string zoo, int foundation, List<Gehege> gehege)
