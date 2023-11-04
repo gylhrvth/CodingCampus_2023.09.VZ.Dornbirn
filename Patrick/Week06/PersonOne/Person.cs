@@ -5,14 +5,14 @@ namespace Patrick.Week06.PersonOne
 {
     public class Person
     {
-        private double _Size;
-        private int _Age;
-        private string _Name;
-        private double _Weight;
+        public double _Size {  get; private set; }
+        public int _Age { get; private set; }
+        public string _Name { get; private set; }
+        public double _Weight { get; private set; }
 
-        public double Size { get => _Size;  }
 
-        public Person(double size, int age, string name, double weight)
+
+        public Person(string name, int age, double size, double weight)
         {
             _Size = size;
             _Age = age;
@@ -20,11 +20,11 @@ namespace Patrick.Week06.PersonOne
             _Weight = weight;
         }
 
-        public override string ToString()
-        {
-            //return string.Format("{0}\nAge: {1}years\nHeight {2}cm\nWeight: {3}kg", _Name, _Age, _Size, _Weight);
-            return _Name;
-        }
-        
+        //public override string ToString()
+        //{
+        //    return string.Format("{0}\nAge: {1}years\nHeight {2}cm\nWeight: {3}kg", _Name, _Age, _Size, _Weight);
+        //    //return _Name;
+        //}
+
     }
 }

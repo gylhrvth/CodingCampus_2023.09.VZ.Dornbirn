@@ -1,6 +1,6 @@
-﻿using Patrick.Week06.PersonZwei;
+﻿using Patrick.Week06.PersonTwo;
 
-PersonZweiExample.Start();
+PersonTwoMain.Start();
 
 
 

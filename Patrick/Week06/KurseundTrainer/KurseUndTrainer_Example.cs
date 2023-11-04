@@ -20,6 +20,6 @@ namespace Patrick.Week06.PersonOne
             Console.WriteLine(b2);
         }
 
-        
+
     }
 }
