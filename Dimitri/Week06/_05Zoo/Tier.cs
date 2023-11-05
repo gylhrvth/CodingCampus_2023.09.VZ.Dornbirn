@@ -13,6 +13,12 @@ namespace Dimitri.Week06._05Zoo
         private Futter _Futter;
         private double _Menge;
 
+        public Futter Futter { get => _Futter;  }
+
+        public double Menge { get => _Menge; } 
+
+        public string Name { get => _Name; }
+
         public Tier(string name, string gattung, Futter futter, double menge)
         {
             _Name = name;

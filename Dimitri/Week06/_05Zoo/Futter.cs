@@ -29,6 +29,11 @@ namespace Dimitri.Week06._05Zoo
             _EinheitsPreis = einheitsPreis;
         }   
 
+        public Futter(string name)
+        {
+            _Name = name;
+        }
+
         public void PrintFutter() 
         {
             Console.WriteLine("│          ├── {0}", _Name);

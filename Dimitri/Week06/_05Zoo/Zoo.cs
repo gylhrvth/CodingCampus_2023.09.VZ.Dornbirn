@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,15 +43,35 @@ namespace Dimitri.Week06._05Zoo
         public void PrintZoo()
         {
             Console.WriteLine("├── Zoo: {0}, gegründet {1}", _Zoo, _Foundation);
-            if (_Gehege.Count != 0)           
+            if (_Gehege.Count != 0)
             {
                 foreach (Gehege enclosure in _Gehege)
                 {
                     enclosure.PrintGehege();
                 }
-            }  else
+            } else
             {
                 Console.WriteLine("│   ├── Kein Gehege im Zoo!");
+            }
+        }
+
+        public void GetFutterbedarf(Zoo zoo)
+        {
+            Dictionary<Futter, double> Futterbedarf = new();
+
+
+            for(int i = 0; i < zoo.Gehege.Count; i++)
+            {
+                for(int j = 0; j < zoo.Gehege[i].Tiere.Count; j++)
+                {
+                    if(!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter) && (zoo.Gehege[i].Tiere[j].Futter != null || zoo.Gehege[i].Tiere[j].Menge != null))
+                    Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
+                }
+            }
+
+            foreach(KeyValuePair<Futter, double> kvp in Futterbedarf)
+            {
+                Console.WriteLine("Key: {0} Value: {1}", kvp.Key, kvp.Value);
             }
         }
 
