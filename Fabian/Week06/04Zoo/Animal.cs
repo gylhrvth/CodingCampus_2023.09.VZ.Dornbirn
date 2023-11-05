@@ -7,6 +7,10 @@
         private Food _Food;
         private int _FoodCount;
         private List<Food> _FoodList = new();
+        private int _MaxHealth;
+        private int _Health;
+        private int _Damage;
+        private bool _IsDead;
 
         public string Name
         {
@@ -33,14 +37,39 @@
             get => _FoodCount;
             set => _FoodCount = value;
         }
-        public Animal(string name, string species, Food food, int foodCount)
+        public int MaxHealth
+        {
+            get => _MaxHealth;
+            set => _MaxHealth = value;
+        }
+        public int Health
+        {
+            get => _Health;
+            set => _Health = value;
+        }
+        public int Damage
+        {
+            get => _Damage;
+            set => _Damage = value;
+        }
+        public bool IsDead
+        {
+            get => _IsDead;
+            set => _IsDead = value;
+        }
+        public Animal(string name, string species, Food food, int foodCount, int maxHealth, int damage)
         {
             _Name = name;
             _Species = species;
             _Food = food;
             _FoodCount = foodCount;
+            _MaxHealth = maxHealth;
+            _Damage = damage;
+            _Health = MaxHealth;
+            _IsDead = false;
             _FoodList = new List<Food>();
         }
+        
         public void PrintAnimal()
         {
             Console.WriteLine($"│\t\t\t├── {_Name}, {_Species}");

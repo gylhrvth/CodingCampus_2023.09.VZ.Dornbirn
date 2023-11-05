@@ -54,13 +54,27 @@
             double cost = 0;
             foreach (Food food in dic.Keys)
             {
-                Console.WriteLine(food.Name + " : " + dic[food] + food.Unit + " / per unit: " + food.PricePerUnit + "$");
+                Console.WriteLine($"{food.Name} : {dic[food]} {food.Unit} / per unit: {food.PricePerUnit}$ ");
                 double amount = dic[food];
                 double price = food.PricePerUnit * amount;
                 cost += price;
             }
             Console.WriteLine("total cost for food: {0:N2}$", cost);
 
+        }
+
+        public void FightStart()
+        {
+            List<Animal> animalsToRemove = new();
+            foreach (var enclosure in _Enclosures)
+            {
+                enclosure.Fight(animalsToRemove);
+                foreach (var animalToRemove in animalsToRemove)
+                {
+                    enclosure.Animals.Remove(animalToRemove);
+                }
+            }
+          
         }
 
         public override string ToString()

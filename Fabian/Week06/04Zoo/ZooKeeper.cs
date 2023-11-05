@@ -3,7 +3,7 @@
 
     public class ZooKeeper
     {
-        private Random rnd = new();
+        private readonly Random rnd = new();
 
         private string _Name;
         private List<Enclosure> _Enclosures = new();
@@ -28,7 +28,8 @@
         public ZooKeeper(string name, List<Enclosure> enclosures)
         {
             _Name = name;
-            _Enclosures = enclosures;           
+            _Enclosures = enclosures;
+            _FavouriteAnimal = FavouriteAnimal;
         }
 
         public void PrintZooKeeper()
@@ -41,10 +42,9 @@
         }
         public void Feed()
         {
+            
             foreach (var enclosure in _Enclosures)
             {
-                _FavouriteAnimal ??= enclosure.Animals[rnd.Next(enclosure.Animals.Count)];
-
                 if (!enclosure.IsFed)
                 {
                     Console.WriteLine($"{_Name} is feeding the {enclosure.Name} enclosure");
@@ -52,9 +52,9 @@
                 }
                 else
                 {
-                    Console.WriteLine($"{_Name} tried to feed {enclosure.Name} but it's already fed");
+                    Console.WriteLine($"{_Name} tried to feed the {enclosure.Name} enclosure but it's already fed");
                 }
-                
+                _FavouriteAnimal ??= enclosure.Animals[rnd.Next(enclosure.Animals.Count)];
             }
             Console.WriteLine($"{_Name} is spectating his favourite animal: {_FavouriteAnimal}");
         }
