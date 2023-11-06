@@ -6,8 +6,8 @@ namespace Patrick.Week06.PersonOne
     {
         public static void Start()
         {
-            Person b1 = new Person("Sebastian", 26, 1.65, 83.4);
-            Person b2 = new Person("David", 35, 1.95, 103);
+            Person b1 = new Person("Sebastian", 26, 1.65f, 83.4f);
+            Person b2 = new Person("David", 35, 1.95f, 103f);
 
             Console.WriteLine(b1);
             Console.WriteLine();
