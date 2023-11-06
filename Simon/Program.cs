@@ -9,4 +9,4 @@ using Simon.Selbsttest;
 using Simon.Week06.PersonExample;
 using Simon.Week06.Listen;
 
-Listenerstellen.Start();
+PersonData.Start();
