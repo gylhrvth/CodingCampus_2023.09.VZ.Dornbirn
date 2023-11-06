@@ -29,7 +29,7 @@
         }
         public void PrintFood(int foodCount)
         {
-            Console.WriteLine($"│\t\t\t\t├── {_Name} {foodCount}{_Unit}");
+            Console.WriteLine($"│\t\t\t\t├── {_Name} {foodCount} {_Unit}");
         }        
         public override string ToString()
         {
