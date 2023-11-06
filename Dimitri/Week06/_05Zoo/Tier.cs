@@ -48,5 +48,13 @@ namespace Dimitri.Week06._05Zoo
                 Console.WriteLine("│           ├── {0} mag nichts essen!", _Name );
             }
         }
+
+        public bool IsNull()
+        {
+            bool isNullorEmpty = false;
+            if (_Futter is null) { isNullorEmpty = true; } else { isNullorEmpty = false; }
+            return isNullorEmpty;
+
+        }
     } 
 }
