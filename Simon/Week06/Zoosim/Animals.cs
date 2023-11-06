@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Simon.Week06.Zoosim
 {
-    internal class Animals
+    public class Animals
     {
         private string _Name;
         private int _Age;
         private string _Species;
-        private string _Gender;        
+        private string _Gender;
         private Food _Food;
         private int _FoodAmount;
 
@@ -22,15 +22,25 @@ namespace Simon.Week06.Zoosim
             _Species = species;
             _Gender = gender;
             _Food = food;
-            _FoodAmount = ammount;            
+            _FoodAmount = ammount;
         }
 
-       public void PrintZoo()
+        public void PrintZoo()
         {
-            Console.WriteLine(" ---> ---> {0} {1} {2} {3} eats: {4} {5}", _Name, _Age, _Species, _Gender, _FoodAmount, _Food);
+            Console.WriteLine("|       ├── {0}, {2}, {1}, {3} eats: {4} {5}", _Name, _Age, _Species, _Gender, _FoodAmount, _Food);
         }
 
-
+        public void GetFood(Dictionary<Food, double> dic)
+        {
+            if(dic.ContainsKey(_Food))
+            {
+                dic[_Food] += _FoodAmount;
+            }
+            else
+            {
+                dic[_Food] = _FoodAmount;
+            }
+        }
 
     }
 }

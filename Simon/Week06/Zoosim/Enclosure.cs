@@ -6,22 +6,19 @@ using System.Threading.Tasks;
 
 namespace Simon.Week06.Zoosim
 {
-    internal class Gehege
+    public class Enclosure
     {
         private string _Name;
         private string _Descritpion;
+        private string _Climate;
         private List<Animals> _AnimalsList;
 
-        public Gehege(string name, string descritpion)
+        public Enclosure(string name, string descritpion, string climate)
         {
             _Descritpion = descritpion;
             _Name = name;
+            _Climate = climate;
             _AnimalsList = new List<Animals>();
-        }
-
-        public void PrintZoo()
-        {
-            Console.WriteLine("Zoo: {0}\nYear: {1}", _Name, _Descritpion);
         }
 
         public void AddAnimals(Animals animals)
@@ -30,17 +27,16 @@ namespace Simon.Week06.Zoosim
             {
                 _AnimalsList.Add(animals);
             }
-
         }
 
-        //public void PrintZoo()
-        //{
-        //    Console.WriteLine(" ---> Gehege: {0} {1}", _Name, _FoundingYear);
+        public void PrintZoo()
+        {
+            Console.WriteLine("|   ├── Gehege: {0}, {1}, {2}", _Name, _Descritpion, _Climate);
 
-        //    foreach (Gehege gehege in _Gehege)
-        //    {
-        //        gehege.PrintZoo();
-        //    }
-        //}
+            foreach (Animals animals in _AnimalsList)
+            {
+                animals.PrintZoo();
+            }
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week06.Zoosim
 {
-    internal class Food
+    public class Food
     {
         private string _Name;
         private string _Unit;
@@ -19,7 +19,13 @@ namespace Simon.Week06.Zoosim
             _Price = price;
         }
 
-        public string Name { get { return _Name; } }
+        //public string Name { get { return _Name; } }
+        public override string ToString()
+        {
+            return _Name;
+        }
+
+        
 
 
     }

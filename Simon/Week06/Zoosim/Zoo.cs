@@ -10,15 +10,9 @@ namespace Simon.Week06.Zoosim
     {
         private string _Name;
         private int _FoundingYear;
-        private List<Gehege> _Gehege;
+        private List<Enclosure> _Enclosure;
         private string _Locality;
         private int _Capacity;
-
-        public Zoo(string name, int year)
-        {
-            _Name = name;
-            _FoundingYear = year;
-        }
 
         public Zoo(string name, int foundingyear, string locality, int capacity)
         {
@@ -26,26 +20,46 @@ namespace Simon.Week06.Zoosim
             _Capacity = capacity;
             _Name = name;
             _FoundingYear = foundingyear;
-            _Gehege = new List<Gehege>();
+            _Enclosure = new List<Enclosure>();
         }
 
-        //public void AddGehege(Gehege gehege)
-        //{
-        //    if (!_Gehege.Contains(gehege))
-        //    {
-        //        _Gehege.Add(gehege);
-        //    }
-        //}
+        public void AddEnclosure(Enclosure enclosure)
+        {
+            if (!_Enclosure.Contains(enclosure))
+            {
+                _Enclosure.Add(enclosure);
+            }
+        }
 
         public void PrintZoo()
         {
-            Console.WriteLine(" ---> Gehege: {0} {1}", _Name, _FoundingYear);
+            Console.WriteLine("├── Zoo: {0} {1}", _Name, _FoundingYear);
 
-            foreach (Gehege gehege in _Gehege)
+            foreach (Enclosure enclosure in _Enclosure)
             {
-                gehege.PrintZoo();
+                enclosure.PrintZoo();
             }
         }
+
+        // größtes problem wohin mit welcher funktion bzw wieso??
+        //public void PrintZooFood()
+        //{
+        //    Dictionary<Food, double> dic = new Dictionary<Food, double>();
+        //    foreach (var enclosure in dic.Keys)
+        //    {
+        //        enclosure.EnclosureStats(dic);
+        //    }
+        //    Console.WriteLine("Food per?");
+        //    double foodcost = 0;
+        //    foreach (Food food in dic.Values)
+        //    {
+        //        Console.WriteLine();
+        //        double ammount = dic[food];
+        //        double price = food.PricePerUnit * ammount;
+        //        foodcost += price;
+        //    }
+        //}
+
 
 
     }
