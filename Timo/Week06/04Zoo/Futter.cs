@@ -10,9 +10,9 @@ namespace Timo.Week06._04Zoo
     {
         private String _Name;
         private String _Unit;
-        private int _PricePerUnit;
+        private double _PricePerUnit;
 
-        public Futter(string name, string unit, int pricePerUnit)
+        public Futter(string name, string unit, double pricePerUnit)
         {
             _Name = name;
             _Unit = unit;
@@ -29,10 +29,15 @@ namespace Timo.Week06._04Zoo
             get { return _Unit; }
             set { _Unit = value; }
         }
-        public int PricePerUnit
+        public double PricePerUnit
         {
             get { return _PricePerUnit; }
             set { _PricePerUnit = value; }
+        }
+
+        public void PrintFood(int _FoodCount)
+        {
+            Console.WriteLine("│\t\t\t├── {0}, {1} {2}", _Name, _FoodCount, _Unit);
         }
     }
 }

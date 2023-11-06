@@ -10,11 +10,17 @@ namespace Timo.Week06._04Zoo
     {
         private string _Name;
         private string _Species;
+        private Futter _Food;
+        private int _FoodCount;
+        private List<Futter> _FoodList = new();
 
-        public Tier(string Name, string Species)
+        public Tier(string name, string species, Futter food, int foodCount)
         {
-            _Name = Name;
-            _Species = Species;
+            _Name = name;
+            _Species = species;
+            _Food = food;
+            _FoodCount = foodCount;
+            _FoodList = new List<Futter>();
         }
 
         public string Name
@@ -27,10 +33,29 @@ namespace Timo.Week06._04Zoo
             get { return _Species; }
             set { _Species = value; }
         }
+        public Futter Food
+        {
+            get { return _Food; }
+            set { _Food = value; }
+        }
+        public int Foodcount
+        {
+            get { return _FoodCount; }
+            set { _FoodCount = value; }
+        }
+        public List<Futter> FoodList
+        {
+            get { return _FoodList; }
+            set { _FoodList = value; }
+        }
 
         public void PrintTier()
         {
             Console.WriteLine("│\t\t├── {0}, {1}", _Name, _Species);
+            for (int i = 0; i < _FoodList.Count; i++)
+            {
+                _FoodList[i].PrintFood(_FoodCount);
+            }
         }
     }
 }
