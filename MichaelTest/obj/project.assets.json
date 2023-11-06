@@ -2319,16 +2319,11 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\juens\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\michi\\.nuget\\packages\\": {}
->>>>>>> 8c25cfb1d10c9f5c9aa40d19eb534ef92017b531
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
       "projectName": "MichaelTest",
       "projectPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
@@ -2337,16 +2332,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\juens\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\michi\\source\\repos\\GitHub\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
-      "projectName": "MichaelTest",
-      "projectPath": "C:\\Users\\michi\\source\\repos\\GitHub\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
-      "packagesPath": "C:\\Users\\michi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\michi\\source\\repos\\GitHub\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\michi\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 8c25cfb1d10c9f5c9aa40d19eb534ef92017b531
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2360,13 +2345,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
               "projectPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
-=======
-            "C:\\Users\\michi\\source\\repos\\GitHub\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
-              "projectPath": "C:\\Users\\michi\\source\\repos\\GitHub\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
->>>>>>> 8c25cfb1d10c9f5c9aa40d19eb534ef92017b531
             }
           }
         }
@@ -2414,11 +2394,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
->>>>>>> 8c25cfb1d10c9f5c9aa40d19eb534ef92017b531
       }
     }
   }
