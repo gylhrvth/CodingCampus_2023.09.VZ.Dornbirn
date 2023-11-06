@@ -11,12 +11,11 @@ namespace Martin.Week06
     public class Liste
     {
 
-        
         public static void Start()
         {
 
-            List<int> Inventar = CreateList(0, 99, 20);
-            List<int> Inventar2 = CreateList(0, 99, 20);
+            List<int> Inventar = CreateList(0, 99, 5);
+            List<int> Inventar2 = CreateList(0, 99, 10);
 
             SotierenAbsteigend(Inventar);
             SotierenAbsteigend(Inventar2);
@@ -28,24 +27,22 @@ namespace Martin.Week06
             //KleinstenZahlSuchen(Inventar);
             //GrößteZahlSuchen(Inventar);
 
-            //List<int> OrginalListe = ListZusammenführen(Inventar, Inventar2);
+            List<int> OrginalListe = ListZusammenführen(Inventar, Inventar2);
             //SotierenAbsteigend(OrginalListe);
 
-            //PrintList(OrginalListe);
-            Person20();
+            PrintList(OrginalListe);
+            //Person20();
         }
 
         public static List<int> CreateList(int min, int max, int size)
         {
             Random rand = new Random();
-
             List<int> Inventar = new List<int>();
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < size; i++)
             {
                 Inventar.Add(rand.Next(min, max));
             }
-
             return Inventar;
         }
 
@@ -110,7 +107,6 @@ namespace Martin.Week06
 
             for (int i = 0; i < Inventar.Count; i++)
             {
- 
                 if (Inventar[i] > Max)
                 {
                     Max = Inventar[i];
@@ -149,20 +145,36 @@ namespace Martin.Week06
         {
             List<int> OrginalList = new List<int>();
 
-            foreach (int ItemFromList1 in list1)
+            int i1 = 0;
+            int i2 = 0;
+
+            while(i1 < list1.Count && i2 < liste2.Count)
             {
-                OrginalList.Add(ItemFromList1);
+                if (list1[i1] < liste2[i2])
+                {
+                    OrginalList.Add(liste2[i2]);
+                    i2++;
+                }
+                else
+                {
+                    OrginalList.Add(list1[i1]);
+                    i1++;
+                }
             }
 
-            foreach (int ItemFromList2 in liste2)
+            while(i1 < list1.Count)
             {
-                OrginalList.Add(ItemFromList2);
+                OrginalList.Add(list1[i1]);
+                i1++;
             }
 
-
+            while (i2 < liste2.Count)
+            {
+                OrginalList.Add(liste2[i2]);
+                i2++;
+            }
             return OrginalList;
         }
-
         public static List<PersonAufgabe> Person20()
         {
             List<PersonAufgabe> Personen = new List<PersonAufgabe>();
@@ -177,11 +189,8 @@ namespace Martin.Week06
                 {
                     Console.WriteLine(Personen[i].Name + "ist grösser als" + Personen[i + 1].Name);
                 }
-            }
-
-
+            }        
             return Personen;
         }
-
     }
 }
