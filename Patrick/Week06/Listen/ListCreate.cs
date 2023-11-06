@@ -19,7 +19,8 @@ namespace Patrick.Week06.Listen
             List<int> list = ListCreated();
             //Liste print
             Print(list);
-            Console.WriteLine("============================================");
+            Console.WriteLine("===" +
+                "=========================================");
             Console.WriteLine();
 
             //Zählen der geraden Zahlen:

@@ -1,4 +1,6 @@
-﻿using Patrick.Week06.Listen;
+﻿using Patrick.Week06.PersonTwo;
 
-Connect2Lists.Start();
+PersonTwoMain.Start();
+
+
 
