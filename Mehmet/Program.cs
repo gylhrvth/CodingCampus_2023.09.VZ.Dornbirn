@@ -1,1 +1,1 @@
-﻿Mehmet.Week06.List.List.Start();
+﻿Mehmet.PersonExamples.Start();

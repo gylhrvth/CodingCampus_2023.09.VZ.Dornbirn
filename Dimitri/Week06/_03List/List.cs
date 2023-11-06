@@ -10,7 +10,55 @@ namespace Dimitri.Week06._03List
 {
     public class List
     {
+
         private static Random random = new Random();
+
+        public static void Main()
+        {
+            //List<int> list = CreateRandomList(20, 0, 100);
+            //PrintList(list);
+            //Console.WriteLine();
+            //Console.WriteLine(CountEvenNumbersList(list));
+            //Console.WriteLine();
+            //Console.WriteLine(FindSmallestNumber(list));
+            //Console.WriteLine();
+            //Console.WriteLine(FindMaxValueList(list));
+            //Console.WriteLine();
+
+            ////easy
+            ///*
+            //list.Sort();
+            //PrintList(list);
+            //list.Reverse();
+            //PrintList(list);
+            //*/
+
+            //PrintList(BubbleSortList(list));
+
+            //DeleteAllOddNumbersList(list);
+
+            //PrintList(list);
+
+            //List<int> list1 = CreateRandomList(20, 0, 100);
+            //List<int> list2 = CreateRandomList(20, 0, 100);
+
+            //list1.Sort();
+            //list2.Sort();
+
+            //PrintList(MergeOrderedLists(list1, list2));
+
+
+            List<char> list = new() { 'a', 'b', 'c', 'd' };
+
+            foreach (char c in list)
+            {
+                Console.Write("{0} ", c);
+            }
+            Console.WriteLine();
+
+            heapPermutationList(list.Count, list);
+            Console.WriteLine("Anzahl der Permutationen ist {0}", count);
+        }
 
         public static List<int> CreateListRandomFirst()
         {
@@ -175,9 +223,10 @@ namespace Dimitri.Week06._03List
             return result;
         }
 
+        public static int count = 0;
+
         public static List<char> heapPermutationList(int k, List<char> charList)
         {
-            int count = 0;
             if (k <= 1)
             {
                 return charList;
@@ -201,8 +250,6 @@ namespace Dimitri.Week06._03List
 
                     }
 
-                    count++;
-
                     foreach (char c in charList)
                     {
                         Console.Write("{0} ", c);
@@ -212,7 +259,7 @@ namespace Dimitri.Week06._03List
 
                     heapPermutationList(k - 1, charList);
 
-
+                    count++;
                 }
 
                 return charList;

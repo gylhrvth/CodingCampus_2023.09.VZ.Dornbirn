@@ -9,10 +9,10 @@ namespace Selina.Week06.Human_2._0
     public class HumanExample2
     {
 
-        public int _Size = 0;
-        public int _Weight = 0;
-        public int _Age = 0;
-        private string _Name = "";
+        private int _Size;
+        private int _Weight;
+        private int _Age;
+        private string _Name;
         public int Size
         {
             get => _Size;
@@ -47,6 +47,8 @@ namespace Selina.Week06.Human_2._0
                 }
             }
         }
+
+        public string Name { get => _Name; }
 
         public HumanExample2(string name, int age, int weigth, int size)
         {
