@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
   },
   "projects": {
@@ -12,13 +13,30 @@
         "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
         "packagesPath": "C:\\Users\\Anwender\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+=======
+    "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "projectName": "MichaelTest",
+        "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "packagesPath": "C:\\Users\\fakr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+>>>>>>> cae4b3e (.)
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Anwender\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\fakr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> cae4b3e (.)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +50,13 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+<<<<<<< HEAD
               "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
                 "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+              "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+>>>>>>> cae4b3e (.)
               }
             }
           }
@@ -47,24 +70,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[2.2.10, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[2.2.10, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.5.0, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[3.2.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -76,6 +81,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+<<<<<<< HEAD
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -93,13 +99,31 @@
         "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
         "packagesPath": "C:\\Users\\Anwender\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "projectName": "Michael",
+        "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "packagesPath": "C:\\Users\\fakr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+>>>>>>> cae4b3e (.)
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\Anwender\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\fakr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> cae4b3e (.)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -140,7 +164,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> cae4b3e (.)
         }
       }
     }
