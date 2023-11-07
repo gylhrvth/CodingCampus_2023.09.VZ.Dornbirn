@@ -14,6 +14,7 @@ namespace Timo.Week06._04Zoo
         private int _FoodCount;
         private List<Futter> _FoodList = new();
 
+
         public Tier(string name, string species, Futter food, int foodCount)
         {
             _Name = name;
@@ -25,37 +26,51 @@ namespace Timo.Week06._04Zoo
 
         public string Name
         {
-            get { return _Name; }
-            set { _Name = value; }
+            get => _Name;
+            //set => _Name = value;
         }
-        public string Species
-        {
-            get { return _Species; }
-            set { _Species = value; }
-        }
-        public Futter Food
-        {
-            get { return _Food; }
-            set { _Food = value; }
-        }
-        public int Foodcount
-        {
-            get { return _FoodCount; }
-            set { _FoodCount = value; }
-        }
-        public List<Futter> FoodList
-        {
-            get { return _FoodList; }
-            set { _FoodList = value; }
-        }
+        //public string Species
+        //{
+        //    get => _Species;
+        //    set => _Species = value;
+        //}
+        //public Futter Food
+        //{
+        //    get => _Food;
+        //    set => _Food = value;
+        //}
+        //public int Foodcount
+        //{
+        //    get => _FoodCount;
+        //    set => _FoodCount = value;
+        //}
+        //public List<Futter> FoodList
+        //{
+        //    get => _FoodList;
+        //    set => _FoodList = value;
+        //}
+
 
         public void PrintTier()
         {
-            Console.WriteLine("│\t\t├── {0}, {1}", _Name, _Species);
-            for (int i = 0; i < _FoodList.Count; i++)
+            Console.WriteLine("│\t\t\t├── {0}, {1}", _Name, _Species);
+            //for (int i = 0; i < _FoodList.Count; i++)
+            //{
+            //    _FoodList[i].PrintFood(_FoodCount);
+            //}
+        }
+
+        public void GetTierStatistic(Dictionary<Futter, double> dic)
+        {
+            if (dic.ContainsKey(_Food))
             {
-                _FoodList[i].PrintFood(_FoodCount);
+                dic[_Food] += _FoodCount;
+            }
+            else
+            {
+                dic[_Food] = _FoodCount;
             }
         }
+
     }
 }
