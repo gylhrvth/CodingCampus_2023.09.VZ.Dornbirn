@@ -1,3 +1,4 @@
-﻿using Gyula.Week06.Book;
+﻿using Gyula.Week06;
 
-BookExample.Start();
+EnumExample.Start();
+DictionaryExample.Start();
