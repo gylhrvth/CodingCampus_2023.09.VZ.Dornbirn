@@ -1,6 +1,5 @@
 ﻿using System.Xml.Linq;
 using David.Week06.PersonExample;
-
 namespace David.Week06.KurseTrainer
 {
 	public class KurseUndTrainer

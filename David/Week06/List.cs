@@ -49,7 +49,9 @@ namespace David.Week06
             List<int> newSortRem = SortRemove3(list);
             PrintList(newSortRem);
 
-            List<int> jointList = JoinList(list, desList);
+            List<int> list1 = CreateList(20, -20, -10);
+            List<int> list2 = CreateList(20, -20, -10);
+            List<int> jointList = JoinList(list1, list2);
             PrintList(jointList);
 
         }
@@ -189,12 +191,40 @@ namespace David.Week06
             return list;
         }
 
-        public static List<int> JoinList(List<int> randomList, List<int> sortedList)
+        public static List<int> JoinList(List<int> list1, List<int> list2)
         {
-            List<int> jointList = new List<int>(randomList);
-            randomList.AddRange(sortedList);
+            list1 = SortListDes(list1);
+            list2 = SortListDes(list2);
 
-            return randomList;
+            List<int> result = new List<int>();
+
+            int left = 0;
+            int right = 0;
+
+            while (left < list1.Count && right < list2.Count)
+            {
+                if (list1[left] < list2[right])
+                {
+                    result.Add(list1[left]);
+                    ++left;
+                }
+                else
+                {
+                    result.Add(list2[right]);
+                    ++right;
+                }
+            }
+            while (left < list1.Count)
+            {
+                result.Add(list1[left]);
+                ++left;
+            }
+            while (right < list2.Count)
+            {
+                result.Add(list2[right]);
+                ++right;
+            }
+            return result;
         }
     }
 }

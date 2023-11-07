@@ -1,0 +1,17 @@
+﻿using System;
+namespace David.Week06.Person2
+{
+	public class ExamplePerson2
+	{
+		private string _Name;
+		private int _Age;
+		private int _Hight;
+		private int _Weight;
+
+		public static void Start()
+		{
+			List<int> PersonIntValues(int _Age, int _Hight )
+		}
+	}
+}
+

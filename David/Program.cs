@@ -24,6 +24,6 @@
 //David.Week05.Selftest.Start();
 //David.Week06.PersonExample.PersonExample.Start();
 //David.Week06.KurseTrainer.KurseUndTrainerExample.Start();
-List1.Start();
-
+//List1.Start();
+Person2
 
