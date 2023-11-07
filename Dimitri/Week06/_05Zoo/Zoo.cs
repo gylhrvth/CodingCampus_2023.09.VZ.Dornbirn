@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +17,6 @@ namespace Dimitri.Week06._05Zoo
         public List<Gehege> Gehege
         {
             get => _Gehege;
-            set => _Gehege = value;
         }
 
         public Zoo(string zoo, int foundation, List<Gehege> gehege)
@@ -43,9 +44,44 @@ namespace Dimitri.Week06._05Zoo
         public void PrintZoo()
         {
             Console.WriteLine("├── Zoo: {0}, gegründet {1}", _Zoo, _Foundation);
-            foreach(Gehege enclosure in _Gehege)
+            if (_Gehege.Count != 0)
             {
-                enclosure.PrintGehege();
+                foreach (Gehege enclosure in _Gehege)
+                {
+                    enclosure.PrintGehege();
+                }
+            } else
+            {
+                Console.WriteLine("│   ├── Kein Gehege im Zoo!");
+            }
+        }
+
+        public void GetFutterbedarf(Zoo zoo)
+        {
+            Dictionary<Futter, double> Futterbedarf = new();
+
+
+            for(int i = 0; i < zoo.Gehege.Count; i++)
+            {
+                for(int j = 0; j < zoo.Gehege[i].Tiere.Count; j++)
+                {
+                    try {
+                    if (!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter) && !zoo.Gehege[i].Tiere[j].IsNull())
+                    {
+                            Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
+
+                    }
+                    }
+                    catch (ArgumentNullException e)
+                    {
+                        Console.WriteLine("Argument is null try to catch it earlier lul.");
+                    }
+                } 
+            }
+
+            foreach(KeyValuePair<Futter, double> kvp in Futterbedarf)
+            {
+                Console.WriteLine("Key: {0} Value: {1}", kvp.Key, kvp.Value);
             }
         }
 

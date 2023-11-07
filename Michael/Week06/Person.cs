@@ -13,6 +13,7 @@ namespace Michael.Week06
         private string _Name;
         private double _Weight;
 
+
         public string Name { get => _Name; }
         public double Weight { get => _Weight; }
         public int Size { get => _Size; }

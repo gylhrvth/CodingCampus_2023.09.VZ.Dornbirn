@@ -2,9 +2,9 @@
 {
     public class Trainer
     {
-        public int _Size = 0;
-        public int _Weight = 0;
-        public int _Age = 0;
+        public int _Size;
+        public int _Weight;
+        public int _Age;
         private string _Name;
         public int Size
         {

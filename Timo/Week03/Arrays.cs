@@ -442,7 +442,7 @@ namespace Timo.Week03
                     Console.WriteLine("sorted");
                 }
             }
-            Console.WriteLine("Size: " + arr.Length + "Steps: " + steps);
+           // Console.WriteLine("Size: " + arr.Length + "Steps: " + steps);
             return arr;
         }
 
