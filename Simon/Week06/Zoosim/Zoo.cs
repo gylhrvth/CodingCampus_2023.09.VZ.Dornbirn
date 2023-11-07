@@ -42,23 +42,23 @@ namespace Simon.Week06.Zoosim
         }
 
         // größtes problem wohin mit welcher funktion bzw wieso??
-        //public void PrintZooFood()
-        //{
-        //    Dictionary<Food, double> dic = new Dictionary<Food, double>();
-        //    foreach (var enclosure in dic.Keys)
-        //    {
-        //        enclosure.EnclosureStats(dic);
-        //    }
-        //    Console.WriteLine("Food per?");
-        //    double foodcost = 0;
-        //    foreach (Food food in dic.Values)
-        //    {
-        //        Console.WriteLine();
-        //        double ammount = dic[food];
-        //        double price = food.PricePerUnit * ammount;
-        //        foodcost += price;
-        //    }
-        //}
+        public void PrintZooFood()
+        {
+            Dictionary<Food, double> dic = new Dictionary<Food, double>();
+            foreach (var enclosure in dic.Keys)
+            {
+                enclosure.EnclosureStats(dic);
+            }
+            Console.WriteLine("Food per?");
+            double foodcost = 0;
+            foreach (Food food in dic.Values)
+            {
+                Console.WriteLine();
+                double ammount = dic[food];
+                double price = food.PricePerUnit * ammount;
+                foodcost += price;
+            }
+        }
 
 
 

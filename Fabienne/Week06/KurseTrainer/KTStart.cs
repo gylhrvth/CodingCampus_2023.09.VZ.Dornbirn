@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fabienne.Week06
+namespace Fabienne.Week06.KurseTrainer
 {
-    public class AufgabenOO
+    internal class KTStart
     {
-        public static void Start()
-        {
-
-        }
     }
 }
