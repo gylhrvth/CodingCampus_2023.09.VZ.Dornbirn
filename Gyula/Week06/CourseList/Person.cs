@@ -13,6 +13,11 @@ namespace Gyula.Week06.CourseList
 			get => "\"" + _Name + "\"";
 		}
 
+		public int Height
+		{
+			get => _Height;
+		}
+
 		public Person(string name, int age, int height, int weigth)
 		{
 			_Name = name;

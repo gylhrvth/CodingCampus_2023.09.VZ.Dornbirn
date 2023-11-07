@@ -1,35 +1,44 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
+    "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
+    "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "projectUniqueName": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
         "projectName": "MichaelTest",
-        "projectPath": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
-        "packagesPath": "C:\\Users\\daae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+        "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "packagesPath": "C:\\Users\\fakr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\daae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\Anwender\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\fakr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> cae4b3e (.)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
-                "projectPath": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+<<<<<<< HEAD
+              "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+              "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+>>>>>>> cae4b3e (.)
               }
             }
           }
@@ -77,6 +86,19 @@
               "privateAssets": "all"
             }
           },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "projectName": "Michael",
+        "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "packagesPath": "C:\\Users\\Anwender\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
@@ -86,25 +108,34 @@
       "restore": {
         "projectUniqueName": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
         "projectName": "Michael",
-        "projectPath": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
-        "packagesPath": "C:\\Users\\daae\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daae\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+        "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "packagesPath": "C:\\Users\\fakr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+>>>>>>> cae4b3e (.)
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\daae\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\Anwender\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+=======
+          "C:\\Users\\fakr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> cae4b3e (.)
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
+                "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -116,6 +147,24 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -132,7 +181,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+=======
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+>>>>>>> cae4b3e (.)
         }
       }
     }

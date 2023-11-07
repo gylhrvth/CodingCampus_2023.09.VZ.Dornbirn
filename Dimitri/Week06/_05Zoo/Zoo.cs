@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -64,9 +65,18 @@ namespace Dimitri.Week06._05Zoo
             {
                 for(int j = 0; j < zoo.Gehege[i].Tiere.Count; j++)
                 {
-                    if(!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter) && (zoo.Gehege[i].Tiere[j].Futter != null || zoo.Gehege[i].Tiere[j].Menge != null))
-                    Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
-                }
+                    try {
+                    if (!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter) && !zoo.Gehege[i].Tiere[j].IsNull())
+                    {
+                            Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
+
+                    }
+                    }
+                    catch (ArgumentNullException e)
+                    {
+                        Console.WriteLine("Argument is null try to catch it earlier lul.");
+                    }
+                } 
             }
 
             foreach(KeyValuePair<Futter, double> kvp in Futterbedarf)
