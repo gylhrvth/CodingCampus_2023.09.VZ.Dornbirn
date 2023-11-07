@@ -2319,39 +2319,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aau21982\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/davidisele/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "projectUniqueName": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
       "projectName": "MichaelTest",
-      "projectPath": "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
-      "packagesPath": "C:\\Users\\aau21982\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+      "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "packagesPath": "/Users/davidisele/.nuget/packages/",
+      "outputPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\aau21982\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/davidisele/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
-              "projectPath": "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+            "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
+              "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
             }
           }
         }
@@ -2399,7 +2392,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
       }
     }
   }
