@@ -38,5 +38,10 @@ namespace Simon.Week06.Zoosim
                 animals.PrintZoo();
             }
         }
+
+        public void CalcFood(List<Animals>)
+        {
+
+        }
     }
 }
