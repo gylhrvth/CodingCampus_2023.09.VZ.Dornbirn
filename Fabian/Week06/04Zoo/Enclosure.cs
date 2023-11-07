@@ -2,7 +2,7 @@
 {
     public class Enclosure
     {
-        private readonly Random random = new Random();
+        private readonly Random random = new();
 
         private string _Name;
         private List<Animal> _Animals;
@@ -50,7 +50,7 @@
 
                 }
             }
-        }
+        }       
         public void PrintEnclosure()
         {
             Console.WriteLine($"│\t\t├── Enclosure: {_Name}");
