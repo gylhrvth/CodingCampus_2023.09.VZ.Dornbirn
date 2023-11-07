@@ -11,7 +11,7 @@ namespace Dimitri.Week06._05Zoo
     {
         public static void Main()
         {
-            List<Gehege> gehegeList = new List<Gehege>();
+            List<Gehege> gehegeList = new();
             Zoo myZoo = new("Zoo Goefis", 1991, gehegeList);
 
             List<Tier> katzenGehegeList = new();
