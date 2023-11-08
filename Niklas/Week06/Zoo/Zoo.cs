@@ -11,15 +11,15 @@ namespace Niklas.Week06.Zoo
     {
         private string _name;
         private int _year;
+        private string _day;
         private List<ZooKeeper> _ZooKeeper;
-
         public string Name
         {
             get => _name;
 
             set
             {
-                Console.Write(" " + Convert.ToChar(9556) + "Zoo: " + value);
+                Console.Write("  " + Convert.ToChar(9556) + "Zoo: " + value);
                 _name = value;
             }
         }
@@ -34,6 +34,16 @@ namespace Niklas.Week06.Zoo
                 _year = value;
             }
         }
+
+        public string Day
+        {
+            get => _day;
+            set
+            {
+                Console.Write("");
+            }
+        }
+
         public Zoo(string name, int year)
         {
             name = _name;
