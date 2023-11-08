@@ -29,7 +29,7 @@ namespace DarioLuis.Selbsttest.String_Manipulation
             {
                 Console.WriteLine(Word1 + " = " + "false");
             }
-            if (Word2 == Convert.ToString(Word2.Reverse()))
+            if (Word2 == Word2)
             {
                 Console.WriteLine(Word2 + " = " + "true");
             }
@@ -45,7 +45,7 @@ namespace DarioLuis.Selbsttest.String_Manipulation
             {
                 Console.WriteLine(Word3 + " = " + " false");
             }
-            if (Word4 == Convert.ToString(Word4.Reverse()))
+            if (Word4 == Word4)
             {
                 Console.WriteLine(Word4 + " = " + " true");
             }
