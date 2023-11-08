@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,17 +10,22 @@ namespace Niklas.Week07.Selbsttest
 {
     internal class Array
     {
+        public static Random random = new Random();
         public static void Start()
         {
             int[] arr = new int[] { 0, 1, 23, 5, 12, 4, 4, 2, 5, 2, 10 };
-            int[] arr2 = new int[] { 123, 19471, 1, 4, 15715, 15, 1, 5, 15, 1, -10, -100 };
-            int[] arr3 = new int[] { 478199, 7812973, 12387123, 12, 3, 123, 12, 3, 1, 3, 1, 3, 1, 8, 9, 15, 1, 5, 1, 5, 1, 5, 15, 1, 5, 0 };
+
+            int[] arr1 = CreateArrayRandom(20, 0, 101);
+            int[] arr2 = CreateArrayRandom(20, 0, 101);
 
             PrintFirstAndLast(arr);
             Console.WriteLine();
             PrintMyresult(arr);
             Console.WriteLine();
-            FillArr(10);
+            FillArr(arr);
+            CreateArrayRandom(20, 0, 101);
+            Bubblesort(arr1, false);
+            Console.WriteLine("Bubblesort: " + string.Join(", ", arr1));
         }
 
         public static void PrintFirstAndLast(int[] arr)
@@ -57,14 +64,69 @@ namespace Niklas.Week07.Selbsttest
             double avg = sum / arr.Length;
             Console.WriteLine("Average value: " + avg);
         }
-        public static void FillArr(int fill)
-        {;
-            int i = fill;
-            for (; i > 0; i--)
+        public static void FillArr(int[] arr)
+        {
+            int i = 0;
+
+            for (; i < arr.Length; i++)
+                Console.Write(i + " ");
+
+            Console.WriteLine();
+
+            foreach (int value in arr)
             {
-                Console.WriteLine(fill);
+                Console.Write(value + " ");
             }
-          
+
+            Console.WriteLine();
+            Console.WriteLine("[{0}]", string.Join(", ", arr));
+
+
         }
+        public static int[] Bubblesort(int[] arr, bool AorD)
+        {
+            if (AorD == true)
+            {
+                for (int i = 0; i < arr.Length - 1; i++)
+                {
+                    for (int j = 0; j < arr.Length - 1 - i; j++)
+                    {
+                        if (arr[j] > arr[j + 1])
+                        {
+                            int temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+            else if (AorD == false)
+            {
+                for (int i = 0; i < arr.Length - 1; i++)
+                {
+                    for (int j = 0; j < arr.Length - 1 - i; j++)
+                    {
+                        if (arr[j] < arr[j + 1])
+                        {
+                            int temp = arr[j];
+                            arr[j] = arr[j + 1];
+                            arr[j + 1] = temp;
+                        }
+                    }
+                }
+            }
+            return arr;
+        }
+
+        public static int[] CreateArrayRandom(int size, int min, int max)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(min, max);
+            }
+            return arr;
+        }
+
     }
 }
