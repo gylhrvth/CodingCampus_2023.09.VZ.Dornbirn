@@ -1,17 +1,13 @@
 ﻿using DarioLuis.Selbsttest.Methoden;
 using DarioLuis.Selbsttest.Schleifen;
+using DarioLuis.Selbsttest.Input;
+using DarioLuis.Selbsttest.Arrays;
+using DarioLuis.Selbsttest.String_Manipulation;
+using DarioLuis.Week02;
+using DarioLuis.Week03;
+using DarioLuis.Week04;
 using DarioLuis.Week05;
 using DarioLuis.Week06;
+using DarioLuis.Zoo;
 
-//Person dario = new Person("Dario", 17, 170, 60);
-//Console.WriteLine(dario);
-
-
-//Console.OutputEncoding = System.Text.Encoding.Unicode;
-//Kurs Course = new Kurs("Coding Campus", DateOnly.FromDateTime(DateTime.Now), 50, 600, dario.Name);
-//Console.WriteLine(Course);
-
-//List.Start();
-
-//Listv2.Start();
-Taschenrechner.Start();
+GameOfLife.Main();

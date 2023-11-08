@@ -6,8 +6,9 @@
 //using Timo.Selbsttest_Strukto;
 using Timo.Week06._01Person;
 using Timo.Week06._02Kurs;
-
+using Timo.Week06._03DynamischeDatenstrukturen;
+using Timo.Week06._04Zoo;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-Kurs_Example.Start();
+ZooMain.Start();

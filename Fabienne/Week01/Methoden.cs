@@ -94,8 +94,6 @@ namespace Fabienne.Week01
         
         public static void PrintChars(char x, int anzahl, bool newline)
         {
-  
-
             for (int i = 0; i < anzahl; i++)
             {
                 Console.Write(x);

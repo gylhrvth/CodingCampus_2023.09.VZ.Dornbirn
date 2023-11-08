@@ -6,6 +6,7 @@ using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 using static Jovo.Week06._03List.ListeAuswerten;
+using static Jovo.Week06._03List.ListeZusammenführen;
 
 namespace Jovo.Week06._03List
 {
@@ -32,7 +33,8 @@ namespace Jovo.Week06._03List
 
             //Sort your numbers ( with a bubbglesort.ALG)
             Console.WriteLine("Sort My Numbers:");
-            PrintList(BubbleSortList(list));
+            BubbleSortList(list);
+            PrintList(list);
 
             //Delet all odd numbers
             Console.WriteLine("All Odd Numbers deleted:");
@@ -41,8 +43,17 @@ namespace Jovo.Week06._03List
             PrintList(list);
 
 
-            
 
+            List<int> list1 = CreateRandomList(20, 0, 101); //dont take list else list1 and list 2 are the same numbers!
+            List<int> list2 = CreateRandomList(10, 0, 101);
+
+            list1.Sort(); //sortiert beide listen
+            list2.Sort();
+            PrintList(list1);
+            PrintList(list2);   
+
+            Console.WriteLine("Result from both lists:");
+            PrintList(MergeBothLists(list1, list2));
 
         }
 
