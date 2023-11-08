@@ -46,9 +46,9 @@ namespace Sven.Week05
             Console.WriteLine("{0}", string.Join(", ", SortIndex(names)));
             Console.WriteLine();
 
-            //Console.WriteLine("String Reverse:");
-            //ReverseString();
-            //Console.WriteLine();
+            Console.WriteLine("String Reverse:");
+            ReverseString();
+            Console.WriteLine();
 
             Console.WriteLine("String Randomize:");
             Console.WriteLine("Wilkommen zum Randomize Programm!");

@@ -11,7 +11,7 @@ namespace Dimitri.Week06._05Zoo
     {
         public static void Main()
         {
-            List<Gehege> gehegeList = new List<Gehege>();
+            List<Gehege> gehegeList = new();
             Zoo myZoo = new("Zoo Goefis", 1991, gehegeList);
 
             List<Tier> katzenGehegeList = new();
@@ -44,8 +44,19 @@ namespace Dimitri.Week06._05Zoo
             myZoo.PrintZoo();
 
 
+            //for (int i = 0; i < myZoo.Gehege.Count; i++)
+            //{
+            //    Console.WriteLine("{0}", myZoo.Gehege[i]);
+
+            //    for (int j = 0; j < myZoo.Gehege[i].Tiere.Count; j++)
+            //    {
+            //        Console.WriteLine("{0}", myZoo.Gehege[i].Tiere[j].Name);
+
+            //    }
+            //}
 
 
+            myZoo.GetFutterbedarf(myZoo);
         }
 
 

@@ -5,18 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick
+namespace Patrick.Week06.PersonOne
 {
     internal class KurseUndTrainer
     {
         private string _Title;
-        private string _Start;
+        private DateTime _Start;
         private int _Kursstunden;
         private double _Preis;
         private Person _Trainer;
 
 
-        public KurseUndTrainer(string title, string start, int kursstunden, double preis, Person trainer)
+        public KurseUndTrainer(string title, DateTime start, int kursstunden, double preis, Person trainer)
         {
             _Title = title;
             _Start = start;

@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace Patrick
+namespace Patrick.Week06.PersonOne 
 {
     public class PersonExample
     {
         public static void Start()
         {
-            Person b1 = new Person(1.65, 26, "Sebastian", 83.4);
-            Person b2 = new Person(1.95, 35, "David", 103);
+            Person b1 = new Person("Sebastian", 26, 1.65f, 83.4f);
+            Person b2 = new Person("David", 35, 1.95f, 103f);
 
             Console.WriteLine(b1);
             Console.WriteLine();
