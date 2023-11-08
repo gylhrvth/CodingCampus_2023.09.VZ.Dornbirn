@@ -1,1 +1,1 @@
-﻿ Niklas.Week06.Zoo.ZooExample.Start();
+﻿ Niklas.Week07.Krankenhaus.KrankenhausExample.Start();
