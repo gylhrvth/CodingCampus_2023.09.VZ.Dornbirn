@@ -10,22 +10,62 @@ namespace Niklas.Week07.Krankenhaus
     {
         public static void Start()
         {
+            Random random = new Random();
+            int rand = random.Next(100);
+            DateTime d = DateTime.Now;
+            string time = d.ToString("t");
+            TimeSpan open = new TimeSpan(8, 0, 0);
+            TimeSpan closed = new TimeSpan(21, 0, 0);
+            TimeSpan now = DateTime.Now.TimeOfDay;
+
+
+
+
             Krankenhaus krankenhaus = new Krankenhaus("...", 0000);
 
             krankenhaus.Name = "Krankenhaus Schwarzwald";
             krankenhaus.Year = 1992;
+            krankenhaus.Area = "Open";
 
-            Ambulanz ambulanz = new Ambulanz(DateTime.Now);
+            Ambulanz ambulanz = new Ambulanz(time, 0);
+            ambulanz.Time = time;
+            ambulanz.Waiting = 0;
 
-            DateTime d = DateTime.Now;
-            Console.WriteLine(d.ToString("t"));
 
-            ambulanz.Time = DateTime.Now;
+            Patient patient = new Patient("Klaus", 24, "Ambulanz");
 
-            if (d.ToString("t") != Convert.ToString(7) || d.ToString("t") != Convert.ToString(8) || d.ToString("t") != Convert.ToString(9) || d.ToString("t") != Convert.ToString(10) || d.ToString("t") != Convert.ToString(10) || d.ToString("t") != Convert.ToString(11) || d.ToString("t") != Convert.ToString(12) || d.ToString("t") != Convert.ToString(13) || d.ToString("t") != Convert.ToString(14) || d.ToString("t") != Convert.ToString(15) || d.ToString("t") != Convert.ToString(16) || d.ToString("t") != Convert.ToString(17) || d.ToString("t") != Convert.ToString(18) || d.ToString("t") != Convert.ToString(19) || d.ToString("t") != Convert.ToString(20) || d.ToString("t") != Convert.ToString(21))
+            //check if open
+            if ((now > open) && (now < closed))
             {
-
+                krankenhaus.Area = "Open";
             }
+            else if ((now < open) && (now > closed))
+            {
+                krankenhaus.Area = "Closed";
+            }
+            if (krankenhaus.Area == "Open" && patient.Health == "Ambulance")
+            {
+                ambulanz.Waiting += 1;
+            }
+
+            //random generator for health status
+            if (rand < 30)
+            {
+                patient.Health = "Station";
+            }
+            else if (rand > 30 && krankenhaus.Area == "Open" && patient.Health != "Station")
+            {
+                patient.Health = "Ambulanz";
+            }
+            else if (rand > 30 && krankenhaus.Area == "Closed")
+            {
+                patient.Health = "Home";
+            }
+
+
+
+
+
 
 
 
