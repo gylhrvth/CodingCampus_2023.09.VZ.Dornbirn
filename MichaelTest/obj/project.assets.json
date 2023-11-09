@@ -2319,19 +2319,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fakr\\.nuget\\packages\\": {}
+    "C:\\Users\\NILA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "projectUniqueName": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
       "projectName": "MichaelTest",
-      "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
-      "packagesPath": "C:\\Users\\fakr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fakr\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+      "projectPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\NILA\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\fakr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\NILA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2345,8 +2345,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
-              "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+            "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
             }
           }
         }

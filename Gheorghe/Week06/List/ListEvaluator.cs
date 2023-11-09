@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Gheorghe.Week06.List
 {
+
 
 
     public class ListEvaluator
@@ -16,10 +18,14 @@ namespace Gheorghe.Week06.List
         {
 
             List<int> list = CreateList(20);
+            List<int> list1 = CreateList(20);
+            List<int> list2= CreateList(20);
 
 
             foreach (int value in list)
             {
+
+
 
                 Console.Write(value + ",");
             }
@@ -49,7 +55,14 @@ namespace Gheorghe.Week06.List
             Console.WriteLine("========================");
 
 
+            Console.WriteLine("SortedMerge:");    
+            SortingMerge( list1, list2 );
+            PrintList(list);
+            Console.WriteLine("==========================");
+
+
         }
+
 
 
         public static List<int> CreateList(int size)
@@ -140,5 +153,49 @@ namespace Gheorghe.Week06.List
                 Console.WriteLine(value);
             }
         }
+        public static List<int> SortingMerge(List<int> list1, List<int> list2)
+        {
+            int i = 0;
+            int j = 0;
+            List<int> result = new List<int>();
+
+            while (i < list1.Count && j < list2.Count)
+            {
+                if ((list1[i] < list2[j]))
+                {
+                    result.Add(list1[i]);
+                    i++;
+                }
+                else
+                {
+                    result.Add(list2[j]);
+                    j++;
+                }
+                while (i < list1.Count)
+                {
+                    result.Add(list1[i]);
+                    i++;
+                }
+                while (j < list2.Count)
+                {
+                    result.Add(list2[j]);
+                    j++;
+                }
+               
+            }
+            return result;
+
+        }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
