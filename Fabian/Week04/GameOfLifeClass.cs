@@ -47,7 +47,7 @@ namespace Fabian.Week04
                 PrintMatrix(matrix);
                 try
                 {
-                    Thread.Sleep(10);
+                    Thread.Sleep(100);
                 }
                 catch (ThreadInterruptedException) { }
 
@@ -127,8 +127,8 @@ namespace Fabian.Week04
                     }
                     else
                     { 
-                        ConsoleColor randomColor = (ConsoleColor)random.Next(1, 15); // random color without black(0)
-                        Console.ForegroundColor = randomColor;
+                       /* ConsoleColor randomColor = (ConsoleColor)random.Next(1, 15); // random color without black(0)
+                        Console.ForegroundColor = randomColor;*/
 
                         sb.Append((char)9632 + " ");
                     }
