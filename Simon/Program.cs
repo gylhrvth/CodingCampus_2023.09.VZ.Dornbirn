@@ -8,5 +8,6 @@ using Simon.Week06;
 using Simon.Selbsttest;
 using Simon.Week06.PersonExample;
 using Simon.Week06.Listen;
+using Simon.Week06.Zoosim;
 
-Listenerstellen.Start();
+ZooMain.Start();

@@ -1,6 +1,6 @@
-﻿using Patrick.Week06.PersonTwo;
+﻿using Patrick.Week06.SelfTest;
 
-PersonTwoMain.Start();
+Kalender.Start();
 
 
 

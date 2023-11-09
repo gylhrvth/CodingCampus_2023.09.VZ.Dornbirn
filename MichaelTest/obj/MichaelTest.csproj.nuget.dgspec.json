@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
+    "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
+    "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "projectUniqueName": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
         "projectName": "MichaelTest",
-        "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
-        "packagesPath": "C:\\Users\\Anwender\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+        "projectPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "packagesPath": "C:\\Users\\NILA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Anwender\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\NILA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
-                "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+              "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
               }
             }
           }
@@ -85,21 +81,17 @@
         }
       }
     },
-    "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+    "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "projectUniqueName": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
         "projectName": "Michael",
-        "projectPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
-        "packagesPath": "C:\\Users\\Anwender\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anwender\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+        "projectPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "packagesPath": "C:\\Users\\NILA\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NILA\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Anwender\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\NILA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -113,6 +105,22 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {}
+          }
+                "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+              }
+            }
+          }
+                "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+              }
+            }
+          }
+                "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+              }
+            }
+          }
+                "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
