@@ -33,7 +33,7 @@ namespace Patrick.Week06.PersonThree
             Person personMinAge = null;
             for(int i = 0; i < _Persons.Count; i++)
             {
-                if(personMinAge == null || personMinAge.Age < _Persons[i].Age)
+                if(personMinAge == null || personMinAge.Age > _Persons[i].Age)
                 {
                     personMinAge = _Persons[i];
                 }
@@ -46,7 +46,7 @@ namespace Patrick.Week06.PersonThree
             Person personMaxAge = null;
             for(int i = 0; i < _Persons.Count; i++)
             {
-                if(personMaxAge == null || personMaxAge.Age > _Persons[i].Age)
+                if(personMaxAge == null || personMaxAge.Age < _Persons[i].Age)
                 {
                     personMaxAge = _Persons[i];
                 }
@@ -85,7 +85,7 @@ namespace Patrick.Week06.PersonThree
             Person personMinHeight = null;
             for(int i = 0; i < _Persons.Count; i++)
             {
-                if(personMinHeight == null || personMinHeight.Height < _Persons[i].Height)
+                if(personMinHeight == null || personMinHeight.Height > _Persons[i].Height)
                 {
                     personMinHeight = _Persons[i];
                 }

@@ -56,15 +56,18 @@ namespace Patrick.Week06.Zoo
             {
                 enclosure.GetEnclosureStatistic(dic);
             }
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Nahrungsbedarf pro Tag:");
+            Console.ResetColor();
             float cost = 0;
             foreach (Food food in dic.Keys)
             {
-                Console.WriteLine($"{food._Name} : {dic[food]} {food._Unit} / per unit: {food._Price}$ ");
+                Console.WriteLine($"{food._Name, -11} : {dic[food], -4} {food._Unit} pro kg: {food._Price} Euro ");
                 float amount = dic[food];
                 float price = food._Price * amount;
                 cost += price;
-            }
+            }           
+            Console.WriteLine("=======================================================");
             Console.WriteLine("Gesamtkosten pro Tag: {0:N2}$", cost);
         }
 

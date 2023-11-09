@@ -84,9 +84,6 @@ namespace Patrick.Week06.Zoo
             zoo.ZooKeeperList.Add(zooKeeper3);
 
 
-            Dictionary<Animals, Food> foodStatistic = new();
-            //foodStatistic.Add()
-
 
             //Print
             zoo.PrintStructure();
@@ -95,6 +92,10 @@ namespace Patrick.Week06.Zoo
             Console.WriteLine("=======================================================");
             Console.ResetColor();
             zoo.PrintZooStatistic();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("=======================================================");
+            Console.WriteLine("=======================================================");
+            Console.ResetColor();
         }
 
     }
