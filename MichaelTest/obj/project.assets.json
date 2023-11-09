@@ -2319,32 +2319,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/davidisele/.nuget/packages/": {}
+    "C:\\Users\\fakr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "projectUniqueName": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
       "projectName": "MichaelTest",
-      "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
-      "packagesPath": "/Users/davidisele/.nuget/packages/",
-      "outputPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/obj/",
+      "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\fakr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fakr\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/davidisele/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\fakr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
-              "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+            "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\fakr\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
             }
           }
         }
@@ -2392,7 +2394,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
