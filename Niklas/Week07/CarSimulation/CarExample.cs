@@ -15,20 +15,18 @@ namespace Niklas.Week07.CarSimulation
             Car peugeot202 = new Car("Peugeot", "202", 30, 40, 780);
             Car renaultDauphine = new Car("Renault", "Dauphine", 37, 40, 800);
 
-            double km = 300;
+            double km = 263;
 
             Drive(km);
         }
         public static void Drive(double km)
         {
             double km2 = km;
-            double km3 = km2;
+            double km3 = km;
 
             Car Skyline = new Car("Nissan", "Skyline", 200, 60, 800);
             Car peugeot202 = new Car("Peugeot", "202", 30, 40, 780);
             Car renaultDauphine = new Car("Renault", "Dauphine", 37, 40, 800);
-
-            double fultank = Skyline.Tankinhalt;
 
             while (Skyline.Tankinhalt > 1 || km == 0)
             {
@@ -44,9 +42,6 @@ namespace Niklas.Week07.CarSimulation
                 //Fuel(Skyline.Tankinhalt, peugeot202.Tankinhalt, renaultDauphine.Tankinhalt);
             }
 
-
-            double fultank2 = peugeot202.Tankinhalt;
-
             while (peugeot202.Tankinhalt > 1 || km2 == 0)
             {
                 km2--;
@@ -60,9 +55,6 @@ namespace Niklas.Week07.CarSimulation
                 Console.WriteLine($"{peugeot202.Modell} droven kilometers: " + km2 * 10);
                 //Fuel(peugeot202.Tankinhalt, peugeot202.Tankinhalt, Skyline.Tankinhalt);
             }
-
-
-            double fultank3 = renaultDauphine.Tankinhalt;
 
             while (renaultDauphine.Tankinhalt > 1 || km3 == 0)
             {
