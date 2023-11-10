@@ -2319,11 +2319,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\DCV\\.nuget\\packages\\": {}
+=======
+    "/Users/davidisele/.nuget/packages/": {}
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
       "projectName": "MichaelTest",
       "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
@@ -2333,20 +2338,34 @@
       "configFilePaths": [
         "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "projectName": "MichaelTest",
+      "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "packagesPath": "/Users/davidisele/.nuget/packages/",
+      "outputPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/davidisele/.nuget/NuGet/NuGet.Config"
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
               "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+            "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
+              "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
             }
           }
         }
@@ -2394,7 +2413,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
       }
     }
   }

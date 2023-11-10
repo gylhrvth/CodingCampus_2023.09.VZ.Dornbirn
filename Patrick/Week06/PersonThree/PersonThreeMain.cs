@@ -23,16 +23,16 @@ namespace Patrick.Week06.PersonThree
 
 
             Person getMaxAge = seoBootCamp.GetMaxAge();
-            Console.WriteLine("Der älteste Teilnehmer ist : {0} und er ist {1} Jahre alt", getMaxAge.Name, getMaxAge.Weight);
+            Console.WriteLine("Der älteste Teilnehmer ist : {0} und er ist {1} Jahre alt", getMaxAge.Name, getMaxAge.Age);
 
             Person getMinAge = seoBootCamp.GetMinAge();
-            Console.WriteLine("Der jüngste Teilnehmer ist : {0} und er ist {1} Kg Jahre alt", getMinAge.Name, getMinAge.Weight);
+            Console.WriteLine("Der jüngste Teilnehmer ist : {0} und er ist {1} Kg Jahre alt", getMinAge.Name, getMinAge.Age);
 
             Person getMaxHeight = seoBootCamp.GetMaxHeight();
-            Console.WriteLine("Der größte Teilnehmer ist : {0} und er ist {1} cm groß", getMaxHeight.Name, getMaxHeight.Weight);
+            Console.WriteLine("Der größte Teilnehmer ist : {0} und er ist {1} cm groß", getMaxHeight.Name, getMaxHeight.Height);
 
             Person getMinHeight = seoBootCamp.GetMinHeight();
-            Console.WriteLine("Der kleinste Teilnehmer ist : {0} und er ist {1} cm groß", getMinHeight.Name, getMinHeight.Weight);
+            Console.WriteLine("Der kleinste Teilnehmer ist : {0} und er ist {1} cm groß", getMinHeight.Name, getMinHeight.Height);
 
             Person getMaxWeight = seoBootCamp.GetMaxWeight();
             Console.WriteLine("Der schwerste Teilnehmer ist : {0} und er ist {1} Kg schwer", getMaxWeight.Name, getMaxWeight.Weight);

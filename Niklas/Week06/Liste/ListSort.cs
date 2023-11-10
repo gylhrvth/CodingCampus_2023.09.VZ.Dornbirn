@@ -1,8 +1,10 @@
 ﻿using Niklas.Week06.Person;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Channels;
@@ -77,6 +79,7 @@ namespace Niklas.Week06.Liste
 
     internal class ListSort
     {
+
         public enum SortedPerson
         {
             Niklas,
@@ -91,34 +94,44 @@ namespace Niklas.Week06.Liste
             int count = 0;
 
             List<int> list = new List<int>();
+            List<int> list2 = new List<int>();
             CreateList.GetList(list);
+            CreateList.GetList2(list2);
             PrintList(list);
-
-            Console.WriteLine("Straight numbers are: ");
-            count = StraightNumber(list);
-            Console.WriteLine(count);
-
-            Console.WriteLine("Min number is: ");
-            min = MinNumber(list);
-            Console.WriteLine(min);
-
-            Console.WriteLine("Max number is: ");
-            max = MaxNumber(list);
-            Console.WriteLine(max);
-
-            Console.WriteLine("Sorted descending: ");
-            BubbleSortDesc(list);
-            PrintList(list);
-
-            Console.WriteLine("Straight numbers deleted: ");
-            DeleteOddNumber(list);
-            PrintList(list);
-
             Console.WriteLine();
-            Person2(list);
+            PrintList2(list2);
 
+            //Console.WriteLine("Straight numbers are: ");
+            //count = StraightNumber(list);
+            //Console.WriteLine(count);
+
+            //Console.WriteLine("Min number is: ");
+            //min = MinNumber(list);
+            //Console.WriteLine(min);
+
+            //Console.WriteLine("Max number is: ");
+            //max = MaxNumber(list);
+            //Console.WriteLine(max);
+
+            //Console.WriteLine("Sorted descending: ");
+            //BubbleSortDesc(list);
+            //PrintList(list);
+
+            //Console.WriteLine("Straight numbers deleted: ");
+            //DeleteOddNumber(list);
+            //PrintList(list);
+
+            Console.WriteLine("Two lists: ");
+            TwoLists(list, list2);
+            PrintList3(list, list2);
             Console.WriteLine();
-            PersonSorted(list);
+
+            //Console.WriteLine();
+            //Person2(list);
+
+            //Console.WriteLine();
+            //BubblesortInts();
+
         }
         public static void PrintList(List<int> list)
         {
@@ -127,6 +140,21 @@ namespace Niklas.Week06.Liste
                 Console.WriteLine(i);
             }
         }
+        public static void PrintList2(List<int> list2)
+        {
+            foreach (int i in list2)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        public static void PrintList3(List<int> list, List<int> list2)
+        {
+            foreach (int i in list)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
 
         public static int StraightNumber(List<int> list)
         {
@@ -178,8 +206,22 @@ namespace Niklas.Week06.Liste
             list.RemoveAll(number => number % 2 != 0);
             return list;
         }
-        public static void TwoLists(List<int> list)
+        public static void TwoLists(List<int> list, List<int> list2)
         {
+            list.AddRange(list2);
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = 0; j < list.Count - 1 - i; j++)
+                {
+                    if (list[j] < list[j + 1])
+                    {
+                        int temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                    }
+                }
+            }
 
         }
 
@@ -368,31 +410,143 @@ namespace Niklas.Week06.Liste
                 }
             }
             Console.WriteLine("Max Height: " + a4);
-            return Convert.ToInt32(p2);
+            return 0;
 
         }
-        public static int PersonSorted(List<int> list)
+
+        public static void BubblesortInts()
         {
+            Person02 p1 = new Person02(0, 0, "Person", 0);
 
-            Person02 p2 = new Person02(0, 0, "Person", 0);
+            p1.Name = "Niklas";
+            string a1 = p1.Name;
 
-            object a = Person2;
+            p1.Name = "Guyla";
+            string b1 = p1.Name;
 
-            Console.WriteLine(a);
+            p1.Name = "Lukas";
+            string c1 = p1.Name;
 
-            for (int i = 0; i < list.Count; i++)
+            p1.Name = "Hassan";
+            string d1 = p1.Name;
+
+            Console.WriteLine();
+
+            string[] names = { a1, b1, c1, d1 };
+
+            p1.Age = 16;
+            int a2 = p1.Age;
+            p1.Age = 44;
+            int b2 = p1.Age;
+            p1.Age = 33;
+            int c2 = p1.Age;
+            p1.Age = 18;
+            int d2 = p1.Age;
+            Console.WriteLine();
+            p1.Size = 175;
+            int a4 = p1.Size;
+            p1.Size = 180;
+            int b4 = p1.Size;
+            p1.Size = 181;
+            int c4 = p1.Size;
+            p1.Size = 185;
+            int d4 = p1.Size;
+            p1.Weight = 75;
+
+            int a3 = p1.Weight;
+            p1.Weight = 73;
+            int b3 = p1.Weight;
+            p1.Weight = 78;
+            int c3 = p1.Weight;
+            p1.Weight = 80;
+            int d3 = p1.Weight;
+
+            int[] heights = { a4, b4, c4, d4 };
+
+            int[] ages = { a2, b2, c2, d2 };
+
+            int[] weigts = { a3, b3, c3, d3 };
+
+            Console.WriteLine();
+
+            for (int i = 0; i < names.Length - 1; i++)
             {
-                for (int j = 0; j < list.Count - 1 - i; j++)
+                for (int j = 0; j < names.Length - 1 - i; j++)
                 {
-                    if (list[j] < list[j + 1])
+                    if (names[j].CompareTo(names[j + 1]) > 0)
                     {
-                        int temp = list[j];
-                        list[j] = list[j + 1];
-                        list[j + 1] = temp;
+                        string temp = names[j];
+                        names[j] = names[j + 1];
+                        names[j + 1] = temp;
                     }
                 }
             }
-            return list.Count;
+            Console.WriteLine("Sorted by... ");
+            Console.WriteLine("Name: ");
+            PrintArray(names);
+
+            for (int i = 0; i < ages.Length - 1; i++)
+            {
+                for (int j = 0; j < ages.Length - 1 - i; j++)
+                {
+                    if (ages[j] > ages[j + 1])
+                    {
+                        int temp = ages[j];
+                        ages[j] = ages[j + 1];
+                        ages[j + 1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Age: ");
+            PrintArrayInt(ages);
+
+            for (int i = 0; i < heights.Length - 1; i++)
+            {
+                for (int j = 0; j < heights.Length - 1 - i; j++)
+                {
+                    if (heights[j] > heights[j + 1])
+                    {
+                        int temp = heights[j];
+                        heights[j] = heights[j + 1];
+                        heights[j + 1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Height: ");
+            PrintArrayInt(heights);
+
+            for (int i = 0; i < weigts.Length - 1; i++)
+            {
+                for (int j = 0; j < weigts.Length - 1 - i; j++)
+                {
+                    if (weigts[j] > weigts[j + 1])
+                    {
+                        int temp = weigts[j];
+                        weigts[j] = weigts[j + 1];
+                        weigts[j + 1] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Weight: ");
+            PrintArrayInt(weigts);
+        }
+
+        public static void PrintArray(String[] names)
+        {
+            foreach (string item in names)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+        }
+
+        public static void PrintArrayInt(int[] ages)
+        {
+            foreach (int item in ages)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
         }
     }
 }

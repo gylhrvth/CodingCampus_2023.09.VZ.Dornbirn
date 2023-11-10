@@ -11,13 +11,17 @@ namespace Patrick.Week06.Zoo
     {
         public string _Name { get; private set; }
 
+        public string _Temp { get; private set; }
+
         private List<Animals> _AnimalsList { get; set; }
 
 
-        public Enclosure(string name)
+        //Konstruktor 
+        public Enclosure(string name, string temp)
         {
             _Name = name;
             _AnimalsList = new List<Animals>();
+            _Temp = temp;
         }
 
         public List<Animals> AnimalsList
@@ -27,15 +31,24 @@ namespace Patrick.Week06.Zoo
 
         }
 
-        public void PrintAnimals()
+        public void GetEnclosureStatistic(Dictionary<Food, float> dic)
         {
-            Console.WriteLine($"│   ├── Gehege: {_Name} ");
-            foreach (Animals animal in _AnimalsList)
+            foreach (var animal in _AnimalsList)
             {
-                Console.WriteLine($"│       ├── {animal.Name}, {animal.Genus}, {animal.Age}");
-            }                                   
+                animal.GetAnimalStatistic(dic);
+            }
         }
 
+        public  void PrintAnimals()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.WriteLine($"│      ├── Gehege: {_Name} || Temperatur: {_Temp}");
+            Console.ResetColor();
+            foreach (Animals animal in _AnimalsList)
+            {
+                Console.WriteLine($"│          ├── {animal.Name}, {animal.Genus}, {animal.Age} || mag: {animal.ToString()}");
+            }           
+        }
 
     }
 }
