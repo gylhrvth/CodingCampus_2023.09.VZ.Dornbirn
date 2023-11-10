@@ -50,7 +50,8 @@ namespace Dimitri.Week06._05Zoo
                 {
                     enclosure.PrintGehege();
                 }
-            } else
+            }
+            else
             {
                 Console.WriteLine("│   ├── Kein Gehege im Zoo!");
             }
@@ -61,28 +62,37 @@ namespace Dimitri.Week06._05Zoo
             Dictionary<Futter, double> Futterbedarf = new();
 
 
-            for(int i = 0; i < zoo.Gehege.Count; i++)
+            for (int i = 0; i < zoo.Gehege.Count; i++)
             {
-                for(int j = 0; j < zoo.Gehege[i].Tiere.Count; j++)
+                for (int j = 0; j < zoo.Gehege[i].Tiere.Count; j++)
                 {
-                    try {
-                    if (!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter) && !zoo.Gehege[i].Tiere[j].IsNull())
+                    if (zoo.Gehege[i].Tiere[j].IsNull())
                     {
-                            Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
+                        break;
+                    }
+                    else if (!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter))
+                    {
+                        Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
 
                     }
-                    }
-                    catch (ArgumentNullException e)
+                    else
                     {
-                        Console.WriteLine("Argument is null try to catch it earlier lul.");
+                        Futterbedarf[zoo.Gehege[i].Tiere[j].Futter] += zoo.Gehege[i].Tiere[j].Menge;
                     }
-                } 
+                }
             }
 
-            foreach(KeyValuePair<Futter, double> kvp in Futterbedarf)
+            double gesamtKosten = 0;
+            Console.WriteLine();
+            Console.WriteLine("Futterbedarf im Zoo:");
+            Console.WriteLine();
+            foreach (KeyValuePair<Futter, double> kvp in Futterbedarf)
             {
-                Console.WriteLine("Key: {0} Value: {1}", kvp.Key, kvp.Value);
+                
+                Console.WriteLine("Futter: {0} Menge: {1}kg Einheitspreis: {2}€ Gesamtkosten: {3:0.000}€", kvp.Key, kvp.Value, kvp.Key.EinheitsPreis, (kvp.Value * kvp.Key.EinheitsPreis));
+                gesamtKosten += (kvp.Value * kvp.Key.EinheitsPreis);
             }
+            Console.WriteLine("Gesamtkosten für Futter pro Tag sind: {0:0.000}€", gesamtKosten);
         }
 
     }

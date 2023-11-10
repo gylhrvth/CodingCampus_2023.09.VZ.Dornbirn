@@ -74,9 +74,8 @@ namespace Fabian.Week06._04Zoo
                     enclosure.Animals.Remove(animal);
                 }
             }
-
         }
-
+        
         public void HealStart()
         {
             List<Animal> availableAnimals = new();
