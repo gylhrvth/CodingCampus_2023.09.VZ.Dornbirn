@@ -16,6 +16,10 @@ namespace Patrick.Week06.SelfTest
             //PrintStipple("X", 3);
             PrintSlash("X", 5, true);
             PrintSlash("Y", 5, false);
+
+            //Aufgabe 2
+            string text = Ressources.StringRessources.getHesse();
+           
         }
 
         public static void PrintLineStipple(string symbol, int amount)
