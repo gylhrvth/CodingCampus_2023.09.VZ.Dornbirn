@@ -77,7 +77,7 @@ namespace Dimitri.Week06._05Zoo
                     }
                     else
                     {
-                        Futterbedarf[zoo.Gehege[i].Tiere[j].Futter] = zoo.Gehege[i].Tiere[j].Menge + Futterbedarf[zoo.Gehege[i].Tiere[j].Futter];
+                        Futterbedarf[zoo.Gehege[i].Tiere[j].Futter] += zoo.Gehege[i].Tiere[j].Menge;
                     }
                 }
             }
