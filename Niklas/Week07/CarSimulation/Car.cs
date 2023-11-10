@@ -14,6 +14,26 @@ namespace Niklas.Week07.CarSimulation
         private double _Tankinhalt;
         private Antriebsart _Antrieb;
         private int _Gewicht;
+        private int _Motor;
+        private int _Tank;
+
+        public int Tank
+        {
+            get =>  _Tank;
+            set
+            {
+                _Tank = value;
+            }
+        }
+
+        public int Motor
+        {
+            get => _Motor;
+            set
+            {
+                _Motor = value;
+            }
+        }
 
 
         public string Hersteller
