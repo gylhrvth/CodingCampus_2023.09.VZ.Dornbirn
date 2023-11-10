@@ -15,12 +15,9 @@ namespace Dimitri.Week06._05Zoo
             List<Gehege> gehegeList = new();
             Zoo myZoo = new("Zoo Goefis", 1991, gehegeList);
 
-            List<Tier> katzenGehegeList = new();
-            List<Tier> schmetterlingsGehegeList = new();
-            List<Tier> vogelGehegeList = new();
-            Gehege katzenGehege = new("Katzengehege", katzenGehegeList);
-            Gehege schmetterlingsGehege = new("Schmetterlingsgehege", schmetterlingsGehegeList);
-            Gehege vogelGehege = new("Vogelgehege", vogelGehegeList);
+            Gehege katzenGehege = new("Katzengehege");
+            Gehege schmetterlingsGehege = new("Schmetterlingsgehege");
+            Gehege vogelGehege = new("Vogelgehege");
 
             Zoo.AddGehege(myZoo, katzenGehege);
             Zoo.AddGehege(myZoo, schmetterlingsGehege);
@@ -36,30 +33,24 @@ namespace Dimitri.Week06._05Zoo
             Gehege.AddTier(katzenGehege, emil);
             Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75);
             Gehege.AddTier(katzenGehege, sandy);
-
             Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter", Zuckerwasser, 0.001);
             Gehege.AddTier(schmetterlingsGehege, sauerFlatter);
-
-
             Tier rotKehle = new("Mitrotemhals", "Rotkehlchen", Korn, 0.01);
             Gehege.AddTier(vogelGehege, rotKehle);
 
-            Zoo.AddGehege(myZoo, new Gehege("Terrarium", new List<Tier>()));
+            Zoo.AddGehege(myZoo, new Gehege("Terrarium"));
+
+            //Waerter
+
+            Waerter Hans = new("Hans");
+
+            Waerter.AddGehege(Hans, katzenGehege);
+
+            Zoo.AddWarter(myZoo, Hans);
+
+            //output
 
             myZoo.PrintZoo();
-
-
-            //for (int i = 0; i < myZoo.Gehege.Count; i++)
-            //{
-            //    Console.WriteLine("{0}", myZoo.Gehege[i]);
-
-            //    for (int j = 0; j < myZoo.Gehege[i].Tiere.Count; j++)
-            //    {
-            //        Console.WriteLine("{0}", myZoo.Gehege[i].Tiere[j].Name);
-
-            //    }
-            //}
-
 
             myZoo.GetFutterbedarf(myZoo);
 
