@@ -30,9 +30,14 @@ namespace Timo.Week06._04Zoo
             {
                 Console.WriteLine(wildPark.Gehege);
             }
+
+            foreach(Gehege gehege in wildPark.Gehege)
+            {
+                Add
+            }
                 
                     
-        //            //Gehege alpenwiese = new Gehege("Alpenwiese");
+        //    //Gehege alpenwiese = new Gehege("Alpenwiese");
         //    //Gehege ried = new Gehege("Ried");
         //    //Gehege alpen = new Gehege("Alpen");
         //    //Gehege wald = new Gehege("Wald");

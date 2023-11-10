@@ -43,6 +43,12 @@ namespace Timo.Week06._04Zoo
         //    set => _Founded = value;
         //}
 
+        //public override string ToString()
+        //{
+        //    return string.Format("Name: {0}");
+             
+        //}
+
         public void AddGehege(Gehege gehege)
         {
             _Gehege.Add(gehege);
