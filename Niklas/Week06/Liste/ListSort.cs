@@ -1,6 +1,7 @@
 ﻿using Niklas.Week06.Person;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -93,34 +94,43 @@ namespace Niklas.Week06.Liste
             int count = 0;
 
             List<int> list = new List<int>();
+            List<int> list2 = new List<int>();
             CreateList.GetList(list);
+            CreateList.GetList2(list2);
             PrintList(list);
-
-            Console.WriteLine("Straight numbers are: ");
-            count = StraightNumber(list);
-            Console.WriteLine(count);
-
-            Console.WriteLine("Min number is: ");
-            min = MinNumber(list);
-            Console.WriteLine(min);
-
-            Console.WriteLine("Max number is: ");
-            max = MaxNumber(list);
-            Console.WriteLine(max);
-
-            Console.WriteLine("Sorted descending: ");
-            BubbleSortDesc(list);
-            PrintList(list);
-
-            Console.WriteLine("Straight numbers deleted: ");
-            DeleteOddNumber(list);
-            PrintList(list);
-
             Console.WriteLine();
-            Person2(list);
+            PrintList2(list2);
 
+            //Console.WriteLine("Straight numbers are: ");
+            //count = StraightNumber(list);
+            //Console.WriteLine(count);
+
+            //Console.WriteLine("Min number is: ");
+            //min = MinNumber(list);
+            //Console.WriteLine(min);
+
+            //Console.WriteLine("Max number is: ");
+            //max = MaxNumber(list);
+            //Console.WriteLine(max);
+
+            //Console.WriteLine("Sorted descending: ");
+            //BubbleSortDesc(list);
+            //PrintList(list);
+
+            //Console.WriteLine("Straight numbers deleted: ");
+            //DeleteOddNumber(list);
+            //PrintList(list);
+
+            Console.WriteLine("Two lists: ");
+            TwoLists(list, list2);
+            PrintList3(list, list2);
             Console.WriteLine();
-            BubblesortInts();
+
+            //Console.WriteLine();
+            //Person2(list);
+
+            //Console.WriteLine();
+            //BubblesortInts();
 
         }
         public static void PrintList(List<int> list)
@@ -130,6 +140,21 @@ namespace Niklas.Week06.Liste
                 Console.WriteLine(i);
             }
         }
+        public static void PrintList2(List<int> list2)
+        {
+            foreach (int i in list2)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        public static void PrintList3(List<int> list, List<int> list2)
+        {
+            foreach (int i in list)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
 
         public static int StraightNumber(List<int> list)
         {
@@ -181,8 +206,22 @@ namespace Niklas.Week06.Liste
             list.RemoveAll(number => number % 2 != 0);
             return list;
         }
-        public static void TwoLists(List<int> list)
+        public static void TwoLists(List<int> list, List<int> list2)
         {
+            list.AddRange(list2);
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                for (int j = 0; j < list.Count - 1 - i; j++)
+                {
+                    if (list[j] < list[j + 1])
+                    {
+                        int temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                    }
+                }
+            }
 
         }
 
