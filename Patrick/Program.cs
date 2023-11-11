@@ -1,6 +1,6 @@
-﻿using Patrick.Week06.PersonTwo;
+﻿using Patrick.Week07;
 
-PersonTwoMain.Start();
+ForInARow.Start();
 
 
 

@@ -59,9 +59,8 @@ namespace Niklas.Week05
         }
         public static void BubblesortAsc(String[] names)
         {
-            int i = 0;
 
-            for (i = 0; i < names.Length - 1; i++)
+            for (int i = 0; i < names.Length - 1; i++)
             {
                 for (int j = 0; j < names.Length - 1 - i; j++)
                 {

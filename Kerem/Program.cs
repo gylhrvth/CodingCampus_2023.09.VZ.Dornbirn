@@ -1,4 +1,4 @@
-Kerem.Selbsttest.Arrays.Start();
+Kerem.Selbsttest.Calendar.Start();
 //Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week03.ArrayExamples.StartArrayExamples();
 //Kerem.Week04.ConsoleInput.Start();

@@ -16,7 +16,7 @@ namespace Patrick.Week06.PersonTwo
 
             for (int i = 0; i < persons.Count; i++)
             {
-                if (personMinHeight == null || persons[i]._Height < personMinHeight._Height)
+                if (personMinHeight == null || persons[i].Height < personMinHeight.Height)
                 {
                     personMinHeight = persons[i];
                 }
@@ -30,7 +30,7 @@ namespace Patrick.Week06.PersonTwo
 
             for (int i = 0; i < persons.Count; i++)
             {
-                if (personMaxHeight == null || persons[i]._Height > personMaxHeight._Height)
+                if (personMaxHeight == null || persons[i].Height > personMaxHeight.Height)
                 {
                     personMaxHeight = persons[i];
                 }
@@ -44,7 +44,7 @@ namespace Patrick.Week06.PersonTwo
 
             for (int i = 0; i < persons.Count; i++)
             {
-                if (personMinAge == null || personMinAge._Age > persons[i]._Age)
+                if (personMinAge == null || personMinAge.Age > persons[i].Age)
                 {
                     personMinAge = persons[i];
                 }
@@ -57,7 +57,7 @@ namespace Patrick.Week06.PersonTwo
             Person personMaxAge = null;
             for(int i = 0; i < persons.Count; i++)
             {
-                if(personMaxAge == null || personMaxAge._Age < persons[i]._Age)
+                if(personMaxAge == null || personMaxAge.Age < persons[i].Age)
                 {
                     personMaxAge = persons[i];
                 }
@@ -70,7 +70,7 @@ namespace Patrick.Week06.PersonTwo
             Person personMaxWeight = null;
             for(int i = 0; i< persons.Count; i++)
             {
-                if(personMaxWeight == null || personMaxWeight._Weight < persons[i]._Weight)
+                if(personMaxWeight == null || personMaxWeight.Weight < persons[i].Weight)
                 {
                     personMaxWeight = persons[i];
                 }
@@ -83,7 +83,7 @@ namespace Patrick.Week06.PersonTwo
             Person personMinWeight = null;
             for (int i = 0; i < persons.Count;i++)
             {
-                if (personMinWeight == null || personMinWeight._Weight < persons[i]._Weight)
+                if (personMinWeight == null || personMinWeight.Weight < persons[i].Weight)
                 {
                     personMinWeight = persons[i];
                 }
@@ -96,7 +96,7 @@ namespace Patrick.Week06.PersonTwo
             float personAvg = 0;
             for(int i =0; i < persons.Count; i++)
             {
-                personAvg += persons[i]._Age;
+                personAvg += persons[i].Age;
             }
             personAvg = personAvg / persons.Count;
 
@@ -108,7 +108,7 @@ namespace Patrick.Week06.PersonTwo
             float personAvg = 0;
             for (int i = 0; i < persons.Count; i++)
             {
-                personAvg += persons[i]._Height;
+                personAvg += persons[i].Height;
             }
             personAvg = personAvg / persons.Count;
 
@@ -120,12 +120,11 @@ namespace Patrick.Week06.PersonTwo
             float personAvg = 0;
             for (int i = 0; i < persons.Count; i++)
             {
-                personAvg += persons[i]._Weight;
+                personAvg += persons[i].Weight;
             }
             personAvg = personAvg / persons.Count;
 
             return personAvg;
-
         }
 
         public void PrintList(List<float> person)
