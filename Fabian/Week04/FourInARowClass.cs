@@ -20,12 +20,12 @@ namespace Fabian.Week04
             {
                 int input = ReadInt($"\nEnter a column between 1-6 (player {player}): ", 1, 6) - 1;
                 int i = board.GetLength(0) - 1;
-                while (board[i, input] != '_')
+                while (board[i, input] != '-')
                 {
-                    if (board[0, input] != '_')
+                    if (board[0, input] != '-')
                     {
                         Console.WriteLine("This column is full!");
-                        input = ReadInt($"\nEnter a column between 1-6 (player {player}): ", 1, 6) - 1;
+                        input = ReadInt($"Enter a column between 1-6 (player {player}): ", 1, 6) - 1;
                     }
                     else i--;
                 }
@@ -83,7 +83,7 @@ namespace Fabian.Week04
             {
                 for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    board[i, j] = '_';
+                    board[i, j] = '-';
                 }
             }
             return board;
@@ -95,7 +95,7 @@ namespace Fabian.Week04
             {
                 for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    if (board[i, j] != '_' && board[i, j] == board[i + 1, j] && board[i + 1, j] == board[i + 2, j] && board[i + 2, j] == board[i + 3, j])
+                    if (board[i, j] != '-' && board[i, j] == board[i + 1, j] && board[i + 1, j] == board[i + 2, j] && board[i + 2, j] == board[i + 3, j])
                         return true;
                 }
             }
@@ -104,7 +104,7 @@ namespace Fabian.Week04
             {
                 for (int j = 0; j < board.GetLength(1) - 3; j++)
                 {
-                    if (board[i, j] != '_' && board[i, j] == board[i, j + 1] && board[i, j + 1] == board[i, j + 2] && board[i, j + 2] == board[i, j + 3])
+                    if (board[i, j] != '-' && board[i, j] == board[i, j + 1] && board[i, j + 1] == board[i, j + 2] && board[i, j + 2] == board[i, j + 3])
                         return true;
                 }
             }
@@ -113,8 +113,8 @@ namespace Fabian.Week04
             {
                 for (int j = 0; j < board.GetLength(1) - 3; j++)
                 {
-                    if ((board[i, j] != '_' && board[i, j] == board[i + 1, j + 1] && board[i + 1, j + 1] == board[i + 2, j + 2] && board[i + 2, j + 2] == board[i + 3, j + 3]) ||
-                        (board[i, j + 3] != '_' && board[i, j + 3] == board[i + 1, j + 2] && board[i + 1, j + 2] == board[i + 2, j + 1] && board[i + 2, j + 1] == board[i + 3, j]))
+                    if ((board[i, j] != '-' && board[i, j] == board[i + 1, j + 1] && board[i + 1, j + 1] == board[i + 2, j + 2] && board[i + 2, j + 2] == board[i + 3, j + 3]) ||
+                        (board[i, j + 3] != '-' && board[i, j + 3] == board[i + 1, j + 2] && board[i + 1, j + 2] == board[i + 2, j + 1] && board[i + 2, j + 1] == board[i + 3, j]))
                         return true;
                 }
             }
