@@ -37,15 +37,15 @@ namespace Dimitri.Week06._05Zoo
 
         public void PrintTier()
         {
-            Console.WriteLine("│       ├── {0}, {1}", _Name, _Gattung);
+            Console.WriteLine("│           ├── {0}, {1}", _Name, _Gattung);
             if(_Futter != null)
             {
-                Console.WriteLine("│           ├── {0} {1} {2} pro Tag", _Menge, _Futter.Einheit, _Futter.Name);
+                Console.WriteLine("│               ├── {0} {1} {2} pro Tag", _Menge, _Futter.Einheit, _Futter.Name);
 
             }
             else
             {
-                Console.WriteLine("│           ├── {0} mag nichts essen!", _Name );
+                Console.WriteLine("│                ├── {0} mag nichts essen!", _Name );
             }
         }
 

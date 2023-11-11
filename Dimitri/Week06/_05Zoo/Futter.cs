@@ -37,7 +37,7 @@ namespace Dimitri.Week06._05Zoo
 
         public void PrintFutter() 
         {
-            Console.WriteLine("│          ├── {0}", _Name);
+            Console.WriteLine("│              ├── {0}", _Name);
         }
 
         public override string ToString()

@@ -29,7 +29,7 @@ namespace Patrick.Week06.Zoo
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("│   ├── Zookeeper: {0}", _Name);
             Console.ResetColor();
-            foreach(var enclosure in _EnclosureList)
+            foreach(Enclosure enclosure in _EnclosureList)
             {
                 enclosure.PrintAnimals();
             }
