@@ -5,4 +5,4 @@ using Dimitri.Week05;
 using Dimitri.Week06;
 using Dimitri.Week07;
 
-ZooMain.Main();
+FourInRows.Main();
