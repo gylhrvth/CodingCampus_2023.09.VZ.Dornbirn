@@ -1,6 +1,6 @@
-﻿using Patrick.Week06.SelfTest;
+﻿using Patrick.Week07;
 
-Kalender.Start();
+ForInARow.Start();
 
 
 

@@ -8,4 +8,8 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MichaelTest
-build_property.ProjectDir = C:\Users\daae\source\repos\CodingCampus_2023.09.VZ.Dornbirn\MichaelTest\
+<<<<<<< HEAD
+build_property.ProjectDir = C:\Users\User\source\repos\CodingCampus_2023.09.VZ.Dornbirn\MichaelTest\
+=======
+build_property.ProjectDir = C:\Users\DCV\source\repos\CodingCampus_2023.09.VZ.Dornbirn\MichaelTest\
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b

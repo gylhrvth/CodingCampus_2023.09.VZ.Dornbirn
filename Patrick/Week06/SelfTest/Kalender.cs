@@ -18,16 +18,16 @@ namespace Patrick.Week06.SelfTest
 
             //Aufgabe2
             string[] cultureInfo = { "de-DE", "fr-FR", "it-IT", "tr-TR", "hu-HU", "en-US" };          
-            DaysOtherLanguages(cultureInfo);
+            PrintLanguages(cultureInfo);
         }
 
-        public static void DaysOtherLanguages(string[] cultureInfo)
+        public static void PrintLanguages(string[] cultureInfo)
         {
             foreach (var culture in cultureInfo)
             {
-                DateTime dayTime = DateTime.Now;
+                DateTime day = DateTime.Now;
                 CultureInfo cultureInfoObj = new CultureInfo(culture);
-                Console.WriteLine(dayTime.ToString("dddd", cultureInfoObj));
+                Console.WriteLine(day.ToString("dddd", cultureInfoObj));
             }
         }
         
