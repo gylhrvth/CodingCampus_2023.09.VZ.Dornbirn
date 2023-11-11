@@ -2,6 +2,22 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+    "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "projectName": "MichaelTest",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
     "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
   },
   "projects": {
@@ -16,6 +32,7 @@
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 =======
     "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj": {}
@@ -37,12 +54,21 @@
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
+<<<<<<< HEAD
+            "projectReferences": {
+              "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+              }
+            }
+=======
             "projectReferences": {}
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
           }
         },
         "warningProperties": {
@@ -70,6 +96,24 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "projectName": "Michael",
+        "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
         }
       }
@@ -86,16 +130,21 @@
         "configFilePaths": [
           "/Users/davidisele/.nuget/NuGet/NuGet.Config"
 >>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
+<<<<<<< HEAD
+            "projectReferences": {}
+=======
             "projectReferences": {
 <<<<<<< HEAD
               "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
@@ -106,6 +155,7 @@
 >>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
               }
             }
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
           }
         },
         "warningProperties": {
@@ -117,24 +167,6 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "dependencies": {
-            "MSTest.TestAdapter": {
-              "target": "Package",
-              "version": "[2.2.10, )"
-            },
-            "MSTest.TestFramework": {
-              "target": "Package",
-              "version": "[2.2.10, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.5.0, )"
-            },
-            "coverlet.collector": {
-              "target": "Package",
-              "version": "[3.2.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -151,6 +183,9 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+=======
 <<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
@@ -211,6 +246,7 @@
 =======
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
 >>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
         }
       }
     }

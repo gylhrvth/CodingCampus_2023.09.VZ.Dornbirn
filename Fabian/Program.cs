@@ -1,1 +1,1 @@
-﻿Fabian.Week03.TicTacToeClass.Start();
+﻿Fabian.Selftest_SP.TowersOfHanoi.Start();

@@ -10,7 +10,7 @@ namespace David.Week06.ZOO
 		private string _Locality;
 		private int _FoundingYear;
 		private int _Capacity;
-		private List<Enclosure> _Enclosures;
+		private List<Enclosure> _Enclosure;
 
 		public Zoo(string name, string locality, int foundingYear, int capacity)
 		{
@@ -18,18 +18,20 @@ namespace David.Week06.ZOO
 			_Locality = locality;
 			_FoundingYear = foundingYear;
 			_Capacity = capacity;
-			_Enclosures = new();
+			_Enclosure = new();
 		}
 
-		public void AddEnclosures(Enclosure enc)
+		public void AddEnclosure(Enclosure enc)
 		{
-			_Enclosures.Add(enc);
+			_Enclosure.Add(enc);
 		}
 
 		public void PrintZoo()
 		{
+			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.WriteLine($"{_Name}, {_Locality}, {_FoundingYear}, {_Capacity}");
-			foreach (Enclosure enc in _Enclosures)
+
+			foreach (Enclosure enc in _Enclosure)
 			{
 				enc.PrintEnclosure();
 			}
