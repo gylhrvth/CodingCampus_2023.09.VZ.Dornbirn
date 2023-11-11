@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Exercises
+namespace Kerem.Exercises.MakingDecisions
 {
     internal class IfStatement
     {
@@ -19,7 +19,7 @@ namespace Kerem.Exercises
 
         public static void CheckHighscore(int score, string playerName)
         {
-            if(score > highscore)
+            if (score > highscore)
             {
                 highscore = score;
                 highscorePlayer = playerName;

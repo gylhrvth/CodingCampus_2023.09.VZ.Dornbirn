@@ -18,16 +18,36 @@ namespace Patrick.Week07
             //NextTurn(Playground());
             string[][] playGround = Playground();
             bool p1P2 = true;
-            for (int i = 0; i < 100; i++)
-            {
+            while (true) 
+            {                
                 if (p1P2 == true)
                 {
                     PrintMethod(NextTurn(playGround, p1P2));
+                    bool winVtk = CheckWinVertikal(playGround);
+                    bool winHoz = CheckWinHorizontal(playGround);
+                    bool winDia = CheckWinDiagonal(playGround);
+                    if (winVtk == true || winHoz == true ||winDia == true)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine("Gratulation Spieler 1, Sie haben gewonnen");
+                        Console.ResetColor();
+                        break;
+                    }
                     p1P2 = false;
                 }
-                else
+                else if(p1P2 == false) 
                 {
-                    PrintMethod(NextTurn(playGround, p1P2));
+                    PrintMethod(NextTurn(playGround, p1P2));                   
+                    bool winVtk = CheckWinVertikal(playGround);
+                    bool winHoz = CheckWinHorizontal(playGround);
+                    bool winDia = CheckWinDiagonal(playGround);
+                    if (winVtk == true || winHoz == true || winDia == true)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Gratulation Spieler 2, Sie haben gewonnen");
+                        Console.ResetColor();
+                        break;
+                    }
                     p1P2 = true;
                 }
             }
@@ -59,11 +79,7 @@ namespace Patrick.Week07
                 Console.WriteLine("=====================");
                 for (int j = 0; j < 7; j++)
                 {
-                    Console.Write("|");
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.Write(playground[i][j]);
-                    Console.ResetColor();
-                    Console.Write("|");
+                    Console.Write("|" + playground[i][j] + "|");
                 }
                 Console.WriteLine();
             }
@@ -73,9 +89,66 @@ namespace Patrick.Week07
             Console.ResetColor();
         }
 
-        public static void CheckWin(string[][] playground)
+        public static bool CheckWinVertikal(string[][] playground)
         {
+            for (int i = 0; i <= playground.Length - 4; i++)
+            {
+                for (int j = 0; j < playground.Length; j++)
+                {
+                    if (playground[i][j] == "X" && playground[i + 1][j] == "X" && playground[i + 2][j] == "X" && playground[i + 3][j] == "X")
+                    {
+                        return true;
+                    }
+                    else if (playground[i][j] == "O" && playground[i + 1][j] == "O" && playground[i + 2][j] == "O" && playground[i + 3][j] == "O")
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
+        public static bool CheckWinDiagonal(string[][] playground)
+        {
+            for (int i = 0; i <= playground.Length - 4; i++)
+            {
+                for (int j = 0; j <= playground.Length - 4; j++)
+                {
+                    // Diagonal nach rechts oben
+                    if (playground[i][j] == "X" && playground[i + 1][j + 1] == "X" && playground[i + 2][j + 2] == "X" && playground[i + 3][j + 3] == "X")
+                    {return true;}
+
+                    else if (playground[i][j] == "O" && playground[i + 1][j + 1] == "O" && playground[i + 2][j + 2] == "O" && playground[i + 3][j + 3] == "O")
+                    { return true;}
+
+                    // Diagonal nach rechts unten
+                    if (playground[i + 3][j] == "X" && playground[i + 2][j + 1] == "X" && playground[i + 1][j + 2] == "X" && playground[i][j + 3] == "X")
+                    { return true; }
+
+                    else if (playground[i + 3][j] == "O" && playground[i + 2][j + 1] == "O" && playground[i + 1][j + 2] == "O" && playground[i][j + 3] == "O")
+                    { return true; }
+                }
+            }
+            return false;
+        }
+
+        public static bool CheckWinHorizontal(string[][] playgroung)
+        {
+            for (int i = 0; i < playgroung.Length; i++)
+            {
+                for (int j = 0; j < playgroung.Length - 4; j++)
+                {
+                    if (playgroung[i][j] == "X" && playgroung[i][j + 1] == "X" && playgroung[i][j + 2] == "X" && playgroung[i][j + 3] == "X")
+                    {
+                        return true;
+                    }
+                    else if (playgroung[i][j] == "O" && playgroung[i][j + 1] == "O" && playgroung[i][j + 2] == "O" && playgroung[i][j + 3] == "O")
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         public static string[][] NextTurn(string[][] playground, bool pl1Pl2)
@@ -191,3 +264,4 @@ namespace Patrick.Week07
         }
     }
 }
+
