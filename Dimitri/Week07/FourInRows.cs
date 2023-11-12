@@ -15,6 +15,7 @@ namespace Dimitri.Week07
 
             string[][] arr = CreateField();
             //PrintField(arr);
+            Console.WriteLine("Four in a Row:");
             PlayerAction(arr);
 
         }
@@ -43,7 +44,7 @@ namespace Dimitri.Week07
 
         public static void PrintField(string[][] arr)
         {
-            Console.WriteLine("Four in a Row:");
+
             Console.WriteLine("-----------------------------");
             for (int i = 0; i < arr.Length; i++)
             {
@@ -68,19 +69,23 @@ namespace Dimitri.Week07
         public static string[][] PlayerAction(string[][] arr)
         {
             PrintField(arr);
-            Console.WriteLine("Where you wanna set your stone?(0-6)");
-            Console.Write(">>>");
             string playerSymbol = "";
+
             if (!playerTurn)
             {
                 playerSymbol = "O";
+                Console.WriteLine("Player two where you wanna set your stone?(0-6)");
+                Console.Write(">>>");
                 playerTurn = true;
             }
             else if (playerTurn)
             {
                 playerSymbol = "X";
+                Console.WriteLine("Player one where you wanna set your stone?(0-6)");
+                Console.Write(">>>");
                 playerTurn = false;
             }
+
             string input = Console.ReadLine();
             int inputInt = int.MinValue;
             while (true)
@@ -112,15 +117,20 @@ namespace Dimitri.Week07
             if (!CheckIfPlayerWon(arr))
             {
                 Console.Clear();
+                Console.WriteLine("Four in a Row:");
                 PlayerAction(arr);
 
             }
             else if (CheckIfPlayerWon(arr))
             {
                 Console.Clear();
-                Console.WriteLine("Player {0} won!", player);
+                Console.WriteLine("Four in a Row:");
                 Console.WriteLine();
                 PrintField(arr);
+                Console.WriteLine();
+                Console.WriteLine("Player {0} won!", player);
+
+
                 return arr;
             }
 
@@ -307,42 +317,120 @@ namespace Dimitri.Week07
             //    }
             //}
 
-            for (int i = 0; i <= arr.Length - 4; i++)
+            //for (int i = 0; i <= arr.Length - 4; i++)
+            //{
+            //    for (int j = 0; j <= arr[i].Length - 4; j++)
+            //    {
+            //        // Diagonal nach rechts oben
+            //        if (arr[i][j] == "X" && arr[i + 1][j + 1] == "X" && arr[i + 2][j + 2] == "X" && arr[i + 3][j + 3] == "X")
+            //        {
+            //            player = "one";
+            //            return true; }
+
+            //        else if (arr[i][j] == "O" && arr[i + 1][j + 1] == "O" && arr[i + 2][j + 2] == "O" && arr[i + 3][j + 3] == "O")
+            //        {
+            //            player = "two";
+            //            return true; }
+
+            //        // Diagonal nach rechts unten
+            //        if (arr[i + 3][j] == "X" && arr[i + 2][j + 1] == "X" && arr[i + 1][j + 2] == "X" && arr[i][j + 3] == "X")
+            //        {
+            //            player = "one";
+            //            return true; }
+
+            //        else if (arr[i + 3][j] == "O" && arr[i + 2][j + 1] == "O" && arr[i + 1][j + 2] == "O" && arr[i][j + 3] == "O")
+            //        {
+            //            player = "two";
+            //            return true; }
+            //    }
+            for (int i = arr.Length - 1; i >= arr.Length - 3; i--)
             {
-                for (int j = 0; j <= arr.Length - 4; j++)
+                for (int j = 0; j < arr[i].Length - 3; j++)
                 {
-                    // Diagonal nach rechts oben
-                    if (arr[i][j] == "X" && arr[i + 1][j + 1] == "X" && arr[i + 2][j + 2] == "X" && arr[i + 3][j + 3] == "X")
+                    for (int k = 0; k < 4; k++)
                     {
-                        player = "one";
-                        return true; }
+                        if (arr[i - k][j + k].Contains("X"))
+                        {
+                            countX++;
+                            countO = 0;
+                        }
+                        else if (arr[i - k][j + k].Contains("O"))
+                        {
+                            countO++;
+                            countX = 0;
+                        }
+                        else
+                        {
+                            countO = 0;
+                            countX = 0;
+                        }
 
-                    else if (arr[i][j] == "O" && arr[i + 1][j + 1] == "O" && arr[i + 2][j + 2] == "O" && arr[i + 3][j + 3] == "O")
-                    {
-                        player = "two";
-                        return true; }
+                        if (countX == 4)
+                        {
+                            player = "one";
+                            return true;
+                        }
+                        else if (countO == 4)
+                        {
+                            player = "two";
+                            return true;
 
-                    // Diagonal nach rechts unten
-                    if (arr[i + 3][j] == "X" && arr[i + 2][j + 1] == "X" && arr[i + 1][j + 2] == "X" && arr[i][j + 3] == "X")
-                    {
-                        player = "one";
-                        return true; }
+                        }
 
-                    else if (arr[i + 3][j] == "O" && arr[i + 2][j + 1] == "O" && arr[i + 1][j + 2] == "O" && arr[i][j + 3] == "O")
-                    {
-                        player = "two";
-                        return true; }
+                    }
                 }
+
             }
 
+            for (int i = arr.Length - 1; i >= arr.Length - 3; i--)
+            {
+                for (int j = arr[i].Length - 1; j > arr.Length - 4; j--)
+                {
+                    for (int k = 0; k < 4; k++)
+                    {
+                        if (arr[i - k][j - k].Contains("X"))
+                        {
+                            countX++;
+                            countO = 0;
+                        }
+                        else if (arr[i - k][j - k].Contains("O"))
+                        {
+                            countO++;
+                            countX = 0;
+                        }
+                        else
+                        {
+                            countO = 0;
+                            countX = 0;
+                        }
 
+                        if (countX == 4)
+                        {
+                            player = "one";
+                            return true;
+                        }
+                        else if (countO == 4)
+                        {
+                            player = "two";
+                            return true;
 
+                        }
 
+                    }
+                }
 
+            }
             return false;
-
         }
 
+
+
+
+
+
+
     }
+
 }
+
 
