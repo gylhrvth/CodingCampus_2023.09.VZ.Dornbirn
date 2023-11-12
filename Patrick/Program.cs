@@ -1,7 +1,7 @@
 ﻿
-using Patrick.Week07.TikTakToe;
+using Patrick.Week07.ForInARow;
 
-TicTacToe.Start();
+ForInARow.Start();
 
 
 

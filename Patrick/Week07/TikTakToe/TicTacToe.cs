@@ -9,7 +9,6 @@ namespace Patrick.Week07.TikTakToe
 {
     internal class TicTacToe
     {
-
         public static void Start()
         {
             //Symbole aus dem Ascii Code f. p1 und p2
@@ -26,37 +25,37 @@ namespace Patrick.Week07.TikTakToe
             DisplayBoard(board);
             while (true)
             {
-                int inputRow = InputRow();
+                int inputRow = InputRow(p1P2);
                 int inputColumn = InputColumn();
                 //Spieler 1
                 if (p1P2 == true)
                 {
-                    DisplayBoard(NextTurn(board, inputRow, inputColumn, player1));
-                    p1P2 = false;                    
+                    DisplayBoard(NextTurn(board, inputRow, inputColumn, player1));         
                     if (CheckWin(NextTurn(board, inputRow, inputColumn, player1), player1, player2) == true)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Gratuliere Spieler 1 hat gewonnen!");
                         Console.ResetColor();
-                        Thread.Sleep(800);
+                        Thread.Sleep(5000);
                         Console.Clear();
                         break;
                     }
+                    p1P2 = false;
                 }
                 //Spieler 2
                 else
                 {
                     DisplayBoard(NextTurn(board, inputRow, inputColumn, player2));
-                    p1P2 = true;
-                    if (CheckWin(NextTurn(board, inputRow, inputColumn, player1), player1, player2) == true)
+                    if (CheckWin(NextTurn(board, inputRow, inputColumn, player2), player1, player2) == true)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Gratuliere Spieler 2 hat gewonnen!");
                         Console.ResetColor();
-                        Thread.Sleep(800);
+                        Thread.Sleep(5000);
                         Console.Clear();
                         break;
                     }
+                    p1P2 = true;
                 }
             }
         }
@@ -99,32 +98,54 @@ namespace Patrick.Week07.TikTakToe
         {
             if (displayboard[inputRow - 1][inputCol] == ' ')
             {
+                Console.Clear();
                 displayboard[inputRow - 1][inputCol] = player;       //füllt mit player1 oder player2
             }
             else
             {
-                Console.WriteLine("Diese Zelle ist bereits belegt. Bitte wählen Sie eine andere.");
+                Console.WriteLine("Diese Zelle ist bereits belegt. Bitte wählen Sie eine andere.");     
             }
+
             return displayboard;
         }
 
-        static int InputRow()
+        static int InputRow(bool p1P2)
         {
             string inputRow = "0";
-            while (true)
+            if (p1P2 == true)
             {
-                Console.WriteLine("Bitte geben Sie eine Zahl für die Reihe an:");
-                Console.Write(">>>>>");
-                inputRow = Console.ReadLine();
-                if (inputRow == "1" || inputRow == "2" || inputRow == "3")
+                while (true)
                 {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Sie müssen eine Zahl zwischen 1 und 3 eingeben!");
+                    Console.WriteLine("Spieler 1 Sie sind am Zug, bitte geben Sie eine Zahl für die Reihe an:");
+                    Console.Write(">>>>>");
+                    inputRow = Console.ReadLine();
+                    if (inputRow == "1" || inputRow == "2" || inputRow == "3")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sie müssen eine Zahl zwischen 1 und 3 eingeben!");
+                    }
                 }
             }
+            else if (p1P2 == false)
+            {
+                while (true)
+                {
+                    Console.WriteLine("Spieler 2 Sie sind am Zug, bitte geben Sie eine Zahl für die Reihe an:");
+                    Console.Write(">>>>>");
+                    inputRow = Console.ReadLine();
+                    if (inputRow == "1" || inputRow == "2" || inputRow == "3")
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Sie müssen eine Zahl zwischen 1 und 3 eingeben!");
+                    }
+                }
+            }    
             return Convert.ToInt32(inputRow);
         }
 
