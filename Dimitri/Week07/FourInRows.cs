@@ -173,7 +173,7 @@ namespace Dimitri.Week07
             int countO = 0;
             int countX = 0;
 
-
+            //Horizontal
             for (int i = arr.Length - 1; i >= 0; i--)
             {
                 for (int j = 0; j < arr[i].Length; j++)
@@ -208,7 +208,7 @@ namespace Dimitri.Week07
 
                 }
             }
-
+            //Vertikal
             for (int j = 0; j < arr[0].Length; j++)
             {
                 for (int i = arr.Length - 1; i >= 0; i--)
@@ -243,106 +243,8 @@ namespace Dimitri.Week07
 
                 }
             }
-            //int i = arr.Length - 1;
-            //while (i >= 0)
-            //{
-            //    for (int j = 0; j < arr[i].Length; j++)
-            //    {
-            //        if (arr[i][j].Contains("X"))
-            //        {
-            //            countX++;
-            //            countO = 0;
-            //        }
-            //        else if (arr[i][j].Contains("O"))
-            //        {
-            //            countO++;
-            //            countX = 0;
-            //        }
-            //        else
-            //        {
-            //            countO = 0;
-            //            countX = 0;
-            //        }
-            //        i--;
 
-
-            //        if (countX == 4)
-            //        {
-            //            player = "one";
-            //            return true;
-            //        }
-            //        else if (countO == 4)
-            //        {
-            //            player = "two";
-            //            return true;
-
-            //        }
-            //    }
-            //}
-
-            //for (int i = arr.Length - 1; i >= 0; i--)
-            //{
-            //    for (int j = arr[i].Length - 1; j >= 0; j--)
-            //    {
-            //        while (i >= 0)
-            //        {
-            //            if (arr[i][j].Contains("X"))
-            //            {
-            //                countX++;
-            //                countO = 0;
-            //            }
-            //            else if (arr[i][j].Contains("O"))
-            //            {
-            //                countO++;
-            //                countX = 0;
-            //            }
-            //            else
-            //            {
-            //                countO = 0;
-            //                countX = 0;
-            //            }
-            //            i--;
-            //        }
-            //        if (countX == 4)
-            //        {
-            //            player = "one";
-            //            return true;
-            //        }
-            //        else if (countO == 4)
-            //        {
-            //            player = "two";
-            //            return true;
-
-            //        }
-            //    }
-            //}
-
-            //for (int i = 0; i <= arr.Length - 4; i++)
-            //{
-            //    for (int j = 0; j <= arr[i].Length - 4; j++)
-            //    {
-            //        // Diagonal nach rechts oben
-            //        if (arr[i][j] == "X" && arr[i + 1][j + 1] == "X" && arr[i + 2][j + 2] == "X" && arr[i + 3][j + 3] == "X")
-            //        {
-            //            player = "one";
-            //            return true; }
-
-            //        else if (arr[i][j] == "O" && arr[i + 1][j + 1] == "O" && arr[i + 2][j + 2] == "O" && arr[i + 3][j + 3] == "O")
-            //        {
-            //            player = "two";
-            //            return true; }
-
-            //        // Diagonal nach rechts unten
-            //        if (arr[i + 3][j] == "X" && arr[i + 2][j + 1] == "X" && arr[i + 1][j + 2] == "X" && arr[i][j + 3] == "X")
-            //        {
-            //            player = "one";
-            //            return true; }
-
-            //        else if (arr[i + 3][j] == "O" && arr[i + 2][j + 1] == "O" && arr[i + 1][j + 2] == "O" && arr[i][j + 3] == "O")
-            //        {
-            //            player = "two";
-            //            return true; }
-            //    }
+            //Diagonal rechts oben
             for (int i = arr.Length - 1; i >= arr.Length - 3; i--)
             {
                 for (int j = 0; j < arr[i].Length - 3; j++)
@@ -382,6 +284,7 @@ namespace Dimitri.Week07
 
             }
 
+            //Diagonal links oben
             for (int i = arr.Length - 1; i >= arr.Length - 3; i--)
             {
                 for (int j = arr[i].Length - 1; j > arr.Length - 4; j--)
@@ -423,14 +326,6 @@ namespace Dimitri.Week07
             return false;
         }
 
-
-
-
-
-
-
     }
 
 }
-
-
