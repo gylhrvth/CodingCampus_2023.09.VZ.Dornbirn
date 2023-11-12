@@ -7,7 +7,6 @@ namespace Fabian.Selftest_SP
         {
             TowersOfHanoiStart();
         }
-
         private static void TowersOfHanoiStart()
         {
             int size = ReadInt("How much layers should the tower have? (3 - 9): ", 3, 9);
@@ -20,9 +19,8 @@ namespace Fabian.Selftest_SP
                 int to = ReadInt("Where do you want to move the piece? (1-3): ", 1, 3);
                 while (from == to)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("You can't select the same tower twice!\n");
-                    Console.ResetColor();
+                    SetConsoleColor(ConsoleColor.Red, "You can't select the same tower twice!\n");
+                    from = ReadInt("Which tower do u want to select? (1-3): ", 1, 3);
                     to = ReadInt("Where do you want to move the piece? (1-3): ", 1, 3);
                 }
 
@@ -31,21 +29,17 @@ namespace Fabian.Selftest_SP
                 {
                     PrintBoard(board);
                     if (result == 0)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("That disc is too big!\n");
-                        Console.ResetColor();
-                    }
+                        SetConsoleColor(ConsoleColor.Red, "That disc is too big!\n");
+
                     if (CheckWin(board))
                     {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("You won! :)\n");
-                        Console.ResetColor();
+                        SetConsoleColor(ConsoleColor.Green, "You won! :)\n");
                         if (AskToPlayAgain()) TowersOfHanoiStart();
                         else return;
                     }
                 }
-                else Console.WriteLine("Invalid move. Please try again.");                
+                else
+                    SetConsoleColor(ConsoleColor.Red, "Invalid move!\n");
             }
         }
         private static int[,] InitializeBoard(int size)
@@ -60,7 +54,6 @@ namespace Fabian.Selftest_SP
         private static void PrintBoard(int[,] board)
         {
             Console.Clear();
-
             for (int i = 0; i < board.GetLength(1); i++)
             {
                 for (int j = 0; j < board.GetLength(0); j++)
@@ -79,12 +72,12 @@ namespace Fabian.Selftest_SP
             if (board[from, size] == 0) return null; // all elements in the tower are 0
 
             // get index of the first element that isnt 0 in the tower
-            int fistElementIndex = 0;
+            int firstElementIndex = 0;
             for (int i = 0; i < board.GetLength(1); i++)
             {
                 if (board[from, i] != 0)
                 {
-                    fistElementIndex = i;
+                    firstElementIndex = i;
                     break;
                 }
             }
@@ -94,24 +87,22 @@ namespace Fabian.Selftest_SP
                 // if last element in tower is 0, set it to the new value
                 if (board[to, size] == 0)
                 {
-                    board[to, size] = board[from, fistElementIndex];
+                    board[to, size] = board[from, firstElementIndex];
                     break;
                 }
-                // get first element that isnt 0 + set it to the new value
+                // get first element that isnt 0 + set the index - 1 to the new value
                 else if (board[to, i] != 0)
                 {
-                    if (board[from, fistElementIndex] > board[to, i])
-                    {
+                    if (board[from, firstElementIndex] > board[to, i])
                         return 0; // disc is too big
-                    }
                     else
                     {
-                        board[to, i - 1] = board[from, fistElementIndex];
+                        board[to, i - 1] = board[from, firstElementIndex];
                         break;
                     }
                 }
             }
-            board[from, fistElementIndex] = 0; // delete the used disc
+            board[from, firstElementIndex] = 0; // delete the used disc
             return 1; //succesfull
         }
         private static bool CheckWin(int[,] board)
@@ -121,19 +112,22 @@ namespace Fabian.Selftest_SP
                 bool win = true;
                 for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    // if there is a 0 the tower its not a win
+                    // if there is a 0 in the tower its not a win
                     if (board[i, j] == 0) 
                     {
                         win = false;
                         break;
                     }
                 }
-                if (win)
-                    return true;
+                if (win) return true;
             }
             return false;
-
+        }
+        public static void SetConsoleColor(ConsoleColor color, string message)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine(message);
+            Console.ResetColor();
         }
     }
-
 }

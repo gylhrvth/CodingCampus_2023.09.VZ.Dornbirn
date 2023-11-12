@@ -130,7 +130,7 @@ namespace Jovo.Week02
             long summ = 1;
             for (long i= 1; i <= number2; i++)
             {
-                summ = summ * i;
+                summ = summ + i;
 
             }
             return summ;

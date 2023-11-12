@@ -25,9 +25,11 @@ namespace Gheorghe.Week01
             //Square2("A", 3);
             // Slash("x", 3);
             // ForwardSlash("x", 7);
-            PrintPyramid("x", 8);
-
-
+            // PrintPyramid("x", 8);
+            //PrintRhombus("x", 7);
+            // PrintX("x", 7);
+            // ChristmasTree(16);
+            PrintCirclePythagoras("*", 10);
 
         }
         public static void Square(string symbol, int size)
@@ -244,40 +246,168 @@ namespace Gheorghe.Week01
             }
         }
 
-        
-        
-            public static void PrintPyramid(String character, int height)
-            {
-                if (height == 1)
-                {
-                    Console.WriteLine(character);
-                    return;
-                }
-                else if (height <= 0)
-                {
-                    return;
-                }
 
-                PrintChars(" ", height - 1);
+
+        public static void PrintPyramid(String character, int height)
+        {
+            if (height == 1)
+            {
                 Console.WriteLine(character);
-                for (int i = 1; i < height - 1; i++)
+                return;
+            }
+            else if (height <= 0)
+            {
+                return;
+            }
+
+            PrintChars(" ", height - 1);
+            Console.WriteLine(character);
+            for (int i = 1; i < height - 1; i++)
+            {
+                PrintChars(" ", height - i - 1);
+                Console.Write(character);
+                PrintChars(" ", i * 2 - 1);
+                Console.WriteLine(character);
+            }
+            PrintChars(character, height * 2 - 1);
+        }
+
+
+        public static void PrintRhombus(string symbol, int size)
+        {
+            for (int i = 0; i < 2 * size - 1; i++)
+            {
+                for (int j = 0; j < 2 * size - 1; j++)
                 {
-                    PrintChars(" ", height - i - 1);
-                    Console.Write(character);
-                    PrintChars(" ", i * 2 - 1);
-                    Console.WriteLine(character);
+                    if (i + j == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (i + size - 1 == j)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (i == j + size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else if (i + j == 3 * size - 3)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+
                 }
-                PrintChars(character, height * 2 - 1);
+                Console.WriteLine();
+
+            }
+
+        }
+
+        public static void PrintX(string symbol, int size)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    if (i == j || i + j == size - 1)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void ChristmasTree(int height)
+        {
+            int TreeLeaves = 1;
+            int Spaces = height - 1;
+            for (int i = 0; i < height; i++)
+            {
+                PrintSpaces(Spaces, " ");
+                PrintTree(TreeLeaves, "*");
+
+                TreeLeaves = TreeLeaves + 2;
+                Spaces = Spaces - 1;
             }
 
 
-    }
+            PrintBottomLeaves("0 ", height);
+
+            int WoodenTrunk = height / 2;
+            int TreeWidth = height * 2 - 1;
+            int TrunkHeight = height / 3 - 1;
+            int TrunkSpaces = TreeWidth / 2 - WoodenTrunk / 2;
 
 
+            for (int i = 0; i < TrunkHeight; i++)
+            {
+                PrintSpaces(TrunkSpaces, " ");
+                PrintTree(WoodenTrunk, "+ ");
+            }
 
+        }
+
+        static void PrintSpaces(int space, string text)
+        {
+            for (int i = 0; i < space; i++)
+            {
+                Console.Write(text);
+            }
+        }
+
+        static void PrintTree(int tree, string text)
+        {
+            PrintSpaces(tree, text);
+            Console.WriteLine();
+        }
+
+
+        static void PrintBottomLeaves(string text, int amount)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                Console.Write(text);
+            }
+            Console.WriteLine();
+        }
+
+        static void PrintCirclePythagoras(string text, int Radius)
+        {
+            for (int i = - Radius; i <= Radius; i++)
+            {
+                for (int j = - Radius; j <= Radius; j++)
+                {
+                    if ((i * i) + (j * j) <= Radius * Radius)
+                    {
+                        Console.Write(text);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+    }       
 
 }
-    
+        
+
+
+
+
 
 
 
