@@ -85,7 +85,7 @@ namespace Dimitri.Week07
                 Console.Write(">>>");
                 playerTurn = false;
             }
-
+ 
             string input = Console.ReadLine();
             int inputInt = int.MinValue;
             while (true)
@@ -112,13 +112,18 @@ namespace Dimitri.Week07
                 }
             }
 
+            Console.Clear();
             FindEmptyField(arr, inputInt, playerSymbol);
+
 
             if (!CheckIfPlayerWon(arr))
             {
-                Console.Clear();
+
+
                 Console.WriteLine("Four in a Row:");
+
                 PlayerAction(arr);
+
 
             }
             else if (CheckIfPlayerWon(arr))
@@ -138,7 +143,6 @@ namespace Dimitri.Week07
         }
         public static string[][] FindEmptyField(string[][] arr, int inputPlayer, string playerSymbol)
         {
-
             int i = arr.Length - 1;
             while (i >= 0)
             {
@@ -149,6 +153,14 @@ namespace Dimitri.Week07
                 }
                 else if (arr[0][inputPlayer].Contains(" ") == false)
                 {
+                    if (playerTurn)
+                    {
+                        playerTurn=false;
+
+                    } else
+                    {
+                        playerTurn = true;
+                    }
                     RowFull();
                     return arr;
                 }
