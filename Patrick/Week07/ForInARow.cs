@@ -14,19 +14,22 @@ namespace Patrick.Week07
     {
         public static void Start()
         {
-            //PrintMethod(Playground());
-            //NextTurn(Playground());
             string[][] playGround = Playground();
             bool p1P2 = true;
+            PrintMethod(playGround);
             while (true) 
-            {                
+            {
+                //changes bool to false --> stops loop!
+                IsPlaygroundFull(playGround);
+
+                //Player 1 
                 if (p1P2 == true)
                 {
                     PrintMethod(NextTurn(playGround, p1P2));
                     bool winVtk = CheckWinVertikal(playGround);
                     bool winHoz = CheckWinHorizontal(playGround);
                     bool winDia = CheckWinDiagonal(playGround);
-                    if (winVtk == true || winHoz == true ||winDia == true)
+                    if (winVtk == true || winHoz == true || winDia == true)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine("Gratulation Spieler 1, Sie haben gewonnen");
@@ -35,9 +38,11 @@ namespace Patrick.Week07
                     }
                     p1P2 = false;
                 }
-                else if(p1P2 == false) 
+
+                //Player 2 
+                else if (p1P2 == false)
                 {
-                    PrintMethod(NextTurn(playGround, p1P2));                   
+                    PrintMethod(NextTurn(playGround, p1P2));
                     bool winVtk = CheckWinVertikal(playGround);
                     bool winHoz = CheckWinHorizontal(playGround);
                     bool winDia = CheckWinDiagonal(playGround);
@@ -49,7 +54,7 @@ namespace Patrick.Week07
                         break;
                     }
                     p1P2 = true;
-                }
+                }              
             }
         }
 
@@ -149,6 +154,21 @@ namespace Patrick.Week07
                 }
             }
             return false;
+        }
+
+        public static bool IsPlaygroundFull(string[][] playgroung)
+        {
+            for(int i = 0;i < playgroung.Length; i++)
+            {
+                for(int j = 0; j < playgroung[i].Length + 1; j++)
+                {
+                    if (playgroung[i][j] == " ")
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         public static string[][] NextTurn(string[][] playground, bool pl1Pl2)
