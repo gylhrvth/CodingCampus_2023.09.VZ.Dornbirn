@@ -15,54 +15,11 @@ namespace Patrick.Week07.ForInARow
         public static void Start()
         {
             string[][] playGround = Playground();
-            bool p1P2 = true;
             PrintMethod(playGround);
-            while (true)
-            {
-                //Player 1 
-                if (p1P2 == true)
-                {
-                    PrintMethod(NextTurn(playGround, p1P2));
-                    bool winVtk = CheckWinVertikal(playGround);
-                    bool winHoz = CheckWinHorizontal(playGround);
-                    bool winDia = CheckWinDiagonal(playGround);
-                    if (winVtk == true || winHoz == true || winDia == true)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine("Gratulation Spieler 1, Sie haben gewonnen");
-                        Console.ResetColor();
-                        break;
-                    }
-                    p1P2 = false;
-                }
+            NextTurn(playGround);
 
-                //Player 2 
-                else if (p1P2 == false)
-                {
-                    PrintMethod(NextTurn(playGround, p1P2));
-                    bool winVtk = CheckWinVertikal(playGround);
-                    bool winHoz = CheckWinHorizontal(playGround);
-                    bool winDia = CheckWinDiagonal(playGround);
-                    if (winVtk == true || winHoz == true || winDia == true)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Gratulation Spieler 2, Sie haben gewonnen");
-                        Console.ResetColor();
-                        break;
-                    }
-                    p1P2 = true;
-                }
-            }
-            Thread.Sleep(5000);
-            Console.Clear();
+
         }
-
-        public static bool IsColumnFull(string[][] playground, int column)
-        {
-            // Überprüfen, ob die oberste Position in der Spalte belegt ist
-            return playground[0][column - 1] != "   ";
-        }
-
 
         public static string[][] Playground()
         {
@@ -83,6 +40,11 @@ namespace Patrick.Week07.ForInARow
             return playground;
         }
 
+        public static bool IsColumnFull(string[][] playground, int column)
+        {
+            // Überprüfen, ob die oberste Position in der Spalte belegt ist
+            return playground[0][column] != "   ";
+        }
 
         public static void PrintMethod(string[][] playground)
         {
@@ -164,11 +126,12 @@ namespace Patrick.Week07.ForInARow
             return false;
         }
 
+        public static bool P1P2 = true;
 
-        public static string[][] NextTurn(string[][] playground, bool pl1Pl2)
+        public static string[][] NextTurn(string[][] playground)
         {
             //Spieler 1
-            if (pl1Pl2 == true)
+            if (P1P2 == true)
             {
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine("Spieler 1, Sie sind am Zug! Geben Sie die Spalte als Zahl an:");
@@ -184,7 +147,19 @@ namespace Patrick.Week07.ForInARow
                 else if (input == 6) { FillPosition(playground, " X ", input); }
                 else { FillPosition(playground, " X ", input); }
 
-                Console.Clear();                                                    //für das Reseten der Console, dh. der vorherige Zug wird hier aus der Console gelöscht!               
+                PrintMethod(playground);
+
+                if (CheckWinDiagonal(playground) == true || CheckWinHorizontal(playground) == true || CheckWinVertikal(playground) == true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Gratulation Spieler 1, Sie haben gewonnen!");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    P1P2 = false;
+                    NextTurn(playground);
+                }
                 return playground;
             }
 
@@ -196,7 +171,7 @@ namespace Patrick.Week07.ForInARow
                 Console.ResetColor();
 
                 int input = ReadNumberRange(playground);
-               
+
                 if (input == 1) { FillPosition(playground, " O ", input); }
                 else if (input == 2) { FillPosition(playground, " O ", input); }
                 else if (input == 3) { FillPosition(playground, " O ", input); }
@@ -205,17 +180,28 @@ namespace Patrick.Week07.ForInARow
                 else if (input == 6) { FillPosition(playground, " O ", input); }
                 else { FillPosition(playground, " O ", input); }
 
-                Console.Clear();                                                    //für das Reseten der Console, dh. der vorherige Zug wird hier aus der Console gelöscht!
+                PrintMethod(playground);
+
+                if (CheckWinDiagonal(playground) == true || CheckWinHorizontal(playground) == true || CheckWinVertikal(playground) == true)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("Gratulation Spieler 2, Sie haben gewonnen!");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    P1P2 = true;
+                    NextTurn(playground);
+                }
                 return playground;
             }
         }
 
         public static int ReadNumberRange(string[][] playground)
         {
-            int input = 0;
             while (true)
             {
-                input = ReadNumberRow();
+                int input = ReadNumberRow();
                 if (input <= 0 || input > playground.Length + 1)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -239,7 +225,7 @@ namespace Patrick.Week07.ForInARow
                 {
                     return Convert.ToInt32(input);
                 }
-                catch (Exception)
+                catch (FormatException)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
                     Console.WriteLine($"\"{input}\" ist keine Zahl, bitte nocheinmal versuchen");
@@ -250,32 +236,32 @@ namespace Patrick.Week07.ForInARow
 
         public static string[][] FillPosition(string[][] playground, string symbol, int input)
         {
-            if (playground[playground.Length - 1][input - 1] == "   ")
+            int column = input - 1;
+
+            if (!IsColumnFull(playground, column))
             {
-                playground[playground.Length - 1][input - 1] = symbol;
+                // Füge das Symbol in die Spalte ein
+                for (int i = playground.Length - 1; i >= 0; i--)
+                {
+                    if (playground[i][column] == "   ")
+                    {
+                        playground[i][column] = symbol;
+                        Console.Clear();                            //Für einen neuen Spielzug
+                        return playground;
+                    }
+                }
             }
-            else if (playground[playground.Length - 1][input - 1] == " X " && playground[playground.Length - 2][input - 1] == "   " || playground[playground.Length - 1][input - 1] == " O " && playground[playground.Length - 2][input - 1] == "   ")
+            else
             {
-                playground[playground.Length - 2][input - 1] = symbol;
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"Die Spalte {input} ist voll, bitte wählen Sie eine andere Spalte!");
+                Console.ResetColor();
+                NextTurn(playground);
             }
-            else if (playground[playground.Length - 2][input - 1] == " X " && playground[playground.Length - 3][input - 1] == "   " || playground[playground.Length - 2][input - 1] == " O " && playground[playground.Length - 3][input - 1] == "   ")
-            {
-                playground[playground.Length - 3][input - 1] = symbol;
-            }
-            else if (playground[playground.Length - 3][input - 1] == " X " && playground[playground.Length - 4][input - 1] == "   " || playground[playground.Length - 3][input - 1] == " O " && playground[playground.Length - 4][input - 1] == "   ")
-            {
-                playground[playground.Length - 4][input - 1] = symbol;
-            }
-            else if (playground[playground.Length - 4][input - 1] == " X " && playground[playground.Length - 5][input - 1] == "   " || playground[playground.Length - 4][input - 1] == " O " && playground[playground.Length - 5][input - 1] == "   ")
-            {
-                playground[playground.Length - 5][input - 1] = symbol;
-            }
-            else if (playground[playground.Length - 5][input - 1] == " X " && playground[playground.Length - 6][input - 1] == "   " || playground[playground.Length - 5][input - 1] == " O " && playground[playground.Length - 6][input - 1] == "   ")
-            {
-                playground[playground.Length - 6][input - 1] = symbol;
-            }
+            Console.Clear();
             return playground;
         }
+      
     }
 }
 
