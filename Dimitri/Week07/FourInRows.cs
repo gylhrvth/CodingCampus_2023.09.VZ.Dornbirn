@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dimitri.Week07
 {
@@ -85,32 +86,9 @@ namespace Dimitri.Week07
                 Console.Write(">>>");
                 playerTurn = false;
             }
- 
-            string input = Console.ReadLine();
-            int inputInt = int.MinValue;
-            while (true)
-            {
-                try
-                {
-                    inputInt = Convert.ToInt32(input);
-                }
-                catch (FormatException fe)
-                {
-                    Console.WriteLine("Input not allowed. Type in a number between 0 and 6:");
-                    Console.Write(">>>");
-                    input = Console.ReadLine();
-                }
-                if (inputInt > 6 || inputInt < 0)
-                {
-                    Console.WriteLine("Input not allowed. Type in a number between 0 and 6:");
-                    Console.Write(">>>");
-                    input = Console.ReadLine();
-                }
-                else
-                {
-                    break;
-                }
-            }
+
+
+            int inputInt = CheckAndReturnPlayerInput("Input not allowed.Type in a number between 0 and 6:", 0, 6);
 
             Console.Clear();
             FindEmptyField(arr, inputInt, playerSymbol);
@@ -141,6 +119,37 @@ namespace Dimitri.Week07
 
             return arr;
         }
+
+        public static int CheckAndReturnPlayerInput(string onError, int lowerEnd, int upperEnd)
+        {
+            string input = Console.ReadLine();
+            int inputInt = int.MinValue;
+            while (true)
+            {
+                try
+                {
+                    inputInt = Convert.ToInt32(input);
+                }
+                catch (FormatException fe)
+                {
+                    Console.WriteLine("{0}", onError);
+                    Console.Write(">>>");
+                    input = Console.ReadLine();
+                }
+                if (inputInt > upperEnd || inputInt < lowerEnd)
+                {
+                    Console.WriteLine("{0}", onError);
+                    Console.Write(">>>");
+                    input = Console.ReadLine();
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return inputInt;
+        }
+
         public static string[][] FindEmptyField(string[][] arr, int inputPlayer, string playerSymbol)
         {
             int i = arr.Length - 1;
@@ -220,6 +229,8 @@ namespace Dimitri.Week07
 
                 }
             }
+            countO = 0;
+            countX = 0;
             //Vertikal
             for (int j = 0; j < arr[0].Length; j++)
             {
@@ -255,6 +266,8 @@ namespace Dimitri.Week07
 
                 }
             }
+            countO = 0;
+            countX = 0;
 
             //Diagonal rechts oben
             for (int i = arr.Length - 1; i >= arr.Length - 3; i--)
@@ -295,6 +308,8 @@ namespace Dimitri.Week07
                 }
 
             }
+            countO = 0;
+            countX = 0;
 
             //Diagonal links oben
             for (int i = arr.Length - 1; i >= arr.Length - 3; i--)
