@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fabienne.Week06
+namespace Niklas.Week07.Krankenhaus
 {
-    public class AufgabenOO
+    internal class Warteraum
     {
-        public static void Start()
-        {
-
-        }
     }
 }

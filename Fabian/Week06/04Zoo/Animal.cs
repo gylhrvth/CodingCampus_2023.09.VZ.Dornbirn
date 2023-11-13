@@ -17,25 +17,10 @@
             get => _Name;
             set => _Name = value;
         }
-        public string Species
-        {
-            get => _Species;
-            set => _Species = value;
-        }
         public List<Food> FoodList
         {
             get => _FoodList;
             set => _FoodList = value;
-        }
-        public Food Food
-        {
-            get => _Food;
-            set => _Food = value;
-        }
-        public int FoodCount
-        {
-            get => _FoodCount;
-            set => _FoodCount = value;
         }
         public int MaxHealth
         {
