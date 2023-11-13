@@ -11,12 +11,19 @@ namespace Simon.Week06.Zoo3
         private string _Name;
         private int _FoundingYear;
         private List<Enclosure> _EnclosureList;
+        private List<Zookeeper> _ZookeeperList;
+        private List<AnimalDoctor> _AnimalDoctorList;
+        private List<Animals> _AnimalsList;
+        
 
         public Zoo(string name, int foundingYear)
         {
             _Name = name;
             _FoundingYear = foundingYear;
             _EnclosureList = new();
+            _ZookeeperList = new();
+            _AnimalDoctorList = new();
+            _AnimalsList = new();            
         }
 
         public void AddEnclosure(Enclosure enclosure)
@@ -24,12 +31,30 @@ namespace Simon.Week06.Zoo3
             _EnclosureList.Add(enclosure);
         }
 
+        public void AddZookeeper(Zookeeper zookeeper)
+        {
+            _ZookeeperList.Add(zookeeper);
+        }
+
+        public void AddAnimalDoctor(AnimalDoctor animalDoctor)
+        {
+            _AnimalDoctorList.Add(animalDoctor);
+        }
+
         public void PrintZoo()
         {
             Console.WriteLine("├── Zoo: {0}, gegründet {1}", _Name, _FoundingYear);
-            foreach(Enclosure enclosure in _EnclosureList)
+            foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.PrintEnclosure();
+            }
+            foreach (Zookeeper zookeeper in _ZookeeperList)
+            {
+                zookeeper.PrintZookeeper();
+            }
+            foreach (AnimalDoctor animalDoctor in _AnimalDoctorList)
+            {
+                animalDoctor.PrintAnimalDocotor();
             }
         }
 
@@ -39,23 +64,59 @@ namespace Simon.Week06.Zoo3
 
             double foodammount = 0;
             double foodsumm = 0;
-            foreach(Enclosure enclosure in _EnclosureList)
+            foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.GetFoodAnimals(dic);
             }
-            foreach(AnimalFood animalFood in dic.Keys)
+            foreach (AnimalFood animalFood in dic.Keys)
             {
                 foodammount += dic[animalFood];
-                Console.WriteLine("{0} wird {1} mal benötigt und kostet pro {3} {2}",animalFood.Name, dic[animalFood], animalFood.PriceperUnit, animalFood.Unit);
+                //Console.WriteLine("{0} wird {1} mal benötigt und kostet pro {3} {2}", animalFood.Name, dic[animalFood], animalFood.PriceperUnit, animalFood.Unit);
                 foodsumm += dic[animalFood] * animalFood.PriceperUnit;
             }
-            Console.WriteLine("Kosten für Futterbedarf pro Tag: {0}", foodsumm);
-            
-
+            Console.WriteLine("Kosten für Futterbedarf für diesen Tag: {0}€", foodsumm);
 
         }
 
+        public void PrintFight()
+        {
+            foreach (Enclosure enclosure in _EnclosureList)
+            {
+                enclosure.FightandBite();
+            }
+        }
+        public void FoodReset()
+        {
+            foreach (Enclosure enclosure in _EnclosureList)
+            {
+                enclosure.Wasfed = false;
+            }
+        }
+
+        public void FillListAnimals()
+        {
+            foreach(Enclosure enclosure in _EnclosureList)
+            {
+                enclosure.FillListAnimals();
+            }
+        }
+
+        public double CalcLowestHP()
+        {
+            double lowesthp = 100;
+            for (int i = 0; i < _AnimalsList.Count; i++)
+            {
+                double percentHP = (_AnimalsList[i].Health / _AnimalsList[i].MaxHealth) * 100;
+                if (lowesthp > percentHP)
+                {
+                    lowesthp = percentHP;
+                }
+            }
+            return lowesthp;
+        }
+
+
+
+
     }
-
-
 }
