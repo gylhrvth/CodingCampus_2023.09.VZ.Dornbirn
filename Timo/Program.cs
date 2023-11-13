@@ -11,4 +11,4 @@ using Timo.Week06._04Zoo;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-Arrays.Start();
+ZooMain.Start();

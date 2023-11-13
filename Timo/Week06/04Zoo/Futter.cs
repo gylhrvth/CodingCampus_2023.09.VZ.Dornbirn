@@ -19,7 +19,6 @@ namespace Timo.Week06._04Zoo
             _PricePerUnit = pricePerUnit;
         }
 
-
         public String Name
         {
             get => _Name;
@@ -35,7 +34,6 @@ namespace Timo.Week06._04Zoo
             get => _PricePerUnit;
             set => _PricePerUnit = value;
         }
-
 
         public void PrintFood(int _FoodCount)
         {

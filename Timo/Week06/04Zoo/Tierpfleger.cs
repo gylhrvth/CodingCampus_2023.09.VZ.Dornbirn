@@ -12,42 +12,36 @@ namespace Timo.Week06._04Zoo
         private string _Name;
         private List<Gehege> _Gehege = new();
         private string _BeobachtTier;
+        private Tier _Lieblingstier ;
 
-
-
-        public Tierpfleger(string name, List<Gehege> zugewieseneGehege)
+        public Tierpfleger(string name, List<Gehege> zugewieseneGehege, Tier lieblingstier = null)
         {
             _Name = name;
             _Gehege = zugewieseneGehege;
-            _BeobachtTier = BeobachtTier;
+            //_BeobachtTier = BeobachtTier;
+            _Lieblingstier = lieblingstier;
         }
         public List<Gehege> Gehege
         {
             get => _Gehege;
             set => _Gehege = value;
         }
-        public string Name
-        {
-            get => _Name;
-            set => _Name = value;
-        }
-        public string BeobachtTier
-        {
-            get => _BeobachtTier;
-            set => _BeobachtTier = value;
-        }
-
+        //public string BeobachtTier
+        //{
+        //    get => _BeobachtTier;
+        //    set => _BeobachtTier = value;
+        //}
 
         public void PrintTierpfleger()
         {
             Console.WriteLine("│\t├── Pfleger: {0}", _Name);
-            for (int i = 0; i < _Gehege.Count; i++)
-            {
-                _Gehege[i].PrintGehege();
-            }
+            //for (int i = 0; i < _Gehege.Count; i++)
+            //{
+            //    _Gehege[i].PrintGehege();
+            //}
         }
 
-        public void Füttern()
+        public void Fuettern()
         {
             Random random = new Random();
             for (int i = 0; i < _Gehege.Count; i++)
@@ -62,10 +56,16 @@ namespace Timo.Week06._04Zoo
                     Console.WriteLine("Das Gehege {0} wurde bereits gefüttert {1} hat hier nichts mehr zu tun", Gehege[i].Description, _Name);
                 }
                 int r = random.Next(Gehege.Count - 1);
-                BeobachtTier = Gehege[r].Tier[random.Next(Gehege[r].Tier.Count)].Name;
+                if (_Lieblingstier != null && _Lieblingstier.Alive == true) 
+                {
+                _BeobachtTier= _Lieblingstier.Name;
+                }
+                else
+                {
+                    _BeobachtTier = Gehege[r].Tier[random.Next(Gehege[r].Tier.Count)].Name;
+                }
             }
-            Console.WriteLine("beobachtet {0}", BeobachtTier);
+            Console.WriteLine("{1} beobachtet: {0}", _BeobachtTier, _Name);
         }
-
     }
 }
