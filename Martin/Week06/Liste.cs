@@ -17,8 +17,8 @@ namespace Martin.Week06
             List<int> Inventar = CreateList(0, 99, 5);
             List<int> Inventar2 = CreateList(0, 99, 10);
 
-            SotierenAbsteigend(Inventar);
-            SotierenAbsteigend(Inventar2);
+            SortierenAbsteigend(Inventar);
+            SortierenAbsteigend(Inventar2);
 
             //List<int> NeueListe = ZählenVonGeradenZahlen(Inventar);
             //ZählenVonGeradenZahlen(Inventar);
@@ -31,13 +31,18 @@ namespace Martin.Week06
             //SotierenAbsteigend(OrginalListe);
 
             PrintList(OrginalListe);
-            //Person20();
+            //List<PersonAufgabe> pers = new List<PersonAufgabe>();
+            //pers= Person20();
+            //foreach (PersonAufgabe p in pers) {Console.WriteLine(p); }
+
+            Person20();
         }
 
         public static List<int> CreateList(int min, int max, int size)
         {
+            
             Random rand = new Random();
-            List<int> Inventar = new List<int>();
+            List<int> Inventar = new List<int>();// empty list
 
             for (int i = 0; i < size; i++)
             {
@@ -118,7 +123,7 @@ namespace Martin.Week06
             return Max;
         }
 
-        public static void SotierenAbsteigend(List<int> Inventar)
+        public static void SortierenAbsteigend(List<int> Inventar)
         {
             for(int i = 0; i < Inventar.Count; i++)
             {
@@ -175,22 +180,50 @@ namespace Martin.Week06
             }
             return OrginalList;
         }
-        public static List<PersonAufgabe> Person20()
+        public static void Person20()
         {
             List<PersonAufgabe> Personen = new List<PersonAufgabe>();
 
             PersonAufgabe person = new PersonAufgabe(150, 12, "Martin", 23);
-            PersonAufgabe person2 = new PersonAufgabe(1320, 22, "lukas", 23);
+            PersonAufgabe person2 = new PersonAufgabe(13, 22, "lukas", 23);
+            PersonAufgabe person3 = new PersonAufgabe(1520, 22, "fabienne", 23);
+           
             Personen.Add(person);
+            Personen.Add(person2);
+            Personen.Add(person3);
 
-            for(int i = 0; i < Personen.Count - 1; i++)
+            //for (int i = 0; i < Personen.Count-1; i++)
+            //{
+            //    if (Personen[i].Groesse > Personen[i + 1].Groesse)
+            //    {
+            //        Console.WriteLine(Personen[i].Name + " ist grösser als" + Personen[i + 1].Name);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(Personen[i].Name + " ist kleiner als" + Personen[i + 1].Name);
+            //    }
+            //}
+
+
+            int Min = Int32.MaxValue;
+
+
+            for (int i = 0; i < Personen.Count; i++)
             {
-                if (Personen[i].Groesse > Personen[i + 1].Groesse)
+                if (Personen[i].Groesse < Min) // checken ob die randomzahl kleiner ist als das minium wenn ja ist sie das neue min
                 {
-                    Console.WriteLine(Personen[i].Name + "ist grösser als" + Personen[i + 1].Name);
+                    Min = Personen[i].Groesse;
                 }
-            }        
-            return Personen;
+            }
+
+            int summe = 0;
+            foreach(PersonAufgabe p  in Personen)
+            {
+                summe = summe + p.Groesse;
+            }
+            double avg = summe / Personen.Count;
+          
+           
         }
     }
 }

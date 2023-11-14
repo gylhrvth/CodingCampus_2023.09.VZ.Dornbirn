@@ -19,7 +19,7 @@ namespace Erik.Week06
             RandomList2 = SortRandomList(RandomList2);
             PrintListWithIndex(RandomList2);
 
-            List<int> finalList = MergeList(RandomList1 ,RandomList2);
+            List<int> finalList = MergeList(RandomList1, RandomList2);
             PrintListWithIndex(finalList);
         }
 
@@ -73,19 +73,24 @@ namespace Erik.Week06
             int j = 0;
             int k = 0;
             List<int> finalList = new List<int>();
+
             for (int i = 0; i < sortedList1.Count + sortedList2.Count; i++)
             {
-                if (sortedList1[j] > sortedList2[k])
+                while (sortedList1[j] < sortedList2[j])
                 {
-                    finalList.Add(sortedList1[j]);
-                    j++;
+                    if (sortedList1[j] > sortedList2[j])
+                    {
+                        finalList.Add(sortedList1[j]);
+                        j++;
+                    }
+                    else
+                    {
+                        finalList.Add(sortedList2[k]);
+                        k++;
+                    }
+
                 }
-                else
-                {
-                    finalList.Add(sortedList2[k]);
-                    k++;
-                }
-                
+
             }
 
             return finalList;

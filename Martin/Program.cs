@@ -9,7 +9,8 @@ using Martin.Week06.Person;
 //Console.WriteLine(Trainer.Name);
 
 //PersonAufgabe person = new PersonAufgabe(182, 23, "Sandro", 90);
-Martin.Week06.Person2.Start();
+Martin.Week07.ZooExample.Start();
+//Martin.Week06.Liste.Start();
 
 
 
