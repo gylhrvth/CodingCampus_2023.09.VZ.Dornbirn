@@ -4,6 +4,7 @@ using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -144,10 +145,10 @@ namespace Dimitri.Week06._05Zoo
         }
 
         private static Random random = new Random();
-        public void Simulation()
+        public void Simulation0()
         {
             Dictionary<Gehege, bool> GehegeGefuettert = new();
-            Console.WriteLine("Simulation von {0}:", _Zoo);
+            Console.WriteLine("Simulation 0.1 von {0}:", _Zoo);
             foreach (Waerter waerter in Waerter)
             {
                 Console.WriteLine();
@@ -161,7 +162,8 @@ namespace Dimitri.Week06._05Zoo
                         int i = random.Next(0, gehege.Tiere.Count);
                         waerter.AddLieblingstier(waerter, gehege.Tiere[i]);
                         Console.WriteLine("{0} beobachtet {1} nach dem fuettern.", waerter, waerter.LieblingsTier.Name);
-                    } else if (gehege.Tiere.Count == 0)
+                    }
+                    else if (gehege.Tiere.Count == 0)
                     {
                         Console.WriteLine("{0} sieht, dass das {1} leer ist und geht weiter.", waerter, gehege);
                     }
@@ -174,5 +176,73 @@ namespace Dimitri.Week06._05Zoo
             }
         }
 
+        public void Simulation1()
+        {
+            Console.WriteLine("Simulation 0.2 von {0}:", _Zoo);
+            Console.WriteLine();
+
+            while (true)
+            {
+                foreach (Gehege gehege in Gehege)
+                {
+                    foreach (Tier tier in gehege.Tiere)
+                    {
+                        foreach (Tier anderesTier in gehege.Tiere)
+                        {
+                            if (random.Next(0, 10) <= 3 && gehege.Tiere.Count >= 2 && tier != anderesTier && !anderesTier.Tot && !tier.Tot)
+                            {
+                                Console.WriteLine("{0} hat {1} hp.", tier.Name, tier.Gesundheit);
+                                Console.WriteLine("{0} beißt {1} und {1} nimmt {2} Schaden.", anderesTier, tier, anderesTier.Biss);
+                                tier.ChangeHealth(tier, anderesTier.Biss);
+                                if (tier.Tot)
+                                {
+                                    Console.WriteLine("{0} ist tot.", tier);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("{0} hat jetzt {1} hp.", tier.Name, tier.Gesundheit);
+                                }
+                                Console.WriteLine();
+                            }
+
+                        }
+                    }
+
+                }
+
+                if (random.Next(1, 7) == 6)
+                {
+                    break;
+                }
+
+            }
+
+            if (GetDeadAnimal() != null)
+            {
+                Console.WriteLine("{0} wird von einem Waerter weggeräumt.", GetDeadAnimal());
+            }
+
+
+
+        }
+        public Tier GetDeadAnimal()
+        {
+            Tier deadAnimal = null;
+
+            foreach (Gehege gehege in _Gehege)
+            {
+                foreach (Tier tier in gehege.Tiere)
+                {
+                    if (tier.Tot)
+                    {
+                        deadAnimal = tier;
+                        return deadAnimal;
+                    }
+
+                }
+            }
+
+            return deadAnimal;
+        }
     }
 }
