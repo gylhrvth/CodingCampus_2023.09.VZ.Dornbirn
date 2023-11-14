@@ -19,8 +19,11 @@ namespace Niklas.Week06.Zoo
         private string _Gender;
         private string _Hunger;
         private List<Food> _Food;
+        private bool _Biss;
+        private int _Health;
+        private int _Maxhealth;
 
-        public Animals(string name, int age, string genus, string gender, string hunger)
+        public Animals(string name, int age, string genus, string gender, string hunger, int health, bool Biss)
         {
             _Name = name;
             _Age = age;
@@ -28,6 +31,40 @@ namespace Niklas.Week06.Zoo
             _Gender = gender;
             _Food = new List<Food>();
             _Hunger = hunger;
+            _Health = health;
+            _Maxhealth = 100;
+            _Biss = Biss;
+        }
+
+        public string Name
+        {
+            get => _Name;
+            set
+            {
+                _Name = value;
+            }
+        }
+        public bool Biss
+        {
+            get => _Biss;
+            set
+            {
+                Console.WriteLine($"{_Name} wurde gebissen!");
+                _Biss = value;
+            }
+        }
+        public int Health
+        {
+            get => _Health;
+            set
+            {
+                Console.WriteLine($"{_Name}s health is {value}");
+                _Health = value;
+            }
+        }
+        public int Maxhealth
+        {
+            get => _Maxhealth;
         }
 
         public void AddFood(Food food)
