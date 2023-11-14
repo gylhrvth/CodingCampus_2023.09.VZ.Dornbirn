@@ -18,25 +18,21 @@ namespace Patrick.Week06.Zoo
         public List<Enclosure> EnclosureList
         {
             get => _EnclosureList;
-            set => _EnclosureList = value;
         }
 
         public List<ZooKeeper> ZooKeeperList
         {
             get => _ZooKeeperList;
-            set => _ZooKeeperList = value;
         }
 
         public string Name
         {
             get => _Name;
-            set => _Name = value;
         }
 
         public string FoundingYear
         {
             get => _FoundingYear;
-            set => _FoundingYear = value;
         }
 
         //Konstruktor
