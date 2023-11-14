@@ -49,6 +49,11 @@ namespace Dimitri.Week06._05Zoo
             }
         }
 
+        public void ToString()
+        {
+            Console.WriteLine("{0}", _Name);
+        }
+
         public bool IsNull()
         {
             bool isNullorEmpty = false;
