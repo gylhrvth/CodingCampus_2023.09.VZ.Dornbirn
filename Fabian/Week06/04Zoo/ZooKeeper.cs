@@ -8,12 +8,7 @@
         private string _Name;
         private List<Enclosure> _Enclosures = new();
         private Animal _FavouriteAnimal;
-
-        public string Name
-        {
-            get => _Name;
-            set => _Name = value;
-        }
+       
         public List<Enclosure> Enclosures
         {
             get => _Enclosures;

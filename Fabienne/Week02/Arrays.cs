@@ -95,12 +95,12 @@ namespace Fabienne.Week02
             //PrintArray(arr4);
             //InsertionSort(arr4);
 
-            //int[,] arr5 = new int[7, 8];
-            //int[,] rand2dArray = CreateRandom2DArray();
+            int[,] arr5 = new int[7, 8];
+            int[,] rand2dArray = CreateRandom2DArray();
 
-            //PrintTwoDeeArray(rand2dArray);
+            PrintTwoDeeArray(rand2dArray);
 
-           // int[,] arr7 = CreatePascalDreieck();
+            //int[,] arr7 = CreatePascalDreieck();
            // PrintPascalTrinangle(arr7);
         }
         public static int[] NumberArray()
@@ -478,7 +478,7 @@ namespace Fabienne.Week02
                 Console.WriteLine();
             }
         }
-        public static int[,] CreatePascalDreieck(int size = 0)          // - geht noch nicht und 0.irgendwas auch nicht
+        public static int[,] CreatePascalDreieck(int size = 0)          
         {
             while (size < 1)
             {                
@@ -492,7 +492,7 @@ namespace Fabienne.Week02
                     Console.WriteLine("Thats not a number ");
                 }
             }
-
+            
             int[,] arr = new int[size, size];           
             for (int i = 0; i < arr.GetLength(0); i++)
             {

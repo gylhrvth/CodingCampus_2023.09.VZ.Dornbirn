@@ -197,9 +197,12 @@ namespace Sven.Week05
 
         public static void ReverseString()
         {
-            Console.WriteLine("Wilkommen zum Reverse Programm!");
-            string input = Console.ReadLine();
-            char[] mychar = input.ToCharArray();
+
+            
+                Console.WriteLine("Wilkommen zum Reverse Programm!");
+                string input = Console.ReadLine();
+                char[] mychar = input.ToCharArray();
+           
 
 
             Array.Reverse(mychar);

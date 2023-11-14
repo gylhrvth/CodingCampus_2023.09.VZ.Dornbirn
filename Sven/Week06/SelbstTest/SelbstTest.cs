@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.ExceptionServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace Sven.Week06.SelbstTest
 {
     internal class SelbstTest
     {
+
+        public static Random random = new Random();
+
         public static void Start()
         {
             Console.WriteLine("Schleifen 1:");
@@ -68,14 +66,42 @@ namespace Sven.Week06.SelbstTest
             Console.WriteLine(Getmin(arr));
             Console.WriteLine(Getmax(arr));
             Console.WriteLine(Getavg(arr));
+
             Console.WriteLine("\n2:");
             Console.WriteLine(Getmin(arr2));
             Console.WriteLine(Getmax(arr2));
             Console.WriteLine(Getavg(arr2));
+
             Console.WriteLine("\n3:");
             Console.WriteLine(Getmin(arr3));
             Console.WriteLine(Getmax(arr3));
             Console.WriteLine(Getavg(arr3));
+            Console.WriteLine();
+
+            Console.WriteLine("Arrays 3:");
+            Printarray();
+            Console.WriteLine();
+
+            int[] randarr = Randomarray(20);
+
+            Console.WriteLine("Arrays 4 Up:");
+            SortUp(randarr);
+            Console.WriteLine();
+
+            Console.WriteLine("Arrays 4 Down:");
+            SortDown(randarr);
+            Console.WriteLine();
+
+            Console.WriteLine("Arrays2D:");
+            Array2D(0);
+            Console.WriteLine();
+
+            Console.WriteLine("Kalender 1:");
+            Kalender();
+            Console.WriteLine();
+
+            Console.WriteLine("Arrays2D:");
+            Print2DArray(Array2D(0));
             Console.WriteLine();
         }
 
@@ -200,7 +226,7 @@ namespace Sven.Week06.SelbstTest
             return number;
         }
 
-        public static void Input1()
+        private static void Input1()
         {
 
             string inputString = ReadString();
@@ -221,7 +247,7 @@ namespace Sven.Week06.SelbstTest
             return combinedString;
         }
 
-        public static int Getmin(int[] arr)
+        private static int Getmin(int[] arr)
         {
             int min = int.MaxValue;
 
@@ -230,12 +256,12 @@ namespace Sven.Week06.SelbstTest
                 if (i < min)
                 {
                     min = i;
-                }               
+                }
             }
             return min;
         }
 
-        public static int Getmax(int[] arr)
+        private static int Getmax(int[] arr)
         {
             int max = int.MinValue;
 
@@ -249,7 +275,7 @@ namespace Sven.Week06.SelbstTest
             return max;
         }
 
-        public static double Getavg(int[] arr)
+        private static double Getavg(int[] arr)
         {
             int sum = 0;
             foreach (int i in arr)
@@ -261,9 +287,153 @@ namespace Sven.Week06.SelbstTest
 
         }
 
+        private static int[] FillArray(int count)
+        {
+            int[] newArray = new int[count + 1];
+            for (int i = 0; i <= count; i++)
+            {
+                newArray[i] = i;
+            }
+            return newArray;
+        }
+
+        private static void Printarray()
+        {
+
+            int count = 10;
+            int[] resultArray = FillArray(count);
+
+            Console.WriteLine("Ausgabe mit for:");
+            for (int i = 0; i < resultArray.Length; i++)
+            {
+                Console.Write(resultArray[i] + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Ausgabe mit foreach:");
+            foreach (int num in resultArray)
+            {
+                Console.Write(num + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Ausgabe string.Join:");
+            Console.WriteLine("[{0}]", string.Join(", ", resultArray));
+
+        }
+
+        private static int[] Randomarray(int size)
+        {
+            int[] arr = new int[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = random.Next(101);
+
+            }
+            return arr;
+        }
+
+        private static int[] SortUp(int[] arr)
+        {
+            int temp = 0;
+
+            for (int count = 0; count < arr.Length - 1; count++)
+            {
+                for (int sort = 0; sort < arr.Length - 1 - count; sort++)
+                {
+                    if (arr[sort] > arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+                }
+
+            }
+            Console.WriteLine(String.Join(", ", arr));
+            return arr;
+        }
+
+        private static int[] SortDown(int[] arr)
+        {
+
+            int temp = 0;
+
+            for (int count = 0; count < arr.Length; count++)
+            {
+                for (int sort = 0; sort < arr.Length - 1; sort++)
+                {
+                    if (arr[sort] < arr[sort + 1])
+                    {
+                        temp = arr[sort + 1];
+                        arr[sort + 1] = arr[sort];
+                        arr[sort] = temp;
+                    }
+                }
+                Console.WriteLine(String.Join(", ", arr));
+
+            }
+            return arr;
+        }
+
+        private static int[][] Array2D(int count)
+        {
+
+
+            int[][] arr = new int[10][];
+            for (int row = 0; row < arr.Length; row++)
+            {
+                arr[row] = new int[10];
+            }
+
+            for (int row = 0; row < arr.Length; row++)
+            {
+                for (int col = 0; col < arr[row].Length; col++)
+                {
+                    arr[row][col] = count++;
+                }
+            }
+            return arr;
+
+        }
+        private static void Print2DArray(int[][] arr2d)
+        {
+
+
+            for (int row = 0; row < arr2d.Length; row++)
+            {
+                for (int col = 0; col < arr2d[row].Length; col++)
+                {
+                    Console.Write(arr2d[row][col] + " ");
+                }
+                Console.WriteLine();
+
+            }
+        }
+
+        private static void Kalender()
+        {
+            DateTime t = DateTime.Now;
+            CultureInfo austrian = new CultureInfo("de-AT");
+
+            Console.WriteLine(t.ToString("ddd d.M.yyyy", austrian));
+
+            string[] cultureInfo = { "de-DE", "fr-FR", "it-IT", "tr-TR", "hu-HU", "en-US" };
+
+            foreach (string culture in cultureInfo)
+            {
+                DateTime currentDate = DateTime.Now;
+                string formattedDate = currentDate.ToString("dddd", new CultureInfo(culture));
+                Console.WriteLine($"{culture}: {formattedDate}");
+            }
+        }
+
+
 
     }
-
 }
+
+
+
 
 
