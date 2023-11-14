@@ -1,7 +1,12 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Kerem.Week06.ExerciseList;
 
 
-namespace Kerem.Week06.ExercisePerson2
+namespace Kerem
 {
     internal class Person2Example
     {
