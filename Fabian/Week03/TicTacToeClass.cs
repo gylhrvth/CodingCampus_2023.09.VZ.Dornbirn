@@ -1,4 +1,5 @@
-﻿using static Fabian.Week02.ConsoleInput;
+﻿using static Fabian.Selftest_SP.TowersOfHanoi;
+using static Fabian.Week02.ConsoleInput;
 namespace Fabian.Week03
 {
     class TicTacToeClass
@@ -19,7 +20,8 @@ namespace Fabian.Week03
                 int input = ReadInt($"Enter a number between 1-9 (player {player}): ", 1, 9);
                 while (arr[input] == player1 || arr[input] == player2)
                 {
-                    Console.WriteLine("This field is already taken!");
+                    PrintBoard(arr);
+                    SetConsoleColor(ConsoleColor.Red, "This field is already taken!");
                     input = ReadInt($"Enter a number between 1-9 (player {player}): ", 1, 9);
                 }
                 arr[input] = (player == 1) ? player1 : player2;
@@ -29,7 +31,7 @@ namespace Fabian.Week03
 
                 if (CheckWin(arr))
                 {
-                    Console.WriteLine($"player {player} won! :)");
+                    SetConsoleColor(ConsoleColor.Green, $"player {player} won! :)");
                     if (AskToPlayAgain()) TicTacToe();
                     else return;
                 }
