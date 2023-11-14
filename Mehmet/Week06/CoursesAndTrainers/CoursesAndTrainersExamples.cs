@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week06.CoursesAndTrainers
+namespace Mehmet
 {
     
 

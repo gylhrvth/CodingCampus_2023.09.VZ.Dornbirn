@@ -8,7 +8,6 @@ namespace Michael.Week06
 {
     public class ListExercises
     {
-
         public static void Start()
         {
             Person person1 = new Person(160, 20, "test1", 85);
@@ -68,6 +67,8 @@ namespace Michael.Week06
         public static int CountEven(List<int> list)
         {
             int count = 0;
+            if (list == null) return count;
+
             foreach (int num in list)
             {
                 if (num % 2 == 0) count++;

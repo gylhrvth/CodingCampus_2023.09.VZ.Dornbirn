@@ -33,7 +33,6 @@ namespace Michael.ZooSimulation
             Animal a24 = new Animal("Pili", "Pinguin", 100, (20, 25), f3);
             Animal a25 = new Animal("Gustaf", "Pinguin", 100, (20, 25), f3);
 
-
             Carer c1 = new Carer("Erik");
             Carer c2 = new Carer("Martin");
 
@@ -51,15 +50,7 @@ namespace Michael.ZooSimulation
             c1.AddEnclosures(new List<Enclosure> { e1, e2 });
             c2.AddEnclosures(new List<Enclosure> { e2, e3 });
 
-
-
-
-
             ExampleZoo.AddEnclosures(new List<Enclosure> { e1, e2 , e3});
-
-
-
-            
 
             ExampleZoo.SimulateMultipleDays(7);
         }

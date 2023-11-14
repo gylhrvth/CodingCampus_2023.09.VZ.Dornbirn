@@ -2319,32 +2319,129 @@
     ]
   },
   "packageFolders": {
-    "/Users/gyula.horvath/.nuget/packages/": {}
+<<<<<<< HEAD
+    "C:\\Users\\juens\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\DCV\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\DCV\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\User\\.nuget\\packages\\": {}
+=======
+<<<<<<< HEAD
+    "C:\\Users\\DCV\\.nuget\\packages\\": {}
+=======
+    "/Users/davidisele/.nuget/packages/": {}
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
+>>>>>>> 27557705b71ae91f4d3e59c48a35374556bb37a4
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
       "projectName": "MichaelTest",
-      "projectPath": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
-      "packagesPath": "/Users/gyula.horvath/.nuget/packages/",
-      "outputPath": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/obj/",
+      "projectPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\juens\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/gyula.horvath/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\juens\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
+      "projectUniqueName": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "projectName": "MichaelTest",
+      "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\DCV\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "projectName": "MichaelTest",
+      "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "projectName": "MichaelTest",
+      "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+      "packagesPath": "C:\\Users\\DCV\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
+>>>>>>> 27557705b71ae91f4d3e59c48a35374556bb37a4
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+=======
+      "projectUniqueName": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "projectName": "MichaelTest",
+      "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj",
+      "packagesPath": "/Users/davidisele/.nuget/packages/",
+      "outputPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/davidisele/.nuget/NuGet/NuGet.Config"
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
-              "projectPath": "/Users/gyula.horvath/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+<<<<<<< HEAD
+            "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\juens\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+<<<<<<< HEAD
+            "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+              "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+            "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj": {
+              "projectPath": "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/Michael/Michael.csproj"
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
+>>>>>>> 27557705b71ae91f4d3e59c48a35374556bb37a4
             }
           }
         }
@@ -2392,7 +2489,27 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+=======
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+>>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
+>>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
+>>>>>>> 27557705b71ae91f4d3e59c48a35374556bb37a4
       }
     }
   }
