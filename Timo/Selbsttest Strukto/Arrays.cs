@@ -57,6 +57,9 @@ namespace Timo.Selbsttest_Strukto
             PrintString(arry);
             PrintString(Bubble(arry, true));
             Console.WriteLine("==========================");
+
+            PrintString( Buuuuubleeeee(arry, true));
+           
         }
 
 
@@ -225,6 +228,29 @@ namespace Timo.Selbsttest_Strukto
             }
             return arr;
         }
-
+        public static int[] Buuuuubleeeee(int[] arr, bool asc)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length - 1 - i; j++)
+                {
+                    if (asc)
+                    {
+                        if (arr[j] > arr[j + 1])
+                        {
+                            (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                        }
+                    }
+                    else
+                    {
+                        if (arr[j] < arr[j + 1])
+                        {
+                            (arr[j], arr[j + 1]) = (arr[j + 1], arr[j]);
+                        }
+                    }
+                }
+            }
+            return arr;
+        }
     }
 }
