@@ -1,1 +1,1 @@
-﻿ Niklas.Week07.Krankenhaus.KrankenhausExample.Start();
+﻿ Niklas.Week07.ST2.Methoden.Start();

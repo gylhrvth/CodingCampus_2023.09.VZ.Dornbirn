@@ -1,6 +1,6 @@
-﻿using Gheorghe.Week01;
+﻿using Gheorghe.Week02;
 
-Testen.Start();
+Testen2.Start();
 
 
 

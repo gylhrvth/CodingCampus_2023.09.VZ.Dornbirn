@@ -215,7 +215,8 @@ namespace Fabian.Week01
         }
 
         //print triangle
-        public static void PrintPyramid(String character, int height)
+       
+     public static void PrintPyramid(String character, int height)
         {
             if(height == 1)
             {
@@ -233,7 +234,6 @@ namespace Fabian.Week01
             {
                 PrintChars(" ", height - i - 1);
                 Console.Write(character);
-    
                 PrintChars(" ", i * 2 - 1);
                 Console.WriteLine(character);
             }

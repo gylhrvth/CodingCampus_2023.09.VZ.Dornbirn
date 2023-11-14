@@ -10,6 +10,7 @@ namespace Niklas.Week07.Krankenhaus
     {
         private string _name;
         private int _year;
+        private string _area;
 
         public string Name
         {
@@ -18,7 +19,7 @@ namespace Niklas.Week07.Krankenhaus
             set
             {
                 Console.Write("" + value);
-                value = _name;
+                _name = value;
             }
         }
         public int Year
@@ -28,13 +29,22 @@ namespace Niklas.Week07.Krankenhaus
             set
             {
                 Console.WriteLine(", gegründet: " + value);
-                value = _year;
+                _year = value;
+            }
+        }
+        public string Area
+        {
+            get => _area;
+            set
+            {
+                Console.WriteLine("Ambulanz ist: " + value);
+                    _area = value;
             }
         }
         public Krankenhaus(string name, int year)
         {
-            name = _name;
-            year = _year;
+            _name = name;
+            _year = year;
         }
 
 

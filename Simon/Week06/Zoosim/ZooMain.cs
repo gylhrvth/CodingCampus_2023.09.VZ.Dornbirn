@@ -32,6 +32,7 @@ namespace Simon.Week06.Zoosim
             company.AddAnimals(monkey1);
             
             zoo.PrintZoo();
+            zoo.PrintFood();
 
 
 

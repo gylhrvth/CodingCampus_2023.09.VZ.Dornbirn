@@ -20,8 +20,24 @@ namespace Niklas.Week06.Liste
             {
                 Console.WriteLine(i);
             }
+
+            List<int> list2 = new List<int>();
+            GetList2(list2);
+            foreach (int i in list2)
+            {
+                Console.WriteLine(i);
+            }
         }
         public static List<int> GetList(List<int> list)
+        {
+
+            for (int i = 0; i <= 20; i++)
+            {
+                list.Add(random.Next(0, 100));
+            }
+            return list;
+        }
+        public static List<int> GetList2(List<int> list)
         {
 
             for (int i = 0; i <= 20; i++)
