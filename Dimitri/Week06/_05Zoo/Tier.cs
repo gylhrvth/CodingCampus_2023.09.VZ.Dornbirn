@@ -12,12 +12,36 @@ namespace Dimitri.Week06._05Zoo
         private string _Gattung;
         private Futter _Futter;
         private double _Menge;
+        private int _Gesundheit;
+        private int _MaxGesundheit;
+        private int _Biss;
+        private bool _Tot;
 
         public Futter Futter { get => _Futter;  }
 
         public double Menge { get => _Menge; } 
 
         public string Name { get => _Name; }
+
+        public int Gesundheit { get => _Gesundheit;  }
+
+        public int MaxGesundheit { get => _MaxGesundheit; }
+
+        public int Biss { get => _Biss; }
+
+        public bool Tot { get => _Tot; }
+
+        public Tier(string name, string gattung, Futter futter, double menge, int gesundheit, int maxGesundheit, int biss)
+        {
+            _Name = name;
+            _Gattung = gattung;
+            _Futter = futter;
+            _Menge = menge;
+            _Gesundheit = gesundheit;
+            _MaxGesundheit = maxGesundheit;
+            _Biss = biss;
+            _Tot = false;
+        }
 
         public Tier(string name, string gattung, Futter futter, double menge)
         {
@@ -49,6 +73,11 @@ namespace Dimitri.Week06._05Zoo
             }
         }
 
+        public override string ToString()
+        {
+            return string.Format("{0}", _Name);
+        }
+
         public bool IsNull()
         {
             bool isNullorEmpty = false;
@@ -56,5 +85,17 @@ namespace Dimitri.Week06._05Zoo
             return isNullorEmpty;
 
         }
+
+        public Tier ChangeHealth(Tier tier, int damage)
+        {
+            tier._Gesundheit -= damage;
+            if(_Gesundheit <= 0) 
+            {
+                tier._Tot = true;
+            }
+            return tier;
+        }
+
+
     } 
 }

@@ -1,1 +1,1 @@
-﻿Fabian.Week06._04Zoo.ZooMain.Start();
+﻿Fabian.Selftest_SP.TowersOfHanoi.Start();
