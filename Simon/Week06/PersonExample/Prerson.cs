@@ -9,6 +9,9 @@ namespace Simon.Week06.PersonExample
     public class Person
     {
         private double _Height;
+        private int _Age;
+        string _Name;
+        private double _Weight;
         public double Height
         {
             get => _Height;
@@ -19,7 +22,6 @@ namespace Simon.Week06.PersonExample
                 _Height = value;
             }
         }
-        private int _Age;
         public int Age
         {
             get => _Age;
@@ -30,12 +32,10 @@ namespace Simon.Week06.PersonExample
                 _Age = value;
             }
         }
-        private string _Name;
-        public string Name 
+        public string Name
         {
             get => _Name;
         }
-        private double _Weight;
         public double Weight
         {
             get => _Weight;
@@ -46,14 +46,13 @@ namespace Simon.Week06.PersonExample
                 _Weight = value;
             }
         }
-        public Person(string Name, int Age)
+        public Person(string Name, int Age, double Height, double Weight)
         {
             _Name = Name;
             _Age = Age;
-            _Height = -1;
-            _Weight = -1;
+            _Height = Height;
+            _Weight = Weight;
         }
-
         public override string ToString()
         {
             return string.Format("Name: {0}\nAlter: {1}\nGröße: {2}m\nGewicht: {3}kg\n", _Name, _Age, _Height, _Weight);

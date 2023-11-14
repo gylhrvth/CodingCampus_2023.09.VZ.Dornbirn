@@ -1,8 +1,11 @@
-﻿using Gheorghe;
-using Gheorghe.Week06;
-using Gheorghe.Week06.List;
+﻿using Gheorghe.Week02;
 
-ListEvaluator.Start();
+Testen2.Start();
+
+
+
+
+
 
 
 
