@@ -1,5 +1,3 @@
-﻿using Fabienne.Week06;
-
-AufgabenOO.Start();
+﻿Fabienne.Week02.Arrays.Start();
 
 
