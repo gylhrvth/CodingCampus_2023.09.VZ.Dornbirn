@@ -8,22 +8,34 @@ namespace Niklas.Week07.Krankenhaus
 {
     internal class Ambulanz
     {
-        private DateTime _time;
+        private string _time;
         private string _places;
-        private string _waiting;
+        private int _waiting;
 
-        public DateTime Time
+        public string Time
         {
             get => _time;
             set
             {
-                Console.WriteLine($"The tine is: {value}");
-                value = _time;
+                Console.WriteLine($"---The time is: {value}");
+                _time = value;
             }
         }
-        public Ambulanz(DateTime time)
+        public int Waiting
+        {
+            get => _waiting;
+            set
+            {
+                Console.WriteLine($"---{value} person in the waitingroom.");
+                _waiting = value;
+            }
+        }
+
+
+        public Ambulanz(string time, int waiting)
         {
             _time = time;
+            _waiting = waiting;
         }
 
 

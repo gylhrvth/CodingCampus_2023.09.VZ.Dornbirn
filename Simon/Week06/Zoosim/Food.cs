@@ -12,6 +12,19 @@ namespace Simon.Week06.Zoosim
         private string _Unit;
         private double _Price;
 
+        public string Name
+        {
+            get => _Name;
+        }
+        public string Unit
+        {
+            get => _Unit;
+        }
+        public double Price
+        {
+            get => _Price;
+        }
+
         public Food(string name, string unit, double price)
         {
             _Name = name;

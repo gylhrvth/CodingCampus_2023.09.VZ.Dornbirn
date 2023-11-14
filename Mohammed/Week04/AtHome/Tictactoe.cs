@@ -5,6 +5,14 @@ namespace Mohammed.Week04.AtHome
     {
 
 
+        /*TODO
+         * METHODS
+         
+         * Human/Computer Move
+         * chek is board full
+        */
+
+
         //Random rand = new Random();
         static int[] board = new int[9];
         public static void Start()
@@ -107,11 +115,11 @@ namespace Mohammed.Week04.AtHome
 
                 if (board[i] == 0)
                 {
-                    Console.Write("X");
+                    Console.Write(" ");
                 }
                 if (board[i] == 1)
                 {
-                    Console.Write("O");
+                    Console.Write("x");
                 }
                 if (board[i] == 2)
                 {

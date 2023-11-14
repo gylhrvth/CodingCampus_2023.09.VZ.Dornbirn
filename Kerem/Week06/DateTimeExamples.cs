@@ -12,8 +12,8 @@ namespace Kerem.Week06
         public static void Start()
         {
             //DateTimeSandbox();
-            //Birthday("Enter your birthday");
-            WhenIsSunday();
+            Birthday("Enter your birthday");
+            //WhenIsSunday();
             //GetNumberOfSundays(2000,5);
         }
         public static void DateTimeSandbox()

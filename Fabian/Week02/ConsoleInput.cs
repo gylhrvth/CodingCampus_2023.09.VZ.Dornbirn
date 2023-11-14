@@ -105,8 +105,8 @@ namespace Fabian.Week02
         public static bool AskToPlayAgain()
         {
             String restart = ReadString("Do you want to play again? (Y/N): ", "^[yYnN]$");
-
-            if (restart == "N" || restart == "n")
+            restart = restart.ToUpper();
+            if (restart == "N")
             {
                 Console.WriteLine("Bye, have a nice day! :)");
                 return false;

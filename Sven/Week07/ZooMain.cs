@@ -8,5 +8,14 @@ namespace Sven.Week07
 {
     internal class ZooMain
     {
+        public class Zoo
+        {
+
+
+
+
+
+        }
+
     }
 }

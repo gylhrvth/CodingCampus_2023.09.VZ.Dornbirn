@@ -1,6 +1,8 @@
-﻿using Gheorghe.Week01;
+﻿using Gheorghe.Week06;
+using Gheorghe.Week06.Personen;
 
-Testen.Start();
+PersonStatistik.Start();
+
 
 
 
