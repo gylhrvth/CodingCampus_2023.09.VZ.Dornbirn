@@ -16,10 +16,6 @@ namespace Niklas.Week06.Zoo
         public static void Start()
         {
 
-
-
-            Console.WriteLine(r1.Next(0, 3));
-
             DateTime t = DateTime.Now;
             Console.Write("  Heute ist: ");
             Console.WriteLine(t.ToString("dddd"));
@@ -69,6 +65,7 @@ namespace Niklas.Week06.Zoo
             aquarium.AddAnimals(dolphin1);
             aquarium.AddAnimals(dolphin2);
             aquarium.AddAnimals(sealion);
+
 
             monkey1.AddFood(banana);
             monkey2.AddFood(banana);
