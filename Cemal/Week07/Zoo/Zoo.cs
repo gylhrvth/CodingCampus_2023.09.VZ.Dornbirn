@@ -19,6 +19,11 @@ namespace Cemal.Week07.Zoo
             _Enclosures = new List<Enclosures>();
         }
 
+        public void addEnclosure(Enclosures enc)
+        {
+            _Enclosures.Add(enc);
+        }
+
         public override string ToString()
         {
             return "Zoo: " + _Name + ", founded: " + _FoundingYear;
@@ -28,6 +33,10 @@ namespace Cemal.Week07.Zoo
         public void PrintStructure()
         {
             Console.WriteLine("├── Zoo: {0}, founded: {1}", _Name, _FoundingYear);
+            foreach (Enclosures enc in _Enclosures)
+            {
+                enc.PrintStructure("|   ");
+            }
         }
     }
 }
