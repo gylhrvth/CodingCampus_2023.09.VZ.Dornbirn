@@ -9,56 +9,19 @@ namespace Patrick.Week07.TikTakToe
 {
     internal class TicTacToe
     {
-
         public static void Start()
         {
-            //Symbole aus dem Ascii Code f. p1 und p2
-            char player1 = (char)142;
-            char player2 = (char)216;
 
             //Spielfeldinitialisierung
             int rows = 3;
             int columns = 3;
             char[][] board = CreateBoard(rows, columns);
 
-            //Programmablauf
+            //Print
             bool p1P2 = true;
             DisplayBoard(board);
-            while (true)
-            {
-                int inputRow = InputRow();
-                int inputColumn = InputColumn();
-                //Spieler 1
-                if (p1P2 == true)
-                {
-                    DisplayBoard(NextTurn(board, inputRow, inputColumn, player1));
-                    p1P2 = false;                    
-                    if (CheckWin(NextTurn(board, inputRow, inputColumn, player1), player1, player2) == true)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Gratuliere Spieler 1 hat gewonnen!");
-                        Console.ResetColor();
-                        Thread.Sleep(800);
-                        Console.Clear();
-                        break;
-                    }
-                }
-                //Spieler 2
-                else
-                {
-                    DisplayBoard(NextTurn(board, inputRow, inputColumn, player2));
-                    p1P2 = true;
-                    if (CheckWin(NextTurn(board, inputRow, inputColumn, player1), player1, player2) == true)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Gratuliere Spieler 2 hat gewonnen!");
-                        Console.ResetColor();
-                        Thread.Sleep(800);
-                        Console.Clear();
-                        break;
-                    }
-                }
-            }
+            NextTurn(board);
+
         }
 
         static char[][] CreateBoard(int rows, int columns)
@@ -95,25 +58,74 @@ namespace Patrick.Week07.TikTakToe
             Console.ResetColor();
         }
 
-        static char[][] NextTurn(char[][] displayboard, int inputRow, int inputCol, char player)
+        public static bool playerTurn = true;
+
+
+        static char[][] NextTurn(char[][] displayboard)
         {
-            if (displayboard[inputRow - 1][inputCol] == ' ')
+            char player1 = 'X';
+            char player2 = (char)216;
+
+            if (playerTurn == true)
             {
-                displayboard[inputRow - 1][inputCol] = player;       //füllt mit player1 oder player2
+                Console.WriteLine($"Spieler 1 \"{player1}\" geben Sie eine Zahl für die Reihe ein!");
+                int inputRow = InputRow();
+                Console.WriteLine($"Spieler 1 \"{player1}\" geben Sie einen Buchstaben für Die Spalte ein!");
+                int inputColumn = InputColumn();
+                Console.Clear();
+                DisplayBoard(FillField(displayboard, inputRow, inputColumn, player1));
+
+                if (CheckWin(displayboard, player1) == false)
+                {
+                    playerTurn = false;
+                    NextTurn(displayboard);
+                }
+                else
+                {
+                    Console.WriteLine("Gratulation Spieler 1, Sie haben gewonnen!");
+                }
             }
             else
             {
-                Console.WriteLine("Diese Zelle ist bereits belegt. Bitte wählen Sie eine andere.");
+                Console.WriteLine($"Spieler 2 \"{player2}\" geben Sie eine Zahl für die Reihe ein!");
+                int inputRow = InputRow();
+                Console.WriteLine($"Spieler 2 \"{player2}\" geben Sie einen Buchstaben für Die Spalte ein!");
+                int inputColumn = InputColumn();
+                Console.Clear();
+                DisplayBoard(FillField(displayboard, inputRow, inputColumn, player2));
+
+                if (CheckWin(displayboard, player2) == false)
+                {
+                    playerTurn = true;
+                    NextTurn(displayboard);
+                }
+                else
+                {
+                    Console.WriteLine("Gratulation Spieler 2, Sie haben gewonnen!");
+                }
+            }
+            return displayboard;
+        }
+
+        static char[][] FillField(char[][] displayboard, int inputRow, int inputColumn, char player)
+        {
+            if (displayboard[inputRow - 1][inputColumn] == ' ')
+            {
+                displayboard[inputRow - 1][inputColumn] = player;
+            }
+            else
+            {
+                Console.WriteLine("Dieses Feld ist bereits belegt, bitte nochmals versuchen!");
+                NextTurn(displayboard);
             }
             return displayboard;
         }
 
         static int InputRow()
         {
-            string inputRow = "0";
+            string inputRow = " ";
             while (true)
             {
-                Console.WriteLine("Bitte geben Sie eine Zahl für die Reihe an:");
                 Console.Write(">>>>>");
                 inputRow = Console.ReadLine();
                 if (inputRow == "1" || inputRow == "2" || inputRow == "3")
@@ -130,87 +142,56 @@ namespace Patrick.Week07.TikTakToe
 
         static int InputColumn()
         {
-            int input = int.MaxValue;
+            int inputCol = int.MaxValue;
             while (true)
             {
-                Console.WriteLine("Bitte geben Sie einen Buchstaben für die Spalte an:");
                 Console.Write(">>>>>");
-                string inputCol = Console.ReadLine();
-                if (inputCol == "a")
+                string input = Console.ReadLine();
+                if (input == "a")
                 {
-                    input = 0; break;
+                    inputCol = 0; break;
                 }
-                else if (inputCol == "b")
+                else if (input == "b")
                 {
-                    input = 1; break;
+                    inputCol = 1; break;
                 }
-                else if (inputCol == "c")
+                else if (input == "c")
                 {
-                    input = 2; break;
+                    inputCol = 2; break;
                 }
                 else
                 {
                     Console.WriteLine("Sie müssen entweder \"a\", \"b\" oder \"c\" eingeben!");
                 }
             }
-            return input;
+            return inputCol;
         }
 
-
-        static bool CheckWin(char[][] displayboard, char player1, char player2)
+        static bool CheckWin(char[][] displayboard, char player)
         {
-            while (true)
-            {
-                // Check Row Player 1
-                if ((displayboard[0][0] == player1 && displayboard[0][1] == player1 && displayboard[0][2] == player1))                   
+
+                // Check Row Player
+                if ((displayboard[0][0] == player && displayboard[0][1] == player && displayboard[0][2] == player))
                 {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler1");
                     return true;
                 }
-                // Check Column Player 1
-                else if ((displayboard[0][0] == player1 && displayboard[1][0] == player1 && displayboard[2][0] == player1))    
+                // Check Column Player
+                else if ((displayboard[0][0] == player && displayboard[1][0] == player && displayboard[2][0] == player))
                 {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler1");
                     return true;
                 }
-                // Check to top right Player 1
-                else if ((displayboard[2][0] == player1 && displayboard[1][1] == player1 && displayboard[0][2] == player1))
+                // Check to top right Player
+                else if ((displayboard[2][0] == player && displayboard[1][1] == player && displayboard[0][2] == player))
                 {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler1");
                     return true;
                 }
-                // Check to bottom right Player 1
-                else if ((displayboard[0][0] == player1 && displayboard[1][1] == player1 && displayboard[2][2] == player1))
+                // Check to bottom right Player
+                else if ((displayboard[0][0] == player && displayboard[1][1] == player && displayboard[2][2] == player))
                 {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler1");
-                    return true;
-                }
-                // Check Row Player 2
-                if ((displayboard[0][0] == player2 && displayboard[0][1] == player2 && displayboard[0][2] == player2))
-                {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler2");
-                    return true;
-                }
-                // Check Column Player 2
-                else if ((displayboard[0][0] == player2 && displayboard[1][0] == player2 && displayboard[2][0] == player2))
-                {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler2");
-                    return true;
-                }
-                // Check to top right Player 2
-                else if ((displayboard[2][0] == player2 && displayboard[1][1] == player2 && displayboard[0][2] == player2))
-                {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler2");
-                    return true;
-                }
-                // Check to bottom right Player 2
-                else if ((displayboard[0][0] == player2 && displayboard[1][1] == player2 && displayboard[2][2] == player2))
-                {
-                    Console.WriteLine($"Gratuliere zum Sieg! Spieler2");
                     return true;
                 }
                 return false;
-            }
+           
         }
     }
 
