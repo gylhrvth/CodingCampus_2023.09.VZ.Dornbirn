@@ -1,4 +1,3 @@
-﻿using Gyula.Week06;
+﻿using Gyula.Week06.Zoo;
 
-EnumExample.Start();
-DictionaryExample.Start();
+ZooMain.Start();
