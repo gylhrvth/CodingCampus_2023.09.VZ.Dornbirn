@@ -11,10 +11,28 @@ namespace Dimitri.Week06._05Zoo
     {
         private string _Name;
         private List<Gehege> _GehegeListe;
+        private Tier _LieblingsTier;
 
         public string Name
         {
             get => _Name;
+        }
+
+        public List<Gehege> GehegeListe
+        {
+            get => _GehegeListe;
+        }
+
+        public Tier LieblingsTier
+        {
+            get => _LieblingsTier;
+        }
+
+        public Waerter(string name, List<Gehege> gehegelist,  Tier lieblingsTier)
+        {
+            _Name = name;
+            _GehegeListe = gehegelist;
+            _LieblingsTier = lieblingsTier;
         }
 
         public Waerter(string name, List<Gehege> gehegelist)
@@ -44,12 +62,28 @@ namespace Dimitri.Week06._05Zoo
                     gehege.PrintGehege();
                 }
             }
+            else
+            {
+                Console.WriteLine("│       ├── Hat kein Gehege!");
+            }
         }
 
         public static Waerter AddGehege(Waerter waerter, Gehege newGehege)
         {
-            waerter._GehegeListe.Add(newGehege);
+            if (waerter._GehegeListe.Contains(newGehege))
+            {
+                return waerter;
+            }
+            else
+            {
+                waerter._GehegeListe.Add(newGehege);
+            }
+            return waerter;
+        }
 
+        public Waerter AddLieblingstier(Waerter waerter, Tier Lieblingstier)
+        {
+            waerter._LieblingsTier = Lieblingstier;
             return waerter;
         }
 

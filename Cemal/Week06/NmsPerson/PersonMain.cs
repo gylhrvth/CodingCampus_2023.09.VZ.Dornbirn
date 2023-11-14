@@ -15,7 +15,6 @@ namespace Cemal.Week06.NmsPerson
             Person p3 = new Person("Lukas", 38, 1.74, 83.4);
             Person p4 = new Person("Kerem", 23, 1.80, 90.3);
             Person p5 = new Person("Lukas", 22, 1.78, 95.5);
-            PersonMin(p1);
         }
 
         public static int PersonMin(List<int> list)

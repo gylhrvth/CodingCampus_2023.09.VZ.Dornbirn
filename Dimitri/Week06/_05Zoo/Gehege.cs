@@ -32,7 +32,7 @@ namespace Dimitri.Week06._05Zoo
 
         public override string ToString()
         {
-            return string.Format("│   ├── Gehege: {0}", _Name);
+            return string.Format("{0}", _Name);
         }
 
         public void PrintGehege()
@@ -66,5 +66,6 @@ namespace Dimitri.Week06._05Zoo
         {
             return gehege.Name;
         }
+
     }
 }
