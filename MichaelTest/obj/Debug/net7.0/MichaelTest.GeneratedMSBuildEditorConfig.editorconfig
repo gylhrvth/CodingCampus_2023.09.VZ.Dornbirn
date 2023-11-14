@@ -9,6 +9,7 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MichaelTest
 <<<<<<< HEAD
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\aau27722\Source\Repos\CodingCampus_2023.09.VZ.Dornbirn\MichaelTest\
 =======
 <<<<<<< HEAD
@@ -17,3 +18,6 @@ build_property.ProjectDir = C:\Users\User\source\repos\CodingCampus_2023.09.VZ.D
 build_property.ProjectDir = C:\Users\DCV\source\repos\CodingCampus_2023.09.VZ.Dornbirn\MichaelTest\
 >>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
+=======
+build_property.ProjectDir = C:\Users\DCV\source\repos\CodingCampus_2023.09.VZ.Dornbirn\MichaelTest\
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5

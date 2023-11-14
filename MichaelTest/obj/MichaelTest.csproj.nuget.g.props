@@ -7,17 +7,28 @@
 <<<<<<< HEAD
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\aau27722\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
 =======
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\User\.nuget\packages\</NuGetPackageFolders>
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
+=======
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\DCV\.nuget\packages\</NuGetPackageFolders>
+=======
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\User\.nuget\packages\</NuGetPackageFolders>
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
     <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.7.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
 <<<<<<< HEAD
+<<<<<<< HEAD
     <SourceRoot Include="C:\Users\aau27722\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+=======
+    <SourceRoot Include="C:\Users\DCV\.nuget\packages\" />
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
 =======
     <SourceRoot Include="C:\Users\User\.nuget\packages\" />
 =======
@@ -38,7 +49,11 @@
     <SourceRoot Include="/Users/davidisele/.nuget/packages/" />
 >>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
 >>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+<<<<<<< HEAD
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
+=======
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)mstest.testadapter/2.2.10/build/net5.0/MSTest.TestAdapter.props" Condition="Exists('$(NuGetPackageRoot)mstest.testadapter/2.2.10/build/net5.0/MSTest.TestAdapter.props')" />

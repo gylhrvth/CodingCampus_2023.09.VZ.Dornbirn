@@ -2,6 +2,7 @@
   "format": 1,
   "restore": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
   },
   "projects": {
@@ -13,6 +14,22 @@
         "projectPath": "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
         "packagesPath": "C:\\Users\\aau27722\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+=======
+    "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "projectName": "MichaelTest",
+        "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj",
+        "packagesPath": "C:\\Users\\DCV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
 =======
 <<<<<<< HEAD
     "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\MichaelTest\\MichaelTest.csproj": {}
@@ -51,7 +68,11 @@
         "configFilePaths": [
           "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+<<<<<<< HEAD
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
+=======
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
 =======
     "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/MichaelTest/MichaelTest.csproj": {}
@@ -82,12 +103,21 @@
 <<<<<<< HEAD
             "projectReferences": {
 <<<<<<< HEAD
+<<<<<<< HEAD
               "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
                 "projectPath": "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
 =======
               "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
                 "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
+=======
+              "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+=======
+              "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+                "projectPath": "C:\\Users\\User\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj"
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
               }
             }
 =======
@@ -125,6 +155,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -133,6 +164,18 @@
         "projectPath": "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
         "packagesPath": "C:\\Users\\aau27722\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\aau27722\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+=======
+    "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "projectName": "Michael",
+        "projectPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\Michael.csproj",
+        "packagesPath": "C:\\Users\\DCV\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
 =======
 <<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
@@ -244,6 +287,7 @@
         "outputPath": "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Michael\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
           "C:\\Users\\DCV\\AppData\\Roaming\\NuGet\\NuGet.Config",
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -293,7 +337,11 @@
           "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
 >>>>>>> 993c37adc792ae3ec22ec7d592ce029e40e0994b
 >>>>>>> 640376999e7e05cfa32159d03a5884f24b5f957b
+<<<<<<< HEAD
 >>>>>>> 2632ed3991b6b70065a6a51809293bb89376b119
+=======
+>>>>>>> 0e11369f8e756439d2c96e497d8229087262e579
+>>>>>>> 5f6b29a7942cee7214645eb2c7451b571b7305c5
         }
       }
     }
