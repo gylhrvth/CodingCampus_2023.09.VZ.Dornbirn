@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Dimitri.Week06._05Zoo
     public class Zoo
     {
         private string _Zoo;
-        private int _Foundation;
+        private DateTime _Foundation;
         private List<Gehege> _Gehege;
         private List<Waerter> _Waerter;
 
@@ -25,11 +26,19 @@ namespace Dimitri.Week06._05Zoo
             get => _Waerter;
         }
 
-        public Zoo(string zoo, int foundation, List<Gehege> gehege)
+        public Zoo(string zoo, DateTime foundation, List<Gehege> gehege)
         {
             _Zoo = zoo;
             _Foundation = foundation;
             _Gehege = gehege;
+            _Waerter = new List<Waerter>();
+        }
+
+        public Zoo(string zoo, DateTime foundation)
+        {
+            _Zoo = zoo;
+            _Foundation = foundation;
+            _Gehege = new List<Gehege>();
             _Waerter = new List<Waerter>();
         }
 
@@ -55,24 +64,25 @@ namespace Dimitri.Week06._05Zoo
 
         public void PrintZoo()
         {
-            Console.WriteLine("├── Zoo: {0}, gegründet {1}", _Zoo, _Foundation);
+            Console.WriteLine("├── Zoo: {0}, gegründet {1}", _Zoo, _Foundation.ToString("d", new CultureInfo("de-AT")));
 
-
-            for (int j = 0; j < _Waerter.Count; j++)
+            foreach (Gehege enclosure in _Gehege)
             {
-                foreach (Waerter waerter in _Waerter)
-                {
-                    waerter.PrintWaerter();
-                }
+                enclosure.PrintGehege();
             }
 
-            //if (Waerter[i] == null)
-            //{
-            //    foreach (Gehege enclosure in _Gehege)
-            //    {
-            //        enclosure.PrintGehege();
-            //    }
-            //}
+            Console.WriteLine();
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine();
+            Console.WriteLine("Liste der Waerter:");
+
+            foreach (Waerter waerter in _Waerter)
+            {
+                waerter.PrintWaerter();
+            }
+
+
+
 
 
 
@@ -97,26 +107,26 @@ namespace Dimitri.Week06._05Zoo
 
         }
 
-        public void GetFutterbedarf(Zoo zoo)
+        public void GetFutterbedarf()
         {
             Dictionary<Futter, double> Futterbedarf = new();
 
 
-            for (int i = 0; i < zoo.Gehege.Count; i++)
+            for (int i = 0; i < Gehege.Count; i++)
             {
-                for (int j = 0; j < zoo.Gehege[i].Tiere.Count; j++)
+                for (int j = 0; j < Gehege[i].Tiere.Count; j++)
                 {
-                    if (zoo.Gehege[i].Tiere[j].IsNull())
+                    if (Gehege[i].Tiere[j].IsNull())
                     {
                         break;
                     }
-                    else if (!Futterbedarf.ContainsKey(zoo.Gehege[i].Tiere[j].Futter))
+                    else if (!Futterbedarf.ContainsKey(Gehege[i].Tiere[j].Futter))
                     {
-                        Futterbedarf.Add(zoo.Gehege[i].Tiere[j].Futter, zoo.Gehege[i].Tiere[j].Menge);
+                        Futterbedarf.Add(Gehege[i].Tiere[j].Futter, Gehege[i].Tiere[j].Menge);
                     }
                     else
                     {
-                        Futterbedarf[zoo.Gehege[i].Tiere[j].Futter] += zoo.Gehege[i].Tiere[j].Menge;
+                        Futterbedarf[Gehege[i].Tiere[j].Futter] += Gehege[i].Tiere[j].Menge;
                     }
                 }
             }
@@ -131,6 +141,37 @@ namespace Dimitri.Week06._05Zoo
                 gesamtKosten += (kvp.Value * kvp.Key.EinheitsPreis);
             }
             Console.WriteLine("Gesamtkosten für Futter pro Tag sind: {0:0.000}€", gesamtKosten);
+        }
+
+        private static Random random = new Random();
+        public void Simulation()
+        {
+            Dictionary<Gehege, bool> GehegeGefuettert = new();
+            Console.WriteLine("Simulation von {0}:", _Zoo);
+            foreach (Waerter waerter in Waerter)
+            {
+                Console.WriteLine();
+                foreach (Gehege gehege in waerter.GehegeListe)
+                {
+                    Console.WriteLine();
+                    if (!GehegeGefuettert.ContainsKey(gehege) && gehege.Tiere.Count != 0)
+                    {
+                        GehegeGefuettert.Add(gehege, true);
+                        Console.WriteLine("{0} fuettert die Tiere im {1}.", waerter, gehege);
+                        int i = random.Next(0, gehege.Tiere.Count);
+                        waerter.AddLieblingstier(waerter, gehege.Tiere[i]);
+                        Console.WriteLine("{0} beobachtet {1} nach dem fuettern.", waerter, waerter.LieblingsTier.Name);
+                    } else if (gehege.Tiere.Count == 0)
+                    {
+                        Console.WriteLine("{0} sieht, dass das {1} leer ist und geht weiter.", waerter, gehege);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0} sieht das bereits bearbeitet {1} und geht weiter.", waerter, gehege);
+                    }
+
+                }
+            }
         }
 
     }

@@ -12,7 +12,7 @@ namespace DarioLuis.Selbsttest.VierGewinnt
         static string[] arr = { "1", "2", "3", "4", "5" };
         public static void Printboard()
         {
-            Console.WriteLine(" 1 2 3 4 5");
+            Console.WriteLine(" 1  2   3   4   5");
             Console.WriteLine("___________");
             Console.WriteLine("|{0}|{1}|{2}|{3}|{4}|");
             Console.WriteLine("___________");
