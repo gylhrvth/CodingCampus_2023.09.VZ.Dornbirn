@@ -4,10 +4,14 @@ namespace David.Week06.PersonExample
 	public class Person
 	{
 		private string _Name;
-		private string _Alter;
-		private string _Gewicht;
+		public string Name
+		{
+			get => _Name;
+		}
+		private int _Alter;
+		private int _Gewicht;
 
-		public string Gewicht
+		public int Gewicht
 		{
 			get => _Gewicht;
 			set
@@ -17,17 +21,18 @@ namespace David.Week06.PersonExample
 			}
 		}
 
-        public int Groesse;
+        private int _Groesse;
 		public int Schuhgroesse;
 		private int _SchuhgroessePrivate;
 
-        public Person(string Name, string Alter, int size)
+        public Person(string Name, int Alter, int Schuhsize)
 		{
 			_Name = Name;
 			_Alter = Alter;
-			Groesse = 180;
+			_Groesse = 180;
+			_Gewicht = 70;
 			Schuhgroesse = 42;
-			_SchuhgroessePrivate = size;
+			_SchuhgroessePrivate = Schuhsize;
 			
 		}
 
@@ -36,7 +41,7 @@ namespace David.Week06.PersonExample
 			return string.Format("Name: {0}\nAlter: {1}\nGröße: {2}\nGewicht: {3}\nSchuhgröße: {4}\nPrivateSchuhGröße: {5}",
 				_Name,
 				_Alter,
-				Groesse,
+				_Groesse,
 				_Gewicht,
 				Schuhgroesse,
 				_SchuhgroessePrivate);

@@ -37,10 +37,10 @@ namespace Timo.Week06._04Zoo
             set => _Gefüttert = value;
         }
 
-        public void AddTier(Tier tier)
-        {
-            _Tier.Add(tier);
-        }
+        //public void AddTier(Tier tier)
+        //{
+        //    _Tier.Add(tier);
+        //}
 
         public void PrintGehege()
         {

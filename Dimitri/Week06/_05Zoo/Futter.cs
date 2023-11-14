@@ -22,6 +22,11 @@ namespace Dimitri.Week06._05Zoo
             get => _Einheit;
         }
 
+        public double EinheitsPreis
+        {
+            get => _EinheitsPreis;
+        }
+
         public Futter(string name, string einheit, double einheitsPreis)
         {
             _Name = name;
@@ -29,14 +34,16 @@ namespace Dimitri.Week06._05Zoo
             _EinheitsPreis = einheitsPreis;
         }   
 
-        public Futter(string name)
-        {
-            _Name = name;
-        }
 
         public void PrintFutter() 
         {
-            Console.WriteLine("│          ├── {0}", _Name);
+            Console.WriteLine("│              ├── {0}", _Name);
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0}", _Name);
+        }
+
     }
 }

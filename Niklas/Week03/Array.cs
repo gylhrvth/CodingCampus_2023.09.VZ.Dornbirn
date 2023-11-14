@@ -96,7 +96,7 @@ namespace Niklas.Week03
             //BubbleSortDesc(arr1);
             //Console.WriteLine("Bubblesort Descending: " + string.Join(", ", arr1));
 
-            //Console.WriteLine("CHoose the size of your random numbers!");
+            //Console.WriteLine("Choose the size of your random numbers!");
             //int size = Convert.ToInt32(Console.ReadLine());
             //Console.WriteLine("What should be the smallest number?");
             //int min = Convert.ToInt32(Console.ReadLine());

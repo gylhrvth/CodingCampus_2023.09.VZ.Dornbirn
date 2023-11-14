@@ -14,7 +14,7 @@ namespace Timo.Week06._04Zoo
         private string _BeobachtTier;
         private Tier _Lieblingstier ;
 
-        public Tierpfleger(string name, List<Gehege> zugewieseneGehege, Tier lieblingstier = null)
+        public Tierpfleger(string name, List<Gehege> zugewieseneGehege, Tier? lieblingstier = null)
         {
             _Name = name;
             _Gehege = zugewieseneGehege;
@@ -26,11 +26,6 @@ namespace Timo.Week06._04Zoo
             get => _Gehege;
             set => _Gehege = value;
         }
-        //public string BeobachtTier
-        //{
-        //    get => _BeobachtTier;
-        //    set => _BeobachtTier = value;
-        //}
 
         public void PrintTierpfleger()
         {
@@ -55,13 +50,13 @@ namespace Timo.Week06._04Zoo
                 {
                     Console.WriteLine("Das Gehege {0} wurde bereits gefüttert {1} hat hier nichts mehr zu tun", Gehege[i].Description, _Name);
                 }
-                int r = random.Next(Gehege.Count - 1);
                 if (_Lieblingstier != null && _Lieblingstier.Alive == true) 
                 {
                 _BeobachtTier= _Lieblingstier.Name;
                 }
                 else
                 {
+                    int r = random.Next(Gehege.Count - 1);
                     _BeobachtTier = Gehege[r].Tier[random.Next(Gehege[r].Tier.Count)].Name;
                 }
             }

@@ -5,19 +5,19 @@ namespace Patrick.Week06.PersonOne
 {
     public class Person
     {
-        public double _Size {  get; private set; }
-        public int _Age { get; private set; }
-        public string _Name { get; private set; }
-        public double _Weight { get; private set; }
+        public float Height {  get; private set; }
+        public int Age { get; private set; }
+        public string Name { get; private set; }
+        public float Weight { get; private set; }
 
+      
 
-
-        public Person(string name, int age, double size, double weight)
+        public Person(string name, int age, float size, float weight)
         {
-            _Size = size;
-            _Age = age;
-            _Name = name;
-            _Weight = weight;
+            Height = size;
+            Age = age;
+            Name = name;
+            Weight = weight;
         }
 
         //public override string ToString()
