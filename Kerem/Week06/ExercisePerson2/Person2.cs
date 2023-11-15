@@ -4,8 +4,9 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
-namespace Kerem.Week06.ExercisePerson2
+namespace Kerem
 {
     public class Person2
     {
@@ -26,8 +27,6 @@ namespace Kerem.Week06.ExercisePerson2
         {
             get => _weight;
         }
-
-
         public Person2(string name, int age, int height, int weight)
         {
             _name = name;
@@ -39,20 +38,20 @@ namespace Kerem.Week06.ExercisePerson2
         {
             int minweight = int.MaxValue;
 
-            for(int i = 0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
-               if( personlist[i].weight < minweight)
+                if (personlist[i].weight < minweight)
                 {
                     minweight = personlist[i].weight;
                 }
             }
 
 
-            Console.WriteLine("minimum weight is {0}",  minweight);
+            Console.WriteLine("minimum weight is {0}", minweight);
 
             int maxweight = int.MinValue;
 
-            for(int i =0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
                 if (personlist[i].weight > maxweight)
                 {
@@ -60,11 +59,11 @@ namespace Kerem.Week06.ExercisePerson2
                 }
             }
 
-            Console.WriteLine("maximum weight is {0}",  maxweight);
+            Console.WriteLine("maximum weight is {0}", maxweight);
 
             int minage = int.MaxValue;
 
-            for(int i = 0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
                 if (personlist[i].age < minage)
                 {
@@ -76,7 +75,7 @@ namespace Kerem.Week06.ExercisePerson2
 
             int maxage = int.MinValue;
 
-            for(int i = 0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
                 if (personlist[i].age > maxage)
                 {
@@ -88,7 +87,7 @@ namespace Kerem.Week06.ExercisePerson2
 
             int minheight = int.MaxValue;
 
-            for(int i = 0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
                 if (personlist[i].height < minheight)
                 {
@@ -100,7 +99,7 @@ namespace Kerem.Week06.ExercisePerson2
 
             int maxheight = int.MinValue;
 
-            for( int i = 0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
                 if (personlist[i].height > maxheight)
                 {
@@ -109,45 +108,108 @@ namespace Kerem.Week06.ExercisePerson2
             }
 
             Console.WriteLine("maximum height is {0}", maxheight);
+        }
+        public static void PrintAvgheight(List<Person2> personlist)
+        {
+            int avgheight = 0;
 
-            float avgage = 0;
-            int tmp = 0;
-
-            for(int i = 0; i < personlist.Count;i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
-
-                tmp += personlist[i].age;
-
-             
+                avgheight += personlist[i].height;
             }
-            avgage = (float)tmp / personlist.Count;
-
-            Console.WriteLine("Average age is {0}", avgage);
-
-            float avgheight = 0;
-            int tmp1 = 0;
-
-            for(int i = 0; i < personlist.Count; i++)
-            {
-                tmp1 += personlist[i].height;
-            }
-            avgheight = (float)tmp /personlist.Count;
+            avgheight = avgheight / personlist.Count;
 
             Console.WriteLine("Average height is {0}", avgheight);
+        }
+        public static void PrintAvgage(List<Person2> personlist)
+        {
+            int avgage = 0;
 
-            float avgweight = 0;
-            int tmp2 = 0;
-
-            for(int i =0; i < personlist.Count; i++)
+            for (int i = 0; i < personlist.Count; i++)
             {
-                tmp2 += personlist[i].weight;
+                avgage += personlist[i].age;
             }
-            avgweight = (float)tmp /personlist.Count;
+            avgage = avgage / personlist.Count;
+
+            Console.WriteLine("Average age is {0}", avgage);
+        }
+        public static void PrintAvgweight(List<Person2> personlist)
+        {
+            int avgweight = 0;
+
+            for (int i = 0; i < personlist.Count; i++)
+            {
+                avgweight += personlist[i].weight;
+            }
+            avgweight = avgweight / personlist.Count;
 
             Console.WriteLine("Average weight is {0}", avgweight);
+        }
 
+        public static void SortAge(List<Person2> personList)
+        {
+            for (int i = 0; i < personList.Count; i++)
+            {
+                for (int j = 0; j < personList.Count - i - 1; j++)
+                {
+                    if (personList[j].age < personList[j + 1].age)
+                    {
+                        Person2 tempPerson = personList[j];
+                        personList[j] = personList[j + 1];
+                        personList[j + 1] = tempPerson;
+                    }
+                }
+            }
+        }
+        public static void SortWeight(List<Person2> personList)
+        {
+            for (int i = 0; i < personList.Count; i++)
+            {
+                for (int j = 0; j < personList.Count - i - 1; j++)
+                {
+                    if (personList[j].weight < personList[j + 1].weight)
+                    {
+                        Person2 tempPerson = personList[j];
+                        personList[j] = personList[j + 1];
+                        personList[j + 1] = tempPerson;
+                    }
+                }
+            }
+        }
+        public static void SortHeight(List<Person2> personList)
+        {
+            for (int i = 0; i < personList.Count; i++)
+            {
+                for (int j = 0; j < personList.Count - i - 1; j++)
+                {
+                    if (personList[j].height < personList[j + 1].height)
+                    {
+                        Person2 tempPerson = personList[j];
+                        personList[j] = personList[j + 1];
+                        personList[j + 1] = tempPerson;
+                    }
+                }
+            }
+        }
+        public static void SortName(List<Person2> personList)
+        {
+            for (int i = 0; i < personList.Count; i++)
+            {
+                for (int j = 0; j < personList.Count - i - 1; j++)
+                {
+                    if (personList[j]._name.CompareTo(personList[j + 1]._name) < 0)
+                    {
+                        Person2 tempPerson = personList[j];
+                        personList[j] = personList[j + 1];
+                        personList[j + 1] = tempPerson;
+                    }
+                }
+            }
+        }
+        public override string ToString()
+        {
+            return string.Format("{0}", _name);
         }
 
     }
- 
 }

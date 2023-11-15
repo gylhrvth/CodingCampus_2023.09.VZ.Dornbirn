@@ -14,4 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Week07\" />
+  </ItemGroup>
 </Project>

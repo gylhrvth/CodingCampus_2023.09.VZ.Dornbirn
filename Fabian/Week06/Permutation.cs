@@ -9,14 +9,11 @@
             PrintPermutationList(list, 0, list.Count);
         }
         public static void PrintListPermutation(List<string> list)
-        {
-           
+        {        
             foreach (string i in list)
             {
                 Console.Write(i);
-
             }
-            Console.WriteLine();
         }
         public static void PrintPermutationList(List<string> list, int startIndex, int endIndex)
         {

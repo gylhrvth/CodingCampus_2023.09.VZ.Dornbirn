@@ -20,7 +20,7 @@ namespace Mehmet.Week06.List
         public static void Start()
         {
             Console.WriteLine("CreateRandomList");
-            CreateRandomList(values1, 20);
+            values1 = CreateRandomList(20);
             PrintList(values1);
             Console.WriteLine("-------------------------\n");
 
@@ -43,9 +43,7 @@ namespace Mehmet.Week06.List
             PrintList(values1);
             Console.WriteLine("-------------------------\n");
 
-
-
-            CreateRandomList(values2, 20);
+            values2 = CreateRandomList(20);
             Console.WriteLine("AddListInAList");
             PrintList(values1);
             PrintList(values2);
@@ -53,10 +51,21 @@ namespace Mehmet.Week06.List
             PrintList(values3);
             Console.WriteLine("-------------------------\n");
 
+            values1 = CreateRandomList(5);
+            values1.Sort();
+            values2 = CreateRandomList(20);
+            values2.Sort();
+            PrintList(values1);
+            PrintList(values2);
+            List<int> values3byGyula = AddListInAListByGyula(values1, values2);
+            PrintList(values3byGyula);
+            Console.WriteLine("-------------------------\n");
+
         }
 
-        public static List<int> CreateRandomList(List<int> values, int size)
+        public static List<int> CreateRandomList(int size)
         {
+            List<int> values = new List<int>();
             for (int i = 0; i < size; i++)
             {
                 values.Add(rand.Next(1, 100));
@@ -165,15 +174,12 @@ namespace Mehmet.Week06.List
             
             while (end)
             {
-
                 while (end2)
                     if (values1.Count > 0 && values2.Count > 0)
                     {
                         if (values1[0] == values2[0])
                         {
-
                             newValues.Add(values1[0]);
-
                             if (values1.Count > 0)
                             {
                                 values1.Remove(values1[0]);
@@ -183,7 +189,6 @@ namespace Mehmet.Week06.List
                                 end2 = false;
                             }
                         }
-
                         else if (values1[0] < values2[0])                       
                         {
                             newValues.Add(values1[0]);
@@ -196,7 +201,6 @@ namespace Mehmet.Week06.List
                                 end2 = false;
                             }
                         }
-
                         else if (values2[0] < values1[0])
                         {
                             newValues.Add(values2[0]);                      
@@ -215,7 +219,7 @@ namespace Mehmet.Week06.List
                         }
                     }   
                 
-                if (values1.Count  == 0)
+                if (values1.Count  == 0 && values2.Count > 0)
                 {
 
                     newValues.Add(values2[0]);
@@ -228,17 +232,21 @@ namespace Mehmet.Week06.List
                         end = false;
                     }
                 }
-                else if (values2.Count == 0)
+                if (values2.Count == 0 && values1.Count > 0)
                 {
-                    newValues.Add(values2[0]);
+                    newValues.Add(values1[0]);
                     if (values1.Count > 0)
                     {
-                        values1.Remove(values2[0]);
+                        values1.Remove(values1[0]);
                     }
                     if (values1.Count == 0)
                     {
                         end = false;
                     }
+                }
+                if (values2.Count == 0 && values1.Count == 0)
+                {
+                    end = false;
                 }
                 else
                 {
@@ -247,5 +255,35 @@ namespace Mehmet.Week06.List
             }                    
             return newValues;
         }
+
+
+        public static List<int> AddListInAListByGyula(List<int> values1, List<int> values2)
+        {
+            List<int> result = new List<int>();
+            while (values1.Count > 0 && values2.Count > 0) { 
+                if (values1[0] < values2[0])
+                {
+                    result.Add(values1[0]);
+                    values1.RemoveAt(0);
+                }
+                else
+                {
+                    result.Add(values2[0]);
+                    values2.RemoveAt(0);
+                }
+            }
+            while (values1.Count > 0)
+            {
+                result.Add(values1[0]);
+                values1.RemoveAt(0);
+            }
+            while (values2.Count > 0)
+            {
+                result.Add(values2[0]);
+                values2.RemoveAt(0);
+            }
+            return result;
+        }
+
     }
 }
