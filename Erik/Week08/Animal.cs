@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Channels;
 
 namespace Erik.Week08
@@ -9,6 +10,11 @@ namespace Erik.Week08
         private string _Genus;
         private string _Gender;
         private Food _Food;
+        private int _Hunger;
+
+        public Food food { get => _Food;  }
+    
+        public int hunger { get => _Hunger; set => _Hunger = value; }
 
         public Animal(string animalName, string genus, string gender, Food food)
         {
@@ -16,32 +22,31 @@ namespace Erik.Week08
             _Genus = genus;
             _Gender = gender;
             _Food = food;
+            Random rnd = new Random();
+            _Hunger = rnd.Next(1, 101);
         }
 
         public void PrintAnimalHunger(string prefix)
         {
-            Random rnd = new Random();
-            int random = rnd.Next(1, 101);
-
-            if (random >= 50)
+            if (_Hunger >= 50)
             {
                 Console.Write(prefix + "─────── {0} ", _AnimalName);
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("not very hungry! ({0}% left!)", random);
+                Console.WriteLine("not very hungry! ({0} units left!)", _Hunger);
                 Console.ResetColor();
             }
-            else if (random < 50 && random > 10)
+            else if (_Hunger < 50 && _Hunger > 10)
             {
                 Console.Write(prefix + "─────── {0} ", _AnimalName);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("is hungry! ({0}% left!)",random);
+                Console.WriteLine("is hungry! ({0} units left!)",_Hunger);
                 Console.ResetColor();
             }
-            else if (random <= 10)
+            else if (_Hunger <= 10)
             {
                 Console.Write(prefix + "─────── {0} is ", _AnimalName);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("VERY hungry! ({0}% left!)",random );
+                Console.WriteLine("VERY hungry! ({0} units left!)",_Hunger );
                 Console.ResetColor();
             }
         }

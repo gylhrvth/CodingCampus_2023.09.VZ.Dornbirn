@@ -10,13 +10,14 @@ namespace Erik.Week08
 
             //Food                   Name /  Unit / Price
             Food Banana = new Food("Banana", 700, 100);
-            Food Meat = new Food("Meat", 1500, 350);
+            DoppelmayrZoo.AddFoodList(Banana);
+            Food Meat = new Food("Meat", 2000, 350);
+            DoppelmayrZoo.AddFoodList(Meat);
             Food Fruits = new Food("Fruits", 500, 50);
-            Food Grass = new Food("Gras", 20000, 500);
-            Banana.FoodList(Banana);
+            DoppelmayrZoo.AddFoodList(Fruits);
+            Food Grass = new Food("Grass", 20000, 500);
+            DoppelmayrZoo.AddFoodList(Grass);
 
-
-            
             Keeper Keeper1 = new Keeper("Johannes");
             Keeper Keeper2 = new Keeper("Peter");
             Keeper Keeper3 = new Keeper("Jasmin");
@@ -68,15 +69,15 @@ namespace Erik.Week08
             DoppelmayrZoo.addEncolsureToZoo(TigerEnclosure);
             DoppelmayrZoo.addEncolsureToZoo(SpiderEnclosure);
 
-
                  
             DoppelmayrZoo.PrintZoo("├──");
+            DoppelmayrZoo.PrintFoodList();
 
-            PressToContinue.Start("Press Enter to feed the Animals!");
-            
-
-
-
+            PressToContinue.Start("Press ENTER to feed the Animals!");
+            Console.Clear();
+            DoppelmayrZoo.LoopToFeedAnimal();
+            DoppelmayrZoo.PrintZoo("├──");
+            DoppelmayrZoo.PrintFoodList();
 
         }
     }

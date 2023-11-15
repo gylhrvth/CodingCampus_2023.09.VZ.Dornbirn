@@ -234,8 +234,8 @@ namespace Gheorghe.Week03
             {
              if (array[i] < min)
                 {
-                    MinArray[i] = min;
-                }
+                    min = array[i];
+                } 
                 
             }
             return min;

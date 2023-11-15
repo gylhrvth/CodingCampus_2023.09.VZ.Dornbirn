@@ -12,6 +12,7 @@ namespace Erik.Week08
         private int _SquareMeter;
         private List<Animal> _AnimalList;
         private Keeper _Keeper;
+        
         public string EnclosureName { get => _Name; }
 
         public Enclosure(string name, int squareMeter, Keeper keeper)
@@ -46,6 +47,16 @@ namespace Erik.Week08
         public void AddAnimals(Animal animal)
         {
             _AnimalList.Add(animal);
+        }
+
+        public void FeedAnimals()
+        {
+            foreach (Animal animal in  _AnimalList)
+            {
+                int FoodToFeed = 100 - animal.hunger;
+                animal.food.unit -= FoodToFeed;
+                animal.hunger += FoodToFeed;
+            }
         }
     }
 }
