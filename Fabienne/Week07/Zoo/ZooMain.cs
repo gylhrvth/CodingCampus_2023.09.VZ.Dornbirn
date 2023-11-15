@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Channels;
@@ -18,7 +19,28 @@ namespace Fabienne.Week07.Zoo
             Food nukes = new Food("Nukes", "mg", 0.05);
             Food beans = new Food("Beans", "kg", 12.05);
             Food child = new Food("Child", "MT", 12500);
-            Food 
+            Food mushrooms = new Food("Mushrooms", "kg", 1.00);
+            Food dog = new Food ("Dog", "MT", 12.09);
+            Food whopper = new Food("Whopper", "mg", 88.00);
+            Food skittles = new Food("Skittles", "kg", 0.90);
+            Food cheese = new Food("Cheese", "kg", 1.00);
+            Food frosting = new Food("Frosting", "Can", 1);
+            Food sushi = new Food("Sushi", "kg", 0.60);
+            Food que = new Food("Quesadilla", "kg", 0.40);
+            Food tubur = new Food("Tubburger", "kg", 0.50);
+            Food wiburg = new Food("Wilburger", "kg", 0.50);
+            Food coca = new Food("Coca-Cola", "ml", 250.00);
+            Food soup = new Food("Miso-Soup", "ml", 700.00);
+            Food whiskey = new Food("Whiskey", "ml", 500.00);
+            Food wine = new Food("Wine", "ml", 900.00);
+            Food cake = new Food("Cake", "kg", 1.00);
+            Food spag = new Food("Spaghetti", "g", 150.00);
+            Food chicken = new Food("Chicken", "kg", 1.00);
+            Food whale = new Food("Whale", "kg", 250);
+            Food nsoup = new Food("Noodle-Soup", "ml", 700.00);
+            Food rice = new Food("Rice and veggies", "kg", 2.00);
+            Food hot = new Food("Hotpockets", "g", 328.00);
+            
 
             Enclosure lasnevadas = new Enclosure("Las Nevadas", "Subtropical", "hot");
             Enclosure snowchester = new Enclosure("Snowchester", "Polar", "cold");
@@ -34,42 +56,40 @@ namespace Fabienne.Week07.Zoo
             Enclosure erets = new Enclosure("Eret's Castle", "Temperate", "medium");
             Enclosure cemetary = new Enclosure("Limbo", "-", "-");
        
-            Animal quackity = new Animal("Quackity", "Male", cig, 15);
-            Animal slimecicle = new Animal("Slimecicle", "Unknown", cig, 1);
-            Animal foolish = new Animal("Foolish", "Male", beans, 3);
-            Animal niki = new Animal("Niki Nihachu", "Female", beans, 2);
-            Animal george = new Animal("GeorgeNotFound", "Male", child, 600);
-            Animal sapnap = new Animal("Sapnap", "Male", nukes, 12);
-            Animal karl = new Animal("Karl Jacobs", "Genderfluid", child, 37);
-            /*
-            Animals tina = new Animals("TinaKitten", "Female", 1, true);
-            Animals toms = new Animals("Tommyinnit", "Male", 69, true);
-            Animals wil = new Animals("Wilbur Soot", "Male", cig,48);
-            Animals fundy = new Animals("Fundy", "Male", salmon, 2);
-            Animals tubbo = new Animals("Tubbo Underscore", "Non-Binary", nukes, 3);
-            Animals ran = new Animals("Ghostboo","Non-Binary",beans, 5);
-            Animals micheal = new Animals("Micheal", "Unknown", salmon, 1);
-            Animals aimsey = new Animals("Aimsey", "Genderfluid", whale, 1);
-            Animals skeppy = new Animals("Skeppy", "Unknown",ramen, 4);
-            Animals badbh = new Animals("BadBoyHalo", "Unknown", spag, 3);
-            Animals hannah = new Animals("Hannah Rose", "Female",wine, 8);
-            Animals antfrost = new Animals("Antfrost", "Male", dog, 7);
-            Animals dream = new Animals("Dream", "Agender", child, 1);
-            Animals cpk = new Animals("Seepeekay", "Male", soup, 6);
-            Animals jack = new Animals("Jack Manifold", "what", skittles, 1);
-            Animals tech = new Animals("Technoblade", "Agender", cake, 1);
-            Animals phil = new Animals("Philza Minecraft", "Male", chicken, 2);
-            Animals mumza = new Animals("Kristen", "Female", spag, 2);
-            Animals sam = new Animals("AweSamDude", "Agender", nukes, 1);
-            Animals ponk = new Animals("Ponk", "Genderfluid", ramen, 2);
-            Animals eret = new Animals("Eret", "Genderfluid", mushrooms, 5);
-            Animals boomers = new Animals("Boomer", "Male", coke, 1);
-            Animals boo = new Animals("Ranboo", "Non-Binary", coke, 1);
-            Animals gboo = new Animals("Ghostbur", "Agender", coke, 1);
-            Animals js = new Animals("JSchlatt", "Male", whiskey, 77);
-            Animals md = new Animals("Mexican Dream", "Mexican", en, 34);
-            */
-
+            Animal quackity = new Animal("Quackity", "Male", whiskey, 15);
+            Animal slimecicle = new Animal("Slimecicle", "Unknown", child, 1);
+            Animal foolish = new Animal("Foolish", "Male", whale, 3);
+            Animal niki = new Animal("Niki Nihachu", "Female", cake, 2);
+            Animal george = new Animal("GeorgeNotFound", "Male", mushrooms, 600);
+            Animal sapnap = new Animal("Sapnap", "Male", sushi, 12);
+            Animal karl = new Animal("Karl Jacobs", "Genderfluid", skittles, 37);
+            Animal tina = new Animal("TinaKitten", "Female", soup, 4);
+            Animal toms = new Animal("Tommyinnit", "Male", coca, 69);
+            Animal wil = new Animal("Wilbur Soot", "Male", cig, 48);
+            Animal fundy = new Animal("Fundy", "Male", salmon, 2);
+            Animal tubbo = new Animal("Tubbo Underscore", "Non-Binary", nukes, 3);
+            Animal ran = new Animal("Ghostboo","Non-Binary",beans, 5);
+            Animal micheal = new Animal("Micheal", "Unknown", tubur, 1);
+            Animal aimsey = new Animal ("Aimsey", "Genderfluid", rice, 1);
+            Animal skeppy = new Animal("Skeppy", "Unknown",hot, 4);
+            Animal badbh = new Animal("BadBoyHalo", "Unknown", cheese, 3);
+            Animal hannah = new Animal("Hannah Rose", "Female",wine, 8);
+            Animal antfrost = new Animal("Antfrost", "Male", dog, 7);
+            Animal dream = new Animal("Dream", "Agender", child, 1);
+            Animal cpk = new Animal("Seepeekay", "Male", soup, 6);
+            Animal jack = new Animal("Jack Manifold", "what", whopper, 1);
+            Animal tech = new Animal("Technoblade", "Agender", cake, 1);
+            Animal phil = new Animal("Philza Minecraft", "Male", chicken, 2);
+            Animal mumza = new Animal("Kristen", "Female", spag, 2);
+            Animal sam = new Animal    ("AweSamDude", "Agender", nukes, 1);
+            Animal ponk = new Animal("Ponk", "Genderfluid", nsoup, 2);
+            Animal eret = new Animal("Eret", "Genderfluid", mushrooms, 5);
+            Animal boomers = new Animal("Boomer", "Male", coca, 1);
+            Animal boo = new Animal("Ranboo", "Non-Binary", coca, 1);
+            Animal gboo = new Animal("Ghostbur", "Agender", coca, 1);
+            Animal js = new Animal("JSchlatt", "Male", whiskey, 77);
+            Animal md = new Animal("Mexican Dream", "Mexican", coca, 34);
+           
             zoo.addEnclosure(lasnevadas);
             zoo.addEnclosure(snowchester);
             zoo.addEnclosure(lmanburg);
