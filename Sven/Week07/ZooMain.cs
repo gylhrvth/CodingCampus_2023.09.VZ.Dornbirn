@@ -8,20 +8,36 @@
 
             Zoo zoo = new Zoo("HalliGalli", "Leipzig", 1902);
 
-            Enclosure savanna = new Enclosure("Savanne", "Warm und Trocken", "Namek");
-            Enclosure aqua = new Enclosure("Aquarium", "Salzwasser", "Neptun");
-            Enclosure tropical = new Enclosure("Urwald", "Tropisch", "Soul Society");
-            Enclosure swamp = new Enclosure("Sumpf", "Schlamm", "Demon Continent");
+            Food balls = new Food("Dragonballs", 200, "pieces");
+            Food grain = new Food("Grain", 2, "kg");
+            Food worms = new Food("Worms", 15, "kg");
+
+            Enclosure moon = new Enclosure("Moon", "Cold / without Oxigen", "Namek");
+            Enclosure aqua = new Enclosure("Aquarium", "Saltwater", "Neptun");
+            Enclosure tropical = new Enclosure("Ancient Forrest", "Tropical", "Soul Society");
+            Enclosure swamp = new Enclosure("Swamp", "Mud", "Demon Continent");
 
 
-            zoo.AddEnclosure(savanna);
+            Animal dragon1 = new Animal("Shen Long", 5485, "Spacedragon", "???", balls, 7);
+            Animal axolotl1 = new Animal("Axel", 2, "Deep sea Axolotl", "Male", worms, 1);
+            Animal blubird1 = new Animal("Blu", 4, "Ice Bird", "Female", grain, 2);
+            Animal explofrog1 = new Animal("Frogston", 7, "Bomb Frog", "Male", worms, 5);
+
+            zoo.AddEnclosure(moon);
+            moon.AddAnimals(dragon1);
+
             zoo.AddEnclosure(aqua);
-            zoo.AddEnclosure(tropical);
-            zoo.AddEnclosure(swamp);
+            aqua.AddAnimals(axolotl1);
 
+            zoo.AddEnclosure(tropical);
+            tropical.AddAnimals(blubird1);
+
+            zoo.AddEnclosure(swamp);
+            swamp.AddAnimals(explofrog1);
 
 
             zoo.PrintZoo();
+
         }
 
     }
