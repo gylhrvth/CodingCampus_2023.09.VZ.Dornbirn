@@ -13,8 +13,8 @@ namespace Simon.Week06.Zoo3
         private List<Enclosure> _EnclosureList;
         private List<Zookeeper> _ZookeeperList;
         private List<AnimalDoctor> _AnimalDoctorList;
-        private List<Animals> _AnimalsList;
-        
+
+
 
         public Zoo(string name, int foundingYear)
         {
@@ -23,7 +23,6 @@ namespace Simon.Week06.Zoo3
             _EnclosureList = new();
             _ZookeeperList = new();
             _AnimalDoctorList = new();
-            _AnimalsList = new();            
         }
 
         public void AddEnclosure(Enclosure enclosure)
@@ -70,7 +69,7 @@ namespace Simon.Week06.Zoo3
             }
             foreach (AnimalFood animalFood in dic.Keys)
             {
-                foodammount += dic[animalFood];
+                //foodammount += dic[animalFood];
                 //Console.WriteLine("{0} wird {1} mal benötigt und kostet pro {3} {2}", animalFood.Name, dic[animalFood], animalFood.PriceperUnit, animalFood.Unit);
                 foodsumm += dic[animalFood] * animalFood.PriceperUnit;
             }
@@ -83,6 +82,7 @@ namespace Simon.Week06.Zoo3
             foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.FightandBite();
+
             }
         }
         public void FoodReset()
@@ -93,26 +93,53 @@ namespace Simon.Week06.Zoo3
             }
         }
 
-        public void FillListAnimals()
+        //public void FillListAnimals()
+        //{
+        //    foreach(Enclosure enclosure in _EnclosureList)
+        //    {
+        //        enclosure.FillListAnimals();
+        //    }
+        //}
+
+        public void RestoreHP()
         {
-            foreach(Enclosure enclosure in _EnclosureList)
+            List<Animals> availableAnimals = new();
+            foreach (Enclosure enclosure in _EnclosureList)
             {
-                enclosure.FillListAnimals();
+                foreach (Animals animal in enclosure.AnimalsList)
+                {
+                    if (animal.Alive == true)
+                    {
+                        availableAnimals.Add(animal);
+                    }
+                }
+                //move to enclosure
+            }
+            foreach (AnimalDoctor animalDoctor in _AnimalDoctorList)
+            {
+                Animals lowestanimal = null;
+                foreach (Animals animal in availableAnimals)
+                {
+                    if (lowestanimal == null || (animal.Health / animal.MaxHealth < lowestanimal.Health / animal.MaxHealth))
+                    {
+                        lowestanimal = animal;
+                    }
+                }
+                if (lowestanimal != null)
+                {
+                    animalDoctor.RestoreHP(lowestanimal);
+                    availableAnimals.Remove(lowestanimal);
+                }
+
             }
         }
 
-        public double CalcLowestHP()
+        public void FeedEnclosures()
         {
-            double lowesthp = 100;
-            for (int i = 0; i < _AnimalsList.Count; i++)
+            foreach(Zookeeper zookeeper in _ZookeeperList)
             {
-                double percentHP = (_AnimalsList[i].Health / _AnimalsList[i].MaxHealth) * 100;
-                if (lowesthp > percentHP)
-                {
-                    lowesthp = percentHP;
-                }
+                zookeeper.FeedEnclosures();
             }
-            return lowesthp;
         }
 
 
