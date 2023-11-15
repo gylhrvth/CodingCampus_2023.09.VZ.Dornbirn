@@ -70,5 +70,10 @@ namespace Simon.Week06.Zoo3
 
         }
 
+        public bool attack(Animals victom)
+        {
+            return true;
+        }
+
     }
 }

@@ -4,24 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Jovo.Week06._05Zoo
 {
-    public class Zoo
+    internal class Zoo
     {
-        private string _name;
-        private string _year;
+        private string _Name;
+        private string _Locality;
+        private int _FoundingYear;
+        private int _Capacity;
+        private List<Enclosure> _EnclosureList;
 
+        public Zoo(string name, string locality, int foundingYear, int capacity)
+        {
+            _Name = name;
+            _Locality = locality;
+            _FoundingYear = foundingYear;
+            _Capacity = capacity;
+            _EnclosureList = new List<Enclosure>();
+        }
 
-
-        public Zoo(string zoo, int year, List<Gehege> Gehege)
+        public void AddEnclosure(Enclosure enclosure)
         {
 
-            _name = zoo;
-            _year = year;
+            if (!_EnclosureList.Contains(enclosure))
+            {
+                _EnclosureList.Add(enclosure);
+            }
+        }
+
+        public void PrintZoo()
+        {
+
+            Console.WriteLine($"Zoo: {_Name}, Year: {_FoundingYear}");
+
+            foreach (Enclosure enclosure in _EnclosureList)
+            {
+                enclosure.PrintZoo();
+
+            }
+
 
         }
+
+
+      
+        
     }
 
 
-    
+
 }
