@@ -33,6 +33,16 @@ namespace Niklas.Week06.Zoo
             }
         }
 
+        public void RemoveAnimals(Animals animals)
+        {
+
+            if (_AnimalsList.Contains(animals) && animals.Health <= 0)
+            {
+                Console.WriteLine("Removed " + animals.Name);
+                _AnimalsList.Remove(animals);
+            }
+        }
+
         public void PrintZoo()
         {
             Console.WriteLine(Convert.ToChar(9556) + "" + Convert.ToChar(9565));
@@ -40,7 +50,6 @@ namespace Niklas.Week06.Zoo
             foreach (Animals animals in _AnimalsList)
             {
                 animals.PrintZoo();
-
             }
         }
         public string Status
@@ -48,8 +57,7 @@ namespace Niklas.Week06.Zoo
             get => _status;
             set
             {
-                Console.WriteLine();
-                Console.Write($"Enclosure {_Name} is now: {value}. ");
+                Console.Write($"Enclosure {_Name} is {value}.\n");
                 _status = value;
 
             }
