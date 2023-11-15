@@ -21,7 +21,7 @@ namespace Niklas.Week06.Zoo
 
         public void PrintZoo()
         {
-            Console.WriteLine("  " + Convert.ToChar(9553) + "  " + Convert.ToChar(9562) + $"Eats: {_name}, {_amount} piece for: {_price}$ ({_amount * 28} piece and {_amount * _price * 28}$ per month)");
+            Console.WriteLine("  " + Convert.ToChar(9553) + "    " + Convert.ToChar(9562) + $"Eats: {_name}, {_amount} piece for: {_price}$ ({_amount * 28} piece and {_amount * _price * 28}$ per month)");
         }
 
         public override string ToString()
