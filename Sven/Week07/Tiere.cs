@@ -28,9 +28,21 @@ namespace Sven.Week07
 
         }
 
+        public void GetAnimalStatistic(Dictionary<Food, float> dic)
+        {
+            if (dic.ContainsKey(_Food))
+            {
+                dic[_Food] += _FoodAmount;
+            }
+            else
+            {
+                dic[_Food] = _FoodAmount;
+            }
+        }
+
         public void PrintZoo()
         {
-            Console.WriteLine($"│       ├── {_Name}, {_Age}, {_Gender}, {_Species}, Food Required : {_FoodAmount} {_Food}");
+            Console.WriteLine($"│       ├── {_Name}, {_Age}, {_Gender}, {_Species}, Food Required : {_FoodAmount} {_Food}: Price per day:");
         }
 
 
