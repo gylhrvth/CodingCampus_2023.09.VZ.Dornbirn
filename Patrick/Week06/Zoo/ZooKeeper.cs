@@ -21,7 +21,6 @@ namespace Patrick.Week06.Zoo
         public List<Enclosure> EnclosureList
         {
             get => _EnclosureList;
-            set => _EnclosureList = value;
         }
 
         public  void PrintZooKeeper()
@@ -33,6 +32,18 @@ namespace Patrick.Week06.Zoo
             {
                 enclosure.PrintAnimals();
             }
+        }
+
+        public void PrintSimulationOne()
+        {
+            foreach(Enclosure enclosure in EnclosureList)
+            {
+                foreach (Animals animal in enclosure.AnimalsList)
+                {
+                    Console.WriteLine($"{_Name} füttert das Tier {animal}, im Gehege {enclosure.Name}, mit dem Futter {animal.Food} ");
+                }
+            }
+            
         }
 
     }
