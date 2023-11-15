@@ -8,9 +8,24 @@ namespace Patrick.Week06.Zoo
 {
     internal class Food
     {
-        public string _Name;
-        public string _Unit;
-        public float _Price;
+        private string _Name;
+        private string _Unit;
+        private float _Price;
+
+        public string Name
+        {
+            get => _Name;
+        }
+
+        public string Unit
+        {
+            get => _Unit;
+        }
+
+        public float Price
+        {
+            get => _Price;
+        }
 
 
         //Konstruktor
@@ -19,11 +34,6 @@ namespace Patrick.Week06.Zoo
             _Name = Name;
             _Unit = Unit;
             _Price = Price;
-        }
-
-        public string Name
-        {
-            get => _Name;
         }
 
         public override string ToString()

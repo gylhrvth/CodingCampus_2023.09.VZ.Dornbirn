@@ -169,14 +169,15 @@ namespace Patrick.Week07.TikTakToe
 
         static bool CheckWin(char[][] displayboard, char player)
         {
-
+            for(int i = 0; i < displayboard.Length; i++)
+            {
                 // Check Row Player
-                if ((displayboard[0][0] == player && displayboard[0][1] == player && displayboard[0][2] == player))
+                if ((displayboard[i][0] == player && displayboard[i][1] == player && displayboard[i][2] == player))
                 {
                     return true;
                 }
                 // Check Column Player
-                else if ((displayboard[0][0] == player && displayboard[1][0] == player && displayboard[2][0] == player))
+                else if ((displayboard[0][i] == player && displayboard[1][i] == player && displayboard[2][i] == player))
                 {
                     return true;
                 }
@@ -190,8 +191,9 @@ namespace Patrick.Week07.TikTakToe
                 {
                     return true;
                 }
-                return false;
-           
+
+            }
+            return false;
         }
     }
 

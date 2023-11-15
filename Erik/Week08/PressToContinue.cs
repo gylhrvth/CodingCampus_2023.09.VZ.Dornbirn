@@ -10,6 +10,7 @@ namespace Erik.Week08
     {
         public static void Start(string message)
         {
+            Console.WriteLine();
             Console.WriteLine(message);
 
             while (Console.ReadKey().Key != ConsoleKey.Enter)
