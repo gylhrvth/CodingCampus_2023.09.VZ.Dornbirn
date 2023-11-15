@@ -1,1 +1,1 @@
-﻿Riccardo.Week06.PersonBook.Start();
+﻿Riccardo.Week06.CreateAList.Start();

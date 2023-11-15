@@ -9,12 +9,17 @@ namespace Patrick.Week06.Zoo
 {
     internal class Enclosure
     {
-        public string _Name { get; private set; }
+        private string _Name;
 
-        public string _Temp { get; private set; }
+        private string _Temp;
 
         private List<Animals> _AnimalsList { get; set; }
 
+
+        public string Name
+        {
+            get => _Name;
+        }
 
         //Konstruktor 
         public Enclosure(string name, string temp)
@@ -27,13 +32,12 @@ namespace Patrick.Week06.Zoo
         public List<Animals> AnimalsList
         {
             get => _AnimalsList;
-            set => _AnimalsList = value;
 
         }
 
         public void GetEnclosureStatistic(Dictionary<Food, float> dic)
         {
-            foreach (var animal in _AnimalsList)
+            foreach (Animals animal in _AnimalsList)
             {
                 animal.GetAnimalStatistic(dic);
             }
@@ -48,6 +52,11 @@ namespace Patrick.Week06.Zoo
             {
                 Console.WriteLine($"│          ├── {animal.Name}, {animal.Genus}, {animal.Age} || mag: {animal.ToString()}");
             }           
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
 
     }

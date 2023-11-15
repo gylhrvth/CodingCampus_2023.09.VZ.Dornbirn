@@ -63,7 +63,7 @@ namespace Patrick.Week07.TikTakToe
 
         static char[][] NextTurn(char[][] displayboard)
         {
-            char player1 = 'X';
+            char player1 = (char)9632;
             char player2 = (char)216;
 
             if (playerTurn == true)

@@ -42,7 +42,7 @@ namespace Mohammed.Week04
 		}
 
 
-public static void PrintArray(int[][] arr)
+		public static void PrintArray(int[][] arr)
 		{
 			foreach(int[] row in arr)
 			{

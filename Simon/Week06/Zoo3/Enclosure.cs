@@ -12,7 +12,6 @@ namespace Simon.Week06.Zoo3
         private string _Name;
         private List<Animals> _AnimalsList;
         private bool _Wasfed;
-        private List<Animals> _lowestAnimalList;
 
         public string Name
         {
@@ -26,12 +25,13 @@ namespace Simon.Week06.Zoo3
             set { _Wasfed = value; }
         }
 
+
+
         public Enclosure(string name)
         {
             _Name = name;
             _AnimalsList = new List<Animals>();
             _Wasfed = false;
-            _AnimalsList = new();
         }
 
 
@@ -67,6 +67,14 @@ namespace Simon.Week06.Zoo3
                 int bittenanimal = random.Next(_AnimalsList.Count);
                 if (bittenanimal != i)
                 {
+                    Animals attacker = _AnimalsList[i];
+                    Animals victom = _AnimalsList[bittenanimal];
+                    bool victomAlive = attacker.attack(victom);
+                    if (!victomAlive)
+                    {
+                        // ToDo
+                    }
+
                     if (rand < 100 && _AnimalsList.Count > 1)
                     {
                         int bitedmg = _AnimalsList[i].BiteDmg;
@@ -87,13 +95,15 @@ namespace Simon.Week06.Zoo3
                 }
             }
         }
-        public void FillListAnimals()
-        {
-            foreach (Animals animals in _AnimalsList)
-            {
-                _AnimalsList.Add(animals);
-            }
-        }
+        //public void FillListAnimals()
+        //{
+        //    foreach (Animals animals in _AnimalsList)
+        //    {
+        //        _LowestAnimalList.Add(animals);
+        //    }
+        //}
+
+
 
 
 

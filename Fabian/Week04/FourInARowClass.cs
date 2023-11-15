@@ -1,4 +1,5 @@
-﻿using static Fabian.Week02.ConsoleInput;
+﻿using static Fabian.Selftest_SP.TowersOfHanoi;
+using static Fabian.Week02.ConsoleInput;
 namespace Fabian.Week04
 {
     public class FourInARowClass
@@ -24,7 +25,8 @@ namespace Fabian.Week04
                 {
                     if (board[0, input] != '-')
                     {
-                        Console.WriteLine("This column is full!");
+                        PrintBoard(board);
+                        SetConsoleColor(ConsoleColor.Red, "This column is full!");
                         input = ReadInt($"Enter a column between 1-6 (player {player}): ", 1, 6) - 1;
                     }
                     else i--;
