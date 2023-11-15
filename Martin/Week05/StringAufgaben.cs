@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Ressources;
 
 namespace Martin.Week05
 {
@@ -24,17 +25,24 @@ namespace Martin.Week05
 
             //BubbleSortNachBuchstabeAbsteigend(names);
             //PrintArray(names);
-<<<<<<< HEAD
-=======
+
 
             //BubbleSortMitStringsExtended(names, true);
 
             //BubbleSortMitStringUndCharacterIndex(names, 1, false);
             //PrintArray(names);
 
-            Reverse(names);
+            Reverse();
+            //Randomzie("Gib dein word ein das dieses word mit den buchstabe ein zufälliges wort gibt");
 
->>>>>>> dd6e6f487f3b940712de11a284d85df1726ce6ff
+            String[] firstName = { "Alfonso", "Beatrix-Eleonor", "Cecil", "Daniel", "Elmar" };
+            String[] lastName = { "Klein", "Kinderdorfer", "Al Elmenar", "Schmidt", "Simma" };
+            int[] age = { 40, 78, 5, 18, 81 };
+            String[] place = { "Wien", "Schwarzach", "Wiener Neudorf", "Sankt Pölten", "Sankt Pölten" };
+            float[] distanceFromCapital = { 0f, 654.4f, 12.457634366f, 120.0f, 119.9999f };
+
+            Tabelle2d(2, 3);
+            
         }
         public static void BubbleSortAufsteigend(string[] names)
         {
@@ -102,7 +110,6 @@ namespace Martin.Week05
                 }
             }
         }
-
         public static void BubbleSortMitStringsExtended(string[] names,bool aufsteigen)
         {
 
@@ -115,7 +122,6 @@ namespace Martin.Week05
                 BubbleSortNachBuchstabeAbsteigend(names);
             }
         }
-
         public static void BubbleSortMitStringUndCharacterIndex(string[] names, int pos, bool aufsteigend) 
         {
             for (int i = 0; i < names.Length; i++)
@@ -133,26 +139,100 @@ namespace Martin.Week05
                 }
             }
         }
-
-        public static void Reverse(string[] names)
+        public static void Reverse()
         {
             Console.WriteLine("Gib ein Wort ein");
             string input = Console.ReadLine();
 
-            String[] FirstInput = new String[input.Length];
-            FirstInput = input.ToCharArray();
+            Char[] FirstInput = input.ToCharArray();
+            
+            Array.Reverse(FirstInput);
 
-            for(int i = input.ToCharArray().Length; i > 0; i--)
+            string ReverseWord = new String(FirstInput);
+
+
+            Console.WriteLine(ReverseWord);
+        }
+        public static void Randomzie(string msg) 
+        {
+            Console.WriteLine(msg);
+            string input = Console.ReadLine();
+
+            Char[] RandomLetters = input.ToCharArray();
+            Random ran = new Random();
+
+            for(int anzahl  = 0; anzahl < RandomLetters.Length; anzahl++)
             {
-                String word = new String(FirstInput);
+                int ranompos = ran.Next(RandomLetters.Length);
+                char temp = RandomLetters[anzahl];
+                RandomLetters[anzahl] = RandomLetters[ranompos];
 
-                word = new 
+                RandomLetters[ranompos] = temp;
 
-                Console.WriteLine(word);
             }
 
-            Console.WriteLine(FirstInput);
+            string RandomWord = new String(RandomLetters);
+
+            Console.WriteLine(RandomLetters);
+
         }
+        public static void BuchstabenZeahlen()
+        {
+            String t = Ressources.StringRessources.getText();
+            //int[] array =   
+        }
+
+
+
+        public class CountLetters
+        {
+            public static void Start()
+            {
+                String s = StringRessources.getText();
+                Console.WriteLine(s);
+
+                int[] count = countLetters(s);
+                PrintResult(count);
+
+            }
+
+            public static void PrintResult(int[] count)
+            {
+                for (int i = 0; i < count.Length; ++i)
+                {
+                    if (count[i] > 0)
+                    {
+                        char c = (char)i;
+                        Console.WriteLine(c + " " + count[i]);
+                    }
+                }
+            }
+
+            public static int[] countLetters(string text)
+            {
+                int[] count = new int[char.MaxValue];
+                for (int i = 0; i < text.Length; i++)
+                {
+                    char c = text[i];
+                    ++count[c];
+                }
+
+                return count;
+            }
+        }
+
+        public static string[][] Tabelle2d(int row, int colms)
+        {
+            String[][] arr = new string[row][];
+
+            for(int i = 0;i < row; ++i)
+            {
+                arr[i] = new string[colms];
+            }
+
+            return arr;
+        }
+        
         public static String[] PrintArray(String[] array)
         {
             for (int i = 0; i < array.Length; i++)

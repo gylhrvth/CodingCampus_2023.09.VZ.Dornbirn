@@ -30,6 +30,8 @@ namespace Niklas.Week02
 
             Console.WriteLine("\nTeilen und Herrschen: ");
             Teilen(0);
+
+
             Console.WriteLine();
 
             Console.WriteLine("\nPi: ");

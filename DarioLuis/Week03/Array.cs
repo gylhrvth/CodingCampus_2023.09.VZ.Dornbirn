@@ -1,6 +1,6 @@
 ﻿namespace DarioLuis.Week03
 {
-    public class Array
+    public class Arrays
     {
         public static Random rand = new Random();
 
@@ -121,6 +121,15 @@
                 }
                 Console.WriteLine();
             }
+        }
+        public static int ArraySum(int[] arr)
+        {
+            int sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum = sum + arr[i];
+            }
+            return sum;
         }
 
     }

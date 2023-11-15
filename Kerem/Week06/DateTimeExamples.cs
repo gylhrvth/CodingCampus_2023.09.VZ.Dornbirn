@@ -12,9 +12,9 @@ namespace Kerem.Week06
         public static void Start()
         {
             //DateTimeSandbox();
-            //Birthday("Enter your birthday");
+            Birthday("Enter your birthday");
             //WhenIsSunday();
-            GetNumberOfSundays(2000,5);
+            //GetNumberOfSundays(2000,5);
         }
         public static void DateTimeSandbox()
         {
@@ -26,8 +26,6 @@ namespace Kerem.Week06
         }
         public static string Birthday(string msg)
         {
-            DateTime t = DateTime.Now;
-
             Console.WriteLine(msg);
             string input = Console.ReadLine();
 
@@ -44,9 +42,6 @@ namespace Kerem.Week06
             {
                 Console.WriteLine("Format Exception, please enter the correct type! ");
             }
-
-
-
             return input;
         }
 

@@ -1,173 +1,127 @@
-﻿using static Fabian.Week02.ConsoleInput;
-using static Fabian.Week03.TicTacToeClass;
-
+﻿using static Fabian.Selftest_SP.TowersOfHanoi;
+using static Fabian.Week02.ConsoleInput;
 namespace Fabian.Week04
 {
     public class FourInARowClass
     {
+        const char player1 = 'X', player2 = 'O';
         public static void Start()
         {
             FourInARow();
         }
 
-        public static void FourInARow()
+        private static void FourInARow()
         {
+            int player = 1;
             int count = 0;
-            bool columnFull = false;
-            int[,] playGround = new int[7, 6];
-
-            // fill array with 0's
-            for (int i = 0; i < playGround.GetLength(0); i++)
-            {
-                for (int j = 0; j < playGround.GetLength(1); j++)
-                {
-                    playGround[i, j] = 0;
-                }
-            }
-            Print2DArray(playGround);
+            char[,] board = InitializeBoard();
+            PrintBoard(board);
 
             while (true)
             {
-                int p1 = UserInput("column", 1, 1, 6); //user input player 1
-                int i = playGround.GetLength(0) - 1;
-                do
+                int input = ReadInt($"\nEnter a column between 1-6 (player {player}): ", 1, 6) - 1;
+                int i = board.GetLength(0) - 1;
+                while (board[i, input] != '-')
                 {
-                    //Check what place in the column is free and place a 1
-                    for (int j = 0; j < playGround.GetLength(0); j++)
+                    if (board[0, input] != '-')
                     {
-                        if (playGround[0, p1 - 1] != 0)
-                        {
-                            columnFull = true;
-                            break;
-                        }
-                        else if (i >= 0 && playGround[i, p1 - 1] == 0)
-                        {
-                            playGround[i, p1 - 1] = 1;
-                            columnFull = false;
-                            break;
-                        }
-                        i--;
+                        PrintBoard(board);
+                        SetConsoleColor(ConsoleColor.Red, "This column is full!");
+                        input = ReadInt($"Enter a column between 1-6 (player {player}): ", 1, 6) - 1;
                     }
-                    if (columnFull)
-                    {
-                        Console.WriteLine("This column is already full!");
-                        p1 = UserInput("column", 1, 1, 6); //input for the new column
-                    }
-                } while (columnFull);
-
-                Print2DArray(playGround);
-
-                if (CheckWinVertical(playGround) || CheckWinHorizontal(playGround) || CheckWinDiagonal(playGround))
-                {
-                    Console.WriteLine("player 1 won!");
-                    if (AskToPlayAgain())
-                        FourInARow();
-                    else
-                        return;
+                    else i--;
                 }
 
-                int p2 = UserInput("column", 2, 1, 6); //user input player 2
-                int k = playGround.GetLength(0) - 1;
-                do
-                {
-                    //Check what place in the column is free and place a 2
-                    for (int j = 0; j < playGround.GetLength(0); j++)
-                    {
-                        if (playGround[0, p2 - 1] != 0)
-                        {
-                            columnFull = true;
-                            break;
-                        }
-                        else if (k >= 0 && playGround[k, p2 - 1] == 0)
-                        {
-                            playGround[k, p2 - 1] = 2;
-                            columnFull = false;
-                            break;
-                        }
-                        k--;
-                    }
-                    if (columnFull)
-                    {
-                        Console.WriteLine("This column is already full!");
-                        p2 = UserInput("column", 2, 1, 6); //input for the new column
-                    }
-                } while (columnFull);
-
-                Print2DArray(playGround);
+                board[i, input] = (player == 1) ? player1 : player2;
                 count++;
+                PrintBoard(board);
 
-                if (CheckWinVertical(playGround) || CheckWinHorizontal(playGround) || CheckWinDiagonal(playGround))
+                if (CheckWin(board))
                 {
-                    Console.WriteLine("player 2 won!");
-                    if (AskToPlayAgain())
-                        FourInARow();
-                    else
-                        return;
-
+                    Console.WriteLine($"player {player} won! :)");
+                    if (AskToPlayAgain()) FourInARow();
+                    else return;
+                }
+                else if (count == 42)
+                {
+                    Console.WriteLine("It's a draw!");
+                    if (AskToPlayAgain()) FourInARow();
+                    else return;
                 }
 
-                //check if all 0's are overwritten
-                if (count == 21)
-                {
-                    Console.WriteLine("You have no turns left!");
-                    if (AskToPlayAgain())
-                        FourInARow();
-                    else
-                        return;
-                }
-
+                player = (player == 1) ? 2 : 1;
             }
-
-        }       
-        private static bool CheckWinVertical(int[,] arr)
+        }
+        private static void PrintBoard(char[,] board)
         {
-            for (int i = 0; i < arr.GetLength(0) - 3; i++)
+            Console.Clear();
+            Console.WriteLine("  1 2 3 4 5 6");
+            Console.WriteLine("+-------------+");
+            for (int i = 0; i < board.GetLength(0); i++)
             {
-                for (int j = 0; j < arr.GetLength(1); j++)
+                Console.Write("|");
+                for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    if (arr[i, j] != 0 && arr[i, j] == arr[i + 1, j] && arr[i + 1, j] == arr[i + 2, j] && arr[i + 2, j] == arr[i + 3, j])
+                    if (board[i, j] == player1)
                     {
-                        return true;
+                        Console.ForegroundColor = ConsoleColor.Red;
                     }
+                    else if (board[i, j] == player2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    Console.Write($" {board[i, j]}");
+
+                    Console.ResetColor();
+                }
+                Console.WriteLine(" |");
+            }
+            Console.WriteLine("+-------------+");
+        }
+        private static char[,] InitializeBoard()
+        {
+            char[,] board = new char[7, 6];
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    board[i, j] = '-';
                 }
             }
+            return board;
+        }
+        private static bool CheckWin(char[,] board)
+        {
+            //vertical
+            for (int i = 0; i < board.GetLength(0) - 3; i++)
+            {
+                for (int j = 0; j < board.GetLength(1); j++)
+                {
+                    if (board[i, j] != '-' && board[i, j] == board[i + 1, j] && board[i + 1, j] == board[i + 2, j] && board[i + 2, j] == board[i + 3, j])
+                        return true;
+                }
+            }
+            //horizontal
+            for (int i = 0; i < board.GetLength(0); i++)
+            {
+                for (int j = 0; j < board.GetLength(1) - 3; j++)
+                {
+                    if (board[i, j] != '-' && board[i, j] == board[i, j + 1] && board[i, j + 1] == board[i, j + 2] && board[i, j + 2] == board[i, j + 3])
+                        return true;
+                }
+            }
+            //diagonal
+            for (int i = 0; i < board.GetLength(0) - 3; i++)
+            {
+                for (int j = 0; j < board.GetLength(1) - 3; j++)
+                {
+                    if ((board[i, j] != '-' && board[i, j] == board[i + 1, j + 1] && board[i + 1, j + 1] == board[i + 2, j + 2] && board[i + 2, j + 2] == board[i + 3, j + 3]) ||
+                        (board[i, j + 3] != '-' && board[i, j + 3] == board[i + 1, j + 2] && board[i + 1, j + 2] == board[i + 2, j + 1] && board[i + 2, j + 1] == board[i + 3, j]))
+                        return true;
+                }
+            }
+
             return false;
         }
-        private static bool CheckWinHorizontal(int[,] arr)
-        {
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1) - 3; j++)
-                {
-                    if (arr[i, j] != 0 && arr[i, j] == arr[i, j + 1] && arr[i, j + 1] == arr[i, j + 2] && arr[i, j + 2] == arr[i, j + 3])
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-        private static bool CheckWinDiagonal(int[,] arr)
-        {
-            for (int i = 0; i < arr.GetLength(0) - 3; i++)
-            {
-                for (int j = 0; j < arr.GetLength(1) - 3; j++)
-                {
-                    if (arr[i, j] != 0 && arr[i, j] == arr[i + 1, j + 1] && arr[i + 1, j + 1] == arr[i + 2, j + 2] && arr[i + 2, j + 2] == arr[i + 3, j + 3])
-                    {
-                        return true;
-                    }
-
-                    if (arr[i, j + 3] != 0 && arr[i, j + 3] == arr[i + 1, j + 2] && arr[i + 1, j + 2] == arr[i + 2, j + 1] && arr[i + 2, j + 1] == arr[i + 3, j])
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-
-
     }
 }

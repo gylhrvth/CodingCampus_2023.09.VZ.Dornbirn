@@ -1,1 +1,1 @@
-﻿Fabian.Week04.FourInARowClass.Start();
+﻿Fabian.Selftest_SP.TowersOfHanoi.Start();

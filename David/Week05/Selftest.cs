@@ -118,11 +118,11 @@ namespace David.Week05
 
             Console.WriteLine("Aufgabe4:");
 
-            int[] ranArr = BubbleRandom(10);
+            int[] ranArr = CreateRandomArray(10);
             Console.WriteLine();
 
-            int[] arrB = PrintBubbleASC(ranArr, true);
-            PrintBubbleAscDesc(arrB);
+            PrintBubbleASC(ranArr, true);
+            PrintBubbleAscDesc(ranArr);
             Console.WriteLine();
 
             Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("2D ARRAYS");
@@ -142,10 +142,10 @@ namespace David.Week05
 
             Console.WriteLine("Aufgabe1:");
 
-            string Word1 = "apfel";
-            string Word2 = "regallager";
-            string Word3 = "hanna";
-            string Word4 = "reittier";
+            string Word1 = "Apfel";
+            string Word2 = "Regallager";
+            string Word3 = "Hanna";
+            string Word4 = "Reittier";
 
             bool tf1 = Aufgabe1StringPalindrom(Word1);
             PrintPallindrom(Word1, tf1);
@@ -170,8 +170,13 @@ namespace David.Week05
         {
             for (int i = max; i >= 0; i--)
             {
-                Console.Write(i + " ");
+                Console.Write(i);
+                if (i > 0)
+                {
+                    Console.Write(" ");
+                }
             }
+            Console.WriteLine();
         }
 
         public static void Aufgabe2(int count)
@@ -188,6 +193,7 @@ namespace David.Week05
 
         public static void Aufgabe3(int count)
         {
+            /*
             for (int i = 0; i < count; i++)
             {
                 while (i <= 5)
@@ -196,6 +202,15 @@ namespace David.Week05
                 }
                 Console.WriteLine();
                 Console.WriteLine(i);
+            }
+            */
+            for (int i = 0; i <= count; i++)
+            {
+                Console.WriteLine(i);
+                if (i > 5 && i < count)
+                {
+                    Console.WriteLine();
+                }
             }
         }
 
@@ -231,6 +246,7 @@ namespace David.Week05
 
         public static void Aufgabe4M(string symbol, int size, bool backslash)
         {
+            /*
             if (backslash)
             {
                 for (int i = 0; i < size; i++)
@@ -267,22 +283,34 @@ namespace David.Week05
                     Console.WriteLine();
                 }
             }
+            */
+
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = 0; j < size; j++)
+                {
+                    if ((backslash && (j == i)) ||
+                            (!backslash && (j == (size - 1) - i)))
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
+
 
         public static string ReadString()
         {
             string userInput = "";
             while (userInput == "")
             {
-                try
-                {
                     Console.WriteLine("Bitte geben Sie einen Text ein:");
                     userInput = Console.ReadLine();
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Das hat leider nicht funktioniert. Bitte geben Sie nochmals einen Text ein:");
-                }
             }
             return userInput;
         }
@@ -313,6 +341,7 @@ namespace David.Week05
 
         public static string Aufgabe1ARR(int[] arr)
         {
+            /*
             string print1 = "";
             string pos1 = "";
             string pos2 = "";
@@ -330,6 +359,10 @@ namespace David.Week05
                 print1 = ("First: " + pos1 + ", Second: " + pos2 + ",");
             }
             return print1;
+            */
+
+            if (arr.Length == 0) return "Empty array has no first or last element";
+            return string.Format("First: {0} Last: {1}", arr[0], arr[arr.Length - 1]);
         }
 
         public static int Aufgabe2ARRMax(int arrMax)
@@ -345,6 +378,19 @@ namespace David.Week05
                 }
             }
             return max;
+        }
+
+        public static int Aufgabe2ARRMaxByGyula(int[] arr)
+        {
+            int maxValue = Int32.MinValue;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > maxValue)
+                {
+                    maxValue = arr[i];
+                }
+            }
+            return maxValue;
         }
 
         public static int Aufgabe2ARRMin(int arrMin)
@@ -403,15 +449,21 @@ namespace David.Week05
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = i;
+                //arr[i] = i;
                 Console.Write(arr[i] + ", ");
             }
         }
         public static void PrintAufgabe3ARRForEach(int[] arr)
         {
+            bool first = true;
             foreach (int element in arr)
             {
-                Console.Write(element + ", ");
+                if (!first)
+                {
+                    Console.WriteLine(", ");
+                }
+                Console.Write(element);
+                first = false;
             }
         }
         public static void PrintAufgabe3ARRStringJoin(int[] arr)
@@ -419,61 +471,36 @@ namespace David.Week05
             Console.WriteLine("{0}", string.Join(", ", arr));
         }
 
-        public static int[] BubbleRandom(int size)
+        public static int[] CreateRandomArray(int size)
         {
             int[] ranArr = new int[size];
 
             for (int i = 0; i < ranArr.Length; i++)
             {
                 ranArr[i] = random.Next(1, 101);
-                Console.Write(ranArr[i] + ", ");
+                //Console.Write(ranArr[i] + ", ");
             }
             return ranArr;
         }
 
-        public static int[] PrintBubbleASC(int[] array, bool AscDesc)
+        public static void PrintBubbleASC(int[] array, bool Ascending)
         {
-            if (AscDesc == false)
+            for (int j = 0; j < array.Length; j++)
             {
-                for (int j = 0; j < array.Length; j++)
+                for (int i = 0; i < array.Length - j - 1; i++)
                 {
-                    for (int i = 0; i < array.Length - j - 1; i++)// Gewusst was zu tun ist, aber -j-1 nicht gemacht.
+                    if (Ascending == (array[i] > array[i + 1]))
                     {
-                        if (array[i] > array[i + 1])
-                        {
-                            int temp = array[i]; // Zwischenspeicher immer über for-Schleife gemacht.
-                            array[i] = array[i + 1];
-                            array[i + 1] = temp;
-                        }
+                        int temp = array[i]; 
+                        array[i] = array[i + 1];
+                        array[i + 1] = temp;
                     }
                 }
-                Console.WriteLine("Sorted Ascending:");
             }
-            else
-            {
-                for (int j = 0; j < array.Length; j++)
-                {
-                    for (int i = 0; i < array.Length - j - 1; i++)
-                    {
-                        if (array[i] < array[i + 1])
-                        {
-                            int temp = array[i];
-                            array[i] = array[i + 1];
-                            array[i + 1] = temp;
-                        }
-                    }
-                }
-                Console.WriteLine("Sorted Descending:");
-            }
-            return array;
         }
         public static void PrintBubbleAscDesc(int[] arr)
         {
-            for (int i = 0; i < 1; i++)
-            {
-                Console.Write("{0}", string.Join(", ", arr));
-            }
-            Console.WriteLine();
+            Console.WriteLine("{0}", string.Join(", ", arr));
         }
 
         public static int[][] Aufgabe1Arr2DCreate(int size)
@@ -513,6 +540,7 @@ namespace David.Week05
 
         public static bool Aufgabe1StringPalindrom(string W1)
         {
+            W1 = W1.ToLower();
             for (int i = 0; i < W1.Length / 2; i++)
             {
                 if (W1[i] != W1[W1.Length - 1 - i])
@@ -554,20 +582,18 @@ namespace David.Week05
         //Nur mit viel Research geschafft!
         public static string Aufgabe2LongestW(string hesseText, string marieText)
         { 
-            string text = hesseText + " " + marieText;
+            string text = string.Join(" ", hesseText, marieText);
 
-            text = text.Replace("@"+"["+","+"."+"!"+"?"+":"+";"+"("+")"+"'"+"/"+"+"+"]", "");
+            text = text.Replace("@[\n]", " ");
+            text = text.Replace("@[,.!?:;()'/+]", "");
 
             string longestWord = "";
             string[] words = text.Split(" ");
 
-            int maxLen = 0;
-
             foreach (string word in words)
             {
-                if (word.Length > maxLen)
+                if (word.Length > longestWord.Length)
                 {
-                    maxLen = word.Length;
                     longestWord = word;
                 }
             }

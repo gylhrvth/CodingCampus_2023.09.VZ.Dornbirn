@@ -1,2 +1,15 @@
-﻿Gheorghe.Week05.StringsExample.Start();
+﻿using Gheorghe.Week06;
+using Gheorghe.Week06.Personen;
+
+PersonStatistik.Start();
+
+
+
+
+
+
+
+
+
+
 

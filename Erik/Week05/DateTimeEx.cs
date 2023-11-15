@@ -11,7 +11,6 @@ namespace Erik.Week05
         {
             GetDateTime();
             Console.WriteLine();
-            Console.Write("Enter your Birthday: ");
             GetUserBirthday();
             DateToNextSunday();
         }
@@ -28,9 +27,8 @@ namespace Erik.Week05
 
         public static void GetUserBirthday()
         {
-            CheckUserInputValid();
-            string userInputBirthday = CheckUserInputValid();
-            DateTime birthday = DateTime.Parse(userInputBirthday);
+            Console.Write("Enter your Birthday: ");
+            DateTime birthday = CheckUserInputValid("Enter your birthday: ");
             Console.WriteLine(birthday.ToString("dddd"));
         }
 
@@ -53,21 +51,22 @@ namespace Erik.Week05
 
         //}
 
-        public static string CheckUserInputValid()
+        public static DateTime CheckUserInputValid(string bedinung)
         {
             string userInput = "";
             while (userInput.Length == 0)
             {
                 try
                 {
-                    userInput = Console.ReadLine();
+                    return DateTime.Parse(Console.ReadLine());
                 }
                 catch (System.FormatException)
                 {
                     Console.WriteLine("Invalid input!");
+                    Console.Write(bedinung);
                 }
             }
-            return userInput;
+            return new DateTime(0);
         }
     }
 }
