@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Week06._05Zoo
+namespace Timo.Week07._06Car
 {
-    internal class Tiere
+    public class RepairStation
     {
-
-
-
     }
 }

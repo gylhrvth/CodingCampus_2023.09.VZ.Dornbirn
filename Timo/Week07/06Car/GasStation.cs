@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Michael.Class
+namespace Timo.Week07._06Car
 {
-    internal class ChessGame
+    public class GasStation
     {
     }
 }

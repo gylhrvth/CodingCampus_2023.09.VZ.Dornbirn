@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -20,35 +21,29 @@ namespace Patrick.Week06.Zoo
         public string Name
         {
             get => _Name; 
-            set => _Name = value;
         }
         public string Genus
         {
             get => _Genus;
-            set => _Genus = value;
         }
 
         public string Age
         {
             get => _Age;
-            set => _Age = value;
         }
         public float HowManyFood
         {
             get => _HowManyFood;
-            set => _HowManyFood = value;
         }
 
         public Food Food
         {
             get => _Food;
-            set => _Food = value;
         }
 
         public List<Food> FoodList
         {
             get => _FoodList;
-            set => _FoodList = value;
         }
 
         //Konstruktor
@@ -74,10 +69,14 @@ namespace Patrick.Week06.Zoo
             }
         }
 
+
+
+
         public override string ToString()
         {
-            return Food._Name;
+            return _Name;
         }
+
 
     }
 }
