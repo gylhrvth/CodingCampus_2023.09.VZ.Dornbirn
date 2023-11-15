@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Kerem.Week06.ExercisePerson2
+namespace Kerem
 {
     public class Person2
     {

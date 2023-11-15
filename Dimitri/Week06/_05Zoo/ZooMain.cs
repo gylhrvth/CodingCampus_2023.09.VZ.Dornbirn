@@ -33,9 +33,9 @@ namespace Dimitri.Week06._05Zoo
 
             Futter Zuckerwasser = new("Fruchtsaft", "l", 1.29);
 
-            Tier emil = new("Emil", "Mitteleuropäische Kurzhaar", Hühnchen, 1);
+            Tier emil = new("Emil", "Mitteleuropäische Kurzhaar", Hühnchen, 1, 200, 200, 50);
             Gehege.AddTier(katzenGehege, emil);
-            Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75);
+            Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75, 150, 150, 40);
             Gehege.AddTier(katzenGehege, sandy);
             Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter", Zuckerwasser, 0.001);
             Gehege.AddTier(schmetterlingsGehege, sauerFlatter);
@@ -76,7 +76,11 @@ namespace Dimitri.Week06._05Zoo
             //Simulation
             Console.WriteLine();
 
-            myZoo.Simulation();
+            myZoo.Simulation0();
+
+            Console.WriteLine();
+
+            myZoo.Simulation1();
 
 
         }

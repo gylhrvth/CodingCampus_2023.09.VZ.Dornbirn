@@ -9,12 +9,14 @@ namespace Fabian.Selftest_SP
         }
         private static void TowersOfHanoiStart()
         {
+            int tries = 0;
             int size = ReadInt("How much layers should the tower have? (3 - 9): ", 3, 9);
             int[,] board = InitializeBoard(size);
             PrintBoard(board);
 
             while (true)
             {
+                Console.WriteLine($"tries: {tries}");
                 int from = ReadInt("Which tower do u want to select? (1-3): ", 1, 3);
                 int to = ReadInt("Where do you want to move the piece? (1-3): ", 1, 3);
                 while (from == to)
@@ -33,13 +35,14 @@ namespace Fabian.Selftest_SP
 
                     if (CheckWin(board))
                     {
-                        SetConsoleColor(ConsoleColor.Green, "You won! :)\n");
+                        SetConsoleColor(ConsoleColor.Green, $"You won with {tries} tries! :)\n");
                         if (AskToPlayAgain()) TowersOfHanoiStart();
                         else return;
                     }
                 }
                 else
                     SetConsoleColor(ConsoleColor.Red, "Invalid move!\n");
+                tries++;
             }
         }
         private static int[,] InitializeBoard(int size)
