@@ -18,6 +18,7 @@ namespace Jovo.Week06._05Zoo
             Food Meat = new Food("Meat", "KG", 15);
             Food Fish = new Food("Fish", "KG", 17);
 
+            
 
             Enclosure meadow = new Enclosure("Meadow", "Outdoor/Ground", "Outside Temperature: 20°");
             Enclosure woods = new Enclosure("Wood", "Outdoor/Ground", "Outside Temperature: 20°");
@@ -25,7 +26,10 @@ namespace Jovo.Week06._05Zoo
             Enclosure iceberg = new Enclosure("Iceberg", "Indoor/Ice/Water", "Indoor Temperature: -5°");
             Enclosure savanna = new Enclosure("Savanna", "Indoor/Desert", "Indoor Temperature: 30°");
 
-           
+            Pfleger Mero = new Pfleger("Mero", new List<Enclosure> { meadow,swamp,savanna });
+            Pfleger Anna = new Pfleger("Anna", new List<Enclosure> { woods, iceberg });
+
+
             Animals cow1 = new Animals("Sora", 15, "Cow","Female", Gras, 1);
             Animals cow2 = new Animals("Meto", 16, "Cow", "Male", Gras, 1);
             Animals monkey1 = new Animals("Rebo", 7, "Monkey", "Male", Bannanas, 2);
@@ -68,6 +72,13 @@ namespace Jovo.Week06._05Zoo
 
             zoo.PrintZoo();
 
+            //kosten ausprinten
+            zoo.PrintZooStatistic();
+
+            Console.WriteLine();
+
+            Mero.PrintFoodSimulation();
+            Anna.PrintFoodSimulation();
 
         }
     }
