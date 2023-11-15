@@ -61,7 +61,7 @@ namespace Patrick.Week06.Zoo
             animalSeal.FoodList.Add(fish);
             animalShark.FoodList.Add(fish);
             animalTuna.FoodList.Add(meat);
-            animalClownfish.FoodList.Add(fishFood);
+            //animalClownfish.FoodList.Add(fishFood);
 
 
             enclosureAlps.AnimalsList.Add(animalCow);
@@ -96,6 +96,9 @@ namespace Patrick.Week06.Zoo
             Console.WriteLine("=======================================================");
             Console.WriteLine("=======================================================");
             Console.ResetColor();
+            zooKeeper1.PrintSimulationOne();
+            zooKeeper2.PrintSimulationOne();
+            zooKeeper3.PrintSimulationOne();
         }
 
     }

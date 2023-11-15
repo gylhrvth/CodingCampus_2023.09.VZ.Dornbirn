@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Michael.Class
+namespace DarioLuis.Hospital
 {
-    internal class ChessGame
+    internal class Hospital
     {
     }
 }

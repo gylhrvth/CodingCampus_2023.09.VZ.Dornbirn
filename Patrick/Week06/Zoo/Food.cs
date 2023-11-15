@@ -21,6 +21,16 @@ namespace Patrick.Week06.Zoo
             _Price = Price;
         }
 
+        public string Name
+        {
+            get => _Name;
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
 
 
     }

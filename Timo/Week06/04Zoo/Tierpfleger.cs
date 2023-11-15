@@ -12,7 +12,7 @@ namespace Timo.Week06._04Zoo
         private string _Name;
         private List<Gehege> _Gehege = new();
         private string _BeobachtTier;
-        private Tier _Lieblingstier ;
+        private Tier _Lieblingstier;
 
         public Tierpfleger(string name, List<Gehege> zugewieseneGehege, Tier? lieblingstier = null)
         {
@@ -48,11 +48,11 @@ namespace Timo.Week06._04Zoo
                 }
                 else
                 {
-                    Console.WriteLine("Das Gehege {0} wurde bereits gefüttert {1} hat hier nichts mehr zu tun", Gehege[i].Description, _Name);
+                    Console.WriteLine("Die Tiere im Gehege {0} wurde bereits gefüttert {1} hat hier nichts mehr zu tun", Gehege[i].Description, _Name);
                 }
-                if (_Lieblingstier != null && _Lieblingstier.Alive == true) 
+                if (_Lieblingstier != null && _Lieblingstier.Alive == true)
                 {
-                _BeobachtTier= _Lieblingstier.Name;
+                    _BeobachtTier = _Lieblingstier.Name;
                 }
                 else
                 {
