@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ressources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,23 @@ namespace Patrick.Week06.SelfTest
             Console.WriteLine($"{Word4,-10} = " + Palindrom(Word4));
 
             //Aufgabe2
-
-
+            String hesse = StringRessources.getHesse();
+            hesse = hesse
+                .Replace("(", "")
+                .Replace(")", "")
+                .Replace(".", "")
+                .Replace("-", "");
+            Console.WriteLine(hesse);
+            string[] words = hesse.Split(' ');
+            string longestWord = "";           
+            foreach (string word in words)
+            {
+                if (word.Length > longestWord.Length)
+                {
+                    longestWord = word;
+                }
+            }
+            Console.WriteLine($"Longest word: {longestWord}");
         }
 
         public static string Palindrom(string word)

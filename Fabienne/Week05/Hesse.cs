@@ -19,7 +19,7 @@ namespace Fabienne.Week05
         public static int CountSubstring(string text, string searchFor)
         {
             int count = 0;
-            int startPos = startPos = text.IndexOf(searchFor, 0);
+            int startPos = text.IndexOf(searchFor );
             
             while (startPos > -1)
             {

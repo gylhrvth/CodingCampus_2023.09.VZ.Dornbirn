@@ -22,8 +22,8 @@ namespace Simon.Week06.Zoo3
             AnimalFood fleisch = new AnimalFood("Fleisch", "kg", 23);
             AnimalFood schokolade = new AnimalFood("Schoki", "Tafeln", 1.30);
 
-            Animals bert = new Animals("Bert", "Adler", fleisch, 1.25, 20, 30);
-            Animals stick = new("Stick", "Uhu", koerner, 0.468, 15,25);
+            Animals bert = new Animals("Bert", "Adler", fleisch, 1.25, 50, 45);
+            Animals stick = new("Stick", "Uhu", koerner, 0.468, 50, 45);
             Animals elsa = new("Elsa", "Ziege", heu, 1.5, 150, 10);
             Animals fridolin = new("Fridolin", "Hängebauchschwein", schokolade, 2, 250, 50);
             Animals fridolin2 = new("Fridolin clone", "Hängebauchschwein", schokolade, 2, 250, 5);
@@ -32,7 +32,7 @@ namespace Simon.Week06.Zoo3
 
             Zookeeper manfred = new("Manfred", new List<Enclosure> { streichelgehege, schweinestall }, fridolin);
             Zookeeper sabrina = new("Sabrina", new List<Enclosure> { vogelkaefig }, fred);
-            Zookeeper paul = new("Paul", new List<Enclosure>{ schweinestall, vogelkaefig , spielgruppefuerpaul}, bert);
+            Zookeeper paul = new("Paul", new List<Enclosure> { schweinestall, vogelkaefig, spielgruppefuerpaul }, bert);
 
             AnimalDoctor lucia = new("Lucia");
             AnimalDoctor noah = new("Noah");
@@ -58,25 +58,21 @@ namespace Simon.Week06.Zoo3
             vogelkaefig.AddAnimals(bert);
             vogelkaefig.AddAnimals(stick);
 
-
-
-            
             wildpark.PrintZoo();
             Console.WriteLine();
             wildpark.GetFoodStatistics();
             Console.WriteLine();
 
-            for(int i = 0; i < 50; i++)
+            for (int i = 1; i <= 10; i++)
             {
                 Console.WriteLine("\nTag {0}", i);
-                wildpark.GetFoodStatistics();                            
+                wildpark.GetFoodStatistics();
                 wildpark.PrintFight();
-                manfred.FeedEnclosures();
-                sabrina.FeedEnclosures();
-                paul.FeedEnclosures();
+                wildpark.FeedEnclosures();
+                wildpark.RestoreHP();
                 wildpark.FoodReset();
             }
-            
+
 
 
 

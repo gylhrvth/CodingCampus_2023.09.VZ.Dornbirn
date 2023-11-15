@@ -92,7 +92,7 @@ namespace Michael.Chess
                     allowed = start.Item1 == end.Item1 ||
                               start.Item2 == end.Item2 ||
                               start.Item1 + start.Item2 == end.Item1 + end.Item2 ||
-                              start.Item1 - start.Item2 == end.Item1 + end.Item2;
+                              start.Item1 - start.Item2 == end.Item1 - end.Item2;
                     break;
 
                 case Type.Bishop:
@@ -114,9 +114,9 @@ namespace Michael.Chess
 
                     if (_color == Color.White)
                     {
-                        if ((start.Item1 == end.Item1 - 1 && start.Item2 == end.Item2) ||
-                             (start.Item1 == field.GetLength(0) - 2 && start.Item1 == end.Item1 - 2 && start.Item2 == end.Item2) ||
-                             (field[end.Item1, end.Item2] != null && field[end.Item1, end.Item2].Color == Color.Black && start.Item1 == end.Item1 - 1 && Math.Abs(start.Item2 - end.Item2) == 1))
+                        if ((start.Item1 == end.Item1 + 1 && start.Item2 == end.Item2) ||
+                             (start.Item1 == field.GetLength(0) - 2 && start.Item1 == end.Item1 + 2 && start.Item2 == end.Item2) ||
+                             (field[end.Item1, end.Item2] != null && field[end.Item1, end.Item2].Color == Color.Black && start.Item1 == end.Item1 + 1 && Math.Abs(start.Item2 - end.Item2) == 1))
                         {
                             allowed = true;
                         }
@@ -124,9 +124,9 @@ namespace Michael.Chess
                     }
                     else
                     {
-                        if ((start.Item1 == end.Item1 + 1 && start.Item2 == end.Item2) ||
-                             (start.Item1 == 1 && start.Item1 == end.Item1 + 2 && start.Item2 == end.Item2) ||
-                             (field[end.Item1, end.Item2] != null && field[end.Item1, end.Item2].Color == Color.White && start.Item1 == end.Item1 + 1 && Math.Abs(start.Item2 - end.Item2) == 1))
+                        if ((start.Item1 == end.Item1 - 1 && start.Item2 == end.Item2) ||
+                             (start.Item1 == 1 && start.Item1 == end.Item1 - 2 && start.Item2 == end.Item2) ||
+                             (field[end.Item1, end.Item2] != null && field[end.Item1, end.Item2].Color == Color.White && start.Item1 == end.Item1 - 1 && Math.Abs(start.Item2 - end.Item2) == 1))
                         {
                             allowed = true;
                         }

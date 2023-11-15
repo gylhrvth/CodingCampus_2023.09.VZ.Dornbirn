@@ -42,7 +42,7 @@ namespace Niklas.Week06.Zoo
             get => _favourite;
             set
             {
-                Console.WriteLine($"{_name}s favourite animal is {value}. He is admiring it.");
+                Console.WriteLine($"{_name}'s favourite animal is {value}. He is admiring it.");
                 value = _favourite;
             }
         }

@@ -27,7 +27,7 @@ namespace Kerem.Week06.ExerciseZoo
         }
         public void PrintZoo()
         {
-            Console.WriteLine($"├── Enclosure: {_Name}, {_Description}, {_Climate}");
+            Console.WriteLine($"│   ├── {_Name}, {_Description}, {_Climate}");
 
             foreach(Animals animals in _AnimalsList)
             {

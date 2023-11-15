@@ -15,7 +15,7 @@ namespace Patrick.Week06.Zoo
         public ZooKeeper(string name, List<Enclosure> enclosures)
         {
             _Name = name;
-            _EnclosureList =  enclosures;
+            _EnclosureList = enclosures;
         }
 
         public List<Enclosure> EnclosureList
@@ -23,28 +23,29 @@ namespace Patrick.Week06.Zoo
             get => _EnclosureList;
         }
 
-        public  void PrintZooKeeper()
+        public string Name
+        {
+            get => _Name;
+        }
+
+        public void PrintZooKeeper()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("│   ├── Zookeeper: {0}", _Name);
             Console.ResetColor();
-            foreach(Enclosure enclosure in _EnclosureList)
+            foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.PrintAnimals();
             }
         }
 
-        public void PrintSimulationOne()
-        {
-            foreach(Enclosure enclosure in EnclosureList)
+        public void SimulateZookeeperWork()
+        {   
+            foreach (Enclosure enclosure in _EnclosureList)
             {
-                foreach (Animals animal in enclosure.AnimalsList)
-                {
-                    Console.WriteLine($"{_Name} füttert das Tier {animal}, im Gehege {enclosure.Name}, mit dem Futter {animal.Food} ");
-                }
-            }
-            
-        }
+                enclosure.SimulateTakeCareOfEnclosure(Name);
 
+            }
+        }
     }
 }

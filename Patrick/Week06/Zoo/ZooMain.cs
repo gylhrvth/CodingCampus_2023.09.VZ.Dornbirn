@@ -29,7 +29,7 @@ namespace Patrick.Week06.Zoo
             Food meat = new("Fleisch", "kg", 100f);
             Food fishFood = new("Fischfutter", "kg", 40f);
             Food grain = new("Getreide", "kg", 15f);
-            Food birdFood = new("Vogelfutter", "kg", 10);
+            Food birdFood = new("Vogelfutter", "kg", 10f);
             Food karrots = new("Karotten", "kg", 18f);
             Food fish = new("Fisch", "kg", 115f);
 
@@ -61,7 +61,7 @@ namespace Patrick.Week06.Zoo
             animalSeal.FoodList.Add(fish);
             animalShark.FoodList.Add(fish);
             animalTuna.FoodList.Add(meat);
-            //animalClownfish.FoodList.Add(fishFood);
+            animalClownfish.FoodList.Add(fishFood);
 
 
             enclosureAlps.AnimalsList.Add(animalCow);
@@ -75,9 +75,9 @@ namespace Patrick.Week06.Zoo
             enclosureFishTank.AnimalsList.Add(animalTuna);
             enclosureFishTank.AnimalsList.Add(animalClownfish);
 
-            ZooKeeper zooKeeper1 = new("Andreas", new List<Enclosure> { enclosureAlps, enclosureForest });
-            ZooKeeper zooKeeper2 = new("Daniela", new List<Enclosure> { enclosureIceLand });
-            ZooKeeper zooKeeper3 = new("Robert Marc Lehmann", new List<Enclosure> { enclosureFishTank });
+            ZooKeeper zooKeeper1 = new("Andreas", new List<Enclosure> { enclosureIceLand, enclosureForest });
+            ZooKeeper zooKeeper2 = new("Daniela", new List<Enclosure> { enclosureAlps, enclosureIceLand });
+            ZooKeeper zooKeeper3 = new("Robert Marc", new List<Enclosure> { enclosureFishTank });
 
             zoo.ZooKeeperList.Add(zooKeeper1);
             zoo.ZooKeeperList.Add(zooKeeper2);
@@ -96,9 +96,10 @@ namespace Patrick.Week06.Zoo
             Console.WriteLine("=======================================================");
             Console.WriteLine("=======================================================");
             Console.ResetColor();
-            zooKeeper1.PrintSimulationOne();
-            zooKeeper2.PrintSimulationOne();
-            zooKeeper3.PrintSimulationOne();
+
+            zoo.SimulateDay(1);
+
+
         }
 
     }
