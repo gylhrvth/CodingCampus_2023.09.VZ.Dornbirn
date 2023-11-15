@@ -29,6 +29,10 @@ namespace Mehmet.Week06.Person
         }
         
 
+
+
+
+
         public static double MinInAIntList(List<int> list) 
 
         {

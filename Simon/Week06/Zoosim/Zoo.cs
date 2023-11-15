@@ -41,6 +41,31 @@ namespace Simon.Week06.Zoosim
             }
         }
 
+        public void PrintFood()
+        {
+            Dictionary<Food, double> dic = new Dictionary<Food, double>();
+            foreach (Enclosure enclosure in _Enclosure)
+            {
+                enclosure.GetFood(dic);
+            }
+            Console.WriteLine("\nFood cost for the Zoo for one Day:");
+            double cost = 0;
+            
+            foreach (Food food in dic.Keys)
+            {
+                Console.Write("{0} kostet: {1} pro {2}\t\t", food.Name, food.Price, food.Unit);
+                double ammount = dic[food];
+                double price = food.Price * ammount;
+                cost += price;
+                Console.WriteLine("Anzahl dieses Futters: {0}", ammount);
+            }
+            Console.WriteLine("Total Food cost for the Zoo: {0}", cost);
+        }
+
+
+
+
+
         // größtes problem wohin mit welcher funktion bzw wieso??
         //public void PrintZooFood()
         //{

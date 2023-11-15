@@ -24,6 +24,10 @@ namespace Simon.Week06.Zoosim
             _Food = food;
             _FoodAmount = ammount;
         }
+        public int Ammount
+        {
+            get => _FoodAmount;
+        }
 
         public void PrintZoo()
         {

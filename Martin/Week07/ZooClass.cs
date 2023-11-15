@@ -12,8 +12,10 @@ namespace Martin.Week07
         private string _name;
         private int _EntstehungsJahr;
 
-        private List<EnclosureClass> EnclosureList = new List<EnclosureClass>();
-        private List<AnimalClass> AnimalList = new List<AnimalClass>();
+     
+
+        private List<EnclosureClass> _EnclosureList = new List<EnclosureClass>();
+        private List<AnimalClass> _AnimalList = new List<AnimalClass>();
 
         public ZooClass(string Name, int EntstehungsJahr) 
         {
@@ -26,28 +28,28 @@ namespace Martin.Week07
             Console.WriteLine($"Name des Zoo´s : {_name} , Entstehung: {_EntstehungsJahr}");
         }
 
-        public void PrintEnclosures()
+        public int PrintEnclosures()
         {
-            foreach(EnclosureClass item in EnclosureList)
-            {
-                Console.WriteLine($"|--- ---Gehäge:{item.Name},Art: {item.Type} ");
-                item.PrintAnimals();
-            }
+                int kosten = 0;
+
+             foreach (EnclosureClass item in _EnclosureList)
+             {
+                    
+                Console.WriteLine($"|------Gehäge:{item.Name},Art: {item.Type} ");
+                kosten += item.PrintAnimals();
+             }
+
+            return kosten;
         }
 
-        public void PrintAnimals()
-        {
-            foreach(AnimalClass item in AnimalList)
-            {
-                Console.WriteLine($"|-- ---Tier:{item.Name},Art: {item.Art} ");
-            }
-        }
+
+
 
         public void AddEnclosure(EnclosureClass item)
         {
-            if(!EnclosureList.Contains(item)) //überprüft ob diese gehege schon gibt
+            if(!_EnclosureList.Contains(item)) //überprüft ob diese gehege schon gibt
             {
-                EnclosureList.Add(item);
+                _EnclosureList.Add(item);
             }
            
         }
@@ -55,9 +57,31 @@ namespace Martin.Week07
 
         public void AddAnimal(AnimalClass item)
         {
-            if (!AnimalList.Contains(item)) //überprüft ob diese gehege schon gibt
+            if (!_AnimalList.Contains(item)) //überprüft ob dieses Tier schon gibt
             {
-                AnimalList.Add(item);
+                _AnimalList.Add(item);
+            }
+
+        }
+
+        public void PrintFoodReport()
+        {
+            Dictionary<Futter, int> report = new Dictionary<Futter, int>();
+
+            foreach(EnclosureClass enc in  _EnclosureList)
+            {
+                enc.ReportFoodRequest(report);
+            }
+
+            Console.WriteLine("Futter anfrage meldung");
+
+            foreach(Futter f in report.Keys)
+            {
+                Console.WriteLine("{0, -20} {1,5} {2,-5}",
+                    f.Name,
+                    report[f],
+                    f.Einheit
+                    );
             }
 
         }

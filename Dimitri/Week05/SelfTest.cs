@@ -492,6 +492,8 @@ namespace Dimitri.Week05
 
             text = Regex.Replace(text, "[.,!?()\r\"\';„“]", "");
 
+            Console.WriteLine(text);
+
             char[] delimiters = new char[] { ' ', '\n'};
 
             string[] textArr = text.Split(delimiters);

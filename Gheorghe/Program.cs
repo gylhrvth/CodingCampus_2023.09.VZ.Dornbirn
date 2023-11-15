@@ -1,8 +1,13 @@
-﻿using Gheorghe;
-using Gheorghe.Week06;
-using Gheorghe.Week06.List;
+﻿using Gheorghe.Week06;
+using Gheorghe.Week06.Personen;
 
-ListEvaluator.Start();
+PersonStatistik.Start();
+
+
+
+
+
+
 
 
 

@@ -10,14 +10,21 @@ namespace Martin.Week07
     {
         private string _Name;
         private string _Einheit;
-        private string _Menge;
+        private int _EinheitPreis;
 
-        public Futter(string name, string einheit, string menge)
+
+        public Futter(string name, string einheit, int EinheitPreis)
         {
             _Name = name;
             _Einheit = einheit;
-            _Menge = menge;
+            _EinheitPreis = EinheitPreis;
         }
+
+
+
+        public string Name { get { return _Name; } }
+        public string Einheit { get {  return _Einheit; } }
+        public int EinHeitPreis { get { return _EinheitPreis; } }
 
     }
 }

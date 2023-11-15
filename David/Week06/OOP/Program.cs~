@@ -1,0 +1,13 @@
+﻿using System;
+namespace David.Week06.OOP
+{
+	public class Program
+	{
+		static void Main(string[] args)
+		{
+
+			Car myCar = new Car(); 
+		}
+	}
+}
+

@@ -81,7 +81,7 @@ namespace Kerem.Week04
 
 
                 }
-                catch
+                catch(FormatException)
                 {
                     Console.WriteLine("Enter a number");
                 }
