@@ -12,6 +12,10 @@ namespace Fabienne.Week07.Zoo
         private string _Gender;
         private Food _Food;
         private int _FoodAmount;
+        ConsoleColor[] colorList2 = new ConsoleColor[]
+        {
+            ConsoleColor.Red, ConsoleColor.Blue, ConsoleColor.DarkYellow, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.DarkRed, ConsoleColor.White, ConsoleColor.DarkBlue, ConsoleColor.Yellow, ConsoleColor.DarkGray, ConsoleColor.DarkGreen, ConsoleColor.DarkRed
+        };
 
         public Animal(string name, string gender, Food food, int foodA) 
         { 
@@ -23,9 +27,9 @@ namespace Fabienne.Week07.Zoo
 
         public void PrintAnimals()
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
+            
             Console.WriteLine("│       ├── {0}, {1}, {2}, {3}", _Name, _Gender, _Food, _FoodAmount);
-            Console.ForegroundColor = ConsoleColor.Red;        
+                  
         }
 
         public void ReportFoodRequest(Dictionary<Food, double> report) 

@@ -38,14 +38,17 @@
                     if (!animal.IsDead && !other.IsDead && other != animal && random.NextDouble() <= 0.4)
                     {
                         Console.WriteLine($"{animal.Name} bit {other.Name} and did {animal.Damage} damage");
+                        int newHealth = ((other.Health - animal.Damage) < 0) ? 0 : other.Health - animal.Damage;
+                        Console.WriteLine($"{other.Name}'s health went from {other.Health} to {newHealth}");
                         other.Health -= animal.Damage;
 
                         if (other.Health <= 0)
                         {
                             other.IsDead = true;
-                            Console.WriteLine($"{other.Name} died");
+                            Console.WriteLine($"{other.Name} died\n");
                             animalsToRemove.Add(other);
                         }
+                        else Console.WriteLine();
                     }
 
                 }

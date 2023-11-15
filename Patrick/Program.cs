@@ -1,6 +1,8 @@
-﻿using Patrick.Week06.PersonTwo;
+﻿
+using Patrick.Week06.Zoo;
 
-PersonTwoMain.Start();
+ZooMain.Start();
+
 
 
 

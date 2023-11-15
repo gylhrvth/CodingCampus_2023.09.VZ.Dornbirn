@@ -15,6 +15,10 @@ namespace Fabienne.Week07.Zoo
         {
             ConsoleColor.Red, ConsoleColor.Blue, ConsoleColor.DarkYellow, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.DarkRed, ConsoleColor.White, ConsoleColor.DarkBlue, ConsoleColor.Yellow, ConsoleColor.DarkGray, ConsoleColor.DarkGreen, ConsoleColor.DarkRed
         };
+        ConsoleColor[] colorList2 = new ConsoleColor[]
+        {
+            ConsoleColor.Red, ConsoleColor.Blue, ConsoleColor.DarkYellow, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.DarkRed, ConsoleColor.White, ConsoleColor.DarkBlue, ConsoleColor.Yellow, ConsoleColor.DarkGray, ConsoleColor.DarkGreen, ConsoleColor.DarkRed
+        };
 
         public Zoo(string name, int founded) 
         {
@@ -37,6 +41,7 @@ namespace Fabienne.Week07.Zoo
                 Console.ForegroundColor = colorList[i % colorList.Length];
                 Enclosure enclosure = _Enclosures[i];
                 Console.WriteLine($"│   ├── Enclosure: {enclosure.Name}");
+                Console.ForegroundColor = colorList2[i % colorList2.Length];
                 enclosure.PrintAnimals();
             }
 
