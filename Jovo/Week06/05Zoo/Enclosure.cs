@@ -12,7 +12,29 @@ namespace Jovo.Week06._05Zoo
         private string _Climate;
         private string _Name;
         private List<Animals> _AnimalsList;
+        private bool _IsFed;
 
+        public string Name
+        {
+            get => _Name;
+            set => _Name = value;
+        }
+        public bool IsFed
+        {
+            get => _IsFed;
+            set => _IsFed = value;
+        }
+        public List<Animals> Animals
+        {
+            get => _AnimalsList;
+            
+        }
+
+        public string Description
+        {
+            get => _Description;
+            set => _Description = value;
+        }
         public Enclosure(string description, string climate, string name)
         {
             _Description = description;
@@ -43,6 +65,28 @@ namespace Jovo.Week06._05Zoo
 
             }
 
+        }
+        public void PrintEnclosure()
+        {
+            Console.WriteLine($"│\t\t├── Enclosure: {_Name}");
+            foreach (var animal in _AnimalsList)
+            {
+                animal.PrintAnimal();
+            }
+        }
+        public void GetEnclosureStatistic(Dictionary <Food, double> dic)
+        {
+            foreach ( var animal in _AnimalsList)
+            {
+                animal.GetAnimalStatistic(dic);
+            }
+
+        }
+
+
+        public override string ToString()
+        {
+            return "Enclosure22:" + _Name;
         }
 
 
