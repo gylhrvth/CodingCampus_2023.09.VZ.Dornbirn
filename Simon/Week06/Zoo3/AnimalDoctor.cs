@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Simon.Week06.Zoo3;
 
 namespace Simon.Week06.Zoo3
 {
     internal class AnimalDoctor
     {
+        Random rand = new Random();
         private string _Name;
         private List<Animals> _AnimalsList;
 
@@ -23,30 +25,22 @@ namespace Simon.Week06.Zoo3
             Console.WriteLine("│\t\t├── {0}", _Name);
         }
 
-        //public double CalcLowestHP()
-        //{
-        //    double lowesthp = 100;
-        //    for (int i = 0; i < _AnimalsList.Count; i++)
-        //    {
-        //        double percentHP = (_AnimalsList[i].Health / _AnimalsList[i].MaxHealth) * 100;
-        //        if (lowesthp > percentHP)
-        //        {
-        //            lowesthp = percentHP;
-        //        }
-        //    }
-        //    return lowesthp;
-        //}
 
-        public void  RestoreHP()
+
+        public void RestoreHP(Animals lowesthp)
         {
-            for(int i = 0; i < _AnimalsList.Count;i++)
+            double healammount = (double)rand.Next(30, 100) / 100;
+            if(lowesthp.Health + (lowesthp.MaxHealth * healammount) > lowesthp.MaxHealth)
             {
-                if(Zoo.CalcLowestHP.convertoint == (_AnimalsList[i].Health / _AnimalsList[i].MaxHealth) * 100)
-                {
-
-                }
+                lowesthp.Health = lowesthp.MaxHealth;
+                Console.WriteLine("{0} hat {1} um geheilt. Es hat nun wider volle ({2}) Leben.", _Name, lowesthp.Name, lowesthp.Health);
             }
+            else
+            {
+                lowesthp.Health = (int)(lowesthp.Health + (lowesthp.MaxHealth * healammount));
+                Console.WriteLine("{0} hat {1} geheilt. Es hat nun {2} Leben.", _Name, lowesthp.Name, lowesthp.Health);
 
+            }
 
         }
 
