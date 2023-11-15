@@ -14,7 +14,7 @@ namespace Jovo.Week06._05Zoo
         private string _Gender;
         private Food _Food;
         private int _FoodCount;
-
+        private List<Food> _FoodList = new();
 
         public Animals(string name, int age, string genus, string gender, Food food, int foodCount)
         {
@@ -31,13 +31,30 @@ namespace Jovo.Week06._05Zoo
             get => _Name;
             set => _Name = value;
         }
+        public string Genus
+        {
+            get => _Genus;
+            set => _Genus = value;
+        }
 
+        public Food Food
+        {
+            get => _Food;
+        }
 
         public void PrintZoo()
         {
             Console.WriteLine($"│   │   ├── {_Name}, {_Age}, {_Gender}, {_Genus}, eats : {_Food.Name}");
         }
 
+        public void PrintAnimal()
+        {
+            Console.WriteLine($"│\t\t\t├── {_Name}, {_Genus}");
+            foreach (var food in _FoodList)
+            {
+                food.PrintFood(_FoodCount);
+            }
+        }
         public void GetAnimalStatistic(Dictionary<Food, float> dic)
         {
             if (dic.ContainsKey(_Food))
@@ -51,9 +68,16 @@ namespace Jovo.Week06._05Zoo
         }
 
 
-        public string ToString()
+       public void GetAnimalStatistic(Dictionary<Food, double>dic)
         {
-            return 
+            if (dic.ContainsKey(_Food))
+            {
+                dic[_Food] += _FoodCount;
+            }
+            else
+            {
+                dic[_Food] = _FoodCount;
+            }
         }
     }
     
