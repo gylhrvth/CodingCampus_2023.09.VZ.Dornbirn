@@ -38,7 +38,7 @@ namespace Sven.Week07
         public void PrintZoo()
         {
 
-            Console.WriteLine($"Zoo: {_Name}, Year: {_FoundingYear}, Location, {_Location}");
+            Console.WriteLine($"├── Zoo: {_Name}, Year: {_FoundingYear}, Location, {_Location}");
 
             foreach (Enclosure enclosure in _EnclosureList)
             {
