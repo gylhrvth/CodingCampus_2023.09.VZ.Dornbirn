@@ -13,50 +13,41 @@ namespace Fabienne.Week07.Zoo
         {
             Zoo zoo = new Zoo("Dream smp", 1970);
 
+            Food cig = new Food("Cigarette", "Pcs", 12.05);
+            Food salmon = new Food("Salmon", "kg", 2.95);
+            Food nukes = new Food("Nukes", "mg", 0.05);
+            Food beans = new Food("Beans", "kg", 12.05);
+            Food child = new Food("Child", "MT", 12500);
+            Food 
+
             Enclosure lasnevadas = new Enclosure("Las Nevadas", "Subtropical", "hot");
-            Enclosure snowchester = new Enclosure("Snow Chester", "Polar", "cold");
+            Enclosure snowchester = new Enclosure("Snowchester", "Polar", "cold");
             Enclosure lmanburg = new Enclosure("L'Manburg", "Temperate", "medium");
             Enclosure kinokokingdom = new Enclosure("Kinoko Kingdom", "Tropical", "warm");
             Enclosure eggpire = new Enclosure("Eggpire", "Tropical", "warm");
-            Enclosure gsmp = new Enclosure("Greater SMP", "Temperate", "medium");
+            Enclosure gsmp = new Enclosure("The Greater SMP", "Temperate", "medium");
             Enclosure manifold = new Enclosure("Manifoldland", "Temperate", "medium");
             Enclosure syndicate = new Enclosure("The Syndicate", "Polar", "cold");
             Enclosure prison = new Enclosure("Pandoras Vault", "-", "-");
             Enclosure ponks = new Enclosure("Ponk's Lemon City", "Temperate", "medium");
             Enclosure boomer = new Enclosure("Boomerville", "Tropical", "warm");
             Enclosure erets = new Enclosure("Eret's Castle", "Temperate", "medium");
-
-            Food mushrooms = new Food("Mushrooms", "Handful", 10);
-            Food whiskey = new Food("Whiskey", "Bottle", 40);
-            Food salmon = new Food("Salmon", "Pound", 28);
-            Food cig = new Food("Cigarette", "Pack", 7);
-            Food cake = new Food("Cake", "Piece", 4);
-            Food wine = new Food("Wine", "Bottle", 20);
-            Food chicken = new Food("Chicken", "Wing", 1);
-            Food child = new Food("Child", "50kg", 10000);
-            Food spag = new Food("Spaghetti", "Plate", 20);
-            Food soup = new Food("Miso-Soup", "Bowl", 10);
-            Food nukes = new Food("Nuke", "City", 420);
-            Food dog = new Food("Dog", "Puppy", 60);
-            Food whale = new Food("Whaleflesh", "Half Whale", 70);
-            Food skittles = new Food("Skittles", "Pack", 2);
-            Food ramen = new Food("Ramen", "Bowl", 15);
-            Food coke = new Food("Coca Cola", "Bottle", 2);
-            Food beans = new Food("Beans", "Can", 3);
-
-            Animals quackity = new Animals("Quackity", "Male", whiskey, 15);
-            Animals slimecicle = new Animals("Slimecicle", "Unknown", child, 1);
-            Animals foolish = new Animals("Foolish", "Male",soup, 3);
-            Animals niki = new Animals("Niki Nihachu", "Female", cake, 2);
-            Animals george = new Animals("GeorgeNotFound", "Male", mushrooms, 600);
-            Animals sapnap = new Animals("Sapnap", "Male", dog, 1);
-            Animals karl = new Animals("Karl Jacobs", "Genderfluid", skittles, 37);
-            Animals tina = new Animals("TinaKitten", "Female", chicken, 1);
-            Animals toms = new Animals("Tommyinnit", "Male", coke, 69);
+            Enclosure cemetary = new Enclosure("Limbo", "-", "-");
+       
+            Animal quackity = new Animal("Quackity", "Male", cig, 15);
+            Animal slimecicle = new Animal("Slimecicle", "Unknown", cig, 1);
+            Animal foolish = new Animal("Foolish", "Male", beans, 3);
+            Animal niki = new Animal("Niki Nihachu", "Female", beans, 2);
+            Animal george = new Animal("GeorgeNotFound", "Male", child, 600);
+            Animal sapnap = new Animal("Sapnap", "Male", nukes, 12);
+            Animal karl = new Animal("Karl Jacobs", "Genderfluid", child, 37);
+            /*
+            Animals tina = new Animals("TinaKitten", "Female", 1, true);
+            Animals toms = new Animals("Tommyinnit", "Male", 69, true);
             Animals wil = new Animals("Wilbur Soot", "Male", cig,48);
             Animals fundy = new Animals("Fundy", "Male", salmon, 2);
             Animals tubbo = new Animals("Tubbo Underscore", "Non-Binary", nukes, 3);
-            Animals ran = new Animals("Ranboo","Non-Binary",beans, 5);
+            Animals ran = new Animals("Ghostboo","Non-Binary",beans, 5);
             Animals micheal = new Animals("Micheal", "Unknown", salmon, 1);
             Animals aimsey = new Animals("Aimsey", "Genderfluid", whale, 1);
             Animals skeppy = new Animals("Skeppy", "Unknown",ramen, 4);
@@ -73,14 +64,20 @@ namespace Fabienne.Week07.Zoo
             Animals ponk = new Animals("Ponk", "Genderfluid", ramen, 2);
             Animals eret = new Animals("Eret", "Genderfluid", mushrooms, 5);
             Animals boomers = new Animals("Boomer", "Male", coke, 1);
+            Animals boo = new Animals("Ranboo", "Non-Binary", coke, 1);
+            Animals gboo = new Animals("Ghostbur", "Agender", coke, 1);
+            Animals js = new Animals("JSchlatt", "Male", whiskey, 77);
+            Animals md = new Animals("Mexican Dream", "Mexican", en, 34);
+            */
 
             zoo.addEnclosure(lasnevadas);
             zoo.addEnclosure(snowchester);
             zoo.addEnclosure(lmanburg);
             zoo.addEnclosure(kinokokingdom);
             zoo.addEnclosure(gsmp);
-            zoo.addEnclosure(manifold);
             zoo.addEnclosure(syndicate);
+            zoo.addEnclosure(cemetary);
+            zoo.addEnclosure(manifold);
             zoo.addEnclosure(ponks);
             zoo.addEnclosure(prison);
             zoo.addEnclosure(boomer);
@@ -94,6 +91,7 @@ namespace Fabienne.Week07.Zoo
             kinokokingdom.AddAnimals(george);
             kinokokingdom.AddAnimals(sapnap);
             kinokokingdom.AddAnimals(karl);
+            /*
             kinokokingdom.AddAnimals(tina);
 
             lmanburg.AddAnimals(toms);
@@ -127,7 +125,13 @@ namespace Fabienne.Week07.Zoo
 
             boomer.AddAnimals(boomers);
 
-            zoo.PrintStructure();   
+            cemetary.AddAnimals(js);
+            cemetary.AddAnimals(boo);
+            cemetary.AddAnimals(gboo);
+            cemetary.AddAnimals(md);
+            */
+            zoo.PrintStructure();
+            zoo.PrintFoodReport();
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Fabienne.Week07.Zoo
         private string _Unit;
         private double _UnitPrice;
 
+        public string Name { get => _Name; }
+        public string Unit { get => _Unit; }
         public Food(string name, string unit, double unitprice)
         {
             _Name = name;
