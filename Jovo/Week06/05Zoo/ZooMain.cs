@@ -29,6 +29,9 @@ namespace Jovo.Week06._05Zoo
             Pfleger Mero = new Pfleger("Mero","Cow" ,new List<Enclosure> { meadow,swamp,savanna });
             Pfleger Anna = new Pfleger("Anna", "Pinguin", new List<Enclosure> { woods, iceberg, savanna });
 
+            ZooDoc Rato = new ZooDoc("Rato");
+            ZooDoc Allania = new ZooDoc("Allania");
+
 
             zoo.AddKeeper(Mero);
             zoo.AddKeeper(Anna);
@@ -45,6 +48,9 @@ namespace Jovo.Week06._05Zoo
             Animals Lion1 = new Animals("Simba", 15, "Lion", "Male", Meat, 3, 50,100, 100);
             Animals Lion2 = new Animals("Leo", 13, "Lion", "Female", Meat, 3, 50, 100, 100);
 
+
+
+           
 
             //Enclosure aufrufen im Zoo
             zoo.AddEnclosure(meadow);
@@ -71,7 +77,8 @@ namespace Jovo.Week06._05Zoo
             savanna.AddAnimals(Lion1);
             savanna.AddAnimals(Lion2);
 
-            
+            zoo.ZooDocList.Add(Rato);
+            zoo.ZooDocList.Add(Allania);
 
             zoo.PrintZoo();
             Console.WriteLine();
@@ -81,13 +88,26 @@ namespace Jovo.Week06._05Zoo
 
             Console.WriteLine();
 
+            Rato.AddAnimal(cow1);
+            Rato.AddAnimal(cow2);
+
+
+          
+
             int day = 10;
             for (int i = 1; i <= day; i++)
             {
                 Console.WriteLine("Day " + i + ": ");
                 zoo.Simulate();
                 Console.WriteLine("========================================");
+
+                zoo.FightStart();
+                Console.WriteLine("=====================================");
+                zoo.HealDaily();
             }
+
+            
+
         }
     }
 }

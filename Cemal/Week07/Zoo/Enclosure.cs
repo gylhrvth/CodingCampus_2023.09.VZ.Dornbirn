@@ -11,14 +11,12 @@ namespace Cemal.Week07.Zoo
         private string _name;
         private List<Animal> _animals;
         private List<Worker> _workers;
-        private List<Food> _food;
 
         public Enclosure(string name)
         {
             _name = name;
             _animals = new List<Animal>();
             _workers = new List<Worker>();
-            _food = new List<Food>();
         }
 
         public void addAnimals(Animal ams)
@@ -31,10 +29,14 @@ namespace Cemal.Week07.Zoo
             _workers.Add(worker);
         }
 
-        public void addFood(Food food)
+        public void CalculateFoodReport(Dictionary<Food, int> report)
         {
-            _food.Add(food);
+            foreach (Animal ani in _animals)
+            {
+                ani.CalculateFoodReport(report);
+            }
         }
+
 
         public void PrintStructure()
         {
@@ -49,19 +51,6 @@ namespace Cemal.Week07.Zoo
             foreach (Animal ams in _animals)
             {
                 ams.PrintStructure();
-            }
-
-            foreach (Food food in _food)
-            {
-                food.PrintStructure();
-            }
-        }
-
-        public void CalculateFoodReport(Dictionary<Food, int> report)
-        {
-            foreach (Animal ani in _animals)
-            {
-                ani.CalculateFoodReport(report);
             }
         }
     }

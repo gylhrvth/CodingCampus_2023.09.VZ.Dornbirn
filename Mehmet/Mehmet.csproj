@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
   </ItemGroup>
 </Project>

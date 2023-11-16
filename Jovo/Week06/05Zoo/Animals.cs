@@ -20,6 +20,7 @@ namespace Jovo.Week06._05Zoo
         private int _Bite;
         private int _Life;
         private int _MaxLife;
+        private bool _IsDead;
 
         public Animals(string name, int age, string genus, string gender, Food food, int foodCount, int bite, int life, int maxLife)
         {
@@ -52,9 +53,31 @@ namespace Jovo.Week06._05Zoo
             set => _Genus = value;
         }
 
+        public int Bite
+        {
+            get => _Bite;
+            set => _Bite = value;
+        }
+
         public Food Food
         {
             get => _Food;
+        }
+        public int Life
+        {
+            get => _Life;
+            set => _Life = value;
+        }
+
+        public bool IsDead
+        {
+            get => _IsDead;
+            set => _IsDead = value;
+        }
+
+        public int MaxLife
+        {
+            get => _MaxLife;            
         }
 
         public void PrintZoo()
@@ -96,10 +119,7 @@ namespace Jovo.Week06._05Zoo
         }
 
 
-        public bool IsDead()
-        {
-            return _Life <= 0;
-        }
+      
 
         //Angriff lebens abzug, attacke und dann im gehege einbauen
         public void Attack(Animals opfer)
@@ -107,7 +127,9 @@ namespace Jovo.Week06._05Zoo
             if (opfer._Life <= 0)
             {
                opfer._Life = _Life;
+               Console.WriteLine("Tier ist tot");
             }
+           
         }
     }
 
