@@ -14,6 +14,7 @@ namespace Sven.Week07
         private string _Location;
         private int _FoundingYear;
         private List<Enclosure> _EnclosureList;
+        private List<Keeper> _Keeper = new();
 
         public Zoo(string name, string location, int foundingyear)
         {
@@ -22,6 +23,7 @@ namespace Sven.Week07
             _Location = location;
             _FoundingYear = foundingyear;
             _EnclosureList = new List<Enclosure>();
+            _Keeper = new List<Keeper>();
 
         }
 
@@ -48,6 +50,8 @@ namespace Sven.Week07
 
         }
 
+        
+
         public void PrintFoodStatistic()
         {
             Dictionary<Food, double> dic = new Dictionary<Food, double>();
@@ -64,7 +68,7 @@ namespace Sven.Week07
                 double price = food.PricePerUnit * amount;
                 cost += price;
             }
-            Console.WriteLine("total daily cost of food: {0:N2}€", cost);
+            Console.WriteLine("total daily cost of food: " +  cost + " $");
         }
 
 

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DarioLuis.Hospital
 {
-    internal class Hospital
+    public class Hospital
     {
+
     }
 }

@@ -23,6 +23,9 @@
             Animal blubird1 = new Animal("Blu", 4, "Ice Bird", "Female", grain, 2);
             Animal explofrog1 = new Animal("Frogston", 7, "Bomb Frog", "Male", worms, 5);
 
+            Keeper k1 = new Keeper("Goku", new List<Enclosure> {moon, aqua});
+            Keeper k2 = new Keeper("Gojo", new List<Enclosure> {tropical, swamp });
+
             zoo.AddEnclosure(moon);
             moon.AddAnimals(dragon1);
 
@@ -38,6 +41,9 @@
             
             zoo.PrintZoo();
             zoo.PrintFoodStatistic();
+
+            k1.PrintFoodSimulation();
+            k2.PrintFoodSimulation();   
 
         }
 

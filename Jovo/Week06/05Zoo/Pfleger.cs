@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Jovo.Week06._05Zoo
+﻿namespace Jovo.Week06._05Zoo
 {
     internal class Pfleger
     {
 
-        
+        Random rand = new Random();
 
+        private bool _isfed = false;
         private string _Name;
         private List<Enclosure> _Enclosures = new();
-        private Animals _FavouriteAnimal;
+        private string _FavAnim;
 
 
 
@@ -22,19 +17,18 @@ namespace Jovo.Week06._05Zoo
             get => _Enclosures;
             set => _Enclosures = value;
         }
-        public Animals FavouriteAnimal
-        {
-            get => _FavouriteAnimal;
-            set => _FavouriteAnimal = value;
-        }
 
 
-        public Pfleger(string name, List<Enclosure> enclosures)
+
+
+
+        public Pfleger(string name, string favAnim, List<Enclosure> enclosures)
         {
             _Name = name;
             _Enclosures = enclosures;
-            
-            
+            _FavAnim = favAnim;
+
+
         }
 
         public void PrintPfleger()
@@ -45,7 +39,7 @@ namespace Jovo.Week06._05Zoo
                 enclosure.PrintEnclosure();
             }
         }
-       
+
 
         public override string ToString()
         {
@@ -56,13 +50,32 @@ namespace Jovo.Week06._05Zoo
         {
             foreach (Enclosure enclosure in Enclosures)
             {
-                foreach (Animals animal in enclosure.Animals)
+                foreach (Animals animal in enclosure.AnimalsList)
                 {
-                    Console.WriteLine($"{_Name} feeds the animal {animal.Genus} with the name {animal.Name}, in enclosure {enclosure.Description}, with the {animal.Food} ");
+                    if (enclosure.IsFed == false)
+                    {
+
+                        Console.WriteLine($"{_Name} feeds the animal {animal.Genus} with the name {animal.Name}, in enclosure {enclosure.Description}, with the {animal.Food} ");
+                        enclosure.ObserveAnimals(_FavAnim);
+                        
+                    }
+                    
                 }
+
+                enclosure.IsFed = true;
             }
+            
+
+
 
         }
+
+        public void Simulate()
+        {
+            PrintFoodSimulation();
+        }
+
+
 
     }
 

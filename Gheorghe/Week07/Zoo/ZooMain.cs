@@ -31,21 +31,22 @@ namespace Gheorghe.Week07.Zoo
            
 
             ZooKeeper gheorghe = new("Gheorghe");
+            ZooKeeper luiza = new("Luiza");
 
           
 
             zoo.AddZooKeeper(gheorghe);
             woods.AddZookeeper(gheorghe);
-            meadow.AddZookeeper(gheorghe);
+            meadow.AddZookeeper(luiza);
             swamp.AddZookeeper(gheorghe);
 
-
+          
 
             zoo.AdddEnclosure(meadow);
             zoo.AdddEnclosure(woods);
             zoo.AdddEnclosure(swamp);
 
-
+         
 
             woods.AddAnimals(monkey1);
             meadow.AddAnimals(monkey2);

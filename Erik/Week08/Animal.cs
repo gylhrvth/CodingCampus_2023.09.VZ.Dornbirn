@@ -10,52 +10,35 @@ namespace Erik.Week08
         private string _Genus;
         private string _Gender;
         private Food _Food;
-        private int _Hunger;
-
+        private int _FoodNeed;
+        private int _Life;
         public Food food { get => _Food;  }
     
-        public int hunger { get => _Hunger; set => _Hunger = value; }
+        public int hunger { get => _Life; set => _Life = value; }
 
-        public Animal(string animalName, string genus, string gender, Food food)
+        public Animal(string animalName, string genus, string gender, Food food, int life, int foodNeed)
         {
             _AnimalName = animalName;
             _Genus = genus;
             _Gender = gender;
             _Food = food;
-            Random rnd = new Random();
-            _Hunger = rnd.Next(1, 101);
+            _Life = life;
+            _FoodNeed = foodNeed;
         }
-
-        public void PrintAnimalHunger(string prefix)
-        {
-            if (_Hunger >= 50)
-            {
-                Console.Write(prefix + "─────── {0} ", _AnimalName);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("not very hungry! ({0} units left!)", _Hunger);
-                Console.ResetColor();
-            }
-            else if (_Hunger < 50 && _Hunger > 10)
-            {
-                Console.Write(prefix + "─────── {0} ", _AnimalName);
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("is hungry! ({0} units left!)",_Hunger);
-                Console.ResetColor();
-            }
-            else if (_Hunger <= 10)
-            {
-                Console.Write(prefix + "─────── {0} is ", _AnimalName);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("VERY hungry! ({0} units left!)",_Hunger );
-                Console.ResetColor();
-            }
-        }
+      
 
         public void PrintAnimal(string prefix)
         {
-            Console.WriteLine("{0} {1}, {2}, {3}", prefix, _AnimalName, _Genus, _Gender);
+            Console.WriteLine("{0} {1}, {2}, {3} , {4} , {5} Life", prefix, _AnimalName, _Genus, _Gender, _Food.foodName, _Life);
         }
 
-
+        public int returnFoodCost()
+        {
+            return food.costPerUnit * _FoodNeed;
+        }
+        public int retrunConsumedFood()
+        {
+            return _FoodNeed;
+        }
     }
 }

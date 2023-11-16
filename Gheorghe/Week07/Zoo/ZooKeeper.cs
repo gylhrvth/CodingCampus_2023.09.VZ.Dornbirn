@@ -57,7 +57,7 @@ namespace Gheorghe.Week07.Zoo
 
         public void SimulationWork()
         {
-            Console.WriteLine($"{_Name} start working");
+            Console.WriteLine($"{_Name} start working")    ;
         }
     }
 }
