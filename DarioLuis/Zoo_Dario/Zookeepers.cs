@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DarioLuis.Zoo
+﻿namespace DarioLuis.Zoo_Dario
 {
-    public class ZooKeeper
+    public class Zookeeper
     {
+
+
         private readonly Random rnd = new();
 
         private string _Name;
@@ -30,15 +26,11 @@ namespace DarioLuis.Zoo
             set => _FavouriteAnimal = value;
         }
 
-        public ZooKeeper(string name, List<Enclosure> enclosures)
+        public Zookeeper(string name, List<Enclosure> enclosures)
         {
             _Name = name;
             _Enclosures = enclosures;
             _FavouriteAnimal = FavouriteAnimal;
-        }
-
-        public ZooKeeper(string v, List<Zoo_Dario.Enclosure> enclosures)
-        {
         }
 
         public void PrintZooKeeper()
@@ -74,5 +66,3 @@ namespace DarioLuis.Zoo
         }
     }
 }
-
-
