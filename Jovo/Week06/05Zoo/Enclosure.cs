@@ -8,6 +8,8 @@ namespace Jovo.Week06._05Zoo
 {
     internal class Enclosure
     {
+        Random rnd = new Random();
+
         private string _Description;
         private string _Climate;
         private string _Name;
@@ -89,6 +91,51 @@ namespace Jovo.Week06._05Zoo
             return "Enclosure22:" + _Name;
         }
 
+
+
+        //Pfleger sollte lieblingtier haben
+        public void ObserveAnimals(string favspecies)
+        {
+            int r = rnd.Next(_AnimalsList.Count);
+            
+            Animals WatchedAnimal = _AnimalsList[r];
+
+            Console.WriteLine(WatchedAnimal.Name + " " + WatchedAnimal.Genus + " wird beobachtet!");
+
+            if(WatchedAnimal.Genus.Equals(favspecies))
+            {
+                Console.WriteLine(".... und hat ihn bewundert!");
+            }
+
+        }
+
+        public Animals GetRandomAnimal()
+        {
+            int r = rnd.Next(_AnimalsList.Count);
+
+            Animals WatchedAnimal = _AnimalsList[r];
+
+            return WatchedAnimal;
+
+        }
+
+        public void Fight()
+        {
+            for(int i = 0;  i < _AnimalsList.Count; i++)
+            {
+                Animals animal = _AnimalsList[i];
+                
+
+                if(!animal.IsDead() && rnd.NextDouble() < 0.4)
+                {
+                    Animals opfer = GetRandomAnimal();
+                    if (!opfer.IsDead() && opfer != animal)
+                    {
+                        animal.Attack(opfer); // im zoo aufbauen
+                    }
+                }
+            }
+        }
 
     }
 }

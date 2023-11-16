@@ -10,25 +10,28 @@ namespace Fabienne.Week07.Zoo
     {
         private string _Name;
         private string _Gender;
+        private string _Species;
         private Food _Food;
-        private int _FoodAmount;
+        private double _FoodAmount;
+        private double _FoodPrice;
         ConsoleColor[] colorList2 = new ConsoleColor[]
         {
             ConsoleColor.Red, ConsoleColor.Blue, ConsoleColor.DarkYellow, ConsoleColor.Red, ConsoleColor.Green, ConsoleColor.DarkRed, ConsoleColor.White, ConsoleColor.DarkBlue, ConsoleColor.Yellow, ConsoleColor.DarkGray, ConsoleColor.DarkGreen, ConsoleColor.DarkRed
         };
 
-        public Animal(string name, string gender, Food food, int foodA) 
+        public Animal(string name, string gender, string species, Food food, double foodA) 
         { 
             _Name = name;
             _Gender = gender;
+            _Species = species;
             _Food = food;
-            _FoodAmount = foodA;            
+            _FoodAmount = foodA; 
         }
 
         public void PrintAnimals()
         {
-            
-            Console.WriteLine("│       ├── {0}, {1}, {2}, {3}", _Name, _Gender, _Food, _FoodAmount);
+
+            Console.WriteLine("│       ├── {0}, {1}, {2}, {3}, {4}", _Name, _Gender, _Species, _Food, _FoodAmount) ;
                   
         }
 

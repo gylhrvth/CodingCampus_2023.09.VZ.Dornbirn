@@ -12,13 +12,12 @@ namespace Patrick.Week07.ForInARow
 {
     internal class ForInARow
     {
+        private static bool P1P2 = true;
         public static void Start()
         {
             string[][] playGround = Playground();
             PrintMethod(playGround);
             NextTurn(playGround);
-
-
         }
 
         public static string[][] Playground()
@@ -54,7 +53,19 @@ namespace Patrick.Week07.ForInARow
                 Console.Write("|");
                 for (int j = 0; j < 7; j++)
                 {
-                    Console.Write("|" + playground[i][j] + "|");
+                    Console.Write("|");
+                    if (playground[i][j].ToLower().Contains("x"))               //ToLower() --> für Großklein Schreibung kein unterschied // Contains() --> enthält das Symbol?
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    }
+                    Console.Write(playground[i][j]);
+                    Console.ResetColor();
+                    Console.Write("|");
+
                 }
                 Console.WriteLine("|");
             }
@@ -70,11 +81,7 @@ namespace Patrick.Week07.ForInARow
             {
                 for (int j = 0; j < playground.Length; j++)
                 {
-                    if (playground[i][j] == " X " && playground[i + 1][j] == " X " && playground[i + 2][j] == " X " && playground[i + 3][j] == " X ")
-                    {
-                        return true;
-                    }
-                    else if (playground[i][j] == " O " && playground[i + 1][j] == " O " && playground[i + 2][j] == " O " && playground[i + 3][j] == " O ")
+                    if (playground[i][j] != "   " && playground[i][j] == playground[i + 1][j] && playground[i + 1][j] == playground[i + 2][j] && playground[i + 2][j] == playground[i + 3][j])
                     {
                         return true;
                     }
@@ -90,17 +97,11 @@ namespace Patrick.Week07.ForInARow
                 for (int j = 0; j <= playground.Length - 4; j++)
                 {
                     // Diagonal nach rechts oben
-                    if (playground[i][j] == " X " && playground[i + 1][j + 1] == " X " && playground[i + 2][j + 2] == " X " && playground[i + 3][j + 3] == " X ")
-                    { return true; }
-
-                    else if (playground[i][j] == " O " && playground[i + 1][j + 1] == " O " && playground[i + 2][j + 2] == " O " && playground[i + 3][j + 3] == " O ")
+                    if (playground[i][j] != "   " && playground[i][j] == playground[i - 1][j + 2] && playground[i - 1][j + 2] == playground[i - 2][j + 2] && playground[i - 2][j + 2] == playground[i - 3][j + 3])
                     { return true; }
 
                     // Diagonal nach rechts unten
-                    if (playground[i + 3][j] == " X " && playground[i + 2][j + 1] == " X " && playground[i + 1][j + 2] == " X " && playground[i][j + 3] == " X ")
-                    { return true; }
-
-                    else if (playground[i + 3][j] == " O " && playground[i + 2][j + 1] == " O " && playground[i + 1][j + 2] == " O " && playground[i][j + 3] == " O ")
+                    if (playground[i][j] != "   " && playground[i + 3][j] == playground[i + 2][j] && playground[i + 2][j] == playground[i][j + 1] && playground[i][j + 1] == playground[i][j])
                     { return true; }
                 }
             }
@@ -113,11 +114,7 @@ namespace Patrick.Week07.ForInARow
             {
                 for (int j = 0; j < playgroung.Length - 4; j++)
                 {
-                    if (playgroung[i][j] == " X " && playgroung[i][j + 1] == " X " && playgroung[i][j + 2] == " X " && playgroung[i][j + 3] == " X ")
-                    {
-                        return true;
-                    }
-                    else if (playgroung[i][j] == " O " && playgroung[i][j + 1] == " O " && playgroung[i][j + 2] == " O " && playgroung[i][j + 3] == " O ")
+                    if (playgroung[i][j] != "   " && playgroung[i][j] == playgroung[i][j + 1] && playgroung[i][j + 1] == playgroung[i][j + 2] && playgroung[i][j + 2] == playgroung[i][j + 3])
                     {
                         return true;
                     }
@@ -126,74 +123,43 @@ namespace Patrick.Week07.ForInARow
             return false;
         }
 
-        public static bool P1P2 = true;
-
-        public static string[][] NextTurn(string[][] playground)
+        public static void NextTurn(string[][] playground)
         {
-            //Spieler 1
-            if (P1P2 == true)
+            string playerName;
+            string symbol;
+            System.ConsoleColor color;
+            if (P1P2)
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("Spieler 1, Sie sind am Zug! Geben Sie die Spalte als Zahl an:");
-                Console.ResetColor();
-
-                int input = ReadNumberRange(playground);
-
-                if (input == 1) { FillPosition(playground, " X ", input); }
-                else if (input == 2) { FillPosition(playground, " X ", input); }
-                else if (input == 3) { FillPosition(playground, " X ", input); }
-                else if (input == 4) { FillPosition(playground, " X ", input); }
-                else if (input == 5) { FillPosition(playground, " X ", input); }
-                else if (input == 6) { FillPosition(playground, " X ", input); }
-                else { FillPosition(playground, " X ", input); }
-
-                PrintMethod(playground);
-
-                if (CheckWinDiagonal(playground) == true || CheckWinHorizontal(playground) == true || CheckWinVertikal(playground) == true)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("Gratulation Spieler 1, Sie haben gewonnen!");
-                    Console.ResetColor();
-                }
-                else
-                {
-                    P1P2 = false;
-                    NextTurn(playground);
-                }
-                return playground;
+                playerName = "Spieler 1";
+                symbol = " X ";
+                color = ConsoleColor.Blue;
             }
-
-            //Spieler 2
             else
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("Spieler 2, Sie sind am Zug! Geben Sie die Spalte als Zahl an:");
+                playerName = "Spieler 1";
+                symbol = " O ";
+                color = ConsoleColor.Green;
+            }
+            Console.ForegroundColor = color;
+            Console.WriteLine(playerName + ", Sie sind am Zug! Geben Sie die Spalte als Zahl an:");
+            Console.ResetColor();
+
+            int input = ReadNumberRange(playground);
+
+            FillPosition(playground, symbol, input);
+
+            PrintMethod(playground);
+
+            if (CheckWinDiagonal(playground) == true || CheckWinHorizontal(playground) == true || CheckWinVertikal(playground) == true)
+            {
+                Console.ForegroundColor = color;
+                Console.WriteLine("Gratulation " + playerName + ", Sie haben gewonnen!");
                 Console.ResetColor();
-
-                int input = ReadNumberRange(playground);
-
-                if (input == 1) { FillPosition(playground, " O ", input); }
-                else if (input == 2) { FillPosition(playground, " O ", input); }
-                else if (input == 3) { FillPosition(playground, " O ", input); }
-                else if (input == 4) { FillPosition(playground, " O ", input); }
-                else if (input == 5) { FillPosition(playground, " O ", input); }
-                else if (input == 6) { FillPosition(playground, " O ", input); }
-                else { FillPosition(playground, " O ", input); }
-
-                PrintMethod(playground);
-
-                if (CheckWinDiagonal(playground) == true || CheckWinHorizontal(playground) == true || CheckWinVertikal(playground) == true)
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Gratulation Spieler 2, Sie haben gewonnen!");
-                    Console.ResetColor();
-                }
-                else
-                {
-                    P1P2 = true;
-                    NextTurn(playground);
-                }
-                return playground;
+            }
+            else
+            {
+                P1P2 = !P1P2;
+                NextTurn(playground);
             }
         }
 
@@ -261,7 +227,7 @@ namespace Patrick.Week07.ForInARow
             Console.Clear();
             return playground;
         }
-      
+
     }
 }
 

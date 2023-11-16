@@ -40,7 +40,6 @@ namespace Fabienne.Week07.Zoo
                 animal.PrintAnimals();
             }
         }
-
         public void ReportFoodRequest(Dictionary<Food, double> report)
         {
             foreach (Animal ani in _Animals)
