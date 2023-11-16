@@ -34,13 +34,12 @@ namespace Fabienne.Week07.Zoo
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("├── Continent: {0}, founded in {1}", _Name, _Founded);
-
                         
             for (int i = 0; i < _Enclosures.Count; i++) 
             {
                 Console.ForegroundColor = colorList[i % colorList.Length];
                 Enclosure enclosure = _Enclosures[i];
-                Console.WriteLine($"│   ├── Country: {enclosure.Name}");
+                Console.WriteLine($"│    ├── Country: {enclosure.Name}");
                 Console.ForegroundColor = colorList2[i % colorList2.Length];
                 enclosure.PrintAnimals();
             }
@@ -77,7 +76,6 @@ namespace Fabienne.Week07.Zoo
             Console.ForegroundColor= ConsoleColor.Red;
             Console.WriteLine(+sum2 + " €");
             Console.ForegroundColor = ConsoleColor.White;
-
         }
 
     }
