@@ -69,6 +69,7 @@
             fishy.FoodList.Add(worms);
             goldie.FoodList.Add(worms);
 
+
             zoo.PrintStructure();
             Console.WriteLine();
             zoo.PrintZooStatistic();

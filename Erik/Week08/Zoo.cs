@@ -11,7 +11,9 @@ namespace Erik.Week08
         private List<Enclosure> _Enclosure;
         private List<Food> _FoodList;
 
-        public List<Enclosure> enclosure { get => _Enclosure; }
+        //public List<Food> foods { get => _FoodList; }
+
+        //public List<Enclosure> enclosure { get => _Enclosure; }
 
         public Zoo(string name, int founded)
         {
@@ -35,15 +37,27 @@ namespace Erik.Week08
                 enclosure.PrintEnclosure("|" + "   " + prefix);
             }
         }
-
-        public void FoodList(Food food)
+        public void AddFoodList(Food food)
         {
+            _FoodList.Add(food);
+        }
+
+        public void PrintFoodList()
+        {
+            Console.WriteLine();
             foreach (Food element in _FoodList)
             {
-                _FoodList.Add(food);
+                Console.WriteLine("Food: {0} / Unit: {1}kg / Price per kg: {2}$", element.foodName, element.unit, element.costPerUnit);
             }
         }
 
-
+        public void LoopToFeedAnimal()
+        {
+            foreach(Enclosure enclosure in _Enclosure)
+            {
+                enclosure.FeedAnimals();
+            }
+            
+        }
     }
 }
