@@ -46,7 +46,7 @@ namespace Sven.Week07
             {
                 foreach (Animal animal in enclosure.Animals)
                 {
-                    Console.WriteLine($"{_Name} feeds the animal {animal.Species} named {animal.Name}, in the {enclosure.Description} enclosure, with {animal.Food} ");
+                    Console.WriteLine($"Keeper {_Name} is responsilbe for enclosure {enclosure.Description} and feeds {animal.Name}");
                 }
             }
 
