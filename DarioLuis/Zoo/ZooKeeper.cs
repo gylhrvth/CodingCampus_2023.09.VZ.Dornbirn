@@ -37,6 +37,10 @@ namespace DarioLuis.Zoo
             _FavouriteAnimal = FavouriteAnimal;
         }
 
+        public ZooKeeper(string v, List<Zoo_Dario.Enclosure> enclosures)
+        {
+        }
+
         public void PrintZooKeeper()
         {
             Console.WriteLine("│\t├──Zookeeper: {0}", _Name);

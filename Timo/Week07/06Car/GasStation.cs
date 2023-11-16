@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Riccardo.Week07
+namespace Timo.Week07._06Car
 {
-    internal class Zoo
+    public class GasStation
     {
     }
 }

@@ -11,7 +11,7 @@ namespace Erik.Week08
             //Food                   Name /  Unit / Price
             Food Banana = new Food("Banana", 700, 100);
             DoppelmayrZoo.AddFoodList(Banana);
-            Food Meat = new Food("Meat", 1500, 350);
+            Food Meat = new Food("Meat", 2000, 350);
             DoppelmayrZoo.AddFoodList(Meat);
             Food Fruits = new Food("Fruits", 500, 50);
             DoppelmayrZoo.AddFoodList(Fruits);
@@ -78,12 +78,6 @@ namespace Erik.Week08
             DoppelmayrZoo.LoopToFeedAnimal();
             DoppelmayrZoo.PrintZoo("├──");
             DoppelmayrZoo.PrintFoodList();
-
-
-
-
-
-
 
         }
     }

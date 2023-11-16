@@ -49,7 +49,7 @@ namespace Erik.Week08
             _AnimalList.Add(animal);
         }
 
-        public void FeedAnimals(Zoo zoo)
+        public void FeedAnimals()
         {
             foreach (Animal animal in  _AnimalList)
             {

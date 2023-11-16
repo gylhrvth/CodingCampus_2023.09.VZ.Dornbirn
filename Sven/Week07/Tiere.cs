@@ -15,6 +15,7 @@ namespace Sven.Week07
         private int _Age;
         private Food _Food;
         private int _FoodAmount;
+        private List<Food> _FoodList = new();
 
 
         public Animal(string name, int age, string species, string gender, Food food, int foodAmount)
@@ -25,10 +26,27 @@ namespace Sven.Week07
             _Gender = gender;
             _Food = food;
             _FoodAmount = foodAmount;
+            _FoodList = new List<Food>();
 
         }
 
-        public void GetAnimalStatistic(Dictionary<Food, float> dic)
+        public string Name
+        {
+            get => _Name;
+            set => _Name = value;
+        }
+        public string Species
+        {
+            get => _Species;
+            set => _Species = value;
+        }
+
+        public Food Food
+        {
+            get => _Food;
+        }
+
+        public void GetAnimalStatistic(Dictionary<Food, double> dic)
         {
             if (dic.ContainsKey(_Food))
             {
@@ -42,7 +60,7 @@ namespace Sven.Week07
 
         public void PrintZoo()
         {
-            Console.WriteLine($"│       ├── {_Name}, {_Age}, {_Gender}, {_Species}, Food Required : {_FoodAmount} {_Food}: Price per day:");
+            Console.WriteLine($"│       ├── {_Name}, {_Age}, {_Gender}, {_Species}, Food Required : {_FoodAmount} {_Food}");
         }
 
 
