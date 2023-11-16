@@ -15,8 +15,30 @@ namespace Cemal.Week07.Zoo
 
         public string Name { get => _name; }
         public string Unit { get => _unit; }
+        public int Price
+        {
+            get => _price; set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Price cannot be lower than 0");
+                }
+                _price = value;
+            }
+        }
 
-        public Food(string name, string unit, int price) 
+
+        //public int GetPrice() { return _price; }
+
+        //public void SetPrice(int price) { 
+        //    if(price < 0)
+        //    {
+        //        throw new ArgumentOutOfRangeException("Price cannot be lower than 0");
+        //    }
+        //    _price = price; 
+        //}
+
+        public Food(string name, string unit, int price)
         {
             _name = name;
             _unit = unit;
@@ -30,7 +52,7 @@ namespace Cemal.Week07.Zoo
 
         public void PrintStructure()
         {
-            Console.WriteLine("|        ├── Essen: {0}, Preis: {1} {2}", _name, _price, _unit);
+            Console.WriteLine("{0,-20} Preis: {1, 5} Euro pro {2}", _name, _price, _unit);
         }
     }
 }

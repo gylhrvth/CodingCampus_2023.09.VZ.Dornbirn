@@ -55,6 +55,14 @@
             }
 
         }
+        public void PrintEnclosure()
+        {
+            Console.WriteLine($"│\t\t├── Enclosure: {_Name}");
+            foreach (var animal in _AnimalsList)
+            {
+                animal.PrintAnimal();
+            }
+        }
 
 
         public void PrintZoo()

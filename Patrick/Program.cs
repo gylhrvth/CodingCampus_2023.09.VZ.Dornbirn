@@ -1,7 +1,5 @@
 ﻿
-using Patrick.Week06.Zoo;
-
-ZooMain.Start();
+Patrick.Week07.ForInARow.ForInARow.Start();
 
 
 

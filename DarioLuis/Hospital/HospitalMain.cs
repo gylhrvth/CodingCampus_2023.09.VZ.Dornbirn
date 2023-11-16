@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DarioLuis.Hospital
 {
-    internal class HospitalMain
+    public class HospitalMain
     {
+        public static void Start()
+        {
+
+        }
     }
 }

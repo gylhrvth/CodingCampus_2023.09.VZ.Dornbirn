@@ -10,13 +10,15 @@ namespace Patrick.Week06.Zoo
 {
     internal class Enclosure
     {
+        private static Random random = new Random();
+        
         private string _Name;
 
         private string _Temp;
 
         private bool _WasKeeperInEnclosure;
 
-        private List<Animals> _AnimalsList { get; set; }
+        private List<Animal> _AnimalsList { get; set; }
 
 
         public string Name
@@ -28,19 +30,21 @@ namespace Patrick.Week06.Zoo
         public Enclosure(string name, string temp)
         {
             _Name = name;
-            _AnimalsList = new List<Animals>();
+            _AnimalsList = new List<Animal>();
             _Temp = temp;
         }
 
-        public List<Animals> AnimalsList
-        {
-            get => _AnimalsList;
 
+        public void AddAnimal(Animal animal)
+        {
+            if (!_AnimalsList.Contains(animal)) { 
+                _AnimalsList.Add(animal);
+            }
         }
 
         public void GetEnclosureStatistic(Dictionary<Food, float> dic)
         {
-            foreach (Animals animal in _AnimalsList)
+            foreach (Animal animal in _AnimalsList)
             {
                 animal.GetAnimalStatistic(dic);
             }
@@ -51,18 +55,18 @@ namespace Patrick.Week06.Zoo
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine($"│      ├── Gehege: {_Name} || Temperatur: {_Temp}");
             Console.ResetColor();
-            foreach (Animals animal in _AnimalsList)
+            foreach (Animal animal in _AnimalsList)
             {
-                Console.WriteLine($"│          ├── {animal.Name}, {animal.Genus}, {animal.Age} || mag: {animal.Food}");
+                animal.PrintAnimal();
             }
         }
 
         public void GetAnimalRandom(string keeperName)
         {
-            var random = new Random();
-            int randomAnimal = random.Next(AnimalsList.Count);
+            Random random = new Random();
+            int randomAnimal = random.Next(_AnimalsList.Count);
 
-            Console.WriteLine($"Der Pfleger {keeperName} beobachtet das Tier {AnimalsList[randomAnimal]}");
+            Console.WriteLine($"Der Pfleger {keeperName} beobachtet das Tier {_AnimalsList[randomAnimal]}");
         }
 
         public void SimulateDayStart()
@@ -74,7 +78,8 @@ namespace Patrick.Week06.Zoo
         {
             if (_WasKeeperInEnclosure == false)
             {
-                foreach (Animals animal in AnimalsList)
+
+                foreach (Animal animal in _AnimalsList)
                 {
                     Console.WriteLine($"{keeperName} füttert das Tier {animal}, im Gehege {Name}, mit dem Futter {animal.Food} ");
 
@@ -92,9 +97,27 @@ namespace Patrick.Week06.Zoo
 
         public void LoveliestAnimalForKeeper(string keeperName)
         {
-            Animals loveliestAnimal = AnimalsList[1];
+            Animal loveliestAnimal = _AnimalsList[1];
             Console.WriteLine($"{keeperName} bewundert eine Weile sein Lieblingstier {loveliestAnimal}");
         }
+
+        public void AnimalBitesAnimal()
+        {            
+            foreach (Animal aggressor in _AnimalsList)
+            {
+                int randomBite = random.Next(0, 101);
+                if (randomBite <= 40)
+                {
+                    int randomAnimal = random.Next(0, _AnimalsList.Count);
+                    Animal victom = _AnimalsList[randomAnimal];
+                    aggressor.DoBite(victom);                    
+                }
+            }
+
+
+
+        }
+
 
         public override string ToString()
         {
