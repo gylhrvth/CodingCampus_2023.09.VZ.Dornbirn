@@ -1,4 +1,6 @@
-﻿namespace Fabian.Week07._07Car
+﻿using static Fabian.Selftest_SP.TowersOfHanoi;
+
+namespace Fabian.Week07._07Car
 {
     public class Car
     {
@@ -12,42 +14,76 @@
         private Tank _Tank;
         private string _Producer;
         private string _Model;
+        private double _Consumption;
         private Engine _Engine;
-        private CarDriveType _CarDriveType;
+        private CarDriveType _DriveType;
         private double _Weight;
+        private int _Trip;
 
         public string Model { get => _Model; }
+        public Tank Tank { get => _Tank; }
+        public Engine Engine { get => _Engine; set => _Engine = value; }
+        public int Trip { get => _Trip; set => _Trip = value; }
+        public CarDriveType DriveType { get => _DriveType; }
+        public double Consumption { get => _Consumption; set => _Consumption = value; }
+
+
         public Car(string producer, string model, Engine engine, double weight, Tank tank, CarDriveType carDriveType)
         {
             _Producer = producer;
             _Model = model;
             _Engine = engine;
-            _Tank = tank;
+            _Tank = (carDriveType == CarDriveType.Strom) ? new Battery(tank.Name, tank.MaxCapacity) : new FuelTank(tank.Name, tank.MaxCapacity);
             _Weight = weight;
-            _CarDriveType = carDriveType;          
+            _DriveType = carDriveType;
+            _Consumption = _Engine.Power / _Weight;
+            _Trip = 0;
         }
 
-        public int Drive (int kilometer)
+        public int Drive(int kilometer)
         {
             int driven = 0;
-            double consumption = _Engine.Power / _Weight;
-            while(driven < kilometer)
+            //SetConsoleColor(ConsoleColor.Green, "Brumm Brumm");
+            while (driven < kilometer)
             {
-                if (_Tank.Capacity - consumption < 0)
+                if (_Tank.Capacity - _Consumption < 0)
                 {
-                    Console.WriteLine("{0} is empty at {1} km and gets refilled", _Model,  driven);
-                    FillTank(10);
+                    PrintCarStatus();
+                    return driven;
                 }
-                _Tank.Capacity -= consumption;
-                driven++;
+                _Engine.IsBroken = _Engine.CheckIfBroken(this);
+                if (_Engine.IsBroken)
+                {
+                    PrintCarStatus();
+                    return driven;
+                }             
+                _Tank.Capacity -= _Consumption;
                 _Engine.DistanceTravelled++;
+                _Trip++;
+                driven++;
             }
-
+            SetConsoleColor(ConsoleColor.Cyan, $"{_Model} stopped!");
             return driven;
         }
-        public void FillTank(double value)
+
+        private void PrintCarStatus()
         {
-            _Tank.Capacity += value;
+            string unit = (_DriveType == CarDriveType.Strom) ? "kWh" : "L";
+            string type = (_DriveType == CarDriveType.Strom) ? "battery" : "tank";
+            Console.Write($"The {type} status is: {_Tank.Capacity:N2}{unit}.");
+            if (_Engine.IsBroken)
+                SetConsoleColor(ConsoleColor.Red, " The Engine is broken!");
+            else
+                Console.WriteLine(" The Engine is not broken!");         
+        }
+
+        public void SelfRepair()
+        {
+            SetConsoleColor(ConsoleColor.DarkRed, "Car stopped!");
+            Console.WriteLine($"The engine of {_Model} has been repaired after {_Engine.DistanceTravelled} km!");
+            _Engine = new Engine("selfrepair", _Engine.Power);
+            SetConsoleColor(ConsoleColor.Green, "Brumm Brumm");
+
         }
     }
 }
