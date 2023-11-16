@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Week06._05Zoo
+namespace Timo.Week07._05Geometry
 {
-    public class Gehege
+    public abstract class Geometry
     {
-
     }
 }

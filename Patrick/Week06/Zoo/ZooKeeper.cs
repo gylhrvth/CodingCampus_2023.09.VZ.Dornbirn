@@ -15,25 +15,37 @@ namespace Patrick.Week06.Zoo
         public ZooKeeper(string name, List<Enclosure> enclosures)
         {
             _Name = name;
-            _EnclosureList =  enclosures;
+            _EnclosureList = enclosures;
         }
 
         public List<Enclosure> EnclosureList
         {
             get => _EnclosureList;
-            set => _EnclosureList = value;
         }
 
-        public  void PrintZooKeeper()
+        public string Name
+        {
+            get => _Name;
+        }
+
+        public void PrintZooKeeper()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("│   ├── Zookeeper: {0}", _Name);
             Console.ResetColor();
-            foreach(Enclosure enclosure in _EnclosureList)
+            foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.PrintAnimals();
             }
         }
 
+        public void SimulateZookeeperWork()
+        {   
+            foreach (Enclosure enclosure in _EnclosureList)
+            {
+                enclosure.SimulateTakeCareOfEnclosure(Name);
+
+            }
+        }
     }
 }

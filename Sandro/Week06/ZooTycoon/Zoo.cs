@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sandro.Week06.ZooTycoon
-{
+{ 
     internal class Zoo
     {
         private string _Name;
