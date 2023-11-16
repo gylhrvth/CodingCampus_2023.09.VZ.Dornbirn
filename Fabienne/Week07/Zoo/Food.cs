@@ -10,15 +10,18 @@ namespace Fabienne.Week07.Zoo
     {
         private string _Name;
         private string _Unit;
-        private double _UnitPrice;
+        private double _UnitAmount;
+        private double _Unitprice;
 
         public string Name { get => _Name; }
         public string Unit { get => _Unit; }
-        public Food(string name, string unit, double unitprice)
+        public double Unitprice { get => _Unitprice; }
+        public Food(string name, string unit, double unitamount, double unitprice)
         {
             _Name = name;
             _Unit = unit;
-            _UnitPrice = unitprice;
+            _UnitAmount = unitamount;
+            _Unitprice = unitprice;
         }
         public override string ToString()
         {

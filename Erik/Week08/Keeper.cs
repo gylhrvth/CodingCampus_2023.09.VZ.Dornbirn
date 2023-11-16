@@ -16,11 +16,9 @@ namespace Erik.Week08
             _KeeperName = keeperName;
         }
 
-        public void PrintKeeper()
+        public override String ToString()
         {
-            Console.WriteLine("responsible employee: " + _KeeperName);
+            return _KeeperName;
         }
-
-
     }
 }

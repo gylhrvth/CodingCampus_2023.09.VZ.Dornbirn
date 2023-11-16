@@ -21,26 +21,6 @@ namespace Cemal.Week07.Zoo
             _gender = gender;
             _food = food;
             _foodrec = foodrec;
-            _foodlist = new List<Food>();
-        }
-
-        public void AddFood()
-        {
-            if(!_foodlist.Contains(_food))
-            {
-                _foodlist.Add(_food);
-            }
-        }
-
-        public override string ToString()
-        {
-            return "Essen: " + _food;
-        }
-
-        public void PrintStructure()
-        {
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("|          ├── Rasse: {0, -8}  Name: {1, -8} Essen: {2, -10} Menge: {3}", _gender,_name,_food,_foodrec);          
         }
 
 
@@ -54,6 +34,17 @@ namespace Cemal.Week07.Zoo
             {
                 report.Add(_food, _foodrec);
             }
+        }
+
+        public override string ToString()
+        {
+            return "Essen: " + _food;
+        }
+
+        public void PrintStructure()
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("|          ├── Rasse: {0, -8}  Name: {1, -8} Essen: {2, -10} Menge: {3}", _gender, _name, _food, _foodrec);
         }
     }
 }

@@ -50,7 +50,7 @@
         {
             foreach (Enclosure enclosure in Enclosures)
             {
-                foreach (Animals animal in enclosure.Animals)
+                foreach (Animals animal in enclosure.AnimalsList)
                 {
                     if (enclosure.IsFed == false)
                     {
