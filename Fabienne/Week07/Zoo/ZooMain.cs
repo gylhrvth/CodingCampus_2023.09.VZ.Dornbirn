@@ -23,7 +23,7 @@ namespace Fabienne.Week07.Zoo
             Food child = new Food("Child🧒", "MT", 12500, 80000.00);
             Food mushrooms = new Food("Mushrooms🍄", "kg", 1.00, 7.79);
             Food dog = new Food ("Dog🐕", "MT", 12.09, 1999.99);
-            Food whopper = new Food("Whopper", "mg", 88.00, 5.99);
+            Food whopper = new Food("Whopper", "kg", 88.00, 5.99);
             Food skittles = new Food("Skittles🌈", "kg", 0.90, 2.49);
             Food cheese = new Food("Cheese🧀", "kg", 1.00, 4.99);
             Food frosting = new Food("Frosting", "Can", 1, 2.80);
@@ -31,17 +31,17 @@ namespace Fabienne.Week07.Zoo
             Food que = new Food("Quesadilla🌮", "kg", 0.40, 6.85);
             Food tubur = new Food("Tubburger🍔", "kg", 0.50, 4.99);
             Food wiburg = new Food("Wilburger🍔", "kg", 0.50, 4.99);
-            Food coca = new Food("Coca-Cola🥤", "ml", 250.00, 1.45);
-            Food soup = new Food("Miso-Soup🥣", "ml", 700.00, 7.44);
-            Food whiskey = new Food("Whiskey🍾", "ml", 500.00, 19.90);
+            Food coca = new Food("Coca-Cola🥤", "l", 250.00, 1.45);
+            Food soup = new Food("Miso-Soup🥣", "l", 700.00, 7.44);
+            Food whiskey = new Food("Whiskey🍾", "l", 500.00, 19.90);
             Food wine = new Food("Wine🍷", "ml", 900.00, 23.99);
             Food cake = new Food("Cake🎂", "kg", 1.00, 7.22);
-            Food spag = new Food("Spaghetti🍝", "g", 150.00, 4.99);
+            Food spag = new Food("Spaghetti🍝", "kg", 150.00, 4.99);
             Food chicken = new Food("Chicken🍗", "kg", 1.00, 5.88);
             Food whale = new Food("Whale🐋", "kg", 250, 100.00);
-            Food nsoup = new Food("Noodle-Soup🍜", "ml", 700.00, 9.99);
+            Food nsoup = new Food("Noodle-Soup🍜", "l", 700.00, 9.99);
             Food rice = new Food("Rice and veggies🍚", "kg", 2.00, 3.65);
-            Food hot = new Food("Hotpockets🌯", "g", 328.00, 4.99);
+            Food hot = new Food("Hotpockets🌯", "kg", 328.00, 4.99);
             Food blue = new Food("Blue💙", "?", 0.00, 0.00);
 
             Enclosure lasnevadas = new Enclosure("Las Nevadas🌃", "Subtropical", "hot");
