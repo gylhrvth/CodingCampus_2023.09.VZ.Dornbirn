@@ -40,7 +40,6 @@ namespace Fabienne.Week07.Zoo
             if (report.ContainsKey(_Food))
             {
                 report[_Food] += _FoodAmount;
-                //report[_FoodAmount] *= _FoodPrice;
             }
             else
             {

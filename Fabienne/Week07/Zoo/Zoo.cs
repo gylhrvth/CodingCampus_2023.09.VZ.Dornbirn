@@ -50,23 +50,34 @@ namespace Fabienne.Week07.Zoo
         public void PrintFoodReport()
         {
             Dictionary<Food, double> report = new Dictionary<Food, double>();
-            Dictionary<Food, double> r = new Dictionary<Food, double>();
 
             foreach (Enclosure enc in _Enclosures)
             {
                 enc.ReportFoodRequest(report);
             }
+            double sum = 0;
+            double sum2 = 0;
 
-            Console.WriteLine("Food request report");
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine("Food request report:");
             foreach (Food f in report.Keys)
             {
-                Console.WriteLine("{0, -20} {1, 5} {2, -5}",
+                sum = f.Unitprice * report[f];
+                Console.WriteLine("{0, -20} {1, 5} {2, -5} {3, -10}",
                     f.Name,
                     report[f],
                     f.Unit,
                     f.Unitprice + " €"
                     ) ;
+
+                sum2 += sum;
             }
+            Console.WriteLine("----------------------------------------------");
+            Console.Write("The sum is:                      ");
+            Console.ForegroundColor= ConsoleColor.Red;
+            Console.WriteLine(+sum2 + " €");
+            Console.ForegroundColor = ConsoleColor.White;
+
         }
 
     }
