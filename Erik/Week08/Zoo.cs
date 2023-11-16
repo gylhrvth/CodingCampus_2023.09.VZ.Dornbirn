@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.ComponentModel.Design;
+using System.Reflection.PortableExecutable;
+using System.Runtime.Serialization.Formatters;
 
 namespace Erik.Week08
 {
@@ -10,31 +12,70 @@ namespace Erik.Week08
         private int _Founded;
         private List<Enclosure> _Enclosure;
         private List<Food> _FoodList;
+        private List<Keeper> _KeeperList;
+        private int _Days;
 
-        //public List<Food> foods { get => _FoodList; }
-
-        //public List<Enclosure> enclosure { get => _Enclosure; }
-
-        public Zoo(string name, int founded)
+        public Zoo(string name, int founded, int days)
         {
             _Name = name;
             _Founded = founded;
             _Enclosure = new List<Enclosure>();
             _FoodList = new List<Food>();
+            _KeeperList = new List<Keeper>();
+            _Days = days;
         }
 
-        public void addEncolsureToZoo(Enclosure enclosure)
+        public void add(Enclosure enclosure)
         {
             _Enclosure.Add(enclosure);
         }
 
+        public void add(Keeper keeper)
+        {
+            _KeeperList.Add(keeper);
+        }
+
         public void PrintZoo(string prefix)
+
+
         {
             Console.WriteLine("{0} Zoo: {1} founded in {2}", prefix, _Name, _Founded);
 
             foreach (Enclosure enclosure in _Enclosure)
             {
                 enclosure.PrintEnclosure("|" + "   " + prefix);
+            }
+        }
+
+        public void simulateDay(int day)
+        {            
+            for (int i = 0; i < _Days; i++)
+            {
+                switch (day % 7)
+                {
+                    case 1:
+                        Console.WriteLine("Monday: ");
+                        break;
+                    case 2:
+                        Console.WriteLine("Tuesday: ");
+                        break;
+                    case 3:
+                        Console.WriteLine("Wednesday: ");
+                        break;
+                    case 4:
+                        Console.WriteLine("Thursday: ");
+                        break;
+                    case 5:
+                        Console.WriteLine("Friday: ");
+                        break;
+                    case 6:
+                        Console.WriteLine("Saturday: ");
+                        break;
+                    case 0:
+                        Console.WriteLine("Sunday: ");
+                        break;
+                }
+
             }
         }
         public void AddFoodList(Food food)
@@ -44,20 +85,30 @@ namespace Erik.Week08
 
         public void PrintFoodList()
         {
-            Console.WriteLine();
+            int unitResault = 0;
+            int totalCost = 0;
+            int totalWeight = 0;
+
             foreach (Food element in _FoodList)
             {
                 Console.WriteLine("Food: {0} / Unit: {1}kg / Price per kg: {2}$", element.foodName, element.unit, element.costPerUnit);
+                unitResault += element.unit;
             }
+            foreach (Enclosure enc in _Enclosure)
+            {
+                totalCost += enc.calculateCost();
+                totalWeight += enc.calculateConsumedFood();
+            }
+
+            Console.WriteLine($"\nDaily consumption: {totalWeight}kg / Daily food costs: {totalCost}$");
         }
 
         public void LoopToFeedAnimal()
         {
-            foreach(Enclosure enclosure in _Enclosure)
+            foreach (Enclosure enclosure in _Enclosure)
             {
                 enclosure.FeedAnimals();
             }
-            
         }
     }
 }
