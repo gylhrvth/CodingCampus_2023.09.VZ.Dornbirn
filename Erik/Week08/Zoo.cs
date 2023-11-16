@@ -11,9 +11,9 @@ namespace Erik.Week08
         private List<Enclosure> _Enclosure;
         private List<Food> _FoodList;
 
-        public List<Food> foods { get => _FoodList; }
+        //public List<Food> foods { get => _FoodList; }
 
-        public List<Enclosure> enclosure { get => _Enclosure; }
+        //public List<Enclosure> enclosure { get => _Enclosure; }
 
         public Zoo(string name, int founded)
         {
@@ -55,7 +55,7 @@ namespace Erik.Week08
         {
             foreach(Enclosure enclosure in _Enclosure)
             {
-                enclosure.FeedAnimals(this);
+                enclosure.FeedAnimals();
             }
             
         }

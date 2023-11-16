@@ -35,8 +35,9 @@
             zoo.AddEnclosure(swamp);
             swamp.AddAnimals(explofrog1);
 
-
+            
             zoo.PrintZoo();
+            zoo.PrintFoodStatistic();
 
         }
 

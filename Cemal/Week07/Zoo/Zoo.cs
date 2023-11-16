@@ -8,34 +8,57 @@ namespace Cemal.Week07.Zoo
 {
     internal class Zoo
     {
-        private string _Name;
-        private int _FoundingYear;
-        private List<Enclosures> _Enclosures;
+        private string _name;
+        private int _foundingYear;
+        private List<Enclosure> _enclosures;
+        private int totalprice = 0;
 
         public Zoo(string name, int foundingYear)
         {
-            _Name = name;
-            _FoundingYear = foundingYear;
-            _Enclosures = new List<Enclosures>();
+            _name = name;
+            _foundingYear = foundingYear;
+            _enclosures = new List<Enclosure>();
         }
 
-        public void addEnclosure(Enclosures enc)
+        public void addEnclosure(Enclosure enc)
         {
-            _Enclosures.Add(enc);
+            _enclosures.Add(enc);
         }
 
         public override string ToString()
         {
-            return "Zoo: " + _Name + ", founded: " + _FoundingYear;
+            return "Zoo: " + _name + ", founded: " + _foundingYear;
         }
-
 
         public void PrintStructure()
         {
-            Console.WriteLine("├── Zoo: {0}, founded: {1}", _Name, _FoundingYear);
-            foreach (Enclosures enc in _Enclosures)
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.WriteLine("├── Zoo: {0}, founded: {1}", _name, _foundingYear);
+            Console.WriteLine();
+
+            foreach (Enclosure enc in _enclosures)
             {
-                enc.PrintStructure("|   ");
+                enc.PrintStructure();
+                Console.WriteLine();
+            }
+        }
+
+
+        public void CalculateFoodReport()
+        {
+            Dictionary<Food, int> report = new Dictionary<Food, int>();
+            foreach (Enclosure enc in _enclosures)
+            {
+                enc.CalculateFoodReport(report);
+            }
+
+            foreach (Food f in report.Keys)
+            {
+                Console.WriteLine("{0, -20} {1, 10} {2, -5}",
+                    f.Name,
+                    report[f],
+                    f.Unit
+                    );
             }
         }
     }
