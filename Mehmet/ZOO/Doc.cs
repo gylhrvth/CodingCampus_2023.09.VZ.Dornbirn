@@ -7,46 +7,39 @@ using System.Threading.Tasks;
 
 namespace Mehmet.ZOO
 {
-    internal class Worker
+    internal class Doc
     {
-        private string _Name;
-        private string _Workplace;
-        private List<Cage> _CageList;
 
-        public Worker(string name, string workplace)
+        private string _Name;
+        private List<Cage> _CageList;
+        private List<Animal> _AnimalList;
+        public Doc(string name)
         {
             _Name = name;
-            _Workplace = workplace;
             _CageList = new List<Cage>();
+            _AnimalList = new List<Animal>();
+        }
+
+        public void AddAnimal(Animal animal)
+        {
+            _AnimalList.Add(animal);
         }
         public void AddCage(Cage cage)
         {
             _CageList.Add(cage);
         }
 
-        public void PrintStrukture()
+
+        
+
+
+        public void HealAnimal()
         {
-            Console.WriteLine("   └──┤ Mitarbeiter: {0},  ArbeitsPlatz: {1}",
-                _Name,
-                _Workplace);
-        }
-
-
-
-        public void SimulateDay()
-        {
-
-
-            Console.WriteLine("  {0} startet mit der Arbeit", _Name);
             foreach (Cage cage in _CageList)
             {
-                cage.SimulateDay();
+                cage.HealAnimalinCage();
             }
-
         }
-
-
-
 
     }
 }
