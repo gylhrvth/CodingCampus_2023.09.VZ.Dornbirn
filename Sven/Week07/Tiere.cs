@@ -46,6 +46,15 @@ namespace Sven.Week07
             get => _Food;
         }
 
+        public void PrintAnimal()
+        {
+            Console.WriteLine($"{_Name}, {_Species}");
+            foreach (var food in _FoodList)
+            {
+                food.PrintFood(_FoodAmount);
+            }
+        }
+
         public void GetAnimalStatistic(Dictionary<Food, double> dic)
         {
             if (dic.ContainsKey(_Food))
