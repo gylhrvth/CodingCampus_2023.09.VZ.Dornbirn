@@ -44,8 +44,6 @@ namespace Gheorghe.Week07.Zoo
         }
 
 
-
-
         public void PrintZoo()
         {
             Console.WriteLine($"|--Zoo: {_Name}, Locality {_Locality},  Year: {_FoundingYear}");
@@ -66,3 +64,4 @@ namespace Gheorghe.Week07.Zoo
         }
     }
 }
+ 
