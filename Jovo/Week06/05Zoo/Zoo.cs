@@ -15,6 +15,7 @@ namespace Jovo.Week06._05Zoo
         private int _Capacity;
         private List<Enclosure> _EnclosureList;
         private List<Pfleger> _PflegerList;
+        private List<ZooDoc> _ZooDocList;
 
         public Zoo(string name, string locality, int foundingYear, int capacity)
         {
@@ -24,7 +25,16 @@ namespace Jovo.Week06._05Zoo
             _Capacity = capacity;
             _EnclosureList = new List<Enclosure>();
             _PflegerList = new List<Pfleger>();
+            _ZooDocList = new List<ZooDoc>();
         }
+
+        public List<ZooDoc> ZooDocList
+        {
+            get => _ZooDocList;
+            set => _ZooDocList = value;
+            
+        }
+        
 
         public void AddEnclosure(Enclosure enclosure)
         {
@@ -92,7 +102,54 @@ namespace Jovo.Week06._05Zoo
             }
 
         }
-        
+
+
+
+
+        public void HealDaily()
+        {
+            Console.WriteLine("test");
+            List<Animals> AnimalsHeal = new();
+            foreach (Enclosure enclosure in _EnclosureList)
+                foreach (Animals animal in enclosure.AnimalsList)
+                    if (!animal.IsDead) AnimalsHeal.Add(animal);
+
+            foreach (var doctor in _ZooDocList)
+            {
+                if (AnimalsHeal.Count == 0) break;
+
+                Animals min = null;
+
+                foreach (var animal in AnimalsHeal)
+                {
+                    if (min == null || (animal.Life / animal.MaxLife) < (min.Life / min.MaxLife))
+                    {
+                        min = animal;
+                    }
+                }
+
+                if (min != null)
+                {
+                    doctor.Heal(min);
+                    AnimalsHeal.Remove(min);
+                }
+            }
+        }
+        public void FightStart()
+        {
+            List<Animals> animalsToRemove = new();
+            foreach (var enclosure in _EnclosureList)
+            {
+                enclosure.Fight(animalsToRemove);
+                foreach (var animal in animalsToRemove)
+                {
+                    enclosure.AnimalsList.Remove(animal);
+                }
+            }
+        }
+
+     
+
     }
 
     
