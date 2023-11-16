@@ -14,6 +14,7 @@ namespace Jovo.Week06._05Zoo
         private int _FoundingYear;
         private int _Capacity;
         private List<Enclosure> _EnclosureList;
+        private List<Pfleger> _PflegerList;
 
         public Zoo(string name, string locality, int foundingYear, int capacity)
         {
@@ -22,6 +23,7 @@ namespace Jovo.Week06._05Zoo
             _FoundingYear = foundingYear;
             _Capacity = capacity;
             _EnclosureList = new List<Enclosure>();
+            _PflegerList = new List<Pfleger>();
         }
 
         public void AddEnclosure(Enclosure enclosure)
@@ -30,6 +32,14 @@ namespace Jovo.Week06._05Zoo
             if (!_EnclosureList.Contains(enclosure))
             {
                 _EnclosureList.Add(enclosure);
+            }
+        }
+
+        public void AddKeeper(Pfleger keeper)
+        {
+            if (!_PflegerList.Contains(keeper))
+            {
+                _PflegerList.Add(keeper);
             }
         }
 
@@ -65,10 +75,26 @@ namespace Jovo.Week06._05Zoo
             }
             Console.WriteLine("total daily cost for food: {0:N2}Euro", cost);
         }
-      
+
+
+        public void Simulate()
+        {
+            foreach(Enclosure enclosure in _EnclosureList )
+            {
+                enclosure.IsFed = false;
+            }
+
+
+            foreach(Pfleger pfleger in _PflegerList)
+            {
+                pfleger.Simulate();
+                
+            }
+
+        }
         
     }
 
-
+    
 
 }
