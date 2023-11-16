@@ -98,6 +98,11 @@ namespace Patrick.Week06.Zoo
             {
                 keep.SimulateZookeeperWork();
             }
+
+            foreach (Enclosure enc in _EnclosureList)
+            {
+                enc.AnimalBitesAnimal();
+            }
         }
 
     }

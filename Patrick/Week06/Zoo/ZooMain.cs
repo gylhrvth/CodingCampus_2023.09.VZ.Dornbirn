@@ -35,45 +35,34 @@ namespace Patrick.Week06.Zoo
 
 
             //animals enclosureAlps
-            Animals animalCow = new("Kuh", "Hilda", "10 Jahre alt", 10f, grain);
-            Animals animalPig = new("Schwein", "Sabine", "3 Jahre alt", 3f, karrots);
+            Animal animalCow = new("Kuh", "Hilda", "10 Jahre alt", 10f, grain, 100, 30);
+            Animal animalPig = new("Schwein", "Sabine", "3 Jahre alt", 3f, karrots, 100, 20);
 
             //animals enclosureForest
-            Animals animalFox = new("Fuchs", "Johannes", "2 Jahre jung", 0.4f, meat);
-            Animals animalRabbit = new("Hase", "Norbert", "1 Jahre jung", 0.3f, karrots);
-            Animals animalBird = new("Vogel", "Kurt", "2 Jahre jung", 0.05f, birdFood);
+            Animal animalFox = new("Fuchs", "Johannes", "2 Jahre jung", 0.4f, meat, 100, 20);
+            Animal animalRabbit = new("Hase", "Norbert", "1 Jahre jung", 0.3f, karrots, 100, 5);
+            Animal animalBird = new("Vogel", "Kurt", "2 Jahre jung", 0.05f, birdFood, 20, 2);
 
             //animals enclosureIceLand
-            Animals animalBear = new("Eisbär", "Robert", "8 Jahre alt", 3.8f, meat);
-            Animals animalSeal = new("Robbe", "Sandra", "4 Jahre alt", 1.5f, fish);
+            Animal animalBear = new("Eisbär", "Robert", "8 Jahre alt", 3.8f, meat, 250, 40);
+            Animal animalSeal = new("Robbe", "Sandra", "4 Jahre alt", 1.5f, fish, 150, 20);
 
             //animals fishTank
-            Animals animalShark = new("Hammerhai", "Hans", "3 Jahre alt", 3.5f, fish);
-            Animals animalTuna = new("Thunfisch", "Susanne", "20 Jahre alt", 2f, meat);
-            Animals animalClownfish = new("Clownfisch", "Theodor", "1 Jahr jung", 0.08f, fishFood);
-
-            animalCow.FoodList.Add(grain);
-            animalPig.FoodList.Add(karrots);
-            animalFox.FoodList.Add(meat);
-            animalRabbit.FoodList.Add(karrots);
-            animalBird.FoodList.Add(birdFood);
-            animalBear.FoodList.Add(meat);
-            animalSeal.FoodList.Add(fish);
-            animalShark.FoodList.Add(fish);
-            animalTuna.FoodList.Add(meat);
-            animalClownfish.FoodList.Add(fishFood);
+            Animal animalShark = new("Hammerhai", "Hans", "3 Jahre alt", 3.5f, fish, 300, 80);
+            Animal animalTuna = new("Thunfisch", "Susanne", "20 Jahre alt", 2f, meat, 200, 50);
+            Animal animalClownfish = new("Clownfisch", "Theodor", "1 Jahr jung", 0.08f, fishFood, 30, 5);
 
 
-            enclosureAlps.AnimalsList.Add(animalCow);
-            enclosureAlps.AnimalsList.Add(animalPig);
-            enclosureForest.AnimalsList.Add(animalFox);
-            enclosureForest.AnimalsList.Add(animalRabbit);
-            enclosureForest.AnimalsList.Add(animalBird);
-            enclosureIceLand.AnimalsList.Add(animalBear);
-            enclosureIceLand.AnimalsList.Add(animalSeal);
-            enclosureFishTank.AnimalsList.Add(animalShark);
-            enclosureFishTank.AnimalsList.Add(animalTuna);
-            enclosureFishTank.AnimalsList.Add(animalClownfish);
+            enclosureAlps.AddAnimal(animalCow);
+            enclosureAlps.AddAnimal(animalPig);
+            enclosureForest.AddAnimal(animalFox);
+            enclosureForest.AddAnimal(animalRabbit);
+            enclosureForest.AddAnimal(animalBird);
+            enclosureIceLand.AddAnimal(animalBear);
+            enclosureIceLand.AddAnimal(animalSeal);
+            enclosureFishTank.AddAnimal(animalShark);
+            enclosureFishTank.AddAnimal(animalTuna);
+            enclosureFishTank.AddAnimal(animalClownfish);
 
             ZooKeeper zooKeeper1 = new("Andreas", new List<Enclosure> { enclosureIceLand, enclosureForest });
             ZooKeeper zooKeeper2 = new("Daniela", new List<Enclosure> { enclosureAlps, enclosureIceLand });
@@ -97,7 +86,15 @@ namespace Patrick.Week06.Zoo
             Console.WriteLine("=======================================================");
             Console.ResetColor();
 
-            zoo.SimulateDay(1);
+            for (int i = 0; i < 3; i++)
+            {
+                zoo.SimulateDay(i + 1);
+            }
+
+
+
+
+
 
 
         }
