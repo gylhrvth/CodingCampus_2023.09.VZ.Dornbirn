@@ -11,35 +11,22 @@ namespace Erik.Week08
         private string _Name;
         private int _SquareMeter;
         private List<Animal> _AnimalList;
-        private List<Keeper> _KeeperList;
+        private Keeper _Keeper;
+        
         public string EnclosureName { get => _Name; }
 
-        public Enclosure(string name, int squareMeter)
+        public Enclosure(string name, int squareMeter, Keeper keeper)
         {
             _Name = name;
             _SquareMeter = squareMeter;
             _AnimalList = new List<Animal>();
-            _KeeperList = new List<Keeper>();
+            _Keeper = keeper;
         }
 
         public void PrintEnclosure(string prefix)
         {
-            Console.WriteLine("{0} Enclosure: {1} / Size: {2} m² / responsible employee: ", prefix, _Name, _SquareMeter);
+            Console.WriteLine("{0} Enclosure: {1} / Size: {2} m² / Keeper: {3}", prefix, _Name, _SquareMeter , (_Keeper == null) ? "No Keeper assigned!" : _Keeper.keeperName);
 
-            if (_KeeperList.Count != 0)
-            {
-                foreach (Keeper keeper in _KeeperList)
-                {
-                    keeper.PrintKeeper();                    
-                }
-            }
-            else
-            {
-                Console.Write(prefix + "── ");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("No keeper was assigned!");
-                Console.ResetColor();
-            }
             if (_AnimalList.Count != 0)
             {
                 foreach (Animal animal in _AnimalList)
@@ -55,16 +42,21 @@ namespace Erik.Week08
                 Console.WriteLine("Enclosure is empty!");
                 Console.ResetColor();
             }
-
         }
 
         public void AddAnimals(Animal animal)
         {
             _AnimalList.Add(animal);
         }
-        public void AddKeeperToEnclosure(Keeper keeper)
+
+        public void FeedAnimals()
         {
-            _KeeperList.Add(keeper);
+            foreach (Animal animal in  _AnimalList)
+            {
+                int FoodToFeed = 100 - animal.hunger;
+                animal.food.unit -= FoodToFeed;
+                animal.hunger += FoodToFeed;
+            }
         }
     }
 }

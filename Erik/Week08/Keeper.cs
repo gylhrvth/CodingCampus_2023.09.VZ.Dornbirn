@@ -9,6 +9,7 @@ namespace Erik.Week08
     public class Keeper
     {
         private string _KeeperName;
+        public string keeperName { get => _KeeperName; }
 
         public Keeper(string keeperName)
         {
@@ -17,7 +18,9 @@ namespace Erik.Week08
 
         public void PrintKeeper()
         {
-            Console.WriteLine(_KeeperName);
+            Console.WriteLine("responsible employee: " + _KeeperName);
         }
+
+
     }
 }

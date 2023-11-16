@@ -11,8 +11,8 @@ namespace Riccardo.Week06
         private static Random random = new Random();
         public static void Start()
         {
-            CreateList(100);
-            PrintList(list);
+            //CreateList(100);
+            //PrintList(list);
         }
 
             public List<int> CreateList(int max)
