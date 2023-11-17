@@ -1,5 +1,4 @@
-﻿using System;
-namespace Gyula.Week07.Vererbung
+﻿namespace Gyula.Week07.Vererbung
 {
 	public class ObstKorbMain
 	{

@@ -48,9 +48,11 @@ namespace Cemal.Week07.Zoo
             {
                 enc.PrintStructure();
                 Console.WriteLine();
-                Console.WriteLine();
             }
 
+            Console.WriteLine("---------------------------------------------------------------------------");
+            Console.WriteLine(
+            );
             foreach (Food food in _food)
             {
                 food.PrintStructure();
@@ -67,6 +69,9 @@ namespace Cemal.Week07.Zoo
                 enc.CalculateFoodReport(report);
             }
 
+            Console.WriteLine("---------------------------------------------------------------------------");
+            Console.WriteLine();
+
 
             foreach (Food f in report.Keys)
             {
@@ -74,13 +79,12 @@ namespace Cemal.Week07.Zoo
                 int price = foodAmount * f.Price;
                 totalprice += price;
 
-                Console.WriteLine();
                 Console.WriteLine("{0, -20} |Gesamtmenge: {1, 2} {2, -10} Einzelpreis: {3, 3} Euro|", f.Name, report[f], f.Unit, price);
             }
 
             Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("{0, 78}", ZooMain.UNDERLINE + "Gesamtpreis: " +totalprice + " Euro" + ZooMain.RESET);
+            Console.WriteLine("---------------------------------------------------------------------------");
+            Console.WriteLine("{0, 78}", ZooMain.UNDERLINE + "Gesamtpreis: " + totalprice + " Euro" + ZooMain.RESET);
         }
     }
 }
