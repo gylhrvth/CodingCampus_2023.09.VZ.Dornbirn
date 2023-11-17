@@ -12,9 +12,9 @@ namespace Kerem.Week06.ExerciseZoo
         private string _Genus;
         private int _Age;
         private Food _food;
-        private int _amountfood;
+        private double _amountfood;
 
-        public Animals(string name,int age, string genus, Food food, int amountfood)
+        public Animals(string name,int age, string genus, Food food, double amountfood)
         {
             _Name = name;
             _Age = age;
@@ -23,7 +23,19 @@ namespace Kerem.Week06.ExerciseZoo
             _amountfood = amountfood;
             
         }
-        public void GetAnimalStatistic(Dictionary<Food, float> dic)
+        public Food Food
+        {
+             get => _food; 
+        }
+        public string Genus
+        {
+            get => _Genus;
+        }
+        public string Name
+        {
+            get => _Name;
+        }
+        public void GetAnimalStatistic(Dictionary<Food, double> dic)
         {
             if (dic.ContainsKey(_food))
             {
@@ -37,8 +49,13 @@ namespace Kerem.Week06.ExerciseZoo
 
         public void PrintZoo()
         {
+            Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine($"│       ├── {_Name}, {_Genus}, {_Age}, eats: {_amountfood} {_food},");
+            Console.ForegroundColor = ConsoleColor.White;
+
         }
+
+
     }
-    
+
 }
