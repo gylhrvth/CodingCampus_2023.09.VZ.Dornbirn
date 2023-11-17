@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.SomeTrys
+namespace Patrick.Week06.OOP.SomeTrys
 {
     internal class BankAccountMain
     {
@@ -17,7 +17,7 @@ namespace Patrick.Week06.SomeTrys
 
             Console.WriteLine("Bitte geben Sie Ihre Kontonummer ein:");
             Console.Write(">>>>>");
-            string  number= Console.ReadLine();
+            string number = Console.ReadLine();
 
             Console.WriteLine("Bitte geben Sie Ihren Kontostand ein:");
             Console.Write(">>>>>");
@@ -65,7 +65,7 @@ namespace Patrick.Week06.SomeTrys
                 else
                 {
                     Console.WriteLine("Ungültige Eingabe, Bitte versuchen Sie es erneut!");
-                }      
+                }
             }
 
         }

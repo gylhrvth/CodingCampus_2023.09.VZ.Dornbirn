@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.Zoo
+namespace Patrick.Week06.OOP.Zoo
 {
     internal class Food
     {

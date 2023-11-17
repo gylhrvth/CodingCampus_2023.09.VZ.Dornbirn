@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Patrick.Week06.PersonOne;
+using Patrick.Week06.OOP.PersonOne;
 
-namespace Patrick.Week06.PersonThree
+namespace Patrick.Week06.OOP.PersonThree
 {
     public class PersonThreeMain
     {
@@ -46,7 +46,7 @@ namespace Patrick.Week06.PersonThree
             Console.ResetColor();
             seoBootCamp.SortByAgeUp();
             seoBootCamp.PrintAllPersons();
-           
+
             //Sortiert nach Alter absteigend
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Sortiert nach dem Alter absteigend");
@@ -84,6 +84,6 @@ namespace Patrick.Week06.PersonThree
         }
 
 
-        
+
     }
 }

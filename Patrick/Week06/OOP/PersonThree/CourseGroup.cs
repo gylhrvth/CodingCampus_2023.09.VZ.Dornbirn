@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Patrick.Week06.PersonOne;
+using Patrick.Week06.OOP.PersonOne;
 
-namespace Patrick.Week06.PersonThree
+namespace Patrick.Week06.OOP.PersonThree
 {
     public class CourseGroup
     {
@@ -31,9 +31,9 @@ namespace Patrick.Week06.PersonThree
         public Person GetMinAge()
         {
             Person personMinAge = null;
-            for(int i = 0; i < _Persons.Count; i++)
+            for (int i = 0; i < _Persons.Count; i++)
             {
-                if(personMinAge == null || personMinAge.Age > _Persons[i].Age)
+                if (personMinAge == null || personMinAge.Age > _Persons[i].Age)
                 {
                     personMinAge = _Persons[i];
                 }
@@ -44,9 +44,9 @@ namespace Patrick.Week06.PersonThree
         public Person GetMaxAge()
         {
             Person personMaxAge = null;
-            for(int i = 0; i < _Persons.Count; i++)
+            for (int i = 0; i < _Persons.Count; i++)
             {
-                if(personMaxAge == null || personMaxAge.Age < _Persons[i].Age)
+                if (personMaxAge == null || personMaxAge.Age < _Persons[i].Age)
                 {
                     personMaxAge = _Persons[i];
                 }
@@ -59,7 +59,7 @@ namespace Patrick.Week06.PersonThree
             Person personMinWeight = null;
             for (int i = 0; i < _Persons.Count; i++)
             {
-                if(personMinWeight == null || personMinWeight.Weight > _Persons[i].Weight)
+                if (personMinWeight == null || personMinWeight.Weight > _Persons[i].Weight)
                 {
                     personMinWeight = _Persons[i];
                 }
@@ -83,9 +83,9 @@ namespace Patrick.Week06.PersonThree
         public Person GetMinHeight()
         {
             Person personMinHeight = null;
-            for(int i = 0; i < _Persons.Count; i++)
+            for (int i = 0; i < _Persons.Count; i++)
             {
-                if(personMinHeight == null || personMinHeight.Height > _Persons[i].Height)
+                if (personMinHeight == null || personMinHeight.Height > _Persons[i].Height)
                 {
                     personMinHeight = _Persons[i];
                 }
@@ -96,9 +96,9 @@ namespace Patrick.Week06.PersonThree
         public Person GetMaxHeight()
         {
             Person personMaxHeight = null;
-            for(int i = 0; i < _Persons.Count; i++)
+            for (int i = 0; i < _Persons.Count; i++)
             {
-                if(personMaxHeight == null || personMaxHeight.Height < _Persons[i].Height)
+                if (personMaxHeight == null || personMaxHeight.Height < _Persons[i].Height)
                 {
                     personMaxHeight = _Persons[i];
                 }
@@ -148,7 +148,7 @@ namespace Patrick.Week06.PersonThree
         }
 
         public void SortByHeightUp()
-        {           
+        {
             for (int i = 0; i < _Persons.Count; i++)
             {
                 for (int j = 0; j < _Persons.Count - i - 1; j++)

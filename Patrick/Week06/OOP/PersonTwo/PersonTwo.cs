@@ -1,11 +1,11 @@
-﻿using Patrick.Week06.PersonOne;
+﻿using Patrick.Week06.OOP.PersonOne;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.PersonTwo
+namespace Patrick.Week06.OOP.PersonTwo
 {
     internal class PersonTwo
     {
@@ -52,12 +52,12 @@ namespace Patrick.Week06.PersonTwo
             return personMinAge;
         }
 
-        public static Person MaxAge (List<Person> persons)
+        public static Person MaxAge(List<Person> persons)
         {
             Person personMaxAge = null;
-            for(int i = 0; i < persons.Count; i++)
+            for (int i = 0; i < persons.Count; i++)
             {
-                if(personMaxAge == null || personMaxAge.Age < persons[i].Age)
+                if (personMaxAge == null || personMaxAge.Age < persons[i].Age)
                 {
                     personMaxAge = persons[i];
                 }
@@ -65,12 +65,12 @@ namespace Patrick.Week06.PersonTwo
             return personMaxAge;
         }
 
-        public static Person MaxWeight (List<Person> persons)
+        public static Person MaxWeight(List<Person> persons)
         {
             Person personMaxWeight = null;
-            for(int i = 0; i< persons.Count; i++)
+            for (int i = 0; i < persons.Count; i++)
             {
-                if(personMaxWeight == null || personMaxWeight.Weight < persons[i].Weight)
+                if (personMaxWeight == null || personMaxWeight.Weight < persons[i].Weight)
                 {
                     personMaxWeight = persons[i];
                 }
@@ -78,10 +78,10 @@ namespace Patrick.Week06.PersonTwo
             return personMaxWeight;
         }
 
-        public static Person MinWeight (List<Person> persons)
+        public static Person MinWeight(List<Person> persons)
         {
             Person personMinWeight = null;
-            for (int i = 0; i < persons.Count;i++)
+            for (int i = 0; i < persons.Count; i++)
             {
                 if (personMinWeight == null || personMinWeight.Weight < persons[i].Weight)
                 {
@@ -94,7 +94,7 @@ namespace Patrick.Week06.PersonTwo
         public static float AvgAge(List<Person> persons)
         {
             float personAvg = 0;
-            for(int i =0; i < persons.Count; i++)
+            for (int i = 0; i < persons.Count; i++)
             {
                 personAvg += persons[i].Age;
             }

@@ -6,7 +6,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.Zoo
+namespace Patrick.Week06.OOP.Zoo
 {
     internal class ZooMain
     {
@@ -19,10 +19,10 @@ namespace Patrick.Week06.Zoo
             Enclosure enclosureIceLand = new("Eisland", "Eiskalt");
             Enclosure enclosureFishTank = new("Seaworld", "Mittelmeertemperatur");
 
-            zoo.EnclosureList.Add(enclosureAlps);
-            zoo.EnclosureList.Add(enclosureForest);
-            zoo.EnclosureList.Add(enclosureIceLand);
-            zoo.EnclosureList.Add(enclosureFishTank);
+            zoo.AddEnclosure(enclosureAlps);
+            zoo.AddEnclosure(enclosureForest);
+            zoo.AddEnclosure(enclosureIceLand);
+            zoo.AddEnclosure(enclosureFishTank);
 
 
             //Food for the animals
@@ -67,10 +67,17 @@ namespace Patrick.Week06.Zoo
             ZooKeeper zooKeeper2 = new("Daniela", new List<Enclosure> { enclosureAlps, enclosureIceLand });
             ZooKeeper zooKeeper3 = new("Robert Marc", new List<Enclosure> { enclosureFishTank, enclosureIceLand });
 
-            zoo.ZooKeeperList.Add(zooKeeper1);
-            zoo.ZooKeeperList.Add(zooKeeper2);
-            zoo.ZooKeeperList.Add(zooKeeper3);
+            zoo.AddZookeeper(zooKeeper1);
+            zoo.AddZookeeper(zooKeeper2);
+            zoo.AddZookeeper(zooKeeper3);
 
+
+            VeterinarySurgeon veterinarySurgeon1 = new VeterinarySurgeon("Sebastian");
+            VeterinarySurgeon veterinarySurgeon2 = new VeterinarySurgeon("David");
+
+
+            zoo.AddVeterinarySurgeon(veterinarySurgeon1);
+            zoo.AddVeterinarySurgeon(veterinarySurgeon2);
 
 
             //Print
@@ -85,11 +92,11 @@ namespace Patrick.Week06.Zoo
             Console.WriteLine("=======================================================");
             Console.ResetColor();
 
-            for(int i = 0; i < 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 zoo.SimulateDay(i + 1);
             }
-            
+
 
 
 

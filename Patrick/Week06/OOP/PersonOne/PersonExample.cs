@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Patrick.Week06.PersonOne 
+namespace Patrick.Week06.OOP.PersonOne
 {
     public class PersonExample
     {

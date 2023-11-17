@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.SomeTrys
+namespace Patrick.Week06.OOP.SomeTrys
 {
     internal class Student
     {

@@ -1,16 +1,16 @@
 ﻿
 using System;
 
-namespace Patrick.Week06.PersonOne
+namespace Patrick.Week06.OOP.PersonOne
 {
     public class Person
     {
-        public float Height {  get; private set; }
+        public float Height { get; private set; }
         public int Age { get; private set; }
         public string Name { get; private set; }
         public float Weight { get; private set; }
 
-      
+
 
         public Person(string name, int age, float size, float weight)
         {

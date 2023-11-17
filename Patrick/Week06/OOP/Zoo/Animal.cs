@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.Zoo
+namespace Patrick.Week06.OOP.Zoo
 {
     internal class Animal
     {
@@ -20,11 +20,11 @@ namespace Patrick.Week06.Zoo
         private int _MaxHealth;
         private int _Bite;
 
+
         public Food Food
         {
             get => _Food;
         }
-
 
         //Konstruktor
         public Animal(string name, string genus, string age, float howManyFood, Food food, int maxHealth, int bite)
@@ -53,7 +53,7 @@ namespace Patrick.Week06.Zoo
 
         public void PrintAnimal()
         {
-            Console.WriteLine($"│          ├── {_Name}, {_Genus}, {_Age} || mag: {_Food}");
+            Console.WriteLine($"│             ├── {_Name}, {_Genus}, {_Age} || mag: {_Food}");
         }
 
 
@@ -64,18 +64,29 @@ namespace Patrick.Week06.Zoo
 
         public void DoBite(Animal victom)
         {
-            if (this._Name == victom._Name || this._Health <= 0 || victom._Health <= 0)
+            if (_Name == victom._Name || _Health <= 0 || victom._Health <= 0)
             {
                 // Keiner beisst sich selbst !!!
                 // Tote Tiere beisen nicht !!!
                 return;
             }
-            Console.WriteLine($"{this._Name} beisst {victom._Name} mit {this._Bite} Schaden.");
-            victom._Health -= this._Bite;
+            Console.WriteLine($"{_Name} beisst {victom._Name} mit {_Bite} Schaden.");
+            victom._Health -= _Bite;
             if (victom._Health <= 0)
             {
                 Console.WriteLine($"R.I.P {victom._Name}");
             }
+        }
+
+        public Animal GetLowestRelativeHealth(Animal best)
+        {
+            if (best == null) return this;
+
+            if (_Health / _MaxHealth < best._Health / best._MaxHealth)
+            {
+                best = this;
+            }
+            return best;
         }
 
     }

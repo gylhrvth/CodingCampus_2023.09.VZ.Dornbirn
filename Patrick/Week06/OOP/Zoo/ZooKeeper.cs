@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.Zoo
+namespace Patrick.Week06.OOP.Zoo
 {
     internal class ZooKeeper
     {
@@ -31,7 +31,7 @@ namespace Patrick.Week06.Zoo
         public void PrintZooKeeper()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("│   ├── Zookeeper: {0}", _Name);
+            Console.WriteLine("│      ├── ZooPfleger: {0}", _Name);
             Console.ResetColor();
             foreach (Enclosure enclosure in _EnclosureList)
             {
@@ -40,7 +40,7 @@ namespace Patrick.Week06.Zoo
         }
 
         public void SimulateZookeeperWork()
-        {   
+        {
             foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.SimulateTakeCareOfEnclosure(Name);

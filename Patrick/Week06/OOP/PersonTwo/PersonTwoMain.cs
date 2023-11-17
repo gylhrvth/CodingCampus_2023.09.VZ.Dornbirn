@@ -4,11 +4,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Patrick.Week06.PersonOne;
-using Patrick.Week06.PersonTwo;
+using Patrick.Week06.OOP.PersonOne;
 
 
-namespace Patrick.Week06.PersonTwo
+namespace Patrick.Week06.OOP.PersonTwo
 {
     internal static class PersonTwoMain
     {
@@ -48,7 +47,7 @@ namespace Patrick.Week06.PersonTwo
 
             Console.WriteLine("Der Gewichtsdurchschnitt von den Personen in der Liste beträgt: {0} Kg", PersonTwo.AvgWeight(persons));
 
-            
+
             //Sortieren des Objektes Nach Alter aufsteigend
             Console.WriteLine("=================================================================================");
             Console.ForegroundColor = ConsoleColor.Red;
@@ -111,7 +110,7 @@ namespace Patrick.Week06.PersonTwo
             {
                 Console.WriteLine($"{person.Name,8} {person.Age,4} {person.Height,5} {person.Weight,5}");
             }
-            
+
         }
 
         public static List<Person> SortByAgeUp(List<Person> persons)

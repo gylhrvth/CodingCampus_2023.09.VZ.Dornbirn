@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.SomeTrys
+namespace Patrick.Week06.OOP.SomeTrys
 {
     internal class StudentenMain
     {
@@ -17,7 +17,7 @@ namespace Patrick.Week06.SomeTrys
             students.Add(new Student(3, "Maria", 2.1f));
 
             float totalGradePoints = 0;
-            
+
             foreach (Student student in students)
             {
                 totalGradePoints += student._GradePointAverage;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.SomeTrys
+namespace Patrick.Week06.OOP.SomeTrys
 {
     internal class BankAccount
     {
@@ -54,7 +54,7 @@ namespace Patrick.Week06.SomeTrys
                 {
                     return Convert.ToInt32(input);
                 }
-                catch(FormatException)
+                catch (FormatException)
                 {
                     Console.WriteLine($"{input} ist kein gültiger Betrag, bitte wiederholen!");
                 }

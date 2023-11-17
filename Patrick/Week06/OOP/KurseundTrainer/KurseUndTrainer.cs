@@ -1,11 +1,11 @@
-﻿using Patrick;
+﻿using Patrick.Week06.OOP.PersonOne;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week06.PersonOne
+namespace Patrick.Week06.OOP.KurseundTrainer
 {
     internal class KurseUndTrainer
     {
@@ -27,7 +27,7 @@ namespace Patrick.Week06.PersonOne
 
         public override string ToString()
         {
-            return string.Format("Title: {0}\nStart: {1}\nKursstunden: {2}hours\nPreis: {3}$\nTrainer: {4}",_Title, _Start, _Kursstunden, _Preis, _Trainer);
+            return string.Format("Title: {0}\nStart: {1}\nKursstunden: {2}hours\nPreis: {3}$\nTrainer: {4}", _Title, _Start, _Kursstunden, _Preis, _Trainer);
         }
     }
 }
