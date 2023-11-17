@@ -12,6 +12,7 @@ namespace Erik.Week08
         private int _SquareMeter;
         private List<Animal> _AnimalList;
         private List<Keeper> _KeeperList;
+        
         public string EnclosureName { get => _Name; }
 
         public Enclosure(string name, int squareMeter)
@@ -24,28 +25,13 @@ namespace Erik.Week08
 
         public void PrintEnclosure(string prefix)
         {
-            Console.WriteLine("{0} Enclosure: {1} / Size: {2} m² / responsible employee: ", prefix, _Name, _SquareMeter);
+            Console.WriteLine("{0} Enclosure: {1} / Size: {2} m² Keeper(s): {3}", prefix, _Name, _SquareMeter, string.Join(", ", _KeeperList));
 
-            if (_KeeperList.Count != 0)
-            {
-                foreach (Keeper keeper in _KeeperList)
-                {
-                    keeper.PrintKeeper();                    
-                }
-            }
-            else
-            {
-                Console.Write(prefix + "── ");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("No keeper was assigned!");
-                Console.ResetColor();
-            }
             if (_AnimalList.Count != 0)
             {
                 foreach (Animal animal in _AnimalList)
                 {
                     animal.PrintAnimal(prefix + "──");
-                    animal.PrintAnimalHunger(prefix);
                 }
             }
             else
@@ -55,16 +41,58 @@ namespace Erik.Week08
                 Console.WriteLine("Enclosure is empty!");
                 Console.ResetColor();
             }
-
         }
 
         public void AddAnimals(Animal animal)
         {
             _AnimalList.Add(animal);
         }
-        public void AddKeeperToEnclosure(Keeper keeper)
+
+        public void AddKeeper(Keeper keeper)
         {
             _KeeperList.Add(keeper);
+        }
+
+
+        public int calculateCost()
+        {
+            int totalCost = 0;
+            foreach(Animal animal in _AnimalList)
+            {
+                totalCost += animal.returnFoodCost();
+            }
+            return totalCost;
+        }
+
+        public int calculateConsumedFood()
+        {
+            int totalWeight = 0;
+            foreach (Animal animal in _AnimalList)
+            {
+                totalWeight += animal.returnConsumedFood();
+            }
+            return totalWeight;
+        }
+
+        public bool IsHungry()
+        {
+            foreach(Animal animal in _AnimalList)
+            {
+                if (animal.IsHungry == true)
+                {
+                    return true;
+                }                
+            }
+            return false;
+        }
+
+        public void GetsFed(Keeper keeper)
+        {
+            foreach(Animal animal in _AnimalList )
+            {
+                animal.IsHungry= false;
+                Console.WriteLine($"{animal.AnimalName} gets fed by {keeper.keeperName}!");
+            }
         }
     }
 }

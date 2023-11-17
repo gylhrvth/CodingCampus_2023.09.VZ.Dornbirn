@@ -48,7 +48,7 @@ namespace Patrick.Week06.Zoo
         public void PrintZooStatistic()
         {
             Dictionary<Food, float> dic = new();
-            foreach (var enclosure in _EnclosureList)
+            foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.GetEnclosureStatistic(dic);
             }
@@ -58,9 +58,9 @@ namespace Patrick.Week06.Zoo
             float cost = 0;
             foreach (Food food in dic.Keys)
             {
-                Console.WriteLine($"{food._Name, -11} : {dic[food], -4} {food._Unit} pro kg: {food._Price} Euro ");
+                Console.WriteLine($"{food.Name, -11} : {dic[food], -4} {food.Unit} pro kg: {food.Price} Euro ");
                 float amount = dic[food];
-                float price = food._Price * amount;
+                float price = food.Price * amount;
                 cost += price;
             }           
             Console.WriteLine("=======================================================");
@@ -79,11 +79,33 @@ namespace Patrick.Week06.Zoo
         public void PrintStructure()
         {
             PrintZoo();
-            foreach (var keeper in ZooKeeperList)
+            foreach (ZooKeeper keeper in ZooKeeperList)
             {
                 keeper.PrintZooKeeper();
             }
         }
+
+
+        public void SimulateDay(int dayNr)
+        {
+            foreach (Enclosure enc in _EnclosureList)
+            {
+                enc.SimulateDayStart();
+            }
+
+            Console.WriteLine("Simulation Tag {0} startet.", dayNr);
+            foreach (ZooKeeper keep in _ZooKeeperList)
+            {
+                keep.SimulateZookeeperWork();
+            }
+
+            foreach (Enclosure enc in _EnclosureList)
+            {
+                enc.AnimalBitesAnimal();
+            }
+        }
+
+
 
     }
 }

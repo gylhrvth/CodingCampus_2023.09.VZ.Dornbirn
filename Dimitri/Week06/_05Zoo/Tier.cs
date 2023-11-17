@@ -83,18 +83,37 @@ namespace Dimitri.Week06._05Zoo
             bool isNullorEmpty = false;
             if (_Futter is null) { isNullorEmpty = true; } else { isNullorEmpty = false; }
             return isNullorEmpty;
-
         }
 
-        public Tier ChangeHealth(Tier tier, int damage)
+        public void Bite(int damage)
         {
-            tier._Gesundheit -= damage;
+            _Gesundheit -= damage;
             if(_Gesundheit <= 0) 
             {
-                tier._Tot = true;
+                _Gesundheit = 0;
+                _Tot = true;
             }
-            return tier;
         }
+
+        public int GetHealth()
+        {
+            return _Gesundheit;
+        }
+
+        public int GetMaxHealth()
+        {
+            return _MaxGesundheit;
+        }
+
+        public void Heal(int health)
+        {
+            _Gesundheit += health;
+            if(_Gesundheit > _MaxGesundheit)
+            {
+                _Gesundheit = _MaxGesundheit;
+            }
+        }
+
 
 
     } 

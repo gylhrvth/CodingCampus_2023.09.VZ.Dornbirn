@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Riccardo.Week07
+namespace Fabienne.Week07.Erbung
 {
-    internal class Zoo
+    internal class Erbung
     {
+
     }
 }

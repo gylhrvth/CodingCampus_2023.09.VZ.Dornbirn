@@ -3,25 +3,34 @@ using System.Drawing;
 
 namespace David.Week06.ZOO
 {
-	public class Food
+	internal class Food
 	{
-		string _FoodName;
-		string _UnitName;
-		double _UnitPrice;
+		public string _FoodName;
+		public string _UnitName;
+		public float _UnitPrice;
 
-
-		public Food(string foodName, string unitName, double unitPrice)
+		
+		//Konstruktor
+        public Food(string foodName, string unitName, float unitPrice)
 		{
 			_FoodName = foodName;
 			_UnitName = unitName;
 			_UnitPrice = unitPrice;
 		}
 
-		public void PrintFood()
+		public string FoodName
 		{
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine($"         ||--> Kind: {_FoodName}, Unit: {_UnitName}, Price: {_UnitPrice}");
+			get => _FoodName;
 		}
+
+		public override string ToString()
+		{
+			return _FoodName;
+		}
+
+
+
+
 	}
 }
 
