@@ -2,10 +2,24 @@
 
 namespace Mohammed.Selftest
 {
-    public class String
+    public class StringManipulation
     {
         public static void Start()
         {
+            string[] texte = new string[]
+            {
+                "Apfel",
+                "regallager",
+                "hanna",
+                "reittier"
+            };
+
+            foreach (string text in texte)
+            {
+                Console.WriteLine("{0} is palindrome: {1}",
+                    text,
+                    IsPalindrome(text));
+            }
 
         }
 
