@@ -10,21 +10,48 @@ namespace Sven.Week07
     {
 
         private string _Name;
-        private int _Price;
         private string _Unit;
+        private double _PricePerUnit;
 
 
-        public Food(string name, int price, string unit) 
+        public Food(string name, double pricePerUnit, string unit)
         {
-            _Name = name;;
-            _Price = price;
+            _Name = name;
             _Unit = unit;
+            _PricePerUnit = pricePerUnit;
 
+        }
+
+
+        public string Name
+        {
+            get => _Name;
+            set => _Name = value;
+        }
+
+
+        public string Unit
+        {
+            get => _Unit;
+            set => _Unit = value;
+        }
+
+        public double PricePerUnit
+        {
+            get => _PricePerUnit;
+            set => _PricePerUnit = value;
+        }
+
+
+
+        public void PrintFood(int foodCount)
+        {
+            Console.WriteLine($"{_Name} {foodCount} {_Unit}");
         }
 
         public override string ToString()
         {
-            return $"{_Unit} {_Name}";
+            return "│   ├──  Food: " + _Name + ", Unit: " + _Unit + ", Price: " + _PricePerUnit; ;
         }
     }
 

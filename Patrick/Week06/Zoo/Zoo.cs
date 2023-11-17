@@ -93,12 +93,19 @@ namespace Patrick.Week06.Zoo
                 enc.SimulateDayStart();
             }
 
-            Console.WriteLine("Simulation Day {0} beginns.", dayNr);
+            Console.WriteLine("Simulation Tag {0} startet.", dayNr);
             foreach (ZooKeeper keep in _ZooKeeperList)
             {
                 keep.SimulateZookeeperWork();
             }
+
+            foreach (Enclosure enc in _EnclosureList)
+            {
+                enc.AnimalBitesAnimal();
+            }
         }
+
+
 
     }
 }
