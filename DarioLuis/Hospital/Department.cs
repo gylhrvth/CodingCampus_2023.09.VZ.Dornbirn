@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Week06._05Zoo
+namespace DarioLuis.Hospital
 {
-    internal class Tiere
+    internal class Department
     {
-
-
-
     }
 }

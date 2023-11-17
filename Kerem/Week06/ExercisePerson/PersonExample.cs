@@ -12,9 +12,16 @@ namespace Kerem
         public static void Start()
         {
             Person p = new Person("Kerem", 23, 180, 86);
-            Console.WriteLine(p.ToString());
-            p.Age = 30;
+            //Console.WriteLine(p.ToString());
+            Console.WriteLine(p);
             
+            p.Age = 30;
+            p.Name = "Würstel";
+            Console.WriteLine(p);
+            p.Name = "";
+            Console.WriteLine(p);
+
+
 
 
         }

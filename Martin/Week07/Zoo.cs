@@ -7,17 +7,17 @@ using System.Threading.Tasks;
 
 namespace Martin.Week07
 {
-    public class ZooClass
+    public class Zoo
     {
         private string _name;
         private int _EntstehungsJahr;
 
      
 
-        private List<EnclosureClass> _EnclosureList = new List<EnclosureClass>();
-        private List<AnimalClass> _AnimalList = new List<AnimalClass>();
-
-        public ZooClass(string Name, int EntstehungsJahr) 
+        private List<Enclosure> _EnclosureList = new List<Enclosure>();
+        private List<Animal> _AnimalList = new List<Animal>();
+        private List<Pfleger> _pflegers = new List<Pfleger>();
+        public Zoo(string Name, int EntstehungsJahr) 
         {
             _EntstehungsJahr = EntstehungsJahr;
             _name = Name;
@@ -30,22 +30,18 @@ namespace Martin.Week07
 
         public int PrintEnclosures()
         {
-                int kosten = 0;
+             int kosten = 0;
 
-             foreach (EnclosureClass item in _EnclosureList)
+             foreach (Enclosure item in _EnclosureList)
              {
-                    
-                Console.WriteLine($"|------Gehäge:{item.Name},Art: {item.Type} ");
+                Console.WriteLine($"|------Gehege:{item.Name}, Art: {item.Type} ");
                 kosten += item.PrintAnimals();
              }
 
             return kosten;
         }
 
-
-
-
-        public void AddEnclosure(EnclosureClass item)
+        public void AddEnclosure(Enclosure item)
         {
             if(!_EnclosureList.Contains(item)) //überprüft ob diese gehege schon gibt
             {
@@ -54,8 +50,17 @@ namespace Martin.Week07
            
         }
 
+        public void AddPfleger(Pfleger item)
+        {
+            if (!_pflegers.Contains(item)) //überprüft ob diese gehege schon gibt
+            {
+                _pflegers.Add(item);
+            }
 
-        public void AddAnimal(AnimalClass item)
+        }
+          
+
+        public void AddAnimal(Animal item)
         {
             if (!_AnimalList.Contains(item)) //überprüft ob dieses Tier schon gibt
             {
@@ -68,12 +73,12 @@ namespace Martin.Week07
         {
             Dictionary<Futter, int> report = new Dictionary<Futter, int>();
 
-            foreach(EnclosureClass enc in  _EnclosureList)
+            foreach(Enclosure enc in  _EnclosureList)
             {
                 enc.ReportFoodRequest(report);
             }
 
-            Console.WriteLine("Futter anfrage meldung");
+            Console.WriteLine("Futter anfrage meldung");   
 
             foreach(Futter f in report.Keys)
             {
@@ -83,6 +88,8 @@ namespace Martin.Week07
                     f.Einheit
                     );
             }
+
+
 
         }
 

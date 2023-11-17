@@ -66,5 +66,6 @@ namespace Dimitri.Week06._05Zoo
         {
             return gehege.Name;
         }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,13 +14,13 @@ namespace Martin.Week07
         {
             Console.OutputEncoding = Encoding.UTF8;
             
-            List<ZooClass> ZooListe = new List<ZooClass>();
-            List<EnclosureClass> EnclosureList = new List<EnclosureClass>();
-
-            List<AnimalClass> AnimalList = new List<AnimalClass>(); //TierListe erstellen
+            List<Zoo> ZooListe = new List<Zoo>();
+            List<Enclosure> EnclosureList = new List<Enclosure>();
+            List<Pfleger> PflegerListe = new List<Pfleger>();
+            List<Animal> AnimalList = new List<Animal>(); //TierListe erstellen
 
             
-            ZooClass Zoo = new ZooClass("Montags Zoo", 1999);
+            Zoo Zoo = new Zoo("Montags Zoo", 1999);
 
             ZooListe.Add(Zoo);
 
@@ -29,41 +30,62 @@ namespace Martin.Week07
 
             Console.WriteLine();
 
-            AnimalClass Animal1 = new AnimalClass("Polo", "Pinguin🐧",123213,Fisch);
+            Animal Animal1 = new Animal("Polo", "Pinguin🐧", 12, Fisch, "Fisch",50,4);
             Zoo.AddAnimal(Animal1);
 
-            AnimalClass Animal2 = new AnimalClass("Erik", "Hund🐕" ,43231,Fleisch);
+            Animal Animal2 = new Animal("Erik", "Hund🐕" ,4,Fleisch,"Fleisch",80,7);
             Zoo.AddAnimal(Animal2);
 
-            AnimalClass Animal3 = new AnimalClass("Polo", "Adler🦅", 2,Mäuse);
+            Animal Animal3 = new Animal("Aldi", "Adler🦅", 2,Mäuse,"lebende Mäuse",90,10);
             Zoo.AddAnimal(Animal2);
 
-       
+            Pfleger sandra = new Pfleger("Sandra", 22, "weiblich");
+            Pfleger marko = new Pfleger("marko", 12, "Divers");
 
 
-            EnclosureClass Enclosure1 = new EnclosureClass("WinterTiere⛄", "OutDoor"); //erstelle ein Gehäge
-            EnclosureClass Enclosure2 = new EnclosureClass("HausTiere🏠", "InDoor"); //erstelle ein Gehäge
-            EnclosureClass Enclosure3 = new EnclosureClass("FlugTiere🌠", "OutDoor/Sky"); //erstelle ein Gehäge
+            Enclosure Enclosure1 = new Enclosure("WinterTiere⛄", "OutDoor",sandra,true); //erstelle ein Gehäge
+            Enclosure Enclosure2 = new Enclosure("HausTiere🏠", "InDoor",marko,false); //erstelle ein Gehäge
+            Enclosure Enclosure3 = new Enclosure("FlugTiere🌠", "OutDoor/Sky",marko, true); //erstelle ein Gehäge
+
+           
+
 
             Enclosure1.AddAnimal(Animal1);
             Enclosure2.AddAnimal(Animal2);
+            Enclosure3.AddAnimal(Animal3);
 
-
-            //Enclosure3.AddAnimal(Animal3);
 
             Zoo.AddEnclosure(Enclosure1);
             Zoo.AddEnclosure(Enclosure2);
             Zoo.AddEnclosure(Enclosure3);
-         
+
+            Enclosure1.AddPfleger(sandra);
+            Enclosure2.AddPfleger(marko);
+            Enclosure3.AddPfleger(marko);
 
             Zoo.PrintZoo();
             Console.WriteLine();
 
             int kosten = Zoo.PrintEnclosures();
-            Console.WriteLine("Kosten:" + kosten);
+            Console.WriteLine();
+            Console.WriteLine("Kosten:" + kosten + "€");
 
             Zoo.PrintFoodReport();
 
+            Console.WriteLine();
+
+            foreach(Enclosure enclosure in EnclosureList)
+            {
+                if(enclosure.IsFed == false)
+                {
+                    enclosure.Feed();
+                    enclosure.IsFed = true;
+                }
+                else
+                {
+                    Console.WriteLine("Dieses Gehege ist schon gefüttert");
+                }
+            }
         }
     }
 }
