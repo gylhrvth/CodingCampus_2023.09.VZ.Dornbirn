@@ -19,6 +19,7 @@ namespace Mehmet.ZOO
             _Workplace = workplace;
             _CageList = new List<Cage>();
         }
+
         public void AddCage(Cage cage)
         {
             _CageList.Add(cage);
@@ -31,22 +32,13 @@ namespace Mehmet.ZOO
                 _Workplace);
         }
 
-
-
         public void SimulateDay()
         {
-
-
-            Console.WriteLine("  {0} startet mit der Arbeit", _Name);
+            Console.WriteLine("  {0} startet  mit der Arbeit", _Name);
             foreach (Cage cage in _CageList)
             {
                 cage.SimulateDay();
             }
-
         }
-
-
-
-
     }
 }

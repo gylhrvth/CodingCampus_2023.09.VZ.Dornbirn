@@ -8,4 +8,5 @@
 //Cemal.Week06.Kurse_und_Trainer.KursMain.Start();
 //Cemal.Week06.NmsList.Numbers.Start();
 //Cemal.Week06.NmsPerson.PersonMain.Start();
-Cemal.Week07.Zoo.ZooMain.Start();
+//Cemal.Week07.Zoo.ZooMain.Start();
+Cemal.Week07.Ubung.HardwareMain.Start();

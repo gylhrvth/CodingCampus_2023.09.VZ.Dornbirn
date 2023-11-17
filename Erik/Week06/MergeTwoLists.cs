@@ -74,6 +74,25 @@ namespace Erik.Week06
             int k = 0;
             List<int> finalList = new List<int>();
 
+<<<<<<< HEAD
+            for (int i = 0; i < sortedList1.Count + sortedList2.Count; i++)
+            {
+                while (sortedList1[j] < sortedList2[j])
+                {
+                    if (sortedList1[j] > sortedList2[j])
+                    {
+                        finalList.Add(sortedList1[j]);
+                        j++;
+                    }
+                    else
+                    {
+                        finalList.Add(sortedList2[k]);
+                        k++;
+                    }
+
+                }
+
+=======
             while (k < sortedList1.Count && j < sortedList2.Count)
             {
                 if (sortedList1[k] < sortedList2[j])
@@ -99,6 +118,7 @@ namespace Erik.Week06
             {
                 finalList.Add(sortedList2[j]);
                 j++;
+>>>>>>> 7a9c1ef80b408ccd2971be25af0b194d6a983de4
             }
 
             return finalList;
