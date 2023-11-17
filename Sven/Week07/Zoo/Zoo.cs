@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Sven.Week07
+namespace Sven.Week07.Zoo
 {
     internal class Zoo
     {
@@ -27,16 +27,6 @@ namespace Sven.Week07
 
         }
 
-        public List<Enclosure> Enclosurelist
-        {
-            get => _EnclosureList;
-            set => _EnclosureList = value;
-        }
-        public List<Keeper> Keeper
-        {
-            get => _KeeperList;
-            set => _KeeperList = value;
-        }
 
         public void AddEnclosure(Enclosure enclosure)
         {
@@ -63,7 +53,7 @@ namespace Sven.Week07
 
             foreach (Enclosure enclosure in _EnclosureList)
             {
-                enclosure.PrintZoo();
+                enclosure.PrintEnclosure();
 
             }
 
