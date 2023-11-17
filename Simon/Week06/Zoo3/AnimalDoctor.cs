@@ -12,13 +12,11 @@ namespace Simon.Week06.Zoo3
     {
         Random rand = new Random();
         private string _Name;
-        private List<Animals> _AnimalsList;
 
 
         public AnimalDoctor(string name)
         {
             _Name = name;
-            _AnimalsList = new();
         }
         public void PrintAnimalDocotor()
         {
@@ -27,8 +25,9 @@ namespace Simon.Week06.Zoo3
 
 
 
-        public void RestoreHP(Animals lowesthp)
+        public void RestoreHP(Animal lowesthp)
         {
+            Console.WriteLine(" {0} has {1} and needs to be healed!", lowesthp.Health, lowesthp.Name);
             double healammount = (double)rand.Next(30, 100) / 100;
             if(lowesthp.Health + (lowesthp.MaxHealth * healammount) > lowesthp.MaxHealth)
             {
