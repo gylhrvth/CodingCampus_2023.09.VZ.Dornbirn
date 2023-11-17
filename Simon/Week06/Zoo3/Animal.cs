@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week06.Zoo3
 {
-    internal class Animals
+    internal class Animal
     {
         private string _Name;
         private string _Species;
@@ -16,14 +16,13 @@ namespace Simon.Week06.Zoo3
         private int _MaxHealth;
         private int _BiteDmg;
         private int _Health;
-        private bool _Alive;
         private int _Deadsince;
 
         public string Name
         {
             get { return _Name; }
         }
-        public bool Alive { get { return _Alive; } set { _Alive = value; } }
+        public bool Alive { get { return Health > 0; } }
         public int Deadsince { get { return _Deadsince; } set { _Deadsince = value; } }
 
         public int MaxHealth { get { return _MaxHealth; } }
@@ -39,7 +38,7 @@ namespace Simon.Week06.Zoo3
         }
 
 
-        public Animals(string name, string spcies, AnimalFood animalfood, double foodcount, int maxhealth, int bitedmg)
+        public Animal(string name, string spcies, AnimalFood animalfood, double foodcount, int maxhealth, int bitedmg)
         {
             _Name = name;
             _Species = spcies;
@@ -48,7 +47,6 @@ namespace Simon.Week06.Zoo3
             _MaxHealth = maxhealth;
             _BiteDmg = bitedmg;
             _Health = maxhealth;
-            _Alive = true;
             _Deadsince = 0;
         }
 
@@ -70,9 +68,9 @@ namespace Simon.Week06.Zoo3
 
         }
 
-        public bool attack(Animals victom)
+        public void GetsAttackedBy(Animal attacker)
         {
-            return true;
+            Health -= attacker.BiteDmg;
         }
 
     }

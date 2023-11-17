@@ -13,13 +13,13 @@ namespace Martin.Week07
         public static void Start()
         {
             Console.OutputEncoding = Encoding.UTF8;
-            
+
             List<Zoo> ZooListe = new List<Zoo>();
-            List<Enclosure> EnclosureList = new List<Enclosure>();
+            //List<Enclosure> EnclosureList = new List<Enclosure>();
             List<Pfleger> PflegerListe = new List<Pfleger>();
             List<Animal> AnimalList = new List<Animal>(); //TierListe erstellen
 
-            
+
             Zoo Zoo = new Zoo("Montags Zoo", 1999);
 
             ZooListe.Add(Zoo);
@@ -30,24 +30,22 @@ namespace Martin.Week07
 
             Console.WriteLine();
 
-            Animal Animal1 = new Animal("Polo", "Pinguin🐧", 12, Fisch, "Fisch",50,4);
+            Animal Animal1 = new Animal("Polo", "Pinguin🐧", 12, Fisch, "Fisch", 50, 4);
             Zoo.AddAnimal(Animal1);
 
-            Animal Animal2 = new Animal("Erik", "Hund🐕" ,4,Fleisch,"Fleisch",80,7);
+            Animal Animal2 = new Animal("Erik", "Hund🐕", 4, Fleisch, "Fleisch", 80, 7);
             Zoo.AddAnimal(Animal2);
 
-            Animal Animal3 = new Animal("Aldi", "Adler🦅", 2,Mäuse,"lebende Mäuse",90,10);
+            Animal Animal3 = new Animal("Aldi", "Adler🦅", 2, Mäuse, "lebende Mäuse", 90, 10);
             Zoo.AddAnimal(Animal2);
 
             Pfleger sandra = new Pfleger("Sandra", 22, "weiblich");
             Pfleger marko = new Pfleger("marko", 12, "Divers");
 
 
-            Enclosure Enclosure1 = new Enclosure("WinterTiere⛄", "OutDoor",sandra,true); //erstelle ein Gehäge
-            Enclosure Enclosure2 = new Enclosure("HausTiere🏠", "InDoor",marko,false); //erstelle ein Gehäge
-            Enclosure Enclosure3 = new Enclosure("FlugTiere🌠", "OutDoor/Sky",marko, true); //erstelle ein Gehäge
-
-           
+            Enclosure Enclosure1 = new Enclosure("WinterTiere⛄", "OutDoor", sandra, true); //erstelle ein Gehäge
+            Enclosure Enclosure2 = new Enclosure("HausTiere🏠", "InDoor", marko, false); //erstelle ein Gehäge
+            Enclosure Enclosure3 = new Enclosure("FlugTiere🌠", "OutDoor/Sky", marko, true); //erstelle ein Gehäge
 
 
             Enclosure1.AddAnimal(Animal1);
@@ -74,18 +72,18 @@ namespace Martin.Week07
 
             Console.WriteLine();
 
-            foreach(Enclosure enclosure in EnclosureList)
-            {
-                if(enclosure.IsFed == false)
-                {
-                    enclosure.Feed();
-                    enclosure.IsFed = true;
-                }
-                else
-                {
-                    Console.WriteLine("Dieses Gehege ist schon gefüttert");
-                }
-            }
+            //foreach (Enclosure enclosure in EnclosureList)
+            //{
+            //    if (enclosure.IsFed == false)
+            //    {
+            //        enclosure.Feed();
+            //        enclosure.IsFed = true;
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Dieses Gehege ist schon gefüttert");
+            //    }
+            //}
         }
     }
 }

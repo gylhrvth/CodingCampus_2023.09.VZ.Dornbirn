@@ -12,7 +12,7 @@ namespace Martin.Week07
         private int _Age;
         private string _Gender;
 
-        public Pfleger(string name, int age, string gender) 
+        public Pfleger(string name, int age, string gender)
         {
             _Name = name;
             _Age = age;
@@ -25,7 +25,7 @@ namespace Martin.Week07
         }
 
         public string Name() { return _Name; }
-        public string Gender() { return _Gender;}
+        public string Gender() { return _Gender; }
 
         public void PrintPfleger()
         {

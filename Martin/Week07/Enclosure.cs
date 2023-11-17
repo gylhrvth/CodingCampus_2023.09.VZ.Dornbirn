@@ -20,7 +20,7 @@ namespace Martin.Week07
 
         private Dictionary<Futter, int> FoodDictionary = new Dictionary<Futter, int>();
 
-        public Enclosure(string name, string type, Pfleger pfleger,bool IsFed)
+        public Enclosure(string name, string type, Pfleger pfleger, bool IsFed)
         {
             _name = name;
             _type = type;

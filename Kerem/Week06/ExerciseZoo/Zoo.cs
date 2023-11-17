@@ -11,12 +11,25 @@ namespace Kerem.Week06.ExerciseZoo
         private string _Name;
         private int _Established;
         private List<Enclosure> _EnclosureList;
+        private List<Pfleger> _pfleger;
+
+        public List<Enclosure> Enclosurelist
+        {
+            get => _EnclosureList;
+            set => _EnclosureList = value;
+        }
+        public List<Pfleger> Pfleger
+        {
+            get => _pfleger;
+            set => _pfleger = value;
+        }
 
         public Zoo(string name, int established)
         {
             _Name = name;
             _Established = established;
             _EnclosureList = new List<Enclosure>();
+            _pfleger = new List<Pfleger>();
         }
         public void addEnclosure(Enclosure enc)
         {
@@ -30,6 +43,10 @@ namespace Kerem.Week06.ExerciseZoo
             {
                 enclosure.PrintZoo();
             }
+        }
+        public void PrintZooStatistic()
+        {
+
         }
     }
 }

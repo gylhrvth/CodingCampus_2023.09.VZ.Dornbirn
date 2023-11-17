@@ -17,7 +17,7 @@ namespace Martin.Week07
         private int _healthMax;
         private int _damage;
         private Futter _FoodClass;
-        public Animal(string Name, string Art,int UnitPrice,Futter FoodClass,string lieblingsessen,int healthMax, int damage)
+        public Animal(string Name, string Art, int UnitPrice, Futter FoodClass, string lieblingsessen, int healthMax, int damage)
         {
             _Name = Name;
             _Art = Art;
@@ -28,9 +28,9 @@ namespace Martin.Week07
             _damage = damage;
         }
 
-        public void FoodRequest(Dictionary<Futter,int> report)
+        public void FoodRequest(Dictionary<Futter, int> report)
         {
-            if(report.ContainsKey(_FoodClass))
+            if (report.ContainsKey(_FoodClass))
             {
                 report[_FoodClass] += _UnitPrice;
             }
@@ -41,11 +41,11 @@ namespace Martin.Week07
         }
 
 
-        public Futter FoodClass {  get { return _FoodClass; } }
+        public Futter FoodClass { get { return _FoodClass; } }
         public string Name { get { return _Name; } }
         public string Art { get { return _Art; } }
 
-        public string Unit {  get { return _Unit; } }
+        public string Unit { get { return _Unit; } }
         public string lieblingsessen { get { return _lieblingsessen; } }
         public int UnitPrice { get { return _UnitPrice; } }
 
@@ -53,7 +53,7 @@ namespace Martin.Week07
         {
             List<Animal> fightingAnimals = new List<Animal>();
 
-            foreach(Animal animal in animals)
+            foreach (Animal animal in animals)
             {
                 fightingAnimals.Add(animal);
             }

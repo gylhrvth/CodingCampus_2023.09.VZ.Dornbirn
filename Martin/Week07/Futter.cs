@@ -23,7 +23,7 @@ namespace Martin.Week07
 
 
         public string Name { get { return _Name; } }
-        public string Einheit { get {  return _Einheit; } }
+        public string Einheit { get { return _Einheit; } }
         public int EinHeitPreis { get { return _EinheitPreis; } }
 
     }

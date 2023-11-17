@@ -8,13 +8,20 @@ namespace Martin.Week07.Vererbung
 {
     public class TastaturMain
     {
-        private string _Name;
-        private bool _HasLoudSound;
-
-        public TastaturMain(string name, bool hasLoudSound)
+        public static void Start()
         {
-            _Name = name;
-            _HasLoudSound = hasLoudSound;
+            List<Tastatur> TastaturShop = new List<Tastatur>();
+
+            TastaturShop.Add(new Tastatur("Razer huntsMini", true));
+            TastaturShop.Add(new Tastatur("Logitech X Pro",false));
+            TastaturShop.Add(new RGBTastatur("RGB RAZER", false, "rainbow"));
+
+            foreach(Tastatur t in TastaturShop)
+            {
+                t.PrintTastatur();
+
+                Console.WriteLine(); //abstand
+            }
         }
     }
 }
