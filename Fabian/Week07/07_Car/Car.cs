@@ -6,10 +6,10 @@ namespace Fabian.Week07._07Car
     {
         public enum CarDriveType
         {
-            Benzin,
+            Petrol,
             Diesel,
             Gas,
-            Strom
+            Electricity
         }
         private Tank _Tank;
         private string _Producer;
@@ -33,7 +33,7 @@ namespace Fabian.Week07._07Car
             _Producer = producer;
             _Model = model;
             _Engine = engine;
-            _Tank = (carDriveType == CarDriveType.Strom) ? new Battery(tank.Name, tank.MaxCapacity) : new FuelTank(tank.Name, tank.MaxCapacity);
+            _Tank = (carDriveType == CarDriveType.Electricity) ? new Battery(tank.Name, tank.MaxCapacity) : new FuelTank(tank.Name, tank.MaxCapacity);
             _Weight = weight;
             _DriveType = carDriveType;
             _Consumption = _Engine.Power / _Weight;
@@ -68,8 +68,8 @@ namespace Fabian.Week07._07Car
 
         private void PrintCarStatus()
         {
-            string unit = (_DriveType == CarDriveType.Strom) ? "kWh" : "L";
-            string type = (_DriveType == CarDriveType.Strom) ? "battery" : "tank";
+            string unit = (_DriveType == CarDriveType.Electricity) ? "kWh" : "L";
+            string type = (_DriveType == CarDriveType.Electricity) ? "battery" : "tank";
             Console.Write($"The {type} status is: {_Tank.Capacity:N2}{unit}.");
             if (_Engine.IsBroken)
                 SetConsoleColor(ConsoleColor.Red, " The Engine is broken!");
@@ -83,7 +83,6 @@ namespace Fabian.Week07._07Car
             Console.WriteLine($"The engine of {_Model} has been repaired after {_Engine.DistanceTravelled} km!");
             _Engine = new Engine("selfrepair", _Engine.Power);
             SetConsoleColor(ConsoleColor.Green, "Brumm Brumm");
-
         }
     }
 }

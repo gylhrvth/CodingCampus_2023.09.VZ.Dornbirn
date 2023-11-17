@@ -12,8 +12,8 @@ namespace Fabian.Week07._07Car
 
         public void FillTank(Car car, double value)
         {
-            string unit = (car.DriveType == Car.CarDriveType.Strom) ? "kWh" : "L";
-            string type = (car.DriveType == Car.CarDriveType.Strom) ? "battery" : "tank";
+            string unit = (car.DriveType == Car.CarDriveType.Electricity) ? "kWh" : "L";
+            string type = (car.DriveType == Car.CarDriveType.Electricity) ? "battery" : "tank";
             SetConsoleColor(ConsoleColor.DarkYellow, "Car stopped!");
             Tank t = car.Tank;
             t.Capacity = (t.Capacity + value < t.MaxCapacity) ? t.Capacity + value : t.MaxCapacity;

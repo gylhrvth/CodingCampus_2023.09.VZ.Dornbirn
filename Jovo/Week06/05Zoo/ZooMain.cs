@@ -36,17 +36,17 @@ namespace Jovo.Week06._05Zoo
             zoo.AddKeeper(Mero);
             zoo.AddKeeper(Anna);
 
-            Animals cow1 = new Animals("Sora", 15, "Cow","Female", Gras, 1, 5, 100,100);
-            Animals cow2 = new Animals("Meto", 16, "Cow", "Male", Gras, 1, 15, 100, 100);
-            Animals monkey1 = new Animals("Rebo", 7, "Monkey", "Male", Bannanas, 2, 20, 100, 100);
-            Animals monkey2 = new Animals("Annika", 8, "Monkey", "Female", Bannanas, 3, 20, 100, 100);
-            Animals Snake1 = new Animals("Billy", 5, "Snake", "Male", Meat, 1, 100, 100, 100);
-            Animals Snake2 = new Animals("Zoe", 5, "Snake", "Female", Meat, 1, 100, 100, 100);
-            Animals Pinguin1 = new Animals("Pingo", 13, "Pinguin", "Male", Fish, 2, 5, 100, 100);
-            Animals Pinguin2 = new Animals("Louise", 11, "Pinguin", "Female", Fish, 2, 5, 100, 100);
-            Animals Pinguin3 = new Animals("Larry", 1, "Baby Pinguin", "Male", Fish, 2,5 , 100, 100);
-            Animals Lion1 = new Animals("Simba", 15, "Lion", "Male", Meat, 3, 50,100, 100);
-            Animals Lion2 = new Animals("Leo", 13, "Lion", "Female", Meat, 3, 50, 100, 100);
+            Animals cow1 = new Animals("Sora", 15, "Cow","Female", Gras, 1, 5, 100,100, "MUUHHH");
+            Animals cow2 = new Animals("Meto", 16, "Cow", "Male", Gras, 1, 15, 100, 100, "MUUHHH") ;
+            Animals monkey1 = new Animals("Rebo", 7, "Monkey", "Male", Bannanas, 2, 20, 100, 100,"UHAHAHAHA");
+            Animals monkey2 = new Animals("Annika", 8, "Monkey", "Female", Bannanas, 3, 20, 100, 100,"UHAAHAHAH");
+            Animals Snake1 = new Animals("Billy", 5, "Snake", "Male", Meat, 1, 100, 100, 100,"PSSSSSSS");
+            Animals Snake2 = new Animals("Zoe", 5, "Snake", "Female", Meat, 1, 100, 100, 100,"PSSSSSSS");
+            Animals Pinguin1 = new Animals("Pingo", 13, "Pinguin", "Male", Fish, 2, 5, 100, 100,"PIUPIU");
+            Animals Pinguin2 = new Animals("Louise", 11, "Pinguin", "Female", Fish, 2, 5, 100, 100, "PIUPIU");
+            Animals Pinguin3 = new Animals("Larry", 1, "Baby Pinguin", "Male", Fish, 2,5 , 100, 100, "PIUPIU");
+            Animals Lion1 = new Animals("Simba", 15, "Lion", "Male", Meat, 3, 50,100, 100, "RAAAWWRRR");
+            Animals Lion2 = new Animals("Leo", 13, "Lion", "Female", Meat, 3, 50, 100, 100,"RAAAWRRR");
 
 
 

@@ -37,10 +37,22 @@ namespace Dimitri.Week06._05Zoo
             Gehege.AddTier(katzenGehege, emil);
             Tier sandy = new("Sandy", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75, 150, 150, 40);
             Gehege.AddTier(katzenGehege, sandy);
-            Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter", Zuckerwasser, 0.001);
+            Tier carlos = new("Carlos", "Mitteleuropäische Kurzhaar", Hühnchen, 1, 120, 120, 30);
+            Gehege.AddTier(katzenGehege, carlos);
+            Tier mimi = new("Mimi", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75, 100, 100, 20);
+            Gehege.AddTier(katzenGehege, mimi);
+            Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter", Zuckerwasser, 0.001, 10, 10, 1);
             Gehege.AddTier(schmetterlingsGehege, sauerFlatter);
-            Tier rotKehle = new("Mitrotemhals", "Rotkehlchen", Korn, 0.01);
+            Tier Monarch = new("King", "Monarchfalter", Zuckerwasser, 0.005, 20, 20, 3);
+            Gehege.AddTier(schmetterlingsGehege, Monarch);
+            Tier Pfauenauge = new("Auge", "Tagpfauenauge", Zuckerwasser, 0.003, 15, 15, 2);
+            Gehege.AddTier(schmetterlingsGehege, Pfauenauge);
+            Tier rotKehle = new("Mitrotemhals", "Rotkehlchen", Korn, 0.01, 40, 40, 5);
             Gehege.AddTier(vogelGehege, rotKehle);
+            Tier Rabe = new("Schwarzefeder", "Rabe", Korn, 0.5, 80, 80, 15);
+            Gehege.AddTier(vogelGehege, Rabe);
+            Tier Steinadler = new("Gipfelstürmer", "Steinadler", Hühnchen, 1.5, 250, 250, 40);
+            Gehege.AddTier(vogelGehege, Steinadler);
             Gehege terrarium = new("Terrarium");
             Zoo.AddGehege(myZoo, terrarium);
 
@@ -67,6 +79,10 @@ namespace Dimitri.Week06._05Zoo
 
             Zoo.AddWarter(myZoo, Hans);
 
+            TierArzt Kathi = new("Kathi");
+
+            myZoo.AddTierArzt(Kathi);
+
             //output
 
             myZoo.PrintZoo();
@@ -76,13 +92,21 @@ namespace Dimitri.Week06._05Zoo
             //Simulation
             Console.WriteLine();
 
-            myZoo.Simulation0();
+            //myZoo.Simulation0Old();
 
-            Console.WriteLine();
+            //myZoo.Simulation0();
 
-            myZoo.Simulation1();
+            //Console.WriteLine();
 
+            ////myZoo.Simulation1Old();
 
+            //Console.WriteLine();
+
+            //myZoo.Simulation1();
+
+            myZoo.Simulation(5);
+
+            //myZoo.Simulation2();
         }
 
 

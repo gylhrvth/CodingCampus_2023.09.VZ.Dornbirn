@@ -69,18 +69,7 @@
             fishy.FoodList.Add(worms);
             goldie.FoodList.Add(worms);
 
-
-            zoo.PrintStructure();
-            Console.WriteLine();
-            zoo.PrintZooStatistic();
-            Console.WriteLine("\nSimulation: ");
-            franz.Feed();
-            Console.WriteLine();
-            hubert.Feed();
-            Console.WriteLine();
-            zoo.FightStart();
-            Console.WriteLine();
-            zoo.HealStart();
+            zoo.Simulation();  
         }                
     }
 }

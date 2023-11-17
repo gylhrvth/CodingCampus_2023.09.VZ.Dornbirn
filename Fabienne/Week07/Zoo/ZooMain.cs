@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -16,9 +17,9 @@ namespace Fabienne.Week07.Zoo
 
             Zoo zoo = new Zoo("Dream smp", 1970);
 
-            Food cig = new Food("Cigarette🚬", "Pcs", 12.05, 7.00);
+            Food cig = new Food("Cigarette🚬", "Pcs", 12.05, 7.01);
             Food salmon = new Food("Salmon🐟", "kg", 2.95, 13.99);
-            Food nukes = new Food("Nukes☢️", "mg", 0.05, 900000000.000);
+            Food nukes = new Food("Nukes☢️", "MT", 0.05, 900000000.0000);
             Food beans = new Food("Beans🫘", "kg", 12.05, 3.99);
             Food child = new Food("Child🧒", "MT", 12500, 80000.00);
             Food mushrooms = new Food("Mushrooms🍄", "kg", 1.00, 7.79);
@@ -43,20 +44,6 @@ namespace Fabienne.Week07.Zoo
             Food rice = new Food("Rice and veggies🍚", "kg", 2.00, 3.65);
             Food hot = new Food("Hotpockets🌯", "kg", 328.00, 4.99);
             Food blue = new Food("Blue💙", "?", 0.00, 0.00);
-
-            Enclosure lasnevadas = new Enclosure("Las Nevadas🌃", "Subtropical", "hot");
-            Enclosure snowchester = new Enclosure("Snowchester❄️", "Polar", "cold");
-            Enclosure lmanburg = new Enclosure("L'Manburg💥", "Temperate", "medium");
-            Enclosure kinokokingdom = new Enclosure("Kinoko Kingdom🍄", "Tropical", "warm");
-            Enclosure eggpire = new Enclosure("Eggpire🩸", "Tropical", "warm");
-            Enclosure gsmp = new Enclosure("The Greater SMP🏹", "Temperate", "medium");
-            Enclosure manifold = new Enclosure("Manifoldland🟥🟦", "Temperate", "medium");
-            Enclosure syndicate = new Enclosure("The Syndicate\U0001fa78", "Polar", "cold");
-            Enclosure prison = new Enclosure("Pandoras Vault☢️", "-", "-");
-            Enclosure ponks = new Enclosure("Ponk's Lemon City🍋", "Temperate", "medium");
-            Enclosure boomer = new Enclosure("Boomerville🐸", "Tropical", "warm");
-            Enclosure erets = new Enclosure("Eret's Castle👑", "Temperate", "medium");
-            Enclosure cemetary = new Enclosure("Limbo💀", "-", "-");
        
             Animal quackity = new Animal("Quackity🦆", "Male", "Duckling-Hybrid", whiskey, 15);
             Animal slimecicle = new Animal("Slimecicle🟢", "Unknown", "Slime", child, 1);
@@ -91,7 +78,48 @@ namespace Fabienne.Week07.Zoo
             Animal gboo = new Animal("Ghostbur🔵", "Agender","Ghost", blue, 1);
             Animal js = new Animal("JSchlatt🍺", "Male","Ram-Hybrid", whiskey, 77);
             Animal md = new Animal("Mexican Dream🌮", "whut","MEXICAN", que, 34);
-           
+
+            Enclosure lasnevadas = new Enclosure("Las Nevadas🌃", "Subtropical", "hot");
+            Enclosure snowchester = new Enclosure("Snowchester❄️", "Polar", "cold");
+            Enclosure lmanburg = new Enclosure("L'Manburg💥", "Temperate", "medium");
+            Enclosure kinokokingdom = new Enclosure("Kinoko Kingdom🍄", "Tropical", "warm");
+            Enclosure eggpire = new Enclosure("Eggpire🩸", "Tropical", "warm");
+            Enclosure gsmp = new Enclosure("The Greater SMP🏹", "Temperate", "medium");
+            Enclosure manifold = new Enclosure("Manifoldland🟥🟦", "Temperate", "medium");
+            Enclosure syndicate = new Enclosure("The Syndicate\U0001fa78", "Polar", "cold");
+            Enclosure prison = new Enclosure("Pandoras Vault☢️", "-", "-");
+            Enclosure ponks = new Enclosure("Ponk's Lemon City🍋", "Temperate", "medium");
+            Enclosure boomer = new Enclosure("Boomerville🐸", "Tropical", "warm");
+            Enclosure erets = new Enclosure("Eret's Castle👑", "Temperate", "medium");
+            Enclosure cemetary = new Enclosure("Limbo💀", "-", "-");
+
+            Caretaker xd = new Caretaker("XD", gsmp);
+            Caretaker wealth = new Caretaker("Goddess of wealth", lasnevadas);
+            Caretaker hd = new Caretaker("HD", kinokokingdom);
+            Caretaker bg = new Caretaker("Blood God", syndicate);
+            Caretaker b = new Caretaker("God of Snow", snowchester); 
+            Caretaker m = new Caretaker("Mumza", lmanburg); 
+            Caretaker egg = new Caretaker("The Egg", eggpire); 
+            Caretaker storm = new Caretaker("God of Storm", manifold); 
+            Caretaker prot = new Caretaker("Dream", prison); 
+            Caretaker lemon = new Caretaker("The Lemon God", ponks); 
+            Caretaker war = new Caretaker("The God of War", boomer); 
+            Caretaker beauty = new Caretaker("Goddess of Beauty", erets); 
+            Caretaker death = new Caretaker("Goddess of Death", cemetary);
+
+            zoo.AddCaretaker(wealth);
+            zoo.AddCaretaker(b);
+            zoo.AddCaretaker(m);
+            zoo.AddCaretaker(hd);
+            zoo.AddCaretaker(xd);
+            zoo.AddCaretaker(bg);
+            zoo.AddCaretaker(death);
+            zoo.AddCaretaker(storm);
+            zoo.AddCaretaker(lemon);
+            zoo.AddCaretaker(prot);
+            zoo.AddCaretaker(war);
+            zoo.AddCaretaker(beauty);
+
             zoo.addEnclosure(lasnevadas);
             zoo.addEnclosure(snowchester);
             zoo.addEnclosure(lmanburg);
