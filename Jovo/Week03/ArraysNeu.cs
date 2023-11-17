@@ -10,7 +10,8 @@ namespace Jovo.Week03
 
         public static void Start()
         {
-
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Increase");
             int[] original = Array(10);
             foreach (int element in original)
@@ -21,7 +22,8 @@ namespace Jovo.Week03
             Console.WriteLine("=========================");
 
 
-
+            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("Decrease");
             int[] originalR = ArrayR(10);
             foreach (int element in originalR)
@@ -127,7 +129,7 @@ namespace Jovo.Week03
             Console.WriteLine("BubbleSortAscending");
             Console.WriteLine();
             //int[] newArr = RandomNumberArrayCrazyRange(100, 0, 100); so neue array angeben
-            int[] array = SortArrayAscending(arr); //warum kann ich keine Zahl eingeben
+            int[] array = SortArrayAscending(arr);
             Console.WriteLine("=========================");
 
 
@@ -136,9 +138,9 @@ namespace Jovo.Week03
             int[] array2 = SortArraysDescending(arr);
             Console.WriteLine("======================");
 
+            int[] randArrNew = RandomNumberArray(10);
 
-           
-
+        
         }
 
 
@@ -308,21 +310,18 @@ namespace Jovo.Week03
 
         public static int[] SortArraysDescending(int[] array2)
         {
-            int length = array2.Length;
-
-            int temp = array2[0];
-
-            for (int i = 0; i < length; i++)
+   
+            for (int i = 0; i < array2.Length; i++)
             {
-                for (int j = 0; j < length - 1; j++)
+                for (int j = 0; j < array2.Length - 1; j++)
                 {
-                    if (array2[j + 1] > array2[j])
+                    if (array2[j] < array2[j + 1])
                     {
-                        temp = array2[j + 1];
+                        int temp = array2[j];
 
-                        array2[j + 1] = array2[j];
+                        array2[j] = array2[j + 1];
 
-                        array2[j] = temp;
+                        array2[j + 1] = temp;
                     }
                     //jeder Schritt wird ausgegeben
                     Console.WriteLine(String.Join(", ", array2));
@@ -332,6 +331,8 @@ namespace Jovo.Week03
 
 
         }
+
+
 
 
 

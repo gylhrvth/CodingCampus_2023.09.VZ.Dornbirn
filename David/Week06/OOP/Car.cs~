@@ -1,0 +1,16 @@
+﻿using System;
+namespace David.Week06.OOP
+{
+	public class Car
+	{
+		string brand = "Toyota";
+		string model = "XYZ 100";
+		int year = 2004;
+		  
+		void Honk()
+		{
+			Console.WriteLine("Das Auto hupt!");
+		}
+	}
+}
+

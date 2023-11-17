@@ -1,2 +1,10 @@
-﻿Hassan.Week03.rehearsal.Start();
-//Hassan.Week03.Arrays.Start();
+﻿using Hassan.Week06;
+
+Person p = new Person("Hassan", 21, 188, 80);
+Console.WriteLine(p.Name);
+
+p.Name = "";
+p.Name = "Paul";
+Console.WriteLine(p.Name);
+
+Console.WriteLine(p);

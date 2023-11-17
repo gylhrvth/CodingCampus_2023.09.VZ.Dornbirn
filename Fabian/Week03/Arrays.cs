@@ -1,12 +1,13 @@
-﻿using System.Reflection;
-using System.Text.RegularExpressions;
+﻿using System.Diagnostics;
+using System.Numerics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Fabian.Week03
 {
     public class Arrays
     {
-        public static Random rand = new Random(123);
-        public static int[] arr = RandomNumberArrayMinMaxAvg();
+        public static Random rand = new(123);
+        public static int[] arr = CreateRandomNumberArray();
 
         public static void Start()
         {
@@ -31,19 +32,19 @@ namespace Fabian.Week03
             Console.WriteLine("index of biggest number = " + IndexOfRandomNumberArrayMax(arr));
             Console.WriteLine("average = " + RandomNumberArrayAvg(arr));*/
 
-            int[] arr1 = MakeACopy(arr);
+            //int[] arr1 = MakeACopy(arr);
             //BubbleSortASC(arr1);
             //Console.WriteLine("[{0}]", string.Join(", ", arr1));
-            int[] arr2 = MakeACopy(arr);
+            //int[] arr2 = MakeACopy(arr);
             //BubbleSortDESC(arr2);
             //Console.WriteLine("[{0}]", string.Join(", ", arr2));
-            int[] arr3 = MakeACopy(arr);
+            //int[] arr3 = MakeACopy(arr);
             //SelectionSort(arr3);
             //Console.WriteLine("[{0}]", string.Join(", ", arr3));
-            int[] arr4 = MakeACopy(arr);
+            //int[] arr4 = MakeACopy(arr);
             //InsertionSort(arr4);
             //Console.WriteLine("[{0}]", string.Join(", ", arr4));
-            int[] arr5 = MakeACopy(arr);
+            //int[] arr5 = MakeACopy(arr);
             //GnomeSort(arr5);
             //Console.WriteLine("[{0}]", string.Join(", ", arr5));
 
@@ -55,10 +56,8 @@ namespace Fabian.Week03
             //int[,] pascal = CreatePascalTriangle();
             //PrintPascalTriangle(pascal);
 
-            //string formula = CreateFormula();
-            //PrintFormula(formula);
-
-            TicTacToe();
+            string formula = CreateFormula();
+            PrintFormula(formula);
         }
         public static void PrintArray(int[] arr)
         {
@@ -185,7 +184,7 @@ namespace Fabian.Week03
 
             return sum;
         }
-        public static int[] RandomNumberArrayMinMaxAvg()
+        public static int[] CreateRandomNumberArray()
         {
             int[] randomNums = new int[10];
 
@@ -223,9 +222,9 @@ namespace Fabian.Week03
         public static void BubbleSortASC(int[] arr)
         {
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
                     {
@@ -237,9 +236,9 @@ namespace Fabian.Week03
         public static void BubbleSortDESC(int[] arr)
         {
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-                for (int j = 0; j < arr.Length - 1; j++)
+                for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] < arr[j + 1])
                     {
@@ -261,6 +260,7 @@ namespace Fabian.Week03
                         min = j;
 
                         (arr[min], arr[i]) = (arr[i], arr[min]);
+
                     }
                 }
             }
@@ -311,7 +311,7 @@ namespace Fabian.Week03
                     Console.WriteLine("Enter number of columns: ");
                     width = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch(FormatException)
                 {
                     Console.WriteLine("Enter a valid number!");
                 }
@@ -378,7 +378,7 @@ namespace Fabian.Week03
                     Console.WriteLine("Enter the size: ");
                     size = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch (FormatException)
                 {
                     Console.WriteLine("Enter a valid number!!");
                 }
@@ -422,16 +422,15 @@ namespace Fabian.Week03
                     Console.WriteLine("Enter an exponent: ");
                     exponent = Convert.ToInt32(Console.ReadLine());
                 }
-                catch
+                catch(FormatException)
                 {
                     Console.WriteLine("Enter a valid number!");
                 }
             }
 
             int[,] arr = CreatePascalTriangle(exponent);
-            //PrintPascalTriangle(arr);
 
-            if(exponent == 1) 
+            if (exponent == 1)
             {
                 formula = $"(a + b)^1 = a + b";
             }
@@ -443,7 +442,7 @@ namespace Fabian.Week03
                     for (int j = 1; j < arr.GetLength(1); j++)
                     {
                         formula += $"{arr[i, j]}a";
-                        if(i > 1)
+                        if (i > 1)
                         {
                             formula += "^" + i;
                         }
@@ -461,73 +460,11 @@ namespace Fabian.Week03
             return formula;
 
         }
-
         public static void PrintFormula(string formula)
         {
             Console.WriteLine(formula);
-        } 
-
-        public static void TicTacToe()
-        {
-            bool gameOver = false;
-            int[,] playGround = new int[3, 3];
-            
-
-            for (int i = 0; i < playGround.GetLength(0); i++)
-            {
-                for (int j = 0; j < playGround.GetLength(1); j++)
-                {
-                    playGround[i, j] = 0;
-                }
-            }
-            Print2DArray(playGround);
-            while (true)
-            {
-                try
-                {
-                    Console.WriteLine("Enter row: (player 1): ");
-                    int p1Row = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine("Enter column: (player 1): ");
-                    int p1Col = Convert.ToInt32(Console.ReadLine());
-
-                    playGround[p1Row - 1, p1Col - 1] = 1;
-
-                    Print2DArray(playGround);
-
-                    if ((playGround[0, 0] == 1 && playGround[0, 1] == 1 && playGround[0, 2] == 1) || (playGround[1, 0] == 1 && playGround[1, 1] == 1 && playGround[1, 2] == 1) || (playGround[2, 0] == 1 && playGround[2, 1] == 1 && playGround[2, 2] == 1))
-                    {
-                        Console.WriteLine("Player 1 won!");
-                        return;
-                    }
-                    else if ((playGround[0, 0] == 1 && playGround[1, 0] == 1 && playGround[2, 0] == 1) || (playGround[0, 1] == 1 && playGround[1, 1] == 1 && playGround[2, 1] == 1) || (playGround[0, 2] == 1 && playGround[1, 2] == 1 && playGround[2, 2] == 1))
-                    {
-                        Console.WriteLine("Player 1 won!");
-                        return;
-                    }
-                    else if ((playGround[0, 0] == 1 && playGround[1, 1] == 1 && playGround[2, 2] == 1) || (playGround[0, 2] == 1 && playGround[1, 1] == 1 && playGround[2, 0] == 1))
-                    {
-                        Console.WriteLine("Player 1 won!");
-                        return;
-                    }
-
-                    Console.WriteLine("Enter row: (player 2): ");
-                    int p2Row = Convert.ToInt32(Console.ReadLine());
-
-                    Console.WriteLine("Enter column: (player 2): ");
-                    int p2Col = Convert.ToInt32(Console.ReadLine());
-
-                    playGround[p2Row - 1, p2Col - 1] = 2;
-  
-                    Print2DArray(playGround);
-
-                }
-                catch
-                {
-                    Console.WriteLine("Enter a valid number!");
-                }
-            }
-        }
-
+        }        
     }
+
 }
+

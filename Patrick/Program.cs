@@ -1,4 +1,4 @@
-﻿using Patrick.Week03;
-UebungMakeACopy.start();
+﻿
+Patrick.Week07.VererbungBsp1.WieseMain.Start();
 
-//Patrick.Week03.ExamplesArrays.start();
+

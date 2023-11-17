@@ -1,1 +1,4 @@
-﻿Mehmet.Week03.ArrayÜbung.start();
+﻿using Mehmet.Week07.Vererbung;
+
+ArthropodaMain.Start();
+ 

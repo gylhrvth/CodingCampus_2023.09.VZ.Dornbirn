@@ -1,2 +1,4 @@
-﻿Erik.Week03.SortAlgorithmSelectionSort.StartSortAlgorithmSelctionSort();
+﻿using Erik.Week08;
+
+ZooMain.Start();
 

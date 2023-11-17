@@ -1,6 +1,6 @@
 ﻿namespace DarioLuis.Week03
 {
-    public class Day03
+    public class PascalDreieck
     {
         public static void Main(string[] args)
         {

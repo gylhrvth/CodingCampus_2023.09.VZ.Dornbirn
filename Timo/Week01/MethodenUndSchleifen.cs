@@ -52,7 +52,7 @@ namespace Timo.Week01
             PrintX('x', 7);
             
             Console.WriteLine("\n13.Aufgabe:");
-            PrintChristmasTree(50);
+            PrintChristmasTree('*',50);
 
             Console.WriteLine("\n14.Aufgabe:");
             PrintCirclePythagoras(10);
@@ -303,25 +303,25 @@ namespace Timo.Week01
 
 
         //Aufgabe13
-        public static void PrintChristmasTree(int zahl)
+        public static void PrintChristmasTree(char symbol, int zahl)
         {
             PrintChars(' ', zahl - 1);
-            Console.WriteLine('*');
+            Console.WriteLine(symbol);
             int spacedifferent = 1;
             for (int i = 1; i < zahl - 1; i++)
             {
                 int characters = zahl - i;
                 PrintChars(' ', characters - 1);
-                Console.Write('*');
+                Console.Write(symbol);
                 for (int a = spacedifferent; a > 0; a--)
                 {
-                    Console.Write('*');
+                    Console.Write(symbol);
                 }
-                Console.Write('*');
+                Console.Write(symbol);
                 spacedifferent = spacedifferent + 2;
                 Console.WriteLine();
             }
-            PrintChars('*', (zahl * 2) - 1);
+            PrintChars(symbol, (zahl * 2) - 1);
             Console.WriteLine();
             PrintString("0 ", zahl);
             Console.WriteLine();

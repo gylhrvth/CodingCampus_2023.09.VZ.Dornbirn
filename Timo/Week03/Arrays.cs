@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
@@ -12,7 +13,7 @@ namespace Timo.Week03
     public class Arrays
     {
         public static Random random = new Random();
-
+        public static Stopwatch stopwatch = new Stopwatch();
         public static void Start()
         {
 
@@ -108,32 +109,28 @@ namespace Timo.Week03
 
             //Aufgabe8 (Bubble)sort
             Console.WriteLine("\nAufgabe 8: (Bubble)sort mit Zahlen");
-            int[] testSort = RandomFor(20, 1, 100);
-            PrintString(testSort);
-            PrintString(Sort(testSort, true));              //use 'true' for ascending sorting, 'false' for descending sorting
-            PrintString(Sort(testSort, false));             //use 'true' for ascending sorting, 'false' for descending
-            PrintString(BubbleSort(testSort, true));
-            PrintString(BubbleSort(testSort, false));
+            int[] testSort = RandomFor(100000, 1, 100);
+            //PrintString(testSort);
+            //PrintString(Sort(testSort, true));              //use 'true' for ascending sorting, 'false' for descending sorting
+            //PrintString(Sort(testSort, false));             //use 'true' for ascending sorting, 'false' for descending
+            //PrintString(BubbleSort(testSort, true));
+            //PrintString(BubbleSort(testSort, false));
+            PrintString(BubbleSortTime(testSort, true));
+            PrintString(BubbleSortBetterTime(testSort, true));
 
-            testSort = RandomFor(50000, 1, 100);
-            BubbleSort(testSort, true);
+
+
+            //testSort = RandomFor(50000, 1, 100);
+            //BubbleSort(testSort, true);
 
             Console.WriteLine("=======================================");
+            Console.WriteLine("=======================================");
 
-            int[][] arr2D = new int[100][];
-            for(int i=0; i < arr2D.Length; i++)
-            {
-                arr2D[i] = new int[100];
-            }
 
-            for (int row = 0; row < arr2D.Length; row++)
-            {
-                for(int col = 0;  col < arr2D[row].Length; col++)
-                {
-                    Console.Write(arr2D[row][col]);
-                }
-                Console.WriteLine();
-            }
+            //Aufgabe9 2D-Array
+            Console.WriteLine("\nAufgabe 9: 2D-Array");
+            //PrintArray2D(Arr2DRandom(10, 10, 0, 100));
+            //PrintArray2D(Matrix2(5, 10, 1, 100));
         }
 
 
@@ -312,7 +309,6 @@ namespace Timo.Week03
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Aufgabe7.1 Min.
-        //ToDo 7.1 leeres Array!
         public static int Minimum(int[] arr)
         {
             int min = Int32.MaxValue;
@@ -338,9 +334,7 @@ namespace Timo.Week03
             }
         }
 
-        //Aufgabe7.2 Max.,
-        //ToDo 7.2 leeres Array!
-
+        //Aufgabe7.2 Max.
         public static int Maximum(int[] arr)
         {
             int max = Int32.MinValue;
@@ -361,8 +355,6 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.3 Avg
-        //ToDo 7.3 leeres Array!
-
         public static double Average(int[] arr)
         {
             double avg = (ArraySum(arr) * 1.00) / arr.Length;
@@ -376,8 +368,6 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.4 IndexMin
-        //ToDo 7.4 leeres Array!
-
         public static int IndexMinimum(int[] arr)
         {
             int indexMin = 0;
@@ -392,8 +382,6 @@ namespace Timo.Week03
         }
 
         //Aufgabe7.5 IndexMax
-        //ToDo 7.5cd leeres Array!
-
         public static int IndexMaximum(int[] arr)
         {
             int indexMax = 0;
@@ -408,7 +396,7 @@ namespace Timo.Week03
         }
         //------------------------------------------------------------------------------------------------------------------------------
 
-        //Aufgabe 8 (Bubble)sort
+        //Aufgabe8 TimoSort
         public static int[] Sort(int[] arr, bool asc)
         {
             for (int i = 0; i < arr.Length; i++)
@@ -432,7 +420,7 @@ namespace Timo.Week03
             return arr;
         }
 
-        //Aufgabe 8 Bubblesort
+        //Aufgabe8 Bubblesort
         public static int[] BubbleSort(int[] arr, bool asc)
         {
             int steps = 0;
@@ -447,16 +435,181 @@ namespace Timo.Week03
                         arr[a] = temp;
                     }
                     steps++;
-                   
+
                 }
-                if(i % 10000 == 0)
+                if (i % 10000 == 0)
                 {
                     Console.WriteLine("sorted");
                 }
             }
-            Console.WriteLine("Size: "+arr.Length+"Steps: " + steps);
+           // Console.WriteLine("Size: " + arr.Length + "Steps: " + steps);
             return arr;
         }
+
+        //Aufgabe8 Bubblesort besser
+        public static int[] BubbleSortBetterTime(int[] arr, bool asc)
+        {
+            int[] penis = new int[0];
+
+            stopwatch.Start();
+            if (asc)
+            {
+                for (int i = arr.Length; i > 1; i--)
+                {
+                    for (int a = 0; a < i - 1; a++)
+                    {
+                        if (arr[a] > arr[a + 1])
+                        {
+                            int temp = arr[a + 1];
+                            arr[a + 1] = arr[a];
+                            arr[a] = temp;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = arr.Length; i > 1; i--)
+                {
+                    for (int a = 0; a < i - 1; a++)
+                    {
+                        if (arr[a] < arr[a + 1])
+                        {
+                            int temp = arr[a + 1];
+                            arr[a + 1] = arr[a];
+                            arr[a] = temp;
+                        }
+                    }
+                }
+            }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            Console.WriteLine("RunTime " + elapsedTime);
+            return penis;
+        }
+
+
+        //
+        //Aufgabe8 Bubblesort Zeit
+        public static int[] BubbleSortTime(int[] arr, bool asc)
+        {
+            int[] penis = new int[0];
+            stopwatch.Start();
+            for (int i = arr.Length; i > 1; i--)
+            {
+                for (int a = 0; a < i - 1; a++)
+                {
+                    if ((asc && arr[a] > arr[a + 1]) || (!asc && arr[a] < arr[a + 1]))
+                    {
+                        int temp = arr[a + 1];
+                        arr[a + 1] = arr[a];
+                        arr[a] = temp;
+                    }
+                }
+            }
+            stopwatch.Stop();
+            TimeSpan ts = stopwatch.Elapsed;
+
+            // Format and display the TimeSpan value.
+            string elapsedTime = string.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            Console.WriteLine("RunTime " + elapsedTime);
+            return penis;
+        }
+
+
+
+
+        
+
+        //------------------------------------------------------------------------------------------------------------------------------
+
+        //Aufgabe9 2D-Array
+        public static int[][] Arr2DRandom(int height, int length, int min, int max)
+        {
+            int[][] arr2D = new int[height][];
+            for (int i = 0; i < arr2D.Length; i++)
+            {
+                arr2D[i] = new int[length];
+            }
+            for (int row = 0; row < arr2D.Length; row++)
+            {
+                for (int col = 0; col < arr2D[row].Length; col++)
+                {
+                    int randomNumber = random.Next(min, max);
+                    arr2D[row][col] = randomNumber;
+                }
+            }
+            return arr2D;
+        }
+        //Print
+        public static void PrintArray2D(int[][] arr2D)
+        {
+            for (int row = 0; row < arr2D.Length; row++)
+            {
+                for (int col = 0; col < arr2D[row].Length; col++)
+                {
+                    Console.Write("{0,4}", arr2D[row][col]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+
+
+
+        //_________________________________________________________________________________________________________________________________________________
+        //funktioniert nicht!!!!!!
+
+
+
+        //public static int[] SumArray2D(int[][] arr2D, bool Spalte)
+        //{
+        //}
+
+
+
+
+
+
+        /*
+
+        public static int[][] Matrix2(int width, int height, int upper, int lower)
+        {
+            int summrow = 0;
+            int summcol = 0;
+
+            int[][] arr = new int[height][];
+            for (int row = 0; row < height; row++)
+            {
+                arr[row] = new int[width];
+                summrow = 0;
+                for (int col = 0; col < width; col++)
+                {
+                    arr[row][col] = random.Next(upper, lower);
+                    summrow += arr[row][col];
+
+                }
+                Console.WriteLine("Summe Zeile {1} = {0,3}", summrow, row + 1);
+
+                //summcol += arr[row][col];
+                //Console.WriteLine("Summe Zeile {1} = {0,3}", summrow, row+1);
+
+            }
+            return arr;
+        }
+
+
+
+
+        */
     }
 }
 

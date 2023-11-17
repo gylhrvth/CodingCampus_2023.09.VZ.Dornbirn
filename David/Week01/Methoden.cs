@@ -60,6 +60,9 @@ namespace David.Week01
             PrintTriangle("x", 5);
             Console.WriteLine();
 
+            Console.WriteLine("\nPrintTriangle");
+            PrintChristmasTree("*", 10);
+            Console.WriteLine();
 
 
 
@@ -314,37 +317,67 @@ namespace David.Week01
             }
         }
 
-        //{
-        //    for (int i = 1; i <= count; i++)
-        //    {
-        //        for (int j = 1 * 2 - 1; j < 5; j++)
-        //        {
+        public static void PrintChristmasTree(string symbol, int count)
+        {
+            //Baum mit Spitze
+            for (int x = 0; x < count; x++)
+            {
+                for (int y = 0; y < count * 2 - 1; y++)
+                {
+                    if (y < count - 1 - x)
+                    {
+                        Console.Write(" ");
+                    }
+                    else if (y >= count + x)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write(symbol);
+                    }
+                }
+                Console.WriteLine();
+            }
 
-        //            if (i == 5)
-        //            {
-        //                Console.Write("/");
-        //            }
-        //            else if (j < i)
-        //            {
-        //                Console.Write("W");
-        //            }
-        //           else if (j < count)
-        //            {
+            //untere Reihe
+            for (int y = 0; y < count * 2 - 1; y++)
+            {
+                if (y % 2 == 0)
+                {
+                    Console.Write("0");
+                }
+                else
+                {
+                    Console.Write(" ");
+                }
+            }
+            Console.WriteLine();
 
-        //                Console.Write(" ");
-        //            }
+            //Stamm
+            for (int x = 0; x < count - 7; x++)
+            {
+                for (int y = 0; y < count * 2 - 1; y++)
+                {
+                    if (y <= count - 4 || y >= count + 2)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write("+");
+                    }
 
-        //            Console.Write(" ");
-        //        }
-        //        Console.WriteLine();
-        //    }
+                }
+                Console.WriteLine();
+            }
 
 
 
 
+        }
     }
 
-    
 }
 
 

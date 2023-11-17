@@ -1,16 +1,32 @@
-﻿using System.ComponentModel;
-using System.Drawing;
-using System.Globalization;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
+﻿using System;
+using System.IO.IsolatedStorage;
 
 namespace Fabienne.Week02
 {
     public class Arrays
     {
+        //private static String[] units = { "Zero", "One", "Two", "Three",
+        //    "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+        //    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
+        //    "Seventeen", "Eighteen", "Nineteen" };
+        //private static String[] tens = { "", "", "Twenty", "Thirty", "Forty",
+        //    "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+
         public static Random rand = new Random();
         public static void Start()
         {
+        //    Console.ForegroundColor = ConsoleColor.DarkBlue;
+        //    for (long i = 100000; i <= 10000000; i *= 10)
+        //    {
+        //        Console.WriteLine(MyConvert(i).ToLower());
+        //        Console.WriteLine(MyConvert(i + 1).ToLower());
+        //        Console.WriteLine(MyConvert(i + 10).ToLower());
+        //        Console.WriteLine(MyConvert(i + 11).ToLower());
+        //        Console.WriteLine(MyConvert(i + 100).ToLower());
+        //        Console.WriteLine(MyConvert(i + 110).ToLower());
+        //        Console.WriteLine(MyConvert(i + 111).ToLower());
+        //    }
+
 
             //int[] original = { 1, 7, 8 , 11, 32, 4, -5};         
             //Console.WriteLine("[{0}]", string.Join(", ", NumberArray()));          
@@ -47,13 +63,11 @@ namespace Fabienne.Week02
             // PrintArray(arr);
             //PrintArray(arr2);
 
-
-            //int[] arr = CreateRandomArray(12);
+            int[] arr = CreateRandomArray(12);
             //PrintArray(arr);
 
             //int limit = 30;
             //Console.WriteLine("Count values bigger than {0}: {1}", limit, Count(arr, limit));
-
 
             //int[] testArray = RandomNumberArray3(20);
             //PrintArray(testArray);
@@ -62,8 +76,12 @@ namespace Fabienne.Week02
             //Console.WriteLine("Maximum: {0}", Maximum(testArray));
             //Console.WriteLine("Avarage: {0}", Average(testArray));
 
-            //Bubblesort(arr);
-            //Console.WriteLine("==========================================");
+            //PrintArray(arr);
+            //Console.WriteLine("===============================================");
+            //BubblesortAscending(arr);
+            //PrintArray(arr);
+            //Console.WriteLine("===============================================");
+            //BubblesortDescending(arr);
             //PrintArray(arr);
 
             //int[] arr2 = CreateRandomArray(12);
@@ -78,16 +96,16 @@ namespace Fabienne.Week02
             //InsertionSort(arr4);
 
             int[,] arr5 = new int[7, 8];
-            int[,] rand2dArray = CreateRandom2DArray(20, 10);
+            int[,] rand2dArray = CreateRandom2DArray();
 
-            Print2DArray(rand2dArray);
-            
-            
+            PrintTwoDeeArray(rand2dArray);
+
+            //int[,] arr7 = CreatePascalDreieck();
+           // PrintPascalTrinangle(arr7);
         }
         public static int[] NumberArray()
         {
             int[] num1 = new int[10];
-           
 
             for (int i = 0; i < num1.Length; ++i)
             {
@@ -110,20 +128,21 @@ namespace Fabienne.Week02
         public static int[] MakeACopy(int[] original)
         {
             int[] arr = new int[original.Length];
-            for (int i = 0; i < arr.Length; i++) 
+
+            for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = original[i];
             }
             return arr;
         }
         public static int[] RandomNumberArray() //help
-        {         
+        {
             int[] arr = new int[10];
 
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = rand.Next(100);
-                
+
             }
 
             Console.WriteLine("[{0}]", string.Join(", ", arr));
@@ -140,7 +159,7 @@ namespace Fabienne.Week02
             Console.WriteLine(arr[9]);
             Console.WriteLine();
 
-            for(int i = 0; i < arr.Length; i += 2)
+            for (int i = 0; i < arr.Length; i += 2)
             {
                 Console.WriteLine(arr[i]);
             }
@@ -149,17 +168,14 @@ namespace Fabienne.Week02
         }
         public static int[] RandomNumberArray2()
         {
-            
-
             Random rand = new Random();
 
             for (int i = 0; i < RandomNumberArray().Length; i++)
             {
                 RandomNumberArray()[i] = rand.Next(100);
-
             }
 
-           // Console.WriteLine("[{0}]", string.Join(", ", arr));
+            //Console.WriteLine("[{0}]", string.Join(", ", arr));
             Console.WriteLine();
 
             foreach (int i in RandomNumberArray())
@@ -180,10 +196,11 @@ namespace Fabienne.Week02
 
             return RandomNumberArray();
         }
-        public static int[] RandomNumberArray3(int size) 
+        public static int[] RandomNumberArray3(int size)
         {
             int[] arr = new int[size];
-            for (int i = 0;i < arr.Length; i++)
+
+            for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = rand.Next(1, 101);
             }
@@ -198,7 +215,7 @@ namespace Fabienne.Week02
 
             Random rand = new Random();
 
-            for (int i = 0; i < arr.Length; i ++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = rand.Next(min, max);
             }
@@ -207,7 +224,7 @@ namespace Fabienne.Week02
         public static void PrintRandomNumberArrayCrazyRange() //passt so braucht void
         {
             foreach (int i in RandomNumberArrayCrazyRange())
-            {               
+            {
                 Console.WriteLine(i);
             }
         }
@@ -223,13 +240,14 @@ namespace Fabienne.Week02
             {
                 arr[i] = rand.Next(100);
 
-                Console.WriteLine(summe += arr[i]); 
+                Console.WriteLine(summe += arr[i]);
             }
-            return summe;                 
+            return summe;
         }
         public static int Count(int[] numbers, int limit)
         {
             int count = 0;
+
             foreach (int value in numbers)
             {
                 if (value > limit)
@@ -242,6 +260,7 @@ namespace Fabienne.Week02
         public static int[] CreateRandomArray(int size)
         {
             int[] arr = new int[size];
+
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = rand.Next(100);
@@ -252,11 +271,13 @@ namespace Fabienne.Week02
         {
             Console.Write("[");
             bool first = true;
-            foreach (int value in arr) {
+
+            foreach (int value in arr)
+            {
                 if (!first)
                 {
                     Console.Write(", ");
-                }                
+                }
                 Console.Write(value);
                 first = false;
             }
@@ -266,7 +287,8 @@ namespace Fabienne.Week02
         }
         public static int Minimum(int[] arr)
         {
-            int min = Int32.MaxValue;            
+            int min = Int32.MaxValue;
+
             for (int i = 0; i < arr.Length; ++i)
             {
                 if (arr[i] < min)
@@ -279,6 +301,7 @@ namespace Fabienne.Week02
         public static int Maximum(int[] arr)
         {
             int max = Int32.MinValue;
+
             for (int i = 0; i < arr.Length; ++i)
             {
                 if (arr[i] > max)
@@ -289,16 +312,31 @@ namespace Fabienne.Week02
             return max;
         }
         public static double Average(int[] arr)
-        {           
+        {
             return arr.Average();
         }
-        public static void Bubblesort(int[] arr) //blub blub blub
+        public static void BubblesortAscending(int[] arr) //blub blub blub
         {
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = 0; j < arr.Length - i - 1; j++)
                 {
                     if (arr[j] > arr[j + 1])
+                    {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+        public static void BubblesortDescending(int[] arr) //blub blub blub
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length - i - 1; j++)
+                {
+                    if (arr[j] < arr[j + 1])
                     {
                         int temp = arr[j];
                         arr[j] = arr[j + 1];
@@ -315,13 +353,13 @@ namespace Fabienne.Week02
             {
                 if (arr[i] >= arr[i - 1])
                 {
-                    i = i + 1;
+                    i += 1;
                 }
                 else
                 {
                     (arr[i], arr[i - 1]) = (arr[i - 1], arr[i]);
-                    
-                    if(i >= 2)
+
+                    if (i >= 2)
                     {
                         i--;
                     }
@@ -345,7 +383,7 @@ namespace Fabienne.Week02
 
                         (arr[i], arr[min]) = (arr[min], arr[i]);
                     }
-                }              
+                }
             }
             Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
@@ -363,18 +401,158 @@ namespace Fabienne.Week02
             }
             Console.WriteLine("[{0}]", string.Join(", ", arr));
         }
-        public static int[,] CreateRandom2DArray(int width, int height)
+        public static int[,] CreateRandom2DArray(int height = 0, int width = 0)
         {
+            while (height < 1 || width < 1)
+            {
+                try
+                {
+                    Console.WriteLine("Hello dear traveler, thou shall now enter a number, which shall be the number of an array thou will get to see, thank you for your service, ser or lady. For when thou refuse, may god be on your side, for that shall be then end of your reign: ");
+                    height = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Thank thy dear traveler, thou shall now enter a number for the amount of columns for said array. If thou dont, the antique gods of the seven kingdoms shall punish you for your crimes - uwu: ");
+                    width = Convert.ToInt32(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("That is it! May the gods strike you down and may your family be cursed for eternity you buffoon!");
+                    Console.WriteLine();
+                }
+            }
             int[,] arr = new int[height, width];
 
             for (int row = 0; row < arr.GetLength(0); row++)
             {
                 for (int col = 0; col < arr.GetLength(1); col++)
                 {
-                    arr[row, col] = rand.Next(0, 10);
+                    arr[row, col] = rand.Next(0, 101);
                 }
             }
             return arr;
         }
+        public static void PrintTwoDeeArray(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+
+                    if (arr[i, j] > 90)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                    }
+                    else if (arr[i, j] > 80)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                    }
+                    else if (arr[i, j] > 70)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                    }
+                    else if (arr[i, j] > 60)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    }
+                    else if (arr[i, j] > 50)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkBlue;
+                    }
+                    else if (arr[i, j] > 40)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    }
+                    else if (arr[i, j] > 30)
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else if (arr[i, j] > 20)
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                }
+                Console.WriteLine();
+            }
+        }
+        public static int[,] CreatePascalDreieck(int size = 0)          
+        {
+            while (size < 1)
+            {                
+                try
+                {
+                    Console.WriteLine("Enter size for Array: ");
+                    size = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Thats not a number ");
+                }
+            }
+            
+            int[,] arr = new int[size, size];           
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                arr[i, 0] = 1;
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    if (i == 0 || j == 0)
+                    {
+                        arr[0, j] = 1;
+                    }
+                    else
+                    {
+                        int sum = arr[i, j - 1] + arr[i - 1, j];
+                        arr[i, j] = sum;
+                    }
+                }
+            }
+            return arr;
+        }
+        public static void PrintPascalTrinangle(int[,] arr)
+        {
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write("{0, 10} ", arr[i, j]);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        //uwu
+
+        //public static String MyConvert(long i)
+        //{
+        //    if (i < 20)
+        //    {
+        //        return units[i];
+        //    }
+        //    if (i < 100)
+        //    {
+        //        return tens[i / 10] + ((i % 10 > 0) ? " " + MyConvert(i % 10) : "");
+        //    }
+        //    if (i < 1000)
+        //    {
+        //        return units[i / 100] + " Hundred"
+        //                + ((i % 100 > 0) ? " And " + MyConvert(i % 100) : "");
+        //    }
+        //    if (i < 1000000)
+        //    {
+        //        return MyConvert(i / 1000) + " Thousand"
+        //                + ((i % 1000 > 0) ? " And " + MyConvert(i % 1000) : "");
+        //    }         
+        //    if (i < 1000000000)
+        //    {
+        //        return MyConvert(i / 1000000) + " Billion"
+        //                + ((i % 1000000 > 0) ? " And " + MyConvert(i % 1000000) : "");
+        //    }
+        //    return MyConvert(i / 1000000000) + " Trillion "
+        //            + ((i % 1000000000 > 0) ? " And " + MyConvert(i % 1000000000) : "");
+        }
     }
-}
+    

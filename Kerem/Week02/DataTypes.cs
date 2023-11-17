@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Kerem.Week02
+﻿namespace Kerem.Week02
 {
     internal class DataTypes
     {
@@ -173,7 +167,7 @@ namespace Kerem.Week02
             {
                 b = 4 / (num1);
 
-                Console.WriteLine(b);  
+                Console.WriteLine(b);
             }
 
             num1 += 2;
@@ -186,23 +180,7 @@ namespace Kerem.Week02
 
             return num1;
         }
-        public static double SecretRow()
-        {
-            double a = 1.0;
-            {
-                for(int i = 0; i< 10; i++)
-                {
-                     
-                }
-            }
 
-
-
-
-
-
-            return 0;
-        }
 
 
     }

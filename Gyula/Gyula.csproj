@@ -11,8 +11,28 @@
     <None Remove="Week01\" />
     <None Remove="Week02\" />
     <None Remove="Week03\" />
+    <None Remove="Week04\" />
+    <None Remove="Week05\" />
+    <None Remove="Week06\" />
+    <None Remove="Week06\Book\" />
+    <None Remove="Week06\CourseList\" />
+    <None Remove="Week06\Zoo\" />
+    <None Remove="Week07\" />
+    <None Remove="Week07\ZooExtra\" />
+    <None Remove="Week07\Vererbung\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week03\" />
+    <Folder Include="Week05\" />
+    <Folder Include="Week06\" />
+    <Folder Include="Week06\Book\" />
+    <Folder Include="Week06\CourseList\" />
+    <Folder Include="Week06\Zoo\" />
+    <Folder Include="Week07\" />
+    <Folder Include="Week07\ZooExtra\" />
+    <Folder Include="Week07\Vererbung\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ressources\Ressources.csproj" />
   </ItemGroup>
 </Project>

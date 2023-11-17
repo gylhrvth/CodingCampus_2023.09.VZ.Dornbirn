@@ -1,1 +1,3 @@
-﻿Riccardo.Week03.ArraysUebung.Start();
+﻿using Riccardo.Week07.ZooDoppelmayer;
+
+ZooMain.Start();

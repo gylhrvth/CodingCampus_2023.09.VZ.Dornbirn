@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,32 +13,12 @@ namespace Martin.Week03
         public static void StartArrays()
         {
             //CreateArray(10);
-            int[] a = CreateArray(5);
-            int[] b = makeACopy(a);
-
-
-
-            Console.Write("[{0}]", string.Join(",", a));
-            Console.Write("[{0}]", string.Join(",", b));
-
-
-            b[1] = 12331;
-
-
-            Console.Write("[{0}]", string.Join(",", a));
-            Console.WriteLine();
-            Console.Write("[{0}]", string.Join(",", b));
+            //CreateArray(5);
             //CreateArray2(10);
             //RandomNumberArray();
-
-            Console.WriteLine();
-
-            Console.WriteLine("++++++");
-
-
-            PrintArray(CreateArray(23));
-            PrintArray(makeACopy(CreateArray(23)));
-
+            //RandomNumberArrayCount();
+            //RandomNumberArraySumme();
+            Array2d();
         }
 
         //Aufgabe: Number Array
@@ -62,18 +43,6 @@ namespace Martin.Week03
 
         }
 
-        //Print Array
-
-        public static void PrintArray(int[] name)
-        {
-
-
-            for (int i = 0;i < name.Length ;i++)
-            {
-                Console.WriteLine("{0}. = {1}", i + 1, name[i]);
-            }
-        }
-
         public static int[] CreateArray2(int size)
         {
             int[] Numbers = new int[size];
@@ -94,18 +63,10 @@ namespace Martin.Week03
 
         //Aufgabe: Kopie
 
-        public static int[] makeACopy(int[] original)
-        {
-            //Console.WriteLine(original[9]); //nimmt den ersten platz und zeigt welchen wert er hat
 
+        //nummer bei Datei/neue
 
-                int[] aaa = CreateArray(5);
-                int[] bbb = aaa;
-
-
-
-            return bbb;
-        }
+   
 
         //Aufgabe: Random Number Array
 
@@ -115,8 +76,8 @@ namespace Martin.Week03
 
             Random rand = new Random();
 
-      
-
+          
+            /*
             for (int i = 0 ;i < Platz.Length ;i++)
             {
                 int RandomNumber = rand.Next(100);
@@ -136,27 +97,176 @@ namespace Martin.Week03
                 Console.WriteLine(stelle + " = " + Platz[stelle]); // stelle bei foreach ist immer 0
 
             }
-
-
+              
+            */
 
             for (int i = 0; i < Platz.Length; i++)
             {
 
                 int RandomNumber = rand.Next(100);
 
-                Console.Write("[{0}]", string.Join("=", i, RandomNumber));
+                Platz[i] = RandomNumber;
 
-      
+                Console.WriteLine("[{0}]", string.Join(" = ", i, RandomNumber));
 
             }
 
+            Console.WriteLine();
 
-            Console.WriteLine(Platz[2]);
-            Console.WriteLine(Platz[5]);
-            Console.WriteLine(Platz[10]);
+            Console.WriteLine(Platz[1]);
+            Console.WriteLine(Platz[4]);
+            Console.WriteLine(Platz[9]);
 
+            Console.WriteLine("----");
+
+            for (int i = 0; i < Platz.Length;i+= 2)
+            {
+
+                Console.WriteLine(Platz[i]);
+
+            }
+
+            Console.WriteLine("-------------");
+
+            int[] crazynumbers = new int[10];
+
+            foreach(int element in crazynumbers) 
+            {
+                int newNumber = rand.Next(-50,50);
+
+                crazynumbers[element] = newNumber;
+
+                Console.WriteLine(crazynumbers[element]);
+            }
 
         }
 
+
+        public static void RandomNumberArrayCount()
+        {
+
+            Random rand = new Random();
+
+
+            int[] ArraysCount = new int[100];
+
+            foreach (int element in ArraysCount)
+            {
+                int randomnumber = rand.Next(1, 100);
+
+                ArraysCount[element] = randomnumber;
+
+                if (randomnumber >= 30)
+                {
+                    Console.WriteLine("Ist über dreisig: " + ArraysCount[element]);
+                }
+            }
+        }
+
+        public static void RandomNumberArraySumme()
+        {
+
+            Random rand = new Random();
+
+
+            int[] ArraysCount = new int[100];
+
+            int result = 0;
+
+            foreach (int element in ArraysCount)
+            {
+                int randomnumber = rand.Next(1, 100);
+
+                result += randomnumber;
+
+                ArraysCount[element] = randomnumber;
+
+            }
+
+            Console.WriteLine("Result is: " + result);
+        }
+
+        public static void Array2d()
+        {
+            Random rand = new Random();
+
+            //create array 2d
+            int[][] arr2d = new int[4][];
+
+
+            for (int row = 0; row < arr2d.Length; row++)
+            {
+                //Random: arr2D[row] = new int[r.Next(0, 10)];
+                arr2d[row] = new int[4];
+            }
+
+            bool GameOver = false;
+
+            Console.WriteLine("Willkommen zum Feld errate Spiel!");
+            Console.WriteLine("Wähle eine 0 und siehe was sich dahinter versteckt, du darfst keine 7 finden! ;(");
+
+            Console.WriteLine();
+
+            for (int row = 0; row < arr2d.Length; row++)
+            {
+                for (int col = 0; col < arr2d[row].Length; col++)
+                {
+                    Console.Write(arr2d[row][col] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            while (GameOver == false)
+            {
+
+                Console.WriteLine();
+
+                Console.WriteLine("Gib die Spalte ein 0 bis 3");
+                int guessrow = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Gib die Stelle der Spalte ein 0 bis 3");
+                int guessCol = Convert.ToInt32(Console.ReadLine());
+
+                arr2d[guessrow][guessCol] = 1;
+
+                int computerguess = arr2d[rand.Next(4)][rand.Next(4)];
+
+                if(arr2d[guessrow][guessCol] == computerguess)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+
+                    arr2d[guessrow][guessCol] = 7;
+
+                    Console.WriteLine("Verloren..");
+
+                    Console.ResetColor();
+
+                    Console.WriteLine();
+
+                    for (int row = 0; row < arr2d.Length; row++)
+                    {
+                        for (int col = 0; col < arr2d[row].Length; col++)
+                        {
+                            Console.Write(arr2d[row][col] + " ");
+                        }
+                        Console.WriteLine();
+                    }
+
+                    break;
+                }
+
+
+                //Print
+                for (int row = 0; row < arr2d.Length; row++)
+                {
+                    for (int col = 0; col < arr2d[row].Length; col++)
+                    {
+                        Console.Write(arr2d[row][col] + " ");
+                    }
+                    Console.WriteLine();
+                }
+       
+            }
+        }
     }
 }
