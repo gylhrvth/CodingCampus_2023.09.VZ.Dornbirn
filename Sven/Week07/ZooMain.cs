@@ -38,12 +38,19 @@
             zoo.AddEnclosure(swamp);
             swamp.AddAnimals(explofrog1);
 
-            
+            zoo.AddKeeper(k1);
+            zoo.AddKeeper(k2);
+
+            moon.AddKeeper(k1);
+            aqua.AddKeeper(k1);
+            tropical.AddKeeper(k2);
+            swamp.AddKeeper(k2);
+
             zoo.PrintZoo();
             zoo.PrintFoodStatistic();
 
             k1.PrintFoodSimulation();
-            k2.PrintFoodSimulation();   
+            k2.PrintFoodSimulation();
 
         }
 
