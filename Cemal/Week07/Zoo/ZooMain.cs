@@ -38,26 +38,34 @@ namespace Cemal.Week07.Zoo
             Enclosure enc1 = new Enclosure("SBZ");
             Enclosure enc2 = new Enclosure("Tennishalle");
             Enclosure enc3 = new Enclosure("Terrarium");
+            Enclosure enc4 = new Enclosure("Digital Campus");
 
             zoo.addEnclosure(enc1);
             zoo.addEnclosure(enc2);
             zoo.addEnclosure(enc3);
+            zoo.addEnclosure(enc4);
 
-            Food meat = new Food("Fleisch", "kg", 15);
-            Food fish = new Food("Fisch", "kg", 10);
+            Food meat = new Food("Fleisch", "kg", 14);
+            Food dogfood = new Food("Hundefutter", "kg", 4);
+            Food banane = new Food("Banane", "kg", 6);
+            
 
 
-            Animal animal1 = new Animal("Affe","Ahmet", meat, 4);
-            Animal animal2 = new Animal("Affe", "Yasin", meat, 4);
-            Animal animal3 = new Animal("Gorilla", "Cemal", fish, 2);
-            Animal animal4 = new Animal("Gorilla", "Hidoyet", fish, 2);
-            Animal animal5 = new Animal("Hund", "Enes", meat, 2);
-            Animal animal6 = new Animal("Hund", "Yunus", meat, 2);
+            Animal animal1 = new Animal("Affe","Ahmet", banane, 3);
+            Animal animal2 = new Animal("Affe", "Yasin", banane, 4);
+            Animal animal3 = new Animal("Krokodil", "Cemal", meat, 6);
+            Animal animal4 = new Animal("Krokodil", "Hidoyet", meat, 7);
+            Animal animal5 = new Animal("Hund", "Enes", dogfood, 1);
+            Animal animal6 = new Animal("Hund", "Yunus", dogfood, 2);
+            Animal animal7 = new Animal("Löwe", "Arda", meat, 5);
+            Animal animal8 = new Animal("Löwe", "Abdu", meat, 6);
+
 
 
             Worker worker1 = new Worker("Kerem");
             Worker worker2 = new Worker("Eren");
             Worker worker3 = new Worker("Ali");
+            Worker worker4 = new Worker("Fabienne");
 
             enc1.addAnimals(animal1); enc1.addAnimals(animal2);
             enc1.addWorker(worker1);
@@ -68,8 +76,12 @@ namespace Cemal.Week07.Zoo
             enc3.addAnimals(animal5); enc3.addAnimals(animal6);
             enc3.addWorker(worker3);
 
-            zoo.addFood(fish); 
+            enc4.addAnimals(animal7); enc4.addAnimals(animal8);
+            enc4.addWorker(worker4);
+
+            zoo.addFood(dogfood); 
             zoo.addFood(meat);
+            zoo.addFood(banane);
 
             zoo.PrintStructure();
             Console.WriteLine();
