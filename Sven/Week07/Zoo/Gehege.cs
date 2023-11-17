@@ -1,4 +1,4 @@
-﻿namespace Sven.Week07
+﻿namespace Sven.Week07.Zoo.Zoo
 
 {
     internal class Enclosure
@@ -15,19 +15,16 @@
         public string Name
         {
             get => _Name;
-            set => _Name = value;
         }
 
         public List<Animal> Animals
         {
             get => _AnimalsList;
-
         }
 
         public string Description
         {
             get => _Description;
-            set => _Description = value;
         }
 
         public Enclosure(string description, string climate, string name)
@@ -66,22 +63,15 @@
             }
 
         }
+
+
+
         public void PrintEnclosure()
-        {
-            Console.WriteLine($"│\t\t├── Enclosure: {_Name}");
-            foreach (var animal in _AnimalsList)
-            {
-                animal.PrintAnimal();
-            }
-        }
-
-
-        public void PrintZoo()
         {
             Console.WriteLine($"│   ├──  Enclosure: {_Description}, {_Climate}, {_Name}");
             foreach (Animal a in _AnimalsList)
             {
-                a.PrintZoo();
+                a.PrintAnimal();
             }
         }
 

@@ -1,4 +1,4 @@
-﻿namespace Sven.Week07
+﻿namespace Sven.Week07.Zoo.Zoo
 {
     internal class ZooMain
     {
@@ -23,8 +23,8 @@
             Animal blubird1 = new Animal("Blu", 4, "Ice Bird", "Female", grain, 2);
             Animal explofrog1 = new Animal("Frogston", 7, "Bomb Frog", "Male", worms, 5);
 
-            Keeper k1 = new Keeper("Goku", new List<Enclosure> {moon, aqua});
-            Keeper k2 = new Keeper("Gojo", new List<Enclosure> {tropical, swamp });
+            Keeper k1 = new Keeper("Goku", new List<Enclosure> { moon, aqua });
+            Keeper k2 = new Keeper("Gojo", new List<Enclosure> { tropical, swamp });
 
             zoo.AddEnclosure(moon);
             moon.AddAnimals(dragon1);
@@ -38,6 +38,7 @@
             zoo.AddEnclosure(swamp);
             swamp.AddAnimals(explofrog1);
 
+
             zoo.AddKeeper(k1);
             zoo.AddKeeper(k2);
 
@@ -47,11 +48,11 @@
             swamp.AddKeeper(k2);
 
             zoo.PrintZoo();
-            zoo.PrintFoodStatistic();
 
             k1.PrintFoodSimulation();
             k2.PrintFoodSimulation();
 
+            zoo.PrintFoodStatistic();
         }
 
     }
