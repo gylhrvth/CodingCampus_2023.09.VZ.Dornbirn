@@ -28,29 +28,22 @@ namespace David.Week06.ZOO
 			Food fruit = new("Fruit", "kg", 25f);
 
 			//animals Forest
-			Animals monkey1 = new("Jonny", 14, "Gorilla", "Male", 2, fruit);
-			Animals monkey2 = new("Dorey", 12, "Gorilla", "Female", 2, fruit);
+			Animals monkey1 = new("Jonny", 14, "Gorilla", "Male", 2, fruit, 100, 50);
+			Animals monkey2 = new("Dorey", 12, "Gorilla", "Female", 2, fruit, 100, 50);
 
 			//animals AlienPlanet
-			Animals alien1 = new("Xylrup", 468, "Gray Alien", "Female", 4, veggies);
-			Animals alien2 = new("Nalxiniqup", 4791, "Insekt Alien", "Male", 6, meat);
+			Animals alien1 = new("Xylrup", 468, "Gray Alien", "Female", 4, veggies, 500, 60);
+			Animals alien2 = new("Nalxiniqup", 4791, "Insekt Alien", "Male", 6, meat, 500, 60);
 
 			//animals UnderWater
-			Animals mairmaid1 = new("Ariel", 29, "Pink Mairmaid", "Female", 7, fish);
-			Animals mairmaid2 = new("Ken", 33, "Blue Mairmaid", "Male", 8, fish);
+			Animals mairmaid1 = new("Ariel", 29, "Pink Mairmaid", "Female", 7, fish, 400, 40);
+			Animals mairmaid2 = new("Ken", 33, "Blue Mairmaid", "Male", 8, fish, 400, 40);
 
 			//animals in the sky
-			Animals giantBird1 = new("Susan", 16, "Eagle", "Female", 4, fruit);
-			Animals giantBird2 = new("Bob", 14, "Eaele", "Male", 6, veggies);
+			Animals giantBird1 = new("Susan", 16, "Eagle", "Female", 4, fruit, 250, 30);
+			Animals giantBird2 = new("Bob", 14, "Eaele", "Male", 6, veggies, 250, 30);
 
-			monkey1.FoodList.Add(fruit);
-			monkey2.FoodList.Add(fruit);
-			alien1.FoodList.Add(veggies);
-			alien2.FoodList.Add(meat);
-			mairmaid1.FoodList.Add(fish);
-			mairmaid2.FoodList.Add(fish);
-			giantBird1.FoodList.Add(fruit);
-			giantBird2.FoodList.Add(veggies);
+			
 
 			forest.AnimalsList.Add(monkey1);
 			forest.AnimalsList.Add(monkey2);
