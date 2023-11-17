@@ -14,34 +14,27 @@ namespace Dimitri.Week06._05Zoo
         private string _Name;
         private List<Tier> _Tiere;
         private bool _Gefuettert = false;
-
         public Gehege(string name)
         {
             _Name = name;
             _Tiere = new();
         }
-
         public List<Tier> Tiere
         {
             get => _Tiere;
         }
-
         public string Name
         {
             get => _Name;
         }
-
         public bool Gefuettert
         {
             get => _Gefuettert;
         }
-
-
         public override string ToString()
         {
             return string.Format("{0}", _Name);
         }
-
         public void PrintGehege()
         {
             Console.WriteLine("│       ├── Gehege: {0}", _Name);
@@ -57,61 +50,48 @@ namespace Dimitri.Week06._05Zoo
                 Console.WriteLine("│           ├── Gehege ist leer!");
             }
         }
-
         public static Gehege AddTier(Gehege gehege, Tier tier)
         {
             gehege.Tiere.Add(tier);
             return gehege;
         }
-
-
         public static List<Tier> GetTiere(Gehege gehege)
         {
             return gehege.Tiere;
         }
-
-        //public static string GetName(Gehege gehege)
-        //{
-        //    return gehege.Name;
-        //}
-
-
-
         public bool GehegeGefuetter()
         {
             return _Gefuettert;
         }
-
         public void SetGehegeGefuettert(bool gefuettert)
         {
             if (gefuettert)
             {
                 _Gefuettert = true;
-            } else if (!gefuettert)
+            }
+            else if (!gefuettert)
             {
                 _Gefuettert = false;
             }
         }
-
         public Tier? getRandomAnimalOtherThan(Tier tier)
         {
-            if(tier == null)
+            if (tier == null)
             {
                 return null;
             }
             int j = rnd.Next(_Tiere.Count);
-            while(_Tiere[j] == tier)
+            while (_Tiere[j] == tier)
             {
-               j = rnd.Next(_Tiere.Count);
+                j = rnd.Next(_Tiere.Count);
             }
             return _Tiere[j];
         }
-
         public void Fight()
         {
             List<Tier> animalsToRemove = new List<Tier>();
 
-            if(_Tiere.Count <= 1)
+            if (_Tiere.Count <= 1)
             {
                 return;
             }
@@ -121,10 +101,12 @@ namespace Dimitri.Week06._05Zoo
                 if (anderesTier != null && rnd.Next(0, 10) <= 3 && Tiere.Count >= 2 && !anderesTier.Tot && !tier.Tot)
                 {
                     Console.WriteLine("{0} hat {1} hp", anderesTier.Name, anderesTier.Gesundheit);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("{0} beißt {1} und {1} nimmt {2} Schaden.", tier, anderesTier.Name, tier.Biss);
                     anderesTier.Bite(tier.Biss);
+                    Console.ResetColor();
                     Console.WriteLine("{0} hat {1} hp", anderesTier.Name, anderesTier.Gesundheit);
-                    if(anderesTier.Tot)
+                    if (anderesTier.Tot)
                     {
                         animalsToRemove.Add(anderesTier);
                     }
@@ -132,7 +114,7 @@ namespace Dimitri.Week06._05Zoo
                 }
             }
             Console.ForegroundColor = ConsoleColor.Red;
-            foreach(Tier tier in animalsToRemove)
+            foreach (Tier tier in animalsToRemove)
             {
                 Console.WriteLine("{0} ist tot und wird beerdigt", tier.Name);
                 Console.WriteLine();
@@ -140,8 +122,17 @@ namespace Dimitri.Week06._05Zoo
             }
             Console.ResetColor();
         }
-
-
-
+        public Tier GetLowestHealth()
+        {
+            Tier lowestTier = null;
+            foreach (Tier tier in Tiere)
+            {
+                if (lowestTier == null || (lowestTier.GetHealth()*100 / lowestTier.GetMaxHealth()*100) > (tier.GetHealth()*100 / tier.GetMaxHealth()*100))
+                {
+                    lowestTier = tier;
+                }
+            }
+            return lowestTier;
+        }
     }
 }

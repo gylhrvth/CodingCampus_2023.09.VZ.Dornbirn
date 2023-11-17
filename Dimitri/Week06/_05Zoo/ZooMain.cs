@@ -41,10 +41,18 @@ namespace Dimitri.Week06._05Zoo
             Gehege.AddTier(katzenGehege, carlos);
             Tier mimi = new("Mimi", "Mitteleuropäische Kurzhaar", Hühnchen, 0.75, 100, 100, 20);
             Gehege.AddTier(katzenGehege, mimi);
-            Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter", Zuckerwasser, 0.001);
+            Tier sauerFlatter = new("Sauerflatter", "Zitronenfalter", Zuckerwasser, 0.001, 10, 10, 1);
             Gehege.AddTier(schmetterlingsGehege, sauerFlatter);
-            Tier rotKehle = new("Mitrotemhals", "Rotkehlchen", Korn, 0.01);
+            Tier Monarch = new("King", "Monarchfalter", Zuckerwasser, 0.005, 20, 20, 3);
+            Gehege.AddTier(schmetterlingsGehege, Monarch);
+            Tier Pfauenauge = new("Auge", "Tagpfauenauge", Zuckerwasser, 0.003, 15, 15, 2);
+            Gehege.AddTier(schmetterlingsGehege, Pfauenauge);
+            Tier rotKehle = new("Mitrotemhals", "Rotkehlchen", Korn, 0.01, 40, 40, 5);
             Gehege.AddTier(vogelGehege, rotKehle);
+            Tier Rabe = new("Schwarzefeder", "Rabe", Korn, 0.5, 80, 80, 15);
+            Gehege.AddTier(vogelGehege, Rabe);
+            Tier Steinadler = new("Gipfelstürmer", "Steinadler", Hühnchen, 1.5, 250, 250, 40);
+            Gehege.AddTier(vogelGehege, Steinadler);
             Gehege terrarium = new("Terrarium");
             Zoo.AddGehege(myZoo, terrarium);
 
@@ -71,6 +79,10 @@ namespace Dimitri.Week06._05Zoo
 
             Zoo.AddWarter(myZoo, Hans);
 
+            TierArzt Kathi = new("Kathi");
+
+            myZoo.AddTierArzt(Kathi);
+
             //output
 
             myZoo.PrintZoo();
@@ -92,9 +104,9 @@ namespace Dimitri.Week06._05Zoo
 
             //myZoo.Simulation1();
 
-            myZoo.Simulation(10);
+            myZoo.Simulation(5);
 
-
+            //myZoo.Simulation2();
         }
 
 

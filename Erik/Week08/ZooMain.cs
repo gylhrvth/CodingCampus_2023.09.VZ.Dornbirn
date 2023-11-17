@@ -18,9 +18,11 @@ namespace Erik.Week08
             Food Grass = new Food("Grass", 20000, 3);
             doppelmayrZoo.AddFoodList(Grass);
 
+
             Keeper keeper1 = new Keeper("Johannes");
             Keeper keeper2 = new Keeper("Peter");
             Keeper keeper3 = new Keeper("Jasmin");
+
 
             Animal martin = new Animal("Martin", "Gorilla", "Male", Banana, 100,5);
             Animal thomas = new Animal("Thomas", "Loxodonta", "Male", Banana,100,5);
@@ -44,16 +46,19 @@ namespace Erik.Week08
             monkeyEnclosure.AddAnimals(michael);
             monkeyEnclosure.AddKeeper(keeper1);
             monkeyEnclosure.AddKeeper(keeper2);
-
+            keeper1.addEclosure(monkeyEnclosure);
+            
             //Elephant Enclosure
             elephantEnclosure.AddAnimals(thomas);
             elephantEnclosure.AddKeeper(keeper2);
+            keeper2.addEclosure(elephantEnclosure);
 
 
             //Tiger Enclosure
             tigerEnclosure.AddAnimals(susanne);
             tigerEnclosure.AddAnimals(luis);
             tigerEnclosure.AddKeeper(keeper3);
+            keeper3.addEclosure(tigerEnclosure);
 
             //Zebra Enclosure
             zebraEnclosure.AddAnimals(peter);
@@ -61,11 +66,13 @@ namespace Erik.Week08
             zebraEnclosure.AddAnimals(steffen);
             zebraEnclosure.AddAnimals(sara);
             zebraEnclosure.AddKeeper(keeper1);
+            keeper1.addEclosure(zebraEnclosure);
 
 
             //Lion Enclosure
 
             //Spider Enclosure
+
 
             doppelmayrZoo.add(zebraEnclosure);
             doppelmayrZoo.add(monkeyEnclosure);
@@ -73,7 +80,12 @@ namespace Erik.Week08
             doppelmayrZoo.add(elephantEnclosure);
             doppelmayrZoo.add(tigerEnclosure);
             doppelmayrZoo.add(spiderEnclosure);
-            
+
+            doppelmayrZoo.add(keeper1);
+            doppelmayrZoo.add(keeper2);
+            doppelmayrZoo.add(keeper3);
+
+
 
             doppelmayrZoo.PrintZoo("├──");
             Console.WriteLine();
@@ -81,10 +93,9 @@ namespace Erik.Week08
             
             PressToContinue.Start("Press ENTER to start simulation!");
             Console.Clear();
-            doppelmayrZoo.LoopToFeedAnimal();
             doppelmayrZoo.PrintZoo("├──");
             doppelmayrZoo.PrintFoodList();
-
+            doppelmayrZoo.simulateDay(100);
 
 
         }

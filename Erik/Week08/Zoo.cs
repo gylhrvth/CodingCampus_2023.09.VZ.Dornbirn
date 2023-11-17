@@ -13,7 +13,9 @@ namespace Erik.Week08
         private List<Enclosure> _Enclosure;
         private List<Food> _FoodList;
         private List<Keeper> _KeeperList;
-        private int _Days;
+
+
+        public List<Keeper> keeperList { get => _KeeperList; }
 
         public Zoo(string name, int founded, int days)
         {
@@ -22,9 +24,8 @@ namespace Erik.Week08
             _Enclosure = new List<Enclosure>();
             _FoodList = new List<Food>();
             _KeeperList = new List<Keeper>();
-            _Days = days;
         }
-
+        
         public void add(Enclosure enclosure)
         {
             _Enclosure.Add(enclosure);
@@ -36,8 +37,6 @@ namespace Erik.Week08
         }
 
         public void PrintZoo(string prefix)
-
-
         {
             Console.WriteLine("{0} Zoo: {1} founded in {2}", prefix, _Name, _Founded);
 
@@ -46,38 +45,44 @@ namespace Erik.Week08
                 enclosure.PrintEnclosure("|" + "   " + prefix);
             }
         }
-
         public void simulateDay(int day)
-        {            
-            for (int i = 0; i < _Days; i++)
+        {
+            for (int i = 0; i < day; i++)
             {
-                switch (day % 7)
+                switch (i % 7)
                 {
                     case 1:
-                        Console.WriteLine("Monday: ");
+                        Console.WriteLine("Monday:\n ");                        
                         break;
                     case 2:
-                        Console.WriteLine("Tuesday: ");
+                        Console.WriteLine("Tuesday:\n ");
                         break;
                     case 3:
-                        Console.WriteLine("Wednesday: ");
+                        Console.WriteLine("Wednesday:\n ");
                         break;
                     case 4:
-                        Console.WriteLine("Thursday: ");
+                        Console.WriteLine("Thursday:\n ");
                         break;
                     case 5:
-                        Console.WriteLine("Friday: ");
+                        Console.WriteLine("Friday:\n ");
                         break;
                     case 6:
-                        Console.WriteLine("Saturday: ");
+                        Console.WriteLine("Saturday:\n ");
                         break;
                     case 0:
-                        Console.WriteLine("Sunday: ");
+                        Console.WriteLine("Sunday:\n ");
                         break;
                 }
+                
+                foreach (Keeper keeper in _KeeperList)
+                {
+                    keeper.FeedEnclosures();
+                }
+                Console.WriteLine();
 
             }
         }
+
         public void AddFoodList(Food food)
         {
             _FoodList.Add(food);
@@ -103,12 +108,6 @@ namespace Erik.Week08
             Console.WriteLine($"\nDaily consumption: {totalWeight}kg / Daily food costs: {totalCost}$");
         }
 
-        public void LoopToFeedAnimal()
-        {
-            foreach (Enclosure enclosure in _Enclosure)
-            {
-                enclosure.FeedAnimals();
-            }
-        }
+
     }
 }

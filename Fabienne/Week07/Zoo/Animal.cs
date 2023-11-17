@@ -31,7 +31,7 @@ namespace Fabienne.Week07.Zoo
         public void PrintAnimals()
         {
 
-            Console.WriteLine("│          ├── {0}, {1}, {2}, {3}, {4}", _Name, _Gender, _Species, _Food, _FoodAmount) ;
+            Console.WriteLine("│              ├── {0}, {1}, {2}, {3}, {4}", _Name, _Gender, _Species, _Food, _FoodAmount) ;
                   
         }
 
