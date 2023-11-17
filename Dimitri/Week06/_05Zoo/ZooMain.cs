@@ -71,6 +71,10 @@ namespace Dimitri.Week06._05Zoo
 
             Zoo.AddWarter(myZoo, Hans);
 
+            TierArzt Kathi = new("Kathi");
+
+            myZoo.AddTierArzt(Kathi);
+
             //output
 
             myZoo.PrintZoo();
@@ -92,9 +96,9 @@ namespace Dimitri.Week06._05Zoo
 
             //myZoo.Simulation1();
 
-            myZoo.Simulation(10);
+            myZoo.Simulation(5);
 
-
+            //myZoo.Simulation2();
         }
 
 
