@@ -279,7 +279,7 @@ namespace Dimitri.Week06._05Zoo
             for (int i = 0; i < days; i++)
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Simulation 0.2 von {0}, Tag {1}:", _Zoo, i + 1);
+                Console.WriteLine("Simulation 0.3 von {0}, Tag {1}:", _Zoo, i + 1);
                 Console.ResetColor();
                 Console.WriteLine();
                 Simulation0();
@@ -300,10 +300,6 @@ namespace Dimitri.Week06._05Zoo
 
         public void Simulation2()
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine("Simulation 0.3");
-            Console.ResetColor();
-            Console.WriteLine();
             Tier lowestAnimal = null;
             foreach(Gehege gehege in _Gehege)
             {

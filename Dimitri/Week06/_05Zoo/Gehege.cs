@@ -101,8 +101,10 @@ namespace Dimitri.Week06._05Zoo
                 if (anderesTier != null && rnd.Next(0, 10) <= 3 && Tiere.Count >= 2 && !anderesTier.Tot && !tier.Tot)
                 {
                     Console.WriteLine("{0} hat {1} hp", anderesTier.Name, anderesTier.Gesundheit);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.WriteLine("{0} beißt {1} und {1} nimmt {2} Schaden.", tier, anderesTier.Name, tier.Biss);
                     anderesTier.Bite(tier.Biss);
+                    Console.ResetColor();
                     Console.WriteLine("{0} hat {1} hp", anderesTier.Name, anderesTier.Gesundheit);
                     if (anderesTier.Tot)
                     {

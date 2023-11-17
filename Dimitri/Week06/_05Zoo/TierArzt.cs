@@ -40,10 +40,14 @@ namespace Dimitri.Week06._05Zoo
 
             if (HealthDiff > 0)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("{0} heilt {1} für {2}. Die neuen Lebenspunkte sind {3}.", _Name, lowestAnimal, HealthDiff, lowestAnimal.GetHealth());
+                Console.ResetColor();
             } else
             {
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("{0} hatte nichts zu tun und geht nach Hause.", _Name);
+                Console.ResetColor();
             }
         }
         
