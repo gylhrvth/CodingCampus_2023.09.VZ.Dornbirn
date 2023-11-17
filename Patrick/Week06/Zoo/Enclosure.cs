@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Patrick.Week06.Zoo;
+//using Patrick.Week06.Zoo;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Patrick.Week06.Zoo
@@ -62,11 +62,13 @@ namespace Patrick.Week06.Zoo
         }
 
         public void GetAnimalRandom(string keeperName)
+
         {
             Random random = new Random();
             int randomAnimal = random.Next(_AnimalsList.Count);
 
-            Console.WriteLine($"Der Pfleger {keeperName} beobachtet das Tier {_AnimalsList[randomAnimal]}");
+            Console.WriteLine($"Der Pfleger {keeperName} beobachtet das Tie" +
+                $"r {_AnimalsList[randomAnimal]} zufällig.");
         }
 
         public void SimulateDayStart()
@@ -78,11 +80,9 @@ namespace Patrick.Week06.Zoo
         {
             if (_WasKeeperInEnclosure == false)
             {
-
                 foreach (Animal animal in _AnimalsList)
                 {
                     Console.WriteLine($"{keeperName} füttert das Tier {animal}, im Gehege {Name}, mit dem Futter {animal.Food} ");
-
                 }
                 _WasKeeperInEnclosure = true;
                 GetAnimalRandom(keeperName);
@@ -98,7 +98,7 @@ namespace Patrick.Week06.Zoo
         public void LoveliestAnimalForKeeper(string keeperName)
         {
             Animal loveliestAnimal = _AnimalsList[1];
-            Console.WriteLine($"{keeperName} bewundert eine Weile sein Lieblingstier {loveliestAnimal}");
+            Console.WriteLine($"{keeperName} bewundert eine Weile sein Lieblingstier {loveliestAnimal}.");
         }
 
         public void AnimalBitesAnimal()
@@ -113,9 +113,6 @@ namespace Patrick.Week06.Zoo
                     aggressor.DoBite(victom);                    
                 }
             }
-
-
-
         }
 
 

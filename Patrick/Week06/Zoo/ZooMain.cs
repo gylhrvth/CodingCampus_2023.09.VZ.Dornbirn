@@ -33,7 +33,6 @@ namespace Patrick.Week06.Zoo
             Food karrots = new("Karotten", "kg", 18f);
             Food fish = new("Fisch", "kg", 115f);
 
-
             //animals enclosureAlps
             Animal animalCow = new("Kuh", "Hilda", "10 Jahre alt", 10f, grain, 100, 30);
             Animal animalPig = new("Schwein", "Sabine", "3 Jahre alt", 3f, karrots, 100, 20);
@@ -66,7 +65,7 @@ namespace Patrick.Week06.Zoo
 
             ZooKeeper zooKeeper1 = new("Andreas", new List<Enclosure> { enclosureIceLand, enclosureForest });
             ZooKeeper zooKeeper2 = new("Daniela", new List<Enclosure> { enclosureAlps, enclosureIceLand });
-            ZooKeeper zooKeeper3 = new("Robert Marc", new List<Enclosure> { enclosureFishTank });
+            ZooKeeper zooKeeper3 = new("Robert Marc", new List<Enclosure> { enclosureFishTank, enclosureIceLand });
 
             zoo.ZooKeeperList.Add(zooKeeper1);
             zoo.ZooKeeperList.Add(zooKeeper2);
@@ -86,10 +85,12 @@ namespace Patrick.Week06.Zoo
             Console.WriteLine("=======================================================");
             Console.ResetColor();
 
-            for (int i = 0; i < 3; i++)
+            for(int i = 0; i < 3; i++)
             {
                 zoo.SimulateDay(i + 1);
             }
+            
+
 
 
 
