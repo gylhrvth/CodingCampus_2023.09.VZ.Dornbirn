@@ -89,22 +89,37 @@ namespace Fabian.Week06._04Zoo
 
                 Animal min = null;
 
-                foreach (var animal in availableAnimals)
-                {
-                    if (min == null || (animal.Health / animal.MaxHealth) < (min.Health / min.MaxHealth))
-                    {
+                foreach (var animal in availableAnimals)             
+                    if (min == null || (animal.Health / animal.MaxHealth) < (min.Health / min.MaxHealth))                 
                         min = animal;
-                    }
-                }
+
 
                 if (min != null)
-                {
                     doctor.Heal(min);
-                    availableAnimals.Remove(min); 
-                }
             }
         }
+        public void Simulation()
+        {
+            for (int i = 1; i <= 3; i++)
+            {
+                Console.WriteLine("DAY " + i);
+                PrintStructure();
+                Console.WriteLine();
+                PrintZooStatistic();
+                Console.WriteLine("\nSimulation: ");
+                foreach (var zookeeper in _ZooKeepers)
+                {
+                    zookeeper.DailyTask();
+                }
+                Console.WriteLine();
+                FightStart();
+                Console.WriteLine();
+                HealStart();
 
+                foreach (var enclosure in _Enclosures)
+                    enclosure.IsFed = false;
+            }
+        }
         public override string ToString()
         {
             return "Zoo: " + _Name + ", founded: " + _FoundingYear;

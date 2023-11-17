@@ -32,6 +32,7 @@ namespace Mehmet.ZOO
         }
 
 
+
         public void SimulateDay()
         {
 

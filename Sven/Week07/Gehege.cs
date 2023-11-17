@@ -8,6 +8,7 @@
         private string _Description;
         private string _Climate;
         private List<Animal> _AnimalsList;
+        private List<Keeper> _KeeperList;
 
 
 
@@ -35,6 +36,7 @@
             _Climate = climate;
             _Name = name;
             _AnimalsList = new List<Animal>();
+            _KeeperList = new List<Keeper>();
 
         }
 
@@ -47,6 +49,15 @@
                 _AnimalsList.Add(animals);
             }
         }
+
+        public void AddKeeper(Keeper keeper)
+        {
+            if (!_KeeperList.Contains(keeper))
+            {
+                _KeeperList.Add(keeper);
+            }
+
+        }
         public void GetEnclosureStatistic(Dictionary<Food, double> dic)
         {
             foreach (var animal in _AnimalsList)
@@ -54,6 +65,14 @@
                 animal.GetAnimalStatistic(dic);
             }
 
+        }
+        public void PrintEnclosure()
+        {
+            Console.WriteLine($"│\t\t├── Enclosure: {_Name}");
+            foreach (var animal in _AnimalsList)
+            {
+                animal.PrintAnimal();
+            }
         }
 
 

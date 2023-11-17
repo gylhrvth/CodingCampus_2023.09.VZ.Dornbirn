@@ -46,11 +46,12 @@ namespace Sven.Week07
 
         public void PrintFood(int foodCount)
         {
-            Console.WriteLine($"│\t\t\t\t├── {_Name} {foodCount} {_Unit}");
+            Console.WriteLine($"{_Name} {foodCount} {_Unit}");
         }
+
         public override string ToString()
         {
-            return "Food: " + _Name + ", Unit: " + _Unit + ", Price: " + _PricePerUnit; ;
+            return "│   ├──  Food: " + _Name + ", Unit: " + _Unit + ", Price: " + _PricePerUnit; ;
         }
     }
 
