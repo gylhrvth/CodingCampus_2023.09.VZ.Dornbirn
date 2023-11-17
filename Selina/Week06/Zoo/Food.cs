@@ -5,19 +5,19 @@
         private string _NameOfFood;
         private string _Unit;
         private double _Price;
-        public Dictionary<int, int> _FoodPrice;
+
+        public string Name { get => _NameOfFood; }
+        public string Unit { get => _Unit; }
+        public double Price { get => _Price; }
 
         public Food(string name, string unit, double price)
         {
             _NameOfFood = name;
             _Unit = unit;
             _Price = price;
-            _FoodPrice = new Dictionary<int, int>();
         }
-        public void Dictionary(int number1, int number2)
-        {
-            _FoodPrice.Add(number1, number2);
-        }
+
+        //wird zu einem String gemacht
         public override string ToString()
         {
             return $"{_NameOfFood}";

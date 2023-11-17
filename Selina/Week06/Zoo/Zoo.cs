@@ -1,4 +1,6 @@
-﻿namespace Selina.Week06.Zoo
+﻿using System.Runtime.CompilerServices;
+
+namespace Selina.Week06.Zoo
 {
     public class Zoo
     {
@@ -7,18 +9,18 @@
         private int _FoundYear;
         private int _Capacity;
         private List<Gehege> _GehegeList;
-        public List<Animals> _AnimalsList { get; set; }   
-
+        private List <Veterinarian> _VeterinarianList;
         public Zoo(string name, string locality, int foundYear, int capacity)
         {
             this._Name = name;
             this._Locality = locality;
             this._FoundYear = foundYear;
             this._Capacity = capacity;
-            this._GehegeList = new List<Gehege>();
-            this._AnimalsList = new List<Animals>();    
+            this._GehegeList = new List<Gehege>();  
+            this._VeterinarianList = new List<Veterinarian>();
         }
 
+        // Gehege und Tierarzt wird zu einer Liste in der Klasse Zoo hinzugefügt
         public void AddGehege(Gehege gehege)
         {
             if (!_GehegeList.Contains(gehege))
@@ -26,20 +28,40 @@
                 _GehegeList.Add(gehege);
             }
         }
-        public double CalculateFoodPrice()
+        public void AddVeterinarian(Veterinarian veterinarian)
         {
-            double totalPrice = 0;
-
-            foreach (var animal in _AnimalsList)
+            if (!_VeterinarianList.Contains(veterinarian))
             {
-                foreach (var foodAmount in animal._FoodAmountOfAnimal)
+                _VeterinarianList.Add(veterinarian);
+            }
+        }
+
+        public void FindAnimal(Animal animal)
+        {
+            foreach(Veterinarian vet in _VeterinarianList)
+            {
+                foreach (Gehege gehe in _GehegeList)
                 {
-                    totalPrice += foodAmount.Key * foodAmount.Value;
+                    gehe.VetHelpAnimal(animal);
+                    Console.WriteLine($"Tierarzt {vet} behandelt {animal}");
                 }
             }
-
-            return totalPrice;
         }
+
+        // Food Price wird berechnet
+        public Dictionary<Food, int> CalculateFoodPrice()
+        {
+            Dictionary<Food, int> report = new Dictionary<Food, int>();
+
+            foreach (Gehege gehege in _GehegeList)
+            {
+                gehege.CalculateFoodRequest(report);
+            }
+
+            return report;
+        }
+
+        // Ausgabe für User
         public void PrintZoo()
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
