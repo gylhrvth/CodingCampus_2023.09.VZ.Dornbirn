@@ -11,6 +11,6 @@ using DarioLuis.Week03;
 using DarioLuis.Week04;
 using DarioLuis.Week05;
 using DarioLuis.Week06;
-using DarioLuis.Zoo;
+using DarioLuis.Zoo_Dario;
 
-VierGewinntSlebst.Start();
+Zoo_Main.Start();

@@ -1,7 +1,10 @@
-﻿using Gheorghe.Week06;
-using Gheorghe.Week06.Personen;
+﻿using Gheorghe.Week07;
+using Gheorghe.Week07.Zoo;
 
-PersonStatistik.Start();
+ZooMain.Start();
+
+
+
 
 
 
