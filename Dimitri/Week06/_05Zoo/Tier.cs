@@ -95,6 +95,24 @@ namespace Dimitri.Week06._05Zoo
             }
         }
 
+        public int GetHealth()
+        {
+            return _Gesundheit;
+        }
+
+        public int GetMaxHealth()
+        {
+            return _MaxGesundheit;
+        }
+
+        public void Heal(int health)
+        {
+            _Gesundheit += health;
+            if(_Gesundheit > _MaxGesundheit)
+            {
+                _Gesundheit = _MaxGesundheit;
+            }
+        }
 
 
 

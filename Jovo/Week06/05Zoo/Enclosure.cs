@@ -15,6 +15,14 @@ namespace Jovo.Week06._05Zoo
         private string _Name;
         private List<Animals> _AnimalsList;
         private bool _IsFed;
+        public Enclosure(string description, string climate, string name)
+        {
+            _Description = description;
+            _Climate = climate;
+            _Name = name;
+            _AnimalsList = new List<Animals>();
+           
+        }
       
         public string Name
         {
@@ -31,22 +39,14 @@ namespace Jovo.Week06._05Zoo
             get => _AnimalsList;
             
         }
-
-      
-
         public string Description
         {
             get => _Description;
             set => _Description = value;
         }
-        public Enclosure(string description, string climate, string name)
-        {
-            _Description = description;
-            _Climate = climate;
-            _Name = name;
-            _AnimalsList = new List<Animals>();
-           
-        }
+
+      
+
 
         public void AddAnimals(Animals animals)
         {
@@ -107,7 +107,7 @@ namespace Jovo.Week06._05Zoo
 
             if(WatchedAnimal.Genus.Equals(favspecies))
             {
-                Console.WriteLine(".... und hat ihn bewundert!");
+                Console.WriteLine( WatchedAnimal.Genus + " is his fav animal so he pets it");
             }
 
         }
@@ -144,7 +144,7 @@ namespace Jovo.Week06._05Zoo
                             Console.WriteLine($"{opfer.Name} died\n");
                             animalsToRemove.Add(opfer);
                         }
-                        else Console.WriteLine();
+                        else Console.WriteLine($"{opfer.Name} runs away and is scared\n");
                     }
 
                 }
