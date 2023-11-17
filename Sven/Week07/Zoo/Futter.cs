@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week07
+namespace Sven.Week07.Zoo.Zoo
 {
     internal class Food
     {
@@ -51,7 +51,7 @@ namespace Sven.Week07
 
         public override string ToString()
         {
-            return "│   ├──  Food: " + _Name + ", Unit: " + _Unit + ", Price: " + _PricePerUnit; ;
+            return "│\n             ├──  Food: " + _Name + ", Unit: " + _Unit + ", Price: " + _PricePerUnit; ;
         }
     }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week07
+namespace Sven.Week07.Zoo.Zoo
 {
     internal class Animal
     {
@@ -35,24 +35,11 @@ namespace Sven.Week07
             get => _Name;
             set => _Name = value;
         }
-        public string Species
-        {
-            get => _Species;
-            set => _Species = value;
-        }
+
 
         public Food Food
         {
             get => _Food;
-        }
-
-        public void PrintAnimal()
-        {
-            Console.WriteLine($"{_Name}, {_Species}");
-            foreach (var food in _FoodList)
-            {
-                food.PrintFood(_FoodAmount);
-            }
         }
 
         public void GetAnimalStatistic(Dictionary<Food, double> dic)
@@ -67,11 +54,10 @@ namespace Sven.Week07
             }
         }
 
-        public void PrintZoo()
+        public void PrintAnimal()
         {
             Console.WriteLine($"│       ├── {_Name}, {_Age}, {_Gender}, {_Species}, Food Required : {_FoodAmount} {_Food}");
         }
-
 
     }
 }

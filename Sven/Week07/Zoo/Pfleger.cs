@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sven.Week07
+namespace Sven.Week07.Zoo.Zoo
 {
     internal class Keeper
     {
@@ -18,20 +18,12 @@ namespace Sven.Week07
             set => _Enclosures = value;
         }
 
-        public Keeper(string name, List <Enclosure> enclosures)
+        public Keeper(string name, List<Enclosure> enclosures)
         {
 
             _Name = name;
             _Enclosures = enclosures;
 
-        }
-        public void PrintPfleger()
-        {
-            Console.WriteLine($"Pfleger: {0}", _Name);
-            foreach (var enclosure in _Enclosures)
-            {
-                enclosure.PrintEnclosure();
-            }
         }
 
 
