@@ -21,8 +21,9 @@ namespace Jovo.Week06._05Zoo
         private int _Life;
         private int _MaxLife;
         private bool _IsDead;
+        private string _Sound;
 
-        public Animals(string name, int age, string genus, string gender, Food food, int foodCount, int bite, int life, int maxLife)
+        public Animals(string name, int age, string genus, string gender, Food food, int foodCount, int bite, int life, int maxLife, string sound)
         {
             _Name = name;
             _Age = age;
@@ -34,13 +35,10 @@ namespace Jovo.Week06._05Zoo
             _Bite = bite;
             _Life = life;
             _MaxLife = maxLife;
+            _Sound = sound;
         }
-
-        public bool IsFed
-        {
-            get => _isFed;
-            set => _isFed = value;
-        }
+        
+  
 
         public string Name
         {
@@ -80,6 +78,11 @@ namespace Jovo.Week06._05Zoo
             get => _MaxLife;            
         }
 
+        public string Sound
+        {
+            get => _Sound; 
+
+        }
         public void PrintZoo()
         {
             Console.WriteLine($"│   │   ├── {_Name}, {_Age}, {_Gender}, {_Genus}, eats : {_Food.Name}");

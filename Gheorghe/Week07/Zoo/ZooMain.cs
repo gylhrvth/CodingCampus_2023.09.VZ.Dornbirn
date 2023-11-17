@@ -22,7 +22,7 @@ namespace Gheorghe.Week07.Zoo
             Enclosure terrarium = new Enclosure("Reptile Terrarium", "Indoor", "Warm/Moist");
             Enclosure fishtank = new Enclosure("Fish Tank", "Indoor", "Saltwater 24-28°C");
 
-            Food bannanas = new Food("Bannas", "Pieces", 1.80);
+            Food bannanas = new Food("Bananas", "Pieces", 1.80);
 
             Animals monkey1 = new Animals("Eugen", 3, "Monkey", "Male", bannanas, 10);
             Animals monkey2 = new Animals("Brigitte", 3, "Monkey", "Female",bannanas,10);
@@ -33,12 +33,20 @@ namespace Gheorghe.Week07.Zoo
             ZooKeeper gheorghe = new("Gheorghe");
             ZooKeeper luiza = new("Luiza");
 
-          
 
+            luiza.AnimalObserve();
+            gheorghe.AnimalObserve();
+
+
+            zoo.AddZooKeeper(luiza);
             zoo.AddZooKeeper(gheorghe);
             woods.AddZookeeper(gheorghe);
             meadow.AddZookeeper(luiza);
             swamp.AddZookeeper(gheorghe);
+
+            gheorghe.AddEnclosure(woods);
+            gheorghe.AddEnclosure(swamp);
+            luiza.AddEnclosure(meadow);
 
           
 
@@ -64,6 +72,7 @@ namespace Gheorghe.Week07.Zoo
             for (int i = 1; i <= 10; i++)
             {
                 zoo.Simulation(i);
+                
             }
 
         }

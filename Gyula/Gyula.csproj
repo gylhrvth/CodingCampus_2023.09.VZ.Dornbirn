@@ -19,6 +19,7 @@
     <None Remove="Week06\Zoo\" />
     <None Remove="Week07\" />
     <None Remove="Week07\ZooExtra\" />
+    <None Remove="Week07\Vererbung\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week03\" />
@@ -29,6 +30,7 @@
     <Folder Include="Week06\Zoo\" />
     <Folder Include="Week07\" />
     <Folder Include="Week07\ZooExtra\" />
+    <Folder Include="Week07\Vererbung\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />

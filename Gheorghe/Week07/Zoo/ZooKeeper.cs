@@ -57,8 +57,25 @@ namespace Gheorghe.Week07.Zoo
 
         public void SimulationWork()
         {
-            Console.WriteLine($"{_Name} start working")    ;
+            Console.WriteLine($"{_Name} start working");
+
+            foreach(var enclosure in _Enclosures)
+            {
+                enclosure.CareAnimals();
+            }
         }
+
+        public void AnimalObserve()
+        {
+            Console.WriteLine($"{_Name} Animal Watching");
+            foreach(var enclosure in _Enclosures)
+            {
+                enclosure.AnimalsObserve();
+            }
+        }
+
+
+
     }
 }
 

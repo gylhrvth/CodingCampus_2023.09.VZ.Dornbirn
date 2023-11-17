@@ -66,11 +66,11 @@ namespace Patrick.Week06.Zoo
         {
             if (this._Name == victom._Name || this._Health <= 0 || victom._Health <= 0)
             {
-                // Keine bisst sich selbst !!!
+                // Keiner beisst sich selbst !!!
                 // Tote Tiere beisen nicht !!!
                 return;
             }
-            Console.WriteLine($"{this._Name} bisst {victom._Name} mit {this._Bite} Schaden.");
+            Console.WriteLine($"{this._Name} beisst {victom._Name} mit {this._Bite} Schaden.");
             victom._Health -= this._Bite;
             if (victom._Health <= 0)
             {

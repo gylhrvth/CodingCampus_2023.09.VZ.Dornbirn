@@ -60,8 +60,15 @@ namespace Gheorghe.Week07.Zoo
             foreach (ZooKeeper zk in _ZooKeeperList)
             {
                 zk.SimulationWork();
+                zk.AnimalObserve();
+                
+                
             }
+            
+           
         }
+
+
     }
 }
  
