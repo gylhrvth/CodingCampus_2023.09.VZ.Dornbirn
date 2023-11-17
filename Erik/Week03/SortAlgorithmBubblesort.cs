@@ -70,7 +70,6 @@ namespace Erik.Week03
                     //{
                     //    Console.Write(arr[j] + " ");
                     //}
-
                     counter++;
                 }
             }
