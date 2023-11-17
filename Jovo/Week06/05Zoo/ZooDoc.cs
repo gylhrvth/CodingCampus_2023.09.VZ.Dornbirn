@@ -19,19 +19,19 @@
 
             _animalList.Add(animal);
         }
-        public void Heal(Animals min)
+        public void Heal(Animals LowLifeAnimal)
          {
              double random = (double)rnd.Next(30, 100) / 100;
-             int heal = (int)(random * min.MaxLife);
-             if ((min.Life + heal) > min.MaxLife)
+             int heal = (int)(random * LowLifeAnimal.MaxLife);
+             if ((LowLifeAnimal.Life + heal) > LowLifeAnimal.MaxLife)
              {
-                 Console.WriteLine($"{_Name} healed {min.Name} for {min.MaxLife - min.Life} health.");
-                 min.Life = min.MaxLife;
+                 Console.WriteLine($"{_Name} healed {LowLifeAnimal.Name} for {LowLifeAnimal.MaxLife - LowLifeAnimal.Life} health {LowLifeAnimal.Name} new life ist now:{LowLifeAnimal.Life}HP.");
+                LowLifeAnimal.Life = LowLifeAnimal.MaxLife;
              }
              else
              {
-                 Console.WriteLine($"{_Name} healed {min.Name} for {heal} health.");
-                 min.Life += heal;
+                 Console.WriteLine($"{_Name} healed {LowLifeAnimal.Name} for {heal} health.");
+                LowLifeAnimal.Life += heal;
              }
 
 
