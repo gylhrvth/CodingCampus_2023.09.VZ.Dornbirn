@@ -17,7 +17,7 @@ namespace Patrick.Week07.VererbungBsp1
             _Age = age;
         }
 
-        public virtual void PrintMe()
+        public virtual void PrintMe()               //diese Methode wird von der PrintMe Methode in der Klasse Milchkuh überschrieben!
         {
             Console.WriteLine($"Das Tier Rind mit dem Namen \"{_Name}\" ist \"{_Age}\" Jahre alt!");
         }
