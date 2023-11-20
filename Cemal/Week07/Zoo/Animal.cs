@@ -44,7 +44,7 @@ namespace Cemal.Week07.Zoo
         public void PrintStructure()
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("|          ├── Rasse: {0, -8}  Name: {1, -8} Essen: {2, -10} Menge: {3}", _gender, _name, _food, _foodrec);
+            Console.WriteLine("|          ├── Rasse: {0, -8}  Name: {1, -8} Essen: {2, -12} Menge: {3}", _gender, _name, _food, _foodrec);
         }
     }
 }

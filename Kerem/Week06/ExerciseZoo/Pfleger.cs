@@ -9,37 +9,61 @@ namespace Kerem.Week06.ExerciseZoo
 {
     internal class Pfleger
     {
+        private Random rand = new Random();
+
         private string _name;
         private List<Enclosure> _enclosure = new();
-        private List<Animals> _favouriteanimal;
+        private Animals _favouriteanimal;
 
         public List<Enclosure> Enclosure
         {
             get => _enclosure;
             set => _enclosure = value;
-        } 
-        public List<Animals> FavouriteAnimal
+        }
+        public Animals FavouriteAnimal
         {
             get => _favouriteanimal;
             set => _favouriteanimal = value;
         }
 
 
-        public Pfleger(string name, List<Enclosure> enclosure ) 
+        public Pfleger(string name, List<Enclosure> enclosure)
         {
             _name = name;
             _enclosure = enclosure;
-            _favouriteanimal = FavouriteAnimal; 
+            _favouriteanimal = FavouriteAnimal;
         }
         public void PrintZooPfleger()
         {
-            Console.WriteLine($"│\t ├── ZooPfleger name: {_name}");
+            Console.Write($"│   ├──ZooPfleger name: {_name} ist zuständig für:");
 
-            foreach(var enclosure in _enclosure )
+            foreach (var enclosure in _enclosure)
             {
-                enclosure.PrintZoo();
+                Console.Write($" {enclosure.Name}");
             }
-
+            Console.WriteLine();
         }
+
+        //public void Feed()
+        //{
+
+        //    foreach (var enclosure in _enclosure)
+        //    {
+        //        if (!enclosure.IsFed)
+        //        {
+        //            Console.WriteLine($"{_name} is feeding the {enclosure.Name} enclosure");
+        //            enclosure.IsFed = true;
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine($"{_name} tried to feed the {enclosure.Name} enclosure but it's already fed");
+        //        }
+        //        FavouriteAnimal ??= enclosure.Animals[rand.Next(enclosure.Animals.Count)];
+        //    }
+        //    Console.WriteLine($"{_name} is spectating his favourite animal: {FavouriteAnimal}");
+
+
+        //}
+
     }
 }

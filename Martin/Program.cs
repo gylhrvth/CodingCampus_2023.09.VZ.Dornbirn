@@ -8,8 +8,9 @@ using Martin.Week06.Person;
 //Trainer.Name = "Lukas";
 //Console.WriteLine(Trainer.Name);
 
-PersonAufgabe person = new PersonAufgabe(182, 23, "Sandro", 90);
-Liste.Start();
+//PersonAufgabe person = new PersonAufgabe(182, 23, "Sandro", 90);
+Martin.Week07.Vererbung.TastaturMain.Start();
+//Martin.Week06.Liste.Start();
 
 
 
