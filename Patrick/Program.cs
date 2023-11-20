@@ -1,8 +1,4 @@
 ﻿
-using Patrick.Week06.Zoo;
-
-ZooMain.Start();
-
-
+Patrick.Week08.LearnDay.ZooMain.Start();
 
 

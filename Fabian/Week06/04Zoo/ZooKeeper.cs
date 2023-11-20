@@ -35,9 +35,8 @@
                 enclosure.PrintEnclosure();
             }
         }
-        public void Feed()
-        {
-            
+        public void DailyTask()
+        {           
             foreach (var enclosure in _Enclosures)
             {
                 if (!enclosure.IsFed)
@@ -49,9 +48,10 @@
                 {
                     Console.WriteLine($"{_Name} tried to feed the {enclosure.Name} enclosure but it's already fed");
                 }
-                _FavouriteAnimal ??= enclosure.Animals[rnd.Next(enclosure.Animals.Count)];
+                _FavouriteAnimal = enclosure.Animals[rnd.Next(enclosure.Animals.Count)];
+                Console.WriteLine($"{_Name} is spectating his favourite animal: {_FavouriteAnimal}\n");
             }
-            Console.WriteLine($"{_Name} is spectating his favourite animal: {_FavouriteAnimal}");
+            
         }
 
         public override string ToString()

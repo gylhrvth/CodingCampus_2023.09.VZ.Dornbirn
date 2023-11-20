@@ -1,3 +1,3 @@
-﻿using Gyula.Week07.ZooExtra;
+﻿using Gyula.Week07.Vererbung;
 
-ZooMain.Start();
+ObstKorbMain.Start();

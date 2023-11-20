@@ -29,7 +29,6 @@ namespace Fabienne.Week06.Person1
         {
             get => _Gewicht;
         }
-
         public Person(int Größe, int Alter, string Name, double Gewicht) 
         {
             _Größe = Größe;

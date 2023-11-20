@@ -19,7 +19,7 @@ namespace Erik.Week06
             RandomList2 = SortRandomList(RandomList2);
             PrintListWithIndex(RandomList2);
 
-            List<int> finalList = MergeList(RandomList1 ,RandomList2);
+            List<int> finalList = MergeList(RandomList1, RandomList2);
             PrintListWithIndex(finalList);
         }
 
@@ -73,22 +73,70 @@ namespace Erik.Week06
             int j = 0;
             int k = 0;
             List<int> finalList = new List<int>();
+
+<<<<<<< HEAD
             for (int i = 0; i < sortedList1.Count + sortedList2.Count; i++)
             {
-                if (sortedList1[j] > sortedList2[k])
+                while (sortedList1[j] < sortedList2[j])
                 {
-                    finalList.Add(sortedList1[j]);
-                    j++;
+                    if (sortedList1[j] > sortedList2[j])
+                    {
+                        finalList.Add(sortedList1[j]);
+                        j++;
+                    }
+                    else
+                    {
+                        finalList.Add(sortedList2[k]);
+                        k++;
+                    }
+
+                }
+
+=======
+            while (k < sortedList1.Count && j < sortedList2.Count)
+            {
+                if (sortedList1[k] < sortedList2[j])
+                {
+                    finalList.Add(sortedList1[k]);
+                    k++;
                 }
                 else
                 {
-                    finalList.Add(sortedList2[k]);
-                    k++;
+                    finalList.Add(sortedList2[j]);
+                    j++;
                 }
-                
+            }
+
+            while (k < sortedList1.Count)
+            {
+                finalList.Add(sortedList1[k]);
+                k++;
+            }
+
+
+            while (j < sortedList2.Count)
+            {
+                finalList.Add(sortedList2[j]);
+                j++;
+>>>>>>> 7a9c1ef80b408ccd2971be25af0b194d6a983de4
             }
 
             return finalList;
         }
+
+        /*for (int i = 0; i < sortedList1.Count + sortedList2.Count; i++)
+        {
+            if (sortedList1[j] > sortedList2[k])
+            {
+                finalList.Add(sortedList1[j]);
+                j++;
+            }
+            else
+            {
+                finalList.Add(sortedList2[k]);
+                k++;
+            }                
+        }
+        return finalList;*/
     }
 }
