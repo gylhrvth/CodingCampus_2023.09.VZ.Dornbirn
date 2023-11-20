@@ -78,13 +78,14 @@ namespace Mehmet.Zoo
 
             z.PrintStrukture();
 
+            int days = 10;
 
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= days; i++)
             {
                 z.SimulateDay(i);
                 a1.Fed = false; a2.Fed = false; a3.Fed = false; a4.Fed = false; a5.Fed = false; a6.Fed = false; 
                 doc1.HealAnimal();
-                if (i == 10) 
+                if (i == days) 
                 {
                     c1.TheEndStory();
                 }

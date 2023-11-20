@@ -11,5 +11,7 @@
 //Kerem.Week05.CountHesse.Start();
 //Kerem.Week06.DateTimeExamples.Start();  
 
-Kerem.Week06.ExerciseZoo.ZooMain.Start();
+//Kerem.Week06.ExerciseZoo.ZooMain.Start();
 
+
+Kerem.Week08.Vererbung.DiseasesMain.Start();

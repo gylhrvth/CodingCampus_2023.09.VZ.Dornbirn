@@ -17,9 +17,9 @@ namespace Fabienne.Week07.Zoo
 
             Zoo zoo = new Zoo("Dream smp", 1970);
 
-            Food cig = new Food("Cigarette🚬", "Pcs", 12.05, 7.00);
+            Food cig = new Food("Cigarette🚬", "Pcs", 12.05, 7.01);
             Food salmon = new Food("Salmon🐟", "kg", 2.95, 13.99);
-            Food nukes = new Food("Nukes☢️", "mg", 0.05, 900000000.000);
+            Food nukes = new Food("Nukes☢️", "MT", 0.05, 900000000.0000);
             Food beans = new Food("Beans🫘", "kg", 12.05, 3.99);
             Food child = new Food("Child🧒", "MT", 12500, 80000.00);
             Food mushrooms = new Food("Mushrooms🍄", "kg", 1.00, 7.79);

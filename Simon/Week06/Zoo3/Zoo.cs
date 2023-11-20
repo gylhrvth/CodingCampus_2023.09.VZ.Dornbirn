@@ -61,7 +61,6 @@ namespace Simon.Week06.Zoo3
         {
             Dictionary<AnimalFood, double> dic = new Dictionary<AnimalFood, double>();
 
-            double foodammount = 0;
             double foodsumm = 0;
             foreach (Enclosure enclosure in _EnclosureList)
             {
@@ -73,6 +72,13 @@ namespace Simon.Week06.Zoo3
                 //Console.WriteLine("{0} wird {1} mal benötigt und kostet pro {3} {2}", animalFood.Name, dic[animalFood], animalFood.PriceperUnit, animalFood.Unit);
                 foodsumm += dic[animalFood] * animalFood.PriceperUnit;
             }
+            List<AnimalFood> foodlist = dic.Keys.ToList();
+            for (int i = 0; i < dic.Count; i++)
+            {
+                foodsumm += dic[foodlist[i]] * foodlist[i].PriceperUnit;
+            }
+
+
             Console.WriteLine("Kosten für Futterbedarf für diesen Tag: {0}€", foodsumm);
 
         }
@@ -103,32 +109,38 @@ namespace Simon.Week06.Zoo3
 
         public void RestoreHP()
         {
-            List<Animals> availableAnimals = new();
+            List<Animal> availableAnimals = new();
+            
+            
             foreach (Enclosure enclosure in _EnclosureList)
             {
-                foreach (Animals animal in enclosure.AnimalsList)
+                foreach (Animal animal in enclosure.AnimalsList)
                 {
-                    if (animal.Alive == true)
+                    if (animal.Alive)
                     {
                         availableAnimals.Add(animal);
                     }
                 }
                 //move to enclosure
+                // geht nicht wegen liste (availableAnimals) bzw würde code nur verkomplizieren?
             }
             foreach (AnimalDoctor animalDoctor in _AnimalDoctorList)
             {
-                Animals lowestanimal = null;
-                foreach (Animals animal in availableAnimals)
+                Animal? lowestanimal = null;
+                float healthInPercent = 0;
+                foreach (Animal animal in availableAnimals)
                 {
-                    if (lowestanimal == null || (animal.Health / animal.MaxHealth < lowestanimal.Health / animal.MaxHealth))
+                    float currentHealthInPercent = animal.Health / (float) animal.MaxHealth;
+                    if (lowestanimal == null || (currentHealthInPercent < healthInPercent))
                     {
                         lowestanimal = animal;
+                        healthInPercent = currentHealthInPercent;
                     }
                 }
                 if (lowestanimal != null)
                 {
                     animalDoctor.RestoreHP(lowestanimal);
-                    availableAnimals.Remove(lowestanimal);
+                    //availableAnimals.Remove(lowestanimal);
                 }
 
             }
@@ -136,7 +148,7 @@ namespace Simon.Week06.Zoo3
 
         public void FeedEnclosures()
         {
-            foreach(Zookeeper zookeeper in _ZookeeperList)
+            foreach (Zookeeper zookeeper in _ZookeeperList)
             {
                 zookeeper.FeedEnclosures();
             }
