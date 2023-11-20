@@ -18,6 +18,8 @@ namespace Patrick.Week07.VererbungBsp1
             rinds.Add(new Rind("Sandra", 1));
             rinds.Add(new Rind("Tobias", 3));
 
+            rinds.Add(new Kalb("Johanna", 1, 200f, "Kinder besuchen das Kalb"));
+
             foreach (Rind rind in rinds)
             {
                 rind.PrintMe();

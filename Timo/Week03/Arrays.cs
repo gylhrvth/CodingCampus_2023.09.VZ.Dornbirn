@@ -208,7 +208,6 @@ namespace Timo.Week03
             }
             return arr;
         }
-        //ToDo 3.1 print Methode schreiben
 
         //Aufgabe3.2 Random for
         public static int[] RandomFor(int i, int min, int max)

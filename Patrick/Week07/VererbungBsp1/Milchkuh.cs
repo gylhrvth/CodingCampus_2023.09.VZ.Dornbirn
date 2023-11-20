@@ -17,8 +17,8 @@ namespace Patrick.Week07.VererbungBsp1
 
         public override void PrintMe()
         {
-            //base.PrintMe();                   //Hier kannst du das PrintMe von Rind aufrufen
-            Console.WriteLine($"Das Tier \"Milchkuh\" mit dem Namen \"{_Name}\" ist \"{_Age}\" Jahre alt und hat auch ein Gewicht von {_Weight} kg");
+            //base.PrintMe();                   //Hier kannst du die PrintMe Methode von der Rind Klasse aufrufen
+            Console.WriteLine($"Das Tier \"Milchkuh\" mit dem Namen \"{_Name}\" ist \"{_Age}\" Jahre alt und hat ein Gewicht von {_Weight} kg");
 
         }
     }
