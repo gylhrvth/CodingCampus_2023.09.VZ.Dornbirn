@@ -148,7 +148,6 @@ namespace Timo.Week03
         //------------------------------------------------------------------------------------------------------------------------------
 
         //Ratespiel NEU und besser
-        //ToDo Exitcode
         public static void Guessinggame(int startNumber, int endNumber)
         {
             Console.WriteLine("Welcome to the game! Try to guess the correct number: enter a number between {0} and {1}", startNumber, endNumber);
@@ -461,7 +460,6 @@ namespace Timo.Week03
 //            {
 //                MethodenUndSchleifen.PrintSquare(ReadChar(o, l), ReadNumber("What should be the size of the square?", k));
 //                Console.WriteLine("new?");
-//                //ToDo Methode für Retry schreiben
 //                int x = 1;
 //                while (x == 1)
 //                {
