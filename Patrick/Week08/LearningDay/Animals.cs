@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Patrick.Week08.LearnDay
+namespace Patrick.Week08.LearningDay
 {
     internal class Animals
     {
