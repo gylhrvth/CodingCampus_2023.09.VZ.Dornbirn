@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week08.Vererbung
+namespace Kerem.Week07.Vererbung
 {
-    internal class Ebola : Diseases
+    internal class Aids : Diseases
     {
         private double _dangerouslevel;
         private bool _treatable;
 
-        public Ebola(string name, bool treatable, double dangerouslevel) : base(name)
+        public Aids(string name, double dangerouslevel, bool treatable) : base(name)
         {
             _dangerouslevel = dangerouslevel;
             _treatable = treatable;
         }
         public override void PrintMe()
         {
-            Console.WriteLine($"I'm a  very terrible {_name} and my dangerous level is at {_dangerouslevel}!!\nBut am i treatable? : {_treatable}!!"); ;
+            Console.WriteLine($"I'm a terrible {_name} and my dangerouslevel is at {_dangerouslevel}.\nBut am I treatable? : {_treatable}");
         }
+
+
     }
 }
