@@ -18,6 +18,10 @@ namespace Kerem.Week08
         }
         public override double CircumFerence()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Rectangle");
+            Console.ForegroundColor = ConsoleColor.White;
+
             return Math.Pow(_length,2) + Math.Pow(_width,2);
         }
 
