@@ -1,4 +1,4 @@
-using Jovo.Week07.NewZoo;
+using Jovo.Week07.Vererbung;
 
 
-ZooMain.Start();
+Garage.Start();
