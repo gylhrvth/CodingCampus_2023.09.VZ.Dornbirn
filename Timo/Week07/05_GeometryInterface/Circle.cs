@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Timo.Week07._05Geometry
+﻿namespace Timo.Week07._05_GeometryInterface
 {
     public class Circle : Geometry
     {
@@ -15,12 +9,12 @@ namespace Timo.Week07._05Geometry
             _Radius = length;
         }
 
-        public override double GetCircumference()
+        public double GetCircumference()
         {
             return 2 * Math.PI * _Radius;
         }
 
-        public override double GetArea()
+        public double GetArea()
         {
             return Math.Pow(_Radius, 2) * Math.PI;
         }
