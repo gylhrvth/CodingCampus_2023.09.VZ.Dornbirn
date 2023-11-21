@@ -27,7 +27,6 @@
     <Folder Include="Week06\Book\" />
     <Folder Include="Week06\CourseList\" />
     <Folder Include="Week06\Zoo\" />
-    <Folder Include="Week07\" />
     <Folder Include="Week07\ZooExtra\" />
   </ItemGroup>
   <ItemGroup>
