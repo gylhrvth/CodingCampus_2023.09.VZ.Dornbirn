@@ -43,10 +43,10 @@ namespace Fabian.Week08._05_Museum
 
             room3.Artworks.AddRange(new List<Artwork>()
             {
-                new("The Birth of Venus", 5),
-                new("Arrangement in Grey and Black", 10),
-                new("The Arnolfini Portrait", 8),
-                new("The Garden of Earthly Delights", 3),
+                new("Composition with Red Blue and Yellow", 5),
+                new("Las Meninas", 10),
+                new("Guernica", 8),
+                new("The Naked Maja", 3),
             });
 
             room4.Artworks.AddRange(new List<Artwork>()
