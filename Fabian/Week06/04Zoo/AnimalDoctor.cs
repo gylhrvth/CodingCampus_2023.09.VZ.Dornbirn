@@ -12,21 +12,18 @@
 
         public void Heal(Animal min)
         {
-            double random = (double)rnd.Next(30, 100) / 100;
+            double random = (double)rnd.Next(30, 101) / 100;
             int heal = (int)(random * min.MaxHealth);
             if ((min.Health + heal) > min.MaxHealth)
             {
-                Console.WriteLine($"{_Name} healed {min.Name} for {min.MaxHealth - min.Health} health.");
-                min.Health = min.MaxHealth;                
+                Console.WriteLine($"{_Name} healed {min.Name} for {min.MaxHealth - min.Health} health. New health is {min.MaxHealth}");
+                min.Health = min.MaxHealth;               
             }
             else
             {
-                Console.WriteLine($"{_Name} healed {min.Name} for {heal} health.");
-                min.Health += heal;               
-            }
-            
-           
+                min.Health += heal;
+                Console.WriteLine($"{_Name} healed {min.Name} for {heal} health. New health is {min.Health}");
+            }           
         }
-
     }
 }

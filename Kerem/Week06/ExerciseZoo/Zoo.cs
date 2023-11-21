@@ -35,18 +35,44 @@ namespace Kerem.Week06.ExerciseZoo
         {
             _EnclosureList.Add(enc);
         }
+
         public void PrintZoo()
         {
             Console.WriteLine($"├── Zoo: {_Name}, Established {_Established}");
 
-            foreach(Enclosure enclosure in _EnclosureList)
+            foreach (Enclosure enclosure in _EnclosureList)
             {
                 enclosure.PrintZoo();
             }
+
+
+
+            Console.WriteLine();
+            foreach (Pfleger p in _pfleger)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                p.PrintZooPfleger();
+            }
+            Console.ForegroundColor = ConsoleColor.White;
+
         }
         public void PrintZooStatistic()
         {
-
+            Dictionary<Food, double> dic = new Dictionary<Food, double>();
+            foreach (var enclosure in _EnclosureList)
+            {
+                enclosure.GetAnimalStatisticFood(dic);
+            }
+            Console.WriteLine("Food requirements:");
+            double cost = 0;
+            foreach (Food food in dic.Keys)
+            {
+                Console.WriteLine($"{food.Name} : {dic[food]} {food.Unit} /cost per Unit: {food.PricePerUnit}Euro ");
+                double amount = dic[food];
+                double price = food.PricePerUnit * amount;
+                cost += price;
+            }
+            Console.WriteLine("total daily cost for food: {0:N2}Euro", cost);
         }
     }
 }

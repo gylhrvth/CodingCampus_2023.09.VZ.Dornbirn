@@ -11,51 +11,57 @@ namespace Kerem.Week06.ExerciseZoo
         public static void Start()
         {
             Zoo z = new Zoo("Wano Kuni", 2018);
-
-            Enclosure Desert = new Enclosure("Desert: ", "Outdoor/Ground", "Outside Temperature 45°");
-            Enclosure mountain = new Enclosure("Mountain: ", "Outdoor/Ground", "Outside Temperature 15°");
-            Enclosure fishtank = new Enclosure("Fishtank: ", "Aquarium", "Salty Temperature 25°");
+        
+            Enclosure Desert = new Enclosure("Desert", "Outdoor/Ground", "Outside Temperature 45°");
+            Enclosure mountain = new Enclosure("Mountain", "Outdoor/Ground", "Outside Temperature 15°");
+            Enclosure fishtank = new Enclosure("Fishtank", "Aquarium", "Salty Temperature 25°");
             Enclosure sky = new Enclosure("Skypia", "Clouds", "humidity 80%");
 
 
-            Food SMILEfruit = new Food("SMILEfruit", "pieces", 1.000);
-            Food CottonCandy = new Food("CottonCandy", "multitude", 50);
-            Food Sand = new Food("Sand", "kg", 22);
-            Food Apple = new Food("Apple", "pieces", 80);
-            Food Sake = new Food("Sake", "liter", 32);
-            Food fish = new Food("Fish", "pieces", 17);
+            Food SMILEfruit = new Food("SMILEfruit", "pieces", 34);
+            Food CottonCandy = new Food("CottonCandy", "multitude", 86);
+            Food Sand = new Food("Sand", "kg", 39);
+            Food Apple = new Food("Apple", "pieces", 27);
+            Food Sake = new Food("Sake", "liter", 10);
+            Food fish = new Food("Fish", "pieces", 22);
 
             Pfleger Vivi = new Pfleger("Vivi", new List<Enclosure>{ Desert, mountain });
             Pfleger Rebecca = new Pfleger("Rebecca", new List<Enclosure> { fishtank, sky });
 
-            Animals mythic = new Animals("Kaido", 56, "Mythic", Sake ,300);
-            Animals Uglyfish = new Animals("Arlong", 44, "Fishman", fish , 200);
-            Animals Flamingo = new Animals("Don Quichotte de Flamingo", 40, "Stringman", SMILEfruit, 100);
-            Animals Thunder = new Animals("Enel", 43, "Earlobeman", Apple, 30);
-            Animals Croco = new Animals("Sir Crocodile", 35, "Hookman", Sand, 46);
-            Animals Deer = new Animals("Chopper", 15, "TonyTony", CottonCandy, 18);
+            Animals mythic = new Animals("Kaido", 56, "Mythic", Sake ,11, "ROROROROR");
+            Animals Uglyfish = new Animals("Arlong", 44, "Fishman", fish , 7,"KUSCHKUSCHSKSHUCH");
+            Animals Flamingo = new Animals("Don Quichotte de Flamingo", 34, "Stringman", SMILEfruit, 26,"HEHEHEHEHEH");
+            Animals Thunder = new Animals("Enel", 43, "Earlobeman", Apple, 20, "HAHDIHDAIHD");
+            Animals Croco = new Animals("Sir Crocodile", 35, "Hookman", Sand, 32,"OHOHAOSDHAODH");
+            Animals Deer = new Animals("Chopper", 15, "TonyTony", CottonCandy, 53, "HIHIHIHIHIH");
 
-
-
-            z.addEnclosure(Desert);
-            Desert.addAnimals(Croco);
-
-            z.addEnclosure(mountain);
-            mountain.addAnimals(Flamingo);
-            mountain.addAnimals(Deer);
-
-            z.addEnclosure(sky);
-            sky.addAnimals(Thunder);
-
-            z.addEnclosure(fishtank);            
-            fishtank.addAnimals(mythic);
-            fishtank.addAnimals(Uglyfish);
 
             z.Pfleger.Add(Vivi);
             z.Pfleger.Add(Rebecca);
 
 
+            z.addEnclosure(Desert);
+            z.addEnclosure(mountain);
+            z.addEnclosure(sky);
+            z.addEnclosure(fishtank);
+            
+            Desert.addAnimals(Croco);
+
+            sky.addAnimals(Thunder);
+
+            mountain.addAnimals(Flamingo);
+            mountain.addAnimals(Deer);
+
+            fishtank.addAnimals(mythic);
+            fishtank.addAnimals(Uglyfish);
+            
             z.PrintZoo();
+   
+            z.PrintZooStatistic();
+            Console.WriteLine("Simulation:");
+         
+
+
 
         }
 

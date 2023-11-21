@@ -22,13 +22,13 @@ namespace Simon.Week06.Zoo3
             AnimalFood fleisch = new AnimalFood("Fleisch", "kg", 23);
             AnimalFood schokolade = new AnimalFood("Schoki", "Tafeln", 1.30);
 
-            Animals bert = new Animals("Bert", "Adler", fleisch, 1.25, 50, 45);
-            Animals stick = new("Stick", "Uhu", koerner, 0.468, 50, 45);
-            Animals elsa = new("Elsa", "Ziege", heu, 1.5, 150, 10);
-            Animals fridolin = new("Fridolin", "Hängebauchschwein", schokolade, 2, 250, 50);
-            Animals fridolin2 = new("Fridolin clone", "Hängebauchschwein", schokolade, 2, 250, 5);
-            Animals fridge = new("Fridge", "Kuh", heu, 3, 350, 15);
-            Animals fred = new("Fred", "MiniSchwein", schokolade, 15, 100, 1);
+            Animal bert = new Animal("Bert", "Adler", fleisch, 1.25, 50, 45);
+            Animal stick = new("Stick", "Uhu", koerner, 0.468, 50, 45);
+            Animal elsa = new("Elsa", "Ziege", heu, 1.5, 150, 10);
+            Animal fridolin = new("Fridolin", "Hängebauchschwein", schokolade, 2, 250, 50);
+            Animal fridolin2 = new("Fridolin clone", "Hängebauchschwein", schokolade, 2, 250, 5);
+            Animal fridge = new("Fridge", "Kuh", heu, 3, 350, 15);
+            Animal fred = new("Fred", "MiniSchwein", schokolade, 15, 100, 1);
 
             Zookeeper manfred = new("Manfred", new List<Enclosure> { streichelgehege, schweinestall }, fridolin);
             Zookeeper sabrina = new("Sabrina", new List<Enclosure> { vogelkaefig }, fred);

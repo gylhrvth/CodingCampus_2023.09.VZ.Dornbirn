@@ -2,6 +2,14 @@
 {
     public class ListHuman
     {
+        public enum Sort
+        {
+            Size,
+            Age,
+            Name,
+            Weight
+        }
+
         public static void Start()
         {
             double resultHighOfAllPeople = 0;
@@ -53,8 +61,11 @@
             Console.WriteLine();
             Console.WriteLine("Weight of all People: " + resultHighOfAllPeople + " kg");
 
-        }
+           
 
+        }
+       
+      
         public static double WeightOfAllPeople(List<HumanExample2> personList)
         {
             double result = 0;

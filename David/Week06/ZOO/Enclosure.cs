@@ -1,43 +1,88 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
+
 namespace David.Week06.ZOO
 {
-	public class Enclosure
-	{
-		private string _Description;
-		private string _Climate;
-		private string _Name;
-        private List<Animals> _Animals;
+    internal class Enclosure
+    {
+        public Random random = new Random();
 
+        public string _Name { get; private set; }
+        public string _Climate { get; private set; }
+        private bool _WasKeeperInEnclosure;
+        private List<Animals> _AnimalsList;
 
-        public Enclosure(string name, string climate, string description)
-		{
-			_Description = description;
-			_Climate = climate;
-			_Name = name;
-            _Animals = new List<Animals>();
-        }
-
-        public void AddAnimals(Animals animals)
+        //Konstruktor
+        public Enclosure(string name, string climate)
         {
-            if (!_Animals.Contains(animals))
+            _Name = name;
+            _Climate = climate;
+            _AnimalsList = new List<Animals>();
+        }
+
+        public List<Animals> AnimalsList
+        {
+            get => _AnimalsList;
+        }
+
+        public void GetEnclosureStatistic(Dictionary<Food, float> dict)
+        {
+            foreach (var animal in _AnimalsList)
             {
-                _Animals.Add(animals);
+                animal.GetAnimalStatistic(dict);
             }
         }
 
-        public void PrintEnclosure()
-		{
-            if (_Animals != null)
+        public void PrintAnimals()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            Console.WriteLine($"   ||--> Name: {_Name}, Climate: {_Climate}");
+            Console.ResetColor();
+            foreach (Animals animals in _AnimalsList)
             {
-                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                Console.WriteLine($"   ||--> Name: {_Name}, Climate: {_Climate}, Description: {_Description}");
+                Console.WriteLine($"      ||--> Name: {animals.Name}, Age: {animals.Age}, Type: {animals.Genus}, Sex: {animals.Gender}, FoodAmount: {animals.ToString()} ");
 
-                foreach (Animals ani in _Animals)
+            }
+        }
+
+        public void SimulateDayStart()
+        {
+            _WasKeeperInEnclosure = false;
+        }
+
+        public void SimulateTakeCareOfEnclosure(string keeperName)
+        {
+            if (_WasKeeperInEnclosure == false)
+            {
+                foreach (Animals animal in _AnimalsList)
                 {
-                    ani.PrintAnimals();
+                    Console.WriteLine($"{keeperName} feeds ANIMAL {animal}, in ENCLOSURE {_Name}, with FOOD {animal.Food}");
                 }
+                _WasKeeperInEnclosure = true;
+                PrintRandomAnimal(keeperName);
+                PrintFavoriteAnimal(keeperName);
             }
+
+            else
+            {
+                Console.WriteLine($"The enclosure {_Name} is already cleand. Name {keeperName} is ready to keep on working in the next enclosure.");
+            }
+
         }
-	}
+
+        public void PrintRandomAnimal(string keeperName)
+        {
+            int randomAnimal = random.Next(AnimalsList.Count);
+            Console.WriteLine("The zoo keeper {0} is randomly watching {1}.", keeperName, _AnimalsList[randomAnimal]);
+
+        }
+
+        public void PrintFavoriteAnimal(string keeperName)
+        {
+            Console.WriteLine("The zoo keeper {0} is watichng his favorite animal {1}", keeperName, _AnimalsList[1]);
+        }
+    }
 }
+
+
 

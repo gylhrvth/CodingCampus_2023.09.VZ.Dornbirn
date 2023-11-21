@@ -52,15 +52,7 @@ namespace Erik.Week08
         {
             _KeeperList.Add(keeper);
         }
-        public void FeedAnimals()
-        {
-            foreach (Animal animal in  _AnimalList)
-            {
-                int FoodToFeed = 100 - animal.hunger;
-                animal.food.unit -= FoodToFeed;
-                animal.hunger += FoodToFeed;
-            }
-        }
+
 
         public int calculateCost()
         {
@@ -77,9 +69,30 @@ namespace Erik.Week08
             int totalWeight = 0;
             foreach (Animal animal in _AnimalList)
             {
-                totalWeight += animal.retrunConsumedFood();
+                totalWeight += animal.returnConsumedFood();
             }
             return totalWeight;
+        }
+
+        public bool IsHungry()
+        {
+            foreach(Animal animal in _AnimalList)
+            {
+                if (animal.IsHungry == true)
+                {
+                    return true;
+                }                
+            }
+            return false;
+        }
+
+        public void GetsFed(Keeper keeper)
+        {
+            foreach(Animal animal in _AnimalList )
+            {
+                animal.IsHungry= false;
+                Console.WriteLine($"{animal.AnimalName} gets fed by {keeper.keeperName}!");
+            }
         }
     }
 }

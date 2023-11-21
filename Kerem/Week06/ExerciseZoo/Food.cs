@@ -11,34 +11,35 @@ namespace Kerem.Week06.ExerciseZoo
     {
         private string _name;
         private string _unit;
-        private double _price;
+        private double _priceperunit;
 
+        public double PricePerUnit
+        {
+            get => _priceperunit;
+            set => _priceperunit = value;
 
+        } 
         public string Name
         {
-            get => _name;
-            set => _name = value;
+            get => _name; set => _name = value;
         }
         public string Unit
         {
             get => _unit;
             set => _unit = value;
         }
-        public double PricePerUnit
-        {
-            get => _price;
-            set => _price = value;
-        }
 
-        public Food(string name, string unit, double price)
+
+
+        public Food(string name, string unit, double priceperunit)
         {
             _name = name;
-            _price = price;
             _unit = unit;
+            _priceperunit = priceperunit;
         }      
         public override string ToString()
         {
-            return _name + ",  Unit: " + _unit + ", Price: " + _price;
+            return _name + ",  Unit: " + _unit + ", Price: " + _priceperunit;
         }
 
     }

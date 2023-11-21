@@ -31,6 +31,18 @@ namespace Martin.Week06.Person
             get => _groesse;
             set => _groesse = value;
         }
+
+        public int Alter
+        {
+            get => _alter;
+            set => _alter = value;
+        }
+
+        public int Gewicht
+        {
+            get => _gewicht;
+            set => _gewicht = value;
+        }
         public PersonAufgabe(int groesse, int alter, string name, int gewicht)
         {
 

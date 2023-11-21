@@ -12,6 +12,15 @@
 
 
 
+        public Pfleger(string name, string favAnim, List<Enclosure> enclosures)
+        {
+            _Name = name;
+            _Enclosures = enclosures;
+            _FavAnim = favAnim;
+
+
+        }
+
         public List<Enclosure> Enclosures
         {
             get => _Enclosures;
@@ -21,15 +30,6 @@
 
 
 
-
-        public Pfleger(string name, string favAnim, List<Enclosure> enclosures)
-        {
-            _Name = name;
-            _Enclosures = enclosures;
-            _FavAnim = favAnim;
-
-
-        }
 
         public void PrintPfleger()
         {
@@ -50,12 +50,12 @@
         {
             foreach (Enclosure enclosure in Enclosures)
             {
-                foreach (Animals animal in enclosure.Animals)
+                foreach (Animals animal in enclosure.AnimalsList)
                 {
                     if (enclosure.IsFed == false)
                     {
 
-                        Console.WriteLine($"{_Name} feeds the animal {animal.Genus} with the name {animal.Name}, in enclosure {enclosure.Description}, with the {animal.Food} ");
+                        Console.WriteLine($"{animal.Genus} is HUNGRY!! {_Name} feeds {animal.Genus} with the name {animal.Name}, with the {animal.Food}\n{animal.Genus} is now satisfied: {animal.Sound}");
                         enclosure.ObserveAnimals(_FavAnim);
                         
                     }

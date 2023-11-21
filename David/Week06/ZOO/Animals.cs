@@ -3,48 +3,77 @@ using System.Runtime.CompilerServices;
 
 namespace David.Week06.ZOO
 {
-    public class Animals
+    internal class Animals
     {
         private string _Name;
-        private int _Age;
         private string _Genus;
+        private int _Age;
         private string _Gender;
-        private List<Food> _Food;
+        private float _FoodAmount;
+        private int _MaxHealthRate;
+        private int _BitePower;
+        private Food _Food;
+        private List<Food> _FoodList;
 
-        public Animals(string name, int age, string genus, string gender)
+        //Properties
+        public Food Food
+        {
+            get => _Food;
+        }
+        public string Name
+        {
+            get => _Name;
+        }
+        public string Genus
+        {
+            get => _Genus;
+        }
+        public string Gender
+        {
+            get => _Gender;
+        }
+        public int Age
+        {
+            get => _Age;
+        }
+
+        //Konstruktor
+        public Animals(string name, int age, string genus, string gender, float foodAmount, Food food, int maxHealthRate, int bitePower)
         {
             _Name = name;
-            _Age = age;
             _Genus = genus;
+            _Age = age;
             _Gender = gender;
-            _Food = new List<Food>();
+            _FoodAmount = foodAmount;
+            _Food = food;
+            _MaxHealthRate = maxHealthRate;
+            _BitePower = bitePower;
+            _FoodList = new List<Food>();
         }
 
-        public void AddFood(Food food)
+        public void GetAnimalStatistic(Dictionary<Food, float> dict)
         {
-            if (!_Food.Contains(food))
+            if (dict.ContainsKey(_Food))
             {
-                _Food.Add(food);
+                dict[_Food] += _FoodAmount;
+            }
+            else
+            {
+                dict[_Food] = _FoodAmount;
             }
         }
 
-        public void PrintAnimals()
+        public override string ToString()
         {
-            if (_Food != null)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.WriteLine($"      ||--> Name: {_Name}, Age: {_Age}, Type: {_Genus}, Sex: {_Gender}");
-
-                foreach (Food foo in _Food)
-                {
-                    foo.PrintFood();
-                }
-            }
+            return _Name;
         }
+
+
 
     }
-
-
 }
+
+
+
 
 
