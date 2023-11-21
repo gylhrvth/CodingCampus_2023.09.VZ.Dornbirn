@@ -13,6 +13,8 @@ namespace Dimitri.Week08
             List<char> list = new List<char>() { 'A', 'B', 'C', 'D'};
 
             PermutationCharList(list, 0, list.Count - 1);
+
+
         }
 
         public static void PrintCharList(List<char> list)

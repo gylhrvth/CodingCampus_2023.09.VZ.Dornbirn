@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week08.Vererbung
+namespace Kerem.Week07.Vererbung
 {
     internal class Diseases
     {

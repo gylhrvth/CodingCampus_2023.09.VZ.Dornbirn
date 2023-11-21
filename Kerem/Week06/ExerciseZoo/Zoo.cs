@@ -35,25 +35,6 @@ namespace Kerem.Week06.ExerciseZoo
         {
             _EnclosureList.Add(enc);
         }
-        public void AnimalStatistic()
-        {
-            double gesamtpreis = 0;
-
-            Dictionary<Food, double> dic = new Dictionary<Food, double>();
-            foreach (Enclosure enc in _EnclosureList)
-            {
-                enc.GetAnimalStatisticFood(dic);
-
-            }
-            foreach (Food f in dic.Keys)
-            {
-                gesamtpreis += dic[f] * f.PricePerUnit;
-
-            }
-
-            Console.WriteLine("Kosten pro Tag : " + gesamtpreis);
-
-        }
 
         public void PrintZoo()
         {
@@ -74,6 +55,24 @@ namespace Kerem.Week06.ExerciseZoo
             }
             Console.ForegroundColor = ConsoleColor.White;
 
+        }
+        public void PrintZooStatistic()
+        {
+            Dictionary<Food, double> dic = new Dictionary<Food, double>();
+            foreach (var enclosure in _EnclosureList)
+            {
+                enclosure.GetAnimalStatisticFood(dic);
+            }
+            Console.WriteLine("Food requirements:");
+            double cost = 0;
+            foreach (Food food in dic.Keys)
+            {
+                Console.WriteLine($"{food.Name} : {dic[food]} {food.Unit} /cost per Unit: {food.PricePerUnit}Euro ");
+                double amount = dic[food];
+                double price = food.PricePerUnit * amount;
+                cost += price;
+            }
+            Console.WriteLine("total daily cost for food: {0:N2}Euro", cost);
         }
     }
 }
