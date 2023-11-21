@@ -9,4 +9,5 @@
 //Cemal.Week06.NmsList.Numbers.Start();
 //Cemal.Week06.NmsPerson.PersonMain.Start();
 //Cemal.Week07.Zoo.ZooMain.Start();
-Cemal.Week07.Ubung.HardwareMain.Start();
+//Cemal.Week07.Ubung.HardwareMain.Start();
+Cemal.Week08.Geometry.GemoetryMain.Start();

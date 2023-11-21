@@ -12,10 +12,10 @@
 
         public void UseBankCounter(BankCounter b, int value)
         {
+            string action = (value >= 0) ? "deposit" : "payout";
             b.Money += value;
-            Console.WriteLine($"{_Name} changed value: {value}");
+            Console.WriteLine($"{_Name} did a {action} of: {Math.Abs(value)}$");
             b.Actions.Add(value);
-            b.TakeBreak();
         }
     }
 }

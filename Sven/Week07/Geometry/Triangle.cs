@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Week08
+namespace Sven.Week07.Geometry
 {
-    internal class Circle
+    internal class Triangle
     {
     }
 }
