@@ -46,7 +46,7 @@ namespace Timo.Week08._063Bank
                     Console.WriteLine("{0} ist am Schalter {1}", kunde.Name, Schalterliste[j].Schalternummer);
                     Schalterliste[j].StatusBesetzt = true;
                     kunde.BankGeschaeft(Schalterliste[j], i);
-                    kunde.Pause(Schalterliste[j]);
+                    Schalterliste[j].Pause();
                     break;
 
                 }
@@ -55,7 +55,7 @@ namespace Timo.Week08._063Bank
                     Console.WriteLine("{0} ist am Schalter {1}", kunde.Name, Schalterliste[j+1].Schalternummer);
                     Schalterliste[j + 1].StatusBesetzt = true;
                     kunde.BankGeschaeft(Schalterliste[j + 1], i);
-                    kunde.Pause(Schalterliste[j + 1]);
+                    Schalterliste[j+1].Pause();
                     break;
                 }
                 Schalterliste[j].StatusBesetzt = false;
