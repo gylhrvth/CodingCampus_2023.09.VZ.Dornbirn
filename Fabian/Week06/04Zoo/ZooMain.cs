@@ -69,7 +69,7 @@
             fishy.FoodList.Add(worms);
             goldie.FoodList.Add(worms);
 
-            zoo.Simulation();  
+            zoo.Simulation(20);  
         }                
     }
 }

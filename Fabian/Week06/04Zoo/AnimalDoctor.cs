@@ -12,7 +12,7 @@
 
         public void Heal(Animal min)
         {
-            double random = (double)rnd.Next(30, 100) / 100;
+            double random = (double)rnd.Next(30, 101) / 100;
             int heal = (int)(random * min.MaxHealth);
             if ((min.Health + heal) > min.MaxHealth)
             {

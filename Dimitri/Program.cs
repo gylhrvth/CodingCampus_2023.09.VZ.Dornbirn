@@ -5,5 +5,6 @@ using Dimitri.Week05;
 using Dimitri.Week06;
 using Dimitri.Week07;
 using Dimitri.Week07._01Mensch;
+using Dimitri.Week08;
 
-Zimmer.Main();
+Permutation.Main();

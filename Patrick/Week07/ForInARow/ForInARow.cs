@@ -12,7 +12,7 @@ namespace Patrick.Week07.ForInARow
 {
     internal class ForInARow
     {
-        private static bool P1P2 = true;
+        private static bool P1 = true;
         public static void Start()
         {
             string[][] playGround = Playground();
@@ -92,16 +92,21 @@ namespace Patrick.Week07.ForInARow
 
         public static bool CheckWinDiagonal(string[][] playground)
         {
-            for (int i = 0; i <= playground.Length - 4; i++)
+            for (int i = 0; i < playground.Length - 3; i++)
             {
-                for (int j = 0; j <= playground.Length - 4; j++)
+                for (int j = 0; j < playground[i].Length - 3; j++)
+                {
+                    // Diagonal nach rechts unten
+                    if (playground[i][j] != "   " && playground[i][j] == playground[i + 1][j + 1] && playground[i + 1][j + 1] == playground[i + 2][j + 2] && playground[i + 2][j + 2] == playground[i + 3][j + 3])
+                    { return true; }
+                }
+            }
+            for (int i = 3; i < playground.Length; i++)
+            {
+                for (int j = 0; j < playground[i].Length - 3; j++)
                 {
                     // Diagonal nach rechts oben
-                    if (playground[i][j] != "   " && playground[i][j] == playground[i - 1][j + 2] && playground[i - 1][j + 2] == playground[i - 2][j + 2] && playground[i - 2][j + 2] == playground[i - 3][j + 3])
-                    { return true; }
-
-                    // Diagonal nach rechts unten
-                    if (playground[i][j] != "   " && playground[i + 3][j] == playground[i + 2][j] && playground[i + 2][j] == playground[i][j + 1] && playground[i][j + 1] == playground[i][j])
+                    if (playground[i][j] != "   " && playground[i][j] == playground[i - 1][j + 1] && playground[i - 1][j + 1] == playground[i - 2][j + 2] && playground[i - 2][j + 2] == playground[i - 3][j + 3])
                     { return true; }
                 }
             }
@@ -127,8 +132,8 @@ namespace Patrick.Week07.ForInARow
         {
             string playerName;
             string symbol;
-            System.ConsoleColor color;
-            if (P1P2)
+            System.ConsoleColor color;                                  // Erstellt eine Variable und der DateiTyp ist: System.ConsoleColor 
+            if (P1)
             {
                 playerName = "Spieler 1";
                 symbol = " X ";
@@ -158,7 +163,7 @@ namespace Patrick.Week07.ForInARow
             }
             else
             {
-                P1P2 = !P1P2;
+                P1 = !P1;                                   //bool wird gedreht, für den Spielerwechsel
                 NextTurn(playground);
             }
         }

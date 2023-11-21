@@ -15,7 +15,11 @@
 			foreach (Obst obst in korb)
 			{
 				obst.PrintMe();
+				obst.Einnahme();
 			}
+
+			VitaminQuelle vq = new BTablette("C Vitamin 250mg");
+			vq.Einnahme();
 
         }
     }

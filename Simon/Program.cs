@@ -8,7 +8,8 @@ using Simon.Selbsttest;
 using Simon.Week06.PersonExample;
 using Simon.Week06.Listen;
 using Simon.Week06.Zoo3;
+using Simon.Week07.VererbungUebung;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-ZooMain.Start();
+StoreMain.Start();

@@ -1,2 +1,4 @@
-﻿Mehmet.Zoo.ZooMain.Start();
+﻿using Mehmet.Week07.Geometry;
+
+GeometryMain.Start();
  

@@ -19,10 +19,10 @@ namespace Mehmet.Zoo
         private List<Worker> _WorkerList;
         private List<Doc> _DocList;
         private bool _Look = true;
-        int awa = rand.Next(1, 4);
         int count = 0;
         int death = 0;
-
+        int animallistcount = 0;
+        
         public Cage(string name)
         {
             _Name = name;
@@ -35,7 +35,7 @@ namespace Mehmet.Zoo
         {
             _AnimalList.Add(animal);
         }
-
+        
         public void AddWorker(Worker worker)
         {
             _WorkerList.Add(worker);
@@ -46,8 +46,6 @@ namespace Mehmet.Zoo
             _DocList.Add(doc);
         }
 
-
-
         public void PrintStrukture()
         {
             Console.WriteLine("   └──┬┤ Gehege: {0}",
@@ -56,11 +54,17 @@ namespace Mehmet.Zoo
             {
                 animal.PrintStrukture();
             }
-
         }
-
+        
         public void SimulateDay()
         {
+            foreach (Animal animal in _AnimalList)
+            {
+                animallistcount++;
+            }
+            int awa = rand.Next(1, animallistcount + 1);
+            //Console.WriteLine("animallistcount: "+animallistcount);
+
             Console.WriteLine("    fängt mit Gehege: {0} an", _Name);
             List<Animal> animalsToRemove = new List<Animal>();
             foreach (Animal animal in _AnimalList)
@@ -70,28 +74,21 @@ namespace Mehmet.Zoo
 
                 if (awa == count && _Look == true)
                 {
-                    animal.LookAtAnimal();
-                    _Look = false;
-                }
-                else if (awa == count && _Look == true)
-                {
-                    animal.LookAtAnimal();
-                    _Look = false;
-                }
-                else if (awa == count && _Look == true)
-                {
-                    animal.LookAtAnimal();
+                    animal.LookAtAnimal(); 
                     _Look = false;
                 }
 
                 int biterate = randBiteRate.Next(0, 101);
-                int hit = randHitDMG.Next(6, 10);
-
-                
-                if (biterate < 41)
+                int hit = randHitDMG.Next(1, 20);
+               
+                if (biterate <= 40)
                 {
                     animal.Health = animal.Health - hit;
-                    Console.Write("        "); animal.PrintAnimalName(); Console.WriteLine(" erhält {0} schaden aktuelle Lebenspunkte {1}", hit, animal.Health);
+                    if (hit > 10)
+                    {
+                        Console.Write("     = = = CRITICAL HIT = = = ");
+                    }
+                    Console.Write("        "); animal.PrintAnimalName(); Console.WriteLine(" wurde gebissen und erhält {0} schaden aktuelle Lebenspunkte {1}", hit, animal.Health);
                     if (animal.Health <= 0)
                     {                       
                         Console.Write("-------------"); animal.PrintAnimalName(); Console.WriteLine("------------- ist gestorben");
@@ -106,14 +103,11 @@ namespace Mehmet.Zoo
             {
                 _AnimalList.Remove(animal);
             }
-
-            awa = rand.Next(1, 4);
+            
             _Look = true;
             count = 0;
+            animallistcount = 0;
         }
-
-
-        
 
         public void HealAnimalinCage()
         {
@@ -136,16 +130,6 @@ namespace Mehmet.Zoo
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
 
         public void TheEndStory()
         {
@@ -170,13 +154,7 @@ namespace Mehmet.Zoo
                 "              `-=#$%&%$#=-'                   I___       I   ____  NNNN     \\o/  \n" +
                 "                 | ;  :|                      I  .|    I NN  | .|  NNNN      |  \n" +
                 "         _____.,-#%&$@%#&#~,._____            I   |    I NN  |  |  NNNN     | \\   \n" + 
-
-
-
-                "                                   ");
-
-
-
+                "");
         }
 
     }
