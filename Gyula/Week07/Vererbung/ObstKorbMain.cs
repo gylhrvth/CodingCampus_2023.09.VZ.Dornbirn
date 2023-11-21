@@ -17,7 +17,6 @@ namespace Gyula.Week07.Vererbung
 			{
 				obst.PrintMe();
 			}
-
         }
     }
 }
