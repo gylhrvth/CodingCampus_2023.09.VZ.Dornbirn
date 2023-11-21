@@ -28,12 +28,12 @@ namespace Kerem.Week06.ExerciseZoo
             Pfleger Vivi = new Pfleger("Vivi", new List<Enclosure>{ Desert, mountain });
             Pfleger Rebecca = new Pfleger("Rebecca", new List<Enclosure> { fishtank, sky });
 
-            Animals mythic = new Animals("Kaido", 56, "Mythic", Sake ,11);
-            Animals Uglyfish = new Animals("Arlong", 44, "Fishman", fish , 7);
-            Animals Flamingo = new Animals("Don Quichotte de Flamingo", 34, "Stringman", SMILEfruit, 26);
-            Animals Thunder = new Animals("Enel", 43, "Earlobeman", Apple, 20);
-            Animals Croco = new Animals("Sir Crocodile", 35, "Hookman", Sand, 32);
-            Animals Deer = new Animals("Chopper", 15, "TonyTony", CottonCandy, 53);
+            Animals mythic = new Animals("Kaido", 56, "Mythic", Sake ,11, "ROROROROR");
+            Animals Uglyfish = new Animals("Arlong", 44, "Fishman", fish , 7,"KUSCHKUSCHSKSHUCH");
+            Animals Flamingo = new Animals("Don Quichotte de Flamingo", 34, "Stringman", SMILEfruit, 26,"HEHEHEHEHEH");
+            Animals Thunder = new Animals("Enel", 43, "Earlobeman", Apple, 20, "HAHDIHDAIHD");
+            Animals Croco = new Animals("Sir Crocodile", 35, "Hookman", Sand, 32,"OHOHAOSDHAODH");
+            Animals Deer = new Animals("Chopper", 15, "TonyTony", CottonCandy, 53, "HIHIHIHIHIH");
 
 
             z.Pfleger.Add(Vivi);
@@ -41,21 +41,23 @@ namespace Kerem.Week06.ExerciseZoo
 
 
             z.addEnclosure(Desert);
+            z.addEnclosure(mountain);
+            z.addEnclosure(sky);
+            z.addEnclosure(fishtank);
+            
             Desert.addAnimals(Croco);
 
-            z.addEnclosure(mountain);
+            sky.addAnimals(Thunder);
+
             mountain.addAnimals(Flamingo);
             mountain.addAnimals(Deer);
 
-            z.addEnclosure(sky);
-            sky.addAnimals(Thunder);
-
-            z.addEnclosure(fishtank);            
             fishtank.addAnimals(mythic);
             fishtank.addAnimals(Uglyfish);
             
-            z.AnimalStatistic();
             z.PrintZoo();
+   
+            z.PrintZooStatistic();
             Console.WriteLine("Simulation:");
          
 
