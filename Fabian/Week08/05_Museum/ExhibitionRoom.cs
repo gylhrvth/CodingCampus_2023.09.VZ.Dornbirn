@@ -2,17 +2,18 @@
 
 namespace Fabian.Week08._05_Museum
 {
-    public class ExhibitiomRoom
+    public class ExhibitionRoom : IRoom
     {
-        private string _Name;
         private List<Artwork> _Artworks;
 
-        public string Name { get => _Name; set => _Name = value; }
+        public List<IRoom> Neighbours { get; set; }
         public List<Artwork> Artworks { get => _Artworks; set => _Artworks = value; }
-        public ExhibitiomRoom(string name)
+        public string Name { get; set; }
+        public ExhibitionRoom(string name)
         {
-            _Name = name;
+            Name = name;
             _Artworks = new List<Artwork>();
+            Neighbours = new List<IRoom>();
         }
 
 

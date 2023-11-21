@@ -1,12 +1,18 @@
 ﻿namespace Fabian.Week08._05_Museum
 {
-    public class Hallway
+    public class Hallway : IRoom
     {
-        protected string _Name;
+        protected Random rnd = new();
+        public List<IRoom> Neighbours { get; set; }
+        public string Name { get; set; }
+
 
         public Hallway(string name)
         {
-            _Name = name;
+            Name = name;
+            Neighbours = new List<IRoom>();
         }
+
+
     }
 }
