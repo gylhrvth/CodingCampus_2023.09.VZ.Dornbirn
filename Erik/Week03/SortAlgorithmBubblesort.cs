@@ -82,14 +82,7 @@ namespace Erik.Week03
                         arr[j] = arr[j + 1];
                         arr[j + 1] = tmp;
                     }
-<<<<<<< HEAD
-                    //else
-                    //{
-                    //    Console.Write(arr[j] + " ");
-                    //}
-                    counter++;
-=======
->>>>>>> e1e98660fd5fad1d503beafc4d056a879c9d3726
+
                 }
             }
         }
