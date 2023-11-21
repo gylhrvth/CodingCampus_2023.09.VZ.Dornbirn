@@ -11,20 +11,16 @@ namespace Fabienne.Week07.Zoo
     public class Enclosure
     {
         private string _Name;
-        private string _Climate;
-        private string _Description;
         private List<Animal> _Animals;
-        
-        public Enclosure(string name, string climate, string desctription)
-        {
-            _Name = name;
-            _Climate = climate;
-            _Description = desctription;
-            _Animals = new List<Animal>();
-        }
+
         public string Name
         {
             get => _Name;
+        }
+        public Enclosure(string name, string climate, string desctription)
+        {
+            _Name = name;
+            _Animals = new List<Animal>();         
         }
         public void AddAnimals(Animal animals)
         {
@@ -40,7 +36,6 @@ namespace Fabienne.Week07.Zoo
                 animal.PrintAnimals();
             }
         }
-
         public void ReportFoodRequest(Dictionary<Food, double> report)
         {
             foreach (Animal ani in _Animals)

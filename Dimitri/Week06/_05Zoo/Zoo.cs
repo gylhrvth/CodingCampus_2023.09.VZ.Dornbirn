@@ -16,7 +16,7 @@ namespace Dimitri.Week06._05Zoo
         private DateTime _Foundation;
         private List<Gehege> _Gehege;
         private List<Waerter> _Waerter;
-
+        private List<TierArzt> _TierArztListe;
         public List<Gehege> Gehege
         {
             get => _Gehege;
@@ -27,12 +27,18 @@ namespace Dimitri.Week06._05Zoo
             get => _Waerter;
         }
 
+        public List<TierArzt> TierArztListe
+        { 
+            get => _TierArztListe; 
+        }
+
         public Zoo(string zoo, DateTime foundation, List<Gehege> gehege)
         {
             _Zoo = zoo;
             _Foundation = foundation;
             _Gehege = gehege;
             _Waerter = new List<Waerter>();
+            _TierArztListe = new List<TierArzt>();
         }
 
         public Zoo(string zoo, DateTime foundation)
@@ -41,6 +47,7 @@ namespace Dimitri.Week06._05Zoo
             _Foundation = foundation;
             _Gehege = new List<Gehege>();
             _Waerter = new List<Waerter>();
+            _TierArztListe = new List<TierArzt>();
         }
 
 
@@ -48,16 +55,20 @@ namespace Dimitri.Week06._05Zoo
 
         public static Zoo AddGehege(Zoo zoo, Gehege newGehege)
         {
-            zoo.Gehege.Add(newGehege);
+            zoo._Gehege.Add(newGehege);
 
             return zoo;
         }
 
         public static Zoo AddWarter(Zoo zoo, Waerter newWaerter)
         {
-            zoo.Waerter.Add(newWaerter); return zoo;
+            zoo._Waerter.Add(newWaerter); return zoo;
         }
 
+        public void AddTierArzt(TierArzt newDoctor)
+        {
+            _TierArztListe.Add(newDoctor);
+        }
         public override string ToString()
         {
             return string.Format("├── Zoo: {0}, gegründet {1}", _Zoo, _Foundation);
@@ -145,7 +156,7 @@ namespace Dimitri.Week06._05Zoo
         }
 
         private static Random random = new Random();
-        public void Simulation0()
+        public void Simulation0Old()
         {
             Dictionary<Gehege, bool> GehegeGefuettert = new();
             Console.WriteLine("Simulation 0.1 von {0}:", _Zoo);
@@ -154,13 +165,12 @@ namespace Dimitri.Week06._05Zoo
                 Console.WriteLine();
                 foreach (Gehege gehege in waerter.GehegeListe)
                 {
-                    Console.WriteLine();
                     if (!GehegeGefuettert.ContainsKey(gehege) && gehege.Tiere.Count != 0)
                     {
                         GehegeGefuettert.Add(gehege, true);
                         Console.WriteLine("{0} fuettert die Tiere im {1}.", waerter, gehege);
                         int i = random.Next(0, gehege.Tiere.Count);
-                        waerter.AddLieblingstier(waerter, gehege.Tiere[i]);
+                        waerter.AddLieblingstier(gehege.Tiere[i]);
                         Console.WriteLine("{0} beobachtet {1} nach dem fuettern.", waerter, waerter.LieblingsTier.Name);
                     }
                     else if (gehege.Tiere.Count == 0)
@@ -176,7 +186,17 @@ namespace Dimitri.Week06._05Zoo
             }
         }
 
-        public void Simulation1()
+        public void Simulation0()
+        {
+            foreach (Waerter waerter in Waerter)
+            {
+                waerter.FeedGehege();
+                Console.WriteLine();
+            }
+
+        }
+
+        public void Simulation1Old()
         {
             Console.WriteLine("Simulation 0.2 von {0}:", _Zoo);
             Console.WriteLine();
@@ -193,7 +213,7 @@ namespace Dimitri.Week06._05Zoo
                             {
                                 Console.WriteLine("{0} hat {1} hp.", tier.Name, tier.Gesundheit);
                                 Console.WriteLine("{0} beißt {1} und {1} nimmt {2} Schaden.", anderesTier, tier, anderesTier.Biss);
-                                tier.ChangeHealth(tier, anderesTier.Biss);
+                                tier.Bite(anderesTier.Biss);
                                 if (tier.Tot)
                                 {
                                     Console.WriteLine("{0} ist tot.", tier);
@@ -243,6 +263,60 @@ namespace Dimitri.Week06._05Zoo
             }
 
             return deadAnimal;
+        }
+
+        public void Simulation1()
+        {
+
+            foreach (Gehege gehege in Gehege)
+            {
+                gehege.Fight();
+            }
+        }
+
+        public void Simulation(int days)
+        {
+            for (int i = 0; i < days; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Simulation 0.3 von {0}, Tag {1}:", _Zoo, i + 1);
+                Console.ResetColor();
+                Console.WriteLine();
+                Simulation0();
+                Simulation1();
+                Simulation2();
+                ResetGehege();
+                Console.WriteLine();
+            }
+        }
+
+        public void ResetGehege()
+        {
+            foreach (Gehege gehege in _Gehege)
+            {
+                gehege.SetGehegeGefuettert(false);
+            }
+        }
+
+        public void Simulation2()
+        {
+            Tier lowestAnimal = null;
+            foreach(Gehege gehege in _Gehege)
+            {
+                if (gehege.Tiere.Count >= 2 )
+                {
+                    Tier newAnimal = gehege.GetLowestHealth();
+                    if (lowestAnimal == null || newAnimal.GetHealth()*100/(newAnimal.GetMaxHealth()*100) < (lowestAnimal.GetHealth()*100)/(lowestAnimal.GetMaxHealth()*100))
+                    {
+                        lowestAnimal = newAnimal;
+                    }
+                }
+            }
+
+            foreach(TierArzt tierArzt in _TierArztListe)
+            {
+                tierArzt.Heal(lowestAnimal);
+            }
         }
     }
 }

@@ -12,22 +12,23 @@ namespace Mehmet.ZOO
     internal class Animal
     {
         public static Random rand = new Random();
-        
-  
-
+        private int _health = 100;
         private string _Race;
         private string _Name;
-       
-    
         private List<Food> _FoodList;
         private bool _Fed = false;
 
-
-
+        public int Health
+        {
+            get => _health; set => _health = value;
+        }
 
         public bool Fed
         {
-            get => _Fed;
+            get
+            {
+                return _Fed;
+            }
             set
             {
                 //Console.WriteLine($"                Fed was changed from {Fed} to: false");
@@ -38,18 +39,19 @@ namespace Mehmet.ZOO
         public Animal(string race, string name)
         {
             _Race = race;
-            _Name = name;
-          
-      
+            _Name = name;      
             _FoodList = new List<Food>();           
         }
+
         public void AddFood(Food food)
         {
             _FoodList.Add(food);
         }
         
-
-
+        public void PrintAnimalName()
+        {
+            Console.Write(_Name);
+        }
 
         public void PrintStrukture()
         {
@@ -64,7 +66,6 @@ namespace Mehmet.ZOO
 
         public void SimulateDay()
         {
-
             if (_Fed == false)
             {
                 Console.WriteLine("      Tier {0} wird gefüttert", _Name);
@@ -74,12 +75,10 @@ namespace Mehmet.ZOO
 
         public void LookAtAnimal()
         {
-            Console.WriteLine("        bewundert -={0}=-", _Name);
+            Console.WriteLine("        bewundert  -={0}=-                     \n" +
+                              "          _ _     ┌─────────┐         o___/    \n" +
+                              "          °o°    <   WoW!!! │          │ │     \n" +
+                              "                  └─────────┘                            ", _Name);
         }
-
-
-
-
-
     }
 }

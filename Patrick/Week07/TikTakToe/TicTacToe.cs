@@ -9,6 +9,7 @@ namespace Patrick.Week07.TikTakToe
 {
     internal class TicTacToe
     {
+        public static bool P1 = true;
         public static void Start()
         {
 
@@ -18,7 +19,6 @@ namespace Patrick.Week07.TikTakToe
             char[][] board = CreateBoard(rows, columns);
 
             //Print
-            bool p1P2 = true;
             DisplayBoard(board);
             NextTurn(board);
 
@@ -58,7 +58,7 @@ namespace Patrick.Week07.TikTakToe
             Console.ResetColor();
         }
 
-        public static bool playerTurn = true;
+
 
 
         static char[][] NextTurn(char[][] displayboard)
@@ -66,7 +66,7 @@ namespace Patrick.Week07.TikTakToe
             char player1 = (char)9632;
             char player2 = (char)216;
 
-            if (playerTurn == true)
+            if (P1)
             {
                 Console.WriteLine($"Spieler 1 \"{player1}\" geben Sie eine Zahl für die Reihe ein!");
                 int inputRow = InputRow();
@@ -77,7 +77,7 @@ namespace Patrick.Week07.TikTakToe
 
                 if (CheckWin(displayboard, player1) == false)
                 {
-                    playerTurn = false;
+                    P1 = false;
                     NextTurn(displayboard);
                 }
                 else
@@ -96,7 +96,7 @@ namespace Patrick.Week07.TikTakToe
 
                 if (CheckWin(displayboard, player2) == false)
                 {
-                    playerTurn = true;
+                    P1 = true;
                     NextTurn(displayboard);
                 }
                 else

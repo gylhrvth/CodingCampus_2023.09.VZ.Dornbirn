@@ -9,12 +9,16 @@ namespace Fabienne.Week07.Zoo
     public class Caretaker
     {
         private string _Name;
-        //List Enclosure _Enclosures;
-        
-        public Caretaker(string name, Enclosure enclosures)
+        List<Enclosure> _Enclosure;
+
+        public string Name
+        {
+            get => _Name;
+        }
+        public Caretaker(string name, Enclosure enclosure)
         {
             _Name = name;
-            //_Enclosures = enclosures; 
+            _Enclosure = new List<Enclosure>();
         }
     }
 }
