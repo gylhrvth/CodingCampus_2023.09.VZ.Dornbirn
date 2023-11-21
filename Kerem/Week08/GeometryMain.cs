@@ -30,9 +30,19 @@ namespace Kerem.Week08
               c1, c2, r1, r2, t1, t2, s1, s2
               
             };
+            double sumCircumference = 0;
+            double sumArea = 0;
+
+            foreach(Geometry o in obj)
+            {
+                sumCircumference += o.CircumFerence();
+                sumArea += o.GetArea();
+            }
+            Console.WriteLine("Circumference: {0:N3} cm", sumCircumference);
+            Console.WriteLine("Area: {0:N3} cm^2", sumArea);
 
 
-            foreach(Geometry geo in obj)
+            foreach (Geometry geo in obj)
             {
                 Console.WriteLine("Umfang:" + geo.CircumFerence());
                 Console.WriteLine("Fläche:" + geo.GetArea());

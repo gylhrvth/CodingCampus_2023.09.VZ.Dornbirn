@@ -2,8 +2,10 @@
 
 namespace Riccardo.Week08
 {
-    internal class Geometry
+    public abstract class Geometry
     {
+        public abstract double GetCircumfence();
+        public abstract double GetArea();
 
 
     }

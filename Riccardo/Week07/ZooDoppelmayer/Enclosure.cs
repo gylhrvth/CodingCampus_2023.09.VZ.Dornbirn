@@ -17,7 +17,7 @@ namespace Riccardo.Week07.ZooDoppelmayer
             _AnimalsList = new List<Animals>();
         }
 
-        public void AddAnimals(Animals animals)
+      /*  public void AddAnimals(Animals animals)
         {
 
             if (!_AnimalsList.Contains(animals))
@@ -26,8 +26,7 @@ namespace Riccardo.Week07.ZooDoppelmayer
                 _AnimalsList.Add(animals);
             }
         }
-
-
+      */
 
         /*
         private string _Name;

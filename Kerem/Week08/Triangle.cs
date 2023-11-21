@@ -17,8 +17,11 @@ namespace Kerem.Week08
             _length = length;
             _height = height;
         }
-        public override double CircumFerence()
+        public override double CircumFerence()   
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Triangle");
+            Console.ForegroundColor= ConsoleColor.White;
             return _length + _length + _length;
         }
         public override double GetArea()

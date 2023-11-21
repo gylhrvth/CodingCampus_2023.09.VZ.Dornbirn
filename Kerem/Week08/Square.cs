@@ -16,6 +16,10 @@ namespace Kerem.Week08
         }
         public override double CircumFerence()
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Square");
+            Console.ForegroundColor = ConsoleColor.White;
+
             return _length *4;
         }
         public override double GetArea()
