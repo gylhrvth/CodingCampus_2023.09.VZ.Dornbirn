@@ -12,10 +12,10 @@ namespace Mehmet.Week07.Geometry
         {
             List<Geometry> geometryList = new List<Geometry>();
 
-            geometryList.Add(new Circle("Kreis",5));
-            geometryList.Add(new Rectangle("Rechteck",4, 3));
-            geometryList.Add(new Square("Würfel",5));
-            geometryList.Add(new Triangle("Dreieck",3, 4, 5));
+            geometryList.Add(new Circle("Kreis", 5));
+            geometryList.Add(new Rectangle("Rechteck", 4, 3));
+            geometryList.Add(new Square("Würfel", 5));
+            geometryList.Add(new Triangle("Dreieck", 3, 4, 5));
 
             foreach (Geometry geometry in geometryList)
             {
@@ -25,6 +25,8 @@ namespace Mehmet.Week07.Geometry
                 Console.WriteLine();
             }
 
+
+           
         }
     }
 }
