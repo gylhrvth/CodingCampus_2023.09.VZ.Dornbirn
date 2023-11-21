@@ -8,6 +8,7 @@ namespace Kerem.Week06.ExerciseZoo
 {
     internal class Enclosure
     {
+        Random rnd = new Random();
 
         private string _Description;
         private string _Name;
@@ -26,8 +27,12 @@ namespace Kerem.Week06.ExerciseZoo
             _IsFed = false;
         }
         public string Description { get => _Description; }
-        public bool IsFed {  get => _IsFed; }
+        public bool IsFed { get => _IsFed; set => _IsFed =value; }
         
+        public List<Animals> AnimalsList
+        {
+              get => _AnimalsList;
+        }
         public void addAnimals(Animals animals)
         {
             _AnimalsList.Add(animals);
@@ -52,6 +57,31 @@ namespace Kerem.Week06.ExerciseZoo
                 animals.GetAnimalStatistic(dic);
             }
         }
+        public void ObserveAnimals(string favspecies)
+        {
+            int r = rnd.Next(_AnimalsList.Count);
+
+            Animals WatchedAnimal = _AnimalsList[r];
+
+            Console.WriteLine(WatchedAnimal.Name + " " + WatchedAnimal.Genus + " wird beobachtet!");
+
+            if (WatchedAnimal.Genus.Equals(favspecies))
+            {
+                Console.WriteLine(WatchedAnimal.Genus + " is his fav animal so he pets it");
+            }
+
+        }
+
+        public Animals GetRandomAnimal()
+        {
+            int r = rnd.Next(_AnimalsList.Count);
+
+            Animals WatchedAnimal = _AnimalsList[r];
+
+            return WatchedAnimal;
+
+        }
+
 
     }
 }

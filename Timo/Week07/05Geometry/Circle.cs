@@ -6,28 +6,23 @@ using System.Threading.Tasks;
 
 namespace Timo.Week07._05Geometry
 {
-    public class Circle
+    public class Circle : Geometry
     {
         private double _Radius;
 
-        public Circle(double radius)
+        public Circle(double length)
         {
-            _Radius = radius;
+            _Radius = length;
         }
 
-        public double Radius
-        { get => _Radius; }
-
-
-        //get Circurcumverenze: 
-        public static double GetUmfang(double radius)
+        public override double GetCircumference()
         {
-            return 2*Math.PI*radius;
+            return 2 * Math.PI * _Radius;
         }
-        public static void GetFlaeche(double radius)
-        {
 
+        public override double GetArea()
+        {
+            return Math.Pow(_Radius, 2) * Math.PI;
         }
     }
-    
 }

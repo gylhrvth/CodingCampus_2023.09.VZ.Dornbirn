@@ -11,13 +11,13 @@ namespace Fabian.Week07._07Car
             Gas,
             Electricity
         }
-        private Tank _Tank;
-        private string _Producer;
-        private string _Model;
-        private double _Consumption;
-        private Engine _Engine;
-        private CarDriveType _DriveType;
-        private double _Weight;
+        protected Tank _Tank;
+        protected string _Producer;
+        protected string _Model;
+        protected double _Consumption;
+        protected Engine _Engine;
+        protected CarDriveType _DriveType;
+        protected double _Weight;
         private int _Trip;
 
         public string Model { get => _Model; }
@@ -77,12 +77,8 @@ namespace Fabian.Week07._07Car
                 Console.WriteLine(" The Engine is not broken!");         
         }
 
-        public void SelfRepair()
-        {
-            SetConsoleColor(ConsoleColor.DarkRed, "Car stopped!");
-            Console.WriteLine($"The engine of {_Model} has been repaired after {_Engine.DistanceTravelled} km!");
-            _Engine = new Engine("selfrepair", _Engine.Power);
-            SetConsoleColor(ConsoleColor.Green, "Brumm Brumm");
+        public virtual void SelfRepair()
+        {         
         }
     }
 }

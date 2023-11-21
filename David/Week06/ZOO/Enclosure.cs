@@ -9,8 +9,8 @@ namespace David.Week06.ZOO
 
         public string _Name { get; private set; }
         public string _Climate { get; private set; }
-        private List<Animals> _AnimalsList;
         private bool _WasKeeperInEnclosure;
+        private List<Animals> _AnimalsList;
 
         //Konstruktor
         public Enclosure(string name, string climate)
@@ -40,7 +40,7 @@ namespace David.Week06.ZOO
             Console.ResetColor();
             foreach (Animals animals in _AnimalsList)
             {
-                Console.WriteLine($"      ||--> Name: {animals.Name}, Age: {animals.Age}, Type: {animals.Genus}, Sex: {animals.Gender}, FoodAmount: {animals.ToString()}, ");
+                Console.WriteLine($"      ||--> Name: {animals.Name}, Age: {animals.Age}, Type: {animals.Genus}, Sex: {animals.Gender}, FoodAmount: {animals.ToString()} ");
 
             }
         }
