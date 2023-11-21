@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fabienne.Week07.Erbung
+namespace Jovo.Week08
 {
-    internal class Erbung
+    internal class Geometry
     {
-
     }
 }

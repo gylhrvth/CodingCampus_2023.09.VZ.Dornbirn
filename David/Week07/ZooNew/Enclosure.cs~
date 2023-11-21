@@ -1,0 +1,35 @@
+﻿using System;
+namespace David.Week07.ZooNew
+{
+	public class Enclosure
+	{
+        private string _Name;
+        private string _Climate;
+        private List<Animals> _AnimalsList;
+
+        public string Name
+        {
+            get => _Name;
+            set => _Name = value;
+        }
+        public string Climate
+        {
+            get => _Climate;
+            set => _Climate = value;
+        }
+
+
+        public Enclosure(string name, string climate)
+		{
+			_Name = name;
+			_Climate = climate;
+		}
+
+        public void PrintEnclosure()
+        {
+            Console.WriteLine($"{Name}, {Climate}");
+            Console.WriteLine();
+        }
+    }
+}
+
