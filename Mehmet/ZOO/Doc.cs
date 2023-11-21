@@ -29,10 +29,6 @@ namespace Mehmet.ZOO
             _CageList.Add(cage);
         }
 
-
-        
-
-
         public void HealAnimal()
         {
             foreach (Cage cage in _CageList)

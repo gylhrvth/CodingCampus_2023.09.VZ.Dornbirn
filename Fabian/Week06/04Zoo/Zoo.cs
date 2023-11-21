@@ -89,18 +89,22 @@ namespace Fabian.Week06._04Zoo
 
                 Animal min = null;
 
-                foreach (var animal in availableAnimals)             
-                    if (min == null || (animal.Health / animal.MaxHealth) < (min.Health / min.MaxHealth))                 
+                foreach (var animal in availableAnimals)
+                    if (min == null || (animal.Health*100 / animal.MaxHealth*100) < (min.Health*100 / min.MaxHealth*100))
+                    {
                         min = animal;
+                    }
 
 
-                if (min != null)
+                if (min.Health != min.MaxHealth)
                     doctor.Heal(min);
+                else
+                    Console.WriteLine("all animals are full life");
             }
         }
-        public void Simulation()
+        public void Simulation(int days)
         {
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= days; i++)
             {
                 Console.WriteLine("DAY " + i);
                 PrintStructure();

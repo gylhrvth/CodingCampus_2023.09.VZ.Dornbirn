@@ -11,10 +11,10 @@ namespace Simon.Week06.Zoo3
     {
         private string _Name;
         private List<Enclosure> _EnclosureList;
-        private Animals _FavAnimal;
-        private List<Animals> _AnimalsList;
+        private Animal _FavAnimal;
+        private List<Animal> _AnimalsList;
 
-        public Zookeeper(string name, List<Enclosure> enclosureListZookeeper, Animals animal)
+        public Zookeeper(string name, List<Enclosure> enclosureListZookeeper, Animal animal)
         {
             _Name = name;
             _EnclosureList = enclosureListZookeeper;

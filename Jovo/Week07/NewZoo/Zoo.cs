@@ -17,13 +17,13 @@ namespace Jovo.Week07.NewZoo
 
 
 
-        public Zoo(string Name, string Location, int ConstructionYear, int ZooEnclosuresCount, List<Enclosures> enclosuresList)
+        public Zoo(string Name, string Location, int ConstructionYear, int ZooEnclosuresCount)
         {
             this.Name = Name;
             this.Location = Location;
             this.ConstructionYear = ConstructionYear;
             this.ZooEnclosuresCount = ZooEnclosuresCount;
-            this.EnclosuresList = enclosuresList;
+            //this.EnclosuresList = new List<enclosuresList>();
         }
 
 

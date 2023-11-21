@@ -13,12 +13,8 @@ namespace Mehmet.ZOO
     {
         public static Random rand = new Random();
         private int _health = 100;
-  
-
         private string _Race;
         private string _Name;
-       
-    
         private List<Food> _FoodList;
         private bool _Fed = false;
 
@@ -26,7 +22,6 @@ namespace Mehmet.ZOO
         {
             get => _health; set => _health = value;
         }
-
 
         public bool Fed
         {
@@ -47,13 +42,12 @@ namespace Mehmet.ZOO
             _Name = name;      
             _FoodList = new List<Food>();           
         }
+
         public void AddFood(Food food)
         {
             _FoodList.Add(food);
         }
         
-
-
         public void PrintAnimalName()
         {
             Console.Write(_Name);
@@ -81,12 +75,10 @@ namespace Mehmet.ZOO
 
         public void LookAtAnimal()
         {
-            Console.WriteLine("        bewundert -={0}=-", _Name);
+            Console.WriteLine("        bewundert  -={0}=-                     \n" +
+                              "          _ _     ┌─────────┐         o___/    \n" +
+                              "          °o°    <   WoW!!! │          │ │     \n" +
+                              "                  └─────────┘                            ", _Name);
         }
-        
-
-
-
-
     }
 }

@@ -24,7 +24,6 @@ namespace Mehmet.ZOO
             _TotalPrice = totalprice;
         }
         
-
         public void PrintStrukture()
         {
             Console.WriteLine("         └──┤ Essen: {0}, Menge: {1}kg , Preis: {2}Euro , Gesammtpreis: {3}Euro",
@@ -33,10 +32,5 @@ namespace Mehmet.ZOO
                 _Price,
                 _TotalPrice);
         }
-
-
-
-
-
     }
 }

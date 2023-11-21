@@ -1,5 +1,4 @@
-﻿using System;
-namespace Gyula.Week07.Vererbung
+﻿namespace Gyula.Week07.Vererbung
 {
 	public class ObstKorbMain
 	{
@@ -16,7 +15,12 @@ namespace Gyula.Week07.Vererbung
 			foreach (Obst obst in korb)
 			{
 				obst.PrintMe();
+				obst.Einnahme();
 			}
+
+			VitaminQuelle vq = new BTablette("C Vitamin 250mg");
+			vq.Einnahme();
+
         }
     }
 }

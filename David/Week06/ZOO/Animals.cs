@@ -20,6 +20,22 @@ namespace David.Week06.ZOO
         {
             get => _Food;
         }
+        public string Name
+        {
+            get => _Name;
+        }
+        public string Genus
+        {
+            get => _Genus;
+        }
+        public string Gender
+        {
+            get => _Gender;
+        }
+        public int Age
+        {
+            get => _Age;
+        }
 
         //Konstruktor
         public Animals(string name, int age, string genus, string gender, float foodAmount, Food food, int maxHealthRate, int bitePower)
