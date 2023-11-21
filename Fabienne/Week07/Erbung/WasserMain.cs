@@ -10,13 +10,14 @@ namespace Fabienne.Week07.Erbung
     {
        public static void Start()
        {
-            List<WasserMain> wasser = new List<WasserMain>();
+            List<Water> wasser = new List<Water>();
 
-            wasser.Add(new WasserMain());
+            wasser.Add(new Water("Leitungswasser"));
+            wasser.Add(new MineralWasser("Prickelnd", 1));
 
-            foreach (WasserMain w in wasser)
+            foreach (Water w in wasser)
             {
-              //  w.PrintMe();
+              w.Print();
             }
         }    
     }
