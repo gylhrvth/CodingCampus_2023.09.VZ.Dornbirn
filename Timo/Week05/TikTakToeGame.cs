@@ -168,7 +168,6 @@ namespace Timo.Week05
             string error = "Field alrerady taken, try another";
             while (notCorrectInput)
             {
-                //ToDo: den code verbessert umsetzen!!!!!!!!!!!!
                 //int number = ConsoleInputs.ReadNumber("It's Player 1's (X) turn: please enter a number ", 1, 9) - 1;
                 //if (arr2D[number % 3][number / 3] == " ")
                 //{

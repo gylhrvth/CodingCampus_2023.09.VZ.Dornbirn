@@ -49,7 +49,7 @@ namespace Mehmet.Zoo
 
         public void SimulateDay(int dayNr)
         {
-            Console.WriteLine("\n\nStarting Day {0}", dayNr);
+            Console.WriteLine("\n\n\nTag {0}", dayNr);
             foreach (Worker worker in _WorkerList)
             {
                 worker.SimulateDay();
