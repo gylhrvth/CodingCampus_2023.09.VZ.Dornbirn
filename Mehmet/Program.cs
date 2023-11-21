@@ -1,4 +1,4 @@
-﻿using Mehmet.Week07.Vererbung;
+﻿using Mehmet.Week07.Geometry;
 
-ArthropodaMain.Start();
+GeometryMain.Start();
  
