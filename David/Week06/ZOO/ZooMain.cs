@@ -70,11 +70,14 @@ namespace David.Week06.ZOO
 
             //Print
             zoo.PrintStructure();
+
 			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.WriteLine();
 			Console.WriteLine("--------------");
 			Console.ResetColor();
+
 			zoo.PrintZooStatistic();
+
 			Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine();
             Console.WriteLine("--------------");

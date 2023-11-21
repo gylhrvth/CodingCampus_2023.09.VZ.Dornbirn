@@ -6,7 +6,7 @@ namespace David.Week06.ZOO
 {
 	internal class Zoo
 	{
-	
+
 		private string _Name;
 		private string _Locality;
 		private int _FoundingYear;
@@ -76,7 +76,6 @@ namespace David.Week06.ZOO
 			_EnclosureList.Add(enc);
 		}
 
-
 		public void PrintZoo()
 		{
 			Console.ForegroundColor = ConsoleColor.Yellow;
@@ -92,7 +91,6 @@ namespace David.Week06.ZOO
 				keeper.PrintZooKeeper();
 			}
 		}
-
 
         public void PrintListZooKeeper()
         {

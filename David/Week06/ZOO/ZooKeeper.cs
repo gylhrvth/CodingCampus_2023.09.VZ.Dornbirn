@@ -7,9 +7,8 @@ namespace David.Week06.ZOO
     internal class ZooKeeper
     {
         public string _Name { get; private set; }
-
-
         private List<Enclosure> _EnclosureList = new();
+
 
         public ZooKeeper(string name, List<Enclosure> enclosures)
         {
@@ -17,11 +16,13 @@ namespace David.Week06.ZOO
             _EnclosureList = enclosures;
         }
 
+
         public List<Enclosure> EnclosureList
         {
             get => _EnclosureList;
             set => _EnclosureList = value;
         }
+
 
         public void PrintZooKeeper(bool printEnclosures = true)
         {
