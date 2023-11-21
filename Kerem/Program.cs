@@ -14,4 +14,4 @@
 //Kerem.Week06.ExerciseZoo.ZooMain.Start();
 
 
-Kerem.Week08.Vererbung.DiseasesMain.Start();
+Kerem.Week08.GeometryMain.Start();
