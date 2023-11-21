@@ -1,4 +1,4 @@
-﻿using System.IO;
+﻿using System.Diagnostics.CodeAnalysis;
 
 namespace Fabian.Week08
 {
@@ -6,26 +6,37 @@ namespace Fabian.Week08
     {
         public static void Start()
         {
-            string path = "C:\\Users\\fakr\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Fabian";
-            NavigateDirectory(path, 0);
+            string path = @"C:\Users\Anwender\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Fabian";
+            NavigateDirectory(path, "");
         }
 
-        public static void NavigateDirectory(string path, int indentationLevel)
+        public static void NavigateDirectory(string path, string prefix)
         {
-            string indentation = new string(' ', indentationLevel * 4);
             string[] files = Directory.GetFiles(path);
             string[] directories = Directory.GetDirectories(path);
 
             foreach (string file in files)
             {
-                Console.WriteLine($"{indentation}├── {Path.GetFileName(file)}");
+                if (file == files.Last())
+                    Console.WriteLine($"{prefix}└── {Path.GetFileName(file)}");
+                else
+                    Console.WriteLine($"{prefix}├── {Path.GetFileName(file)}");
             }
 
             foreach (string directory in directories)
             {
-                Console.WriteLine($"{indentation}├── {Path.GetFileName(directory)}");
-                NavigateDirectory(directory, indentationLevel + 1);
+                if (directory == directories.Last())
+                {
+                    Console.WriteLine($"{prefix}└── {Path.GetFileName(directory)}");
+                    NavigateDirectory(directory, $"{prefix}    ");
+                }
+                else
+                {
+                    Console.WriteLine($"{prefix}├── {Path.GetFileName(directory)}");
+                    NavigateDirectory(directory, $"{prefix}|   ");
+                }
             }
         }
     }
 }
+

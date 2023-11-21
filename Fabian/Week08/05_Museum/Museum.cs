@@ -4,30 +4,34 @@ namespace Fabian.Week08._05_Museum
     public class Museum
     {
         private string _Name;
-        private List<ExhibitionRoom> _Rooms;
-        private List<Hallway> _Hallways;
-        private DateTime _OpeningTime;
-        private DateTime _ClosingTime;
+        private Hallway _Entrance;
+        private List<Visitor> _Visitors;
         private int _Ticks;
 
-        public List<ExhibitionRoom> ExhibitionRooms { get => _Rooms; set => _Rooms = value; }
-        public List<Hallway> Hallways { get => _Hallways; set => _Hallways = value; }
         public int Ticks { get => _Ticks; set => _Ticks = value; }
-        public Museum(string name, DateTime openingTime, DateTime closingTime)
+        public Museum(string name, Hallway entrance)
         {
             _Name = name;
-            _Rooms = new List<ExhibitionRoom>();
-            _Hallways = new List<Hallway>();
-            _OpeningTime = openingTime;
-            _ClosingTime = closingTime;
+            _Visitors = new List<Visitor>();
+            _Entrance = entrance;
             _Ticks = 0;
         }
         
-
-
-        public override string ToString()
+        public void AddVisitor(Visitor v)
         {
-            return $"Name: {_Name}, opening time: {_OpeningTime:t} - {_ClosingTime:t}";
+            if (!_Visitors.Contains(v))
+            {
+                _Visitors.Add(v);
+                v.MoveTo(_Entrance);
+            }
+                                    
         }
+
+        public void PrintStructure(string prefix)
+        {
+            Console.WriteLine($"{prefix}Museum: {_Name}");
+            List<Room> roomsVisited = new List<Room>();
+            _Entrance.PrintStructure(prefix + "    ", roomsVisited);
+        }     
     }
 }

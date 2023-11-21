@@ -1,18 +1,17 @@
 ﻿namespace Fabian.Week08._05_Museum
 {
-    public class Hallway : IRoom
+    public class Hallway : Room
     {
         protected Random rnd = new();
-        public List<IRoom> Neighbours { get; set; }
-        public string Name { get; set; }
 
-
-        public Hallway(string name)
+        public Hallway(string name) : base(name)
         {
-            Name = name;
-            Neighbours = new List<IRoom>();
+
         }
 
-
+        protected override void PrintMyself(string prefix)
+        {
+            Console.Write($"{prefix} Hallway: {_Name}");
+        }
     }
 }

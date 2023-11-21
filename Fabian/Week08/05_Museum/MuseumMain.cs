@@ -5,9 +5,10 @@ namespace Fabian.Week08._05_Museum
     {
         public static void Start()
         {
-            Museum museum = new("Pinakothek", new DateTime(2023, 11, 21, 9, 0, 0), new DateTime(2023, 11, 21, 17, 0, 0));
 
-            MainHallway mainHallway = new("Mainhallway");
+            Hallway mainHallway = new("main hallway");
+
+            Museum museum = new("Pinakothek", mainHallway);
 
             Hallway hallway1 = new("hallway1");
             Hallway hallway2 = new("hallway2");
@@ -26,18 +27,15 @@ namespace Fabian.Week08._05_Museum
 
             Thief t1 = new("Chris", 15, 50);
 
-            mainHallway.Visitors.AddRange(new List<Visitor>
-            {
-                new("Sandro"),
-                new("Timo"),
-                new("David"),
-                new("Fabian"),
-                new("Patrick"),
-                new("Cemal"),
-                new("Dario"),
-                new("Hassan"),
-                new("Mohammed"),
-            });
+            Visitor sandro = new("Sandro");
+            Visitor timo = new("Timo");
+            Visitor david = new("David");
+            Visitor fabian = new("Fabian");
+            Visitor patrick = new("Patrick");
+            Visitor cemal = new("Cemal");
+            Visitor dario = new("Dario");
+            Visitor hassan = new("Hassan");
+            Visitor mohammed = new("Mohammed");            
 
             room1.Artworks.AddRange(new List<Artwork>()
             {
@@ -110,59 +108,40 @@ namespace Fabian.Week08._05_Museum
                 new("The Raft of the Medusa", 3),
             });
 
+            mainHallway.AddNeighour(room5);
+            mainHallway.AddNeighour(room9);
+            mainHallway.AddNeighour(hallway1);
 
-            museum.Hallways.Add(hallway1);
-            museum.Hallways.Add(hallway2);
+            hallway1.AddNeighour(room3);
+            hallway1.AddNeighour(hallway2);
+            hallway1.AddNeighour(room6);
 
-            museum.ExhibitionRooms.Add(room1);
-            museum.ExhibitionRooms.Add(room2);
-            museum.ExhibitionRooms.Add(room3);
-            museum.ExhibitionRooms.Add(room4);
-            museum.ExhibitionRooms.Add(room5);
-            museum.ExhibitionRooms.Add(room6);
-            museum.ExhibitionRooms.Add(room7);
-            museum.ExhibitionRooms.Add(room8);
-            museum.ExhibitionRooms.Add(room9);
+            hallway2.AddNeighour(room1);
+            hallway2.AddNeighour(room6);
 
-            mainHallway.Neighbours.Add(room5);
-            mainHallway.Neighbours.Add(room9);
-            mainHallway.Neighbours.Add(hallway1);
+            room1.AddNeighour(room2);
+            room2.AddNeighour(room3);
+            room3.AddNeighour(room4);
+            room4.AddNeighour(room5);
+            room6.AddNeighour(room7);
+            room7.AddNeighour(room8);
 
-            hallway1.Neighbours.Add(room3);
-            hallway1.Neighbours.Add(hallway2);
-            hallway1.Neighbours.Add(mainHallway);
+            //Simulation
 
-            hallway2.Neighbours.Add(room1);
-            hallway2.Neighbours.Add(room6);
-            hallway2.Neighbours.Add(hallway1);
+            museum.PrintStructure("");
 
-            room1.Neighbours.Add(hallway2);
-            room1.Neighbours.Add(room2);
+            museum.AddVisitor(sandro);
+            museum.AddVisitor(timo);
+            museum.AddVisitor(david);
+            museum.AddVisitor(fabian);
+            museum.AddVisitor(patrick);
+            museum.AddVisitor(cemal);
+            museum.AddVisitor(dario);
+            museum.AddVisitor(hassan);
+            museum.AddVisitor(mohammed);
 
-            room2.Neighbours.Add(room1);
-            room2.Neighbours.Add(room3);
 
-            room3.Neighbours.Add(hallway1);
-            room3.Neighbours.Add(room2);
-            room3.Neighbours.Add(room4);
 
-            room4.Neighbours.Add(room3);
-            room4.Neighbours.Add(room5);
-            
-            room5.Neighbours.Add(mainHallway);
-            room5.Neighbours.Add(room4);
-
-            room6.Neighbours.Add(hallway1);
-            room6.Neighbours.Add(room7);
-
-            room7.Neighbours.Add(room6);
-            room7.Neighbours.Add(room8);
-
-            room8.Neighbours.Add(room7);
-
-            room9.Neighbours.Add(mainHallway);
-
-            mainHallway.SendVistorsToRooms();
 
         }
     }

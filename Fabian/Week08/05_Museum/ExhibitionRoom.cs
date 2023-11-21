@@ -1,21 +1,19 @@
-﻿using System.Security.Cryptography;
+﻿
 
 namespace Fabian.Week08._05_Museum
 {
-    public class ExhibitionRoom : IRoom
+    public class ExhibitionRoom : Room
     {
         private List<Artwork> _Artworks;
-
-        public List<IRoom> Neighbours { get; set; }
         public List<Artwork> Artworks { get => _Artworks; set => _Artworks = value; }
-        public string Name { get; set; }
-        public ExhibitionRoom(string name)
-        {
-            Name = name;
+        public ExhibitionRoom(string name) : base(name)
+        { 
             _Artworks = new List<Artwork>();
-            Neighbours = new List<IRoom>();
         }
 
-
+        protected override void PrintMyself(string prefix)
+        {
+            Console.Write($"{prefix} Exhibition: {_Name}");
+        }
     }
 }

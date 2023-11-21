@@ -5,18 +5,28 @@
         private Random rnd = new();
         protected string _Name;
 
-        public IRoom Room { get; set; }
+        public Room _CurrentLocation { get; set; }
         public string Name { get => _Name; set => _Name = value; }
         public Visitor(string name)
         {
             _Name = name;
-            Room = null;
+            _CurrentLocation = null;
         }
 
-        public void WatchArtwork()
+        public void MoveTo(Room room)
         {
-            //int randomArtwork = rnd.Next(Room.Artworks.Count);
-            //Console.WriteLine($"{_Name} is spectating the artwork {Room.Artworks[randomArtwork].Name}");
+            if (room == _CurrentLocation)
+            {
+                return;
+            }
+
+            if (_CurrentLocation != null)
+            {
+                _CurrentLocation.ExitVisitor(this);
+            }
+
+            _CurrentLocation = room;
+            _CurrentLocation.EnterVisitor(this);
         }
     }
 }
