@@ -1,3 +1,3 @@
-﻿using Gyula.Week07.Vererbung;
+﻿using Gyula.Week08.MuseumSim;
 
-ObstKorbMain.Start();
+MuseumMain.Start();

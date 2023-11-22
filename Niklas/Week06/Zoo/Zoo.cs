@@ -13,6 +13,9 @@ namespace Niklas.Week06.Zoo
         private int _year;
         private string _day;
         private List<ZooKeeper> _ZooKeeper;
+        private List<Enclosure> _enclosures;
+        private List<Animal> _AnimalsList;
+
         public string Name
         {
             get => _name;
@@ -44,11 +47,17 @@ namespace Niklas.Week06.Zoo
             }
         }
 
+        public void AddEnclosure(Enclosure enclosure)
+        {
+            this._enclosures.Add(enclosure);
+        }
+
         public Zoo(string name, int year)
         {
             name = _name;
             year = _year;
             _ZooKeeper = new List<ZooKeeper>();
+            _enclosures = new List<Enclosure>();
         }
         public void AddZooKeeper(ZooKeeper zooKeeper)
         {
@@ -66,5 +75,53 @@ namespace Niklas.Week06.Zoo
                 zooKeeper.PrintZoo();
             }
         }
+
+        public void SimulateDay()
+        {
+            foreach (Enclosure enc in _enclosures)
+            {
+                enc.SimulateDay();
+            }
+        }
+        public void FeedAnimals()
+        {
+            foreach (Enclosure enc in _enclosures)
+            {
+                enc.FeedAnimalsAndClean();
+            }
+        }
+
+        public void Biting()
+        {
+            foreach (Enclosure enc in _enclosures)
+            {
+                
+                enc.Biting();
+            }
+        }
+
+        public void BiteDamage()
+        {
+            foreach (Enclosure enc in _enclosures)
+            {
+                enc.BiteDamage();
+            }
+        }
+
+        public void DeadAnimal()
+        {
+            foreach (Enclosure enc in _enclosures)
+            {
+                enc.DeadAnimal();
+            }
+        }
+
+        //public void Feeding()
+        //{
+        //    foreach (Animals animal in _animals)
+        //    {
+        //        _ZooKeeper.Feeding = animal.Name;
+        //    }
+        //}
     }
 }

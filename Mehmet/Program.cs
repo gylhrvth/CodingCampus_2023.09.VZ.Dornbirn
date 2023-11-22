@@ -1,4 +1,5 @@
 ﻿using Mehmet.Week07.Geometry;
+using Mehmet.Week07.Museum;
 
-GeometryMain.Start();
+MuseumStart.Start();
  

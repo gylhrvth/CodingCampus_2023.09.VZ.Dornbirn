@@ -34,8 +34,6 @@ namespace Mehmet.Week07.Geometry
         public override double getArea()
         {
             double a = (_x + _y + _z)/2;
-
-
             return Math.Sqrt(a*(a-_x)*(a-_y)*(a-_z));
         }
 
