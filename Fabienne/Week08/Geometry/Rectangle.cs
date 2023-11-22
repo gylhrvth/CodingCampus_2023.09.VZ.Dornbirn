@@ -15,11 +15,11 @@ namespace Fabienne.Week08.Geometry
             _Length = length;
             _Height = height;
         }
-        public override double GetArea()
+        public /*override*/ double GetArea()
         {
             return _Length * _Height;
         }
-        public override double GetCircumference()
+        public /*override*/ double GetCircumference()
         {
             return (_Height + _Length) * 2;
         }

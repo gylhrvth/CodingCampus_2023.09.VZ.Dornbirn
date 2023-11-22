@@ -3,8 +3,11 @@ namespace Gyula.Week08.MuseumSim
 {
 	public class Guest
 	{
+		private static Random rand = new Random();
+
 		private string _Name;
 		private Room _CurrentLocation;
+		private int _TimeLeft;
 
 		public string Name { get => _Name; }
 
@@ -12,6 +15,7 @@ namespace Gyula.Week08.MuseumSim
 		{
 			_Name = name;
 			_CurrentLocation = null;
+			_TimeLeft = 0;
 		}
 
 		public void MoveTo(Room room)
@@ -28,7 +32,30 @@ namespace Gyula.Week08.MuseumSim
 
 			_CurrentLocation = room;
 			_CurrentLocation.enterGuest(this);
+			_TimeLeft = rand.Next(3);
 		}
+
+
+		public void Tick()
+		{
+			if (_TimeLeft > 0)
+			{
+				--_TimeLeft;
+				Console.WriteLine("Do nothing...");
+			}
+			else
+			{
+                Room nextRoom = _CurrentLocation.GetRandomNeighbouringRoom();
+                if (nextRoom == null)
+                {
+                    Console.WriteLine($"{_Name} is blocked in {_CurrentLocation.Name}");
+                }
+                else
+                {
+                    MoveTo(nextRoom);
+                }
+            }
+        }
 	}
 }
 

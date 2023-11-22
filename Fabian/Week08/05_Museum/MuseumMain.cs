@@ -10,18 +10,18 @@ namespace Fabian.Week08._05_Museum
 
             Museum museum = new("Pinakothek", mainHallway);
 
-            Hallway hallway1 = new("hallway1");
-            Hallway hallway2 = new("hallway2");
+            Hallway hallway1 = new("hallway 1");
+            Hallway hallway2 = new("hallway 2");
 
-            ExhibitionRoom room1 = new("room1");
-            ExhibitionRoom room2 = new("room2");
-            ExhibitionRoom room3 = new("room3");
-            ExhibitionRoom room4 = new("room4");
-            ExhibitionRoom room5 = new("room5");
-            ExhibitionRoom room6 = new("room6");
-            ExhibitionRoom room7 = new("room7");
-            ExhibitionRoom room8 = new("room8");
-            ExhibitionRoom room9 = new("room9");
+            ExhibitionRoom room1 = new("room 1");
+            ExhibitionRoom room2 = new("room 2");
+            ExhibitionRoom room3 = new("room 3");
+            ExhibitionRoom room4 = new("room 4");
+            ExhibitionRoom room5 = new("room 5");
+            ExhibitionRoom room6 = new("room 6");
+            ExhibitionRoom room7 = new("room 7");
+            ExhibitionRoom room8 = new("room 8");
+            ExhibitionRoom room9 = new("room 9");
 
             Guardian g1 = new("Fred", 10);
 
@@ -36,6 +36,17 @@ namespace Fabian.Week08._05_Museum
             Visitor dario = new("Dario");
             Visitor hassan = new("Hassan");
             Visitor mohammed = new("Mohammed");            
+            Visitor guenther = new("Günther");            
+            Visitor fred = new("Fred");            
+            Visitor olaf = new("Olaf");            
+            Visitor bro = new("Bro");            
+            Visitor hugo = new("Hugo");            
+            Visitor garmond = new("Garmond");            
+            Visitor idaxis = new("Idaxis");            
+            Visitor fenris = new("Fenris");            
+            Visitor heinrich = new("Heinrich");            
+            Visitor doris = new("Doris");            
+            Visitor yukiko = new("Yukiko");            
 
             room1.Artworks.AddRange(new List<Artwork>()
             {
@@ -108,9 +119,13 @@ namespace Fabian.Week08._05_Museum
                 new("The Raft of the Medusa", 3),
             });
 
+
+            Hallway exit = new("exit");
+
             mainHallway.AddNeighour(room5);
             mainHallway.AddNeighour(room9);
             mainHallway.AddNeighour(hallway1);
+            mainHallway.AddNeighour(exit);
 
             hallway1.AddNeighour(room3);
             hallway1.AddNeighour(hallway2);
@@ -126,9 +141,8 @@ namespace Fabian.Week08._05_Museum
             room6.AddNeighour(room7);
             room7.AddNeighour(room8);
 
-            //Simulation
-
             museum.PrintStructure("");
+            Console.WriteLine();
 
             museum.AddVisitor(sandro);
             museum.AddVisitor(timo);
@@ -139,9 +153,22 @@ namespace Fabian.Week08._05_Museum
             museum.AddVisitor(dario);
             museum.AddVisitor(hassan);
             museum.AddVisitor(mohammed);
+            museum.AddVisitor(guenther);
+            museum.AddVisitor(fred);
+            museum.AddVisitor(olaf);
+            museum.AddVisitor(bro);
+            museum.AddVisitor(garmond);
+            museum.AddVisitor(hugo);
+            museum.AddVisitor(idaxis);
+            museum.AddVisitor(fenris);
+            museum.AddVisitor(heinrich);
+            museum.AddVisitor(doris);
+            museum.AddVisitor(yukiko);
+
+            Console.WriteLine();
 
 
-
+            museum.Simulation(8000000);
 
         }
     }

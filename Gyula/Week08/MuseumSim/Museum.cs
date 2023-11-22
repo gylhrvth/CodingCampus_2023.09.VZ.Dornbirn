@@ -29,6 +29,14 @@ namespace Gyula.Week08.MuseumSim
                 g.MoveTo(_Entrace);
             }
 		}
+
+		public void Tick()
+		{
+			foreach (Guest g in _Guests)
+			{
+				g.Tick();
+			}
+		}
 	}
 }
 
