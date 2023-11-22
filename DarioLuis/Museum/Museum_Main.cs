@@ -4,11 +4,33 @@
     {
         public static void Start()
         {
-            Museum museum = new Museum("Schloss von Gyulalia", 1869);
+            Hallway eingang = new Hallway("Eingang");
+            Museum museum = new Museum("Schloss vo" +
+                "n Gyulalia", 1869, eingang);
+
+            Austellungsraum r1 = new Austellungsraum("Gemälde");
+            Austellungsraum r2 = new Austellungsraum("Moderne Kunst");
+
+            eingang.Raumhinzu(r1);
+            r1.Raumhinzu(r2);
+
+            museum.PrintStruktur("");
+
+            Gast ali = new Gast("Ali", false);
+            museum.Gasthinzu(ali);
+
+            Gast berna = new Gast("Berna", false);
+            museum.Gasthinzu(berna);
+
+            for (int i = 0; i < 10; i++)
+            {
+                museum.Tick();
+            }
+
+
+            /*
 
             //Gäste
-            Gast ali = new Gast("Ali", false);
-            Gast berna = new Gast("Berna", false);
             Gast cemal = new Gast("Cemal", true);
             Gast dario = new Gast("Dario", true);
             Gast david = new Gast("David", false);
@@ -89,7 +111,7 @@
             //Kunststücke
             Kunststuecke doctorschnabel = new Kunststuecke("Doctor Schnabel in Rom", 1656, "Ein Pestdoktor", "Barock");
             
-
+            */
 
 
         }

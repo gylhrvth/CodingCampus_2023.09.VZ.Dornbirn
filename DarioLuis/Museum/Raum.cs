@@ -8,12 +8,13 @@ namespace DarioLuis.Museum
 {
     public abstract class Raum
     {
+        private static Random rand = new Random();
         public string Name { get; set; }
 
 
         public List<string> Kunststücke;
         public List<Gast> Gaeste;
-        public List<Raum> Raeume;
+        public List<Raum> NachbarRaeume;
         
 
         public Raum(string name)
@@ -21,75 +22,76 @@ namespace DarioLuis.Museum
             Name = name;
             Gaeste = new List<Gast>();
             Kunststücke = new List<string>();
-            Raeume = new List<Raum>();
+            NachbarRaeume = new List<Raum>();
         }
 
-        public void RaumVerlassen(Gast gaeste)
+        public void RaumVerlassen(Gast gast)
         {
-            if (!Gaeste.Contains(gaeste))
+            //Console.WriteLine($"{gast.Name} verlässt den Raum {Name}.");
+            if (Gaeste.Contains(gast))
             {
-                Gaeste.Add(gaeste);
-                Console.WriteLine($"{gaeste.Name} verlässt den Raum {Name}.");
+                Gaeste.Remove(gast);
             }
         }
-        public void GebaeudeVerlassen(Gast gaeste)
+        public void RaumEintreten(Gast gast)
         {
-            if (!Gaeste.Contains(gaeste))
+            Console.WriteLine($"{gast.Name} tritt in den Raum {Name} ein.");
+            if (!Gaeste.Contains(gast))
             {
-                Gaeste.Remove(gaeste);
-                Console.WriteLine($"{gaeste.Name} hat das Museum verlassen.");
+                Gaeste.Add(gast);
             }
         }
 
-        public void GebaeudeBetreten(Gast gaeste)
-        {
-            if (!Gaeste.Contains(gaeste))
-            {
-                Gaeste.Add(gaeste);
-                Console.WriteLine($"{gaeste.Name} hat das Museum betreten");
-            }
-        }
         
-        public void Raumhinzu(Raum austellungsräume)
+        public void Raumhinzu(Raum raum)
         {
-            if (!Raeume.Contains(austellungsräume))
+            if (!NachbarRaeume.Contains(raum))
             {
-                Raeume.Add(austellungsräume);
-                austellungsräume.Raumhinzu(this);
+                NachbarRaeume.Add(raum);
+                raum.Raumhinzu(this);
             }
         }
 
-        public void SimulateGuest(Gast gaeste)
+
+        public abstract void PrintMich(string prefix);
+
+        public void PrintStruktur(string prefix, List<Raum> besuchteRaeume)
         {
-            RaumVerlassen(gaeste);
-            GebaeudeVerlassen(gaeste);
-            GebaeudeBetreten(gaeste);
-        }
-        public void Gebaeudeplan(string index, List<Raum> besucht)
-        {
-            if (!besucht.Contains(this))
+            if (!besuchteRaeume.Contains(this))
             {
-                besucht.Add(this);
-                AufenthaltsOrt(index);
+                besuchteRaeume.Add(this);
+                PrintMich(prefix);
                 bool first = true;
-                foreach(Raum a in Raeume )
+                foreach (Raum r in NachbarRaeume)
                 {
+                    if (first)
+                    {
+                        Console.Write(" Nachbarräume: ");
+                    }
+                    else
+                    {
+                        Console.Write(", ");
+                    }
                     first = false;
-                    Console.WriteLine(a.Name);
+                    Console.Write(r.Name);
                 }
-                foreach(Raum b in Raeume)
+                Console.WriteLine();
+                foreach (Raum r in NachbarRaeume)
                 {
-                    b.Gebaeudeplan(index, besucht);
+                    r.PrintStruktur(prefix, besuchteRaeume);
                 }
             }
-
         }
 
-        public abstract void AufenthaltsOrt(string index);
 
-
-        
-
-        
+        public Raum GibEinNachbarRaum()
+        {
+            Raum r = null;
+            if (NachbarRaeume.Count > 0)
+            {
+                r = NachbarRaeume[rand.Next(NachbarRaeume.Count)];
+            }
+            return r;
+        }
     }
 }

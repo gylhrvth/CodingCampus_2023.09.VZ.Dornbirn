@@ -37,5 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
+    <ProjectReference Include="..\DarioLuis\DarioLuis.csproj" />
   </ItemGroup>
 </Project>

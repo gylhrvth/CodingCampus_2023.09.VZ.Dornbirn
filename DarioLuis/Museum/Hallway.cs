@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DarioLuis.Museum
 {
-    public class Hallway:Raum
+    public class Hallway : Raum
     {
         public Hallway(string name):base(name) { }
 
-        protected override void PrintMyself(string prefix)
+        public override void PrintMich(string prefix)
         {
-            Console.WriteLine($"{prefix} Hallway: {_Name}");
+            Console.Write($"{prefix} Hallway: {Name}");
         }
     }
 }
