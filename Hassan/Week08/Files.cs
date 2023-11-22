@@ -11,8 +11,12 @@ namespace Hassan.Week08
         public static void Start()
         {
             string directoryPath = "C:\\Users\\DCV\\Source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Hassan\\Week08";
-            //ListFilesRecursively(new DirectoryInfo(directoryPath));
 
+            //Alle datein auslisten (Aufgabe1) ohne sortieren
+            ListFilesRecursively(new DirectoryInfo(directoryPath));
+            
+
+            // Datein zählen und die gesamt Größe berechnen (Aufgabe2)
             PrintFileCountAndSum(directoryPath);
 
         }
@@ -50,6 +54,7 @@ namespace Hassan.Week08
                 
                 numFiles++;
                 fileSumLength += file.Length;
+
             }
 
             Console.WriteLine($"Anzahl der Dateien im Verzeichnis: {numFiles}");
