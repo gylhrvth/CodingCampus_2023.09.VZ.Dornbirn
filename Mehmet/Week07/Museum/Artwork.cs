@@ -10,6 +10,8 @@ namespace Mehmet.Week07.Museum
     {
         private string _ArtName;
 
+        public string ArtName {  get => _ArtName; }
+
         public Artwork(string artName)
         {
             _ArtName = artName;

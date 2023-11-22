@@ -10,6 +10,7 @@ namespace Mehmet.Week07.Museum
     {
         private string _Name;
         private List<Room> _RoomList = new();
+        public static List<Human> _CheckedHumans = new();
 
 
 
@@ -26,8 +27,8 @@ namespace Mehmet.Week07.Museum
         public void Simulation()
         {
             foreach (Room room in _RoomList)
-            {
-                room.CheckHuamList();
+            { 
+                room.CheckHumanList();
 
             }
 

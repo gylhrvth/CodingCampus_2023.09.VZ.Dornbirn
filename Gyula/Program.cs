@@ -1,3 +1,3 @@
-﻿using Gyula.Week08.MuseumSim;
+﻿using DarioLuis.Museum;
 
-MuseumMain.Start();
+Museum_Main.Start();
