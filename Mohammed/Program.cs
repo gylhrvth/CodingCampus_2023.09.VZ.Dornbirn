@@ -19,7 +19,23 @@
 
 //using Mohammed.Week06.CreateAList;
 //Person20.Start();
-using Mohammed.Selftest;
+//using Mohammed.Week04.AtHome;
+//oopAtHome.Start();
 
-Calendar.Start();
 
+
+//using Mohammed.Week06.Zoo;
+//ZooMain.Start();
+
+//using Mohammed.Week07.Vererbung;
+//OrganHumanMain.Start();
+
+//using Mohammed.Week07.OOPAtHome;
+//BankMain.Start();
+
+//using Mohammed.Week07.Zoo02;
+//ZooMain.Start();
+
+
+using Mohammed.Week07.Geometry;
+GeometryList.Start();

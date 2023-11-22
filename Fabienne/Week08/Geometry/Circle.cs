@@ -13,11 +13,11 @@ namespace Fabienne.Week08.Geometry
         {
             _Radius = radius;
         }
-        public override double GetArea()
+        public /*override*/ double GetArea()
         {
             return _Radius * _Radius * Math.PI;
         }
-        public override double GetCircumference()
+        public /*override*/ double GetCircumference()
         {
             return 2 * Math.PI * _Radius * 3;
         }
