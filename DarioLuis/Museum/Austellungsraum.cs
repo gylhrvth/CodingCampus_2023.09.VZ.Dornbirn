@@ -13,9 +13,10 @@ namespace DarioLuis.Museum
             
         }
 
-        public override void AufenthaltsOrt(string index)
+        public override void PrintMich(string prefix)
         {
-            Console.WriteLine(index);
+            Console.Write($"{prefix} Ausstellungsraum: {Name}");
+
         }
     }
 

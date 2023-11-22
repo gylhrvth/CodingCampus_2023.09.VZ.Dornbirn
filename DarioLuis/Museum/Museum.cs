@@ -4,30 +4,41 @@
     {
         private string _Name;
         private int _FoundingYear;
-        public List<Raum> Raeume;
-        private Hallway Gaenge;
+        //public List<Raum> Raeume;
+        private Hallway Eingang;
         public List<Gast> Gaeste;
 
-        public Museum(string name, int foundingyear)
+        public Museum(string name, int foundingyear, Hallway eingang)
         {
             _Name = name;
             _FoundingYear = foundingyear;
-            Raeume = new List<Raum>();
+            //Raeume = new List<Raum>();
             Gaeste = new List<Gast>();
+            Eingang = eingang;
         }
 
-        public void PrintStructur(string prefix)
+        public void PrintStruktur(string prefix)
         {
             Console.WriteLine($"{prefix} Museum: {_Name}, Founded: {_FoundingYear}");
             List<Raum> besuchteRaeume = new List<Raum>();
-            _
+
+            Eingang.PrintStruktur("    " + prefix, besuchteRaeume);
         }
         public void Gasthinzu(Gast gast)
         {
             if (!Gaeste.Contains(gast))
             {
                 Gaeste.Add(gast);
-                gast.Ortwechsel(Raeume);
+                gast.Ortwechsel(Eingang);
+            }
+        }
+
+
+        public void Tick()
+        {
+            foreach (Gast g in Gaeste)
+            {
+                g.Tick();
             }
         }
     }

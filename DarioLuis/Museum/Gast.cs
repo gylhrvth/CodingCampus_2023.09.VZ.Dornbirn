@@ -2,10 +2,12 @@
 {
     public class Gast
     {
+        private static Random rand = new Random();
 
-        public string _Name;
+        private string _Name;
         public bool _IsThief;
         public Raum Aufenthaltsort;
+        private int ZeitZuWarten;
 
         public Gast(string Name, bool IsThief)
         {
@@ -13,25 +15,46 @@
             _IsThief = IsThief;
             Aufenthaltsort = null;
         }
-        public string Name { get; set; }
+        public string Name { get => _Name; }
         public bool IsThief { get; set; }
 
-        public void Ortwechsel(Raum Raum)
+        public void Ortwechsel(Raum raum)
         {
-            if (Raum == Aufenthaltsort)
+            if (raum == Aufenthaltsort)
             {
                 return;
             }
             
             if (Aufenthaltsort != null)
             {
-                Aufenthaltsort.GebaeudeVerlassen(this);
+                Aufenthaltsort.RaumVerlassen(this);
             }
+            Aufenthaltsort = raum;
+            Aufenthaltsort.RaumEintreten(this);
+            ZeitZuWarten = rand.Next(3);
+            
         }
 
-        internal void Ortwechsel(List<Raum> raeume)
+
+        public void Tick()
         {
-            return;
+            if (ZeitZuWarten > 0)
+            {
+                --ZeitZuWarten;
+                Console.WriteLine($"{_Name} macht NIX");
+            }
+            else
+            {
+                Raum ziel = Aufenthaltsort.GibEinNachbarRaum();
+                if (ziel == null)
+                {
+                    Console.WriteLine("Es ist nirgendwo zu gehen!!!");
+                }
+                else
+                {
+                    Ortwechsel(ziel);
+                }
+            }
         }
     }
 }
