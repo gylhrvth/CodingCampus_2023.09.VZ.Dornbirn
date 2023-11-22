@@ -10,12 +10,15 @@ namespace Patrick.Week08.MuseumNew
     {
         private string _Name;
         private List<Room> _RoomList;
+        private Room _MainEntry;
+        private List<Person> _PersonInMuseumList;
 
-        public Museum(string name)
+        public Museum(string name, HallwayMain mainEntry)
         {
             _Name = name;
             _RoomList = new List<Room>();
-            
+            _PersonInMuseumList = new List<Person>();
+            _MainEntry = mainEntry;
         }
         public void AddRoom(Room room)
         {
@@ -28,12 +31,29 @@ namespace Patrick.Week08.MuseumNew
         public void PrintStructure()
         {
             Console.WriteLine($"Museum: {_Name} ");
-            foreach(Room room in _RoomList)
+            foreach (Room room in _RoomList)
             {
                 room.PrintRoomList();
             }
+            Console.WriteLine();
         }
 
+        public void EnterNewPerson(Person person)
+        {
+            if (!_PersonInMuseumList.Contains(person))
+            {
+                _PersonInMuseumList.Add(person);
+            }
+            person.MoveToRoom(_MainEntry);
+        }
+
+        public void Tick()
+        {
+            foreach (Person person in _PersonInMuseumList)
+            {
+                person.Tick();
+            }
+        }
 
     }
 }

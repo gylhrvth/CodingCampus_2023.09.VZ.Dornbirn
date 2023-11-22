@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace Patrick.Week08.MuseumNew
 {
-    internal class Artwork
+    public class Artwork
     {
+        private string _Name;
+
+        public string Name
+        {
+            get => _Name;
+        }
+
+        public Artwork(string name)
+        {
+            _Name = name;
+        }
+
+
     }
 }

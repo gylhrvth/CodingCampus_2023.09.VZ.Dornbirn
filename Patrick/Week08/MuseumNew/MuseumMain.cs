@@ -10,8 +10,8 @@ namespace Patrick.Week08.MuseumNew
     {
         public static void Start()
         {
-
-            Museum museum = new Museum("Pinakothek");
+            HallwayMain hallMain = new HallwayMain("Haupteingang");
+            Museum museum = new Museum("Pinakothek", hallMain);
 
             ExhibitionRoom room1 = new("BilderGalerie");
             ExhibitionRoom room2 = new("StatuenGalerie");
@@ -20,7 +20,30 @@ namespace Patrick.Week08.MuseumNew
             ExhibitionRoom room5 = new("SteinzeitRaum");
 
             Hallway hall1 = new Hallway("Gang1");
-            HallwayMain hallMain = new HallwayMain("Haupteingang");
+
+            Person guest1 = new Person("Andreas");
+            Person guest2 = new Person("Sabine");
+            Person guest3 = new Person("Hannes");
+
+            Artwork monalisa = new("Monalisa");
+            Artwork derKuss = new("Der Kuss");
+            Artwork hassan = new("Hassan! :)");
+            Artwork skulptur = new("Statue von Caesar");
+            Artwork shark = new("Shark");
+            Artwork dasMaedchen = new("Das Mädchen");
+            Artwork sternenNacht = new("SternenNacht");
+
+
+            //Liste von Artworks in den Räumen
+            room1.AddArtwork(monalisa);
+            room1.AddArtwork(derKuss);
+            room2.AddArtwork(hassan);
+            room3.AddArtwork(skulptur);
+            room4.AddArtwork(shark);
+            room5.AddArtwork(dasMaedchen);
+            room5.AddArtwork(sternenNacht);
+
+
 
             //Liste von Räumen im Museum
             museum.AddRoom(room1);
@@ -32,23 +55,35 @@ namespace Patrick.Week08.MuseumNew
             museum.AddRoom(hallMain);
 
             //Liste von NachbarsRäumen
-            room1.AddNeighbour(room2);
-            room1.AddNeighbour(hallMain);
+            room1.AddNeighbourList(room2);
+            room1.AddNeighbourList(hallMain);
 
-            room2.AddNeighbour(room3);
+            room2.AddNeighbourList(room3);
 
-            room3.AddNeighbour(hall1);
+            room3.AddNeighbourList(hall1);
 
-            room4.AddNeighbour(room5);
+            room4.AddNeighbourList(room5);
             
-            hall1.AddNeighbour(room3);
-            hall1.AddNeighbour(room4);
-            hall1.AddNeighbour(hallMain);
+            hall1.AddNeighbourList(room3);
+            hall1.AddNeighbourList(room4);
+            hall1.AddNeighbourList(hallMain);
 
 
 
             //Print
             museum.PrintStructure();
+
+
+            //Liste von Personen im Museum
+            museum.EnterNewPerson(guest1);
+            museum.EnterNewPerson(guest2);
+            museum.EnterNewPerson(guest3);
+
+
+            for (int i = 0; i < 10; i++)
+            {
+                museum.Tick();
+            }
         }
 
 
