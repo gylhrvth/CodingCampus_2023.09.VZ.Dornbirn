@@ -9,6 +9,11 @@
 
         }
 
+        public override void PrintAction(Visitor v)
+        {
+            Console.WriteLine($"{v.Name} is going through the {_Name}");
+        }
+
         protected override void PrintMyself(string prefix)
         {
             Console.Write($"{prefix} Hallway: {_Name}");

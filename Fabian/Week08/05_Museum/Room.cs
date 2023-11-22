@@ -3,10 +3,15 @@ namespace Fabian.Week08._05_Museum
 {
     public abstract class Room
     {
+        private static Random rnd = new();
+
         protected string _Name;
         private List<Room> _Neighbours;
         private List<Visitor> _Visitors;
 
+        public List<Room> Neighbours { get => _Neighbours; }
+        public List<Visitor> Visitors { get => _Visitors; }
+        public string Name { get => _Name; }
         protected Room(string name)
         {
             _Name = name;
@@ -16,6 +21,11 @@ namespace Fabian.Week08._05_Museum
 
         protected abstract void PrintMyself(string prefix);
 
+        public Room GetRandomNeighbour()
+        {
+            return _Neighbours[rnd.Next(_Neighbours.Count)];
+        }
+        public abstract void PrintAction(Visitor v);
         public void EnterVisitor(Visitor v)
         {
             if (!_Visitors.Contains(v))
