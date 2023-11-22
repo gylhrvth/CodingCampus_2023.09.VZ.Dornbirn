@@ -37,13 +37,13 @@ namespace Mohammed.Selftest
             return array;
         }
 
-        public static void PrintArray(int[][]array)
+        public static void PrintArray(int[][]array)//double try
         {
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array[i].Length; j++)
                 {
-                    Console.Write("{0, -10}",array[i][j]);
+                    Console.Write("{0, 10}",array[i][j]);
                 }
                 Console.WriteLine( );
             }

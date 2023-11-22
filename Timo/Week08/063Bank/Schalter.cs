@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static Timo.ColorOfConsole;
 
 namespace Timo.Week08._063Bank
 {
@@ -66,7 +67,7 @@ namespace Timo.Week08._063Bank
             Console.WriteLine("Schalter \"{0}\" bediente folgende Kunden: ", Schalternummer);
             foreach(Kunde kunde in _KundenlisteSchalter)
             {
-                Console.WriteLine("Name: {0}, Bankgeschäft: {1}", kunde.Name, kunde.Bankgeschaeft < 0 ? "Abhebung: " + kunde.Bankgeschaeft * -1 + "€" : "Einzahlung: " + kunde.Bankgeschaeft + "€");
+                Console.WriteLine("Name: {0}, Bankgeschäft: {1}", kunde.Name, kunde.Bankgeschaeft < 0 ? $"Abhebung: {kunde.Bankgeschaeft * -1}€" : "Einzahlung: " + kunde.Bankgeschaeft + "€");
                 if (kunde.Bankgeschaeft < 0)
                 {
                     _StatAuszahlung += -1 * kunde.Bankgeschaeft;
@@ -77,6 +78,20 @@ namespace Timo.Week08._063Bank
                 }
             }
             Console.WriteLine("Gesammteinzahlungen: {0}€, Gesamtauszahlungen: {1}€, Kassenstand am Schalter: {2}€\n", _StatEinzahlung, _StatAuszahlung, _VerfuegbareGeldsumme);
+        }
+
+
+        public void Pause()
+        {
+            Random random = new Random();
+            int i = random.Next(101);
+            if (i <= 20)
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Der Schalter ist für eine Pause geschlossen");
+                Console.ResetColor();
+                _StatusGeschlossen = true; //ToDo geschlossen für 3 Kunden
+            }
         }
 
         //public void AddKunde(Kunde kunde)

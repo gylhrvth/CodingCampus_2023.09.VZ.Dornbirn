@@ -95,7 +95,7 @@ namespace Erik.Week08
             Console.Clear();
             doppelmayrZoo.PrintZoo("├──");
             doppelmayrZoo.PrintFoodList();
-            doppelmayrZoo.simulateDay(100);
+            doppelmayrZoo.simulateDay(10);
 
 
         }

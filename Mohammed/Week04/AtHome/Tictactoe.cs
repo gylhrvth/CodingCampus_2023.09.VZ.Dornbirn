@@ -71,7 +71,7 @@ namespace Mohammed.Week04.AtHome
         {
 
 
-            if (board[0] == board[1] && board[1] == board[2])
+            if (board[0] == 1 && board[1] == 1 )
             {
                 return board[0];
             }

@@ -38,7 +38,6 @@ namespace Erik.Week08
             }
         }
 
-
         public override String ToString()
         {
             return _KeeperName;

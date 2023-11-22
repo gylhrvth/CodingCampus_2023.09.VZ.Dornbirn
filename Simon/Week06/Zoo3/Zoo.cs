@@ -110,8 +110,8 @@ namespace Simon.Week06.Zoo3
         public void RestoreHP()
         {
             List<Animal> availableAnimals = new();
-            
-            
+
+
             foreach (Enclosure enclosure in _EnclosureList)
             {
                 foreach (Animal animal in enclosure.AnimalsList)
@@ -130,7 +130,7 @@ namespace Simon.Week06.Zoo3
                 float healthInPercent = 0;
                 foreach (Animal animal in availableAnimals)
                 {
-                    float currentHealthInPercent = animal.Health / (float) animal.MaxHealth;
+                    float currentHealthInPercent = animal.Health / (float)animal.MaxHealth;
                     if (lowestanimal == null || (currentHealthInPercent < healthInPercent))
                     {
                         lowestanimal = animal;

@@ -1,13 +1,10 @@
 ﻿
-using Fabian.Week06._04Zoo;
-
 namespace Fabian.Week07._08_Bank
 {
     public class BankMain
     {
         public static void Start()
-        {
-            Random rnd = new();
+        { 
 
             Bank bank = new("Sparkasse");
 
@@ -16,10 +13,11 @@ namespace Fabian.Week07._08_Bank
                 new BankCounter(1, 20000),
                 new BankCounter(2, 10000),
                 new BankCounter(3, 35000),
-                new BankCounter(4, 5000),
+                new BankCounter(4, 15000),
             });
 
-            List<Customer> customerList = new() {
+            bank.Customers.AddRange(new List<Customer>
+            {
                 new("Frank"),
                 new("Paul"),
                 new("Anna"),
@@ -29,13 +27,9 @@ namespace Fabian.Week07._08_Bank
                 new("Fabian"),
                 new("Olaf"),
                 new("Lukas"),
-            };
+            });
 
-            foreach(var customer in customerList)
-            {
-                bank.SendCustomerToCounter(customer, rnd.Next(-5000, 10000));
-            }
-
+            bank.Simulation(4);
         }
     }
 }

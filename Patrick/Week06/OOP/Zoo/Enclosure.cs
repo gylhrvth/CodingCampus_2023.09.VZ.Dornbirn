@@ -69,7 +69,7 @@ namespace Patrick.Week06.OOP.Zoo
 
             Console.WriteLine($"Der Pfleger {keeperName} beobachtet das Tier {_AnimalsList[randomIndex]} zufällig.");
         }
-
+         
         public void SimulateDayStart()
         {
             _WasKeeperInEnclosure = false;

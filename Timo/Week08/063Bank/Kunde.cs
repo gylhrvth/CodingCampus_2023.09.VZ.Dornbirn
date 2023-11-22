@@ -48,17 +48,6 @@ namespace Timo.Week08._063Bank
             Console.WriteLine("Name: {0}, Bankgeschäft: {1}", _Name, i < 0 ? "Abhebung: " + i * -1 + "€" : "Einzahlung: " + i + "€");
         }
 
-        public void Pause(Schalter schalter)
-        {
-            Random random = new Random();
-            int i = random.Next(101);
-            if (i <= 20)
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine( "Der Schalter ist für eine Pause geschlossen"); 
-                Console.ResetColor();
-                schalter.StatusGeschlossen = true; //ToDo geschlossen für 3 Kunden
-            }
-        }
+        
     }
 }

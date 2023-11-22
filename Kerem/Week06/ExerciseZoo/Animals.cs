@@ -13,19 +13,26 @@ namespace Kerem.Week06.ExerciseZoo
         private int _Age;
         private Food _food;
         private double _amountfood;
+        private string _sound;
 
-        public Animals(string name,int age, string genus, Food food, double amountfood)
+        public Animals(string name,int age, string genus, Food food, double amountfood, string sound)
         {
             _Name = name;
             _Age = age;
             _Genus = genus;
             _food = food;
             _amountfood = amountfood;
+            _sound = sound;
+
             
         }
         public Food Food
         {
              get => _food; 
+        }
+        public string Sound
+        {
+            get => _sound;
         }
         public string Genus
         {

@@ -36,7 +36,7 @@ namespace Riccardo.Week07.ZooDoopelmayer
 
             foreach (Enclosure enclosure in _EnclosureList)
             {
-                enclosure.PrintZoo();
+               // enclosure.PrintZoo();
 
             }
 
