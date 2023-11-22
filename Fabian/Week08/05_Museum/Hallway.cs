@@ -3,10 +3,14 @@
     public class Hallway : Room
     {
         protected Random rnd = new();
-
-        public Hallway(string name) : base(name)
+        public Hallway(string name, int distanceToExit) : base(name, distanceToExit)
         {
 
+        }
+
+        public override Artwork GetRandomArtwork()
+        {
+            return null;
         }
 
         public override void PrintAction(Visitor v)

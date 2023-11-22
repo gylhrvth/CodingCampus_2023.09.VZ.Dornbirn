@@ -7,7 +7,7 @@ namespace Fabian.Week08._05_Museum
         private Random rnd = new Random();
         private List<Artwork> _Artworks;
         public List<Artwork> Artworks { get => _Artworks; set => _Artworks = value; }
-        public ExhibitionRoom(string name) : base(name)
+        public ExhibitionRoom(string name, int distanceToExit) : base(name, distanceToExit)
         { 
             _Artworks = new List<Artwork>();
         }
@@ -16,7 +16,17 @@ namespace Fabian.Week08._05_Museum
         {
             Console.Write($"{prefix} Exhibition: {_Name}");
         }
+        public override Artwork GetRandomArtwork()
+        {
+            if (_Artworks.Count == 0)
+            {
+                return null;
+            }
 
+            int indexArtwork = rnd.Next(_Artworks.Count);
+
+            return _Artworks[indexArtwork];
+        }
         public override void PrintAction(Visitor v)
         {
             int random = rnd.Next(_Artworks.Count);
@@ -28,3 +38,5 @@ namespace Fabian.Week08._05_Museum
         }
     }
 }
+
+
