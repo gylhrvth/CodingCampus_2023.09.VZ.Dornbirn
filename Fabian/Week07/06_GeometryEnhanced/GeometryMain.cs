@@ -26,7 +26,7 @@ namespace Fabian.Week07._06_GeometryEnhanced
             CompassStar comp1 = new(25.6);
             CompassStar comp2 = new(13.4);
 
-            List<object> list = new()
+            List<Geometry> list = new()
             {
                 s1, s2, c1, c2, p1, p2, r1, r2, t1, t2, n1, n2, comp1, comp2
             };

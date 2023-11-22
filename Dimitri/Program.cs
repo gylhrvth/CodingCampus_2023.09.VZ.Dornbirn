@@ -5,5 +5,9 @@ using Dimitri.Week05;
 using Dimitri.Week06;
 using Dimitri.Week07;
 using Dimitri.Week07._01Mensch;
+using Dimitri.Week08;
+using Dimitri.Week08._01Geometrie;
+using Dimitri.Week08._02GeometrieInterface;
+using Dimitri.Week08._03Test;
 
-Zimmer.Main();
+GeometrieRun.Main();

@@ -2,6 +2,7 @@
 using David.Week06.OOP;
 using David.Week06.Person2Main;
 using David.Week06.ZOO;
+using David.Week07;
 //David.Week03.Week03Day02Arrays.Week03Day02();
 //David.Week03.Week03Day03RandomArrays.StartWeek03Day03RandomArrays();
 //David.Week03.Random2.Start();
@@ -29,5 +30,7 @@ using David.Week06.ZOO;
 //David.Week06.KurseTrainer.KurseUndTrainerExample.Start();
 //List1.Start();
 //Person2VOOP.Start();
-ZooMain.Start();
+//ZooMain.Start();
 //BankProgram.Main();
+//ObstKorbMain.Start();
+David.Week07.ZooNew.ZooMain.Start();

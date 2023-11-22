@@ -1,4 +1,6 @@
 ﻿
+using DarioLuis.Zoo;
+
 namespace DarioLuis.Zoo_Dario
 {
     public class Zoo
@@ -7,7 +9,7 @@ namespace DarioLuis.Zoo_Dario
         private int _FoundingYear;
         private List<Enclosure> _Enclosures;
         private List<Zookeeper> _Zookeepers;
-        
+        public List<AnimalDoctor> _AnimalDoctors;
 
         public List<Enclosure> Enclosures
         {
@@ -33,12 +35,19 @@ namespace DarioLuis.Zoo_Dario
             set => _FoundingYear = value;
         }
 
+        public List<AnimalDoctor> AnimalDoctors
+        {
+            get => _AnimalDoctors;
+            set => _AnimalDoctors = value;
+        }
+
         public Zoo(string name, int foundingYear)
         {
             _Name = name;
             _FoundingYear = foundingYear;
             _Enclosures = new List<Enclosure>();
             _Zookeepers = new List<Zookeeper>();
+            _AnimalDoctors = new List<AnimalDoctor>();
         }
         public void PrintZooStatistic()
         {
@@ -73,6 +82,36 @@ namespace DarioLuis.Zoo_Dario
             }
 
         }
+        public void HealStart()
+        {
+            List<Animal> availableAnimals = new();
+            foreach (Enclosure enclosure in _Enclosures)
+                foreach (Animal animal in enclosure.Animals)
+                    if (!animal.IsDead) availableAnimals.Add(animal);
+
+            foreach (var doctor in _AnimalDoctors)
+            {
+                if (availableAnimals.Count == 0) break;
+
+                Animal min = null;
+
+                foreach (var animal in availableAnimals)
+                {
+                    if (min == null || (animal.Health / animal.MaxHealth) < (min.Health / min.MaxHealth))
+                    {
+                        min = animal;
+                    }
+                }
+
+                if (min != null)
+                {
+                    doctor.Heal(min);
+                    availableAnimals.Remove(min);
+                }
+            }
+        }
+
+        //Struktur
         public void PrintStructure()
         {
             Console.WriteLine($"├── Zoo: {_Name}, founded: {_FoundingYear}");
