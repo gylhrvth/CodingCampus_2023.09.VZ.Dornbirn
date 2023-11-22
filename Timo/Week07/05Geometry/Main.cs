@@ -25,7 +25,7 @@ namespace Timo.Week07._05Geometry
             Triangle t1 = new(5);
             Triangle t2 = new(10.7);
 
-            List<object> list = new()
+            List<Geometry> list = new()
             {
                 s1, s2, c1, c2, p1, p2, r1, r2, t1, t2
             };

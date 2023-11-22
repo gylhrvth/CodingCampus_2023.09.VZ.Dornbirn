@@ -9,5 +9,10 @@ namespace Mehmet.Week07.Museum
     internal class Entrance : Corridor
     {
         public Entrance(string name) : base(name) { }
+
+        public override Artwork GetRandomArtwork()
+        { return null; }
     }
+
+
 }

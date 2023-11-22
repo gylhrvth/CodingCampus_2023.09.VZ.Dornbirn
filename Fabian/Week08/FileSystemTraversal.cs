@@ -1,12 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
-
-namespace Fabian.Week08
+﻿namespace Fabian.Week08
 {
     public class FileSystemTraversal
     {
         public static void Start()
         {
-            string path = @"C:\Users\Anwender\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Fabian";
+            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Fabian";
             NavigateDirectory(path, "");
         }
 
@@ -36,6 +34,8 @@ namespace Fabian.Week08
                     NavigateDirectory(directory, $"{prefix}|   ");
                 }
             }
+
+            
         }
     }
 }

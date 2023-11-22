@@ -1,5 +1,4 @@
-﻿using static Fabian.Selftest_SP.TowersOfHanoi;
-namespace Fabian.Week08._05_Museum
+﻿namespace Timo.Week08._053Museum
 {
     public class Visitor
     {

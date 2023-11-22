@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static Timo.ColorOfConsole;
 
 namespace Timo.Week08._063Bank
 {
@@ -66,7 +67,7 @@ namespace Timo.Week08._063Bank
             Console.WriteLine("Schalter \"{0}\" bediente folgende Kunden: ", Schalternummer);
             foreach(Kunde kunde in _KundenlisteSchalter)
             {
-                Console.WriteLine("Name: {0}, Bankgeschäft: {1}", kunde.Name, kunde.Bankgeschaeft < 0 ? "Abhebung: " + kunde.Bankgeschaeft * -1 + "€" : "Einzahlung: " + kunde.Bankgeschaeft + "€");
+                Console.WriteLine("Name: {0}, Bankgeschäft: {1}", kunde.Name, kunde.Bankgeschaeft < 0 ? $"Abhebung: {kunde.Bankgeschaeft * -1}€" : "Einzahlung: " + kunde.Bankgeschaeft + "€");
                 if (kunde.Bankgeschaeft < 0)
                 {
                     _StatAuszahlung += -1 * kunde.Bankgeschaeft;

@@ -3,10 +3,13 @@ namespace Gyula.Week08.MuseumSim
 {
 	public abstract class Room
 	{
+		private static Random rand = new Random();
         protected string _Name;
 		private List<Room> _Neighbours;
 		private List<Guest> _Guests;
- 
+
+		public string Name { get => _Name; }
+
         protected Room(string name)
 		{
 			_Name = name;
@@ -40,7 +43,17 @@ namespace Gyula.Week08.MuseumSim
 			}
 		}
 
-		protected abstract void PrintMyself(string prefix);
+		public Room GetRandomNeighbouringRoom()
+		{
+			Room result = null;
+            if (_Neighbours.Count > 0)
+			{
+				result = _Neighbours[rand.Next(_Neighbours.Count)];
+			}
+			return result;
+        }
+
+        protected abstract void PrintMyself(string prefix);
 
 		public void PrintStructure(string prefix, List<Room> visited)
 		{
