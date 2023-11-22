@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Patrick.Week08.MuseumNew
 {
-    public class ExhibitionRoom : Room
+    internal class Artwork
     {
-
-        public ExhibitionRoom(string name) : base (name)
-        {
-            
-        }
     }
 }

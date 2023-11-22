@@ -82,7 +82,7 @@ namespace Patrick.Week08.Museum
 
 
 
-            Guardian g1 = new("Fred");
+            //Guardian g1 = new("Fred");
 
             Visitor v1 = new("Sandro");
             Visitor v2 = new("Timo");

@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Patrick.Week08.MuseumNew
 {
-    public class ExhibitionRoom : Room
+    public class HallwayMain : Hallway
     {
+        private bool _IsOpen;
 
-        public ExhibitionRoom(string name) : base (name)
+        public HallwayMain( string name) : base(name)
         {
-            
+            _IsOpen = true;
         }
     }
 }
