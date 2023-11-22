@@ -33,4 +33,5 @@ using David.Week07;
 //ZooMain.Start();
 //BankProgram.Main();
 //ObstKorbMain.Start();
-David.Week07.ZooNew.ZooMain.Start();
+//David.Week07.ZooNew.ZooMain.Start();
+David.Week08.Geometry.GeometryMain.Start();
