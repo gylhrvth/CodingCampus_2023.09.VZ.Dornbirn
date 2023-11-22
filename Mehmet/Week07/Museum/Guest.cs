@@ -26,7 +26,7 @@ namespace Mehmet.Week07.Museum
             if (_EnergyCount <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("----> Energy Count of {0} is {1}", _Name, _EnergyCount);
+                //Console.WriteLine("----> Energy Count of {0} is {1}", _Name, _EnergyCount);
                 Console.WriteLine("----> {0} is tired and goes home.", _Name);
                 Console.ResetColor();
                 _currentRoom.RemoveHuman(this);
@@ -38,7 +38,7 @@ namespace Mehmet.Week07.Museum
                 if (artwork != null)
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("----> Energy Count of {0} is {1}", _Name, _EnergyCount);
+                    //Console.WriteLine("----> Energy Count of {0} is {1}", _Name, _EnergyCount);
                     Console.WriteLine("----> {0} is looking at {1} in {2}", _Name, artwork.ArtName, _currentRoom.name);
                     Console.ResetColor();
                     _EnergyCount--;

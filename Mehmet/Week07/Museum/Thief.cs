@@ -21,6 +21,7 @@ namespace Mehmet.Week07.Museum
                 Console.WriteLine($"----> {_Name} is alone and steals {artwork.ArtName} in {_currentRoom.name}.");
                 _currentRoom.RemoveArtwork(artwork);
                 _StolenItems.Add(artwork);
+                Museum._ArtworkCount--;
                 Console.ResetColor();
                
                 return true;

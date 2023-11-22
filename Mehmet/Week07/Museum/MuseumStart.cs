@@ -126,6 +126,7 @@ namespace Mehmet.Week07.Museum
 
 
             Guard guard1 = new Guard("Türsteher Jovo", entrance);
+            Guard guard2 = new Guard("Türsteher Ovoj", entrance);
 
 
             entrance.AddHuman(human1);
@@ -137,11 +138,12 @@ namespace Mehmet.Week07.Museum
             entrance.AddHuman(thief2);
 
             entrance.AddHuman(guard1);
+            entrance.AddHuman(guard2);
 
 
 
 
-            for (int i = 0; i < 48; i++)
+            for (int i = 0; i < 72; i++)
             {
                 
                 Console.WriteLine("Simulation hour {0}", i + 1);
