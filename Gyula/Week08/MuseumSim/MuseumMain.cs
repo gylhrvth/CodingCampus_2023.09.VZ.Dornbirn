@@ -19,7 +19,12 @@ namespace Gyula.Week08.MuseumSim
 
 			Guest g = new Guest("Gustav");
 			neuePinakothek.AddGuest(g);
-	
+
+
+			for (int i = 0; i < 10; i++)
+			{
+				neuePinakothek.Tick();
+			}
 		}
 	}
 }
