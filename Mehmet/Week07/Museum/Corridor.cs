@@ -12,6 +12,8 @@ namespace Mehmet.Week07.Museum
         {
 
         }
+        public override Artwork GetRandomArtwork()
+        { return null; }
 
     }
 }
