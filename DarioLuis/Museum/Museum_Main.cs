@@ -45,9 +45,9 @@
             Austellungsraum r7 = new Austellungsraum("Abstrakte Kunst");
 
             //Gänge
-            Gang eingang = new Gang("Eingang");
-            Gang gang1 = new Gang("Van-Gogh-Gang");
-            Gang gang2 = new Gang("Picasso-Gang");
+            Hallway eingang = new Hallway("Eingang");
+            Hallway gang1 = new Hallway("Van-Gogh-Gang");
+            Hallway gang2 = new Hallway("Picasso-Gang");
 
             //Eingan hinzufügen
             eingang.Raumhinzu(r7);
@@ -83,7 +83,7 @@
             r7.Raumhinzu(r6);
             r6.Raumhinzu(r7);
 
-            Museum.SimulateGuest();
+            
 
 
             //Kunststücke
@@ -93,5 +93,6 @@
 
 
         }
+
     }
 }

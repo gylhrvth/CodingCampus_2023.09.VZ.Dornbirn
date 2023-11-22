@@ -59,7 +59,12 @@ namespace DarioLuis.Museum
             }
         }
 
-
+        public void SimulateGuest(Gast gaeste)
+        {
+            RaumVerlassen(gaeste);
+            GebaeudeVerlassen(gaeste);
+            GebaeudeBetreten(gaeste);
+        }
         public void Gebaeudeplan(string index, List<Raum> besucht)
         {
             if (!besucht.Contains(this))

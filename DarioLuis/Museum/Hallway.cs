@@ -7,15 +7,13 @@ using System.Threading.Tasks;
 
 namespace DarioLuis.Museum
 {
-    public class Gang:Raum
+    public class Hallway:Raum
     {
-        public string _Name;
+        public Hallway(string name):base(name) { }
 
-        public Gang(string name):base(name) { }
-
-        public override void AufenthaltsOrt(string index)
+        protected override void PrintMyself(string prefix)
         {
-            Console.WriteLine(index);
+            Console.WriteLine($"{prefix} Hallway: {_Name}");
         }
     }
 }
