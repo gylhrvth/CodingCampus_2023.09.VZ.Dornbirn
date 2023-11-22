@@ -17,6 +17,7 @@ namespace Niklas.Week06.Zoo
         private string _feeding;
         private List<Enclosure> _EnclosureList;
 
+
         public ZooKeeper(string name, int age, int height, string enclosure, string favourite, string feeding)
         {
             _name = name;
@@ -62,7 +63,6 @@ namespace Niklas.Week06.Zoo
             {
                 enclosure.PrintZoo();
             }
-        }
-
+        }        
     }
 }
