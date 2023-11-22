@@ -1,0 +1,47 @@
+﻿using System;
+using System.Security.AccessControl;
+using System.Security.Cryptography.X509Certificates;
+
+namespace David.Week07.ZooNew
+{
+	public class Zoo
+	{
+		private string _Name;
+		private int _Year;
+        private string _Location;
+        private List<Enclosure> _EnclosureList;
+
+        public string Name
+        {
+            get => _Name;
+            set => _Name = value;
+        }
+        public int Year
+        {
+            get => _Year;
+            set => _Year = value;
+        }
+        public string Location
+        {
+            get => _Location;
+            set => _Location = value;
+        }
+
+
+        public Zoo(string name, int year, string location )
+		{
+			_Name = name;
+			_Year = year;
+			_Location = location;
+
+		}
+
+        public void PrintZoo()
+        {
+            Console.WriteLine($"{Name}, {Year}, {Location}");
+            Console.WriteLine();
+        }
+	}
+}
+
+

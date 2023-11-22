@@ -16,8 +16,18 @@ namespace Kerem.Week06.ExerciseZoo
         public double PricePerUnit
         {
             get => _priceperunit;
+            set => _priceperunit = value;
 
         } 
+        public string Name
+        {
+            get => _name; set => _name = value;
+        }
+        public string Unit
+        {
+            get => _unit;
+            set => _unit = value;
+        }
 
 
 

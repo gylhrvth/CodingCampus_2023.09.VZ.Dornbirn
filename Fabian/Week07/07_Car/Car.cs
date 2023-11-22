@@ -77,12 +77,8 @@ namespace Fabian.Week07._07Car
                 Console.WriteLine(" The Engine is not broken!");         
         }
 
-        public void SelfRepair()
-        {
-            SetConsoleColor(ConsoleColor.DarkRed, "Car stopped!");
-            Console.WriteLine($"The engine of {_Model} has been repaired after {_Engine.DistanceTravelled} km!");
-            _Engine = new Engine("selfrepair", _Engine.Power);
-            SetConsoleColor(ConsoleColor.Green, "Brumm Brumm");
+        public virtual void SelfRepair()
+        {         
         }
     }
 }

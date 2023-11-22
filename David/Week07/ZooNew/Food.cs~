@@ -1,0 +1,43 @@
+﻿using System;
+using System.Reflection;
+using System.Xml.Linq;
+
+namespace David.Week07.ZooNew
+{
+	public class Food
+	{
+        private string _FoodName;
+        private string _FoodUnit;
+        private float _FoodPrice;
+
+        public string FoodName
+        {
+            get => _FoodName;
+            set => _FoodName = value;
+        }
+        public string FoodUnit
+        {
+            get => _FoodUnit;
+            set => _FoodUnit = value;
+        }
+        public float FoodPrice
+        {
+            get => _FoodPrice;
+            set => _FoodPrice = value;
+        }
+
+        public Food(string foodName, string foodUnit, float foodPrice)
+		{
+			_FoodName = foodName;
+			_FoodUnit = foodUnit;
+			_FoodPrice = foodPrice;
+
+		}
+        public void PrintAnimals()
+        {
+            Console.WriteLine($"{FoodName}, {FoodUnit}, {FoodPrice}");
+            Console.WriteLine();
+        }
+    }
+}
+
