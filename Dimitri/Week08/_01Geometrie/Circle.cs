@@ -8,7 +8,6 @@ namespace Dimitri.Week08._01Geometrie
 {
     internal class Circle : Geometry
     {
-
         public Circle(double radius) : base(radius)
         {
             _side = radius;

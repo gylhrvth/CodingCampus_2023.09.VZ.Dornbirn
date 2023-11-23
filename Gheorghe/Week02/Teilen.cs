@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week02
+﻿namespace Gheorghe.Week02
 {
     internal class Teilen
     {
@@ -76,10 +68,10 @@ namespace Gheorghe.Week02
         }
         public static void Wurzelnaehrung(int n)
         {
-           int firstpower = 2;
-           int  Root = 0;
-           int  Minimum = 0;
-           int  Maximum = Root;
+            int firstpower = 2;
+            int Root = 0;
+            int Minimum = 0;
+            int Maximum = Root;
             double random = new Random().Next(10000) + 1;
 
             for (int i = 0; i < n; i++)
@@ -87,7 +79,7 @@ namespace Gheorghe.Week02
                 if (i == 0)
                 {
                     firstpower++;
-                    Console.WriteLine(  );
+                    Console.WriteLine();
                 }
             }
         }

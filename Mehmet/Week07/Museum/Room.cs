@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mehmet.Week07.Museum
+﻿namespace Mehmet.Week07.Museum
 {
-    public abstract class Room 
+    public abstract class Room
     {
         private string _Name;
         private List<Room> _RoomNeighbours = new();
         private List<Human> _HumansList = new();
-
+        
         public string name { get => _Name; }
 
         public Room(string name)
@@ -23,7 +17,7 @@ namespace Mehmet.Week07.Museum
         {
             _RoomNeighbours.Add(room);
         }
-        
+
         public void AddHuman(Human human)
         {
             _HumansList.Add(human);
@@ -39,16 +33,57 @@ namespace Mehmet.Week07.Museum
             return _RoomNeighbours;
         }
 
-        public void CheckHuamList()
+
+        public virtual void RemoveArtwork(Artwork artwork)
         {
-            for (int i = _HumansList.Count - 1; i >= 0; i--)
-            {
-                Human human = _HumansList[i];
-                human.RandomNextRoom();
-            }
-            
+
         }
 
 
+        public void CheckHumanList()
+        {
+
+            for (int i = _HumansList.Count - 1; i >= 0; i--)
+            {
+                Human human = _HumansList[i];
+                //human.RandomNextRoom();
+                if (!Museum._CheckedHumans.Contains(human))
+                {
+                    if (human.HumanAction())
+                    {
+                    }
+                    else
+                    {
+                        human.RandomNextRoom();
+                    }
+                    Museum._CheckedHumans.Add(human);
+                }
+            }
+
+         
+        }
+        public abstract Artwork GetRandomArtwork();
+
+
+        public int CountGuards()
+        {
+            int count = 0;
+
+            foreach (Human hum in _HumansList)
+            {
+                if (hum.GetType() == typeof(Guard)) count++;
+            }
+
+            return count;
+        }
+
+
+        public int CountPeople()
+        {
+            return _HumansList.Count();
+        }
     }
+
+
+
 }

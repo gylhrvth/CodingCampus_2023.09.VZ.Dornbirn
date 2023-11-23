@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week07.Zoo
+﻿namespace Gheorghe.Week07.Zoo
 {
     internal class Animals
     {
@@ -17,16 +10,17 @@ namespace Gheorghe.Week07.Zoo
         private double _FoodAmount;
         private bool _Hungry;
         public bool _Saw;
-        
-        
-        public string Name {  get { return _Name;}}
-       
+
+
+
+        public string Name { get { return _Name; } }
+
         public bool Hungry { get => _Hungry; set => _Hungry = value; }
 
-       
-        
 
-        public Animals(string name , int age, string genus, string gender, Food food, double foodAmount ) 
+
+
+        public Animals(string name, int age, string genus, string gender, Food food, double foodAmount)
 
         {
             _Name = name;
@@ -38,10 +32,17 @@ namespace Gheorghe.Week07.Zoo
             _Hungry = true;
 
 
-          
+
+
+
+
+
+
         }
 
-        public void PrintZoo ()
+
+
+        public void PrintZoo()
         {
             Console.WriteLine($"    |--- {_Name}, {_Age}, {_Gender},{_Genus}, eats: {_FoodAmount}, {_Food}");
         }

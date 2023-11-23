@@ -1,3 +1,5 @@
-﻿using Gyula.Week08.MuseumSim;
+﻿using Gyula.Week08;
 
-MuseumMain.Start();
+//FileList.Start();
+//WriteTextFile.Start();
+ReadTextFile.Start();

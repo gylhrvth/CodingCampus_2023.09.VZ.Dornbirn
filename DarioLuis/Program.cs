@@ -11,6 +11,9 @@ using DarioLuis.Week03;
 using DarioLuis.Week04;
 using DarioLuis.Week05;
 using DarioLuis.Week06;
+using DarioLuis.Week07;
+using DarioLuis.Week08;
 using DarioLuis.Zoo_Dario;
+using DarioLuis.Museum;
 
-Zoo_Main.Start();
+Museum_Main.Start();

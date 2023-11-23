@@ -35,6 +35,8 @@ namespace Sandro.Week06.ZooTycoon
             zoo.AddEnclosure(swamp);
 
             woods.AddAnimals(monkey1);
+            woods.AddAnimals(monkey1);
+            woods.AddAnimals(monkey2);
             woods.AddAnimals(monkey2);
 
 
