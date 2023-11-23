@@ -38,7 +38,7 @@
 
         public void Tick()
         {
-            if (ZeitZuWarten > 0)
+            if (ZeitZuWarten > 10)
             {
                 --ZeitZuWarten;
                 Console.WriteLine($"{_Name} macht NIX");

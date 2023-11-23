@@ -4,18 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Niklas.Week08.Museum
+namespace Erik.Week09.Filesystem.Filesystem_Traversl_Useful
 {
-    public class MuseumMain
+    class FileReceiver : Itraversal
     {
-        //Gäste
         public static void Start()
         {
-            List<Museum> list = new List<Museum>();
 
-            list.Add(new Gang("Eingang"));
 
         }
+
+        private void CountFileAndDirectory()
+        {
+
+
+        }
+
 
 
     }

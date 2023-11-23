@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Niklas.Week08.Museum
+namespace Selina.Week08.Schwarzwald_Klinik
 {
-    internal class Kunststücke
+    public class Hospital
     {
     }
 }

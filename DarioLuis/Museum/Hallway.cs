@@ -9,7 +9,7 @@ namespace DarioLuis.Museum
 {
     public class Hallway : Raum
     {
-        public Hallway(string name):base(name) { }
+        public Hallway(string name):base(name, ConsoleColor.Magenta) { }
 
         public override void PrintMich(string prefix)
         {

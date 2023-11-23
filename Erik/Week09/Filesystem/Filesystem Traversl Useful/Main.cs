@@ -4,19 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Niklas.Week08.Museum
+namespace Erik.Week09.Filesystem.Filesystem_Traversl_Useful
 {
-    public class MuseumMain
+    internal class Main
     {
-        //Gäste
         public static void Start()
         {
-            List<Museum> list = new List<Museum>();
-
-            list.Add(new Gang("Eingang"));
 
         }
-
-
     }
 }

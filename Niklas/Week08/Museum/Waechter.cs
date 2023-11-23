@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Museum
 {
-    public class Dieb
+    public class Waechter
     {
     }
 }
