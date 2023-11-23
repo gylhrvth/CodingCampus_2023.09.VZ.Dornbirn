@@ -28,9 +28,7 @@
     <Folder Include="Week06\Book\" />
     <Folder Include="Week06\CourseList\" />
     <Folder Include="Week06\Zoo\" />
-    <Folder Include="Week07\" />
     <Folder Include="Week07\ZooExtra\" />
-    <Folder Include="Week07\Vererbung\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
