@@ -1,5 +1,5 @@
-﻿using Mehmet.Zoo;
-using Mehmet.ZOO;
+﻿using Kerem.Zoo;
+using Kerem.ZOO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 
 
-namespace Mehmet.Zoo
+namespace Kerem.Zoo
 {
     internal class ZooMain
     {

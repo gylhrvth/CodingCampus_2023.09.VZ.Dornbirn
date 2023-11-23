@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kerem.Week08;
 
 namespace Kerem.Week08
 {
@@ -18,16 +19,16 @@ namespace Kerem.Week08
         }
         public override double CircumFerence()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Rectangle");
-            Console.ForegroundColor = ConsoleColor.White;
-
-            return Math.Pow(_length,2) + Math.Pow(_width,2);
+            return 2 * (_length) + 2 * (_width);
         }
 
         public override double GetArea()
         {
             return _length * _width;
+        }
+        public override string ToString()
+        {
+            return "Rectangle";
         }
     }
 

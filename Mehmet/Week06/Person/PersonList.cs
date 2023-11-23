@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mehmet.Week06.Person;
-using Mehmet.Week06.List;
+using Kerem.Week06.Person;
+using Kerem.Week06.List;
 
-namespace Mehmet.Week06.Person
+namespace Kerem.Week06.Person
 {
     internal class PersonList
     {        

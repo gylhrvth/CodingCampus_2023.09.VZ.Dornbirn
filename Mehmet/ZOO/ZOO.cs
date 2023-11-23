@@ -1,6 +1,6 @@
-﻿using Mehmet.ZOO;
+﻿using Kerem.ZOO;
 
-namespace Mehmet.Zoo
+namespace Kerem.Zoo
 {
     internal class Zoo
     {

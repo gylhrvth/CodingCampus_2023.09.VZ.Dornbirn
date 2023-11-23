@@ -1,5 +1,5 @@
-﻿using Mehmet.Week07.Geometry;
-using Mehmet.Week07.Museum;
+﻿using Kerem.Week08.Geometry;
+using Kerem.Week08.Museum;
 
 MuseumStart.Start();
  
