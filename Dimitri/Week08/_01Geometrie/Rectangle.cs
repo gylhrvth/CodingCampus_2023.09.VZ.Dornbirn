@@ -10,10 +10,10 @@ namespace Dimitri.Week08._01Geometrie
     {
         public double _width;
 
-        public Rectangle(double width, double height) : base(height)
+        public Rectangle(double height, double width) : base(height)
         {
-            _width = width;
             _side = height;
+            _width = width;
         }
 
         public override double getArea()
@@ -23,7 +23,7 @@ namespace Dimitri.Week08._01Geometrie
 
         public override double getCircumference()
         {
-            return ((2*_side) + (2 * _width));
+            return ((2 * _side) + (2 * _width));
         }
     }
 }

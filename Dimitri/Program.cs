@@ -9,5 +9,6 @@ using Dimitri.Week08;
 using Dimitri.Week08._01Geometrie;
 using Dimitri.Week08._02GeometrieInterface;
 using Dimitri.Week08._03Test;
+using Dimitri.Week08._04Filesystem;
 
-GeometrieRun.Main();
+Filesystem.Main();
