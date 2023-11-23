@@ -21,11 +21,6 @@ namespace Timo.Week08
             {
                 FileInfo fileInfo = new FileInfo(directory);
                 DirectoryInfo info = new DirectoryInfo(directory);
-                //if (File.Exists(fileInfo.FullName))
-                //{
-                //    Console.WriteLine(fileInfo.Name + " " + fileInfo.Length);
-                //}
-                /*else*/
                 if (Directory.Exists(info.FullName))
                 {
                     Console.WriteLine(info.Name);
@@ -39,10 +34,6 @@ namespace Timo.Week08
                 {
                     Console.WriteLine(fileInfo.Name + " " + Math.Round(ConvertToKB(fileInfo.Length)) + "KB") ;
                 }
-                //else if (Directory.Exists(info.FullName))
-                //{
-                //    Console.WriteLine(info.Name);
-                //}
             }
         }
         public static float ConvertToKB(long sizeInByte)
