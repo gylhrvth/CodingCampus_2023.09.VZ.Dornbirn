@@ -2,6 +2,7 @@
 {
     public interface IFileReceiver
     {
-        public void OnFileReceived(int depth, FileInfo fi);
+        public void OnFileReceived(int depth, string path);
+        public void OnDirectoryReceived(int depth, string path);
     }
 }
