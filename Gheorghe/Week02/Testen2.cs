@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week02
+﻿namespace Gheorghe.Week02
 {
     internal class Testen2
     {
@@ -230,7 +223,7 @@ namespace Gheorghe.Week02
 
             // Wenn die Schleife noch nicht beendet wurde, dann ist die Zahl nicht reell
 
-            if(i == maximum)
+            if (i == maximum)
             {
                 return -1;
             }

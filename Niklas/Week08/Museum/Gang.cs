@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Museum
 {
-    internal class Gang
+    public class Gang : Museum
     {
+        private string _Gang;
+
+        public Gang(string gang) 
+        {
+            _Gang = gang;
+        }
     }
 }

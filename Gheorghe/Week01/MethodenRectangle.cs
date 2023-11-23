@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week01
+﻿namespace Gheorghe.Week01
 {
     internal class MethodenRectangle
     {
@@ -21,7 +12,7 @@ namespace Gheorghe.Week01
             // PrintTriangleTopRight("x", 5); v
             //PrintTriangleBottomRight("x", 5);
             //PrintEmptySqure("x", 7);
-           // PrintemptySquare("A", 5);
+            // PrintemptySquare("A", 5);
         }
 
         public static void PrintChars(string symbol, int count)

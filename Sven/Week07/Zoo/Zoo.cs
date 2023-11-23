@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Sven.Week07.Zoo
+namespace Sven.Week07.Zoo.Zoo
 {
     internal class Zoo
     {

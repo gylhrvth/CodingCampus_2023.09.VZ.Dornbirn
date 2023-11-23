@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week01
+﻿namespace Gheorghe.Week01
 {
     internal class Methoden01
     {
@@ -17,12 +11,12 @@ namespace Gheorghe.Week01
         {
             for (int line = 0; line < count; line++)
             {
-                
+
                 for (int column = 0; column < count; column++)
                 {
                     Console.Write(symbol);
                 }
-                    Console.WriteLine();
+                Console.WriteLine();
 
             }
         }

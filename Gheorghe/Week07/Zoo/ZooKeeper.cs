@@ -1,32 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week07.Zoo
+﻿namespace Gheorghe.Week07.Zoo
 {
     internal class ZooKeeper
     {
-      
+
 
         private string _Name;
-        private List<Enclosure> _Enclosures ;
-       
+        private List<Enclosure> _Enclosures;
+
 
         public List<Enclosure> Enclosures
         {
             get => _Enclosures;
             set => _Enclosures = value;
         }
-   
+
 
         public ZooKeeper(string name)
         {
             _Name = name;
             _Enclosures = new List<Enclosure>();
-           
+
         }
 
 
@@ -45,7 +38,7 @@ namespace Gheorghe.Week07.Zoo
         {
             Console.WriteLine("     ├──Zookeeper: {0}", _Name);
         }
-      
+
 
 
 
@@ -59,7 +52,7 @@ namespace Gheorghe.Week07.Zoo
         {
             Console.WriteLine($"{_Name} start working");
 
-            foreach(var enclosure in _Enclosures)
+            foreach (var enclosure in _Enclosures)
             {
                 enclosure.CareAnimals();
             }
@@ -67,13 +60,23 @@ namespace Gheorghe.Week07.Zoo
 
         public void AnimalObserve()
         {
-            Console.WriteLine($"{_Name} Animal Watching");
-            foreach(var enclosure in _Enclosures)
+            Console.WriteLine($"{_Name} looking for  animal");
+            foreach (var enclosure in _Enclosures)
             {
                 enclosure.AnimalsObserve();
             }
-        }
+            Console.WriteLine();
 
+        }
+        public void FavoritAnimal()
+        {
+            Console.WriteLine($"{_Name} Liebliengs animal");
+            foreach (var enclosure in _Enclosures)
+            {
+                enclosure.FavoritsAnimals();
+            }
+            Console.WriteLine();
+        }
 
 
     }
@@ -81,9 +84,9 @@ namespace Gheorghe.Week07.Zoo
 
 
 
- 
 
- 
+
+
 
 
 
