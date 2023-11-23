@@ -2,12 +2,12 @@
 {
     public class Artwork
     {
-        private string _Name;
+        public string Name { get; set; }
         private double _Weight;
 
         public Artwork(string name, double weight)
         {
-            _Name = name;
+            Name = name;
             _Weight = weight;
         }
     }

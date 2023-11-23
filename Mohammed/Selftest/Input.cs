@@ -5,28 +5,10 @@ namespace Mohammed.Selftest
     {
         public static void Start()
         {
-            string text;
-            int count;
-
-
-
-
-
-            do
-            {
-                Console.WriteLine("Bitte geben Sie einen Text ein: ");
-                text = Console.ReadLine();
-
-            } while (text.Length == 0);
-
-
-
-
-            do
-            {
-                Console.WriteLine("Wie oft soll der Text ausgegeben werden: ");
-                count = Convert.ToInt32(Console.ReadLine());
-            } while (count <= 0);
+            Console.WriteLine("Bitte geben Sie einen Text ein: ");
+            string text = ReadString();
+            Console.WriteLine("Wie oft soll der Text ausgegeben werden: ");
+            int count = ReadNumber();
 
             for (int i = 0; i < count; i++)
             {

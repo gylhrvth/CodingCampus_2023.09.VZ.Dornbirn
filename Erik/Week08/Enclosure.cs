@@ -12,7 +12,7 @@ namespace Erik.Week08
         private int _SquareMeter;
         private List<Animal> _AnimalList;
         private List<Keeper> _KeeperList;
-        
+
         public string EnclosureName { get => _Name; }
 
         public Enclosure(string name, int squareMeter)
@@ -57,7 +57,7 @@ namespace Erik.Week08
         public int calculateCost()
         {
             int totalCost = 0;
-            foreach(Animal animal in _AnimalList)
+            foreach (Animal animal in _AnimalList)
             {
                 totalCost += animal.returnFoodCost();
             }
@@ -74,26 +74,48 @@ namespace Erik.Week08
             return totalWeight;
         }
 
+
         public bool IsHungry()
         {
-            foreach(Animal animal in _AnimalList)
+            foreach (Animal animal in _AnimalList)
             {
                 if (animal.IsHungry == true)
                 {
                     return true;
-                }                
+                }
             }
             return false;
         }
 
+
         public void GetsFed(Keeper keeper)
         {
-            foreach(Animal animal in _AnimalList )
+            foreach (Animal animal in _AnimalList)
             {
-                animal.IsHungry= false;
+                animal.IsHungry = false;
                 Console.WriteLine($"{animal.AnimalName} gets fed by {keeper.keeperName}!");
             }
         }
+
+        public void AddHungerToAnimal()
+        {
+            Random random = new Random();
+            foreach (Animal animal in _AnimalList)
+            {
+                if (random.Next(0, 2) == 0)
+                {
+                    animal.IsHungry = false;
+                    Console.WriteLine($"----- {animal.AnimalName} is not hungry at the time!-----");
+                }
+                else
+                {
+                    animal.IsHungry = true;
+                    Console.WriteLine($"----- {animal.AnimalName} is hungry again!-----");
+                }
+            }
+        }
+
+
     }
 }
 

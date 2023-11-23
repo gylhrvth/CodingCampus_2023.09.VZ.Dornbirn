@@ -52,12 +52,13 @@ namespace Timo.Week08._063Bank
                 }
                 else if (Schalterliste[j].StatusBesetzt == false && Schalterliste[j].StatusGeschlossen == true)
                 {
-                    Console.WriteLine("{0} ist am Schalter {1}", kunde.Name, Schalterliste[j+1].Schalternummer);
+                    Console.WriteLine("{0} ist am Schalter {1}", kunde.Name, Schalterliste[j + 1].Schalternummer);
                     Schalterliste[j + 1].StatusBesetzt = true;
                     kunde.BankGeschaeft(Schalterliste[j + 1], i);
-                    Schalterliste[j+1].Pause();
+                    Schalterliste[j + 1].Pause();
                     break;
                 }
+                
                 Schalterliste[j].StatusBesetzt = false;
             }
 

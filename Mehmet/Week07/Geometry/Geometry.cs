@@ -13,6 +13,7 @@ namespace Mehmet.Week07.Geometry
         public abstract string getName();
         public abstract double getCircumference();
         public abstract double getArea();
+        //public abstract void PrintForm();
 
     }
 }

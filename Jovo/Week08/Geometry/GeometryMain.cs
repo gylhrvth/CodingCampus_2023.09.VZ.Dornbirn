@@ -40,21 +40,15 @@ namespace Jovo.Week08.Geometry
 
             foreach (Geometry1 geo in list)
             {
-
-
                 Console.WriteLine("umfang ist: " + geo.GetCircumference());
                 Console.WriteLine("Fläche ist: " + geo.GetArea());
-
-
             }
 
             foreach (Geometry1 geo in list)
             {
 
-
                 sumCircum = sumCircum + geo.GetCircumference();
                 sumArea = sumArea + geo.GetArea();
-
 
             }
 

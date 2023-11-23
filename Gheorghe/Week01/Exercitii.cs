@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week01
+﻿namespace Gheorghe.Week01
 {
     internal class Exercitii
     {
@@ -13,16 +6,16 @@ namespace Gheorghe.Week01
         {
             PrintExercitii("x", 10);
             //  PrintQuadrat("$", 10);
-           // PrintRect("€", 10, 3);
+            // PrintRect("€", 10, 3);
         }
 
-         public static void PrintExercitii(string symbol, int count)
+        public static void PrintExercitii(string symbol, int count)
         {
             for (int i = 0; i < count; i++)
             {
                 Console.Write(symbol);
             }
-         }
+        }
 
         public static void PrintQuadrat(string symbol, int count)
         {
@@ -33,25 +26,25 @@ namespace Gheorghe.Week01
                 {
                     Console.Write(symbol);
                 }
-                    Console.WriteLine();
+                Console.WriteLine();
             }
 
         }
 
-        public static void PrintRect(String symbol,int height,int width)
+        public static void PrintRect(String symbol, int height, int width)
         {
-            for (int i = 0;i < height;i++)
+            for (int i = 0; i < height; i++)
             {
-                for (int j = 0;j < width;j++)
+                for (int j = 0; j < width; j++)
                 {
-                    Console.Write(symbol,i);
-                   
+                    Console.Write(symbol, i);
+
 
                 }
-                   Console.WriteLine();
+                Console.WriteLine();
             }
         }
     }
-        
+
 }
 
