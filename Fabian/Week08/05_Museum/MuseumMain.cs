@@ -1,4 +1,4 @@
-﻿
+﻿using static Fabian.Selftest_SP.TowersOfHanoi;
 namespace Fabian.Week08._05_Museum
 {
     public class MuseumMain
@@ -6,26 +6,28 @@ namespace Fabian.Week08._05_Museum
         public static void Start()
         {
 
-            Hallway mainHallway = new("main hallway");
+            Hallway mainHallway = new("main hallway", 1);
 
             Museum museum = new("Pinakothek", mainHallway);
 
-            Hallway hallway1 = new("hallway 1");
-            Hallway hallway2 = new("hallway 2");
+            Hallway hallway1 = new("hallway 1", 2);
+            Hallway hallway2 = new("hallway 2", 3);
 
-            ExhibitionRoom room1 = new("room 1");
-            ExhibitionRoom room2 = new("room 2");
-            ExhibitionRoom room3 = new("room 3");
-            ExhibitionRoom room4 = new("room 4");
-            ExhibitionRoom room5 = new("room 5");
-            ExhibitionRoom room6 = new("room 6");
-            ExhibitionRoom room7 = new("room 7");
-            ExhibitionRoom room8 = new("room 8");
-            ExhibitionRoom room9 = new("room 9");
+            ExhibitionRoom room1 = new("room 1", 4);
+            ExhibitionRoom room2 = new("room 2", 4);
+            ExhibitionRoom room3 = new("room 3", 3);
+            ExhibitionRoom room4 = new("room 4", 3);
+            ExhibitionRoom room5 = new("room 5", 2);
+            ExhibitionRoom room6 = new("room 6", 4);
+            ExhibitionRoom room7 = new("room 7", 5);
+            ExhibitionRoom room8 = new("room 8", 6);
+            ExhibitionRoom room9 = new("room 9", 2);
 
             Guardian g1 = new("Fred", 10);
 
-            Thief t1 = new("Chris", 15, 50);
+            Thief t1 = new("mr nonsuspect", 15, 3);
+            Thief t2 = new("Hassan", 20, 3);
+            Thief t3 = new("mr suspect", 30, 3);
 
             Visitor sandro = new("Sandro");
             Visitor timo = new("Timo");
@@ -34,7 +36,7 @@ namespace Fabian.Week08._05_Museum
             Visitor patrick = new("Patrick");
             Visitor cemal = new("Cemal");
             Visitor dario = new("Dario");
-            Visitor hassan = new("Hassan");
+            Visitor kuhl = new("Kuhl");
             Visitor mohammed = new("Mohammed");            
             Visitor guenther = new("Günther");            
             Visitor fred = new("Fred");            
@@ -120,7 +122,7 @@ namespace Fabian.Week08._05_Museum
             });
 
 
-            Hallway exit = new("exit");
+            Hallway exit = new("exit", 0);
 
             mainHallway.AddNeighour(room5);
             mainHallway.AddNeighour(room9);
@@ -151,7 +153,7 @@ namespace Fabian.Week08._05_Museum
             museum.AddVisitor(patrick);
             museum.AddVisitor(cemal);
             museum.AddVisitor(dario);
-            museum.AddVisitor(hassan);
+            museum.AddVisitor(kuhl);
             museum.AddVisitor(mohammed);
             museum.AddVisitor(guenther);
             museum.AddVisitor(fred);
@@ -164,11 +166,23 @@ namespace Fabian.Week08._05_Museum
             museum.AddVisitor(heinrich);
             museum.AddVisitor(doris);
             museum.AddVisitor(yukiko);
+            museum.AddVisitor(t1);
+            museum.AddVisitor(t2);
+            museum.AddVisitor(t3);
 
             Console.WriteLine();
 
+            for (int i = 0; i < 17; i++)
+            {
+                museum.Tick();
+            }
+            SetConsoleColor(ConsoleColor.DarkYellow, "The museum is closing, visitors must leave now!");
+            for (int i = 0; i < 7; i++)
+            {
+                museum.LeaveMuseum();
+            }
 
-            museum.Simulation(8000000);
+
 
         }
     }

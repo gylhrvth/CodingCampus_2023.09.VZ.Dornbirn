@@ -46,7 +46,7 @@ namespace Fabian.Week08._05_Museum
             return list;
         }
 
-        public void Simulation(int ticksPerSwitch)
+        /*public void Simulation(int ticksPerSwitch)
         {
             List<Visitor> visitorsToRemove = new();
             int currentTick = 0;
@@ -77,8 +77,39 @@ namespace Fabian.Week08._05_Museum
                     _Visitors.Remove(v);
                 }
                 
+            }*/
+
+        public void Tick()
+        {
+            List<Visitor> visitorsToRemove = new();
+            _Visitors = RandomizeList(_Visitors);
+            foreach (Visitor v in _Visitors)
+            {
+                v.Tick(visitorsToRemove);
+                Thread.Sleep(500);
+            }
+            foreach(var v in visitorsToRemove)
+            {
+                _Visitors.Remove(v);
+            }
+        }
+
+        public void LeaveMuseum()
+        {
+            List<Visitor> visitorsToRemove = new();
+            _Visitors = RandomizeList(_Visitors);
+            foreach (Visitor v in _Visitors)
+            {
+                v.LeaveMuseum(visitorsToRemove);
+                Thread.Sleep(275);
+            }
+            foreach (var v in visitorsToRemove)
+            {
+                _Visitors.Remove(v);
             }
         }
     }
+    
 }
+
 

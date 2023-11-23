@@ -8,23 +8,45 @@ namespace Fabian.Week08._05_Museum
         protected string _Name;
         private List<Room> _Neighbours;
         private List<Visitor> _Visitors;
+        protected int _DistanceToExit;
+        public List<Artwork> Artworks = new();
 
+        public int DistanceToExit { get => _DistanceToExit; }
         public List<Room> Neighbours { get => _Neighbours; }
         public List<Visitor> Visitors { get => _Visitors; }
         public string Name { get => _Name; }
-        protected Room(string name)
+        protected Room(string name, int distanceToExit)
         {
             _Name = name;
             _Neighbours = new List<Room>();
             _Visitors = new List<Visitor>();
+            _DistanceToExit = distanceToExit;
         }
 
         protected abstract void PrintMyself(string prefix);
 
         public Room GetRandomNeighbour()
         {
-            return _Neighbours[rnd.Next(_Neighbours.Count)];
+            Room result = null;
+            if (_Neighbours.Count > 0)
+            {
+                result = _Neighbours[rnd.Next(_Neighbours.Count)];
+            }
+            return result;
         }
+        public Room GetFastestExit()
+        {
+            Room closest = _Neighbours[0];
+            foreach(var n in _Neighbours)
+            {
+                if(closest.DistanceToExit > n.DistanceToExit)
+                {
+                    closest = n;
+                }
+            }
+            return closest;
+        }
+        public abstract Artwork GetRandomArtwork();
         public abstract void PrintAction(Visitor v);
         public void EnterVisitor(Visitor v)
         {
