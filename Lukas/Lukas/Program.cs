@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Lukas.Week07.Rehearsal.Start();
+Lukas.Week08.Files.Start();
 
 Console.ReadLine();
