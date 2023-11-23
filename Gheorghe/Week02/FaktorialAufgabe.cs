@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week02
+﻿namespace Gheorghe.Week02
 {
     internal class Zählen_in_0
     {
         public static void Start()
         {
             int c = Add();
-            Console.WriteLine( );
+            Console.WriteLine();
             for (int i = 1; i <= 20; i++)
             {
                 Console.WriteLine("{0,2}! = {1,20}", i, Factorialcalculus(i));
