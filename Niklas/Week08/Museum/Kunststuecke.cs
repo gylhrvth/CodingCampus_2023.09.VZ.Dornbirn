@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Museum
 {
-    internal class Wächter
+    public class Kunststuecke : Museum
     {
+        private string _Name;
+        private int _Year;
+        private string _Artist;
+
     }
 }
