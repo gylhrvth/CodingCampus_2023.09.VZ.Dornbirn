@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erik.Week09.Filesystem
+namespace Timo.Week08
 {
-    internal class TraversalUseful
+    public class FileStreamRead
     {
+        public static void Start()
+        {
+
+        }
     }
 }
