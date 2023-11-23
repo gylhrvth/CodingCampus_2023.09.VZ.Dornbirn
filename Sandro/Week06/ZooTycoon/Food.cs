@@ -8,22 +8,21 @@ namespace Sandro.Week06.ZooTycoon
 {
     internal class Food
     {
-        private string _Name;
-        private string _Unit;
-        private double _Price;
+        private string name;
+        private string unit;
+        private double price;
 
-
+    
         public Food(string name, string unit, double price)
         {
-            _Name = name;
-            _Unit = unit;
-            _Price = price;
+            this.name = name;
+            this.unit = unit;
+            this.price = price;
         }
-
 
         public override string ToString()
         {
-            return $"{_Name}";
+            return $"{name}";
         }
     }
 }
