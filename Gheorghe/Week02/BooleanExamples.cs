@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week02
+﻿namespace Gheorghe.Week02
 {
     public class BooleanExamples
     {
@@ -68,11 +61,11 @@ namespace Gheorghe.Week02
 
         public static void printRohmbus(string symbol, int size)
         {
-            for (int zeile = 0;zeile < size ;zeile++)
+            for (int zeile = 0; zeile < size; zeile++)
             {
-                for(int col = 0;col < size -1 - zeile  ;col++)
+                for (int col = 0; col < size - 1 - zeile; col++)
                 {
-                    if (zeile > 0 )
+                    if (zeile > 0)
                     {
                         Console.Write(".");
 
@@ -81,14 +74,14 @@ namespace Gheorghe.Week02
                     {
                         Console.Write("$");
                     }
-                   
+
                 }
                 Console.WriteLine();
             }
         }
 
     }
-}          
+}
 
 
 

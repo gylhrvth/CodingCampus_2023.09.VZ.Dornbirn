@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week06.List
+﻿namespace Gheorghe.Week06.List
 {
 
 
@@ -19,7 +12,7 @@ namespace Gheorghe.Week06.List
 
             List<int> list = CreateList(20);
             List<int> list1 = CreateList(20);
-            List<int> list2= CreateList(20);
+            List<int> list2 = CreateList(20);
 
 
             foreach (int value in list)
@@ -55,8 +48,8 @@ namespace Gheorghe.Week06.List
             Console.WriteLine("========================");
 
 
-            Console.WriteLine("SortedMerge:");    
-            SortingMerge( list1, list2 );
+            Console.WriteLine("SortedMerge:");
+            SortingMerge(list1, list2);
             PrintList(list);
             Console.WriteLine("==========================");
 
@@ -181,7 +174,7 @@ namespace Gheorghe.Week06.List
                     result.Add(list2[j]);
                     j++;
                 }
-               
+
             }
             return result;
 

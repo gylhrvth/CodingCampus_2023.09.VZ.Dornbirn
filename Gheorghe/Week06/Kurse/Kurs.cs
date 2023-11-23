@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Gheorghe;
-using Gheorghe.Week06.Person;
-
-namespace Gheorghe
+﻿namespace Gheorghe
 {
     public class Kurs
     {
@@ -18,23 +9,23 @@ namespace Gheorghe
         private Mensch _Trainer;
 
 
-     public Kurs(string Titel, DateTime date, int anzahlkursstunden, double preis, Mensch trainer)
+        public Kurs(string Titel, DateTime date, int anzahlkursstunden, double preis, Mensch trainer)
         {
             _Titel = Titel;
             _Date = date;
             _AnzahlKursStunden = anzahlkursstunden;
             _Preis = preis;
             _Trainer = trainer;
-            
+
 
         }
 
         public override string ToString()
         {
-            return String.Format("Titel: {0}\nDate: {1}\nAnzahlkursstunden: {2}\nPreis: {3}\nTrainer: \"{4}\"",_Titel, _Date, _AnzahlKursStunden, _Preis, _Trainer.Name);
+            return String.Format("Titel: {0}\nDate: {1}\nAnzahlkursstunden: {2}\nPreis: {3}\nTrainer: \"{4}\"", _Titel, _Date, _AnzahlKursStunden, _Preis, _Trainer.Name);
         }
 
     }
 
-   
+
 }

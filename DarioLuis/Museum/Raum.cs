@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using DarioLuis.Museum;
 
 namespace DarioLuis.Museum
 {
@@ -15,14 +17,16 @@ namespace DarioLuis.Museum
         public List<string> Kunststücke;
         public List<Gast> Gaeste;
         public List<Raum> NachbarRaeume;
+        private ConsoleColor MeineFarbe;
         
 
-        public Raum(string name)
+        public Raum(string name, ConsoleColor cc)
         {
             Name = name;
             Gaeste = new List<Gast>();
             Kunststücke = new List<string>();
             NachbarRaeume = new List<Raum>();
+            MeineFarbe = cc;
         }
 
         public void RaumVerlassen(Gast gast)
@@ -34,8 +38,10 @@ namespace DarioLuis.Museum
             }
         }
         public void RaumEintreten(Gast gast)
-        {
+        {   
+            Console.ForegroundColor = MeineFarbe;
             Console.WriteLine($"{gast.Name} tritt in den Raum {Name} ein.");
+            Console.ForegroundColor = ConsoleColor.White;
             if (!Gaeste.Contains(gast))
             {
                 Gaeste.Add(gast);
