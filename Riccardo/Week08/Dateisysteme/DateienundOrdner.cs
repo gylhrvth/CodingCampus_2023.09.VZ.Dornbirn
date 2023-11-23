@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Niklas.Week08.Museum
+namespace Riccardo.Week08.Dateisysteme
 {
-    internal class Kunststücke
+    internal class DateienundOrdner
     {
     }
 }

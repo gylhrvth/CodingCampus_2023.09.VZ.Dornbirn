@@ -8,7 +8,7 @@ namespace DarioLuis.Museum
 {
     public  class Austellungsraum:Raum
     {
-        public Austellungsraum(string name):base (name) 
+        public Austellungsraum(string name, ConsoleColor cc):base (name, cc) 
         {
             
         }

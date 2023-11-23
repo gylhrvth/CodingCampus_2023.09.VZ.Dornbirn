@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Museum
 {
-    internal class MuseumMain
+    public class MuseumMain
     {
+        //Gäste
+        public static void Start()
+        {
+            List<Museum> list = new List<Museum>();
+
+            list.Add(new Gang("Eingang"));
+
+        }
+
+
     }
 }
