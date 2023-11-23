@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sven.Week07.Geometry
 {
-    internal class geometry
+    internal abstract class Geometry
     {
+        public abstract double CircumFerence();
+
+        public abstract double GetArea();
     }
 }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week07.Zoo
+﻿namespace Gheorghe.Week07.Zoo
 {
     internal class Enclosure
     {
@@ -67,7 +60,9 @@ namespace Gheorghe.Week07.Zoo
                 if (animals.Hungry)
                 {
                     animals.Hungry = false;
-                    Console.WriteLine($"{animals.Name} , gerade gefüttert");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($" Wer hat hunger ->: {animals.Name} , gerade gefüttert");
+                    Console.ResetColor();
 
 
                 }
@@ -91,19 +86,24 @@ namespace Gheorghe.Week07.Zoo
             Animals animals = _AnimalsList[randomIndex];
 
             // Gib das Tier aus.
-            Console.WriteLine($"Saw {animals.Name}");
-
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Saw ,{animals.Name}");
+            Console.ResetColor();
         }
 
-        //foreach (Animals animals in _AnimalsList)
-        //{
-        //   if (animals._Saw) 
-        //    {
-        //        animals._Saw = false;
-        //        Console.WriteLine($"{animals.Name}, lange überwacht");*
+        public void FavoritsAnimals()
+        {
+            if (_AnimalsList.Count == 0)
+            {
+                return;
+            }
 
-        //    }
-        //}
+            int randomIndex = new Random().Next(_AnimalsList.Count);
+            Animals animals = _AnimalsList[randomIndex];
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Favorit ,{animals.Name}");
+            Console.ResetColor();
+        }
     }
 
 }

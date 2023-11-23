@@ -10,8 +10,8 @@ namespace Dimitri.Week08._01Geometrie
     {
         public Square(double length) : base(length, length)
         {
-            _width = length;
             _side = length;
+            _width = length;
         }
 
     }

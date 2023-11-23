@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week06.Personen
+﻿namespace Gheorghe.Week06.Personen
 {
     public static class PersonStatistik
     {

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week04
+﻿namespace Gheorghe.Week04
 {
     internal class RekursiveAlgorithm
     {
@@ -22,8 +15,8 @@ namespace Gheorghe.Week04
             Console.WriteLine("=====================================");
 
             Console.WriteLine("Fibonaccirechnung ist:");
-            Console.WriteLine( FibonacciRechnung(10));
-           
+            Console.WriteLine(FibonacciRechnung(10));
+
             Console.WriteLine("========================================");
         }
 
@@ -60,9 +53,9 @@ namespace Gheorghe.Week04
             {
                 return 1;
             }
-            return FibonacciRechnung(x - 1) + FibonacciRechnung(x -2) ;
+            return FibonacciRechnung(x - 1) + FibonacciRechnung(x - 2);
 
-        }  
+        }
 
     }
 }

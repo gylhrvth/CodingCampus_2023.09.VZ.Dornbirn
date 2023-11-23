@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week02
+﻿namespace Gheorghe.Week02
 {
     internal class AufgabeDataTypes
     {
@@ -25,7 +19,7 @@ namespace Gheorghe.Week02
             int result = 0;
             for (int i = from; i <= to; i++)
             {
-                result  +=  i;
+                result += i;
             }
             return result;
         }
@@ -35,5 +29,5 @@ namespace Gheorghe.Week02
 
 
 
-      
+
 
