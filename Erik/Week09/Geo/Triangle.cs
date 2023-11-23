@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erik.Week09.Geo
+namespace Erik.Week09.Geometry
 {
     class Triangle : Geometry
     {

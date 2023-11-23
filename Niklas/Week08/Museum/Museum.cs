@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Museum
 {
-    internal class Museum
+    public class Museum
     {
+
+
     }
 }
