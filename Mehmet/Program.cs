@@ -1,5 +1,1 @@
-﻿using Mehmet.Week07.Geometry;
-using Mehmet.Week07.Museum;
-
-MuseumStart.Start();
- 
+﻿Mehmet.Week08.FileSystem.Start();

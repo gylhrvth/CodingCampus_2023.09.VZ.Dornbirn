@@ -1,4 +1,4 @@
-﻿using Mehmet.Zoo;
+﻿using Mehmet.Week06.ZOO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Mehmet.ZOO
+namespace Mehmet.Week06.ZOO
 {
     internal class Animal
     {
@@ -39,15 +39,15 @@ namespace Mehmet.ZOO
         public Animal(string race, string name)
         {
             _Race = race;
-            _Name = name;      
-            _FoodList = new List<Food>();           
+            _Name = name;
+            _FoodList = new List<Food>();
         }
 
         public void AddFood(Food food)
         {
             _FoodList.Add(food);
         }
-        
+
         public void PrintAnimalName()
         {
             Console.Write(_Name);

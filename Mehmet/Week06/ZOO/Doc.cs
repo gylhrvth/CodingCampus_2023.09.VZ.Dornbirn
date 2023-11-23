@@ -1,11 +1,10 @@
-﻿using Mehmet.Zoo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.ZOO
+namespace Mehmet.Week06.ZOO
 {
     internal class Doc
     {

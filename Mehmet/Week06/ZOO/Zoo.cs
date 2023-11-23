@@ -1,6 +1,4 @@
-﻿using Mehmet.ZOO;
-
-namespace Mehmet.Zoo
+﻿namespace Mehmet.Week06.ZOO
 {
     internal class Zoo
     {
@@ -9,13 +7,13 @@ namespace Mehmet.Zoo
         private List<Cage> _CageList;
         private List<Worker> _WorkerList;
         private List<Doc> _DocList;
-        
+
         public Zoo(string name, int founded)
         {
             _Name = name;
             _Founded = founded;
             _CageList = new List<Cage>();
-           _WorkerList = new List<Worker>();
+            _WorkerList = new List<Worker>();
         }
 
         public void AddCage(Cage cage)
@@ -40,10 +38,10 @@ namespace Mehmet.Zoo
             foreach (Worker worker in _WorkerList)
             {
                 worker.PrintStrukture();
-            }          
+            }
             foreach (Cage cage in _CageList)
             {
-                cage.PrintStrukture();               
+                cage.PrintStrukture();
             }
         }
 
