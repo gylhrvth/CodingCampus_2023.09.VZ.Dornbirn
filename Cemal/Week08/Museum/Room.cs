@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Cemal.Week08.Museum
 {
-    public class Visitor
+    public class Room
     {
+        public Room() 
+        {
+
+        }
     }
 }

@@ -1,17 +1,18 @@
 ﻿using System;
-namespace Mohammed.Week07.Geometry
+
+namespace Mohammed.Week05.Geometry
 {
-	public class Rectangle : Geometry
-	{
+    public class Rectangle : Geometry
+    {
         private double width;
         private double height;
 
-         public Rectangle(double width, double height)
-         {
+        public Rectangle(double width, double height)
+        {
             this.width = width;
             this.height = height;
 
-         }
+        }
 
         public virtual double GetCirumFerence()
         {

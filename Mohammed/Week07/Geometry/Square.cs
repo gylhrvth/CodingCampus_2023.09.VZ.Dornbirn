@@ -1,11 +1,12 @@
 ﻿using System;
-namespace Mohammed.Week07.Geometry
+
+namespace Mohammed.Week05.Geometry
 {
-	public class Square : Rectangle
-	{
-		public Square(double side) : base(side, side)
-		{
-		}
+    public class Square : Rectangle
+    {
+        public Square(double side) : base(side, side)
+        {
+        }
     }
 }
 
