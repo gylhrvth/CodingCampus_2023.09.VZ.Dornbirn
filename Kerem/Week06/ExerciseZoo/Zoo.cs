@@ -74,5 +74,20 @@ namespace Kerem.Week06.ExerciseZoo
             }
             Console.WriteLine("total daily cost for food: {0:N2}Euro", cost);
         }
+        public void Simulate()
+        {
+            foreach (Enclosure enclosure in _EnclosureList)
+            {
+                enclosure.IsFed = false;
+            }
+
+
+            foreach (Pfleger pfleger in _pfleger)
+            {
+                pfleger.Simulate();
+
+            }
+
+        }
     }
 }

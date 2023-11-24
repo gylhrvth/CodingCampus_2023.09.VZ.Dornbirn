@@ -7,20 +7,20 @@ using System.Xml.Linq;
 
 namespace Martin.Week07.Vererbung
 {
-    public class RGBTastatur : Tastatur // Vererbung ->
+    public class RGBTastatur : Tastatur // Vererbung -> 
     {
-        public string _Color;
+        public int _LichtStärke;
 
         //base -> 
-        public RGBTastatur(string name, bool hasLoudClick,string color) : base(name,hasLoudClick)
+        public RGBTastatur(string name, bool hasLoudClick,string color, int lichtStärke) : base(name,hasLoudClick,color)
         {
-            _Color = color;
+            _LichtStärke = lichtStärke;
 
         }
 
         public override void PrintTastatur() // override überschreibt die exestierte methode
         {
-            Console.WriteLine($"Tastatur: {_Name} \n HasLoudClick: {_HasLoudClick} \n Color: {_Color}");
+            Console.WriteLine($"Tastatur: {_Name} \n HasLoudClick: {_HasLoudClick} \n Color: {_Color} \n Lightpower: {_LichtStärke}");
         }
     }
 }
