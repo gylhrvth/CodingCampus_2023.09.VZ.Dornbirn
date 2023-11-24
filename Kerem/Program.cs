@@ -13,5 +13,6 @@
 
 //Kerem.Week06.ExerciseZoo.ZooMain.Start();
 
+//Kerem.Week08.Museum.MuseumStart.Start();
+Kerem.Week08.Files.FilesData.Start();
 
-Kerem.Week08.GeometryMain.Start();

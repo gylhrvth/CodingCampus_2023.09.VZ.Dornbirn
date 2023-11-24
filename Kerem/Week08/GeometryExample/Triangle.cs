@@ -4,29 +4,29 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kerem.Week08;
 
 namespace Kerem.Week08
 {
     internal class Triangle : Geometry
     {
         private double _length;
-        private double _height;
 
-        public Triangle (double length, double height)
+        public Triangle (double length)
         {
             _length = length;
-            _height = height;
         }
         public override double CircumFerence()   
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Triangle");
-            Console.ForegroundColor= ConsoleColor.White;
             return _length + _length + _length;
         }
         public override double GetArea()
         {
-            return _length * _height /2;
+            return _length * _length / 2;
+        }
+        public override string ToString()
+        {
+            return "Triangle";
         }
     }
 }

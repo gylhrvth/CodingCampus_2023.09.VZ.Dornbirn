@@ -16,15 +16,16 @@ namespace Kerem.Week08
         }
         public override double CircumFerence()
         {
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Circle");
-            Console.ForegroundColor = ConsoleColor.White;
-
             return Math.PI * 2 * _radius;
         }
         public override double GetArea()
         {
             return Math.PI * Math.Pow(_radius,2);
+        }
+
+        public override string ToString()
+        {
+            return "Circle";
         }
     }
 }
