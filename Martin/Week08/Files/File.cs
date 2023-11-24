@@ -70,7 +70,7 @@ namespace Martin.Week08.Files
 
         public static void Filesystemtraversal(string path)
         {
-
+            Console.WriteLine("Test");
             string dicretory = Directory.GetCurrentDirectory();
             DirectoryInfo directoryInfo = new DirectoryInfo(dicretory);
             Console.WriteLine(directoryInfo);
