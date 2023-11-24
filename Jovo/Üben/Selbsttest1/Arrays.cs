@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Üben
+namespace Jovo.Üben.Selbsttest1
 {
     internal class Arrays
     {
         public static Random rand = new Random();
         public static void Start()
         {
-            
+
 
             int[] arr = new int[] { 0, 1, 23, 5, 12, 4, 4, 2, 5, 2, 10 };
 
@@ -61,7 +61,7 @@ namespace Jovo.Üben
 
         public static void ArrayFirstLast(int[] arr)
         {
-            Console.WriteLine("First:{0}, Last:{1}",arr[0], arr[arr.Length-1]);
+            Console.WriteLine("First:{0}, Last:{1}", arr[0], arr[arr.Length - 1]);
 
 
         }
@@ -93,13 +93,13 @@ namespace Jovo.Üben
         {
             int Min = int.MaxValue;
 
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] < Min)
                 {
                     Min = arr[i];
                 }
-                
+
             }
             return Min;
 
@@ -109,9 +109,9 @@ namespace Jovo.Üben
         public static int GetMax(int[] arr)
         {
             int Max = int.MinValue;
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
-               if (arr[i] > Max)
+                if (arr[i] > Max)
                 {
                     Max = arr[i];
                 }
@@ -125,11 +125,11 @@ namespace Jovo.Üben
         {
             int avg = 0;
 
-            for(int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 avg = avg + arr[i];
             }
-            return (avg / arr.Length);
+            return avg / arr.Length;
         }
 
 
@@ -167,7 +167,7 @@ namespace Jovo.Üben
         public static int[] BubblesortASC(int[] arr)
         {
             int length = arr.Length;
-            for (int i = 0;  i < length; i++)
+            for (int i = 0; i < length; i++)
             {
                 for (int j = 0; j < length - 1; j++)
                 {
@@ -210,12 +210,12 @@ namespace Jovo.Üben
 
 
 
-        public static int[] Bubblesortchoice(int[] arr, bool asc) 
+        public static int[] Bubblesortchoice(int[] arr, bool asc)
         {
             int length = arr.Length;
             for (int i = 0; i < length; i++)
             {
-                for(int j = 0; j < length -1; j++)
+                for (int j = 0; j < length - 1; j++)
                 {
                     if (asc)
                     {

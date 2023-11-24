@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Üben
+namespace Jovo.Üben.Selbsttest1
 {
     internal class Input
     {
         public static void Start()
         {
-            Input1("Bitte geben Sie einen Text ein:","Wie oft soll der Text ausgegeben werden:");
+            Input1("Bitte geben Sie einen Text ein:", "Wie oft soll der Text ausgegeben werden:");
         }
         public static int ReadNumber(string msg)
         {
@@ -46,10 +46,10 @@ namespace Jovo.Üben
             }
         }
         public static void Input1(string askText, string HowOften)
-        { 
+        {
             string text = ReadString(askText);
             int times = ReadNumber(HowOften);
-            for (int i = 0 ; i < times; i++)
+            for (int i = 0; i < times; i++)
             {
                 Console.WriteLine(text);
             }
