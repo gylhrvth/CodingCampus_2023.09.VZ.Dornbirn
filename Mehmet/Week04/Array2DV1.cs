@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week04
+namespace Kerem.Week04
 {
     internal class Array2DV1
     {

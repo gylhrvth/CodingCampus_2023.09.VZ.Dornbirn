@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week02
+namespace Kerem.Week02
 {
     internal class BooleanExamples
     {

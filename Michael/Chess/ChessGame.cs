@@ -14,6 +14,8 @@ namespace Michael.Class
     {
         public static void Start()
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             Console.WriteLine("Press any button to start");
             Console.Read();
             string player1 = "Player 1";
@@ -238,6 +240,8 @@ namespace Michael.Class
                         highlighted = field[row,column].Highlighted;
                     }
 
+                    //if (highlighted) Console.ForegroundColor = ConsoleColor.Yellow;
+
                     Console.Write($"{((highlighted) ? '╠' : ' ')}{((field[row, column] != null) ? field[row, column] : ' ')}{((highlighted) ? '╣' : ' ')}");
                 }
                 Console.BackgroundColor = ConsoleColor.Black;
@@ -276,22 +280,28 @@ namespace Michael.Class
             PrintField(newField);
             Thread.Sleep(500);
 
-            newField[0,0] = newField[0, size - 1] = new Piece(Chess.Type.Rook, Color.Black);
-            newField[size - 1, 0] = newField[size - 1, size - 1] = new Piece(Chess.Type.Rook, Color.White);
+            newField[0,0] = new Piece(Chess.Type.Rook, Color.Black);
+            newField[0, size - 1] = new Piece(Chess.Type.Rook, Color.Black);
+            newField[size - 1, 0] = new Piece(Chess.Type.Rook, Color.White);
+            newField[size - 1, size - 1] = new Piece(Chess.Type.Rook, Color.White);
 
             Console.SetCursorPosition(0, 0);
             PrintField(newField);
             Thread.Sleep(500);
 
-            newField[0, 1] = newField[0, size - 2] = new Piece(Chess.Type.Knight, Color.Black);
-            newField[size - 1, 1] = newField[size - 1, size - 2] = new Piece(Chess.Type.Knight, Color.White);
+            newField[0, 1] = new Piece(Chess.Type.Knight, Color.Black);
+            newField[0, size - 2] = new Piece(Chess.Type.Knight, Color.Black);
+            newField[size - 1, 1] = new Piece(Chess.Type.Knight, Color.White);
+            newField[size - 1, size - 2] = new Piece(Chess.Type.Knight, Color.White);
 
             Console.SetCursorPosition(0, 0);
             PrintField(newField);
             Thread.Sleep(500);
 
-            newField[0, 2] = newField[0, size - 3] = new Piece(Chess.Type.Bishop, Color.Black);
-            newField[size - 1, 2] = newField[size - 1, size - 3] = new Piece(Chess.Type.Bishop, Color.White);
+            newField[0, 2] = new Piece(Chess.Type.Bishop, Color.Black);
+            newField[0, size - 3] = new Piece(Chess.Type.Bishop, Color.Black);
+            newField[size - 1, 2] = new Piece(Chess.Type.Bishop, Color.White);
+            newField[size - 1, size - 3] = new Piece(Chess.Type.Bishop, Color.White);
 
             Console.SetCursorPosition(0, 0);
             PrintField(newField);

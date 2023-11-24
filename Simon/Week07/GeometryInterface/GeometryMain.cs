@@ -10,7 +10,7 @@ namespace Simon.Week07.GeometryInterface
     {
         public static void Start()
         {
-            List<Geometry> geometries = new();
+            List<IGeometry> geometries = new();
 
             geometries.Add(new Square(10.5));
             geometries.Add(new Square(12.7));
@@ -40,15 +40,15 @@ namespace Simon.Week07.GeometryInterface
             CalcGeometry(geometries);
         }
 
-        public static void CalcGeometry(List<Geometry> geometries)
+        public static void CalcGeometry(List<IGeometry> geometries)
         {
             double overallcircumfrence = 0;
             double overallarea = 0;
-            foreach (Geometry geometry in geometries)
+            foreach (IGeometry geometry in geometries)
             {
                 overallcircumfrence += geometry.GetCircumfrence();
             }
-            foreach (Geometry geometry in geometries)
+            foreach (IGeometry geometry in geometries)
             {
                 overallarea += geometry.GetArea();
             }
