@@ -1,6 +1,6 @@
 ﻿using System.Runtime.ExceptionServices;
 
-namespace Mehmet.Week03
+namespace Kerem.Week03
 {
     internal class ArrayUEbung
     {

@@ -1,4 +1,4 @@
 ﻿using Sandro.Week06;
 using Sandro.Week06.ZooTycoon;
 
-ZooMain.Start();
+Sandro.Week08.FilesByLuki.Files2.Start();

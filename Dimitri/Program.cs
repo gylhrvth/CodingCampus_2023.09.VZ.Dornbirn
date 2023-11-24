@@ -10,5 +10,7 @@ using Dimitri.Week08._01Geometrie;
 using Dimitri.Week08._02GeometrieInterface;
 using Dimitri.Week08._03Test;
 using Dimitri.Week08._04Filesystem;
+using Dimitri.Week08._05Selftest;
 
-Filesystem.Main();
+Aufgabe1.Main();
+

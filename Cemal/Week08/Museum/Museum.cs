@@ -6,16 +6,13 @@ using System.Threading.Tasks;
 
 namespace Cemal.Week08.Museum
 {
-    internal class Museum
+    public class Museum
     {
         private string _Name;
-        private List<Hallway> _HallwayList;
-        private List<ExhibitionRoom> _RoomList;
-        private DateTime _OpeningTime;
-        private DateTime _ClosingTime;
 
-        public Museum(string name, DateTime opening) 
+        public Museum(string name) 
         {
+            _Name = name;
 
         }
     }
