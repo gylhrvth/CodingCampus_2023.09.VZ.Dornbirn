@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week07.Museum
+namespace Sven.Week08.Museum
 {
     internal class ExhibitionRoom : Room
     {
         private List<Artwork> _artworkList = new();
-        private static Random _random = new Random(); 
+        private static Random _random = new Random();
 
 
 
@@ -39,7 +39,8 @@ namespace Mehmet.Week07.Museum
 
             int indexArtwork = _random.Next(_artworkList.Count);
 
-            return _artworkList[indexArtwork]; }
+            return _artworkList[indexArtwork];
+        }
 
     }
 }

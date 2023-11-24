@@ -34,8 +34,8 @@ namespace Erik.Week09.Filesystem
                     rootPath = dirElements.FullName;
                     NavigateToFolder(rootPath, "   " + prefix);
                 }
-
             }
+
 
             foreach (FileInfo fileInf in files)
             {

@@ -31,7 +31,7 @@
                 else
                 {
                     Console.WriteLine($"{prefix}├── {Path.GetFileName(directory)}");
-                    NavigateDirectory(directory, $"{prefix}|   ");
+                    NavigateDirectory(directory, $"{prefix}│   ");
                 }
             }
 
