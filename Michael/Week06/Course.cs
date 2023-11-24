@@ -20,7 +20,7 @@ namespace Michael.Week06
             _Start = start;
             _CourseHoursCount = courseHoursCount;
             _Price = price;
-            _Trainer = trainer;
+            _Trainer = trainer; 
         }
 
 
