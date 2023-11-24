@@ -20,6 +20,13 @@
     <None Remove="Week06\Person2Main\" />
     <None Remove="Week06\ZOO\" />
     <None Remove="Week06\OOP\" />
+    <None Remove="Week07\" />
+    <None Remove="Week07\ZooNew\" />
+    <None Remove="Week08\" />
+    <None Remove="Week08\Geometry\" />
+    <None Remove="Week08\GeometryInterface\" />
+    <None Remove="Week08\Museum\" />
+    <None Remove="Week08\MuseumNew\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -34,6 +41,13 @@
     <Folder Include="Week06\Person2Main\" />
     <Folder Include="Week06\ZOO\" />
     <Folder Include="Week06\OOP\" />
+    <Folder Include="Week07\" />
+    <Folder Include="Week07\ZooNew\" />
+    <Folder Include="Week08\" />
+    <Folder Include="Week08\Geometry\" />
+    <Folder Include="Week08\GeometryInterface\" />
+    <Folder Include="Week08\Museum\" />
+    <Folder Include="Week08\MuseumNew\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />

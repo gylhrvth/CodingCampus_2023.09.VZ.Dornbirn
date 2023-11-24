@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week03
+﻿namespace Gheorghe.Week03
 {
     internal class Arrays03
     {
@@ -69,7 +59,7 @@ namespace Gheorghe.Week03
 
             int[] arr = NumberArray(7);
             int[] cp = MakeaACopy(arr);
-             //Console.WriteLine("[{0}]", string.Join(", ", arr));
+            //Console.WriteLine("[{0}]", string.Join(", ", arr));
             PrintArray(arr);
             Console.WriteLine("Random Arry original");
             Console.WriteLine("=======================");
@@ -128,7 +118,7 @@ namespace Gheorghe.Week03
 
         }
 
-      
+
 
         public static int[] Array(int size)
         {
@@ -345,7 +335,7 @@ namespace Gheorghe.Week03
 
         public static void Printavaragearry(int[] mynumarator)
         {
-            foreach(int element in mynumarator)
+            foreach (int element in mynumarator)
             {
                 Console.Write(element);
                 Console.Write(" , ");
@@ -356,18 +346,18 @@ namespace Gheorghe.Week03
         public static int Avaragerechner(int[] mynumarator)
         {
             int sume = 0;
-            for(int i = 0;i < mynumarator.Length; i++)
+            for (int i = 0; i < mynumarator.Length; i++)
             {
                 sume += mynumarator[i];
                 avarage = sume / mynumarator.Length;
             }
             return avarage;
         }
-         
+
     }
 }
 
-   
+
 
 
 

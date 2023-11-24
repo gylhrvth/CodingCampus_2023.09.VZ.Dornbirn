@@ -3,16 +3,16 @@
     internal class ZooExample
     {
         public static int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        public static double[] R4 = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        public static Random r4 = new Random();
         public static void Start()
         {
             Random r1 = new Random();
             Random r2 = new Random();
             Random r3 = new Random();
-            Random random = new Random();
+            Random rand = new Random();
 
-            int R1 = r1.Next(0, 3);
-            int R2 = r2.Next(0, 2);
-            int R3 = r3.Next(0, 3);
+
 
             DateTime t = DateTime.Now;
             Console.Write("  Heute ist: ");
@@ -23,27 +23,31 @@
             zoo.Name = "Tierpark Höchst";
             zoo.Year = 1982;
 
-            ZooKeeper keeper1 = new ZooKeeper("Gyula", 40, 180, "Meadow", "", "");
-            ZooKeeper keeper2 = new ZooKeeper("Lukas", 35, 183, "Woods", "", "");
-            ZooKeeper keeper3 = new ZooKeeper("Sandro", 25, 185, "Aquarium", "", "");
+            TierArzt arzt1 = new TierArzt("Alex");
+            TierArzt arzt2 = new TierArzt("Mannfred");
+            TierArzt arzt3 = new TierArzt("Heinz");
 
-            Enclosure meadow = new Enclosure("Meadow", "Outdoor/Ground", "Outside Temperature", "Dirty");
-            Enclosure woods = new Enclosure("Wood", "Outdoor/Ground", "Outside Temperature", "Dirty");
-            Enclosure aquarium = new Enclosure("Ocean", "Outdoor/Water", "Cold Temperature", "Dirty");
+            Enclosure meadow = new Enclosure("Meadow", "Outdoor/Ground", "Outside Temperature", false);
+            Enclosure woods = new Enclosure("Wood", "Outdoor/Ground", "Outside Temperature", false);
+            Enclosure aquarium = new Enclosure("Ocean", "Outdoor/Water", "Cold Temperature", false);
 
-            Animals rabbit1 = new Animals("Peter", 2, "Rabbit", "Male", "hungry", 100, false);
-            Animals rabbit2 = new Animals("Hase", 1, "Rabbit", "Female", "hungry", 100, false);
-            Animals rabbit3 = new Animals("Richard", 1, "Rabbit", "Male", "hungry", 100, false);
-            Animals monkey1 = new Animals("Elisabeth", 3, "Monkey", "Male", "hungry", 100, false);
-            Animals monkey2 = new Animals("Lukas", 3, "Monkey", "Female", "hungry", 100, false);
-            Animals dolphin1 = new Animals("Hans", 6, "Dolphin", "Male", "hungry", 100, false);
-            Animals dolphin2 = new Animals("Jürgen", 8, "Dolphin", "Male", "hungry", 100, false);
-            Animals sealion = new Animals("Simba", 9, "Sealion", "Female", "hungry", 100, false);
+            ZooKeeper keeper1 = new ZooKeeper("Gyula", 40, 180, meadow.Name, "", "");
+            ZooKeeper keeper2 = new ZooKeeper("Lukas", 35, 183, woods.Name, "", "");
+            ZooKeeper keeper3 = new ZooKeeper("Sandro", 25, 185, aquarium.Name, "", "");
 
-            for (int i = 0; i < 9; i++)
-            {
-                arr[i] = random.Next(101);
-            }
+            zoo.AddEnclosure(meadow);
+            zoo.AddEnclosure(woods);
+            zoo.AddEnclosure(aquarium);
+
+            Animal rabbit1 = new Animal("Peter", 2, "Rabbit", "Male", true, 30, false);
+            Animal rabbit2 = new Animal("Hase", 1, "Rabbit", "Female", true, 30, false);
+            Animal rabbit3 = new Animal("Richard", 1, "Rabbit", "Male", true, 30, false);
+            Animal monkey1 = new Animal("Elisabeth", 3, "Monkey", "Male", true, 100, false);
+            Animal monkey2 = new Animal("Lukas", 3, "Monkey", "Female", true, 100, false);
+            Animal dolphin1 = new Animal("Hans", 6, "Dolphin", "Male", true, 140, false);
+            Animal dolphin2 = new Animal("Jürgen", 8, "Dolphin", "Male", true, 140, false);
+            Animal sealion = new Animal("Simba", 9, "Sealion", "Female", true, 200, false);
+            Animal sealion2 = new Animal("Ralph", 11, "Sealion", "Male", true, 200, false);
 
             Food banana = new Food("Banana", 6, 2);
             Food fish = new Food("Fish", 12, 4);
@@ -53,11 +57,9 @@
             zoo.AddZooKeeper(keeper2);
             zoo.AddZooKeeper(keeper3);
 
-
             keeper1.AddEnclosure(meadow);
             keeper2.AddEnclosure(woods);
             keeper3.AddEnclosure(aquarium);
-
 
             meadow.AddAnimals(rabbit1);
             meadow.AddAnimals(rabbit2);
@@ -67,7 +69,7 @@
             aquarium.AddAnimals(dolphin1);
             aquarium.AddAnimals(dolphin2);
             aquarium.AddAnimals(sealion);
-
+            aquarium.AddAnimals(sealion2);
 
             monkey1.AddFood(banana);
             monkey2.AddFood(banana);
@@ -78,156 +80,103 @@
             rabbit2.AddFood(carrot);
             rabbit3.AddFood(carrot);
 
+            for (int days = 0; days < 8; days++)
+            {
+                zoo.PrintZoo();
+
+                Console.WriteLine();
+
+                zoo.SimulateDay();
+
+                Console.WriteLine();
+
+                for (int i = 0; i < 9; i++)
+                {
+                    R4[i] = r4.Next(1, 15);
+                }
+
+                int R1 = r1.Next(0, 3);
+                int R2 = r2.Next(0, 2);
+                int R3 = r3.Next(0, 3);
+
+                for (int i = 0; i < 9; i++)
+                {
+                    arr[i] = rand.Next(101);
+                }
+
+                zoo.FeedAnimals();
+
+                if (monkey1.Hunger == false &&
+                    monkey2.Hunger == false &&
+                    dolphin1.Hunger == false &&
+                    dolphin2.Hunger == false &&
+                    sealion.Hunger == false &&
+                    rabbit1.Hunger == false &&
+                    rabbit2.Hunger == false &&
+                    rabbit3.Hunger == false)
+                {
+                    if (R1 == 1)
+                    {
+                        keeper1.Favourite = $"{rabbit1.Name}";
+                    }
+                    else if (R1 == 1)
+                    {
+                        keeper1.Favourite = $"{rabbit2.Name}";
+                    }
+                    else
+                    {
+                        keeper1.Favourite = $"{rabbit3.Name}";
+                    }
+
+                    if (R2 == 0)
+                    {
+                        keeper2.Favourite = $"{monkey1.Name}";
+                    }
+                    else if (R2 == 1)
+                    {
+                        keeper2.Favourite = $"{monkey2.Name}";
+                    }
+
+                    if (R3 == 0)
+                    {
+                        keeper3.Favourite = $"{dolphin1.Name}";
+                    }
+                    else if (R3 == 1)
+                    {
+                        keeper3.Favourite = $"{dolphin2.Name}";
+                    }
+                    else
+                    {
+                        keeper3.Favourite = $"{sealion.Name}";
+                    }
+                }
+
+                Console.WriteLine();
+
+                zoo.Biting();
+
+                zoo.BiteDamage();
+
+                Console.WriteLine();
+
+                zoo.DeadAnimal();
+
+                Console.WriteLine();
+
+                if (days == days++)
+                {
+                    Console.WriteLine("===End of day!===");
+                }
+
+                rabbit1.Biss = false; rabbit2.Biss = false; rabbit3.Biss = false; monkey1.Biss = false; monkey2.Biss = false; dolphin1.Biss = false; dolphin2.Biss = false; sealion.Biss = false;
+
+                Console.WriteLine();
+            }
             zoo.PrintZoo();
 
-            if (meadow.Status != "Clean" || woods.Status != "Clean" || aquarium.Status != "Clean")
-            {
-                meadow.Status = "Clean";
-                woods.Status = "Clean";
-                aquarium.Status = "Clean";
-            }
+            Console.WriteLine();
+            Console.WriteLine("---END OF WEEK---");
 
-            Console.WriteLine();
-            keeper1.Feeding = "Hase";
-            keeper1.Feeding = "Richard";
-            keeper1.Feeding = "Peter";
-            Console.WriteLine();
-            keeper2.Feeding = "Elisabeth";
-            keeper2.Feeding = "Lukas";
-            Console.WriteLine();
-            keeper3.Feeding = "Hans";
-            keeper3.Feeding = "Jürgen";
-            keeper3.Feeding = "Simba";
-            Console.WriteLine();
-            monkey1.Hunger = "fed up";
-            monkey2.Hunger = "fed up";
-            dolphin1.Hunger = "fed up";
-            dolphin2.Hunger = "fed up";
-            sealion.Hunger = "fed up";
-            rabbit1.Hunger = "fed up";
-            rabbit2.Hunger = "fed up";
-            rabbit3.Hunger = "fed up";
-            Console.WriteLine();
-
-            if (monkey1.Hunger == "fed up" &&
-                monkey2.Hunger == "fed up" &&
-                dolphin1.Hunger == "fed up" &&
-                dolphin2.Hunger == "fed up" &&
-                sealion.Hunger == "fed up" &&
-                rabbit1.Hunger == "fed up" &&
-                rabbit2.Hunger == "fed up" &&
-                rabbit3.Hunger == "fed up")
-            {
-                if (R1 == 1)
-                {
-                    keeper1.Favourite = $"{rabbit1.Name}";
-                }
-                else if (R1 == 1)
-                {
-                    keeper1.Favourite = $"{rabbit2.Name}";
-                }
-                else
-                {
-                    keeper1.Favourite = $"{rabbit3.Name}";
-                }
-
-                if (R2 == 0)
-                {
-                    keeper2.Favourite = $"{monkey1.Name}";
-                }
-                else if (R2 == 1)
-                {
-                    keeper2.Favourite = $"{monkey2.Name}";
-                }
-
-                if (R3 == 0)
-                {
-                    keeper3.Favourite = $"{dolphin1.Name}";
-                }
-                else if (R3 == 1)
-                {
-                    keeper3.Favourite = $"{dolphin2.Name}";
-                }
-                else
-                {
-                    keeper3.Favourite = $"{sealion.Name}";
-                }
-            }
-
-            Console.WriteLine();
-            for (int bissChance = 0; bissChance < 1; bissChance++)
-            {
-                if (arr[0] < 40 && rabbit1.Health > 0)
-                {
-                    rabbit1.Biss = true;
-                }
-                if (arr[1] < 40 && rabbit2.Health > 0)
-                {
-                    rabbit2.Biss = true;
-                }
-                if (arr[2] < 40 && rabbit3.Health > 0)
-                {
-                    rabbit3.Biss = true;
-                }
-                if (arr[3] < 40 && monkey1.Health > 0)
-                {
-                    monkey1.Biss = true;
-                }
-                if (arr[4] < 40 && monkey2.Health > 0)
-                {
-                    monkey2.Biss = true;
-                }
-                if (arr[5] < 40 && dolphin1.Health > 0)
-                {
-                    dolphin1.Biss = true;
-                }
-                if (arr[7] < 40 && dolphin2.Health > 0)
-                {
-                    dolphin2.Biss = true;
-                }
-                if (arr[8] < 40 && sealion.Health > 0)
-                {
-                    sealion.Biss = true;
-                }
-            }
-            Console.WriteLine();
-            for (int bissVictim = 0; bissVictim < 1; bissVictim++)
-            {
-                if (rabbit1.Biss == true)
-                {
-                    rabbit2.Health -= 15;
-                }
-                if (rabbit2.Biss == true)
-                {
-                    rabbit3.Health -= 15;
-                }
-                if (rabbit3.Biss == true)
-                {
-                    rabbit1.Health -= 15;
-                }
-                if (monkey1.Biss == true)
-                {
-                    monkey2.Health -= 15;
-                }
-                if (monkey2.Biss == true)
-                {
-                    monkey1.Health -= 15;
-                }
-                if (dolphin1.Biss == true)
-                {
-                    sealion.Health -= 15;
-                }
-                if (dolphin2.Biss == true)
-                {
-                    dolphin1.Health -= 15;
-                }
-                if (sealion.Biss == true)
-                {
-                    dolphin2.Health -= 15;
-                }
-            }
-            Console.WriteLine();
-            zoo.PrintZoo();
         }
     }
 }

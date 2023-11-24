@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 namespace Gheorghe.Week05
 {
     internal class DateExample

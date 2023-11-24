@@ -1,0 +1,24 @@
+﻿using System;
+namespace David.Week07.ZooNew
+{
+	public class ZooKeeper
+	{
+		private string _Name;
+		private List<Enclosure> _EnclosureList;
+
+		public ZooKeeper(string name)
+		{
+			_Name = name;
+		}
+
+		public void PrintZooKeeper()
+		{
+			Console.WriteLine($"   --->{_Name}");
+			foreach (Enclosure enclosure in _EnclosureList)
+			{
+				enclosure.PrintEnclosure();
+			}
+		}
+	}
+}
+

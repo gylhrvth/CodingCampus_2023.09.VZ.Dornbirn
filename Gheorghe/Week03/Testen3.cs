@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gheorghe.Week03
+﻿namespace Gheorghe.Week03
 {
     internal class Testen3
     {
@@ -87,7 +79,7 @@ namespace Gheorghe.Week03
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Summe Array Zufall generiert:");
             int[] summearr = RandomSummeArray(CreatArray(10));
-            foreach(int i in summearr)
+            foreach (int i in summearr)
             {
                 Console.Write(i + Random.Next(1, 100) + " ");
             }
@@ -96,10 +88,10 @@ namespace Gheorghe.Week03
 
 
             Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor= ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Array Generator:");
             int[] arrgenerator = ArrayGenerator(CreatArray(10));
-            foreach(int i in arrgenerator)
+            foreach (int i in arrgenerator)
             {
                 Console.Write(i + " ");
 
@@ -193,12 +185,12 @@ namespace Gheorghe.Week03
 
         public static int[] RandomSummeArray(int[] array)
         {
-            
+
             int[] summearray = new int[array.Length];
             for (int i = 0; i < summearray.Length; i++)
 
             {
-                array[i ] = Random.Next(1, 100);
+                array[i] = Random.Next(1, 100);
                 array[i] += 1;
 
             }
@@ -230,13 +222,13 @@ namespace Gheorghe.Week03
         public static int MinArray(int[] array)
         {
             int min = int.MaxValue;
-            for (int i = 0;i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-             if (array[i] < min)
+                if (array[i] < min)
                 {
-                    MinArray[i] = min;
+                    min = array[i];
                 }
-                
+
             }
             return min;
 

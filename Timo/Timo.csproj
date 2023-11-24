@@ -9,13 +9,10 @@
 
   <ItemGroup>
     <None Remove="Week01\" />
+    <None Remove="Week07\05_GeometryInterface\Triangle.cs~RF19006bef.TMP" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Week07\" />
   </ItemGroup>
 </Project>

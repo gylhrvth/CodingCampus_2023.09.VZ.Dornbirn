@@ -1,5 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Lukas.Week03.Array2DMatrix.Start();
+Lukas.Week08.Recursion.Start();
 
 Console.ReadLine();

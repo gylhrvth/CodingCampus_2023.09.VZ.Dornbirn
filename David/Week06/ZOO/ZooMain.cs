@@ -1,64 +1,95 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Xml.Linq;
 
 namespace David.Week06.ZOO
 {
-	public class ZooMain
+	internal class ZooMain
 	{
 		public static void Start()
 		{
-			Zoo zoo = new Zoo("The Monkey Paradise", "Mars", 1879, 40);
+			Zoo zoo = new Zoo("The Galaxy Zoo", "Mars", 1879);
 
-			Enclosure forest = new Enclosure("Monkeyforest", "outdoor climate", "forest");
-			Enclosure alienPlanet = new Enclosure("Alien Planet", "-456°C", "different galaxy");
-			Enclosure underWaterWorld = new Enclosure("Mairmaid", "Carribian under water temperature", "it's underwater");
+			//Enclosures
+			Enclosure forest = new Enclosure("Monkeyforest", "outdoor climate");
+			Enclosure alienPlanet = new Enclosure("Alien Planet", "indoor temperature");
+			Enclosure underWaterWorld = new Enclosure("Mairmaid", "temperatured water");
+			Enclosure sky = new Enclosure("Birds", "outdoor climate");
 
-			Animals monkey1 = new Animals("Jonny", 14, "Gorilla", "male");
-            Animals monkey2 = new Animals("Dorey", 12, "Gorilla", "female");
+			zoo.EnclosureList.Add(forest);
+			zoo.EnclosureList.Add(alienPlanet);
+			zoo.EnclosureList.Add(underWaterWorld);
+			zoo.EnclosureList.Add(sky);
 
-			Food foodMonkey1 = new Food("Bananas", "Bundle", 5.0);
-            Food foodMonkey2 = new Food("Mangos", "Piece", 1.50);
+			//Food for animals
+			Food meat = new("meat", "kg", 100f);
+			Food fish = new("Fish", "kg", 40f);
+			Food veggies = new("Veggies", "kg", 18f);
+			Food fruit = new("Fruit", "kg", 25f);
 
-            Animals alien1 = new Animals("Xylrup", 468, "Gray Alien", "???");
-            Animals alien2 = new Animals("Nalxiniqup", 4791, "Insekt Alien", "Inter");
+			//animals Forest
+			Animals monkey1 = new("Jonny", 14, "Gorilla", "Male", 2, fruit, 100, 50);
+			Animals monkey2 = new("Dorey", 12, "Gorilla", "Female", 2, fruit, 100, 50);
 
-            Food foodAlien1 = new Food("Fruits", "Box", 7.0);
-            Food foodAlien2 = new Food("Veggies", "Box", 6.0);
+			//animals AlienPlanet
+			Animals alien1 = new("Xylrup", 468, "Gray Alien", "Female", 4, veggies, 500, 60);
+			Animals alien2 = new("Nalxiniqup", 4791, "Insekt Alien", "Male", 6, meat, 500, 60);
 
-            Animals mairmaid1 = new Animals("Ariel", 29, "Pink Mairmaid", "Female");
-            Animals mairmaid2 = new Animals("Ken", 33, "Blue Mairmaid", "Male");
+			//animals UnderWater
+			Animals mairmaid1 = new("Ariel", 29, "Pink Mairmaid", "Female", 7, fish, 400, 40);
+			Animals mairmaid2 = new("Ken", 33, "Blue Mairmaid", "Male", 8, fish, 400, 40);
 
-            Food foodMairmaid1 = new Food("Sea Fruit", "500g box", 11.0);
-            Food foodmairmaid2 = new Food("Sea Cucumber", "500g box", 10.0);
+			//animals in the sky
+			Animals giantBird1 = new("Susan", 16, "Eagle", "Female", 4, fruit, 250, 30);
+			Animals giantBird2 = new("Bob", 14, "Eaele", "Male", 6, veggies, 250, 30);
+
+			
+
+			forest.AnimalsList.Add(monkey1);
+			forest.AnimalsList.Add(monkey2);
+			alienPlanet.AnimalsList.Add(alien1);
+			alienPlanet.AnimalsList.Add(alien2);
+			underWaterWorld.AnimalsList.Add(mairmaid1);
+			underWaterWorld.AnimalsList.Add(mairmaid2);
+			sky.AnimalsList.Add(giantBird1);
+			sky.AnimalsList.Add(giantBird2);
+
+			ZooKeeper zooKeeper = new("David", new List<Enclosure> { forest, underWaterWorld });
+			ZooKeeper zooKeeper1 = new("Patrick", new List<Enclosure> { underWaterWorld, sky });
+			ZooKeeper zooKeeper2 = new("Mohammed", new List<Enclosure> { sky, underWaterWorld });
+            ZooKeeper zooKeeper3 = new("George", new List<Enclosure> { alienPlanet, forest });
+            ZooKeeper zooKeeper4 = new("Dimitri", new List<Enclosure> { alienPlanet, sky });
+
+			zoo.ZooKeeperList.Add(zooKeeper);
+			zoo.ZooKeeperList.Add(zooKeeper1);
+			zoo.ZooKeeperList.Add(zooKeeper2);
+			zoo.ZooKeeperList.Add(zooKeeper3);
+            zoo.ZooKeeperList.Add(zooKeeper4);
 
 
 
-            zoo.AddEnclosure(forest);
-			zoo.AddEnclosure(alienPlanet);
-			zoo.AddEnclosure(underWaterWorld);
+            //Print
+            zoo.PrintStructure();
 
-			forest.AddAnimals(monkey1);
-            forest.AddAnimals(monkey2);
+			Console.ForegroundColor = ConsoleColor.Yellow;
+			Console.WriteLine();
+			Console.WriteLine("--------------");
+			Console.ResetColor();
 
-			monkey1.AddFood(foodMonkey1);
-			monkey2.AddFood(foodMonkey2);
+			zoo.PrintZooStatistic();
 
-			alienPlanet.AddAnimals(alien1);
-            alienPlanet.AddAnimals(alien2);
+			Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine();
+            Console.WriteLine("--------------");
+            Console.ResetColor();
 
-			alien1.AddFood(foodAlien1);
-			alien2.AddFood(foodAlien2);
+			zoo.SimulateDay(1);
 
-			underWaterWorld.AddAnimals(mairmaid1);
-			underWaterWorld.AddAnimals(mairmaid2);
+			zoo.PrintListZooKeeper();
+			//zoo.PrintZooKeeperWithResponsabilities();
 
-			mairmaid1.AddFood(foodMairmaid1);
-			mairmaid2.AddFood(foodmairmaid2);
 
-            zoo.PrintZoo();
-		}
-
-		
-	}
+        }
+    }
 }
 
