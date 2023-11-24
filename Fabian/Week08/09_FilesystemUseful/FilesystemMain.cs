@@ -5,7 +5,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
     {
         public static void Start()
         {
-            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn/Fabian";
+            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn";
 
 
             FileAndDirectoryCounter fdCounter = new();
@@ -14,7 +14,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
             FileExtensionCounter fec = new(".cs");
             FolderSizeCalculator fsc = new();
             FileSystem fsy = new();
-            
+
             NavigateFileSystem(0, path, new List<IFileReceiver> { fdCounter, fs, feco, fec, fsc});
 
             Console.WriteLine("Directory count:\n" + fdCounter.GetDirectoryCounter());
@@ -28,7 +28,9 @@ namespace Fabian.Week08._09_FilesystemUsefull
             feco.PrintExtensions();
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Folder sizes:\n");
-            fsc.PrintFolderSizes();
+            //fsc.PrintFolderSizes();
+
+
         }
 
         public static void NavigateFileSystem(int depth, string path, List<IFileReceiver> frs)

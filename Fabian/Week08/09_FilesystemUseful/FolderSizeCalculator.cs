@@ -4,41 +4,61 @@ namespace Fabian.Week08._09_FilesystemUsefull
 {
     public class FolderSizeCalculator : IFileReceiver
     {
-        private Dictionary<string, long> _FolderSizes = new Dictionary<string, long>();
+        private Dictionary<string, (long, string)> _FolderSizes = new Dictionary<string, (long, string)>();
+
         public void OnFileReceived(int depth, string path)
         {
-
         }
 
         public void OnDirectoryReceived(int depth, string path)
         {
-            DirectoryInfo dir = new DirectoryInfo(path);
-            long directorySize = 0;
-            string prefix = new(' ', depth * 4);
-            foreach (var file in Directory.GetFiles(path))
+            try
             {
-                FileInfo fi = new FileInfo(file);
-                directorySize += fi.Length;
+                DirectoryInfo dir = new DirectoryInfo(path);
+                long directorySize = 0;
+                string prefix = new(' ', depth * 4);
+                foreach (var file in Directory.GetFiles(path))
+                {
+                    FileInfo fi = new FileInfo(file);
+                    directorySize += fi.Length;
+                }
+
+                if (!_FolderSizes.ContainsKey(path))
+                    _FolderSizes[path] = (returnSize(path), prefix);
+
             }
-            //foreach (var subdir in Directory.GetDirectories(path))
-            //{
-            //    NavigateFileSystem(depth + 1, subdir, new List<IFileReceiver> { this });
-            //    directorySize += _FolderSizes[subdir];
-            //}
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
 
-            if (_FolderSizes.ContainsKey(dir.Name))
-                _FolderSizes[prefix + dir.Name] += directorySize;
-            else
-                _FolderSizes[prefix + dir.Name] = directorySize;
+
         }
-        
-
         public void PrintFolderSizes()
         {
             foreach (var kvp in _FolderSizes)
             {
-                Console.WriteLine($"{kvp.Key} : {kvp.Value} bytes");
+                DirectoryInfo di = new(kvp.Key);
+                Console.WriteLine($"{kvp.Value.Item2}{di.Name} : {kvp.Value.Item1} bytes");
             }
+        }
+
+        public long returnSize(string path)
+        {
+            var files = Directory.GetFiles(path);
+            var dirs = Directory.GetDirectories(path);
+
+            long sum = 0;
+
+            foreach(var file in files)
+            {
+                FileInfo fi = new FileInfo(file);
+                sum += fi.Length;
+            }
+
+            foreach(var subdir in dirs)
+            {
+                DirectoryInfo dirInfo = new DirectoryInfo(subdir);
+                sum += returnSize(dirInfo.FullName);
+            }
+            return sum;
         }
     }
 }
