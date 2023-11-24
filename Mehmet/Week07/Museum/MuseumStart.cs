@@ -143,7 +143,7 @@ namespace Kerem.Week08.Museum
 
 
 
-            for (int i = 0; i < 72; i++)
+            for (int i = 0; i < 14; i++)
             {
                 
                 Console.WriteLine("Simulation hour {0}", i + 1);
