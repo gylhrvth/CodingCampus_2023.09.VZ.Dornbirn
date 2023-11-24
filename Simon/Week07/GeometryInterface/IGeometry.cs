@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Simon.Week07.GeometryInterface
 {
-    public interface Geometry
+    public interface IGeometry
     {
         public double GetCircumfrence();
         public double GetArea();
+
+       
 
     }
 }
