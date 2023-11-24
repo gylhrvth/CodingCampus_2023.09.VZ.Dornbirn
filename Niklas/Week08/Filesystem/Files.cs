@@ -16,7 +16,9 @@ namespace Niklas.Week08.Filesystem
             //Console.WriteLine();
             //FolderSize();
             //Console.WriteLine();
-            Traversal();
+            //Traversal();
+            //Console.WriteLine();
+            TraversalUseful();
         }
         public static void FilesAndFolders()
         {
@@ -61,14 +63,33 @@ namespace Niklas.Week08.Filesystem
 
             foreach (var dir in directoryChildren)
             {
+                //Weeks
                 DirectoryInfo dirInfo = new DirectoryInfo(dir);
                 if (dirInfo.Name.Contains("Week"))
                 {
                     Console.WriteLine(Convert.ToChar(9568) + dirInfo.Name);
                 }
-                else { }
+
+                var childchild = dirInfo.GetDirectories();
+
+                //Files in folders of week
+                foreach (var printfiles in childchild)
+                {
+
+                    if (!printfiles.Name.Contains("Debug") && !printfiles.Name.Contains("Release"))
+                    {
+                        Console.WriteLine(Convert.ToChar(9553) + " " + "" + Convert.ToChar(9562) + "" + Convert.ToChar(9552) + printfiles.Name);
+                    }
+                    var foldersInFolders = printfiles.GetFiles();
+                    foreach (var files in foldersInFolders)
+                    {
+                        Console.WriteLine(Convert.ToChar(9553) + "     " + Convert.ToChar(9562) + files.Name);
+                    }
+                }
+
                 var getfiles = dirInfo.GetFiles();
 
+                //Files in week
                 foreach (var printfiles in getfiles)
                 {
                     if (!printfiles.Name.Contains("Niklas") && printfiles.Name.Contains(".cs"))
@@ -76,9 +97,42 @@ namespace Niklas.Week08.Filesystem
                         Console.WriteLine(Convert.ToChar(9553) + "  " + Convert.ToChar(9562) + printfiles.Name);
                     }
                 }
-                // print inside folder from week 6 to 8
             }
         }
+
+        public static void TraversalUseful()
+        {
+            string directory = Directory.GetCurrentDirectory();
+
+            var currentDirectoryInfo = new DirectoryInfo(directory);
+
+            string projectRootDirectory = currentDirectoryInfo.Parent.Parent.Parent.FullName;
+
+            string[] directoryChildren = Directory.GetDirectories(projectRootDirectory);
+
+            Console.WriteLine(directoryChildren.Length);
+
+            foreach (var dir in directoryChildren)
+            { 
+                //Weeks
+                DirectoryInfo dirInfo = new DirectoryInfo(dir);
+
+                var childchild = dirInfo.GetDirectories();
+                Console.WriteLine(childchild.Length);
+
+                //Files in folders of week
+                foreach (var printfiles in childchild)
+                {
+                    var foldersInFolders = printfiles.GetFiles();
+                    Console.WriteLine(foldersInFolders.Length);
+                }
+
+                var getfiles = dirInfo.GetFiles();
+                Console.WriteLine(getfiles.Length);
+            }
+        }
+
+
         public static float ConvertToMByte(long sizeInByte)
         {
             return sizeInByte / 1024.0f / 1024;

@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week07.Vererbung
+namespace Kerem.Week08.Vererbung
 {
     internal class Aids : Diseases
     {

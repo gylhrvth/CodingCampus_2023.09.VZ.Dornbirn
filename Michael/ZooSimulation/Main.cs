@@ -53,6 +53,8 @@ namespace Michael.ZooSimulation
             ExampleZoo.AddEnclosures(new List<Enclosure> { e1, e2 , e3});
 
             ExampleZoo.SimulateMultipleDays(7);
+
+            
         }
     }
 }
