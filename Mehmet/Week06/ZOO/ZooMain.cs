@@ -1,6 +1,10 @@
+<<<<<<< HEAD:Mehmet/ZOO/ZooMain.cs
 ﻿using Kerem.Zoo;
 using Kerem.ZOO;
 using System;
+=======
+﻿using System;
+>>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/ZooMain.cs
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +15,11 @@ using System.Threading.Tasks;
 
 
 
+<<<<<<< HEAD:Mehmet/ZOO/ZooMain.cs
 namespace Kerem.Zoo
+=======
+namespace Mehmet.Week06.ZOO
+>>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/ZooMain.cs
 {
     internal class ZooMain
     {
@@ -71,7 +79,7 @@ namespace Kerem.Zoo
             a1.AddFood(f1001); a2.AddFood(f1002); a3.AddFood(f1003);
             a4.AddFood(f2001); a5.AddFood(f2002); a6.AddFood(f2003);
 
-            c1.AddDoc(doc1);c2.AddDoc(doc1);
+            c1.AddDoc(doc1); c2.AddDoc(doc1);
             doc1.AddCage(c1);
 
             //doc1.AddAnimal(a1); doc1.AddAnimal(a2); doc1.AddAnimal(a3); doc1.AddAnimal(a4); doc1.AddAnimal(a5); doc1.AddAnimal(a6);
@@ -83,9 +91,9 @@ namespace Kerem.Zoo
             for (int i = 1; i <= days; i++)
             {
                 z.SimulateDay(i);
-                a1.Fed = false; a2.Fed = false; a3.Fed = false; a4.Fed = false; a5.Fed = false; a6.Fed = false; 
+                a1.Fed = false; a2.Fed = false; a3.Fed = false; a4.Fed = false; a5.Fed = false; a6.Fed = false;
                 doc1.HealAnimal();
-                if (i == days) 
+                if (i == days)
                 {
                     c1.TheEndStory();
                 }
