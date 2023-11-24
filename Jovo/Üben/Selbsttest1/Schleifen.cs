@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Jovo.Üben
+namespace Jovo.Üben.Selbsttest1
 {
     internal class Schleifen
     {
@@ -32,9 +32,9 @@ namespace Jovo.Üben
         //Schleifen Aufgabe 1
         public static void Schleifen1(int length)
         {
-            for(int i = length; i > 0 ; i--) 
+            for (int i = length; i > 0; i--)
             {
-                
+
                 Console.WriteLine(i);
             }
 
@@ -46,7 +46,7 @@ namespace Jovo.Üben
 
         public static void Schleifen2(int start, int end)
         {
-            for(int i = start; i <= end; i++)
+            for (int i = start; i <= end; i++)
             {
                 Console.WriteLine(i);
             }
@@ -59,7 +59,7 @@ namespace Jovo.Üben
         {
             int result = 0;
 
-           while(result <= endMax)
+            while (result <= endMax)
             {
                 if (result <= endLow)
                 {
@@ -78,7 +78,7 @@ namespace Jovo.Üben
         }
 
 
-        
+
 
     }
 }
