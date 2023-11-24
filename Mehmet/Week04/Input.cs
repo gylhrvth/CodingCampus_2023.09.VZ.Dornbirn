@@ -5,12 +5,12 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using static Mehmet.Week01.Rechnen;
-using static Mehmet.Week02.BooleanExamples;
+using static Kerem.Week01.Rechnen;
+using static Kerem.Week02.BooleanExamples;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
-namespace Mehmet.Week04
+namespace Kerem.Week04
 {
     internal class Input
     {

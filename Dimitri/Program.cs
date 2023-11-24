@@ -11,4 +11,8 @@ using Dimitri.Week08._02GeometrieInterface;
 using Dimitri.Week08._03Test;
 using Dimitri.Week08._04Filesystem;
 
+<<<<<<< HEAD
 Filesystem.Main();
+=======
+List.Main();
+>>>>>>> ea0520c (changes)

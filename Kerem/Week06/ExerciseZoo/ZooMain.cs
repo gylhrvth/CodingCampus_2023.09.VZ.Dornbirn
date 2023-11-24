@@ -58,7 +58,9 @@ namespace Kerem.Week06.ExerciseZoo
             z.PrintZoo();
    
             z.PrintZooStatistic();
+            Console.WriteLine();
             Console.WriteLine("Simulation:");
+            z.Simulate();
          
 
 
