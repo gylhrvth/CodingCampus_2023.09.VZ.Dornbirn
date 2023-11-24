@@ -5,6 +5,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
     {
         private int _FileCounter = 0;
         private int _DirectoryCounter = 0;
+
         public void OnDirectoryReceived(int depth, string path)
         {
             _DirectoryCounter++;

@@ -24,6 +24,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
             {
                 Console.WriteLine($"{kvp.Key} : {kvp.Value}");
             }
+            Console.WriteLine("Total count of extensions: " + _Extensions.Count);
         }
     }
 }

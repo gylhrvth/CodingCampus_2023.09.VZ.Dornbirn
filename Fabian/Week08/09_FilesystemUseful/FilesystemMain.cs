@@ -5,7 +5,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
     {
         public static void Start()
         {
-            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Fabian";
+            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn/Fabian";
 
 
             FileAndDirectoryCounter fdCounter = new();
@@ -17,17 +17,17 @@ namespace Fabian.Week08._09_FilesystemUsefull
             
             NavigateFileSystem(0, path, new List<IFileReceiver> { fdCounter, fs, feco, fec, fsc});
 
-            Console.WriteLine("\nDirectory count: " + fdCounter.GetDirectoryCounter());
-            Console.WriteLine("File count: " + fdCounter.GetFileCounter());
+            Console.WriteLine("Directory count:\n" + fdCounter.GetDirectoryCounter());
+            Console.WriteLine("File count:\n" + fdCounter.GetFileCounter());
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("\nTotal size: " + fs.GetTotalSize() + " bytes");
+            Console.WriteLine("Total size:\n" + fs.GetTotalSize() + " bytes");
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("\nTotal files with .cs: " + fec.GetFileCounter());
+            Console.WriteLine("Total files with .cs:\n" + fec.GetFileCounter());
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("\nTotal Extension dictionary: ");
+            Console.WriteLine("Total extensions:\n");
             feco.PrintExtensions();
             Console.WriteLine("--------------------------------------------");
-            Console.WriteLine("\nFolder sizes: ");
+            Console.WriteLine("Folder sizes:\n");
             fsc.PrintFolderSizes();
         }
 
