@@ -25,12 +25,13 @@ namespace Sandro.Week06.ZooTycoon
             _FoodAmount = foodAmount;
         }
 
+       
 
         public void PrintZoo() {
             Console.WriteLine($" --- --- {_Name},{_Age},{_Gender},{_Genus}, eats : {_FoodAmount} {_Food}");
         }
 
-
+      
 
     }
 }

@@ -10,4 +10,8 @@
   <ItemGroup>
     <None Remove="Week01\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
 </Project>

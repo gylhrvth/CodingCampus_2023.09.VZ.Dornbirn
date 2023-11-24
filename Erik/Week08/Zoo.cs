@@ -15,6 +15,7 @@ namespace Erik.Week08
         private List<Keeper> _KeeperList;
 
 
+
         public List<Keeper> keeperList { get => _KeeperList; }
 
         public Zoo(string name, int founded, int days)
@@ -24,6 +25,7 @@ namespace Erik.Week08
             _Enclosure = new List<Enclosure>();
             _FoodList = new List<Food>();
             _KeeperList = new List<Keeper>();
+
         }
         
         public void add(Enclosure enclosure)
@@ -45,6 +47,8 @@ namespace Erik.Week08
                 enclosure.PrintEnclosure("|" + "   " + prefix);
             }
         }
+
+ 
         public void simulateDay(int day)
         {
             for (int i = 0; i < day; i++)
@@ -52,7 +56,7 @@ namespace Erik.Week08
                 switch (i % 7)
                 {
                     case 1:
-                        Console.WriteLine("Monday:\n ");                        
+                        Console.WriteLine("Monday:\n ");
                         break;
                     case 2:
                         Console.WriteLine("Tuesday:\n ");
@@ -73,7 +77,12 @@ namespace Erik.Week08
                         Console.WriteLine("Sunday:\n ");
                         break;
                 }
-                
+
+                foreach (Enclosure enclosure in _Enclosure)
+                {
+                    enclosure.AddHungerToAnimal();
+                }
+
                 foreach (Keeper keeper in _KeeperList)
                 {
                     keeper.FeedEnclosures();
@@ -104,10 +113,7 @@ namespace Erik.Week08
                 totalCost += enc.calculateCost();
                 totalWeight += enc.calculateConsumedFood();
             }
-
             Console.WriteLine($"\nDaily consumption: {totalWeight}kg / Daily food costs: {totalCost}$");
         }
-
-
     }
 }

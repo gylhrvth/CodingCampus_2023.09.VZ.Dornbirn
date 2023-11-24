@@ -13,14 +13,15 @@ namespace Kerem.Week06.ExerciseZoo
 
         private string _name;
         private List<Enclosure> _enclosure = new();
-        private Animals _favouriteanimal;
+        private string _favouriteanimal;
+        private bool _isfed = false;
 
         public List<Enclosure> Enclosure
         {
             get => _enclosure;
             set => _enclosure = value;
         }
-        public Animals FavouriteAnimal
+        public string FavouriteAnimal
         {
             get => _favouriteanimal;
             set => _favouriteanimal = value;
@@ -43,27 +44,36 @@ namespace Kerem.Week06.ExerciseZoo
             }
             Console.WriteLine();
         }
+        public override string ToString()
+        {
+            return "Name: " + _name;
+        }
+        public void PrintFoodSimulation()
+        {
+            foreach (Enclosure enclosure in _enclosure)
+            {
+                foreach (Animals animal in enclosure.AnimalsList)
+                {
+                    if (enclosure.IsFed == false)
+                    {
 
-        //public void Feed()
-        //{
+                        Console.WriteLine($"{animal.Genus} is HUNGRY!! {_name} feeds {animal.Genus} with the name {animal.Name}, with the {animal.Food}\n{animal.Genus} is now satisfied: {animal.Sound}");
+                        enclosure.ObserveAnimals(_favouriteanimal);
 
-        //    foreach (var enclosure in _enclosure)
-        //    {
-        //        if (!enclosure.IsFed)
-        //        {
-        //            Console.WriteLine($"{_name} is feeding the {enclosure.Name} enclosure");
-        //            enclosure.IsFed = true;
-        //        }
-        //        else
-        //        {
-        //            Console.WriteLine($"{_name} tried to feed the {enclosure.Name} enclosure but it's already fed");
-        //        }
-        //        FavouriteAnimal ??= enclosure.Animals[rand.Next(enclosure.Animals.Count)];
-        //    }
-        //    Console.WriteLine($"{_name} is spectating his favourite animal: {FavouriteAnimal}");
+                    }
+
+                }
+
+                enclosure.IsFed = true;
+            }
 
 
-        //}
+        }
+
+        public void Simulate()
+        {
+            PrintFoodSimulation();
+        }
 
     }
 }

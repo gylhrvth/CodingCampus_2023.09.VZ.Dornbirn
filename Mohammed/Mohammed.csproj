@@ -22,6 +22,11 @@
     <None Remove="Selftest\" />
     <None Remove="Week06\Zoo\" />
     <None Remove="Week07\" />
+    <None Remove="Week07\Vererbung\" />
+    <None Remove="Week07\OOPAtHome\" />
+    <None Remove="Week07\Zoo02\" />
+    <None Remove="Week07\Geometry\" />
+    <None Remove="Week07\Mueseum\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -38,6 +43,11 @@
     <Folder Include="Selftest\" />
     <Folder Include="Week06\Zoo\" />
     <Folder Include="Week07\" />
+    <Folder Include="Week07\Vererbung\" />
+    <Folder Include="Week07\OOPAtHome\" />
+    <Folder Include="Week07\Zoo02\" />
+    <Folder Include="Week07\Geometry\" />
+    <Folder Include="Week07\Mueseum\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />

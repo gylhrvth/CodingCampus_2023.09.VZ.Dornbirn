@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace Gheorghe.Week04
+﻿namespace Gheorghe.Week04
 {
     internal class UserInput
     {
@@ -120,7 +112,7 @@ namespace Gheorghe.Week04
 
             while (!win)
             {
-               
+
 
                 int generatedNumber = ZahlEinlesen2();
 
@@ -128,7 +120,7 @@ namespace Gheorghe.Week04
                 {
                     Console.WriteLine("Du hast gewonnen");
                     win = true;
-                      
+
                 }
                 else if (generatedNumber < SecretNumber)
 

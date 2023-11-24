@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
-
-namespace Gheorghe.Week01
+﻿namespace Gheorghe.Week01
 {
     internal class Testen
     {
@@ -382,9 +372,9 @@ namespace Gheorghe.Week01
 
         static void PrintCirclePythagoras(string text, int Radius)
         {
-            for (int i = - Radius; i <= Radius; i++)
+            for (int i = -Radius; i <= Radius; i++)
             {
-                for (int j = - Radius; j <= Radius; j++)
+                for (int j = -Radius; j <= Radius; j++)
                 {
                     if ((i * i) + (j * j) <= Radius * Radius)
                     {
@@ -400,10 +390,10 @@ namespace Gheorghe.Week01
             Console.WriteLine();
         }
 
-    }       
+    }
 
 }
-        
+
 
 
 

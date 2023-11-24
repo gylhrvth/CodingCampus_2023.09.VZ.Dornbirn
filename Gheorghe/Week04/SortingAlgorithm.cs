@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Gheorghe.Week03.Arrays03;
+﻿using static Gheorghe.Week03.Arrays03;
 
 namespace Gheorghe.Week04
 {
@@ -32,7 +27,7 @@ namespace Gheorghe.Week04
 
             Console.WriteLine("Aufsteigend");
             Console.WriteLine("Unsorted");
-            PrintCrazyRangeArry(arr); 
+            PrintCrazyRangeArry(arr);
 
 
             Console.WriteLine();

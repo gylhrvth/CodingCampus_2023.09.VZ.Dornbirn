@@ -1,19 +1,18 @@
-﻿using System;
-namespace Gheorghe.Week01
+﻿namespace Gheorghe.Week01
 {
-	public class HelloWorld
-	{
-		public static void Start()
-		{
-			Console.WriteLine("Helloo Gheorghe!");
-			Console.WriteLine("      /--\\  ");
-			Console.WriteLine("     / /\\ \\");
-			Console.WriteLine("    / /  \\ \\");
-			Console.WriteLine("   / /    \\ \\");
-			Console.WriteLine("  /   ======  \\");
-			Console.WriteLine(" /_/        \\_\\");
-			}
-
+    public class HelloWorld
+    {
+        public static void Start()
+        {
+            Console.WriteLine("Helloo Gheorghe!");
+            Console.WriteLine("      /--\\  ");
+            Console.WriteLine("     / /\\ \\");
+            Console.WriteLine("    / /  \\ \\");
+            Console.WriteLine("   / /    \\ \\");
+            Console.WriteLine("  /   ======  \\");
+            Console.WriteLine(" /_/        \\_\\");
         }
+
     }
+}
 

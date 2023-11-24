@@ -21,13 +21,20 @@ namespace Mohammed.Selftest
             PrintResult("Min3", GetMinResult(arr3));
             Console.WriteLine();
 
+
+            PrintResult("Max", GetMaxResult(arr));
+            PrintResult("Max2", GetMaxResult(arr2));
+            PrintResult("Max3", GetMaxResult(arr3));
+            Console.WriteLine();
+
+
             PrintResult("Avg", GetAvgResult(arr));
             PrintResult("Avg2", GetAvgResult(arr2));
             PrintResult("Avg3", GetAvgResult(arr3));
             Console.WriteLine();
 
-            //int[] arr = Fillarr(10);
-            //PrintResultD(arr);
+            int[] arr4 = Fillarr(10);
+            ArrayForEach(arr4);
             ArrayForEach(arr);
             Console.WriteLine("[{0}]", string.Join(", ", arr));
             Console.WriteLine();

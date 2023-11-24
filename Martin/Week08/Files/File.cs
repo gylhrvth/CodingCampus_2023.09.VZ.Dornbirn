@@ -12,9 +12,9 @@ namespace Martin.Week08.Files
         public static void Start()
         {
             string dicretory = Directory.GetCurrentDirectory();
-            string[] Files = Directory.GetFiles(dicretory); //bekommt die file
+            //string[] Files = Directory.GetFiles(dicretory); //bekommt die file
 
-            Console.WriteLine("Creation Date: " + Directory.GetCreationTime(dicretory)); //erstellung datum von dicretory
+            //Console.WriteLine("Creation Date: " + Directory.GetCreationTime(dicretory)); //erstellung datum von dicretory
             DirectoryInfo directoryInfo = new DirectoryInfo(dicretory); //aktuellen Ordner zur obersten Ebene zu navigieren.
 
             string orderName = directoryInfo.Parent.Parent.Parent.FullName;
@@ -57,7 +57,7 @@ namespace Martin.Week08.Files
                 size += file.Length;
             }
 
-            Console.WriteLine("Size: {0} Mbbytes",ConvertToMbyte(size));
+            Console.WriteLine("Size: {0} Mbbytes", ConvertToMbyte(size));
 
             return size;
 
@@ -65,16 +65,35 @@ namespace Martin.Week08.Files
 
         public static double ConvertToMbyte(double bytes)
         {
-            return  bytes / 1024 / 1024;
+            return bytes / 1024 / 1024;
         }
 
-        public static void Filesystemtraversal(string ordner)
+        public static void Filesystemtraversal(string path)
         {
+
             string dicretory = Directory.GetCurrentDirectory();
+            DirectoryInfo directoryInfo = new DirectoryInfo(dicretory);
+            Console.WriteLine(directoryInfo);
 
-            Console.WriteLine(dicretory);
+            string[] files = Directory.GetFiles(dicretory);
+            string[] dir = Directory.GetDirectories(dicretory);
 
-            foreach()
+            foreach (string file in files)
+            {
+                FileInfo fileInfo = new FileInfo(file);
+                Console.WriteLine(" " + fileInfo.Name);
+
+            }
+
+            foreach (string folder in dir)
+            {
+                DirectoryInfo dirInfo = new DirectoryInfo(folder);
+                Console.WriteLine(dirInfo.Name);
+
+                Filesystemtraversal("-----" + folder);
+
+            }
+
         }
 
 

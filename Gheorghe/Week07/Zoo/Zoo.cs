@@ -1,12 +1,10 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace Gheorghe.Week07.Zoo
+﻿namespace Gheorghe.Week07.Zoo
 {
     internal class Zoo
     {
         private string _Name;
         private string _Locality;
-        private int _FoundingYear;        
+        private int _FoundingYear;
         private List<Enclosure> _EnclosureList;
         private List<ZooKeeper> _ZooKeeperList;
         public readonly string _FavoritSpecies;
@@ -17,7 +15,7 @@ namespace Gheorghe.Week07.Zoo
         {
             _Name = Name;
             _Locality = Locality;
-            _FoundingYear = FoundingYear;            
+            _FoundingYear = FoundingYear;
             _EnclosureList = new List<Enclosure>();
             _ZooKeeperList = new List<ZooKeeper>();
         }
@@ -46,6 +44,7 @@ namespace Gheorghe.Week07.Zoo
 
         public void PrintZoo()
         {
+
             Console.WriteLine($"|--Zoo: {_Name}, Locality {_Locality},  Year: {_FoundingYear}");
             foreach (Enclosure enclosure in _EnclosureList)
             {
@@ -57,18 +56,21 @@ namespace Gheorghe.Week07.Zoo
         public void Simulation(int dayNr)
         {
             Console.WriteLine($"Start Day {dayNr}:");
+
+
             foreach (ZooKeeper zk in _ZooKeeperList)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 zk.SimulationWork();
                 zk.AnimalObserve();
-                
-                
+                zk.FavoritAnimal();
+
+
             }
-            
-           
+
+
         }
 
 
     }
 }
- 
