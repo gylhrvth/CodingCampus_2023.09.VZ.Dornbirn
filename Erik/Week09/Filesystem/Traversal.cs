@@ -8,7 +8,6 @@ namespace Erik.Week09.Filesystem
         {
             string rootPath = "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Erik";
             NavigateToFolder(rootPath, "> ");
-
         }
 
         public static void NavigateToFolder(string rootPath, string prefix)
@@ -16,6 +15,7 @@ namespace Erik.Week09.Filesystem
             DirectoryInfo directoryInfo = new DirectoryInfo(rootPath);
             DirectoryInfo[] dir = directoryInfo.GetDirectories();
             FileInfo[] files = directoryInfo.GetFiles();
+
 
 
             foreach (DirectoryInfo dirElements in dir)
@@ -39,7 +39,6 @@ namespace Erik.Week09.Filesystem
 
             foreach (FileInfo fileInf in files)
             {
-
                 Console.WriteLine(prefix + "(File)" + fileInf.Name);
             }
         }

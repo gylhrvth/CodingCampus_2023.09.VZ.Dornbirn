@@ -47,7 +47,7 @@ namespace Michael.ZooSimulation
 
                 if (this.checksEnclosureIfFed(currentEnclosure))
                 {
-                    Console.WriteLine(prefix + $"Nothing needed feeding.");
+                    Console.WriteLine(prefix + $"Nothing needed feeding.\n");
                     checkedEnclosures[this]++;
                 }
                 else
