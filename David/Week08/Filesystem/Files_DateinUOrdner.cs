@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 
 namespace David.Week08.Filesystem
@@ -12,10 +13,8 @@ namespace David.Week08.Filesystem
 
         public static void Start()
         {
-
             string path = Directory.GetCurrentDirectory();
             Console.WriteLine(path);
-
 
             DirectoryInfo directoryInfo = new DirectoryInfo(path);
             directoryInfo = directoryInfo.Parent.Parent.Parent;
@@ -29,14 +28,19 @@ namespace David.Week08.Filesystem
             foreach (DirectoryInfo d in directoryInfo.GetDirectories())
             {
                 Console.WriteLine(indent + "d: " + d.Name);
-                PrintDirectory(d, indent + "  ");
+                PrintDirectory(d, indent + " - ");
             }
+
+            long size = 0;
 
             foreach (FileInfo fileInfo in directoryInfo.GetFiles())
             {
-                //SumOfAllFileSize(fileInfo.Length);
                 Console.WriteLine(indent + "f: " + fileInfo.Name + " " + Math.Round(ConvertToKByte(fileInfo.Length), 2) + "KB");
+                size += fileInfo.Length;
             }
+
+            Console.WriteLine("Total size: " + Math.Round(ConvertToKByte(size), 2) + "KB");
+            Console.WriteLine("-----");
         }
 
         public static float ConvertToKByte(long sizeInByte)
@@ -44,11 +48,15 @@ namespace David.Week08.Filesystem
             return sizeInByte / 1024f;
         }
 
-        public static float SumOfAllFileSize(long value)
+        public static void FileTraversalUse(int depth, string path)
         {
-            long sum = 0;
-            return sum + value;
+            path = "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/David";
+
+
+
         }
+
+
     }
 
 }
