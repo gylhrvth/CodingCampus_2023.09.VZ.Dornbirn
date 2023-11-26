@@ -31,6 +31,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
             fsc.PrintFolderSizes();
 
 
+
         }
 
         public static void NavigateFileSystem(int depth, string path, List<IFileReceiver> frs)
@@ -39,10 +40,9 @@ namespace Fabian.Week08._09_FilesystemUsefull
             string[] directories = Directory.GetDirectories(path);
 
             foreach(var file in files)
-            {
                 foreach(var fr in frs)
                     fr.OnFileReceived(depth, file);
-            }
+            
             foreach (var directory in directories)
             {
                 foreach (var fr in frs)
