@@ -1,0 +1,17 @@
+﻿using System;
+namespace David.Week08.Filesystem
+{
+	public class Files_DateinUOrdner
+	{
+		public Files_DateinUOrdner()
+		{
+		}
+
+		public static void Start()
+		{
+			string currentDirectory = Directory.GetCurrentDirectory();
+			Console.WriteLine(currentDirectory);
+		}
+	}
+}
+

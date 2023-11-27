@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week07.Geometry
+namespace Kerem.Week08.Geometry
 {
     internal class Square : Rectangle
     {

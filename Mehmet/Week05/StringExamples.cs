@@ -1,4 +1,4 @@
-﻿using Mehmet.Week04;
+﻿using Kerem.Week04;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -7,12 +7,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using static Mehmet.Week04.Input;
+using static Kerem.Week04.Input;
 using Ressources;
 using System.ComponentModel.DataAnnotations;
 using System.Net.NetworkInformation;
 
-namespace Mehmet.Week05
+namespace Kerem.Week05
 {
     internal class StringExamples
     {

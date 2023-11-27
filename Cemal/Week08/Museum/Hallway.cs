@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Cemal.Week08.Museum
 {
-    internal class Hallway
+    public class Hallway
     {
+        private string  _Name;
+
+        public Hallway(string name)
+        {
+            _Name = name;
+
+        }
+
     }
 }
