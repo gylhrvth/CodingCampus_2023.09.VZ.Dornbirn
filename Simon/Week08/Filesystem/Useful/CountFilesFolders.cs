@@ -9,23 +9,26 @@ namespace Simon.Week08.Filesystem.Useful
     public class CountFilesFolders : IFileReceiver
     {
 
-        private int _Count;
+        private int _FileCount;
+        private int _FolderCount;
 
-        public CountFilesFolders(int count)
+        public CountFilesFolders()
         {
-            _Count = 0;
+            _FileCount = 0;
+            _FolderCount = 0;
         }
 
-        public int Count {  get { return _Count; } }
-        
+        public int FileCount { get { return _FileCount; } }
+        public int FolderCount { get { return _FolderCount; } }
 
-        public void OnfileRecived(int depth, string path)
+
+        public void OnFileReceived(int depth, string path)
         {
-            _Count++;
+            _FileCount++;
         }
         public void OnDirectoryReceived(int depth, string path)
         {
-            _Count++;
+            _FolderCount++;
         }
 
     }

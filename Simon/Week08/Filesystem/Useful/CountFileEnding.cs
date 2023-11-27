@@ -6,21 +6,27 @@ using System.Threading.Tasks;
 
 namespace Simon.Week08.Filesystem.Useful
 {
-    public class SizeFiles : IFileReceiver
+    public class CountFileEnding : IFileReceiver
     {
-        private long _Size;
-        public SizeFiles()
+        private int _Count;
+        private string _FileEnding;
+
+        public CountFileEnding(string fileEnding)
         {
-            _Size = 0;
+            _Count = 0;
+            _FileEnding = fileEnding;
         }
-        public long Size { get { return _Size; } }
+
+        public int Count { get { return _Count; } }
 
         public void OnFileReceived(int depth, string path)
         {
             FileInfo fileInfo = new FileInfo(path);
-            _Size += fileInfo.Length;
+            if (path.EndsWith(_FileEnding))
+            {
+                _Count++;
+            }
         }
-
         public void OnDirectoryReceived(int depth, string path)
         {
 
