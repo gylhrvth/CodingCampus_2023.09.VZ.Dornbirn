@@ -4,7 +4,7 @@
     {
         public static void Start()
         {
-            string path = "C:\\Users\\Anwender\\source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn";
+            string path = "C:\\Users\\fakr\\source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn";
             NavigateDirectory(path, "");
         }
 
