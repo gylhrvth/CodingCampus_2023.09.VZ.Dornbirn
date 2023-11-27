@@ -8,30 +8,33 @@ namespace Patrick.Week08.FileSystem.FilesystemTraversalUseful
 {
     internal class FindAndCountFile : IFilereceiver
     {
-        private int _Count = 0;
+        private Dictionary<string, int> _FileExtensionsCount = new Dictionary<string, int>();
 
-        public int Count
+        public Dictionary<string, int> FileExtensionsCount
         {
-            get => _Count;
+            get => _FileExtensionsCount;
         }
-        public void OnFileReceived(int depth, string rootFolder)
-        {
 
-            FileInfo fileInfo = new FileInfo(rootFolder);
-            string findFileName = fileInfo.FullName;
-            string countains = "VehicleMain.cs";
-            if (findFileName == countains)
+        public void OnFileReceived(int depth, string path)
+        {
+            string extension = Path.GetExtension(path)?.ToLowerInvariant();
+            if (!string.IsNullOrEmpty(extension))
             {
-                _Count++;
+                if (_FileExtensionsCount.ContainsKey(extension))
+                {
+                    _FileExtensionsCount[extension]++;
+                }
+                else
+                {
+                    _FileExtensionsCount[extension] = 1;
+                }
             }
         }
-        public void OnDirectoryReceived(int depth, string rootFolder)
+
+        public void OnDirectoryReceived(int depth, string path)
         {
 
-
         }
-
-
 
     }
 }
