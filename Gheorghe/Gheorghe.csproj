@@ -10,4 +10,9 @@
   <ItemGroup>
     <None Remove="Week01\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MimeKit" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+  </ItemGroup>
 </Project>

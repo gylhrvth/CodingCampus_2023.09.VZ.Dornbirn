@@ -1,16 +1,18 @@
 ﻿using System;
-namespace Mohammed.Week07.Geometry
+using Mohammed.Week07.Geometry;
+
+namespace Mohammed.Week05.Geometry
 {
-	public class GeometryList
-	{
-		public static void Start()
-		{
+    public class GeometryList
+    {
+        public static void Start()
+        {
             List<Geometry> geometries = new List<Geometry>();
 
             geometries.Add(new Circle(9));
             geometries.Add(new Square(3));
             geometries.Add(new Rectangle(5, 10));
-			geometries.Add(new Triangle(6, 4));
+            geometries.Add(new Triangle(6, 4));
 
 
             foreach (Geometry geometry in geometries)
@@ -21,20 +23,20 @@ namespace Mohammed.Week07.Geometry
             }
 
             double totalCircumference = 0;
-			double totalArea = 0;
+            double totalArea = 0;
 
-			foreach(Geometry geometry in geometries)
-			{
+            foreach (Geometry geometry in geometries)
+            {
                 Console.ForegroundColor = ConsoleColor.Green;
                 totalCircumference += geometry.GetCirumFerence();
                 totalArea += geometry.GetArea();
             }
 
-			Console.WriteLine("Gesamtumfang: {0}", totalCircumference);
-			Console.WriteLine("Gesamtfläche: {0}", totalArea);
+            Console.WriteLine("Gesamtumfang: {0}", totalCircumference);
+            Console.WriteLine("Gesamtfläche: {0}", totalArea);
 
-			
-		}
-	}
+
+        }
+    }
 }
 

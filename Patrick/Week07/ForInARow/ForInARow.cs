@@ -17,7 +17,7 @@ namespace Patrick.Week07.ForInARow
         {
             string[][] playGround = Playground();
             PrintMethod(playGround);
-            NextTurn(playGround);
+            GameLogic(playGround);
         }
 
         public static string[][] Playground()
@@ -128,7 +128,7 @@ namespace Patrick.Week07.ForInARow
             return false;
         }
 
-        public static void NextTurn(string[][] playground)
+        public static void GameLogic(string[][] playground)
         {
             string playerName;
             string symbol;
@@ -141,7 +141,7 @@ namespace Patrick.Week07.ForInARow
             }
             else
             {
-                playerName = "Spieler 1";
+                playerName = "Spieler 2";
                 symbol = " O ";
                 color = ConsoleColor.Green;
             }
@@ -164,7 +164,7 @@ namespace Patrick.Week07.ForInARow
             else
             {
                 P1 = !P1;                                   //bool wird gedreht, für den Spielerwechsel
-                NextTurn(playground);
+                GameLogic(playground);
             }
         }
 
@@ -172,7 +172,7 @@ namespace Patrick.Week07.ForInARow
         {
             while (true)
             {
-                int input = ReadNumberRow();
+                int input = ReadInteger();
                 if (input <= 0 || input > playground.Length + 1)
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -186,7 +186,9 @@ namespace Patrick.Week07.ForInARow
             }
         }
 
-        public static int ReadNumberRow()
+        public static int ReadInteger
+            
+            ()
         {
             while (true)
             {
@@ -227,7 +229,7 @@ namespace Patrick.Week07.ForInARow
                 Console.ForegroundColor = ConsoleColor.Magenta;
                 Console.WriteLine($"Die Spalte {input} ist voll, bitte wählen Sie eine andere Spalte!");
                 Console.ResetColor();
-                NextTurn(playground);
+                GameLogic(playground);
             }
             Console.Clear();
             return playground;
