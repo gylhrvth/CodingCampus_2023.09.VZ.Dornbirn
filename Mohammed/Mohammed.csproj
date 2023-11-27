@@ -26,7 +26,12 @@
     <None Remove="Week07\OOPAtHome\" />
     <None Remove="Week07\Zoo02\" />
     <None Remove="Week07\Geometry\" />
-    <None Remove="Week07\Mueseum\" />
+    <None Remove="Week08\" />
+    <None Remove="Week08\MuseumNew\" />
+    <None Remove="Week08\Hospital\" />
+    <None Remove="Week08\FileSystem\" />
+    <None Remove="Week08\Filesystem2\" />
+    <None Remove="Week08\Uebung OOP\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -47,7 +52,12 @@
     <Folder Include="Week07\OOPAtHome\" />
     <Folder Include="Week07\Zoo02\" />
     <Folder Include="Week07\Geometry\" />
-    <Folder Include="Week07\Mueseum\" />
+    <Folder Include="Week08\" />
+    <Folder Include="Week08\MuseumNew\" />
+    <Folder Include="Week08\Hospital\" />
+    <Folder Include="Week08\FileSystem\" />
+    <Folder Include="Week08\Filesystem2\" />
+    <Folder Include="Week08\Uebung OOP\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
