@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week07.GeometryInterface
 {
-    public class Rectangle : Geometry
+    public class Rectangle : IGeometry
     {
         public double _Width;
         public double _Height;

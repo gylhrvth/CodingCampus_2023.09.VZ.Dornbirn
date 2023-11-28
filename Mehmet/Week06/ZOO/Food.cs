@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
-namespace Mehmet.Week06.ZOO
+namespace Mehmet.ZOO
 {
     internal class Food
     {

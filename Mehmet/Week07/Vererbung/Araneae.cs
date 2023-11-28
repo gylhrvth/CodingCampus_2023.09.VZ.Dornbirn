@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week07.Vererbung
+namespace Mehmet.Week08.Vererbung
 {
     internal class Araneae : Arthropoda
     {

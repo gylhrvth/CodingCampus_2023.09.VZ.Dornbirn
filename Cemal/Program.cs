@@ -10,4 +10,6 @@
 //Cemal.Week06.NmsPerson.PersonMain.Start();
 //Cemal.Week07.Zoo.ZooMain.Start();
 //Cemal.Week07.Ubung.HardwareMain.Start();
-Cemal.Week08.Geometry.GemoetryMain.Start();
+//Cemal.Week08.Geometry.GemoetryMain.Start();
+//Cemal.Week08.Filesystem.Dateien_Ordner.Start();
+Cemal.Selbsttest.Aufgabe1.HouseMain.Start();

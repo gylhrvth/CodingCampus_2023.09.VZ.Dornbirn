@@ -1,5 +1,4 @@
-﻿using Erik.Week09.Filesystem;
+﻿using Erik.Week10;
 
-
-Traversal.Start();
+Main.Start();
 

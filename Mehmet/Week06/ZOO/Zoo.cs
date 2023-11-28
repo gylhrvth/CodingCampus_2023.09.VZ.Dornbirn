@@ -1,4 +1,4 @@
-﻿namespace Mehmet.Week06.ZOO
+namespace Mehmet.ZOO
 {
     internal class Zoo
     {

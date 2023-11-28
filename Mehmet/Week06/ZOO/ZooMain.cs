@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+
+using System;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 
 
-
-
-
-namespace Mehmet.Week06.ZOO
+namespace Mehmet.ZOO
 {
     internal class ZooMain
     {

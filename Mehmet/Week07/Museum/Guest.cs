@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week07.Museum
+namespace Mehmet.Week08.Museum
 {
 
     internal class Guest : Human
