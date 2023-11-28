@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace Ali.Week06.Zoo
         private string _Name;
         private List<Animal> _AnimalsList;
 
-        public Enclosure(string description, string climate, string name)
+        public Enclosure(string description, string climate, string name, string pfleger)
         {
             _Description = description;
             _Climate = climate;
@@ -43,6 +44,14 @@ namespace Ali.Week06.Zoo
 
             }
 
+
+        }
+        public void ReportFoodRequest(Dictionary<Food, int> report)
+        {
+            foreach(Animal animals in _AnimalsList)
+            {
+                animals.ReportFoodRequest(report);
+            }
         }
 
 
