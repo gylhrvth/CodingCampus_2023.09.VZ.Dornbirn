@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week08.Museum
+namespace Mehmet.Week08.Museum
 {
     internal class Corridor : Room
     {
