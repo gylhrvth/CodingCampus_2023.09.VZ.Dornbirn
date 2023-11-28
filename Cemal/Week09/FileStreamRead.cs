@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erik.Week09.Selbsttest.Ex2
+namespace Cemal.Week09
 {
-    internal class Ex2Main
+    public class FileStreamRead
     {
         public static void Start()
         {
-
-
-
+            File.OpenRead("C:\\Users\\wpfceko\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Cemal\\Week09\\Hello.txt");
 
         }
     }

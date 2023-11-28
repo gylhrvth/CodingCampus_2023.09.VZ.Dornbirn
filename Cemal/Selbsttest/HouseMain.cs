@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cemal.Selbsttest.Aufgabe1
+namespace Cemal.Selbsttest
 {
     public class HouseMain
     {
@@ -21,7 +21,7 @@ namespace Cemal.Selbsttest.Aufgabe1
             Person pers9 = new Person("Selina", 18, "weiblich");
             Person pers10 = new Person("Dario", 17, "männlich");
 
-            House Einfamilienhaus = new House(5,"Millöckerstraße 1", 10);
+            House Einfamilienhaus = new House(5, "Millöckerstraße 1", 10);
             House Wohnung = new House(3, "Robert-Koch-Straße 10a", 7);
             House Villa = new House(8, "Lustenauerstraße 33", 18);
 

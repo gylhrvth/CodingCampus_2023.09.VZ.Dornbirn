@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cemal.Selbsttest.Aufgabe1
+namespace Cemal.Selbsttest
 {
     public class House
     {
@@ -36,7 +36,7 @@ namespace Cemal.Selbsttest.Aufgabe1
 
             foreach (Person person in _Person)
             {
-                Console.ForegroundColor= ConsoleColor.White;
+                Console.ForegroundColor = ConsoleColor.White;
                 person.PrintStructure();
             }
         }

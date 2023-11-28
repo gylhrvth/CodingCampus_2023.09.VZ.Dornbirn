@@ -1,4 +1,4 @@
-﻿using Erik.Week09.Selbsttest;
+﻿using Erik.Week10;
 
 Main.Start();
 

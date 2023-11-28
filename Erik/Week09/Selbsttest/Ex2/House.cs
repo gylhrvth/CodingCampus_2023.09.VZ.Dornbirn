@@ -35,7 +35,7 @@ namespace Erik.Week09.Selbsttest.Ex2
         public override string ToString()
         {
             Person person = null;
-            return $"This house of {person.Name}has {_Doors} doors and {_Windows} windows. The address is: {address}";
+            return $"This house of {person.Name} has {_Doors} doors and {_Windows} windows. The address is: {address}";
         }
     }
 }
