@@ -11,9 +11,9 @@ namespace Erik.Week09.Selbsttest.Ex2
         public static void Start()
         {
 
+
+
+
         }
-
-
-
     }
 }
