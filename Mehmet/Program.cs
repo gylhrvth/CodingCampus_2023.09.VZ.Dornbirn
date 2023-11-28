@@ -1,3 +1,3 @@
 
-Mehmet.SelbstTest.Main.Aufgabe3_MainStart();
+Mehmet.Week09.FileStreamWrite.Start();
 
