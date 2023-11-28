@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Markup;
 using System.Xml.Linq;
 
-namespace Kerem.Week06.List
+namespace Mehmet.Week06.List
 {
     internal class List
     {

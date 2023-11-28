@@ -26,7 +26,7 @@ namespace Sven.Week08.Filesystem
             long result = 0;
             foreach (var file in directoryInfo.GetFiles())
             {
-                Console.WriteLine("File: " + file.Name + "Filesize: "+ ConvertToMB(file.Length) + " MB");
+                Console.WriteLine("File: " + file.Name + "Filesize: " + ConvertToMB(file.Length) + " MB");
                 result += file.Length;
             }
             Console.WriteLine("Result: " + ConvertToMB(result) + "MB");
@@ -38,8 +38,8 @@ namespace Sven.Week08.Filesystem
         {
             double f = sizeInfo / 1024.0 / 1024;
             return Math.Round(f, 2);
-                
-                
+
+
         }
         public static void FileSystemTraversal(string path, string prefix)
         {
@@ -58,14 +58,14 @@ namespace Sven.Week08.Filesystem
                     Console.WriteLine($"{prefix}├── {Path.GetFileName(file)}");
 
                 }
-               
+
             }
-            foreach(string directory in directories)
+            foreach (string directory in directories)
             {
-                if(directory == directories.Last())
+                if (directory == directories.Last())
                 {
                     Console.WriteLine($"{prefix}├── {Path.GetFileName(directory)}");
-                    FileSystemTraversal(directory,$"{prefix}    ");
+                    FileSystemTraversal(directory, $"{prefix}    ");
 
                 }
                 else

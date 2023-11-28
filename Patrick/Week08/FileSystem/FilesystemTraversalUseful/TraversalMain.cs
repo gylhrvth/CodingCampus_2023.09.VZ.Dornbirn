@@ -34,7 +34,7 @@ namespace Patrick.Week08.FileSystem.FilesystemTraversalUseful
             //Aufgabe4
             FindAndCountFile findAndCountFile = new FindAndCountFile();
             Traversal(rootFolder, 0, findAndCountFile);
-            Console.WriteLine(findAndCountFile.Count);
+            Console.WriteLine("Count of \".cs\" files: " + findAndCountFile.FileExtensionsCount[".cs"]);        //es wird nach .cs Dateien gesucht.
         }
 
         public static void Traversal(string rootFolder, int depth, IFilereceiver fileReceiver)
@@ -65,6 +65,7 @@ namespace Patrick.Week08.FileSystem.FilesystemTraversalUseful
                 FileInfo fileInfo = new FileInfo(file);
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine(prefix + $"Filename: {fileInfo.Name} | FileSize {fileInfo.Length}");
+                Console.ResetColor();
             }
 
             string[] folders = Directory.GetDirectories(rootFolder);

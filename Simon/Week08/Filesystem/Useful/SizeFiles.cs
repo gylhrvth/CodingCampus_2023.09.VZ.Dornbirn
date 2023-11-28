@@ -8,15 +8,16 @@ namespace Simon.Week08.Filesystem.Useful
 {
     public class SizeFiles : IFileReceiver
     {
-        private long _Size;
-        public SizeFiles()
+        private int _Size;
+        public SizeFiles(int size)
         {
-            _Size = 0;
+            _Size = size;
         }
-        public long Size { get { return _Size; } }
+        public int Size {  get { return _Size; } }
 
-        public void OnFileReceived(int depth, string path)
+        public void OnFileRecieved()
         {
+<<<<<<< HEAD
             FileInfo fileInfo = new FileInfo(path);
             _Size += fileInfo.Length;
             Console.WriteLine(_Size + fileInfo.Name + fileInfo.Length);
@@ -27,9 +28,12 @@ namespace Simon.Week08.Filesystem.Useful
             //    _Size += file.Length;
             //    Console.WriteLine(_Size + file.Name);
             //}            
+=======
+
+>>>>>>> 9f87552f42c4104cfae8cf02fca03992d0b643d4
         }
 
-        public void OnDirectoryReceived(int depth, string path)
+        public void OnDirectoryRecieved()
         {
 
         }

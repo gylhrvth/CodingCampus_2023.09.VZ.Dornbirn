@@ -1,4 +1,4 @@
-﻿namespace Kerem.Week08.Museum
+﻿namespace Mehmet.Week08.Museum
 {
     public abstract class Room
     {

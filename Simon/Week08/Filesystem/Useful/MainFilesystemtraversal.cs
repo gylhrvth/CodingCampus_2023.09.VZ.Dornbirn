@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,17 +8,18 @@ namespace Simon.Week08.Filesystem.Useful
 {
     public class MainFilesystemtraversal
     {
-        
-        
         public static void Start()
         {
+<<<<<<< HEAD
             string path = "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Simon\\Week01";
             CountFilesFolders countFilesFolders = new();
             SizeFiles sizeFiles = new SizeFiles();
             CountFileEnding countFileEnding = new("cs");
+=======
+>>>>>>> 9f87552f42c4104cfae8cf02fca03992d0b643d4
 
-            //PrintFileTraversal(path);
 
+<<<<<<< HEAD
             //string current = Directory.GetCurrentDirectory();
             //Console.WriteLine(current);
 
@@ -30,58 +30,37 @@ namespace Simon.Week08.Filesystem.Useful
             Console.WriteLine($"SummFilesize: {sizeFiles.Size}");
             FileTraversal(path, 0, countFileEnding);
             Console.WriteLine($"Files ending on cs: {countFileEnding.Count}");
+=======
+>>>>>>> 9f87552f42c4104cfae8cf02fca03992d0b643d4
         }
 
 
-        public static void FileTraversal(string path, int depth, IFileReceiver fr)
+
+        public static void FileTraversal(string path)
         {
+            
             string[] files = Directory.GetFiles(path);
-            string[] directories = Directory.GetDirectories(path);
+
             foreach (string file in files)
             {
+<<<<<<< HEAD
                 fr.OnFileReceived(depth, file);
             }
+=======
+                IFileReceiver.OnfileRecived(0, path);
+>>>>>>> 9f87552f42c4104cfae8cf02fca03992d0b643d4
 
-            foreach (string directory in directories)
+
+
+            }
+            string[] directories = Directory.GetDirectories(path);
+            foreach (string dir in directories)
             {
-                fr.OnDirectoryReceived(depth, directory);
-                FileTraversal(directory, depth + 1, fr);
+                
+                
+                FileTraversal(dir);
             }
         }
-
-        //public static void PrintFileTraversal(string path)
-        //{
-        //    foreach (string file in files)
-        //    {
-        //        FileInfo fileInfo = new FileInfo(file);
-        //        Console.WriteLine(fileInfo.Name);
-        //    }
-        //    foreach (string directory in directories)
-        //    {
-        //        DirectoryInfo directoryInfo = new DirectoryInfo(directory);
-        //        Console.WriteLine(directoryInfo.Name);
-        //        PrintFileTraversal(directory);
-        //    }
-        //}
-        //public static void PrintFileTraversal(string path, string prefix)
-        //{
-        //    string[] directories = Directory.GetDirectories(path);
-        //    string[] files = Directory.GetFiles(path);
-
-        //    foreach (string file in files)
-        //    {
-        //        FileInfo pathfileInfo = new FileInfo(file);
-        //        Console.WriteLine(prefix + pathfileInfo.Name);
-
-        //    }
-
-        //    foreach (string dir in directories)
-        //    {
-        //        DirectoryInfo pathDirectoryInfo = new DirectoryInfo(dir);
-        //        Console.WriteLine(prefix + pathDirectoryInfo.Name);
-        //        PrintFileTraversal(dir, prefix + "+++");
-        //    }
-        //}
 
 
 
