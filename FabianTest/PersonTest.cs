@@ -5,7 +5,7 @@ namespace FabianTest
     public class PersonTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Person1Test()
         {
             string name = "Fabian";
             int age = 17;

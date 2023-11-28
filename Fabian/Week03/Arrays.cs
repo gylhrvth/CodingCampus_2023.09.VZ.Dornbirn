@@ -11,43 +11,6 @@ namespace Fabian.Week03
 
         public static void Start()
         {
-            //Console.WriteLine("[{0}]", string.Join(", ", CreateNumberArray(10)));
-            //Console.WriteLine("[{0}]", string.Join(", ", NumberArrayReversed()));
-            //int[] originial = { 1, 2, 3, 4 };
-            //Console.WriteLine("[{0}]", string.Join(", ", MakeACopy(originial)));
-            //RandomNumberArray(10);
-            //PrintRandomNumberArrayEverySecond();
-            //PrintRandomNumberArray2();
-            //PrintRandomNumberArrayEverySecond();
-            //PrintRandomNumberArrayCrazyRange();
-            //Console.WriteLine(RandomNumberArrayCount(arr));
-            //Console.WriteLine("sum of array = " + RandomNumberArraySum());
-
-            //task Random Number Array Min/Max/Avg:
-            /*
-            Console.WriteLine("[{0}]", string.Join(", ", arr));
-            Console.WriteLine("smallest number = " + RandomNumberArrayMin(arr));
-            Console.WriteLine("index of smallest number = " + IndexOfRandomNumberArrayMin(arr));
-            Console.WriteLine("biggest number = " + RandomNumberArrayMax(arr));
-            Console.WriteLine("index of biggest number = " + IndexOfRandomNumberArrayMax(arr));
-            Console.WriteLine("average = " + RandomNumberArrayAvg(arr));*/
-
-            //int[] arr1 = MakeACopy(arr);
-            //BubbleSortASC(arr1);
-            //Console.WriteLine("[{0}]", string.Join(", ", arr1));
-            //int[] arr2 = MakeACopy(arr);
-            //BubbleSortDESC(arr2);
-            //Console.WriteLine("[{0}]", string.Join(", ", arr2));
-            //int[] arr3 = MakeACopy(arr);
-            //SelectionSort(arr3);
-            //Console.WriteLine("[{0}]", string.Join(", ", arr3));
-            //int[] arr4 = MakeACopy(arr);
-            //InsertionSort(arr4);
-            //Console.WriteLine("[{0}]", string.Join(", ", arr4));
-            //int[] arr5 = MakeACopy(arr);
-            //GnomeSort(arr5);
-            //Console.WriteLine("[{0}]", string.Join(", ", arr5));
-
             /*int[,] twoDarray = CreateRandom2DArray();
             Print2DArray(twoDarray);
             Console.WriteLine("sum of columns = [{0}]", string.Join(", ", SumByColumn(twoDarray)));
@@ -248,7 +211,7 @@ namespace Fabian.Week03
                 }
             }
         }
-        public static void SelectionSort(int[] arr)
+        public static int[] SelectionSort(int[] arr)
         {
             int min;
             for (int i = 0; i < arr.Length; i++)
@@ -263,10 +226,11 @@ namespace Fabian.Week03
                         (arr[min], arr[i]) = (arr[i], arr[min]);
 
                     }
-                }
+                }               
             }
+            return arr;
         }
-        public static void InsertionSort(int[] arr)
+        public static int[] InsertionSort(int[] arr)
         {
             int j;
             for (int i = 0; i < arr.Length; i++)
@@ -278,8 +242,9 @@ namespace Fabian.Week03
                     j--;
                 }
             }
+            return arr;
         }
-        public static void GnomeSort(int[] arr)
+        public static int[] GnomeSort(int[] arr)
         {
             int i = 2;
 
@@ -299,6 +264,7 @@ namespace Fabian.Week03
                     }
                 }
             }
+            return arr;
         }
         public static int[,] CreateRandom2DArray(int height = 0, int width = 0)
         {

@@ -5,4 +5,4 @@
 //Fabian.Week08._09_FilesystemUsefull.FilesystemMain.Start();
 //Fabian.Week08.FileSystemTraversal.Start();
 
-Fabian.Selftest_OP._06.Start();
+Fabian.Week09.GraphExample.GraphMain.Start();
