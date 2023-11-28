@@ -3,6 +3,9 @@
 //using Timo.Week03;
 //using Timo.Week04;
 //using Timo.Week05;
+using Timo.Selbsttest_OOP._1Person;
+using Timo.Selbsttest_OOP._2Haus;
+using Timo.Selbsttest_OOP;
 using Timo.Selbsttest_Strukto;
 using Timo.Week06._01Person;
 using Timo.Week06._02Kurs;
@@ -16,4 +19,4 @@ using Timo.Week08.FileSystemTraversalUseful;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-FilesystemMain.Start();
+Aufgabe5.Start();

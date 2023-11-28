@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cemal.Week08.Museum
 {
-    internal class Artwork
+    public class Artwork
     {
     }
 }

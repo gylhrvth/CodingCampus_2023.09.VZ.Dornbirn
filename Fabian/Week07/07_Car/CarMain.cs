@@ -7,10 +7,10 @@ namespace Fabian.Week07._07Car
     {
         public static void Start()
         {
-            Car c1 = new("The Fabian Company", "Fabian1", new Engine("engine1", 200), 3000, new Tank("tank1", 300), Car.CarDriveType.Petrol);
-            SelfRepairingCar c2 = new("The Fabian Company", "Fabian2", new Engine("engine2", 250), 3300, new Tank("tank2", 300), Car.CarDriveType.Electricity);
-            AeroDynamicCar c3 = new("The Fabian Company", "Fabian3", new Engine("engine3", 250), 3300, new Tank("tank3", 300), Car.CarDriveType.Diesel);
-            CrapCar c4 = new("The Fabian Company", "Fabian4", new Engine("engine4", 250), 3300, new Tank("tank4", 200), Car.CarDriveType.Gas);
+            Car c1 = new("The Fabian Company", "Fabian1", new Engine("engine1", 200), 3000, new Tank("tank1", 300), CarDriveType.Petrol);
+            SelfRepairingCar c2 = new("The Fabian Company", "Fabian2", new Engine("engine2", 250), 3300, new Tank("tank2", 300), CarDriveType.Electricity);
+            AeroDynamicCar c3 = new("The Fabian Company", "Fabian3", new Engine("engine3", 250), 3300, new Tank("tank3", 300), CarDriveType.Diesel);
+            CrapCar c4 = new("The Fabian Company", "Fabian4", new Engine("engine4", 250), 3300, new Tank("tank4", 200), CarDriveType.Gas);
 
             GasStation gs = new("Shell");
             RepairStation rs = new("Haueis");

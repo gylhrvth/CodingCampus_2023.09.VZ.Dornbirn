@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cemal.Week08.Museum
 {
-    internal class Guardian
+    public class Guardian
     {
     }
 }
