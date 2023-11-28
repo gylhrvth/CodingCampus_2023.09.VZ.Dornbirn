@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms.PlatformConfiguration;
 
-namespace Kerem.Week08.Geometry
+namespace Mehmet.Week08.Geometry
 {
     internal class Triangle : Geometry
     {

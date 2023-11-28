@@ -7,7 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week02
+namespace Mehmet.Week02
 {
     internal class PrimitiveDatentypen
     {

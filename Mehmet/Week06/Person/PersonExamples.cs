@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
-using Kerem.Week06.Person;
+using Mehmet.Week06.Person;
 
-namespace Kerem
+namespace Mehmet
 {
     internal class PersonExamples
     {
