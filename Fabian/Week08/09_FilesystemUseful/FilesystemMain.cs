@@ -5,7 +5,7 @@ namespace Fabian.Week08._09_FilesystemUsefull
     {
         public static void Start()
         {
-            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn";
+            string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Fabian";
 
 
             FileAndDirectoryCounter fdCounter = new();
@@ -28,7 +28,8 @@ namespace Fabian.Week08._09_FilesystemUsefull
             feco.PrintExtensions();
             Console.WriteLine("--------------------------------------------");
             Console.WriteLine("Folder sizes:\n");
-            //fsc.PrintFolderSizes();
+            fsc.PrintFolderSizes();
+
 
 
         }
@@ -39,10 +40,9 @@ namespace Fabian.Week08._09_FilesystemUsefull
             string[] directories = Directory.GetDirectories(path);
 
             foreach(var file in files)
-            {
                 foreach(var fr in frs)
                     fr.OnFileReceived(depth, file);
-            }
+            
             foreach (var directory in directories)
             {
                 foreach (var fr in frs)

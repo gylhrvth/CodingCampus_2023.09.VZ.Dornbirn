@@ -34,7 +34,6 @@
     <Folder Include="Week03\" />
     <Folder Include="Week04\" />
     <Folder Include="Week04\AtHome\" />
-    <Folder Include="Week05\" />
     <Folder Include="Week06\" />
     <Folder Include="Week06\Book\" />
     <Folder Include="Week06\PersonEx\" />
@@ -42,7 +41,6 @@
     <Folder Include="Week06\CreateAList\" />
     <Folder Include="Selftest\" />
     <Folder Include="Week06\Zoo\" />
-    <Folder Include="Week07\" />
     <Folder Include="Week07\Vererbung\" />
     <Folder Include="Week07\OOPAtHome\" />
     <Folder Include="Week07\Zoo02\" />

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Timo.Week08
+namespace Cemal.Week08.Museum
 {
-    public class FileStreamRead
+    public class Room
     {
-        public static void Start()
+        public Room() 
         {
 
         }
