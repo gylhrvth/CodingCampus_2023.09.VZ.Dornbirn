@@ -4,6 +4,7 @@ using David.Week06.Person2Main;
 using David.Week06.ZOO;
 using David.Week07;
 using David.Week08;
+using David.Week09;
 //David.Week03.Week03Day02Arrays.Week03Day02();
 //David.Week03.Week03Day03RandomArrays.StartWeek03Day03RandomArrays();
 //David.Week03.Random2.Start();
@@ -34,8 +35,12 @@ using David.Week08;
 //ZooMain.Start();
 //BankProgram.Main();
 //ObstKorbMain.Start();
-David.Week07.ZooNew.ZooMain.Start();
+//David.Week07.ZooNew.ZooMain.Start();
 //David.Week08.Geometry.GeometryMain.Start();
 //David.Week08.Filesystem.Files_DateinUOrdner.Start();
 //David.Week08.Filesystem.FileReceiverMain.Start();
-//David.Week08.FilesDirectoriesPath.Files.Start();
+
+David.Week08.FilesDirectoriesPath.Files.Start(); //UDEMI
+//David.Week09.WriteFile.Start();
+//David.Week09.ReedFile.Start();
+//FileCopy.Start();
