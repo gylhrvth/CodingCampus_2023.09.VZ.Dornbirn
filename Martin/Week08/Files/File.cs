@@ -81,7 +81,7 @@ namespace Martin.Week08.Files
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                Console.WriteLine(" " + fileInfo.Name);
+                Console.WriteLine(">>>" + fileInfo.Name);
 
             }
 

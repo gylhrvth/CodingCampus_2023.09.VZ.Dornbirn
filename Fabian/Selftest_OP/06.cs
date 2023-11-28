@@ -5,8 +5,7 @@
         public static void Start()
         {
             string path = @"C:\Users\fakr\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Fabian";
-            List<string> biggestFiles = GetBiggestFiles(path, 15);
-            biggestFiles = SortList(biggestFiles);
+            List<string> biggestFiles = GetBiggestFiles(path, 10);
             foreach (string file in biggestFiles)
                 PrintFile(file);
         }
@@ -14,7 +13,7 @@
         {
             if (!Directory.Exists(path))
             {
-                Console.WriteLine("Directory isn't valid");
+                Console.WriteLine($"{path} isn't a valid directory");
                 return new List<string>();
             }
             else if (count <= 0)
@@ -26,6 +25,7 @@
             List<string> biggestFiles = new();
             GetBiggestFilesRecursive(path, biggestFiles, count);
 
+            biggestFiles = SortFileSize(biggestFiles);
             return biggestFiles;
         }
         public static void GetBiggestFilesRecursive(string path, List<string> biggestFiles, int count, long max = 0)
@@ -45,24 +45,24 @@
 
             foreach (string file in files)
             {
-
-                if (!File.Exists(file)) continue;
-
-                FileInfo fi = new(file);
-                if ((fi.Length > max || biggestFiles.Count < count) /*&& file.EndsWith(".cs")*/)
+                if (File.Exists(file))
                 {
-                    if (biggestFiles.Count == count)
+                    FileInfo fi = new(file);
+                    if ((fi.Length > max || biggestFiles.Count < count) /*&& file.EndsWith(".cs")*/)
                     {
-                        string smallestFile = GetSmallestFileInList(biggestFiles);
-                        if (fi.Length > new FileInfo(smallestFile).Length)
+                        if (biggestFiles.Count == count)
                         {
-                            biggestFiles.Remove(smallestFile);
-                            biggestFiles.Add(file);
+                            string smallestFile = GetSmallestFileInList(biggestFiles);
+                            if (fi.Length > new FileInfo(smallestFile).Length)
+                            {
+                                biggestFiles.Remove(smallestFile);
+                                biggestFiles.Add(file);
+                            }
                         }
-                    }
-                    else biggestFiles.Add(file);
+                        else biggestFiles.Add(file);
 
-                    max = GetMinLengthInList(biggestFiles);
+                        max = GetMinLengthInList(biggestFiles);
+                    }
                 }
             }
 
@@ -74,7 +74,7 @@
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write($"file: {Path.GetFileName(file)}, ");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"size: {new FileInfo(file).Length} B. ");
+            Console.Write($"size: {new FileInfo(file).Length} bytes. ");
             Console.ResetColor();
             Console.WriteLine($"path: {file}");
         }
@@ -93,7 +93,7 @@
                     smallestFile = file;
             return smallestFile;
         }
-        public static List<string> SortList(List<string> list)
+        public static List<string> SortFileSize(List<string> list)
         {
             for (int i = 0; i < list.Count; i++)
                 for (int j = 0; j < list.Count - i - 1; j++)

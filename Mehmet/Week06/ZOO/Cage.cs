@@ -1,9 +1,4 @@
-<<<<<<< HEAD:Mehmet/ZOO/Cage.cs
-﻿using Kerem.ZOO;
 using System;
-=======
-﻿using System;
->>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/Cage.cs
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -11,11 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-<<<<<<< HEAD:Mehmet/ZOO/Cage.cs
-namespace Kerem.Zoo
-=======
-namespace Mehmet.Week06.ZOO
->>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/Cage.cs
+namespace Mehmet.ZOO
 {
     internal class Cage
     {

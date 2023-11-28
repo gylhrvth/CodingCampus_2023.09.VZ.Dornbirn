@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Design;
 
-namespace Kerem.Week01
+namespace Mehmet.Week01
 {
 	public class Variable
 	{

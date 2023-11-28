@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week06
+namespace Mehmet.Week06
 {
     internal class Date
     {
