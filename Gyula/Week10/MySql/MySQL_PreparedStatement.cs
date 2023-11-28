@@ -26,6 +26,9 @@ namespace Gyula.Week10.MySql
             catch (MySqlException se)
             {
                 Console.WriteLine(se.Message);
+            } finally
+            {
+                connection.Close();
             }
         }
 
