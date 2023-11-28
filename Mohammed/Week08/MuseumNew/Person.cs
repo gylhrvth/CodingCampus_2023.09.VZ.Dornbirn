@@ -12,9 +12,10 @@ namespace Mohammed.Week08.MuseumNew
         public string Name
         {
             get => _Name;
+            
         }
 
-        public Person(string name)
+        public Person(string name) 
         {
             _Name = name;
             _CurrentRoom = null;

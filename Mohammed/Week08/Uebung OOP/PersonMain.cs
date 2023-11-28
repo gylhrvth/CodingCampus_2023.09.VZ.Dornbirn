@@ -5,16 +5,16 @@ namespace Mohammed.Week08.UebungOOP
 	{
 		public static void Start()
 		{
-			Person person = new Person("Sandro", 30, "male");
-			Person person2 = new Person("David", 35, "divers");
-			Person person3 = new Person("Patrick", 30, "male");
-			Person person4 = new Person("Dimitri", 33, "male");
-			Person person5 = new Person("Harald", 63, "male");
-			Person person6 = new Person("Hanna", 29, "female");
-			Person person7 = new Person("Lisa", 15, "female");
-			Person person8 = new Person("Paul", 10, "male");
-			Person person9 = new Person("yousuf", 93, "male");
-			Person person10 = new Person("Anna", 32, "female");
+			Persons person = new Persons("Sandro", 30, "male");
+			Persons person2 = new Persons("David", 35, "divers");
+			Persons person3 = new Persons("Patrick", 30, "male");
+			Persons person4 = new Persons("Dimitri", 33, "male");
+			Persons person5 = new Persons("Harald", 63, "male");
+			Persons person6 = new Persons("Hanna", 29, "female");
+			Persons person7 = new Persons("Lisa", 15, "female");
+			Persons person8 = new Persons("Paul", 10, "male");
+			Persons person9 = new Persons("yousuf", 93, "male");
+			Persons person10 = new Persons("Anna", 32, "female");
 
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(person.ToString());
@@ -45,10 +45,24 @@ namespace Mohammed.Week08.UebungOOP
 			Console.WriteLine();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine(person10.ToString());
-			
-			
+
+
+            //Haus
+
+           // House house1 = new House(4, 4, "karlstraße12", "Sandro", 30, "male");
+           // Console.WriteLine(house1.ToString());
+
+
+
+           //house1.AddPerson(new Persons("Sandro", 34, "male"));
+           //house1.AddPerson(new Persons("David", 34, "devers"));
+           //house1.AddPerson(new Persons("Patrick", 28, "male"));
+           //house1.AddPerson(new Persons("Dimitri", 33, "male"));
+
+           // Console.WriteLine(house1);
             
-		}
+
+        }
 	}
 }
 

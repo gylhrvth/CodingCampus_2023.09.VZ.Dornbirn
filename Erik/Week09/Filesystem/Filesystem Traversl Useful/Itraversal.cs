@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Erik.Week09.Filesystem.Filesystem_Traversl_Useful
 {
-    interface Itraversal
+    public interface Itraversal
     {
         public abstract void OneFileReceived(int depth, string path);
         public abstract void OneDirectoryReceived(int depth, string path);

@@ -32,6 +32,7 @@
     <None Remove="Week08\FileSystem\" />
     <None Remove="Week08\Filesystem2\" />
     <None Remove="Week08\Uebung OOP\" />
+    <None Remove="Week09\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -39,7 +40,6 @@
     <Folder Include="Week03\" />
     <Folder Include="Week04\" />
     <Folder Include="Week04\AtHome\" />
-    <Folder Include="Week05\" />
     <Folder Include="Week06\" />
     <Folder Include="Week06\Book\" />
     <Folder Include="Week06\PersonEx\" />
@@ -47,7 +47,6 @@
     <Folder Include="Week06\CreateAList\" />
     <Folder Include="Selftest\" />
     <Folder Include="Week06\Zoo\" />
-    <Folder Include="Week07\" />
     <Folder Include="Week07\Vererbung\" />
     <Folder Include="Week07\OOPAtHome\" />
     <Folder Include="Week07\Zoo02\" />
@@ -58,6 +57,7 @@
     <Folder Include="Week08\FileSystem\" />
     <Folder Include="Week08\Filesystem2\" />
     <Folder Include="Week08\Uebung OOP\" />
+    <Folder Include="Week09\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />

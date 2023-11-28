@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Mohammed.Week08.UebungOOP
 {
-	public class Person
+	public class Persons
 	{
 		private string _Name;
 		private int _Age;
@@ -12,21 +12,23 @@ namespace Mohammed.Week08.UebungOOP
 		{
 	
             get => _Name;
+			set { Name = value; }
         }
 
 		private int Age
 		{
 			get => _Age;
+			set { Age = value; }
 		}
 
 		private string Gender
 		{
 			get => _Gender;
-			
+			set { Gender = value; }
 			
 		}
 
-		public Person(string Name, int Age, string Gender)
+		public Persons(string Name, int Age, string Gender)
 		{
            
             _Name = Name;

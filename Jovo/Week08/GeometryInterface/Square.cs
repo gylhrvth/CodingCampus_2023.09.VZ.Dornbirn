@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jovo.Week08.GeometryInterface
 {
-    internal class Square : Geometry1
+    internal class Square 
     {
         private double _length;
 

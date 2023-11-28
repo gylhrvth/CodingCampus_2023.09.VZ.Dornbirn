@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week07.GeometryInterface
 {
-    public class Triangle : Geometry
+    public class Triangle : IGeometry
     {
         public double _Length;
 

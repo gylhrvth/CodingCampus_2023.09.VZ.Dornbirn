@@ -12,9 +12,9 @@ namespace Martin.Week07.Vererbung
         {
             List<Tastatur> TastaturShop = new List<Tastatur>();
 
-            TastaturShop.Add(new Tastatur("Razer huntsMini", true));
-            TastaturShop.Add(new Tastatur("Logitech X Pro",false));
-            TastaturShop.Add(new RGBTastatur("RGB RAZER", false, "rainbow"));
+            TastaturShop.Add(new Tastatur("Razer huntsMini", true,"Green"));
+            TastaturShop.Add(new Tastatur("Logitech X Pro",false,"Blue"));
+            TastaturShop.Add(new RGBTastatur("RGB RAZER", false, "rainbow",20));
 
             foreach(Tastatur t in TastaturShop)
             {
@@ -22,6 +22,7 @@ namespace Martin.Week07.Vererbung
 
                 Console.WriteLine(); //abstand
             }
+
         }
     }
 }

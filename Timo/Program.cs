@@ -16,4 +16,4 @@ using Timo.Week08.FileSystemTraversalUseful;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-FilesystemMain.Start();
+ReadAndWrite.Start();

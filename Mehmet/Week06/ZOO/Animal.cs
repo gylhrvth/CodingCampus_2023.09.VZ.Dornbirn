@@ -1,4 +1,8 @@
+<<<<<<< HEAD:Mehmet/ZOO/Animal.cs
+﻿using Kerem.Zoo;
+=======
 ﻿using Mehmet.Week06.ZOO;
+>>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/Animal.cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
+<<<<<<< HEAD:Mehmet/ZOO/Animal.cs
+namespace Kerem.ZOO
+=======
 namespace Mehmet.Week06.ZOO
+>>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/Animal.cs
 {
     internal class Animal
     {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -75,11 +77,12 @@ namespace Michael.Chess
             field[goal.Item1, goal.Item2] = this;
             field[start.Item1, start.Item2] = null;
         }
-
+         
 
         public bool IsValidMove((int, int) start, (int, int) end, Piece[,] field)
         {
             bool allowed = false;
+            bool isKnight = false;
 
             switch (_type)
             {
@@ -91,18 +94,19 @@ namespace Michael.Chess
                 case Type.Queen:
                     allowed = start.Item1 == end.Item1 ||
                               start.Item2 == end.Item2 ||
-                              start.Item1 + start.Item2 == end.Item1 + end.Item2 ||
-                              start.Item1 - start.Item2 == end.Item1 - end.Item2;
+                              Math.Abs(start.Item1 + start.Item2) == Math.Abs(end.Item1 + end.Item2);
                     break;
 
                 case Type.Bishop:
-                    allowed = start.Item1 + start.Item2 == end.Item1 + end.Item2 ||
-                              start.Item1 - start.Item2 == end.Item1 + end.Item2;
+                    allowed = Math.Abs(start.Item1 + start.Item2) == Math.Abs(end.Item1 + end.Item2);
                     break;
 
-                case Type.Knight:
-                    allowed = start.Item1 == end.Item1 ||
-                              start.Item2 == end.Item2;
+                case Type.Knight: 
+                    allowed = Math.Abs(start.Item1 - end.Item1) == 1 && Math.Abs(start.Item2 - end.Item2) == 2 ||
+                              Math.Abs(start.Item1 - end.Item1) == 2 && Math.Abs(start.Item2 - end.Item2) == 1;
+
+                    isKnight = true;
+
                     break;
 
                 case Type.Rook:
@@ -133,6 +137,19 @@ namespace Michael.Chess
                     }
 
                     break;
+            }
+
+            int rowDiff = start.Item1 - end.Item1;
+            int colDiff = start.Item2 - end.Item2;
+
+            for (int steps = 1; steps < Math.Abs(rowDiff); steps++)
+            {
+                try
+                {
+                    allowed = allowed && (field[start.Item1 - Math.Sign(rowDiff) * steps, start.Item2 + Math.Sign(colDiff) * steps] == null || isKnight);
+                }
+                catch { }
+
             }
 
             return allowed;
