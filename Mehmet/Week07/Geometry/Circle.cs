@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week08.Geometry
+namespace Mehmet.Week08.Geometry
 {
     internal class Circle : Geometry
     {
