@@ -16,4 +16,8 @@ using Simon.Week08.Filesystem.Useful;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
+<<<<<<< HEAD
+WriteFile.Start();
+=======
 MainFilesystemtraversal.Start();
+>>>>>>> 9f87552f42c4104cfae8cf02fca03992d0b643d4

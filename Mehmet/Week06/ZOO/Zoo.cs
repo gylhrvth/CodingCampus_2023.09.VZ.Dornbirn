@@ -1,10 +1,4 @@
-<<<<<<< HEAD:Mehmet/ZOO/ZOO.cs
-﻿using Kerem.ZOO;
-
-namespace Kerem.Zoo
-=======
-﻿namespace Mehmet.Week06.ZOO
->>>>>>> cef7d42f6d1ac56725b97fa9b906b80feba585f7:Mehmet/Week06/ZOO/Zoo.cs
+namespace Mehmet.ZOO
 {
     internal class Zoo
     {

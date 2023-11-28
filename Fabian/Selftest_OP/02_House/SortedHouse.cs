@@ -20,15 +20,10 @@ namespace Fabian.Selftest_OP._02_House
         public void SortPersons()
         {
             for (int i = 0; i < Persons.Count; i++)
-            {
                 for (int j = 0; j < Persons.Count - i - 1; j++)
-                {
                     if (string.Compare(Persons[j].Name, Persons[j + 1].Name, CultureInfo.CurrentCulture, CompareOptions.IgnoreNonSpace) > 0)
-                    {
                         (Persons[j], Persons[j + 1]) = (Persons[j + 1], Persons[j]);
-                    }
-                }
-            }
+
         }
 
         public override string ToString()

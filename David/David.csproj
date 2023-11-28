@@ -29,6 +29,7 @@
     <None Remove="Week08\MuseumNew\" />
     <None Remove="Week08\Filesystem\" />
     <None Remove="Week08\Filesystem\Filesystem\" />
+    <None Remove="Week08\FilesDirectoriesPath\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -52,8 +53,11 @@
     <Folder Include="Week08\MuseumNew\" />
     <Folder Include="Week08\Filesystem\" />
     <Folder Include="Week08\Filesystem\Filesystem\" />
+    <Folder Include="Week08\FilesDirectoriesPath\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ressources\Ressources.csproj" />
+    <ProjectReference Include="..\Ressources\Ressources.csproj">
+      <ReferenceSourceTarget></ReferenceSourceTarget>
+    </ProjectReference>
   </ItemGroup>
 </Project>

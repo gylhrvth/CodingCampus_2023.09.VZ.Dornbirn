@@ -12,14 +12,11 @@ namespace Mehmet.Week08
         {
             string currentDirectory = Directory.GetCurrentDirectory();
 
-
-
             Console.WriteLine("\n===============Aufgabe_1===============\n");
 
             Console.WriteLine(currentDirectory);
 
             Console.WriteLine("\n===============Aufgabe_2===============\n");
-
 
             FileInfo fileInfo1 = new FileInfo(currentDirectory);
             Console.WriteLine(fileInfo1.Name);
@@ -38,30 +35,37 @@ namespace Mehmet.Week08
 
             var currentDirectoryInfo1 = new DirectoryInfo(currentDirectory);
             string pojektRootDirectory = currentDirectoryInfo1.Parent.Parent.Parent.FullName;
-            printDirectory(pojektRootDirectory, "│   ");
+            printDirectory(pojektRootDirectory, "────");
 
             Console.WriteLine("\n===============Aufgabe_4===============\n");
 
 
+
+
+
+
+
         }
+
+
 
         public static void printDirectory(string directoryName, string depth)
         {
-            Console.Write("──");
+            Console.Write("────");
             string[] children = Directory.GetFiles(directoryName);
             foreach (var asa in children)
             {
-                Console.Write("" + depth);
+                Console.Write(depth);
                 FileInfo fileInfo1 = new FileInfo(asa);
-                Console.WriteLine(""+fileInfo1.Name); 
+                Console.WriteLine(fileInfo1.Name); 
             }
-            
             string[] folders = Directory.GetDirectories(directoryName);
             foreach(var child in folders)
             {
-                
-                printDirectory(child,depth+ "──");
+                printDirectory(child,depth+ "────");
             }
         }
+
+
     }
 }
