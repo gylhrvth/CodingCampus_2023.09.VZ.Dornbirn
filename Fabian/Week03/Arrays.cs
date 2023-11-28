@@ -219,7 +219,7 @@ namespace Fabian.Week03
 
             return maxIndex;
         }
-        public static void BubbleSortASC(int[] arr)
+        public static int[] BubbleSortASC(int[] arr)
         {
 
             for (int i = 0; i < arr.Length; i++)
@@ -232,6 +232,7 @@ namespace Fabian.Week03
                     }
                 }
             }
+            return arr;
         }
         public static void BubbleSortDESC(int[] arr)
         {

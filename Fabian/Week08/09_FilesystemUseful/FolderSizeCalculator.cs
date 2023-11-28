@@ -1,6 +1,4 @@
-﻿using static Fabian.Week08._09_FilesystemUsefull.FilesystemMain;
-
-namespace Fabian.Week08._09_FilesystemUsefull
+﻿namespace Fabian.Week08._09_FilesystemUsefull
 {
     public class FolderSizeCalculator : IFileReceiver
     {
