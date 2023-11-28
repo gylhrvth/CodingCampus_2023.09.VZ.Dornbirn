@@ -19,6 +19,14 @@ namespace Simon.Week08.Filesystem.Useful
         {
             FileInfo fileInfo = new FileInfo(path);
             _Size += fileInfo.Length;
+            Console.WriteLine(_Size + fileInfo.Name + fileInfo.Length);
+            //DirectoryInfo directoryInfo = new DirectoryInfo(path);
+            //FileInfo[] files = directoryInfo.GetFiles();
+            //foreach(FileInfo file in files)
+            //{
+            //    _Size += file.Length;
+            //    Console.WriteLine(_Size + file.Name);
+            //}            
         }
 
         public void OnDirectoryReceived(int depth, string path)

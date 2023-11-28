@@ -13,16 +13,19 @@ namespace Simon.Week08.Filesystem.Useful
         
         public static void Start()
         {
-            string path = "C:\\Users\\BAU21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Simon";
+            string path = "C:\\Users\\aau21982\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Simon\\Week01";
             CountFilesFolders countFilesFolders = new();
-            SizeFiles sizeFiles = new();
+            SizeFiles sizeFiles = new SizeFiles();
             CountFileEnding countFileEnding = new("cs");
 
             //PrintFileTraversal(path);
 
-            //FileTraversal(path, 0, countFilesFolders);
-            //Console.WriteLine($"Filecount: {countFilesFolders.FileCount}");
-            //Console.WriteLine($"Foldercount: {countFilesFolders.FolderCount}");
+            //string current = Directory.GetCurrentDirectory();
+            //Console.WriteLine(current);
+
+            FileTraversal(path, 0, countFilesFolders);
+            Console.WriteLine($"Filecount: {countFilesFolders.FileCount}");
+            Console.WriteLine($"Foldercount: {countFilesFolders.FolderCount}");
             FileTraversal(path, 0, sizeFiles);
             Console.WriteLine($"SummFilesize: {sizeFiles.Size}");
             FileTraversal(path, 0, countFileEnding);
@@ -36,7 +39,7 @@ namespace Simon.Week08.Filesystem.Useful
             string[] directories = Directory.GetDirectories(path);
             foreach (string file in files)
             {
-                fr.OnFileReceived(depth, path);
+                fr.OnFileReceived(depth, file);
             }
 
             foreach (string directory in directories)

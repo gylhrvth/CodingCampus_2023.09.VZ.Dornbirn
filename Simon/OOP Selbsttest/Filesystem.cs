@@ -12,7 +12,7 @@ namespace Simon.OOP_Selbsttest
         {
             GetbiggestFile(GetPath());
 
-            PrintBiggestFile(GetbiggestFile1(GetPath(), 0, ""));
+            PrintBiggestFile(GetbiggestFile1(GetPath()));
         }
 
         public static string GetPath()
@@ -64,29 +64,28 @@ namespace Simon.OOP_Selbsttest
         }
 
 
-        public static string GetbiggestFile1(string path, long startingvalue, string name)
+        public static string GetbiggestFile1(string path, long startingvalue=0, string name="")
         {
             string[] files = Directory.GetFiles(path);
-            long biggestfile = startingvalue;
-            string namebiggestfile = name;
             string[] directories = Directory.GetDirectories(path);
+            long biggestfile = startingvalue;
+            string pathbiggestfile = name;            
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                long filesize = fileInfo.Length;
-                if (filesize > biggestfile)
+                if (fileInfo.Length > biggestfile)
                 {
-                    namebiggestfile = fileInfo.Name;
-                    biggestfile = filesize;
+                    pathbiggestfile = fileInfo.FullName;
+                    biggestfile = fileInfo.Length;
                 }
             }
             foreach (string directory in directories)
             {
                 DirectoryInfo directionaryInfo = new DirectoryInfo(directory);
-                namebiggestfile = GetbiggestFile1(directionaryInfo.FullName, biggestfile, namebiggestfile);
+                pathbiggestfile = GetbiggestFile1(directionaryInfo.FullName, biggestfile, pathbiggestfile);
             }
 
-            return namebiggestfile;
+            return pathbiggestfile;
         }
     }
 }
