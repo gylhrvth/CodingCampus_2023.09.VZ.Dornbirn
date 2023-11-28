@@ -12,19 +12,18 @@ namespace Niklas.Week08.Filesystem
     {
         public static void Start()
         {
-            //FilesAndFolders();
-            //Console.WriteLine();
-            //FolderSize();
-            //Console.WriteLine();
-            //Traversal();
-            //Console.WriteLine();
-            TraversalUseful();
+            FilesAndFolders();
+            Console.WriteLine();
+            FolderSize();
+            Console.WriteLine();
+            Traversal();
+            Console.WriteLine();
         }
         public static void FilesAndFolders()
         {
             string directory = Directory.GetCurrentDirectory();
             Console.WriteLine(directory);
-            DirectoryInfo info = new DirectoryInfo(directory);
+            //DirectoryInfo info = new DirectoryInfo(directory);
 
             string[] children = Directory.GetFiles(directory);
 
@@ -99,39 +98,6 @@ namespace Niklas.Week08.Filesystem
                 }
             }
         }
-
-        public static void TraversalUseful()
-        {
-            string directory = Directory.GetCurrentDirectory();
-
-            var currentDirectoryInfo = new DirectoryInfo(directory);
-
-            string projectRootDirectory = currentDirectoryInfo.Parent.Parent.Parent.FullName;
-
-            string[] directoryChildren = Directory.GetDirectories(projectRootDirectory);
-
-            Console.WriteLine(directoryChildren.Length);
-
-            foreach (var dir in directoryChildren)
-            { 
-                //Weeks
-                DirectoryInfo dirInfo = new DirectoryInfo(dir);
-
-                var childchild = dirInfo.GetDirectories();
-                Console.WriteLine(childchild.Length);
-
-                //Files in folders of week
-                foreach (var printfiles in childchild)
-                {
-                    var foldersInFolders = printfiles.GetFiles();
-                    Console.WriteLine(foldersInFolders.Length);
-                }
-
-                var getfiles = dirInfo.GetFiles();
-                Console.WriteLine(getfiles.Length);
-            }
-        }
-
 
         public static float ConvertToMByte(long sizeInByte)
         {

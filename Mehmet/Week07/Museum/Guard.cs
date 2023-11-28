@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week07.Museum
+namespace Mehmet.Week08.Museum
 {
     public class Guard : Human
     {

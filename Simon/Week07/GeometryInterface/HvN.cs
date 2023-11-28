@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week07.GeometryInterface
 {
-    public class HvN : Geometry
+    public class HvN : IGeometry
     {
         public double _Leangth;
 

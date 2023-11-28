@@ -22,6 +22,8 @@
     <None Remove="Week07\Vererbung\" />
     <None Remove="Week08\" />
     <None Remove="Week08\MuseumSim\" />
+    <None Remove="Week10\" />
+    <None Remove="Week10\MSSQL\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week03\" />
@@ -34,9 +36,14 @@
     <Folder Include="Week07\Vererbung\" />
     <Folder Include="Week08\" />
     <Folder Include="Week08\MuseumSim\" />
+    <Folder Include="Week10\" />
+    <Folder Include="Week10\MSSQL\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
     <ProjectReference Include="..\DarioLuis\DarioLuis.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 </Project>
