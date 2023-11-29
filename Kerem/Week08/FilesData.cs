@@ -5,15 +5,13 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Kerem.Week08.Files
+namespace Kerem.Week08
 {
-    internal class FilesData
+    public class FilesData
     {
-        public FilesData()
-        {
-        }
+      
 
-        public static void Start()
+        public static void Start() 
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             Console.WriteLine("---CurrentDirectory---");
@@ -25,11 +23,12 @@ namespace Kerem.Week08.Files
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                Console.WriteLine(fileInfo.Name + " " + (ConvertToMByte(fileInfo.Length) + " MB"));
+                Console.WriteLine(fileInfo.Name + " " + ConvertToMByte(fileInfo.Length) + " MB");
                 result += fileInfo.Length;
 
             }
-            Console.WriteLine("Result: "+ ConvertToMByte(result)+" MB") ;
+
+            Console.WriteLine("Result: " + ConvertToMByte(result) + " MB");
             Console.WriteLine("---Directories---");
 
             var currentDirectoryInfo = new DirectoryInfo(currentDirectory);
@@ -41,17 +40,17 @@ namespace Kerem.Week08.Files
             Console.WriteLine("-----------FileSystemTraversal----------");
             string path = @"C:\Users\DCV\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Kerem";
             FileSystemTraversal(path, " ");
-            
+
 
         }
         public static double ConvertToMByte(long sizeInfo)
         {
             double f = sizeInfo / 1024.0 / 1024;
             return Math.Round(f, 2);
-            
+
         }
-       
-        public static void FileSystemTraversal(string path,string prefix)
+
+        public static void FileSystemTraversal(string path, string prefix)
         {
             string[] files = Directory.GetFiles(path);
             string[] directories = Directory.GetDirectories(path);
