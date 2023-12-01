@@ -26,6 +26,10 @@ namespace Gyula.Week10.MySql
             {
                 Console.WriteLine(se.Message);
             }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }

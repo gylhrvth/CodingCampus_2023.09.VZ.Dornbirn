@@ -25,6 +25,7 @@
     <None Remove="Week10\" />
     <None Remove="Week10\MSSQL\" />
     <None Remove="Week10\MySql\" />
+    <None Remove="Week09\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week03\" />
@@ -40,6 +41,7 @@
     <Folder Include="Week10\" />
     <Folder Include="Week10\MSSQL\" />
     <Folder Include="Week10\MySql\" />
+    <Folder Include="Week09\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />
