@@ -58,15 +58,15 @@ order by p.Population desc;
 
 
 -- sort rivers in europe by length
-select distinct r.Name, r.`Length` 
+select distinct r.Name, r.Length
 from encompasses e 
 join geo_river gr on e.Country = gr.Country
 join river r on gr.River = r.Name 
 where e.Continent = "Europe" and e.Percentage >= 50
-order by r.`Length` desc;
+order by r.Length desc;
 
 -- islands in pacific with 50%+ muslim
-select distinct gi.Island , r.Percentage 
+select distinct gi.Island, r.Percentage 
 from geo_island gi
 join islandin ii on ii.Island = gi.Island 
 join religion r on r.Country = gi.Country
@@ -88,7 +88,7 @@ join geo_lake gl on c.Code = gl.Country
 join lake l on gl.Lake = l.Name
 join geo_mountain gm on gm.Country = c.Code 
 join mountain m on m.Name = gm.Mountain
-where l.`Depth` >= 100 and m.Height >= 1500;
+where l.Depth >= 100 and m.Height >= 1500;
 
 -- population per religion
 select r.Name Religion, round(sum(c.Population * r.Percentage / 100)) Population
@@ -130,30 +130,28 @@ where cntCity = 3
 order by c.Name, ci.Name;
 
 -- 3 biggest cities in america
-select c.Name Country, c2.Name City, c2.Population  
+select top 3 c.Name Country, c2.Name City, c2.Population  
 from encompasses e 
 join country c on c.Code = e.Country 
 join city c2 on c2.Country = c.Code
 where e.Continent = 'America'
 order by c2.Population desc
-limit 3;
+
 
 -- biggest mountain in austria
-select m.Name, m.Height 
+select top 1 m.Name, m.Height 
 from geo_mountain gm 
 join mountain m on m.Name = gm.Mountain 
 where gm.Country = 'A'
 order by m.Height desc
-limit 1;
 
 -- biggest mountain in europe
-select e.Country, m.Name, m.Height  
+select top 1 e.Country, m.Name, m.Height  
 from encompasses e 
 join geo_mountain gm on gm.Country = e.Country 
 join mountain m on m.Name = gm.Mountain 
 where e.Continent = 'Europe'
 order by m.Height desc
-limit 1;
 
 -- biggest mountain each continent
 select e.Continent, max(m.Height) Height
@@ -162,18 +160,17 @@ join country c on c.Code = e.Country
 join geo_mountain gm on gm.Country = c.Code 
 join mountain m on m.Name = gm.Mountain
 group by e.Continent;
-
+drop database mondial;
 
 -- country with most religions
-select c.Name Country, count(r.Name) Religions
+select top 1c.Name Country, count(r.Name) Religions
 from country c 
 join religion r on r.Country = c.Code
 group by c.Name
 order by Religions desc
-limit 1;
 
 -- all organizations in austria with their member count
-select o.Name Organization, count(i.`Type`) Members 
+select o.Name Organization, count(i.Type) Members 
 from organization o
 join ismember i on i.Organization = o.Abbreviation 
 join country c on c.Code = o.Country 
@@ -181,10 +178,10 @@ where c.Name  = 'Austria'
 group by o.Name;
 
 -- top 10 languages
-select l.Name `Language`, round(sum(c.Population * l.Percentage / 100)) Persons
+select top 10 l.Name Language, round(sum(c.Population * l.Percentage / 100)) Persons
 from country c 
-join `language` l on l.Country = c.Code 
+join language l on l.Country = c.Code 
 group by l.Name 
 order by Persons desc
-limit 10;
+
 
