@@ -14,3 +14,8 @@ using Dimitri.Week08._05Selftest;
 
 Aufgabe1.Main();
 
+<<<<<<< HEAD
+=======
+Filesystem.Main();
+
+>>>>>>> 68fecc2 (change program.cs)
