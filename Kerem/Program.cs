@@ -10,7 +10,7 @@
 //Kerem.Week05.DataTableExample.Start();
 //Kerem.Week05.CountHesse.Start();
 //Kerem.Week06.DateTimeExamples.Start();
-Kerem.SelbsttestOOP.FileSystem.Start();
+Kerem.Exercises.TicTacToe.Start();
 
 //Kerem.Week06.ExerciseZoo.ZooMain.Start();
 
