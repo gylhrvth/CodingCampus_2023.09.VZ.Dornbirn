@@ -5,32 +5,33 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace Jovo.Week11
+namespace Sven.Week11
 {
-    internal class MSSQLTRAIN
+    internal class MSSQL_ConnectExample
     {
         public static void Start()
         {
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Jovo;Password=jovo13696";
+
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:Local_Host;User=sven;Password=ihesfb2010";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("Select ci. *\r\n\tFrom City ci\r\n\tJoin Country c on c.Code = ci.Country\r\n\twhere c.Name = 'Austria'", connection);
 
+                SqlCommand command = new SqlCommand("SELECT country.Name, country.Population, country.Capital\r\nFROM Country\r\nWHERE Country.Name LIKE 'A%'");
                 try
                 {
+
                     command.Connection.Open();
 
                     Console.WriteLine("Verbindung wurde aufgebaut.");
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         List<DbColumn> header = reader.GetColumnSchema().ToList();
-                    
-                        foreach(DbColumn column in header)
+
+                        for (int i = 0; i < header.Count; i++)
                         {
-                            Console.Write($"{column.ColumnName, -18} | "); // 15 ist fixe breite
+                            Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "]    ");
                         }
                         Console.WriteLine();
 
@@ -39,25 +40,24 @@ namespace Jovo.Week11
                         {
                             for (int i = 0; i < reader.FieldCount; i++)
                             {
-                               string value = reader[i].ToString();
-                                if (header[i].DataTypeName == "float") 
-                                {
-                                    Console.Write($"{value,18} | "); // Rechtsbündig
-                                }
-                                else
-                                {
-                                    Console.Write($"{value, -18} | ");
-                                }
+
+                                Console.Write(reader[i] + " ");
+
                             }
                             Console.WriteLine();
+
                         }
+
                     }
+
                 }
-                catch (SqlException ex)
+                catch (SqlException sqle)
                 {
-                    Console.WriteLine(ex.Message);
+                    Console.WriteLine(sqle.Message);
                 }
+
             }
         }
+
     }
 }

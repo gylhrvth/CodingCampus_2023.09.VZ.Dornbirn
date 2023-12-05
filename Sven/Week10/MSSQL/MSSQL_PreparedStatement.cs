@@ -1,15 +1,20 @@
 ﻿using System;
-using System.Data.SqlClient;
+using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Gyula.Week10.MSSQL
+namespace Sven.Week10.MSSQL
 {
-	public class MSSQL_PreparedStatement
-	{
-		public static void Start()
-		{
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.0.107,1433;User=gyula;Password=gyula";
+    internal class MSSQL_PreparedStatement
+    {
+
+        public static void Start()
+        {
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:Local_Host;User=sven;Password=ihesfb2010";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -24,7 +29,8 @@ namespace Gyula.Week10.MSSQL
 
                     PrintResult(dataReader);
                     dataReader.Close();
-                } catch (SqlException se)
+                }
+                catch (SqlException se)
                 {
                     Console.WriteLine(se.Message);
                 }
@@ -58,6 +64,5 @@ namespace Gyula.Week10.MSSQL
                 Console.WriteLine();
             }
         }
-	}
+    }
 }
-

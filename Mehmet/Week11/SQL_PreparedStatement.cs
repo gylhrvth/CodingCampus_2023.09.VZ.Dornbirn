@@ -1,19 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Data.Common;
 using System.Data;
+using System.Security.Cryptography.X509Certificates;
+using System.Data.Common;
 
-namespace Gyula.Week10.MSSQL
+namespace Mehmet.Week11
 {
-	public class MSSQL_PreparedStatement
-	{
-		public static void Start()
-		{
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.0.107,1433;User=gyula;Password=gyula";
+    internal class SQL_PreparedStatement
+    {
+        public static void Start()
+        {
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Mehmet;Password=Mehmet";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("select * from city where Name LIKE @Name and Population > @Pop", connection);
+                SqlCommand command = new SqlCommand("Select ci.Name, ci.Province, ci.Population \r\n\tFrom City ci\r\n\tJoin Country c on c.Code = ci.Country\r\n\twhere c.Name = 'Austria'", connection);
 
                 command.Parameters.Add("@Name", SqlDbType.NVarChar, 80).Value = "%on";
                 command.Parameters.Add("@Pop", SqlDbType.Int).Value = 1000000;
@@ -24,18 +29,17 @@ namespace Gyula.Week10.MSSQL
 
                     PrintResult(dataReader);
                     dataReader.Close();
-                } catch (SqlException se)
+                }
+                catch(SqlException se) 
                 {
                     Console.WriteLine(se.Message);
                 }
             }
         }
-
-
         public static void PrintResult(SqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            for (int i = 0; i < header.Count; i++)
+            for(int i = 0; i < header.Count; i++)
             {
                 if (i > 0)
                 {
@@ -47,9 +51,9 @@ namespace Gyula.Week10.MSSQL
 
             while (dataReader.Read())
             {
-                for (int i = 0; i < dataReader.FieldCount; i++)
+                for (int i = 0;i < dataReader.FieldCount;i++)
                 {
-                    if (i > 0)
+                    if ( i > 0)
                     {
                         Console.Write(" | ");
                     }
@@ -58,6 +62,5 @@ namespace Gyula.Week10.MSSQL
                 Console.WriteLine();
             }
         }
-	}
+    }
 }
-
