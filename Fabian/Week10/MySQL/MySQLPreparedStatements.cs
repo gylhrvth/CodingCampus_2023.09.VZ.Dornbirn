@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data.Common;
+using System.Reflection;
 
 namespace Fabian.Week10.MySQL
 {
@@ -41,7 +42,7 @@ namespace Fabian.Week10.MySQL
                 {
                     Console.Write(" | ");
                 }
-                Console.Write($"{header[i].ColumnName, -20}");
+                Console.Write($"{header[i].ColumnName, -21}");
             }
             Console.WriteLine();
 
@@ -53,10 +54,24 @@ namespace Fabian.Week10.MySQL
                     {
                         Console.Write(" | ");
                     }
-                    Console.Write($"{dataReader[i], -20}");
+                    if (IsNumeric(dataReader[i]))
+                    {
+                        Console.Write($"{dataReader[i],21}");
+                    }
+                    else
+                    {
+                        Console.Write($"{dataReader[i],-21}");
+                    }
+                    
                 }
                 Console.WriteLine();
             }
+        }
+
+        
+        private static bool IsNumeric(object value)
+        {
+            return value is int || value is double || value is float || value is decimal;
         }
 
     }
