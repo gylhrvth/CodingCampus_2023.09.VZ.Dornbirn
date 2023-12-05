@@ -23,10 +23,10 @@ namespace Timo.Week08.FileSystemTraversalUseful
             ////Ausgabe
             //Filesystem filesystem = new ();
             //NavigateFileSystem(0, path, filesystem);
-            ////Extentioncount
-            //CountEnd extentionCount = new(".cs");
-            //NavigateFileSystem(0, path, extentionCount);
-            //Console.WriteLine("Files ending with \".cs\": {0}", extentionCount.ExtentionCount());
+            //Extentioncount
+            CountEnd extentionCount = new(".cs");
+            NavigateFileSystem(0, path, extentionCount);
+            Console.WriteLine("Files ending with \".cs\": {0}", extentionCount.ExtentionCount());
         }
 
         public static void NavigateFileSystem(int depth, string path, IFileReceiver fr) 
