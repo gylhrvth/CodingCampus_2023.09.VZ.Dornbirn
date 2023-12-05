@@ -10,6 +10,7 @@ namespace David.Week10
 	{
         public static void Start()
         {
+            
             string connectionString = "server=localhost;port=3306;user=david;password=david;database=Mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
