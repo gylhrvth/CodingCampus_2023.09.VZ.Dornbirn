@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Filesystem
 {
-    internal class CalculateFileSize : FileReceiver
+    internal class CalculateFileSize : IFileReceiver
     {
         private long _OverallFileSizeInBytes = 0;
 
