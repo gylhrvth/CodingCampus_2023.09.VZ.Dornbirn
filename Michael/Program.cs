@@ -12,4 +12,4 @@ using Michael.Week08;
 using Michael.Week08.Carsimulation;
 using Michael.ZooSimulation;
 
-Michael.Week08.FileSystem.Main.Start();
+Michael.Week09.Sudoku.Sudoku.Start();
