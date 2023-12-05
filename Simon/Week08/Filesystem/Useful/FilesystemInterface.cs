@@ -9,7 +9,7 @@ namespace Simon.Week08.Filesystem.Useful
     public interface IFileReceiver
     {
 
-        public void OnfileRecived(int depth, string path);
+        public void OnFileRecived(int depth, string path);
 
         public void OnDirectoryReceived(int depth, string path);
 

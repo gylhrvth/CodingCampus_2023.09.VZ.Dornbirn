@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week08
+namespace Kerem.Week08.FileSystemUseful
 {
-    internal class Aufgabe1
+    internal class FolderSizeCalculator
     {
     }
 }

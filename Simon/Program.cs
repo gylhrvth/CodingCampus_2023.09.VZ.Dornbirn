@@ -13,11 +13,8 @@ using Simon.Week07.Carsim;
 using Simon.Week07.GeometryInterface;
 using Simon.Week08.Filesystem;
 using Simon.Week08.Filesystem.Useful;
+using Simon.adventofcode;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-<<<<<<< HEAD
-WriteFile.Start();
-=======
-MainFilesystemtraversal.Start();
->>>>>>> 9f87552f42c4104cfae8cf02fca03992d0b643d4
+Day_1.Start();

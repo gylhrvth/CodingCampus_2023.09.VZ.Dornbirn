@@ -11,18 +11,37 @@ namespace Timo.Week08
         public static void Start()
         {
 
-            string file = "C:\\Users\\BAU27722\\OneDrive - Julius Blum GmbH\\Dokumente\\Textnis.txt";
+            string file = "C:\\Users\\BAU27722\\OneDrive - Julius Blum GmbH\\Dokumente\\textnis.txt";
             string file2 = "C:\\Users\\BAU27722\\OneDrive - Julius Blum GmbH\\Dokumente\\Textnis75.doc";
-            string newText = "hello world";
 
 
-            //CopyTextFile(file, file2);
+            CopyTextFile(file, file2);
             //CopyTextStreamWriter(file, file2);
             //CopyTextFileStream(file, file2);
-            CopyTextFileToUpper(file, file2);
+            //CopyTextFileToUpper(file, file2);
+            //WriteText();
+            //ReadText();
 
+        }
 
-
+        public static void WriteText() 
+        {
+            using (StreamWriter sw = new ("C:\\Users\\aau27722\\source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Timo\\Week08\\Datei.txt", true)) 
+            {
+                sw.WriteLine("Hello World");
+            }
+        }
+        public static void ReadText()
+        {
+            using (StreamReader sr = new("C:\\Users\\aau27722\\source\\Repos\\CodingCampus_2023.09.VZ.Dornbirn\\Timo\\Week08\\Datei.txt"))
+            {
+                string line = sr.ReadLine();
+                while (line != null)
+                {
+                    Console.WriteLine(line);
+                    line = sr.ReadLine();
+                }
+            }
         }
         public static void CopyTextFile(string file, string file2)
         {
