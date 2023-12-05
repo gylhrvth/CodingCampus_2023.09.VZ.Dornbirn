@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,8 @@ namespace Michael.Week08.FileSystem
 {
     internal class Main
     {
+
+
         public static void Start()
         {
             /*
@@ -26,6 +29,8 @@ namespace Michael.Week08.FileSystem
             //Exercises.WriteFile(file2);
             */
 
+
+
             Console.ReadLine();
 
             Random rnd = new Random();
@@ -40,32 +45,7 @@ namespace Michael.Week08.FileSystem
             List<Node> solution = Dijkstra(startNode, endNode, labyrinth.Nodes);
 
 
-            for(int row = 0; row < field.GetLength(0); row++)
-            {
-                for(int col = 0; col < field.GetLength(1); col++)
-                {
-                    bool foundSomething = false;
-                    foreach(Node toDraw in solution)
-                    {
-                        if (row == toDraw.yCoord && col == toDraw.xCoord)
-                        {
-                            Console.Write("O ");
-                            foundSomething = true;
-                            break;
-                        }
-                    }
-                    if (!foundSomething) Console.Write((field[row, col]) ? "  " : "##");
-                }
-                Console.WriteLine();
-            }
-
-
-            Console.SetCursorPosition(2*startNode.xCoord, startNode.yCoord);
-            Console.Write("S");
-            Console.SetCursorPosition(2*endNode.xCoord, endNode.yCoord);
-            Console.Write("E");
-
-            Console.Write(solution.Count());
+            PrintLabyrinth(field, solution, startNode, endNode);
 
             Console.Read();
 
@@ -73,15 +53,115 @@ namespace Michael.Week08.FileSystem
 
 
 
+        public static void PrintLabyrinth(bool[,] field, List<Node> solution, Node startNode, Node endNode)
+        {
+            for (int row = 0; row < field.GetLength(0); row++)
+            {
+                for (int col = 0; col < field.GetLength(1); col++)
+                {
+                    bool foundSomething = false;
+                    foreach (Node toDraw in solution)
+                    {
+                        if (row == toDraw.yCoord && col == toDraw.xCoord)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+
+                            if (toDraw == endNode)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                            }
+                            else if (toDraw == startNode)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Blue;
+                            }
+
+                            Console.Write("■ ");
+                            Console.ResetColor();
+                            foundSomething = true;
+                            break;
+                        }
+                    }
+
+                    if (!foundSomething)
+                    {
+                        string toPrint = "";
+                        if (!field[row, col])
+                        {
+                            int result = BinaryMaskOrSomething(field, row, col);
+
+                            switch (result)
+                            {
+                                case 0: toPrint = "O "; break;
+                                case 1:
+                                case 4:
+                                case 5: toPrint = "║ "; break;
+                                case 2:
+                                case 8:
+                                case 10: toPrint = "══"; break;
+                                case 3: toPrint = "╚═"; break;
+                                case 6: toPrint = "╔═"; break;
+                                case 7: toPrint = "╠═"; break;
+                                case 9: toPrint = "╝ "; break;
+                                case 11: toPrint = "╩═"; break;
+                                case 12: toPrint = "╗ "; break;
+                                case 13: toPrint = "╣ "; break;
+                                case 14: toPrint = "╦═"; break;
+                                case 15: toPrint = "╬═"; break;
+                            }
+                        }
+                        else
+                        {
+                            toPrint = "  ";
+                        }
+                        Console.Write(toPrint);
+                    }
+
+                }
+                Console.WriteLine();
+            }
+        }
+
+
+        public static int BinaryMaskOrSomething(bool[,] field, int row, int col)
+        {
+            int result = 0;
+            try
+            {
+                if (field[row - 1, col] == false) result += 1;
+            }
+            catch { }
+
+            try
+            {
+                if (field[row, col + 1] == false) result += 2;
+            }
+            catch { }
+
+            try
+            {
+                if (field[row + 1, col] == false) result += 4;
+            }
+            catch { }
+
+            try
+            {
+                if (field[row, col - 1] == false) result += 8;
+            }
+            catch { }
+
+            return result;
+        }
+
+
         public static List<Node> Dijkstra(Node start, Node end, List<Node> setting)
         {
             Dictionary<Node, Node> previousNeighbor = new Dictionary<Node, Node>();
-            previousNeighbor[start] = start;
             List<Node> unvisited = new List<Node>();
 
             foreach(Node node in setting)
             {
                 unvisited.Add(node);
+                previousNeighbor.Add(node, node);
             }
 
             start.SetDistance(0);
@@ -89,7 +169,7 @@ namespace Michael.Week08.FileSystem
 
             Node currentNode = start;
 
-            while (unvisited.Contains(end))
+            while (currentNode != end)
             {
                 foreach(Node neighbor in currentNode.Neighbors)
                 {
@@ -105,6 +185,7 @@ namespace Michael.Week08.FileSystem
                 unvisited.Remove(currentNode);
 
                 currentNode = unvisited.MinBy(nd => nd.CurrentDistance);
+                //currentNode = GetSmallestNode(unvisited);
             }
 
 
@@ -121,7 +202,6 @@ namespace Michael.Week08.FileSystem
 
             return solution;
         }
-
 
 
         public static Graph CreateLabyrinthGraph()
@@ -145,7 +225,8 @@ namespace Michael.Week08.FileSystem
             {
                 foreach (Node potentialNeighbor in labyrinth.Nodes)
                 {
-                    if (Math.Abs(node.xCoord - potentialNeighbor.xCoord) == 1 ^ Math.Abs(node.yCoord - potentialNeighbor.yCoord) == 1)
+                    if ((Math.Abs(node.xCoord - potentialNeighbor.xCoord) == 1 && Math.Abs(node.yCoord - potentialNeighbor.yCoord) == 0) ||
+                        (Math.Abs(node.xCoord - potentialNeighbor.xCoord) == 0 && Math.Abs(node.yCoord - potentialNeighbor.yCoord) == 1))
                     {
                         node.AddNeighbor(potentialNeighbor);
                     }
@@ -181,6 +262,22 @@ namespace Michael.Week08.FileSystem
 
             return maze;
 
+        }
+
+
+        public static Node GetSmallestNode(List<Node> list)
+        {
+            Node minimum = list[0];
+
+            foreach(Node node in list)
+            {
+                if (node.CurrentDistance < minimum.CurrentDistance)
+                {
+                    minimum = node;
+                }
+            }
+
+            return minimum;
         }
     }
 }
