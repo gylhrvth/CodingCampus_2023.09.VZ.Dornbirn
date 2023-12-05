@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Simon.Week07.GeometryInterface
 {
-    public class Stern : Geometry
+    public class Stern : IGeometry
     {
         public double _Leangth;
 

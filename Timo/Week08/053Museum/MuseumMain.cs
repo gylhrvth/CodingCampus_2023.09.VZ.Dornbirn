@@ -1,4 +1,4 @@
-﻿
+﻿using static Timo.ColorOfConsole;
 namespace Timo.Week08._053Museum
 {
     public class MuseumMain
@@ -6,26 +6,28 @@ namespace Timo.Week08._053Museum
         public static void Start()
         {
 
-            Hallway mainHallway = new("main hallway");
+            Hallway mainHallway = new("main hallway", 1);
 
             Museum museum = new("Pinakothek", mainHallway);
 
-            Hallway hallway1 = new("hallway1");
-            Hallway hallway2 = new("hallway2");
+            Hallway hallway1 = new("hallway 1", 2);
+            Hallway hallway2 = new("hallway 2", 3);
 
-            ExhibitionRoom room1 = new("room1");
-            ExhibitionRoom room2 = new("room2");
-            ExhibitionRoom room3 = new("room3");
-            ExhibitionRoom room4 = new("room4");
-            ExhibitionRoom room5 = new("room5");
-            ExhibitionRoom room6 = new("room6");
-            ExhibitionRoom room7 = new("room7");
-            ExhibitionRoom room8 = new("room8");
-            ExhibitionRoom room9 = new("room9");
+            ExhibitionRoom room1 = new("room 1", 4);
+            ExhibitionRoom room2 = new("room 2", 4);
+            ExhibitionRoom room3 = new("room 3", 3);
+            ExhibitionRoom room4 = new("room 4", 3);
+            ExhibitionRoom room5 = new("room 5", 2);
+            ExhibitionRoom room6 = new("room 6", 4);
+            ExhibitionRoom room7 = new("room 7", 5);
+            ExhibitionRoom room8 = new("room 8", 6);
+            ExhibitionRoom room9 = new("room 9", 2);
 
             Guardian g1 = new("Fred", 10);
 
-            Thief t1 = new("Chris", 15, 50);
+            Thief t1 = new("mr nonsuspect", 15, 3);
+            Thief t2 = new("Hassan", 20, 3);
+            Thief t3 = new("mr suspect", 30, 3);
 
             Visitor sandro = new("Sandro");
             Visitor timo = new("Timo");
@@ -34,8 +36,19 @@ namespace Timo.Week08._053Museum
             Visitor patrick = new("Patrick");
             Visitor cemal = new("Cemal");
             Visitor dario = new("Dario");
-            Visitor hassan = new("Hassan");
-            Visitor mohammed = new("Mohammed");            
+            Visitor kuhl = new("Kuhl");
+            Visitor mohammed = new("Mohammed");
+            Visitor guenther = new("Günther");
+            Visitor fred = new("Fred");
+            Visitor olaf = new("Olaf");
+            Visitor bro = new("Bro");
+            Visitor hugo = new("Hugo");
+            Visitor garmond = new("Garmond");
+            Visitor idaxis = new("Idaxis");
+            Visitor fenris = new("Fenris");
+            Visitor heinrich = new("Heinrich");
+            Visitor doris = new("Doris");
+            Visitor yukiko = new("Yukiko");
 
             room1.Artworks.AddRange(new List<Artwork>()
             {
@@ -108,9 +121,13 @@ namespace Timo.Week08._053Museum
                 new("The Raft of the Medusa", 3),
             });
 
+
+            Hallway exit = new("exit", 0);
+
             mainHallway.AddNeighour(room5);
             mainHallway.AddNeighour(room9);
             mainHallway.AddNeighour(hallway1);
+            mainHallway.AddNeighour(exit);
 
             hallway1.AddNeighour(room3);
             hallway1.AddNeighour(hallway2);
@@ -126,9 +143,8 @@ namespace Timo.Week08._053Museum
             room6.AddNeighour(room7);
             room7.AddNeighour(room8);
 
-            //Simulation
-
             museum.PrintStructure("");
+            Console.WriteLine();
 
             museum.AddVisitor(sandro);
             museum.AddVisitor(timo);
@@ -137,12 +153,34 @@ namespace Timo.Week08._053Museum
             museum.AddVisitor(patrick);
             museum.AddVisitor(cemal);
             museum.AddVisitor(dario);
-            museum.AddVisitor(hassan);
+            museum.AddVisitor(kuhl);
             museum.AddVisitor(mohammed);
+            museum.AddVisitor(guenther);
+            museum.AddVisitor(fred);
+            museum.AddVisitor(olaf);
+            museum.AddVisitor(bro);
+            museum.AddVisitor(garmond);
+            museum.AddVisitor(hugo);
+            museum.AddVisitor(idaxis);
+            museum.AddVisitor(fenris);
+            museum.AddVisitor(heinrich);
+            museum.AddVisitor(doris);
+            museum.AddVisitor(yukiko);
+            museum.AddVisitor(t1);
+            museum.AddVisitor(t2);
+            museum.AddVisitor(t3);
 
+            Console.WriteLine();
 
-
-
+            for (int i = 0; i < 17; i++)
+            {
+                museum.Tick();
+            }
+            SetConsoleColor(ConsoleColor.DarkYellow, "The museum is closing, visitors must leave now!");
+            for (int i = 0; i < 7; i++)
+            {
+                museum.LeaveMuseum();
+            }
         }
     }
 }

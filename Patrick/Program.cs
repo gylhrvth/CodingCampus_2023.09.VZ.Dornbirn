@@ -1,4 +1,3 @@
 ﻿
-Patrick.Week08.FileSystem.AufgabeDateienUndOrdnerAnzeigen.Start();
-
+Patrick.Week09.FileSystem.FileCopy.Start();
 
