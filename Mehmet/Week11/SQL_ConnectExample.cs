@@ -28,7 +28,7 @@ namespace Mehmet.Week11
                         List<DbColumn> header = reader.GetColumnSchema().ToList();
                         for (int i = 0; i < header.Count; i++)
                         {
-                            Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "] | ");
+                            Console.Write(header[i].ColumnName + "     -------                 " + header[i].DataTypeName + "[" + header[i].ColumnSize + "] | ");
                         }
                         Console.WriteLine();
 
