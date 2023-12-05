@@ -36,31 +36,23 @@ namespace Erik.Week11
         public static void PrintResult(SqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            Console.WriteLine("Printing data...\n");
             for (int i = 0; i < header.Count; i++)
             {
                 if (i > 0)
                 {
-                    Console.Write("      | ");
+                    Console.Write(" | ");
                 }
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write("   " + header[i].ColumnName);
-                Console.ResetColor();
+                Console.Write(header[i].ColumnName);
             }
-            Console.WriteLine("\n");
-
+            Console.WriteLine();
 
             while (dataReader.Read())
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
-                    Console.WriteLine(header[i]);
-                }
-                for (int i = 0; i < dataReader.FieldCount; i++)
-                {
                     if (i > 0)
                     {
-                        Console.Write("|");
+                        Console.Write(" | ");
                     }
                     Console.Write(dataReader[i]);
                 }
@@ -69,4 +61,5 @@ namespace Erik.Week11
         }
     }
 }
+
 
