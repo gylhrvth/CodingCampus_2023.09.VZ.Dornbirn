@@ -8,7 +8,7 @@ namespace Patrick.Week10
 {
     public class MSSQL_PreparedStatement
     {
-        private static ConsoleColor[] myCOLOR = new ConsoleColor[]{ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Cyan, ConsoleColor.Magenta, ConsoleColor.DarkYellow};
+        private static ConsoleColor[] myCOLOR = new ConsoleColor[] { ConsoleColor.Green, ConsoleColor.Blue, ConsoleColor.Cyan, ConsoleColor.Magenta, ConsoleColor.DarkYellow, ConsoleColor.DarkMagenta, ConsoleColor.DarkBlue };
 
         public static void Start()
         {
@@ -44,7 +44,7 @@ namespace Patrick.Week10
                 //Console.WriteLine(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "] ");           //zum herausfinden welche Datentypen vorhanden sind
                 Console.Write("|");
                 Console.ForegroundColor = ConsoleColor.Red;
-                string formatString = string.Format(" {{0, {0}}} ", -1 * header[i].ColumnSize);
+                string formatString = string.Format("{{0, {0}}} ", -1 * header[i].ColumnSize);
                 Console.Write(formatString,header[i].ColumnName);
                 Console.ResetColor();
             }
@@ -59,19 +59,18 @@ namespace Patrick.Week10
                     Console.ForegroundColor = myCOLOR[i % myCOLOR.Length];
                     if (dataReader.GetDataTypeName(i).Equals("nvarchar"))
                     {
-                        string formatString = string.Format(" {{0, {0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        string formatString = string.Format("{{0, {0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
                         Console.Write(formatString, dataReader[i]);
                     }
                     else if (dataReader.GetDataTypeName(i).Equals("float"))
                     {
-                        string formatString = string.Format(" {{0, {0}}} ", 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        string formatString = string.Format("{{0, {0}}} ", 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
                         Console.Write(formatString, dataReader[i]);
                     }
                     Console.ResetColor();
                 }
                 Console.WriteLine("|");
             }
-            //Console.WriteLine(RepeatStrBuilder("-", 80));
             PrintSepLine(header);
         }
 
@@ -80,16 +79,16 @@ namespace Patrick.Week10
             for (int i = 0; i < header.Count; i++)
             {
                 Console.Write("|");
-                string formatString = string.Format(" {{0, {0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                Console.Write(formatString, RepeatStrBuilder("-", Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length)));
+                string formatString = string.Format("{{0,{0}}}", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                Console.Write(formatString, RepeatStrBuilder("-", Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length)+1));
             }
             Console.WriteLine("|");
         }
 
         public static string RepeatStrBuilder(string text, int n)
         {
-            return new StringBuilder(text.Length * (int)n)
-              .Insert(0, text, (int)n)
+            return new StringBuilder(text.Length * n)
+              .Insert(0, text,n)
               .ToString();
         }
     }
