@@ -12,7 +12,7 @@ namespace Fabienne.Week10
     {
         public static void Start()
         {
-            string connectionString = "server=localhost;port=3306;user=Fabienne;password=fabienne;database:mondial";
+            string connectionString = "server=localhost;port=3306;user=Fabienne;password=fabienne;database=mondial";
 
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
