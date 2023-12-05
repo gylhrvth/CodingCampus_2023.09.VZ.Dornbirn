@@ -4,6 +4,9 @@
     {
         public static void Start()
         {
+
+            double result = 0;
+
             // schreibt C:\Users\wpfsebr\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Selina\bin\Debug\net7.0
             Console.ForegroundColor = ConsoleColor.Blue;
             string filesystem = Directory.GetCurrentDirectory();
@@ -16,12 +19,15 @@
 
             foreach (string file in files)
             {
-               FileInfo fileInfo = new FileInfo(file);
-               Console.ForegroundColor = ConsoleColor.Cyan;
-               Console.WriteLine("├── " + fileInfo.FullName);
-               Console.ForegroundColor = ConsoleColor.White;
-               Console.WriteLine($"│\t└── File: {fileInfo.Name} ist {fileInfo.Length} bytes groß \n│");
+                FileInfo fileInfo = new FileInfo(file);
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("├── " + fileInfo.FullName);
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"│\t└── File: {fileInfo.Name} ist {fileInfo.Length} bytes groß.\n│");
+                result += fileInfo.Length;
             }
+
+            Console.WriteLine($"\t\t└── Alle Files sind {result} bytes groß.\n");
 
             //DirectoryInfo schreibt: C:\Users\wpfsebr\source\repos\CodingCampus_2023.09.VZ.Dornbirn\Selina\bin\Debug
             var dirs = new DirectoryInfo(filesystem);
@@ -44,7 +50,7 @@
             {
                 for (int j = 0; j < names.Length - i - 1; j++)
                 {
-                    if (names[j].Length > names[j + 1].Length)
+                    if (names[j].Length < names[j + 1].Length)
                     {
                         string temp = names[j];
                         names[j] = names[j + 1];

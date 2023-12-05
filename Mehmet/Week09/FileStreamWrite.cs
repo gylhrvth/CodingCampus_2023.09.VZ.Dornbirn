@@ -23,9 +23,7 @@ namespace Mehmet.Week09
                 byte[] bytes = Encoding.UTF8.GetBytes(data);
 
                 fs.Write(bytes, 0, bytes.Length);
-
             }
-
         }
     }
 }
