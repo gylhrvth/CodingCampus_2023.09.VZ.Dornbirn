@@ -12,4 +12,5 @@
 //Cemal.Week07.Ubung.HardwareMain.Start();
 //Cemal.Week08.Geometry.GemoetryMain.Start();
 //Cemal.Week08.Filesystem.Dateien_Ordner.Start();
-Cemal.Selbsttest.Aufgabe1.HouseMain.Start();
+//Cemal.Week09.WriteFile.Start();
+Cemal.Week09.FileStreamRead.Start();

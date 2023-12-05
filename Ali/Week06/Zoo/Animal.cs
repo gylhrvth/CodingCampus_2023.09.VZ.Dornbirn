@@ -30,5 +30,18 @@ namespace Ali.Week06.Zoo
         {
             Console.WriteLine($"│   ├── {_Name},{_Age},{_Gender},{_Genus}, eats : {_FoodAmount} {_Food}");
         }
+        public void ReportFoodRequest(Dictionary<Food , int> report) 
+        {
+        if (report.ContainsKey(_Food))
+            {
+                report[_Food] += _FoodAmount;
+
+
+            }
+            else
+            {
+                report.Add(_Food, _FoodAmount);
+            }
+        }
     }
 }
