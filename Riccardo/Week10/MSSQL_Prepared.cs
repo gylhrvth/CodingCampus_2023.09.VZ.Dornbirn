@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simon.Week10
+namespace Riccardo.Week10
 {
-    public class MSSQL
+    internal class MSSQL_Prepared
     {
         public static void Start()
         {
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=simber;Password=simon1234";
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.188.78,1433;User=gyula;Password=gyula";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -64,8 +64,4 @@ namespace Simon.Week10
             }
         }
     }
-
-
-
-
 }

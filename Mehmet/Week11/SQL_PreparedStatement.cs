@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
+using System.Security.Cryptography.X509Certificates;
+using System.Data.Common;
 
-namespace Simon.Week10
+namespace Mehmet.Week11
 {
-    public class MSSQL
+    internal class SQL_PreparedStatement
     {
         public static void Start()
         {
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=simber;Password=simon1234";
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Mehmet;Password=Mehmet";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -29,18 +30,16 @@ namespace Simon.Week10
                     PrintResult(dataReader);
                     dataReader.Close();
                 }
-                catch (SqlException se)
+                catch(SqlException se) 
                 {
                     Console.WriteLine(se.Message);
                 }
             }
         }
-
-
         public static void PrintResult(SqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            for (int i = 0; i < header.Count; i++)
+            for(int i = 0; i < header.Count; i++)
             {
                 if (i > 0)
                 {
@@ -52,9 +51,9 @@ namespace Simon.Week10
 
             while (dataReader.Read())
             {
-                for (int i = 0; i < dataReader.FieldCount; i++)
+                for (int i = 0;i < dataReader.FieldCount;i++)
                 {
-                    if (i > 0)
+                    if ( i > 0)
                     {
                         Console.Write(" | ");
                     }
@@ -64,8 +63,4 @@ namespace Simon.Week10
             }
         }
     }
-
-
-
-
 }
