@@ -26,25 +26,27 @@ namespace Mehmet.Week11
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         List<DbColumn> header = reader.GetColumnSchema().ToList();
-                        for (int i = 0; i < header.Count; i++)
+
+                        foreach (DbColumn column in header)
                         {
-                            Console.Write(header[i].ColumnName + "     -------                 " + header[i].DataTypeName + "[" + header[i].ColumnSize + "] | ");
+                            Console.Write($"|{column.ColumnName,-20} | "); // 15 ist fixe breite
                         }
-                        Console.WriteLine("\n");
+                        Console.WriteLine("\n|=====================| |=====================| |=====================|");
+
 
                         while (reader.Read())
                         {
-                            for (int i= 0; i < reader.FieldCount; i++)
+                            for (int i = 0; i < reader.FieldCount; i++)
                             {
-                                int o = reader.Depth;
-                                Console.Write(reader[i] + " | " + o);
-                                
-                                for (int j = 0; j < header[i].ColumnSize -o; j++)
+                                string value = reader[i].ToString();
+                                if (header[i].DataTypeName == "float")
                                 {
-                                    //Console.Write("-");
+                                    Console.Write($"|{value,20} | "); // Rechtsbündig
                                 }
-
-
+                                else
+                                {
+                                    Console.Write($"|{value,-20} | ");
+                                }
                             }
                             Console.WriteLine();
                         }
