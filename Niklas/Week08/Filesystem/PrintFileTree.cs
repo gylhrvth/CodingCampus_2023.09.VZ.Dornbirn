@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Filesystem
 {
-    public class PrintFileTreeReceiver : FileReceiver
+    public class PrintFileTreeReceiver : IFileReceiver
     {
         public PrintFileTreeReceiver()
         {

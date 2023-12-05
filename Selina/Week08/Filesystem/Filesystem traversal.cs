@@ -1,25 +1,37 @@
 ﻿namespace Selina.Week08.Filesystem
 {
-    public class Filesystem_traversal
+    public class Filesystem_traversal 
     {
         public static void Start()
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
             string filesystem = Directory.GetCurrentDirectory();
-            string[] files = Directory.GetFiles(filesystem);
-            var dirs = new DirectoryInfo(filesystem);
-            string projectDirectory = dirs.Parent.Parent.Parent.FullName;
+            Console.WriteLine(filesystem);
+
+            DirectoryInfo projectDirectory = new DirectoryInfo(filesystem).Parent.Parent.Parent;
             Console.WriteLine(projectDirectory);
-            Console.ForegroundColor = ConsoleColor.White;
+
+            GetFiles(projectDirectory);
 
         }
+        public static void GetFiles(DirectoryInfo projectDirectory)
+        {
+            FileInfo[] fileInfo = projectDirectory.GetFiles();
 
+            DirectoryInfo[] subfolders = projectDirectory.GetDirectories();
+
+            foreach (DirectoryInfo subfolder in subfolders)
+            {
+                Console.WriteLine($"├── {subfolder.Name}");
+                GetFiles(subfolder);
+            }
+
+            foreach (FileInfo file in fileInfo)
+            {
+                Console.WriteLine($"│\t└── {file.Name}");
+            }
+        }
     }
-
-    //public static void Files()
-    //{
-        
-    //}
 }
-       
- 
+
+
+
