@@ -11,6 +11,7 @@ namespace David.Week08.FilesDirectoriesPath
 			//CREATE FILE
 			File.Create(path);
 
+
 			//READ FILE
 			//string content = File.ReadAllText(path);
 			//Console.WriteLine(content);
