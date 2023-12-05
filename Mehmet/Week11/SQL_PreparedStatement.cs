@@ -18,7 +18,7 @@ namespace Mehmet.Week11
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("select * from city where Name LIKE @Name and Population > @Pop", connection);
+                SqlCommand command = new SqlCommand("Select ci.Name, ci.Province, ci.Population \r\n\tFrom City ci\r\n\tJoin Country c on c.Code = ci.Country\r\n\twhere c.Name = 'Austria'", connection);
 
                 command.Parameters.Add("@Name", SqlDbType.NVarChar, 80).Value = "%on";
                 command.Parameters.Add("@Pop", SqlDbType.Int).Value = 1000000;

@@ -16,7 +16,7 @@ namespace Mehmet.Week11
             
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("Select *\r\n\tFrom City ci\r\n\tJoin Country c on c.Code = ci.Country\r\n\twhere c.Name = 'Austria'", connection);
+                SqlCommand command = new SqlCommand("Select ci.Name, ci.Province , ci.Population \r\n\tFrom City ci\r\n\tJoin Country c on c.Code = ci.Country\r\n\twhere c.Name = 'Austria'", connection);
 
                 try
                 {
@@ -30,15 +30,23 @@ namespace Mehmet.Week11
                         {
                             Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "] | ");
                         }
-                        Console.WriteLine();
+                        Console.WriteLine("\n");
 
                         while (reader.Read())
                         {
                             for (int i= 0; i < reader.FieldCount; i++)
                             {
-                                Console.Write(reader[i] + " | ");
+                                int o = reader.Depth;
+                                Console.Write(reader[i] + " | " + o);
+                                
+                                for (int j = 0; j < header[i].ColumnSize -o; j++)
+                                {
+                                    //Console.Write("-");
+                                }
+
+
                             }
-                            Console.WriteLine(reader[0]);
+                            Console.WriteLine();
                         }
                     }
                 }
@@ -48,5 +56,7 @@ namespace Mehmet.Week11
                 }
             }
         }
+
+
     }
 }
