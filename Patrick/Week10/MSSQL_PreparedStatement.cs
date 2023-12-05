@@ -14,14 +14,14 @@ namespace Patrick.Week10
         {
             string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=patrick;Password=slipknot6";
 
-            //string input = Console.ReadLine();
+            string input = Console.ReadLine();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand("select *\r\nfrom city\r\nwhere name like @Name AND Population > @Pop", connection);
 
                 command.Parameters.Add("@Name", SqlDbType.NVarChar, 22).Value = "%on";                
-                command.Parameters.Add("@Pop", SqlDbType.Int).Value = 10000;
+                command.Parameters.Add("@Pop", SqlDbType.Int).Value = 100000;
                 try
                 {
                     command.Connection.Open();
@@ -38,7 +38,8 @@ namespace Patrick.Week10
 
         public static void PrintResult(SqlDataReader dataReader)
         {
-            List<DbColumn> header = dataReader.GetColumnSchema().ToList();            
+            List<DbColumn> header = dataReader.GetColumnSchema().ToList();
+            PrintSepLine(header);
             for (int i = 0; i < header.Count; i++)
             {
                 //Console.WriteLine(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "] ");           //zum herausfinden welche Datentypen vorhanden sind
