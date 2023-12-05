@@ -13,7 +13,7 @@ namespace Fabian.Week10.MySQL
             try
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("select * from city where country like @Name and population > @Pop order by population desc;", connection);
+                MySqlCommand command = new MySqlCommand("select * from country order by population desc", connection);
 
                 command.Parameters.AddWithValue("@Name", "%A");
                 command.Parameters.AddWithValue("@Pop", 500000);
