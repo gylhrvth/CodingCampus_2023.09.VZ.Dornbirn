@@ -12,11 +12,14 @@ using Timo.Week06._02Kurs;
 using Timo.Week06._03DynamischeDatenstrukturen;
 using Timo.Week06._04Zoo;
 using Timo.Week07._06Car;
-using Timo.Week08;
+
 using Timo.Week08._063Bank;
 using Timo.Week08.FileSystemTraversalUseful;
+using Timo.Week08;
+using Timo.Week08._053Museum;
+using Timo.AdventOfCode;
 //using Timo.Week07.hopspital;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-Aufgabe5.Start();
+Day01.Start();
