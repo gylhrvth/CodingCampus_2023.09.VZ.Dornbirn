@@ -39,11 +39,8 @@ namespace DarioLuis.Week10.MySql
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
             for (int i = 0; i < header.Count; i++)
             {
-                if (i > 0)
-                {
-                    Console.Write(" | ");
-                }
-                Console.Write(header[i].ColumnName);
+                
+                Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "]   ");
             }
             Console.WriteLine();
 
@@ -51,11 +48,8 @@ namespace DarioLuis.Week10.MySql
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
-                    if (i > 0)
-                    {
-                        Console.Write(" | ");
-                    }
-                    Console.Write(dataReader[i]);
+                    Console.Write(dataReader[i] + dataReader.ToString.Length" |" +
+                        " ");
                 }
                 Console.WriteLine();
             }
