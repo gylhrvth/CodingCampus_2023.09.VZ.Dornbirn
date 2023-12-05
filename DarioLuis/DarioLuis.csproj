@@ -14,4 +14,8 @@
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.2.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Week11\" />
+  </ItemGroup>
 </Project>

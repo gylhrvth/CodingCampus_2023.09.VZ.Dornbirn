@@ -48,7 +48,7 @@ namespace DarioLuis.Week10.MySql
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
-                    Console.Write(dataReader[i] + dataReader.ToString.Length" |" +
+                    Console.Write(dataReader[i] + " |" +
                         " ");
                 }
                 Console.WriteLine();
