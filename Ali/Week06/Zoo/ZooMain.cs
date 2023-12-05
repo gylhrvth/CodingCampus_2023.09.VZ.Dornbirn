@@ -23,16 +23,22 @@ namespace Ali.Week06.Zoo
             Food crops = new Food("Crops", "Pieces", 1.10);
             Food meat = new Food("Meat", "Kg", 15);
             Food fruit = new Food("Fruit", "Kg", 10);
+            Food bugs = new Food("Bugs", "Pieces", 0.50);
+            Food mice = new Food("Mice", "Pieces", 3);
 
-            Enclosure flatland = new Enclosure("Outside Temperature", "Outdoor/Ground", "Flatland");
-            Enclosure jungle = new Enclosure("Outside Temperatur", "Outdoor/Ground", "Jungle");
-            Enclosure swamp = new Enclosure("Outside Temperature", "Outdoor/Water", "Swamp");
-            Enclosure terrarium = new Enclosure("Warm/Moist", "Indoor","Reptile Terrarium");
+            
 
-            Pfleger Moritz = new Pfleger ("Moritz",flatland);
+            Enclosure flatland = new Enclosure("Outside Temperature", "Outdoor/Ground", "Flatland", "Moritz");
+            Enclosure jungle = new Enclosure("Outside Temperatur", "Outdoor/Ground", "Jungle", "Josef");
+            Enclosure swamp = new Enclosure("Outside Temperature", "Outdoor/Water", "Swamp", "Maria");
+            Enclosure terrarium = new Enclosure("Warm/Moist", "Indoor","Reptile Terrarium", "Anna");
+
+            Pfleger Moritz = new Pfleger("Moritz", flatland);
             Pfleger Josef = new Pfleger("Gustaf", jungle);
             Pfleger Maria = new Pfleger("Maria", swamp);
             Pfleger Anna = new Pfleger("Anna", terrarium);
+
+
 
 
             Animal monkey1 = new Animal("Eren", 3, "Monkey", "Male", bannanas, 500);
@@ -46,6 +52,10 @@ namespace Ali.Week06.Zoo
             Animal hippopotamus1 = new Animal("Johanna", 4, "Hippopotamus", "Female", fruit, 30);
             Animal hippopotamus2 = new Animal("Josef", 4, "Hippopotamus", "Male", fruit, 37);
             Animal crocodile = new Animal("Magnus", 12, "Crocodile", "Male", meat, 2);
+
+            Animal gecko = new Animal("Moria", 42, "Gecko", "Male", bugs, 30);
+            Animal snake = new Animal("Erdol", 12, "Snake", "Female", mice, 3);
+            Animal chameleon = new Animal("Lara", 3, "Chameleon", "Female", bugs, 49);
 
 
 
@@ -70,10 +80,17 @@ namespace Ali.Week06.Zoo
             swamp.AddAnimals(hippopotamus2);
             swamp.AddAnimals(crocodile);
 
+            terrarium.AddAnimals(snake);
+            terrarium.AddAnimals(chameleon);
+            terrarium.AddAnimals(gecko);
+
+            
+
 
 
 
             zoo.PrintZoo();
+            zoo.PrintFoodReport();
 
 
             //for(int i = 0; i < 10; i++)

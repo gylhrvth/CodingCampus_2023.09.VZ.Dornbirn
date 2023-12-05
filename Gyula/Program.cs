@@ -1,5 +1,15 @@
-﻿using Gyula.Week08;
+﻿using Gyula.Week10.MSSQL;
+using Gyula.Week10.MySql;
 
 //FileList.Start();
 //WriteTextFile.Start();
-ReadTextFile.Start();
+//ReadTextFile.Start();
+
+//MSSQL_PreparedStatement.Start();
+//MSSQL_Update.Start();
+
+//MySQL_PreparedStatement.Start();
+//MySQL_Update.Start();
+
+//Gyula.Week09.FileCopy.Start();
+Gyula.Week09.CsvReader.Start();

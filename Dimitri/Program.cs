@@ -10,9 +10,12 @@ using Dimitri.Week08._01Geometrie;
 using Dimitri.Week08._02GeometrieInterface;
 using Dimitri.Week08._03Test;
 using Dimitri.Week08._04Filesystem;
+using Dimitri.Week08._05Selftest;
+
+Test.Main();
 
 <<<<<<< HEAD
-Filesystem.Main();
 =======
-List.Main();
->>>>>>> ea0520c (changes)
+Filesystem.Main();
+
+>>>>>>> 68fecc2 (change program.cs)

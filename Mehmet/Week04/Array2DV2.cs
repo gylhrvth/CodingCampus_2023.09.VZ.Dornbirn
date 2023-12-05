@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kerem.Week04
+namespace Mehmet.Week04
 {
     internal class Array2DV2
     {

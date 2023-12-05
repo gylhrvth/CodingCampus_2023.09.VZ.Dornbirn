@@ -11,7 +11,10 @@ using Simon.Week06.Zoo3;
 using Simon.Week07.VererbungUebung;
 using Simon.Week07.Carsim;
 using Simon.Week07.GeometryInterface;
+using Simon.Week08.Filesystem;
+using Simon.Week08.Filesystem.Useful;
+using Simon.adventofcode;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-GeometryMain.Start();
+Day_1.Start();
