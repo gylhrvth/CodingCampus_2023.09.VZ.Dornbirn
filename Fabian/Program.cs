@@ -4,3 +4,5 @@
 //Fabian.Week08._05_Museum.MuseumMain.Start();
 //Fabian.Week08._09_FilesystemUsefull.FilesystemMain.Start();
 //Fabian.Week08.FileSystemTraversal.Start();
+
+Fabian.Week10.MySQL.MySQLPreparedStatements.Start();
