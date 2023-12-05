@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Kerem.Week01
+namespace Mehmet.Week01
 {
     public class Rechnen
     {

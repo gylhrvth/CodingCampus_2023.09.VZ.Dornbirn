@@ -11,13 +11,21 @@ namespace Ali.Week06.Zoo
         private string _Name;
         private string _Unit;
         private double _Price;
+        private double _UnitPrice;
+
+        public string Name { get  => _Name; }
+        public string Unit { get => _Unit; }
+        
+        public double UnitPrice { get => _UnitPrice; }
 
 
-        public Food(string name, string unit, double price)
+
+        public Food(string name, string unit, double unitprice)
         {
             _Name = name;
             _Unit = unit;
-            _Price = price;
+           
+            _UnitPrice = unitprice;
         }
 
 

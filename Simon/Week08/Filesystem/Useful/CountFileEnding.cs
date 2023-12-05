@@ -21,7 +21,6 @@ namespace Simon.Week08.Filesystem.Useful
 
         public void OnFileReceived(int depth, string path)
         {
-            FileInfo fileInfo = new FileInfo(path);
             if (path.EndsWith(_FileEnding))
             {
                 _Count++;

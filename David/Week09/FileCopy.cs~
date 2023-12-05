@@ -1,0 +1,34 @@
+﻿using System;
+namespace David.Week09
+{
+	public class FileCopy
+	{
+		public static void Start()
+		{
+			string source = "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/David/Week08/Hello.txt";
+			string destination = "/Users/davidisele/Projects/CodingCampus_2023.09.VZ.Dornbirn/David/Week08/Hello2.txt";
+			CopyTo(source, destination);
+        }
+		
+
+		public static void CopyTo(string source, string destination)
+		{
+			using (StreamReader sr = new StreamReader(source))
+			{
+				using (StreamWriter sw = new StreamWriter(destination))
+				{
+                    string line = sr.ReadLine();
+
+                    while (line != null)
+                    {
+						sw.WriteLine(line);
+						line = sr.ReadLine();
+    
+					}
+
+                }
+			}
+		}
+	}
+}
+

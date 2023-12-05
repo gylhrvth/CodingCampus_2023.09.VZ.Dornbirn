@@ -44,6 +44,36 @@ namespace Ali.Week06.Zoo
 
 
         }
+        public void PrintFoodReport()
+        {
+            Dictionary<Food, int> report= new Dictionary<Food, int>();
+
+            foreach (Enclosure enc in _EnclosureList)
+            {
+                enc.ReportFoodRequest(report);
+            }
+
+            double sum = 0;
+            double sum2 = 0;
+
+            Console.WriteLine("-----------------------------------------------------------------------------");
+
+            Console.WriteLine("Food Report");
+
+            foreach(Food food in report.Keys)
+            {
+                sum = food.UnitPrice * report[food];
+                Console.WriteLine("{0, -9} {1,-20} {2, -10} {3, -10}",
+                    food.Name,
+                    report[food],
+                    food.Unit,
+                    food.UnitPrice + "$");
+                sum2 += sum;
+
+            }
+            Console.WriteLine("--------------------------------------------------------------------------------");
+            Console.WriteLine("The sum of all the Food expanses is:" +  sum2+"$");
+        }
     }
 
 }

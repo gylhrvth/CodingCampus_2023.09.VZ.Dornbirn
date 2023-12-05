@@ -43,7 +43,6 @@ namespace Fabian.Week07._07Car
         public int Drive(int kilometer)
         {
             int driven = 0;
-            //SetConsoleColor(ConsoleColor.Green, "Brumm Brumm");
             while (driven < kilometer)
             {
                 if (_Tank.Capacity - _Consumption < 0)
