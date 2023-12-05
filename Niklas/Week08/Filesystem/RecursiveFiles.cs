@@ -57,7 +57,7 @@ namespace Niklas.Week08.Filesystem
         }
 
 
-        public static void Traversal(string rootFolder, int depth, FileReceiver fileReceiver)
+        public static void Traversal(string rootFolder, int depth, IFileReceiver fileReceiver)
         {
             string[] files = Directory.GetFiles(rootFolder);
 

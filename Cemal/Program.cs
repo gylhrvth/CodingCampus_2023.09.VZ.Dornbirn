@@ -13,4 +13,5 @@
 //Cemal.Week08.Geometry.GemoetryMain.Start();
 //Cemal.Week08.Filesystem.Dateien_Ordner.Start();
 //Cemal.Week09.WriteFile.Start();
-Cemal.Week09.FileStreamRead.Start();
+//Cemal.Week09.FileStreamRead.Start();
+Cemal.Week10.SQL_PreparedStatement.Start();

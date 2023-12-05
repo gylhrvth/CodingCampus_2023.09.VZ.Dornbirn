@@ -31,6 +31,8 @@
     <None Remove="Week08\Filesystem\Filesystem\" />
     <None Remove="Week08\FilesDirectoriesPath\" />
     <None Remove="Week09\" />
+    <None Remove="Week10\" />
+    <None Remove="Week11\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -56,10 +58,15 @@
     <Folder Include="Week08\Filesystem\Filesystem\" />
     <Folder Include="Week08\FilesDirectoriesPath\" />
     <Folder Include="Week09\" />
+    <Folder Include="Week10\" />
+    <Folder Include="Week11\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj">
       <ReferenceSourceTarget></ReferenceSourceTarget>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.2.0" />
   </ItemGroup>
 </Project>
