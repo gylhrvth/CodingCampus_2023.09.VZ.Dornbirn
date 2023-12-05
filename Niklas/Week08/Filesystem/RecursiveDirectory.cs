@@ -44,7 +44,7 @@ namespace Niklas.Week08.Filesystem
             }
         }
 
-        public static void Traversal(DirectoryInfo rootFolder, string praefix, FileReceiver fileReceiver)
+        public static void Traversal(DirectoryInfo rootFolder, string praefix, IFileReceiver fileReceiver)
         {
             FileInfo[] files = rootFolder.GetFiles();
 

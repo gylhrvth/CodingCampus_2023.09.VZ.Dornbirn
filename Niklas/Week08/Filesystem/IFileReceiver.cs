@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Filesystem
 {
-    public interface FileReceiver
+    public interface IFileReceiver
     {
         public void OnFileReceived(int depth, string path);
 
