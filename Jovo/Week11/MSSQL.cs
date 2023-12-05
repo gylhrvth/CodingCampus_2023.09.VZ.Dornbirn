@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Simon.Week10
+namespace Jovo.Week11
 {
-    public class MSSQL
+    internal class MSSQL
     {
         public static void Start()
         {
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=simber;Password=simon1234";
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Jovo;Password=jovo13696";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -64,8 +65,4 @@ namespace Simon.Week10
             }
         }
     }
-
-
-
-
 }

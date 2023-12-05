@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Niklas.Week08.Filesystem
 {
-    public class FileAndFolderCounter : FileReceiver
+    public class FileAndFolderCounter : IFileReceiver
     {
         private int _CountFolder = 0;
         private int _CountFile = 0;
