@@ -1,17 +1,19 @@
 ﻿
+using System.Net;
+
 namespace Erik.Week10
 {
     internal class Main
     {
         public static void Start()
         {
-            WriteFile();
-            ReadFile();
-            Console.WriteLine();
+            //WriteFile();
+            //ReadFile();
+            //Console.WriteLine();
 
             string path = "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Erik\\Week10\\Hey.txt";
             string copyToPath = "C:\\Users\\DCV\\source\\repos\\CodingCampus_2023.09.VZ.Dornbirn\\Erik\\";
-            CopyFile(path, copyTo)
+            CopyFile(path, copyToPath);
         }
 
         public static void WriteFile()
@@ -37,8 +39,14 @@ namespace Erik.Week10
 
         public static void CopyFile(string copy, string copyTo)
         {
-            
-
+            using (StreamReader sr = new StreamReader(copy))
+            {
+                while (sr != null)
+                {
+                    File.Create(copyTo);     
+                }
+            }
+            }
         }
     }
 }

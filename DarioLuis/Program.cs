@@ -15,5 +15,6 @@ using DarioLuis.Week07;
 using DarioLuis.Week08;
 using DarioLuis.Zoo_Dario;
 using DarioLuis.Museum;
+using DarioLuis.Week10.MySql;
 
-Museum_Main.Start();
+MySQL_PreparedStatement.Start();

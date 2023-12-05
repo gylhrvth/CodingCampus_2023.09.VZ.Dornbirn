@@ -11,7 +11,7 @@ namespace Simon.Week08.Filesystem.Useful
 
         private int _Count;
 
-        public CountFilesFolders(int count)
+        public CountFilesFolders()
         {
             _Count = 0;
         }
@@ -19,7 +19,7 @@ namespace Simon.Week08.Filesystem.Useful
         public int Count {  get { return _Count; } }
         
 
-        public void OnfileRecived(int depth, string path)
+        public void OnFileRecived(int depth, string path)
         {
             _Count++;
         }

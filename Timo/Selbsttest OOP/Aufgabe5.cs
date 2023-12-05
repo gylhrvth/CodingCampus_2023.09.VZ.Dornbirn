@@ -6,9 +6,12 @@ namespace Timo.Selbsttest_OOP
     {
         public static void Start()
         {
-            //Pfad =C:\Users\aau27722\source\Repos\CodingCampus_2023.09.VZ.Dornbirn\Timo
-            PrintBiggestFile(BiggestFile(ReadUserInput()));
+            //Pfad = C:\Users\aau27722\source\Repos\CodingCampus_2023.09.VZ.Dornbirn\Timo
+            //PrintBiggestFile(BiggestFile(ReadUserInput()));
         }
+
+       
+
 
         public static string ReadUserInput()
         {
