@@ -12,5 +12,10 @@ using Dimitri.Week08._03Test;
 using Dimitri.Week08._04Filesystem;
 using Dimitri.Week08._05Selftest;
 
-Aufgabe1.Main();
+Test.Main();
 
+<<<<<<< HEAD
+=======
+Filesystem.Main();
+
+>>>>>>> 68fecc2 (change program.cs)

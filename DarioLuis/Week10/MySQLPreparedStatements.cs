@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mehmet.Week08
+namespace DarioLuis.Week10
 {
-    internal class Aufgabe1
+    internal class MySQLPreparedStatements
     {
     }
 }
