@@ -13,13 +13,15 @@ namespace Dimitri.Week10.MSSql
     {
         public static void Start()
         {
+            Console.WriteLine("The lakes of what land you wanna know?");
+            string land = Console.ReadLine();
+            Console.WriteLine();
             string connectionString = "Persist Security Info=False;Initial Catalog=mondial;server=tcp:127.0.0.1,1433;User=dimitri;Password=sqlnew";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand("select top 10 * from lake where name like @name and depth > @depth", connection);
+                SqlCommand cmd = new SqlCommand("select la.* from geo_lake as l join country as co on l.Country = co.Code join lake as la on la.Name = l.lake where co.Name = @LandSelect", connection);
 
-                cmd.Parameters.Add("@name", System.Data.SqlDbType.NVarChar, 50).Value = "%A";
-                cmd.Parameters.Add("@depth", System.Data.SqlDbType.Float).Value = 0f;
+                cmd.Parameters.Add("@LandSelect", System.Data.SqlDbType.NVarChar, 50).Value = land;
                 try
                 {
                     cmd.Connection.Open();
