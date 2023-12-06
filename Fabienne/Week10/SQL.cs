@@ -36,8 +36,6 @@ namespace Fabienne.Week10
                 connection.Close();
             }
         }
-
-
         public static void PrintResult(MySqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
