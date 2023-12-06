@@ -27,7 +27,7 @@ namespace Gheorghe.Week10
                         StringBuilder stringBuilder = new StringBuilder();
 
                         // Build the table header
-                        stringBuilder.AppendLine(String.Format("{0,-20} | {1,-10} | {2,-10} | {3,-12} | {4,-10} | {5,-10} | {6,-10}", "Name", "Country", "Province", "Population", "Latitude", "Longitude", "Elevation"));
+                        stringBuilder.AppendLine(String.Format("{0,-20} | {1,-30} | {2,-10} | {3,-12} | {4,-10} | {5,-10} | {6,-10}", "Name", "Country", "Province", "Population", "Latitude", "Longitude", "Elevation"));
                         stringBuilder.AppendLine("-------------------------------|------------|------------|-------------|------------|------------|------------");
 
                         // Build the table rows
