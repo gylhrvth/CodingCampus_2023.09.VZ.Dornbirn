@@ -5,6 +5,7 @@ namespace Lukas.Week08
 	{
         public void OnFileReceived(int depth, string path);
         public void OnDirectoryReceived(int depth, string path);
+        
     }
 }
 

@@ -9,7 +9,7 @@ namespace Gyula.Week10.MSSQL
 	{
 		public static void Start()
 		{
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.188.78,1433;User=gyula;Password=gyula";
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.0.107,1433;User=gyula;Password=gyula";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

@@ -14,7 +14,9 @@ using Simon.Week07.GeometryInterface;
 using Simon.Week08.Filesystem;
 using Simon.Week08.Filesystem.Useful;
 using Simon.adventofcode;
+using Simon.Week10;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-Day_1.Start();
+MSSQLuserinputquery.Start();
+

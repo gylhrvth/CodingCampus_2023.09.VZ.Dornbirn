@@ -43,11 +43,11 @@ namespace Erik.Week10
             {
                 while (sr != null)
                 {
-                    File.Create(copyTo);     
+                    File.Create(copyTo);
                 }
-            }
             }
         }
     }
 }
+
 
