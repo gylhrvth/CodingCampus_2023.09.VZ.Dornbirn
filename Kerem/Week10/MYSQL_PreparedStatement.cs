@@ -1,19 +1,19 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
-namespace Fabienne.Week10
+namespace Kerem.Week10
 {
-    public class SQL
+    public class MYSQL_PreparedStatement
     {
         public static void Start()
         {
-            string connectionString = "server=localhost;port=3306;user=Fabienne;password=fabienne;database=mondial";
-
+            string connectionString = "server=localhost;port=3306;user=root;password=Fenerbahce1907.;database=Mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
@@ -36,6 +36,7 @@ namespace Fabienne.Week10
                 connection.Close();
             }
         }
+
         public static void PrintResult(MySqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
