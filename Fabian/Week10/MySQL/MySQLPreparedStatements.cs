@@ -13,7 +13,7 @@ namespace Fabian.Week10.MySQL
             try
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("select * from city where country like @Name and population > @Pop order by population desc;", connection);
+                MySqlCommand command = new MySqlCommand("select * from country order by population desc", connection);
 
                 command.Parameters.AddWithValue("@Name", "%A");
                 command.Parameters.AddWithValue("@Pop", 500000);
@@ -36,39 +36,44 @@ namespace Fabian.Week10.MySQL
         public static void PrintResult(MySqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
+            Console.ForegroundColor = ConsoleColor.Cyan;
             for (int i = 0; i < header.Count; i++)
             {
-                if(i > 0)
+                string formatstring = string.Format("{{0, {0}}}", -1 * header[i].ColumnSize);
+                if (i > 0)
                 {
-                    Console.Write(" | ");
+                    Console.Write(" | "); 
                 }
-                Console.Write($"{header[i].ColumnName, -21}");
+                
+                Console.Write(formatstring, header[i].ColumnName);
             }
+            Console.ResetColor();
             Console.WriteLine();
 
             while(dataReader.Read())
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
+                    
                     if (i > 0)
                     {
                         Console.Write(" | ");
                     }
                     if (IsNumeric(dataReader[i]))
                     {
-                        Console.Write($"{dataReader[i],21}");
+                        string formatstring = string.Format("{{0, {0}}}", Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                        Console.Write(formatstring, dataReader[i]);
                     }
                     else
                     {
-                        Console.Write($"{dataReader[i],-21}");
+                        string formatstring = string.Format("{{0, {0}}}", -1 * Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                        Console.Write(formatstring, dataReader[i]);
                     }
                     
                 }
                 Console.WriteLine();
             }
-        }
-
-        
+        }     
         private static bool IsNumeric(object value)
         {
             return value is int || value is double || value is float || value is decimal;
