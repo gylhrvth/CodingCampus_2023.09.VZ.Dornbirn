@@ -9,7 +9,9 @@
 //Sven.Week06.SelbstTest.SelbstTest.Start();
 //Sven.Week07.Zoo.Zoo.Start();
 //Sven.Week07.Modelierung.AutoHändler.Start();
-Sven.Week08.Filesystem.FileExamlpes.Start();
+//Sven.Week08.Filesystem.FileExamlpes.Start();
+//Sven.Week09.Writefile.Start();
 
+//Sven.Week09.Readfile.Start();
 
-  
+Sven.Week10.MSSQL.MSSQL_PreparedStatement.Start();

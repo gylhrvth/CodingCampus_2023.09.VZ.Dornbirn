@@ -19,7 +19,7 @@ namespace Simon.Week08.Filesystem.Useful
 
         public int Count { get { return _Count; } }
 
-        public void OnFileReceived(int depth, string path)
+        public void OnFileRecived(int depth, string path)
         {
             if (path.EndsWith(_FileEnding))
             {
