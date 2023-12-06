@@ -1,15 +1,19 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
-namespace DarioLuis.Week10.MySql
+namespace Kerem.Week10
 {
-    public class MySQL_PreparedStatement
+    public class MYSQL_PreparedStatement
     {
         public static void Start()
         {
-            string connectionString = "server=localhost;port=3306;user=DarAndrad;password=Abruf!3300;database=Mondial";
+            string connectionString = "server=localhost;port=3306;user=root;password=Fenerbahce1907.;database=Mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
@@ -33,14 +37,16 @@ namespace DarioLuis.Week10.MySql
             }
         }
 
-
         public static void PrintResult(MySqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
             for (int i = 0; i < header.Count; i++)
             {
-                
-                Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "[" + header[i].ColumnSize + "]   ");
+                if (i > 0)
+                {
+                    Console.Write(" | ");
+                }
+                Console.Write(header[i].ColumnName);
             }
             Console.WriteLine();
 
@@ -48,12 +54,14 @@ namespace DarioLuis.Week10.MySql
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
-                    Console.Write(dataReader[i] + " |" +
-                        " ");
+                    if (i > 0)
+                    {
+                        Console.Write(" | ");
+                    }
+                    Console.Write(dataReader[i]);
                 }
                 Console.WriteLine();
             }
         }
     }
 }
-
