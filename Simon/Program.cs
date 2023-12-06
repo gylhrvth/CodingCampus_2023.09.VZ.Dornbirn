@@ -18,4 +18,5 @@ using Simon.Week10;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-MSSQL.Start();
+MSSQLuserinputquery.Start();
+

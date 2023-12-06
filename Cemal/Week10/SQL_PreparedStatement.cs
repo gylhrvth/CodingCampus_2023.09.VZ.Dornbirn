@@ -13,7 +13,10 @@ namespace Cemal.Week10
     {
         public static void Start()
         {
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.188.78,1433;User=gyula;Password=gyula";
+
+            Console.WriteLine("Welches Land möchten sie wissen?");
+            string land = Console.ReadLine();
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=cemal;Password=cemal";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand("select * from city where Name LIKE @Name and Population > @Pop", connection);
@@ -39,25 +42,30 @@ namespace Cemal.Week10
         public static void PrintResult(SqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            for (int i =  0; i < header.Count; i++)
+            for (int i = 0; i < header.Count; i++)
             {
                 if (i > 0)
                 {
-                    Console.Write(" | ");
+                    string formatString = string.Format("{{0,{0}}}", Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                    Console.Write(formatString + "|", dataReader[i]);
                 }
-                Console.Write(header[i].ColumnName);
             }
             Console.WriteLine();
 
             while (dataReader.Read())
             {
-                for (int i = 0;i < dataReader.FieldCount;i++) 
+                for (int i = 0; i < dataReader.FieldCount; i++)
                 {
-                    if (i > 0)
+                    if (header[i].DataTypeName == "float")
                     {
-                        Console.Write(" | ");
+                        string formatString = string.Format("{{0,{0}}}|", Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        Console.Write(formatString, dataReader[i]);
                     }
-                    Console.Write(dataReader[i]);
+                    else 
+                    {
+                        string formatString = string.Format("{{0,{0}}}", - 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        Console.Write(formatString + "|", dataReader[i]);
+                    }
                 }
                 Console.WriteLine();
             }
