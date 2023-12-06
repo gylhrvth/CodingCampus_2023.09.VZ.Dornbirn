@@ -1,36 +1,37 @@
-﻿using Google.Protobuf.WellKnownTypes;
-using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Niklas.Week11
+namespace Jovo.Week11
 {
-    internal class MySQL_ConnectExample
+    internal class MSSQLSORT
     {
+
+
         public static void Start()
         {
             Console.Write("Welches Land möchtest du sehen? ");
             string land = Console.ReadLine();
 
-            string connectionString = "server=localhost;port=3306;user=Niklas;password=6C#fw,_.UDbLa&g;database=Mondial";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=jovo;Password=jovo13696";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                MySqlCommand command = new MySqlCommand("select c.* from City c join country co on c.Country = co.Code where co.Name = @LandSelect order by population desc", connection);
+                SqlCommand command = new SqlCommand("select c.* \nfrom City c \njoin country co on c.Country = co.Code \nwhere co.Name = @LandSelect", connection);
 
-                command.Parameters.Add("@LandSelect", MySqlDbType.VarChar).Value = land;
-
-                try // System.Data.SqlDbType.NVarChar MySql.Data.MySqlClient.MySqlDbType
+                command.Parameters.Add("@LandSelect", System.Data.SqlDbType.NVarChar).Value = land;
+                try
                 {
                     command.Connection.Open();
 
                     Console.WriteLine("Verbindung wurde aufgebaut.");
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
                         List<DbColumn> header = reader.GetColumnSchema().ToList();
                         for (int i = 0; i < header.Count; i++)
@@ -43,13 +44,11 @@ namespace Niklas.Week11
                             }
                             else if (header[i].DataTypeName == "float")
                             {
-                                string formatString = string.Format("| {{0,{0}:N2}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                                Console.Write(formatString, header[i].ColumnName);
+                                Console.Write("| {0,20:N2} ", header[i].ColumnName);
                             }
                             else
                             {
-                                string formatString = string.Format("| {{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                                Console.Write(formatString, header[i].ColumnName);
+                                Console.Write("| {0,20} ", header[i].ColumnName);
                             }
                         }
                         Console.WriteLine("|");
@@ -59,23 +58,21 @@ namespace Niklas.Week11
                             for (int i = 0; i < reader.FieldCount; i++)
                             {
                                 Console.Write("| ");
-                                if (header[i].DataType == typeof(string))
+                                if (header[i].DataTypeName == "nvarchar")
                                 {
                                     Console.ForegroundColor = ConsoleColor.Yellow;
                                     string formatString = string.Format("{{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
                                     Console.Write(formatString, reader[i]);
                                 }
-                                else if (header[i].DataType == typeof(float))
+                                else if (header[i].DataTypeName == "float")
                                 {
                                     Console.ForegroundColor = ConsoleColor.Green;
-                                    string formatString = string.Format("{{0,{0}:N2}} ", 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                                    Console.Write(formatString, reader[i]);
+                                    Console.Write("{0,20:N2} ", reader[i]);
                                 }
                                 else
                                 {
                                     Console.ForegroundColor = ConsoleColor.Magenta;
-                                    string formatString = string.Format("{{0,{0}}} ", 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                                    Console.Write(formatString, reader[i]);
+                                    Console.Write("{0,20} ", reader[i]);
                                 }
                                 Console.ResetColor();
                             }
@@ -83,7 +80,7 @@ namespace Niklas.Week11
                         }
                     }
                 }
-                catch (MySqlException sqlE)
+                catch (SqlException sqlE)
                 {
                     Console.WriteLine(sqlE.Message);
                 }
@@ -91,4 +88,3 @@ namespace Niklas.Week11
         }
     }
 }
-

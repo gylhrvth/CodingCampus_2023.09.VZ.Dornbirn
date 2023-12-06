@@ -5,14 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fabienne.Week10
+namespace Kerem.Week10
 {
-    public class MySQL
+    internal class MYSQL_Update
     {
         public static void Start()
         {
-            string connectionString = "server=localhost;port=3306;user=root;password=fabienne;database:mondial";
-
+            string connectionString = "server=localhost;port=3306;user=root;password=Fenerbahce1907.;database=Mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
