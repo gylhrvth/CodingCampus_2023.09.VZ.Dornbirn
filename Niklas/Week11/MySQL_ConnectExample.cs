@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -12,58 +13,82 @@ namespace Niklas.Week11
     {
         public static void Start()
         {
+            Console.Write("Welches Land möchtest du sehen? ");
+            string land = Console.ReadLine();
+
             string connectionString = "server=localhost;port=3306;user=Niklas;password=6C#fw,_.UDbLa&g;database=Mondial";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            try
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                connection.Open();
-                MySqlCommand command = new MySqlCommand("select * from city where Name LIKE @Name and Population > @Pop", connection);
+                MySqlCommand command = new MySqlCommand("select c.* from City c join country co on c.Country = co.Code where co.Name = @LandSelect order by population desc", connection);
 
-                command.Parameters.AddWithValue("@Name", "%on");
-                command.Parameters.AddWithValue("@Pop", 1000000);
-                MySqlDataReader dataReader = command.ExecuteReader();
+                command.Parameters.Add("@LandSelect", MySqlDbType.VarChar).Value = land;
 
-                PrintResult(dataReader);
-                dataReader.Close();
-
-            }
-            catch (MySqlException se)
-            {
-                Console.WriteLine(se.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-        }
-
-
-        public static void PrintResult(MySqlDataReader dataReader)
-        {
-            string space = " | ";
-            List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            for (int i = 0; i < header.Count; i++)
-            {
-                if (i > 0)
+                try // System.Data.SqlDbType.NVarChar MySql.Data.MySqlClient.MySqlDbType
                 {
-                    Console.Write($"{space}");
-                }
-                Console.Write($"{header[i].ColumnName,-14}");
-            }
-            Console.WriteLine();
+                    command.Connection.Open();
 
-            while (dataReader.Read())
-            {
-                for (int i = 0; i < dataReader.FieldCount; i++)
-                {
-                    if (i > 0)
+                    Console.WriteLine("Verbindung wurde aufgebaut.");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        Console.Write($"{space}");
+                        List<DbColumn> header = reader.GetColumnSchema().ToList();
+                        for (int i = 0; i < header.Count; i++)
+                        {
+                            //Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "["+ header[i].ColumnSize + "]   ");
+                            if (header[i].DataTypeName == "nvarchar")
+                            {
+                                string formatString = string.Format("| {{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                                Console.Write(formatString, header[i].ColumnName);
+                            }
+                            else if (header[i].DataTypeName == "float")
+                            {
+                                string formatString = string.Format("| {{0,{0}:N2}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                                Console.Write(formatString, header[i].ColumnName);
+                            }
+                            else
+                            {
+                                string formatString = string.Format("| {{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                                Console.Write(formatString, header[i].ColumnName);
+                            }
+                        }
+                        Console.WriteLine("|");
+                        Console.ResetColor();
+                        while (reader.Read())
+                        {
+                            for (int i = 0; i < reader.FieldCount; i++)
+                            {
+                                Console.Write("| ");
+                                if (header[i].DataType == typeof(string))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Yellow;
+                                    string formatString = string.Format("{{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                                    Console.Write(formatString, reader[i]);
+                                }
+                                else if (header[i].DataType == typeof(float))
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Green;
+                                    string formatString = string.Format("{{0,{0}:N2}} ", 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                                    Console.Write(formatString, reader[i]);
+                                }
+                                else
+                                {
+                                    Console.ForegroundColor = ConsoleColor.Magenta;
+                                    string formatString = string.Format("{{0,{0}}} ", 1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                                    Console.Write(formatString, reader[i]);
+                                }
+                                Console.ResetColor();
+                            }
+                            Console.WriteLine("|");
+                        }
                     }
-                    Console.Write($"{dataReader[i],-14}");
                 }
-                Console.WriteLine();
+                catch (MySqlException sqlE)
+                {
+                    Console.WriteLine(sqlE.Message);
+                }
             }
         }
     }
 }
+
