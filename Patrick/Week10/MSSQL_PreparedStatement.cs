@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Data.Common;
 using System.Data;
 using System.Text;
+using System.ComponentModel.Design;
 
 namespace Patrick.Week10
 {
@@ -14,17 +15,19 @@ namespace Patrick.Week10
         {
             string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=patrick;Password=slipknot6";
 
-            string input = Console.ReadLine();
+            //string input = Console.ReadLine();
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("select *\r\nfrom city\r\nwhere name like @Name AND Population > @Pop", connection);
+                SqlCommand command = new SqlCommand("select *\r\nfrom city\r\nwhere name like @Name AND Population > @Pop AND Elevation < @ele", connection);
 
-                command.Parameters.Add("@Name", SqlDbType.NVarChar, 22).Value = "%on";                
-                command.Parameters.Add("@Pop", SqlDbType.Int).Value = 100000;
+                command.Parameters.Add("@Name", SqlDbType.NVarChar, 22).Value = "A%";
+                //command.Parameters.Add("@Name2", SqlDbType.NVarChar, 22).Value = "%a";
+                command.Parameters.Add("@Pop", SqlDbType.Int).Value = 10000;
+                command.Parameters.Add("@ele", SqlDbType.Int).Value = 200;
                 try
                 {
-                    command.Connection.Open();
+                    connection.Open();
                     SqlDataReader dataReader = command.ExecuteReader();
 
                     PrintResult(dataReader);
@@ -38,7 +41,9 @@ namespace Patrick.Week10
 
         public static void PrintResult(SqlDataReader dataReader)
         {
+            
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
+            
             PrintSepLine(header);
             for (int i = 0; i < header.Count; i++)
             {
@@ -46,7 +51,7 @@ namespace Patrick.Week10
                 Console.Write("|");
                 Console.ForegroundColor = ConsoleColor.Red;
                 string formatString = string.Format("{{0, {0}}} ", -1 * header[i].ColumnSize);
-                Console.Write(formatString,header[i].ColumnName);
+                Console.Write(formatString, header[i].ColumnName);
                 Console.ResetColor();
             }
             Console.WriteLine("|");

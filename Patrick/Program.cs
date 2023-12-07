@@ -1,3 +1,3 @@
 ﻿
-Patrick.Week10.MSSQL_PreparedStatement.Start();
+Patrick.Week10.MSSQL_ConsoleInput.Start();
 
