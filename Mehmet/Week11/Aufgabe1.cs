@@ -16,13 +16,16 @@ namespace Mehmet.Week11
             SqlConnection connection = new SqlConnection(StringConnect());
             Console.WriteLine("Geben Sie eine Stadt ein: ");
 
-            string Input1 = Console.ReadLine();
-            SqlCommand cmd = new SqlCommand("Select ci.Province , ci.Name,  ci.Population \r\n\tFrom City ci\r\n\twhere ci.Name = @Input1", connection);
-            cmd.Parameters.AddWithValue("Input1", Input1);
+            string cityName = Console.ReadLine();
+            SqlCommand cmd = new SqlCommand("SELECT ci.Province, ci.Name, ci.Population " +
+                "FROM City ci " +
+                "WHERE ci.Name = @cityName", connection);
+            cmd.Parameters.AddWithValue("@cityName", cityName);
 
             try
             {
                 connection.Open();
+                Console.WriteLine("connection is succeed!!\n\n\n");
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     int p = 0;
@@ -30,7 +33,6 @@ namespace Mehmet.Week11
 
                     while (reader.Read())
                     {
-                        Console.WriteLine("connection is succeed!!\n\n\n");
                         foreach (DbColumn col in header)
                         {
                             Console.Write(col.ColumnName + "     |     ");
@@ -47,19 +49,31 @@ namespace Mehmet.Week11
 
                     if (p == 1)
                     {
-                        NochmalAbfrage(Input1);
-                    }
-                    if (p == 0 ) 
+                        if(AskForPopulationChange(cityName))
+                        {
+                            ChangePopulation(cityName);
+                        } else
+                        {
+                            Start();
+                        }
+                    } else if(p == 0)
                     {
                         Console.WriteLine("Versuchs Nochmal!");
                         Start();
                     }
-                    Start();
+                    else
+                    {
+                        Console.WriteLine("Stadt ist nicht eindeutig!");
+                        Start();
+                    }
                 }
             }
             catch (SqlException sqlex)
             {
-                Console.WriteLine(sqlex.Message);
+                Console.WriteLine(sqlex);
+            } finally
+            {
+                connection.Close();
             }
         }
 
@@ -79,43 +93,43 @@ namespace Mehmet.Week11
                 }
             }
         }
-        public static void NochmalAbfrage(string Input1)
+        public static bool AskForPopulationChange(string cityName)
         {
             Console.WriteLine("Wollen Sie die Population ändern? ja | nein");
-            string Input2 = Console.ReadLine();
+            string myWill = Console.ReadLine().Trim().ToLower();
 
-            if (Input2 == "nein")
+            if (myWill == "nein")
             {
-                Start();
-            }
-            if (Input2 == "ja")
+                return false;
+            } 
+            else if (myWill == "ja")
             {
-                ChangePopulation(Input1);
+                return true;
             }
             else
             {
                 Console.WriteLine("Versuch es nochmal");
-                NochmalAbfrage(Input1);
+                return AskForPopulationChange(cityName);
             }
         }
         public static string StringConnect()
         {
             return "Persist Security Info=False;Initial Catalog=Mondial;server=tcp: localhost,1433;User=Mehmet;Password=Mehmet";
         }
-        public static void ChangePopulation(string Input1)
+        public static void ChangePopulation(string cityName)
         {
             string connectionString = (StringConnect());
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                Console.WriteLine("(Verbindung erfolgreich)\n\n\n");
+                Console.WriteLine("connection is succeed!!\n\n\n");
                 Console.WriteLine("um wie viel soll es sich ändern? (±x)");
-                int Input2 = TypeNumber();
-                string query = "update City set Population = Population + @Input2\r\n\tWhere Name = @Input1";
+                int number = TypeNumber();
+                string query = "update City set Population = Population + @number\r\n\tWhere Name = @cityName";
                 using (SqlCommand command = new SqlCommand(query, conn))
                 {
-                    command.Parameters.AddWithValue("@Input2", Input2);
-                    command.Parameters.AddWithValue("@Input1", Input1);
+                    command.Parameters.AddWithValue("@number", number);
+                    command.Parameters.AddWithValue("@cityName", cityName);
                     command.ExecuteNonQuery();
                     {
                         conn.Close();
