@@ -28,8 +28,6 @@ namespace Dimitri.Week10.MSSql
                     using (SqlDataReader dataReader = cmd.ExecuteReader())
                     {
                         PrintResult(dataReader);
-                        dataReader.Close();
-
                     }
                 }
                 catch (SqlException se)
@@ -44,15 +42,15 @@ namespace Dimitri.Week10.MSSql
         public static void PrintResult(SqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            //for (int i = 0; i < header.Count; i++)
-            //{
-            //    if (i > 0)
-            //    {
-            //        Console.Write(" | ");
-            //    }
-            //    Console.Write(header[i].DataTypeName + "[" + header[i].ColumnSize + "]");
-            //}
-            //Console.WriteLine();
+            for (int i = 0; i < header.Count; i++)
+            {
+                if (i > 0)
+                {
+                    Console.Write(" | ");
+                }
+                Console.Write(header[i].DataTypeName + "[" + header[i].ColumnSize + "]");
+            }
+            Console.WriteLine();
             for (int i = 0; i < header.Count; i++)
             {
                 if (i > 0)

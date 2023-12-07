@@ -10,11 +10,12 @@
 //Kerem.Week05.DataTableExample.Start();
 //Kerem.Week05.CountHesse.Start();
 //Kerem.Week06.DateTimeExamples.Start();
-Kerem.Exercises.TicTacToe.Start();
+//Kerem.Exercises.TicTacToe.Start();
 
 //Kerem.Week06.ExerciseZoo.ZooMain.Start();
 
 //Kerem.Week08.Museum.MuseumStart.Start();
 
-
 //Kerem.Week09.FileStream.FileStreamRead.Start();
+
+Kerem.Week10.MYSQL_Exercise.MYSQL_CRUD.Start();
