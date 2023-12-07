@@ -6,8 +6,8 @@ using MySql.Data.MySqlClient;
 
 namespace David.Week10
 {
-	public class MySQL_PreparedStatement
-	{
+    public class MySQL_PreparedStatement
+    {
         public static void Start()
         {
             // Der Connection String (Object) ruft durch den "Connection String" (server=...) eine Verbindung zum MySQL server auf!
@@ -27,14 +27,15 @@ namespace David.Week10
                 // Lokale Variable "command". Kann natürlich auch einen anderen Namen erhalten.
                 // OPEN und CLOSE sind wichtig um den Kanal zu öffnen und zu schließen. (Türe öffnen und hinter dir wieder schließen! ;)
 
-                command.Parameters.AddWithValue("@Name", "%au"); //Werte für den Command @=Aufruf verhält sich wie eine "Variable", nach Komma steht dann die Bedingung zB. Endung mit "on".
+                command.Parameters.AddWithValue("@Name", "%on"); //Werte für den Command @=Aufruf verhält sich wie eine "Variable", nach Komma steht dann die Bedingung zB. Endung mit "on".
                 command.Parameters.AddWithValue("@Pop", 1000000);
-                MySqlDataReader dataReader = command.ExecuteReader();
+                MySqlDataReader dataReader = command.ExecuteReader(); // ÖFFNET SICH SELBST! Führt die QUERY aus / SCHICKT sie and die Erweiterung und über diese wird die Abfrage über die DB ausgeführt.
+                // Executer = Ausführer
 
-                PrintResult(dataReader);
-                dataReader.Close();
+                PrintResult(dataReader); // Führt die PRINTRESULT Methode aus
+                dataReader.Close(); // SCHLIESST den EXECUTEREADER wieder 
             }
-            catch (MySqlException se)
+            catch (MySqlException se) // Catch falls etwas mit der Abfrage nicht funktioniert, damit es nicht abstürzt!
             {
                 Console.WriteLine(se.Message);
             }
@@ -43,38 +44,49 @@ namespace David.Week10
                 connection.Close(); // HIER wird die Verbindung geschlossen!
             }
         }
-        
-        public static void PrintResult(MySqlDataReader dataReader)
-        {
-            int abst = 20;
-            List<DbColumn> header = dataReader.GetColumnSchema().ToList();
 
+        public static void PrintResult(MySqlDataReader dataReader) //PRINT METHODE --> im MySQL_connectExample.cs anschauen.
+        {
+            List<DbColumn> header = dataReader.GetColumnSchema().ToList(); // Header geht in die DB und liest die HEADER (SpaltenNamen) aus. So wie beim Files auslesen.
+            //GetColumSchema() ist eine vorgefertigte Methode von der Erweiterung.
             for (int i = 0; i < header.Count; i++)
             {
                 if (i > 0)
                 {
-                    Console.Write(" | ");
+                    Console.Write("|");
                 }
-                Console.Write(header[i].ColumnName.PadRight(abst));
+                int width = Math.Max(12, header[i].ColumnName.Length);
+                if (header[i].DataType.Name == "String" && header[i].ColumnSize != null)
+                {
+                    width = -1 * Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length);
+                }
+                string formatstring = string.Format("{{0,{0}}}", width);
+                Console.Write(formatstring, header[i].ColumnName);
             }
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine();
-
-            while (dataReader.Read())
+            while (dataReader.Read())// dataReader ist wie die Varibale vom oben angeführten MySqlDataReader -- Liest den Inhalt der DB-Tabellen.
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
                     if (i > 0)
                     {
-                        Console.Write(" | ");
+                        Console.ForegroundColor = ConsoleColor.DarkRed;
+                        Console.Write("|");
                     }
-                    if (i == 2)
+                    int width = Math.Max(12, header[i].ColumnName.Length);
+                    string formatString = string.Format("{{0,{0}}}", width);
+                    if (header[i].DataType.Name == "String" && header[i].ColumnSize != null)
                     {
-                        Console.Write(dataReader[i].ToString().PadLeft(abst));
+                        width = -1 * Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length);
+                        formatString = string.Format("{{0,{0}}}", width);
                     }
-                    else
+                    else if (header[i].DataType.Name == "Single")
                     {
-                        Console.Write(dataReader[i].ToString().PadRight(abst));
+                        width = Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length);
+                        formatString = string.Format("{{0,{0}:N2}}", width);
                     }
+                    Console.Write(formatString, dataReader[i]);
                 }
                 Console.WriteLine();
             }
