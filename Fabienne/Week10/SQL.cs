@@ -1,10 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fabienne.Week10
 {
@@ -18,10 +13,10 @@ namespace Fabienne.Week10
             try
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("select * from city where Name LIKE @Name and Population > @Pop", connection);
+                MySqlCommand command = new MySqlCommand("select * from country order by population desc", connection);
 
-                command.Parameters.AddWithValue("@Name", "%on");
-                command.Parameters.AddWithValue("@Pop", 1000000);
+                command.Parameters.AddWithValue("@Name", "%A");
+                command.Parameters.AddWithValue("@Pop", 500000);
                 MySqlDataReader dataReader = command.ExecuteReader();
 
                 PrintResult(dataReader);
@@ -35,17 +30,21 @@ namespace Fabienne.Week10
             {
                 connection.Close();
             }
+
         }
+
         public static void PrintResult(MySqlDataReader dataReader)
         {
-            List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            for (int i = 0; i < header.Count; i++)
+            List<DbColumn> head = dataReader.GetColumnSchema().ToList();
+            for (int i = 0; i < head.Count; i++)
             {
+                string formatstring = string.Format("{{0, {0}}}", -1 * head[i].ColumnSize);
                 if (i > 0)
                 {
                     Console.Write(" | ");
                 }
-                Console.Write(header[i].ColumnName);
+
+                Console.Write(formatstring, head[i].ColumnName);
             }
             Console.WriteLine();
 
@@ -53,14 +52,30 @@ namespace Fabienne.Week10
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
+
                     if (i > 0)
                     {
                         Console.Write(" | ");
                     }
-                    Console.Write(dataReader[i]);
+                    if (Number(dataReader[i]))
+                    {
+                        string formatstring = string.Format("{{0, {0}}}", Math.Max((int)head[i].ColumnSize, head[i].ColumnName.Length));
+                        Console.Write(formatstring, dataReader[i]);
+                    }
+                    else
+                    {
+                        string formatstring = string.Format("{{0, {0}}}", -1 * Math.Max((int)head[i].ColumnSize, head[i].ColumnName.Length));
+                        Console.Write(formatstring, dataReader[i]);
+                    }
                 }
                 Console.WriteLine();
             }
         }
+        private static bool Number(object value)
+        {
+            return value is int || value is double || value is float || value is decimal;
+        }
+
+       
     }
 }
