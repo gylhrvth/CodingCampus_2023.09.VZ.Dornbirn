@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Erik.Week11._1
+namespace Sven.Week11.SQL_CRUD
 {
-    internal class Datenbank
+    internal class SQL_LandMain
     {
-         
     }
 }

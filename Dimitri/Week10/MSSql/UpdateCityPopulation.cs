@@ -33,7 +33,6 @@ namespace Dimitri.Week10.MSSql
         }
 
 
-
         public static string UserInputCity(string prompt)
         {
             Console.WriteLine(prompt);
@@ -68,9 +67,9 @@ namespace Dimitri.Week10.MSSql
 
         public static bool CheckForStringInReader(string cityName, SqlDataReader dataReader)
         {
-            while (dataReader.Read())
-            {
-                if (dataReader.GetString(0).Equals(cityName, StringComparison.OrdinalIgnoreCase))
+            while (dataReader.Read()) {
+
+                if (dataReader.HasRows)
                 {
                     Population = Int32.Parse(dataReader.GetValue(3).ToString());
                     return true;
@@ -113,7 +112,6 @@ namespace Dimitri.Week10.MSSql
                 {
                     connection.Open();
                     int outcome = cmd.ExecuteNonQuery();
-                    Console.WriteLine(outcome);
                     connection.Close();
                     return true;
                 }

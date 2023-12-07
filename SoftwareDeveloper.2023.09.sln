@@ -127,7 +127,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ressources", "Ressources\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GyulaTest", "GyulaTest\GyulaTest.csproj", "{4B30F3C2-B1FD-4E00-BC8C-FDE812DDE755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FabianTest", "FabianTest\FabianTest.csproj", "{4A23224F-FD8D-47A9-B6D9-1FE34167446D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FabianTest", "FabianTest\FabianTest.csproj", "{4A23224F-FD8D-47A9-B6D9-1FE34167446D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9F805725-89B7-4C58-BB3D-B8B84C418B15} = {9F805725-89B7-4C58-BB3D-B8B84C418B15}
 	EndProjectSection
