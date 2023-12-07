@@ -1,94 +1,122 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Data.Common;
 
 namespace Kerem.Week10
 {
-    internal class MYSQL_ConnectExample
+    public class MySqlConnectionExample
     {
         public static void Start()
         {
             Console.Write("Welches Land möchtest du sehen? ");
-            string land = Console.ReadLine();
-
+            string countryName = Console.ReadLine();
 
             string connectionString = "server=localhost;port=3306;user=root;password=Fenerbahce1907.;database=Mondial";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                MySqlCommand command = new MySqlCommand("select * \nfrom City c \njoin country co on c.Country = co.Code \nwhere co.Name = @LandSelect", connection);
-
-                //command.Parameters.Add("@LandSelect", System.Data.SqlDbType.NVarChar).Value = land;
-                command.Parameters.AddWithValue("@LandSelect",1).Value = land;
-                MySqlDataReader datareader = command.ExecuteReader();
                 try
                 {
-                    command.Connection.Open();
+                    connection.Open();
+                    Console.ForegroundColor = ConsoleColor.Green; // Ändere die Farbe für eine erfolgreiche Verbindung
+                    Console.WriteLine("Verbindung wurde erfolgreich hergestellt.");
+                    Console.ResetColor();
 
-                    Console.WriteLine("Verbindung wurde aufgebaut.");
+                    MySqlCommand command = new MySqlCommand("SELECT c.* FROM City c JOIN country co ON c.Country = co.Code WHERE co.Name = @CountryName", connection);
+                    command.Parameters.AddWithValue("@CountryName", countryName);
+
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    MySqlDataReader reader = command.ExecuteReader();
+
+                    List<DbColumn> header = reader.GetColumnSchema().ToList();
+
+                    // Tabellenkopf mit gelber Farbe
+                    PrintTableRow(header, ConsoleColor.Blue);
+
+                    while (reader.Read())
                     {
-                        List<DbColumn> header = reader.GetColumnSchema().ToList();
-                        for (int i = 0; i < header.Count; i++)
-                        {
-                            //Console.Write(header[i].ColumnName + " " + header[i].DataTypeName + "["+ header[i].ColumnSize + "]   ");
-                            if (header[i].DataTypeName == "nvarchar")
-                            {
-                                string formatString = string.Format("| {{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                                Console.Write(formatString, header[i].ColumnName);
-                            }
-                            else if (header[i].DataTypeName == "float")
-                            {
-                                Console.Write("| {0,20:N2} ", header[i].ColumnName);
-                            }
-                            else
-                            {
-                                Console.Write("| {0,20} ", header[i].ColumnName);
-                            }
-                        }
-                        Console.WriteLine("|");
-                        Console.ResetColor();
-                        while (reader.Read())
-                        {
-                            for (int i = 0; i < reader.FieldCount; i++)
-                            {
-                                Console.Write("| ");
-                                if (header[i].DataTypeName == "nvarchar")
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Yellow;
-                                    string formatString = string.Format("{{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
-                                    Console.Write(formatString, reader[i]);
-                                }
-                                else if (header[i].DataTypeName == "float")
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Green;
-                                    Console.Write("{0,20:N2} ", reader[i]);
-                                }
-                                else
-                                {
-                                    Console.ForegroundColor = ConsoleColor.Magenta;
-                                    Console.Write("{0,20} ", reader[i]);
-                                }
-                                Console.ResetColor();
-                            }
-                            Console.WriteLine("|");
-                        }
+                        // Datenzeile mit weißer Farbe
+                        PrintTableRow(reader, header, ConsoleColor.White);
                     }
+
+                    reader.Close();
                 }
                 catch (MySqlException sqlE)
                 {
-                    Console.WriteLine(sqlE.Message);
+                    Console.ForegroundColor = ConsoleColor.Red; // Ändere die Farbe für Fehler
+                    Console.WriteLine("Fehler bei der MySQL-Verbindung: " + sqlE.Message);
+                    Console.ResetColor();
                 }
-
             }
-
         }
 
+        private static void PrintTableRow(IEnumerable<DbColumn> columns, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            foreach (var column in columns)
+            {
+                string formatString = GetFormatString(column);
+                Console.Write(formatString, column.ColumnName);
+            }
+            Console.WriteLine("|");
+            Console.ResetColor();
+        }
+
+        private static void PrintTableRow(MySqlDataReader reader, IEnumerable<DbColumn> columns, ConsoleColor color)
+        {
+            Console.ForegroundColor = color;
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                Console.Write("| ");
+                string formatString = GetFormatString(columns, i);
+                Console.Write(formatString, reader[i]);
+            }
+            Console.WriteLine("|");
+            Console.ResetColor();
+        }
+
+        private static string GetFormatString(DbColumn column)
+        {
+            int columnSize = Math.Max((int)column.ColumnSize, (int)column.ColumnName.Length);
+
+            if (column.DataType == typeof(string))
+            {
+                return $"| {{0,{-columnSize}}} ";
+            }
+            else if (column.DataType == typeof(float))
+            {
+                return $"{{0,{columnSize}}} ";
+            }
+            else
+            {
+                return $"{{0,{columnSize}}} ";
+            }
+        }
+
+        private static string GetFormatString(IEnumerable<DbColumn> columns, int index)
+        {
+            var column = columns.ElementAt(index);
+            int columnSize = Math.Max((int)column.ColumnSize, (int)column.ColumnName.Length);
+
+            if (column.DataType == typeof(string))
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+                return $"{{0,{-columnSize}}} ";
+            }
+            else if (column.DataType == typeof(float))
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+
+                return $"{{0,{columnSize}:N2}} ";
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+
+                return $"{{0,{columnSize}}} ";
+            }
+        }
     }
 }
