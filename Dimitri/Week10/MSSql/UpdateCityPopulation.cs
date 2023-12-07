@@ -33,7 +33,6 @@ namespace Dimitri.Week10.MSSql
         }
 
 
-
         public static string UserInputCity(string prompt)
         {
             Console.WriteLine(prompt);
