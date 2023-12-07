@@ -6,7 +6,7 @@ using Martin.Week06.Person;
 using Martin.Week08.AbstraktGeometry;
 
 
-Martin.Week10.MySql.Start();
+Martin.Week10.MySqlUpdate.Start();
 
 
 
