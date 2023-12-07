@@ -34,6 +34,7 @@
     <None Remove="Week10\" />
     <None Remove="Week11\" />
     <None Remove="Week10\UebungCity\" />
+    <None Remove="Week10\BspLukasDB\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Week01\" />
@@ -62,6 +63,7 @@
     <Folder Include="Week10\" />
     <Folder Include="Week11\" />
     <Folder Include="Week10\UebungCity\" />
+    <Folder Include="Week10\BspLukasDB\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj">
