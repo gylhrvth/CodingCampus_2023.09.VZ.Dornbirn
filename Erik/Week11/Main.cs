@@ -20,7 +20,7 @@ namespace Erik.Week11
                 command.Parameters.Add("@Pop", SqlDbType.Int).Value = 1000000;
                 try
                 {
-                    Console.WriteLine("Successfully connected to database!");
+                    Console.WriteLine("Successfully connected to database! \n");
                     command.Connection.Open();
                     SqlDataReader dataReader = command.ExecuteReader();
                     PrintResult(dataReader);
@@ -36,15 +36,6 @@ namespace Erik.Week11
         public static void PrintResult(SqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
-            for (int i = 0; i < header.Count; i++)
-            {
-                if (i > 0)
-                {
-                    Console.Write(" | ");
-                }
-                Console.Write(header[i].ColumnName);
-            }
-            Console.WriteLine();
 
             while (dataReader.Read())
             {
@@ -52,7 +43,7 @@ namespace Erik.Week11
                 {
                     if (i > 0)
                     {
-                        Console.Write(" | ");
+                        Console.Write(String.Format("{0,-13}", " | "));
                     }
                     Console.Write(dataReader[i]);
                 }
