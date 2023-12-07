@@ -3,23 +3,23 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 
-namespace Kerem.Week10
+namespace Ali.Week10
 {
-    public class MySqlConnectionExample
+    public class MySQLFormatEX
     {
         public static void Start()
         {
             Console.Write("Welches Land möchtest du sehen? ");
             string countryName = Console.ReadLine();
 
-            string connectionString = "server=localhost;port=3306;user=root;password=Fenerbahce1907.;database=Mondial";
+            string connectionString = "server=localhost;port=3306;user=Ali;password=Denizli20@;database=Mondial";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
                 {
                     connection.Open();
-                    Console.ForegroundColor = ConsoleColor.Green; // Ändere die Farbe für eine erfolgreiche Verbindung
+                    Console.ForegroundColor = ConsoleColor.Green; 
                     Console.WriteLine("Verbindung wurde erfolgreich hergestellt.");
                     Console.ResetColor();
 
@@ -31,12 +31,12 @@ namespace Kerem.Week10
 
                     List<DbColumn> header = reader.GetColumnSchema().ToList();
 
-                    // Tabellenkopf mit gelber Farbe
+                    
                     PrintTableRow(header, ConsoleColor.Blue);
 
                     while (reader.Read())
                     {
-                        // Datenzeile mit weißer Farbe
+                        
                         PrintTableRow(reader, header, ConsoleColor.White);
                     }
 
@@ -44,7 +44,7 @@ namespace Kerem.Week10
                 }
                 catch (MySqlException sqlE)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red; // Ändere die Farbe für Fehler
+                    Console.ForegroundColor = ConsoleColor.Red; 
                     Console.WriteLine("Fehler bei der MySQL-Verbindung: " + sqlE.Message);
                     Console.ResetColor();
                 }
