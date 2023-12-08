@@ -1,15 +1,13 @@
 ﻿
 using MySql.Data.MySqlClient;
-using System.Data.Common;
 
 namespace Fabian.Week10.MySQL
 {
-    internal class SQLUpdateCity
+    internal class UpdateCityPopulation
     {
-        private static string connectionString = "server=localhost;port=3306;user=root;password=?Krfa2006?;database=Mondial";
         public static void Start()
         {
-           
+            string connectionString = "server=localhost;port=3306;user=root;password=?Krfa2006?;database=Mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
             try
             {
@@ -23,14 +21,14 @@ namespace Fabian.Week10.MySQL
 
                 int amount = 0;
 
-                while(amount == 0)
+                while (amount == 0)
                 {
                     Console.Write("How many people do u want to add to the population? ");
                     try
                     {
                         amount = Convert.ToInt32(Console.ReadLine());
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
                         Console.WriteLine("Enter a valid number");
                     }
@@ -39,29 +37,23 @@ namespace Fabian.Week10.MySQL
                         Console.WriteLine("Number is too high!");
                     }
                 }
-                          
+
                 MySqlCommand command = new MySqlCommand("update city set Population = Population + @Amount where Name = @Name", connection);
-
                 command.Parameters.AddWithValue("@Amount", amount);
-                command.Parameters.AddWithValue("@Name", city);
+                command.Parameters.AddWithValue("@City", city);
 
-                int effectedRows = command.ExecuteNonQuery();
-                Console.WriteLine($"{effectedRows} rows were affected.");
+                MySqlCommand populationCommand = new MySqlCommand("SELECT Population FROM city WHERE Name = @City", connection);
+                populationCommand.Parameters.AddWithValue("@City", city);
+
+                MySqlDataReader reader = populationCommand.ExecuteReader();
+                reader.Read();
+                Console.WriteLine($"The population of {city} has been updated to {reader.GetValue(0)}.");
+                reader.Close();
+
             }
             catch (MySqlException se)
             {
-                switch (se.Number)
-                {
-                    case 0:
-                        Console.WriteLine("Cannot connect to server.  Contact administrator");
-                        break;
-                    case 1045:
-                        Console.WriteLine("Invalid username/password, please try again");
-                        break;
-                    default:
-                        Console.WriteLine(se.Message + " error code: " + se.Number);
-                        break;
-                }
+                Console.WriteLine(se.Message + " error code: " + se.Number);
             }
             finally
             {
@@ -81,7 +73,7 @@ namespace Fabian.Week10.MySQL
                 return true;
             }
             reader.Close();
-            Console.WriteLine("Not a valid city!");
+            Console.WriteLine($"'{city}' is not a valid city!");
             return false;
         }
 

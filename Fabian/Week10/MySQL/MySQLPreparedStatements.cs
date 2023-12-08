@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data.Common;
-using System.Reflection;
 
 namespace Fabian.Week10.MySQL
 {
@@ -13,10 +12,15 @@ namespace Fabian.Week10.MySQL
             try
             {
                 connection.Open();
-                MySqlCommand command = new MySqlCommand("select * from country order by population desc", connection);
 
-                command.Parameters.AddWithValue("@Name", "%A");
-                command.Parameters.AddWithValue("@Pop", 500000);
+                Console.Write("What country do you want to select? ");
+                string country = Console.ReadLine();
+
+
+                MySqlCommand command = new MySqlCommand("select city.* from city join country c on c.Code = city.Country where c.name = @CountrySelect order by population desc;", connection);
+
+                command.Parameters.AddWithValue("@CountrySelect", country);
+
                 MySqlDataReader dataReader = command.ExecuteReader();
 
                 PrintResult(dataReader);
@@ -24,60 +28,85 @@ namespace Fabian.Week10.MySQL
             }
             catch(MySqlException se)
             {
-                Console.WriteLine(se.Message);
+                switch (se.Number)
+                {
+                    case 0:
+                        Console.WriteLine("Cannot connect to server.  Contact administrator");
+                        break;
+                    case 1045:
+                        Console.WriteLine("Invalid username/password, please try again");
+                        break;
+                    default:
+                        Console.WriteLine(se.Message);
+                        break;
+                }
             }
             finally
             {
                 connection.Close();
             }           
-
         }
-
         public static void PrintResult(MySqlDataReader dataReader)
         {
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
             Console.ForegroundColor = ConsoleColor.Cyan;
             for (int i = 0; i < header.Count; i++)
             {
-                string formatstring = string.Format("{{0, {0}}}", -1 * header[i].ColumnSize);
                 if (i > 0)
                 {
-                    Console.Write(" | "); 
+                    Console.Write(" | ");
                 }
-                
-                Console.Write(formatstring, header[i].ColumnName);
-            }
+                if (header[i].DataType == typeof(string))
+                {
+                    string formatstring = string.Format("{{0, {0}}}", -1 * Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                    Console.Write(formatstring, header[i].ColumnName);
+                }
+                else if (header[i].DataType == typeof(float))
+                {
+                    string formatstring = string.Format("{{0, {0}}}", Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                    Console.Write(formatstring, header[i].ColumnName);
+                }
+                else
+                {
+                    string formatstring = string.Format("{{0, {0}}}", Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                    Console.Write(formatstring, header[i].ColumnName);
+                }
+            }          
+            Console.WriteLine(" |");
             Console.ResetColor();
-            Console.WriteLine();
 
-            while(dataReader.Read())
+            while (dataReader.Read())
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
-                {
-                    
+                {               
                     if (i > 0)
                     {
                         Console.Write(" | ");
                     }
-                    if (IsNumeric(dataReader[i]))
+                    if (header[i].DataType == typeof(string))
                     {
-                        string formatstring = string.Format("{{0, {0}}}", Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        string formatstring = string.Format("{{0, {0}}}", -1 * Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                        Console.Write(formatstring, dataReader[i]);
+                    }
+                    else if (header[i].DataType == typeof(float))
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        string formatstring = string.Format("{{0, {0}:N2}}", Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
                         Console.Write(formatstring, dataReader[i]);
                     }
                     else
                     {
-                        string formatstring = string.Format("{{0, {0}}}", -1 * Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        string formatstring = string.Format("{{0, {0}}}", Math.Max((int)header[i].ColumnSize, header[i].ColumnName.Length));
                         Console.Write(formatstring, dataReader[i]);
                     }
-                    
+                    Console.ResetColor();
                 }
-                Console.WriteLine();
+                
+                Console.WriteLine(" |");
             }
         }     
-        private static bool IsNumeric(object value)
-        {
-            return value is int || value is double || value is float || value is decimal;
-        }
 
     }
 }
