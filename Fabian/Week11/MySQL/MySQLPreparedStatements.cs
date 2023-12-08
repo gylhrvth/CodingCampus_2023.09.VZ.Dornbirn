@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data.Common;
 
-namespace Fabian.Week10.MySQL
+namespace Fabian.Week11.MySQL
 {
     internal class MySQLPreparedStatements
     {

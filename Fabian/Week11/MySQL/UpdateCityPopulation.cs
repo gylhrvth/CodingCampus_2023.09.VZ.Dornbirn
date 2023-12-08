@@ -1,7 +1,7 @@
 ﻿
 using MySql.Data.MySqlClient;
 
-namespace Fabian.Week10.MySQL
+namespace Fabian.Week11.MySQL
 {
     internal class UpdateCityPopulation
     {
