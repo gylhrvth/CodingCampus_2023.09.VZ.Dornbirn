@@ -17,4 +17,5 @@ using DarioLuis.Zoo_Dario;
 using DarioLuis.Museum;
 using DarioLuis.Week10.MySql;
 
-MySQL_PreparedStatement.Start();
+//MySQL_PreparedStatement.Start();
+Bevölekrung_Datenank.Start();

@@ -18,4 +18,4 @@
 
 //Kerem.Week09.FileStream.FileStreamRead.Start();
 
-Kerem.Week10.MYSQL_ConnectExample.Start();
+Kerem.Week10.MYSQL_Exercise.MYSQL_CRUD.Start();

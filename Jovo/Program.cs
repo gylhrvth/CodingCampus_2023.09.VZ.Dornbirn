@@ -1,3 +1,3 @@
 using Jovo.Week11;
 
-MSSQLTRAIN.Start();
+SQLTEST.Start();
