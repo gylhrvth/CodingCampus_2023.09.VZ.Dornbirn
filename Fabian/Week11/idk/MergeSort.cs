@@ -1,5 +1,4 @@
-﻿
-namespace Fabian.Week11
+﻿namespace Fabian.Week11.idk
 {
     internal class MergeSort
     {
@@ -23,7 +22,7 @@ namespace Fabian.Week11
 
             for (; i < array.Length; i++)
             {
-                if(i < leftArray.Length)
+                if (i < leftArray.Length)
                 {
                     leftArray[i] = array[i];
                 }
@@ -48,7 +47,7 @@ namespace Fabian.Week11
 
             int i = 0, r = 0, l = 0;
 
-            while(l < leftSize && r < rightSize)
+            while (l < leftSize && r < rightSize)
             {
                 if (leftArray[l] < rightArray[r])
                 {
@@ -75,7 +74,7 @@ namespace Fabian.Week11
                 i++;
                 r++;
             }
-            
+
 
         }
     }
