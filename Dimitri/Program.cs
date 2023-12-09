@@ -12,4 +12,5 @@ using Dimitri.Week08._03Test;
 using Dimitri.Week08._04Filesystem;
 using Dimitri.Week08._05Selftest;
 using Dimitri.Week10.MSSql;
-UpdateCityPopulation.Start();
+using Dimitri.Week10.CRUD;
+CRUDStart.Start();
