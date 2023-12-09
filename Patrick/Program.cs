@@ -1,3 +1,3 @@
 ﻿
-Patrick.Week10.MSSQL_ConsoleInput.Start();
+Patrick.Week10.CountryInput.DatabaseMain.Start();
 
