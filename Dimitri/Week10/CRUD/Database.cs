@@ -29,5 +29,19 @@ namespace Dimitri.Week10.CRUD
         {
             _Connection?.Close();
         }
+
+        public void SearchCountry(string country)
+        {
+            string query = "Select * in country where name = @CountryName";
+
+            using (SqlCommand cmd = new SqlCommand(query, _Connection))
+            {
+                cmd.Parameters.AddWithValue("@CountryName", country);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    MSSql.MSSql.PrintResult(reader);
+                }
+            }
+        }
     }
 }
