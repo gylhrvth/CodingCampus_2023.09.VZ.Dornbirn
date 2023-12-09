@@ -26,12 +26,24 @@ namespace Dimitri.Week10.CRUD
         {
             string connectionString = "Persist Security Info=False;Initial Catalog=mondial;server=tcp:127.0.0.1,1433;User=dimitri;Password=sqlnew";
 
+            Country goefnien = new("Göfnien", "GOF", "Göfis", "Göfis", 9.07, 3312.00);
+           
             Database database = new(connectionString);
 
             try
             {
                 database.Connect();
-                database.SearchCountry("Austria");
+
+                database.DeleteCountry(goefnien._Code);
+
+                database.CreateCountry(goefnien);
+
+                Console.WriteLine("Country {0} exists: {1}", goefnien._Name, database.SearchCountry(goefnien._Name));
+
+                database.DeleteCountry(goefnien._Code);
+
+                Console.WriteLine("Country {0} exists: {1}", goefnien._Name, database.SearchCountry(goefnien._Name));
+
                 database.Disconnect();
             } catch (Exception ex)
             {

@@ -10,7 +10,7 @@ namespace Dimitri.Week10.CRUD
     {
         public string _Name;
         public string _Code;
-        public string _Captial;
+        public string _Capital;
         public string _Province;
         public double _Area;
         public double _Population;
@@ -19,7 +19,7 @@ namespace Dimitri.Week10.CRUD
         { 
             _Name = name;
             _Code = code;
-            _Captial = capital;
+            _Capital = capital;
             _Province = province;
             _Area = area;
             _Population = population;

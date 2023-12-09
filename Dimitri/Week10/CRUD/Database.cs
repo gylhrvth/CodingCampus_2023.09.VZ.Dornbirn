@@ -30,18 +30,60 @@ namespace Dimitri.Week10.CRUD
             _Connection?.Close();
         }
 
-        public void SearchCountry(string country)
+        public void CreateCountry(Country country)
         {
-            string query = "Select * in country where name = @CountryName";
+            string query = "INSERT INTO country (name, code, capital, province, area, population)" +
+                "VALUES (@Name, @Code, @Capital, @Province, @Area, @Population)";
+
+            using  (SqlCommand cmd = new SqlCommand(query, _Connection)) 
+            {
+                cmd.Parameters.AddWithValue("@Name", country._Name);
+                cmd.Parameters.AddWithValue("@Code", country._Code);
+                cmd.Parameters.AddWithValue("@Capital", country._Capital);
+                cmd.Parameters.AddWithValue("@Province", country._Province);
+                cmd.Parameters.AddWithValue("@Area", country._Area);
+                cmd.Parameters.AddWithValue("@Population", country._Population);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public bool SearchCountry(string country)
+        {
+            string query = "Select * FROM country where name = @CountryName";
 
             using (SqlCommand cmd = new SqlCommand(query, _Connection))
             {
                 cmd.Parameters.AddWithValue("@CountryName", country);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    MSSql.MSSql.PrintResult(reader);
+                    while(reader.Read())
+                    {
+                        if(reader.HasRows)
+                        {
+                            return true;
+                        }
+                    }
                 }
+
+                return false;
             }
+        }
+
+        public void DeleteCountry(string code) 
+        {
+            string query = "DELETE FROM country WHERE code = @Code";
+
+            using(SqlCommand cmd = new SqlCommand(query, _Connection))
+            {
+                cmd.Parameters.AddWithValue("Code", code);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateCityName(string cityName, Country country) 
+        {
+            
         }
     }
 }
