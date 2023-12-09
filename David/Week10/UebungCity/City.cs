@@ -13,7 +13,7 @@ namespace David.Week10.UebungCity
         {
             string connectionString = "server=localhost;port=3306;user=david;pwd=david;database=mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
-
+            string citySelect = "";
 
             try
             {
@@ -21,10 +21,11 @@ namespace David.Week10.UebungCity
                 Console.WriteLine("Connected.");
 
                 Console.WriteLine("Type in a City name of your choice:");
-                string citySelect = Console.ReadLine();
+                citySelect = Console.ReadLine();
 
                 MySqlCommand command = new MySqlCommand("SELECT c.Name, c.Population from city c \nWHERE c.Name = @Name", connection);
                 command.Parameters.AddWithValue("@Name", citySelect);
+
 
                 MySqlDataReader dataReader = command.ExecuteReader();
 
@@ -53,9 +54,38 @@ namespace David.Week10.UebungCity
 
                 Console.WriteLine("Bitte füge neue Bewohner der Stadt hinzu:");
                 string numberPeople = Console.ReadLine();
+                int.Parse(numberPeople);
 
                 MySqlCommand command = new MySqlCommand("UPDATE city SET Population = Population + @Number WHERE Name = @Name", connection);
                 command.Parameters.AddWithValue("@Number", numberPeople);
+                command.Parameters.AddWithValue("@Name", citySelect);
+
+                MySqlDataReader dataReader = command.ExecuteReader();
+
+                if (dataReader.HasRows)
+                {
+                    Console.WriteLine("Sorry the city is'nt in the database!");
+                }
+
+                PrintResult(dataReader);
+                dataReader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand command = new MySqlCommand("SELECT c.Name, c.Population from city c \nWHERE c.Name = @Name", connection);
+                command.Parameters.AddWithValue("@Name", citySelect);
+
 
                 MySqlDataReader dataReader = command.ExecuteReader();
 

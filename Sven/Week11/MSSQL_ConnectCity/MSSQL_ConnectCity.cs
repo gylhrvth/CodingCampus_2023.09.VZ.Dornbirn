@@ -38,7 +38,7 @@ namespace Sven.Week11.MSSQL_ConnectCity
                         {
                             if (reader.Read())
                             {
-                                Console.WriteLine($"| {reader["Name"],-10} | {reader["Population"],-10} |");
+                                Console.WriteLine($"| {reader["Name"],-10} | {reader["Population"], 10} |");
                             }
                         }
                     }
@@ -66,7 +66,7 @@ namespace Sven.Week11.MSSQL_ConnectCity
                                     {
                                         if (reader.Read())
                                         {
-                                            Console.WriteLine($"| {reader["Name"],-10} | {reader["Population"],-10} |");
+                                            Console.WriteLine($"| {reader["Name"], -10} | {reader["Population"], 10} |");
                                         }
                                     }
                                 }

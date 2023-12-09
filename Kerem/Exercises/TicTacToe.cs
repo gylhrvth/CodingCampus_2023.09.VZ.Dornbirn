@@ -40,10 +40,99 @@ namespace Kerem.Exercises
                 }
 
                 SetField();
-              
+                #region
+                //Check winning condition
+                char[] placerChars = { 'X', 'O' };
+
+                foreach(char playerChar in placerChars)
+                {
+                    if (((playField[0, 0] == playerChar) && playField[0, 1] == playerChar && (playField[0, 2] == playerChar))
+                        || ((playField[1, 0] == playerChar) && playField[1, 1] == playerChar && (playField[1, 2] == playerChar))
+                        || ((playField[2, 0] == playerChar) && playField[2, 1] == playerChar && (playField[2, 2] == playerChar))
+                        || ((playField[0, 0] == playerChar) && playField[1, 0] == playerChar && (playField[2, 0] == playerChar))
+                        || ((playField[0, 1] == playerChar) && playField[1, 1] == playerChar && (playField[2, 1] == playerChar))
+                        || ((playField[0, 2] == playerChar) && playField[2, 1] == playerChar && (playField[2, 2] == playerChar))
+                        || ((playField[0, 0] == playerChar) && playField[1, 1] == playerChar && (playField[2, 2] == playerChar))
+                        || ((playField[0, 2] == playerChar) && playField[1, 1] == playerChar && (playField[2, 0] == playerChar)))
+                        
+                    {
+                        if(playerChar == 'X')
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("\nPlayer 2 has won!");
+                            Console.ForegroundColor = ConsoleColor.White;
+
+                        }
+                        else
+                        {
+                            Console.ForegroundColor= ConsoleColor.Red;
+                            Console.WriteLine("\nPlayer 1 has won!");
+                            Console.ForegroundColor = ConsoleColor.White;
+
+                        }
+                        Console.WriteLine("Please press any key to reset the game!");
+                        Console.ReadKey();
+                        ResetField();
+
+                        break;
+                    }
+                    else if(turns == 10)
+                    {
+                        Console.WriteLine("\nDRAW!");
+                        Console.WriteLine("Please press any key to reset the game!");
+                        Console.ReadKey();
+                        ResetField();
+                        break;
+                    }
+                }
+                #endregion
+
+
+                #region
+                // Test if field is already taken
+                do
+                {
+                    Console.Write("\nPlayer {0}: Choose your field! ", player);
+                    try
+                    {
+                        input = Convert.ToInt32(Console.ReadLine());
+                    }
+                    catch (FormatException) 
+                    {
+                        Console.WriteLine("Please enter a number!");
+                    }
+
+                    if ((input == 1) && (playField[0, 0] == '1'))
+                        inputCorrect = true;
+                    else if ((input == 2) && (playField[0, 1] == '2'))
+                        inputCorrect = true;
+                    else if ((input == 3) && (playField[0, 2] == '3'))
+                        inputCorrect = true;
+                    else if ((input == 4) && (playField[1, 0] == '4'))
+                        inputCorrect = true;
+                    else if ((input == 5) && (playField[1, 1] == '5'))
+                        inputCorrect = true;
+                    else if ((input == 6) && (playField[1, 2] == '6'))
+                        inputCorrect = true;
+                    else if ((input == 7) && (playField[2, 0] == '7'))
+                        inputCorrect = true;
+                    else if ((input == 8) && (playField[2, 1] == '8'))
+                        inputCorrect = true;
+                    else if ((input == 9) && (playField[2, 2] == '9'))
+                        inputCorrect = true;
+
+                    else
+                    {
+                        Console.WriteLine("\n InCorrect Input! Please use another field!");
+                        inputCorrect = false;
+                    }
+
+
+                } while (!inputCorrect);
+                #endregion
+                
 
             } while (true);
-            
         }
         public static void ResetField()
         {
