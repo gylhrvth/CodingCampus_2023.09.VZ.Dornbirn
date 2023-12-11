@@ -1,17 +1,13 @@
 ﻿namespace Fabian.Week11.idk
 {
-    internal class BlackJack
+    internal class Blackjack
     {
         const double initialMoney = 100.00;
 
         private readonly static Random rnd = new();
-        static string skillLevel, name, nickName;
-        static string role = "Player";
-        static int age, totalGamesPlayed;
-        static int playerTotalCardScore = 0;
-        static int dealerTotalCardScore = 0;
-        static double money = initialMoney;
-        static double bettingAmount;
+        private static string skillLevel, name, nickName, role = "Player";
+        private static int age, totalGamesPlayed, playerTotalCardScore = 0, dealerTotalCardScore = 0;
+        private static double bettingAmount, money = initialMoney;
 
 
         public static void Start()
@@ -71,6 +67,7 @@
                         Restart();
                     }
                     SetConsoleColor(ConsoleColor.Green, $"Congratulations!!!! You won {bettingAmount}$ :)");
+                    money += bettingAmount;
                     Restart();
                     break;
 
@@ -97,50 +94,56 @@
 
         private static void AddBalance()
         {
-            try
+            int addMoney = 0;
+            while (addMoney <= 0)
             {
-                Console.Write("How much money would you like to add? ");
-                money += int.Parse(Console.ReadLine());
+                try
+                {
+                    Console.Write("How much money would you like to add? ");
+                    addMoney = int.Parse(Console.ReadLine());
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("only numbers!!!");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("number is too high!!!");
+                }
             }
-            catch (FormatException)
-            {
-                Console.WriteLine("only numbers!!!");
-                AddBalance();
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("number is too high!!!");
-                AddBalance();
-            }
-
-
+            
+            money += addMoney;
+            SetConsoleColor(ConsoleColor.Green, $"Succesfully added {addMoney}$ to balance, new balance is: {money}$");
         }
 
         private static void GetPlayerBet()
         {
             SetConsoleColor(ConsoleColor.Cyan, $"How much money do u want to bet?");
             SetConsoleColor(ConsoleColor.Green, $"(current money: {money}$): ");
-            try
+            int bet = 0;
+            while (bet <= 0)
             {
-                bettingAmount = int.Parse(Console.ReadLine());
-
-                if (bettingAmount > money)
+                try
                 {
-                    SetConsoleColor(ConsoleColor.Red, "You dont have that much money!!!");
-                    GetPlayerBet();
-                }
-            }
-            catch (FormatException)
-            {
-                Console.WriteLine("only enter numbers!!!");
-                GetPlayerBet();
+                    bet = int.Parse(Console.ReadLine());
 
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine("number is too high!!!");
-                GetPlayerBet();
-            }
+                    if (bettingAmount > money)
+                    {
+                        SetConsoleColor(ConsoleColor.Red, "You dont have that much money!!!");
+                        GetPlayerBet();
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("only enter numbers!!!");
+
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("number is too high!!!");
+                }
+            }           
+            bettingAmount = bet;
         }
 
         private static void HitCard(string role = "Player")
@@ -202,7 +205,7 @@
         private static void PrintMenuInfo()
         {
             Console.Clear();
-            Console.BackgroundColor = ConsoleColor.Yellow;
+            
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("  .-----------. ");
             Console.WriteLine(" /------------/|");
@@ -214,7 +217,7 @@
             Console.WriteLine("|            |||");
             Console.WriteLine("|            |||");
             Console.WriteLine("| ♥       ♥  ||/");
-            Console.WriteLine("\\-----------./  ");
+            Console.WriteLine("\\___________./  ");
             Console.WriteLine();
             Console.ResetColor();
             Console.WriteLine("--------------------------------------------------------------------------------------");
