@@ -20,14 +20,14 @@ namespace David.Week10.BspLukasDB
             try
             {
 				database.connect();
-                database.DeleteCity("KD", "KönigCity", "Central Königreich");
-                database.DeleteCity("KD", "KingCity", "Central Kingdom");
+                database.DeleteCountry("KD", "KingCitttttt", "Central Kingdom");
+                database.DeleteCountry("KD", "KingCity", "Central Kingdom");
 
-                // Exist the requested Cities?
+                // Exist the requested Counties?
                 Console.WriteLine("Does Denmark exist in Mondial: " + (database.SearchCountry("Denmark").Count > 0));
 				Console.WriteLine("Does the Kingdom of David exist in Mondial: " + (database.SearchCountry("Kingdom of David").Count > 0));
 
-				// Create the missing City.
+				// Create the missing Country.
 				Console.WriteLine("Creating now the Kingdom of David");
 
 				Country kingdomOfDavid = new Country("Kingdom of David", "KD", "KingCity", "Central Kingdom", 18000000, 150000000);
@@ -35,27 +35,27 @@ namespace David.Week10.BspLukasDB
                 Console.WriteLine("Does the Kingdom of David exist in Mondial: " + (database.SearchCountry("Kingdom of David").Count > 0));
 
 				// Update the Population
-				//Country receiveName = database.SearchCountry("KingCity")[2];
-				//Console.WriteLine("Updating the Name: " + receiveName.capital);
+				Country receiveName = database.SearchCountry("KingCitttttt")[0];
+				Console.WriteLine("Updating the Name: " + receiveName.capital);
 
-				//kingdomOfDavid.capital = "KingCity";
-				//database.UpdateCountry("KD", "KönigsStadt", "Central Kingdom", kingdomOfDavid);
-				//Console.WriteLine("Neuer Name der Stadt = KönigsStadt: " + (database.SearchCountry("KönigsStadt").Count > 0));
+				kingdomOfDavid.capital = "KingCity";
+				database.UpdateCountry("KD", "KingCitttttt", "Central Kingdom", kingdomOfDavid);
+				Console.WriteLine("Neuer Name der Stadt = KönigsStadt: " + (database.SearchCountry("KönigsStadt").Count > 0));
 
                 //Zurück
-                //kingdomOfDavid.capital = "KönigsStadt";
-               //database.UpdateCountry("KD", "KingCity", "Central Kingdom", kingdomOfDavid);
+                kingdomOfDavid.capital = "KönigsStadt";
+                database.UpdateCountry("KD", "KingCity", "Central Kingdom", kingdomOfDavid);
 
 
-                // Delete the new City again.
+                // Delete the new Country again.
                 Console.WriteLine("Delting Kingdom of David agian.");
-				database.DeleteCity("KD", "KingCity", "Central Kingdom");
+				database.DeleteCountry("KD", "KingCity", "Central Kingdom");
 
                 //Check if deleted.
                 Console.WriteLine("Does the Kingdom of David exist in Mondial: " + (database.SearchCountry("Kingdom of David").Count > 0));
 
                 // Delete a City that doesn't exist to prove the Exeption
-               database.DeleteCity("KD", "KingCity", "Central Kingdom");
+               database.DeleteCountry("KD", "KingCity", "Central Kingdom");
 
 
             }
