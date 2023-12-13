@@ -1,0 +1,16 @@
+﻿using System;
+namespace David.Week04.Udemy
+{
+	public class uebung
+	{
+		public void Start(string[] args)
+		{
+			List<int> ints = new List<int>();
+
+			ints.Add(100);
+			ints.Add(-100);
+			ints.Add(500);
+		}
+	}
+}
+
