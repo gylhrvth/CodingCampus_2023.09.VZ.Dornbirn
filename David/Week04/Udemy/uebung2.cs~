@@ -1,0 +1,17 @@
+﻿using System;
+namespace David.Week04.Udemy
+{
+	public class uebung2
+	{
+		public static void Start()
+		{
+			List<string> names = new List<string>()
+			{
+				"David", "Camilo", "Josè"
+			};
+
+			Console.WriteLine(names[1]);
+		}
+	}
+}
+

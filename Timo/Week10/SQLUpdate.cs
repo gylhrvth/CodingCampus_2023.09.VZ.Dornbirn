@@ -1,16 +1,21 @@
-﻿
-using MySql.Data.MySqlClient;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.Common;
 
-namespace Fabian.Week10.MySQL
+namespace Timo.Week10
 {
-    internal class SQLUpdateCity
+    public class SQLUpdate
     {
-        private static string connectionString = "server=localhost;port=3306;user=root;password=?Krfa2006?;database=Mondial";
+        private static string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Timo;Password=Timo1234";
         public static void Start()
         {
-           
-            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            SqlConnection connection = new SqlConnection(connectionString);
             try
             {
                 connection.Open();
@@ -23,14 +28,14 @@ namespace Fabian.Week10.MySQL
 
                 int amount = 0;
 
-                while(amount == 0)
+                while (amount == 0)
                 {
                     Console.Write("How many people do u want to add to the population? ");
                     try
                     {
                         amount = Convert.ToInt32(Console.ReadLine());
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
                         Console.WriteLine("Enter a valid number");
                     }
@@ -39,16 +44,19 @@ namespace Fabian.Week10.MySQL
                         Console.WriteLine("Number is too high!");
                     }
                 }
-                          
-                MySqlCommand command = new MySqlCommand("update city set Population = Population + @Amount where Name = @Name", connection);
+                SqlCommand command = new SqlCommand("update city set Population = Population + @Amount where Name = @Name", connection);
 
                 command.Parameters.AddWithValue("@Amount", amount);
                 command.Parameters.AddWithValue("@Name", city);
 
-                int effectedRows = command.ExecuteNonQuery();
-                Console.WriteLine($"{effectedRows} rows were affected.");
+                //int effectedRows = command.ExecuteNonQuery();
+                //Console.WriteLine($"{effectedRows} rows were affected.");
+                //SqlCommand cmd = new SqlCommand("select * from city where name = @City", connection);
+
+                Console.WriteLine("Inhabitants of city \"{0}\" were updated", city);
+
             }
-            catch (MySqlException se)
+            catch (SqlException se)
             {
                 switch (se.Number)
                 {
@@ -69,11 +77,11 @@ namespace Fabian.Week10.MySQL
             }
         }
 
-        public static bool IsValidCity(MySqlConnection conn, string city)
+        public static bool IsValidCity(SqlConnection conn, string city)
         {
-            MySqlCommand command = new MySqlCommand("select * from city where name = @City", conn);
+            SqlCommand command = new SqlCommand("select * from city where name = @City", conn);
             command.Parameters.AddWithValue("@City", city);
-            MySqlDataReader reader = command.ExecuteReader();
+            SqlDataReader reader = command.ExecuteReader();
 
             if (reader.HasRows)
             {
@@ -81,7 +89,7 @@ namespace Fabian.Week10.MySQL
                 return true;
             }
             reader.Close();
-            Console.WriteLine("Not a valid city!");
+            Console.WriteLine("\"{0}\" is not a valid city!", city);
             return false;
         }
 
