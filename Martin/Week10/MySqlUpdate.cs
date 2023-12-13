@@ -11,7 +11,7 @@ namespace Martin.Week10
             int AddNumber = 0;
             string city = "";
 
-            string connectionString = "server=localhost;port=3306;user=Martin;pwd=NiceTry;database=Mondial";
+            string connectionString = "server=localhost;port=3306;user=Martin;pwd=Enibas75@@!!;database=Mondial";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             try
