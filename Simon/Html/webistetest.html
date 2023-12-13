@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            display: none;
+            background-color: #333;
+        }
+
+        nav ul li {
+            display: block;
+            text-align: center;
+        }
+
+        nav:hover ul {
+            display: block;
+        }
+
+        .image-slider {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-slider img {
+            width: 100%;
+            height: auto;
+            display: block;
+            animation: slide 10s infinite;
+        }
+
+        @keyframes slide {
+            0%, 20% {
+                transform: translateX(0);
+            }
+            25%, 45% {
+                transform: translateX(-100%);
+            }
+            50%, 70% {
+                transform: translateX(-200%);
+            }
+            75%, 95% {
+                transform: translateX(-300%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        section {
+            padding: 20px;
+            transition: background-color 0.5s;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Media Queries */
+        @media only screen and (max-width: 600px) {
+            nav a {
+                font-size: 14px;
+            }
+
+            nav ul {
+                top: 30px;
+            }
+
+            section {
+                padding: 10px;
+            }
+
+            section img {
+                margin: 10px auto;
+            }
+        }
+
+        /* New Styles */
+        .action-buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .action-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .action-buttons button:hover {
+            background-color: #555;
+        }
+
+        .hover-image-text {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .hover-image-text img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .hover-image-text:hover img {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Modern Website</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">More</a>
+        <ul>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 2</a></li>
+            <li><a href="#">Option 3</a></li>
+        </ul>
+    </nav>
+
+    <div class="image-slider">
+        <img src="https://placekitten.com/1600/600" alt="Slider Image 1">
+        <img src="https://placekitten.com/1600/601" alt="Slider Image 2">
+        <img src="https://placekitten.com/1600/602" alt="Slider Image 3">
+    </div>
+
+    <section>
+        <h2>Welcome to Our Website!</h2>
+        <p>This is a simple and modern website with images and a nice menu. Feel free to explore!</p>
+        <img src="https://placekitten.com/800/400" alt="Sample Image">
+        <p>More content goes here...</p>
+    </section>
+
+    <div class="action-buttons">
+        <button onclick="alert('Button 1 clicked!')">Button 1</button>
+        <button onclick="console.log('Button 2 clicked!')">Button 2</button>
+        <button onclick="window.location.href='https://www.example.com'">Button 3</button>
+    </div>
+
+    <div class="hover-image-text">
+        <p>Hover over this text to display an image:</p>
+        <img src="https://placekitten.com/400/300" alt="Hover Image">
+    </div>
+
+    <footer>
+        &copy; 2023 Modern Website. All rights reserved.
+    </footer>
+
+</body>
+</html>
