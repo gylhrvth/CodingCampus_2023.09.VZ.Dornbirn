@@ -48,7 +48,9 @@
                         HitCard();
                     }
 
-                    SetConsoleColor(ConsoleColor.Cyan, $"Your total score is {playerTotalCardScore}.");
+                    SetConsoleColor(ConsoleColor.Cyan, $"Your total score is {playerTotalCardScore}.");                  
+                    HitCard("Dealer");
+                    SetConsoleColor(ConsoleColor.Yellow, $"Dealer's total score is {dealerTotalCardScore}\n");
 
                     if (playerTotalCardScore > 21)
                     {
@@ -56,11 +58,7 @@
                         money -= bettingAmount;
                         Restart();
                     }
-
-                    HitCard("Dealer");
-                    SetConsoleColor(ConsoleColor.Yellow, $"Dealer's total score is {dealerTotalCardScore}\n");
-
-                    if (playerTotalCardScore <= dealerTotalCardScore)
+                    else if (playerTotalCardScore <= dealerTotalCardScore)
                     {
                         SetConsoleColor(ConsoleColor.Red, $"You lost!!! you lost {bettingAmount}$");
                         money -= bettingAmount;
@@ -89,18 +87,27 @@
                 case "4":
                     Console.WriteLine("Bye! :)");
                     return;
+                default:
+                    Console.WriteLine("Not valid!");
+                    BlackJackGame();
+                    break;
             }
         }
 
         private static void AddBalance()
         {
-            int addMoney = 0;
-            while (addMoney <= 0)
+            int addMoney = -1;
+            while (addMoney < 0)
             {
                 try
                 {
-                    Console.Write("How much money would you like to add? ");
+                    Console.Write("How much money would you like to add? (type 0 to exit): ");
                     addMoney = int.Parse(Console.ReadLine());
+
+                    if(addMoney == 0)
+                    {
+                        BlackJackGame();
+                    }
                 }
                 catch (FormatException)
                 {
@@ -118,20 +125,21 @@
 
         private static void GetPlayerBet()
         {
-            SetConsoleColor(ConsoleColor.Cyan, $"How much money do u want to bet?");
+            SetConsoleColor(ConsoleColor.Cyan, $"How much money do u want to bet? (type 0 to exit): ");
             SetConsoleColor(ConsoleColor.Green, $"(current money: {money}$): ");
-            int bet = 0;
-            while (bet <= 0)
+            int bet = -1;
+            while (bet < 0)
             {
                 try
                 {
                     bet = int.Parse(Console.ReadLine());
 
-                    if (bettingAmount > money)
+                    if (bet > money)
                     {
                         SetConsoleColor(ConsoleColor.Red, "You dont have that much money!!!");
-                        GetPlayerBet();
+                        bet = -1;
                     }
+                    else if (bet == 0) BlackJackGame();
                 }
                 catch (FormatException)
                 {
