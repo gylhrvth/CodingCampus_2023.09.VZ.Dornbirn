@@ -3,19 +3,19 @@ namespace David.Week07
 {
 	public class Ananas : Obst
 	{
-		private string _Leafs;
+		private string Leafs;
 
 
 		public Ananas (string name, string color, int price, string leafs) : base(name, color, price)
 		{
-			_Leafs = leafs;
+			this.Leafs = leafs;
 		}
 
         public override void PrintObst()
         {
 
 			base.PrintObst();
-			Console.WriteLine($"My name is {_Name} and I'm special because I have {_Leafs} as hair!");
+			Console.WriteLine($"My name is {Name} and I'm special because I have {Leafs} as hair!");
         }
     }
 }
