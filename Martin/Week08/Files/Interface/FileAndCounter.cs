@@ -11,6 +11,11 @@ namespace Martin.Week08.Files.Interface
 
         private int _counterFolder = 0;
         private int _counterFile = 0;
+
+        public int CounterFolder {  get => _counterFolder; }
+        public int CounterFile { get => _counterFile; }
+
+
         public FileAndCounter() { }
 
         public void OnFileReceived(int depth, string path)
