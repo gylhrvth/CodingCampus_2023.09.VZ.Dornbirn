@@ -8,9 +8,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Title of the site-->
     <title>Hello World!</title>
+    <!--favicon-->
+    <link rel="icon" type="image/gif" href="smiley.gif">
+    <!--css presedence first are the inline css style attribute, then the style element inside the head and last the external css file as a link and relation type stylesheet-->
+    <link rel="stylesheet" href="styles.css">
+    <!--<style>
+        h1 {
+          color: blue;
+          font-family: verdana;
+          font-size: 300%;
+        }
+        p {
+          color: red;
+          font-family: courier;
+          font-size: 160%;
+        }
+        p {
+        border: 2px solid rgb(38, 124, 136);
+        }
+        p {
+        padding: 30px;
+        margin: 20px;
+        }
+        </style> -->
 </head>
 <!--Body: containe for visble content-->
-<body style="background-color:powderblue;"></body>">
+<body style="background-color:powderblue;"></body>
     <h1 style="color: blueviolet;">Hauptkapitel 1</h1><!--header 1 with color attribute - Attributes hould be quoted!!!-->
     <p style="background-color:tomato;" title="Hello World!">Hello <br> World!</p><!--paragraph with title/tooltip and line break-->
     <br>
@@ -19,8 +42,17 @@
     <br> <!--Line break-->
     <p style="color:magenta">Heute ist Mittwoch</p>
     <h3 style="font-family:verdana;">Kapitel 3</h3><!--header 3 with font style-->
-    <h3 style="scrollbar-arrow-color: aquamarine;">Heading with style tags</h3>
-    <a style="color: pink"href="https://liquipedia.net/" target="_blank">liquipedia</a> <!--link-->
+    <a style="color: pink" href="https://liquipedia.net/" target="_blank">liquipedia</a> <!--link-->
+    <br>
+    <a href="https://liquipedia.net/" target="_blank">liquipedia</a> <!--link-->
+    <br>
+    <a href="https://archlinux.org" target ="_blank">archlinux target _blank</a> <!--link with external css formatting-->
+    <br>
+    <a href="https://archlinux.org" target ="_parent">archlinux target _parent</a> <!--link with external css formatting-->
+    <br>
+    <a href="https://archlinux.org" target ="_self">archlinux target _self</a> <!--link with external css formatting-->
+    <br>
+    <a href="https://archlinux.org" target ="_top">archlinux target _top</a> <!--link with external css formatting-->
     <br>
     <img title="liquipedia" src="liquipedia_icon_menu.png" alt="liquipedia menu icon" width="130" height="80"><!--picture with tooltip and alternative text if picture cannot be found-->
     <br>
@@ -66,6 +98,98 @@
     </pre>
     <h1 style="text-align:center;">Centered Heading</h1>
     <p style="text-align:center;">Centered paragraph.</p>
+    <p>
+        <strong>My Bonnie lies over the ocean.</strong> <!--strong-->
+      
+        <b>My Bonnie lies over the sea.</b><!--bold-->
+      
+        <i>My</i> <!--italic-->
+        <em>Bonnie</em> <!--empphasized: screenreader with verbal stressing-->
+        <mark>over</mark>  <!--marked-->
+        <small>the</small> <!--small-->
+        <del>ocean.</del> <!--deleted-->
+      
+        <ins>Oh,</ins> <!--inserted--> 
+        <sub>bring</sub> <!--subscript-->
+        <sup>back</sup> <!--superscript-->
+        my Bonnie to me.
+    </p>
+    <!--blockquote-->
+    <p>Here is a quote from WWF's website:</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+    For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization, WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+    </blockquote>
+    <!--shortquote-->
+    <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+    <!--abbreviation-->
+    <p>The <abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+
+    <!--adress-->
+    <address>
+        Written by John Doe.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <!--cite-->
+    <p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+    <!--bidirectional override - used to override current text direction-->
+    <bdo dir="rtl">This text will be written from right to left</bdo>
+    <!--color settings-->
+    <!-- background oclor-->
+    <!--it is possible to use hex,rgb and hsl codes to change your colors-->
+    <h1 style="background-color:rgb(255, 99, 71);">...</h1>
+    <h1 style="background-color:#ff6347;">...</h1>
+    <h1 style="background-color:hsl(9, 100%, 64%);">...</h1>
+
+    <h1 style="background-color:rgba(255, 99, 71, 0.5);">...</h1>
+    <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">...</h1>
+    <!--border color-->
+    <h1 style="border:2px solid Tomato;">Hello World</h1>
+    <h1 style="border:2px solid DodgerBlue;">Hello World</h1>
+    <h1 style="border:2px solid Violet;">Hello World</h1>
+
+    <!--images-->
+    <p><img src="smiley.webp" alt="Smiley face" style="float:right;width:100px;height:100px;padding-top:20px">
+        The image will float to the right of the text.</p>
+        
+        <p><img src="smiley.webp" alt="Smiley face" style="float:left;width:100px;height:100px;padding-bottom:500px">
+        The image will float to the left of the text.</p>
+
+        <picture>
+            <source media="(min-width: 650px)" srcset="220711-james-webb.jpg">
+            <source media="(min-width: 412px)" srcset="james-webb-telescope--tarantula-nebula-wallpaper-361042464.jpg">
+            <img src="smiley.webp">
+        </picture>
+    <!--unorder list-->
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+      </ul>
+
+    <!--ordered list-->
+    <ol>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    <!--description list-->
+    
+    <dl>
+        <dt>Coffee</dt>
+        <!--span inline element to  style text inline-->
+        <span style="color:green;font-weight:bold"><dd>- black hot drink</dd></span>
+        <!--div block as a container to style an entire block-->
+    <div style="background-color:black;color:white;padding:20px;">
+        <dt>Milk</dt>
+        <dd>- white cold drink</dd>
+    </div>
+    </dl>
+    <!--shows that an dive element takes all the available width-->
+    <p style="color:#ff6347">Ipsum <div>I am a div</div> dolor sit amet.</p>
+    <!--script tag that executes javascript code-->
     <script>
         let wort = "word"
         let zahl = "25"
