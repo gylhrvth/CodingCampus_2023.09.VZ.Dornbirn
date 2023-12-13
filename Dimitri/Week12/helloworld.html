@@ -176,12 +176,19 @@
         <li>Milk</li>
     </ol>
     <!--description list-->
+    
     <dl>
         <dt>Coffee</dt>
-        <dd>- black hot drink</dd>
+        <!--span inline element to  style text inline-->
+        <span style="color:green;font-weight:bold"><dd>- black hot drink</dd></span>
+        <!--div block as a container to style an entire block-->
+    <div style="background-color:black;color:white;padding:20px;">
         <dt>Milk</dt>
         <dd>- white cold drink</dd>
+    </div>
     </dl>
+    <!--shows that an dive element takes all the available width-->
+    <p style="color:#ff6347">Ipsum <div>I am a div</div> dolor sit amet.</p>
     <!--script tag that executes javascript code-->
     <script>
         let wort = "word"
