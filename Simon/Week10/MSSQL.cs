@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Simon.Week10
 {
@@ -42,23 +43,39 @@ namespace Simon.Week10
             List<DbColumn> header = dataReader.GetColumnSchema().ToList();
             for (int i = 0; i < header.Count; i++)
             {
-                if (i > 0)
-                {
-                    Console.Write(" | ");
-                }
-                Console.Write(header[i].ColumnName);
+                Console.Write("| ");
+                //string formatString = string.Format("{{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                string formatString = $"{{0,{-1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length)}}} ";
+                Console.Write(formatString, header[i].ColumnName);
+
             }
             Console.WriteLine();
+            Console.ResetColor();
 
             while (dataReader.Read())
             {
                 for (int i = 0; i < dataReader.FieldCount; i++)
                 {
-                    if (i > 0)
+                    Console.Write("| ");
+                    if (header[i].DataTypeName == "nvarchar")
                     {
-                        Console.Write(" | ");
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        string formatString = string.Format("{{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        Console.Write(formatString, dataReader[i]);
                     }
-                    Console.Write(dataReader[i]);
+                    else if (header[i].DataTypeName == "float")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        string formatString = string.Format("{{0,{0}}} ", Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        Console.Write(formatString, dataReader[i]);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                        string formatString = string.Format("{{0,{0}}} ", -1 * Math.Max((int)header[i].ColumnSize, (int)header[i].ColumnName.Length));
+                        Console.Write(formatString, dataReader[i]);
+                    }
+                    Console.ResetColor();
                 }
                 Console.WriteLine();
             }
