@@ -50,6 +50,6 @@ using David.Week10;
 //David.Week10.TEST.Start();
 //David.Week10.UebungCity.City.Start();
 
+//David.Week04.Udemy.studentMain.Start();
+
 David.Week10.BspLukasDB.DatavbaseStart.Start();
-
-

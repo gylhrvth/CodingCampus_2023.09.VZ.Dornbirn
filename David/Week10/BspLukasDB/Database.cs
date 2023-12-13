@@ -60,7 +60,7 @@ namespace David.Week10.BspLukasDB
 
         public Country CreateCountry(Country country)
         {
-            string query = "INSERT INTO country (Name, Code, Capital, Province, Area, Population)" +
+            string query = "INSERT INTO country (Name, Code, Capital, Province, Area, Population) " +
                 "VALUES (@Name, @Code, @Capital, @Province, @Area, @Population)";
 
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -73,6 +73,7 @@ namespace David.Week10.BspLukasDB
                 command.Parameters.AddWithValue("@Population", country.population);
 
                 int result = command.ExecuteNonQuery();
+
                 if (result == 0)
                 {
                     throw new Exception("Country could not be created! ");
@@ -81,7 +82,7 @@ namespace David.Week10.BspLukasDB
             }
         }
 
-        public bool DeleteCity(string code, string capital, string province)
+        public bool DeleteCountry(string code, string capital, string province)
         {
             string query = "DELETE FROM country WHERE code = @Code AND capital = @Capital AND province = @Province";
             using(MySqlCommand command = new MySqlCommand(query, connection))
