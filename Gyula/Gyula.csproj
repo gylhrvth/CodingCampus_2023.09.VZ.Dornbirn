@@ -42,7 +42,6 @@
     <Folder Include="Week10\MSSQL\" />
     <Folder Include="Week10\MySql\" />
     <Folder Include="Week09\" />
-    <Folder Include="Week11\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ressources\Ressources.csproj" />

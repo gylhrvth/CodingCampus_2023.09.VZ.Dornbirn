@@ -16,7 +16,7 @@ namespace Niklas.Week11
             Console.Write("Welches Land möchtest du sehen? ");
             string land = Console.ReadLine();
 
-            string connectionString = "server=localhost;port=3306;user=Niklas;password=6C#fw,_.UDbLa&g;database=Mondial";
+            string connectionString = "port=3306;user=Niklas;password=6C#fw,_.UDbLa&g;database=Mondial;server=localhost";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -28,7 +28,6 @@ namespace Niklas.Week11
                 {
                     command.Connection.Open();
 
-                    Console.WriteLine("Verbindung wurde aufgebaut.");
                     Console.ForegroundColor = ConsoleColor.Blue;
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
