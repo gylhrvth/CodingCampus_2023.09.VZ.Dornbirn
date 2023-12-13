@@ -5,7 +5,12 @@
 
 //Gheorghe.Week10.MSSQL.Start();
 
-Gheorghe.Week10.MSSQL_ConnectExample.Start();
+//Gheorghe.Week10.MSSQL_ConnectExample.Start();
+//Gheorghe.Week10.SqlTestConnection.Start();
+//Gheorghe.Week10.SqlAufgabeConnection.Start();
+Gheorghe.Week11.DatabaseStart.Start();
+
+
 
 
 

@@ -1,0 +1,40 @@
+﻿using System;
+using Org.BouncyCastle.Asn1.Crmf;
+
+namespace David.Week04.Udemy
+{
+    public class uebung3
+    {
+        public static void Start()
+        {
+            List<string> names = new List<string>()
+            {
+                "David","Camilo","José"
+            };
+            List<int> nc = new List<int>()
+            {
+                4,3,2
+            };
+
+            foreach (var student in names)
+            {
+                Console.Write(student + " | ");
+            }
+
+            foreach (var note in nc)
+            {
+                Console.WriteLine(note + " | ");
+            }
+
+            for (int i = 0; i < nc.Count; i++)
+            {
+                int durchschnitt = 0;
+                durchschnitt++;
+
+                int sum;
+                sum = nc[i]++;
+            }
+        }
+    }
+}
+

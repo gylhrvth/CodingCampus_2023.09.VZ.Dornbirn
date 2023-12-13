@@ -1,0 +1,42 @@
+﻿using System;
+using System.Data.SqlClient;
+using System.Data.Common;
+using System.Data;
+using MySql.Data.MySqlClient;
+using David.Week10.BspLukasDB;
+
+namespace David.Week10.BspLukasDB
+{
+	public class DatavbaseStart
+	{
+		public DatavbaseStart()
+		{
+		}
+		public static void Start()
+		{
+			string connectionString = "server=localhost;port=3306;user=david;pwd=david;database=mondial";
+            Database database = new Database(connectionString);
+
+            try
+            {
+				database.connect();
+
+
+			}
+
+			catch (MySqlException ex)
+			{
+				Console.WriteLine("Unfortunately this failed for the following reason: " + ex);
+			}
+
+			finally
+			{
+				database.close();
+			}
+
+
+
+        }
+	}
+}
+

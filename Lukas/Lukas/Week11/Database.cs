@@ -31,7 +31,7 @@ namespace Lukas.Week11
 
         public List<City> SearchCities(string searchTerm)
         {
-            List<City> cities = new List<City>();
+            List<City> cities = new List<City>();   
 
             string query = "SELECT name, country, province, population, latitude, longitude, elevation FROM city WHERE name like @SearchTerm";
 

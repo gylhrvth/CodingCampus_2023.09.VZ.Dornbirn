@@ -1,0 +1,78 @@
+<!--Decleration of the document-->
+<!DOCTYPE html>
+<!--root element of the html page with a lang attribute that declares language-->
+<html lang="en">
+<!--Head meta information-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title of the site-->
+    <title>Hello World!</title>
+</head>
+<!--Body: containe for visble content-->
+<body style="background-color:powderblue;"></body>">
+    <h1 style="color: blueviolet;">Hauptkapitel 1</h1><!--header 1 with color attribute - Attributes hould be quoted!!!-->
+    <p style="background-color:tomato;" title="Hello World!">Hello <br> World!</p><!--paragraph with title/tooltip and line break-->
+    <br>
+    <p title='i "quote" text' style="font-size:300%;">paragraph with a single quoted attribute because tooltips contains a quote</p>
+    <h2>Hauptkapitel 2</h2><!--header 2-->
+    <br> <!--Line break-->
+    <p style="color:magenta">Heute ist Mittwoch</p>
+    <h3 style="font-family:verdana;">Kapitel 3</h3><!--header 3 with font style-->
+    <h3 style="scrollbar-arrow-color: aquamarine;">Heading with style tags</h3>
+    <a style="color: pink"href="https://liquipedia.net/" target="_blank">liquipedia</a> <!--link-->
+    <br>
+    <img title="liquipedia" src="liquipedia_icon_menu.png" alt="liquipedia menu icon" width="130" height="80"><!--picture with tooltip and alternative text if picture cannot be found-->
+    <br>
+    <a href="https://liquipedia.net/" target="_blank"><img src="liquipedia_icon_menu.png" width="20"></a> <!--picture as link-->
+    <!--all the headings-->
+    <h1>Heading 1</h1>
+    <h1 style="font-size:60px;">Heading 1 with bigger font-size</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <br>
+    <!--horizontal rule = thematik break-->
+    <h1>This is heading 1</h1>
+    <p>This is some text.</p>
+    <hr>
+    <h2>This is heading 2</h2>
+    <p>This is some other text.</p>
+    <hr>
+    <h1>the poem problem</h1>
+    <h2>without pre element</h2>
+    <p>
+        My Bonnie lies over the ocean.
+      
+        My Bonnie lies over the sea.
+      
+        My Bonnie lies over the ocean.
+      
+        Oh, bring back my Bonnie to me.
+    </p>
+    <br>
+    <!--pre element renders text in a fixed width with a fixed font (courier), preservers spaces and line breaks-->
+    <h2>with pre element</h2>
+    <pre>
+        My Bonnie lies over the ocean.
+      
+        My Bonnie lies over the sea.
+      
+        My Bonnie lies over the ocean.
+      
+        Oh, bring back my Bonnie to me.
+    </pre>
+    <h1 style="text-align:center;">Centered Heading</h1>
+    <p style="text-align:center;">Centered paragraph.</p>
+    <script>
+        let wort = "word"
+        let zahl = "25"
+        for (let index = 0; index < zahl; index++) {
+            console.log('Hello World! ' + index + " " + wort)
+        }
+        
+    </script>
+</body>
+</html>
