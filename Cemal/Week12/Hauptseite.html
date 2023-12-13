@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Russo+One&family=Silkscreen&display=swap" rel="stylesheet">
+
+
+    <style>
+        .hidden{
+            
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .button{
+            color: aqua;
+            background-color: brown;
+        }
+        .Image{
+            border-radius: 5%;
+            width: 799px;
+            height: fit-content;
+        }
+    </style>
+
+</head>
+<body style="background-color: rgb(217, 221, 215);">
+    <h1 style="text-align: center;font-family: 'Shadows Into Light', cursive;
+    font-family: 'Russo One', sans-serif;">Wilkommen auf die Seite von</h1>
+    <h2 style="text-align: center; font-family: 'Shadows Into Light', cursive;
+    font-family: 'Silkscreen', sans-serif; background-color: aliceblue;">CEMAL KOSAR</h2>
+
+    <!-- <button onclick="openPage()">LEBENSLAUF??</button> -->
+    <button class="button" id="showImage">Show image</button>
+    <div id="myCV" class="hidden">
+        <img class="Image" src="Lebenslauf.jpg" alt="Lebenslauf"  id="img">
+    </div>
+
+    <script>
+       document.getElementById("showImage").onclick = function(){
+        var x = document.getElementById("myCV");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        } else {
+        x.style.display = "none";
+        }
+       }
+    </script>
+</body>
+</html>
