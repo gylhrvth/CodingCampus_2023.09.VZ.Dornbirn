@@ -12,33 +12,41 @@ namespace Martin.Week03
     {
         public static void StartArrays()
         {
-            //CreateArray(10);
+            string[] names = CreateArray(10);
+
+            foreach(string name in names)
+            {
+                Console.Write(name + " ");
+                
+            }
+
             //CreateArray(5);
             //CreateArray2(10);
             //RandomNumberArray();
             //RandomNumberArrayCount();
             //RandomNumberArraySumme();
-            Array2d();
+            //Array2d();
         }
 
         //Aufgabe: Number Array
-        public static int[] CreateArray(int size)
+        public static string[] CreateArray(int size)
         {
             int[] Numbers = new int[size];
+            string[] names = new string[size];
 
 
 
-            for (int i = 0; i < Numbers.Length; i++)
+            for (int i = 0; i < names.Length; i++)
             {
 
 
 
-                Numbers[i] = i;
+                names[i] = "Hello";
               
             }
 
             
-            return Numbers;
+            return names;
  
 
         }
