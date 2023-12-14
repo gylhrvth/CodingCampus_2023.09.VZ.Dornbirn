@@ -19,13 +19,17 @@ namespace Martin.Week08.Files.Interface
 
             FileAndCounter FileCounter = new FileAndCounter();
             Traversal(currentPath,0, FileCounter);
-            Console.WriteLine("Total F");
+
+            Console.WriteLine("Files: {0}",FileCounter.CounterFile);
+
 
             FileAndCounter FolderCounter = new FileAndCounter();
             Traversal(currentPath, 0, FolderCounter);
 
-            PrintTreeReceived printTreeReceived = new PrintTreeReceived();
+            Console.WriteLine("Folder: {0}", FolderCounter.CounterFolder);
 
+
+            PrintTreeReceived printTreeReceived = new PrintTreeReceived();
             Traversal(currentPath, 0, printTreeReceived);
         }
 

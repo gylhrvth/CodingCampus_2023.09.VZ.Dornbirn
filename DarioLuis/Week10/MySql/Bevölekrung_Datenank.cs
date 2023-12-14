@@ -9,9 +9,16 @@ namespace DarioLuis.Week10.MySql
 {
     public class Bevölekrung_Datenank
     {
+        public Database(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
+
         public static void Start()
         {
             string connectionString = "server=localhost;port=3306;user=DarAndrad;password=Abruf!3300;database=Mondial";
+
+            Database database = new Database(connectionString);
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             connection.Open();
@@ -27,6 +34,7 @@ namespace DarioLuis.Week10.MySql
                 //Abfrage Stadt
                 Console.WriteLine("Hallo, bei welcher Stadt wollen sie die Bevölkerungsanzahl verändern?");
                 string city = Console.ReadLine().ToLower();
+
                 
                 //Abfrage Anzahl
                 Console.WriteLine("Wie viele Personen sollen hinzugefügt werden?");
