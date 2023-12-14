@@ -4,17 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="darkmode.css">
     <title>My First Site</title>
     <style>
         .overlay {
             position: absolute;
-            top: 65%;
+            top: 700px;
             right: 0;
+            z-index: 1;
+        }
+        .overlay2 {
+            position: absolute;
+            text-align: center;
+            top: 650px;
+            left: 23%;
             z-index: 1;
         }
 
         body {
-            background-color: rgb(241, 241, 211);
+            background-color: #f1f1d3;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .no-pointer-events {
@@ -36,22 +51,73 @@
             padding: 10px;
             border: 1px solid #8d8d8d;
         }
-    </style>
 
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
 </head>
 
 <body>
+
+    <div class="container">
+        <h1>Toggle Darkmode</h1>
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+    <script src="darkmode.js"></script>
+
     <h1 style="text-align:center; font-size:100px;">Welcome to my first Site</h1>
 
-    <div style="text-align: center; font-size: 30px;">
+    <div style="text-align: center; font-size: 25px;">
         <h1>Langweiliger Cookie Clicker</h1>
-        <div id="counter">0</div>
-        <div id="cps">0 CPS</div>
+        <div id="counter" style="font-size: larger;">0</div>
+        <div id="cps" style="font-size: larger;">0 CPS</div>
 
-        <button id="clickButton">Klick mich</button>
-        <button id="reset"> <a style="color: black; text-decoration: none;"
+        <button id="clickButton" style="font-size: larger;">Klick mich</button>
+        <button id="reset" style="font-size: larger;"> <a style="color: black; text-decoration: none;"
                 href="http://127.0.0.1:5500/Niklas/Week12/erste.html">Reset</a></button>
-
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 var clickCount = 0;
@@ -85,41 +151,52 @@
         </script>
     </div>
 
-
     <p style="font-size: xx-large; position: relative; left: 10px; vertical-align: middle;">
-        <a href="https://www.youtube.com/" target="_blank" style="color: black; text-decoration: none;">
-            <img src="youtubepngpng.png" alt="youtube" height="95" width="100" style="vertical-align: middle;">Youtube
+        <a href="https://www.youtube.com/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="youtubepng.png" alt="youtube" height="95" width="100"
+                style="vertical-align: middle;">Youtube
         </a>
     </p>
 
-    <p
-        style="font-size: xx-large; position: relative; left: 10px; position: relative; bottom: 8px;vertical-align: middle;">
-        <a href="https://www.twitch.tv/" target="_blank" style="color: black; text-decoration: none;">
-            <img src="twitch.png" alt="twitch" height="100" width="100" style="vertical-align: middle;">Twitch
+    <p style="font-size: xx-large; position: relative; left: 10px; position: relative; bottom: 8px;vertical-align: middle;">
+        <a href="https://www.twitch.tv/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="twitch.png" alt="twitch" height="100" width="100"
+                style="vertical-align: middle;">Twitch
         </a>
     </p>
 
     <p style="font-size: xx-large; vertical-align: middle; position: relative; left: 10px;">
-        <a href="https://www.twitter.com/" target="_blank" style="color: black; text-decoration: none;">
-            <img src="twitter.png" alt="twitter" height="70" width="90" style="vertical-align: middle;">Twitter
+        <a href="https://www.twitter.com/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="twitter.png" alt="twitter" height="70" width="90"
+                style="vertical-align: middle;">Twitter
         </a>
     </p>
     <p style="font-size: xx-large; vertical-align: middle; position: relative; left: 10px;">
-        <a href="https://www.discord.gg/" target="_blank" style="color: black; text-decoration: none;">
-            <img src="discord.png" alt="discord" height="70" width="85" style="vertical-align: middle;">Discord
+        <a href="https://www.discord.gg/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="discord.png" alt="discord" height="70" width="85"
+                style="vertical-align: middle;">Discord
         </a>
     </p>
 
     <div class="overlay">
         <a href="https://www.youtube.com/watch?v=7h4_lc6ts1k&pp=ygUSbG90dXNibHVtZSBmbGlwcGVy" target="_blank">
-            <img src="leberkäsjpg.jpg" alt="leberkäs" class="no-pointer-events" style="height: 200px; width: 300px;">
+            <img src="leberkäsjpg.jpg" alt="leberkäs" class="no-pointer-events"
+                style="height: 200px; width: 300px;">
         </a>
     </div>
 
-    <div style="background-color: whitesmoke; margin: -10px;">
+<a href="subdirectory/erste.html">TEST</a>   
+
+    <div class="overlay2" id="japan">
+        <h2>Link to new site design and info</h2>
+        <a href="http://127.0.0.1:5500/Niklas/Week12/erste.html#japan"><img src="japan.jpg" alt="japan" style="height: 60%; width: 60%;"></a>
+    </div>
+
+    <div style="background-color: var(--secondary-background-color); margin: -10px;">
+        
         <hr style="margin: 0px; width: 100%; border-width: 3px;">
-        <h3 style="margin-left: 10px;">Contact informations:</h3>
-        <div class="flex-container" style="margin-left: 10px;">
+        <h3 style="margin-left: 10px; color: var(--primary-text-color);">Contact informations:</h3>
+        <div class="flex-container" style="margin-left: 10px; color: var(--primary-text-color); background-color: var(--third-background-color);">
             <div class="flex-item"><b>Email</b></div>
             <div class="flex-item"><b>Full Name</b></div>
             <div class="flex-item"><b>Phone Number</b></div>
@@ -128,13 +205,14 @@
             <div class="flex-item">Test Person</div>
             <div class="flex-item">+43 123 45656789</div>
         </div>
-        <h5 style="text-align: center; color: black;" ;><a
+        <h5 style="text-align: center;" ;><a
                 href="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3B4OTQxMTQ5LWltYWdlLTAyLWpvYjE1NDMucG5n.png"
-                target="_blank">© Niklas Lange</a></h5>
+                target="_blank" style="color: var(--primary-text-color)">© Niklas Lange</a></h5>
     </div>
 </body>
 
 </html>
+
 
 <!-- <h1 style="text-decoration: underline; color: #00ffff;">Hauptkapitel1</h1>
     video{
