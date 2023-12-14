@@ -8,9 +8,9 @@ namespace Sven.Week11.SQL_CRUD
 {
     internal class Land
     {
-        public string Name { get; set; }
-        public string Hauptstadt { get; set; }
-        public double Bevölkerung { get; set; }
+        public string Name;
+        public string Hauptstadt;
+        public double Bevölkerung;
 
         public Land(string name, string hauptstadt, double bevölkerung)
         {
@@ -50,7 +50,6 @@ namespace Sven.Week11.SQL_CRUD
             }
         }
 
-        // Methode zum Löschen eines bestimmten Landes aus der Datenbank
         public static void LandLöschen(List<Land> datenbank, string name)
         {
             Land land = LandFinden(datenbank, name);
