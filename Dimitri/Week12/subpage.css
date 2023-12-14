@@ -1,0 +1,27 @@
+body {
+    background-color: #2E3440;
+    font-family: 'Courier New', Courier, monospace;
+    color:#D8DEE9;
+    margin: 5%;
+}
+
+h1 {
+    color: #D8DEE9;
+}
+
+.text {
+    color: #e5e9f0;
+}
+
+a {
+    color:#88c0d0
+}
+
+.quote {
+    background-color: #434c5e;
+    color: #eceff4;
+    text-align: center;
+
+}
+
+
