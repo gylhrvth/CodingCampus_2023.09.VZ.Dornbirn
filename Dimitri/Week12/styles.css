@@ -1,0 +1,106 @@
+body {
+  background-image: url('james-webb-telescope--tarantula-nebula-wallpaper-361042464.jpg');
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: 300% 300%;
+}
+
+h1 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+  h2 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+  h3 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+  h4 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+  h5 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+  h6 {
+    color: blue;
+    font-family: verdana;
+    font-size: 300%;
+  }
+
+p {
+    color: rgb(255, 255, 255);
+    font-family: courier;
+    font-size: 160%;
+    border: 2px solid rgb(38, 124, 136);
+    padding: 30px;
+    margin: 20px;
+  }
+blockquote {
+  color: white;
+}
+pre {
+  color: whitesmoke
+}
+ul {
+  color: white;
+  font-family: courier;
+  font-size: 120%;
+}
+ol {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 120%;
+}
+dl {
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 120%;
+}
+  /* 
+  /* styling of a link element
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  */
+  /* styling of a button */
+  a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: red;
+  }

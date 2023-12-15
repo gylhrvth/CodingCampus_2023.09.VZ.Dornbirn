@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -12,6 +13,7 @@ namespace Erik.Week11
 {
     internal class DatabaseÜbung
     {
+        private static string CityNameSave;
         public static void Start()
         {
             while (true)
@@ -20,16 +22,17 @@ namespace Erik.Week11
                 Console.BackgroundColor = ConsoleColor.DarkGray;
                 Console.WriteLine("Commands: 'exit'  'clear'  'addpop'  'deletepop' \n");
                 Console.ResetColor();
-                string userInput = ReadUserInputWithMessage("Enter a City: ");
+                string userCityInput = ReadUserInputWithMessage("Enter a City: ");
 
                 SqlCommand cmd = new SqlCommand("select Country.Name as Country ,City.Name , City.Population " +
                                                 "from City " +
                                                 "join Country on City.Country = Country.Code " +
                                                 "where City.Name = @userInput", sqlConnection);
-                
-                cmd.Parameters.AddWithValue("@userInput", userInput);
 
-                ProcessUserInput(userInput, sqlConnection);
+                CityNameSave = userCityInput;
+                cmd.Parameters.AddWithValue("@userInput", userCityInput);
+
+                ProcessUserInput(userCityInput, sqlConnection);
                 try
                 {
                     cmd.Connection.Open();
@@ -42,6 +45,7 @@ namespace Erik.Week11
                 {
                     Console.WriteLine(sqlex.Message);
                 }
+                cmd.Connection.Close();
                 string userInputNext = ReadUserInputWithMessage("Enter or command or a new city: ");
                 ProcessUserInput(userInputNext, sqlConnection);
 
@@ -73,9 +77,9 @@ namespace Erik.Week11
         }
 
 
-        public static string ProcessUserInput(string FirstuserInput, SqlConnection sqlConnection)
+        public static string ProcessUserInput(string userInput, SqlConnection sqlConnection)
         {
-            switch (FirstuserInput)
+            switch (userInput)
             {
                 case "exit":
                     {
@@ -90,25 +94,24 @@ namespace Erik.Week11
                         break;
                     }
                 case "addpop":
-                    {
+                    { 
                         Console.Write("Enter a value to ");
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.Write("increase ");
                         Console.ResetColor();
                         Console.Write($"the Population value: ");
-
                         int userAmountInput = Int32.Parse(Console.ReadLine());
-                        SqlCommand cmd = new SqlCommand("update city set Population = Population + @userAmountInput " +
-                                                        "where Name = '@cityUserInput'", sqlConnection);
 
-                        cmd.Connection.Open();
-                        cmd.ExecuteNonQuery();
+                        using (SqlCommand cmd = new SqlCommand("update city set Population = (Population + @userAmountInput) " +
+                                                               "where Name = @cityUserInput", sqlConnection))
+                        {
+                            Console.WriteLine("Amount: " + userAmountInput+" ["+userInput+"]");
+                            cmd.Parameters.AddWithValue("@cityUserInput", CityNameSave);
+                            cmd.Parameters.AddWithValue("@userAmountInput", userAmountInput);
 
-
-
-                        cmd.Parameters.AddWithValue("@cityUserInput", FirstuserInput);
-                        cmd.Parameters.AddWithValue("@userAmountInput", userAmountInput);
-
+                            cmd.Connection.Open();
+                            Console.WriteLine("Affected rows: "+cmd.ExecuteNonQuery());
+                        }
                         Start();
                         break;
                     }

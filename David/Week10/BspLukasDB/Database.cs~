@@ -1,0 +1,33 @@
+﻿using System;
+using System.Data.SqlClient;
+using System.Data.Common;
+using System.Data;
+using MySql.Data.MySqlClient;
+using David.Week10.BspLukasDB;
+
+namespace David.Week10.BspLukasDB
+{
+	public class Database
+	{
+		private string connectionString;
+		private MySqlConnection connection;
+
+		public Database(string connectionString)
+		{
+			this.connectionString = connectionString;
+		}
+
+		public void connect()
+		{
+			close();
+			connection = new MySqlConnection(connectionString);
+			connection.Open();
+		}
+
+		public void close()
+		{
+			connection?.Close();
+		}
+	}
+}
+
