@@ -2,7 +2,6 @@
 using System.Data.SqlClient;
 using System.Data.Common;
 using System.Data;
-using MySql.Data.MySqlClient;
 using Lukas.Week11.Models;
 
 namespace Lukas.Week11
