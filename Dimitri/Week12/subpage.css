@@ -5,17 +5,16 @@
     background-color: #3B4252;
     font-family: lilex;
     justify-content: left;
+    box-shadow:
+    0px 0.9px 0.6px -8px rgba(0, 0, 0, 0.11),
+    0px 2px 1.3px -8px rgba(0, 0, 0, 0.087),
+    0px 3.3px 2.1px -8px rgba(0, 0, 0, 0.076),
+    0px 5px 3.2px -8px rgba(0, 0, 0, 0.068),
+    0px 7.3px 4.6px -8px rgba(0, 0, 0, 0.061),
+    0px 10.3px 6.6px -8px rgba(0, 0, 0, 0.055),
+    0px 14.6px 9.3px -8px rgba(0, 0, 0, 0.049);
   }
-  
-  /* Links inside the navbar */
-  .navbar a {
-    float: left;
-    font-size: 16px;
-    color: #2E3440;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
+
   
   /* The dropdown container */
   .dropdown {
@@ -47,8 +46,14 @@
     position: absolute;
     background-color: #E5E9F0;
     color: #3B4252;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    /* z-index: 1; */
+    box-shadow:
+    0px 1.1px 0.6px rgba(0, 0, 0, 0.13),
+    0px 2.3px 1.3px rgba(0, 0, 0, 0.103),
+    0px 3.9px 2.1px rgba(0, 0, 0, 0.09),
+    0px 5.9px 3.2px rgba(0, 0, 0, 0.08),
+    0px 8.5px 4.6px rgba(0, 0, 0, 0.072),
+    0px 12.1px 6.6px rgba(0, 0, 0, 0.065),
+    0px 17.1px 9.3px rgba(0, 0, 0, 0.058);
   }
   
   /* Mega Menu header, if needed */
@@ -136,6 +141,14 @@ h1 {
     display: flex;
     justify-content: left;
     background-color: #3b4252;
+    box-shadow:
+    0px 0.9px 0.6px -8px rgba(0, 0, 0, 0.11),
+    0px 2px 1.3px -8px rgba(0, 0, 0, 0.087),
+    0px 3.3px 2.1px -8px rgba(0, 0, 0, 0.076),
+    0px 5px 3.2px -8px rgba(0, 0, 0, 0.068),
+    0px 7.3px 4.6px -8px rgba(0, 0, 0, 0.061),
+    0px 10.3px 6.6px -8px rgba(0, 0, 0, 0.055),
+    0px 14.6px 9.3px -8px rgba(0, 0, 0, 0.049);
 }
 
 h2 {
