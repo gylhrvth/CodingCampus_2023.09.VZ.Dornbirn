@@ -1,3 +1,87 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    overflow: hidden;
+    background-color: #3B4252;
+    font-family: lilex;
+    justify-content: left;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: #2E3440;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #E5E9F0;
+    padding: 14px 16px;
+    background-color: inherit;
+    font: inherit; /* Important for vertical align on mobile phones */
+    margin: 0; /* Important for vertical align on mobile phones */
+  }
+  
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #5E81AC;
+
+  }
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #E5E9F0;
+    color: #3B4252;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    /* z-index: 1; */
+  }
+  
+  /* Mega Menu header, if needed */
+  .dropdown-content .header {
+    background: #D8DEE9;
+    /* padding: 16px; */
+    color: #3B4252;
+  }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+    padding: 10px
+  }
+  
+  
+  /* Style links inside the columns */
+  .column a {
+    float: none;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  /* Add a background color on hover */
+  .column a:hover {
+    background-color: 
+    #4C566A;
+  }
+  
+
 @font-face {
     font-family: Lilex;
     src: url(Lilex-Regular.ttf)
@@ -7,8 +91,32 @@ body {
     background-color: #2E3440;
     font-family: Lilex;
     color: #D8DEE9;
-    margin: 5%;
+
 }
+
+
+
+.outter-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+}
+
+.top-flex {
+    flex: 1;
+}
+
+.content-flex {
+    flex: 8;
+}
+
+.footer-flex {
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+}
+
+
 
 ::selection {
     background: #4c566a;
@@ -58,7 +166,7 @@ a:visited:hover {
 }
 
 
-.outterflex {
+.flex-quote {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -67,9 +175,11 @@ a:visited:hover {
 }
 
 .quote {
-    background-color: #434c5e;
+    background-color: #eceff4;
     padding: 10px;
-    color: #eceff4;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #434c5e;
     width: 80%;
     text-align: justify;
 }
@@ -78,23 +188,7 @@ a:visited:hover {
     color: #88c0d0;
 }
 
-.palette {
-    display: flex;
-    width: 50vw;
-    height: 12vh;
-    border-radius: 5px;
-    overflow: hidden;
-}
 
-@media screen and (max-width: 480px) {
-    .palette {
-        display: flex;
-        width: 80vw;
-        height: 12vh;
-        border-radius: 5px;
-        overflow: hidden;
-    }
-}
 
 .palette-shadow {
     box-shadow:
@@ -118,9 +212,33 @@ a:visited:hover {
         0px 17.1px 9.3px rgba(0, 0, 0, 0.058);
 }
 
+.palette-center {
+    display: flex;
+    justify-content: center;
+}
+
+.palette {
+    display: flex;
+    width: 50vw;
+    height: 12vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+    .palette {
+        display: flex;
+        width: 90%;
+        height: 12vh;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+
 .palette-quarter {
     display: flex;
     flex-direction: column;
+    width: 25%;
     height: 100%;
     flex: 1;
 }
