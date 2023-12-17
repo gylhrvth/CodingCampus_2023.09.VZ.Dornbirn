@@ -8,7 +8,7 @@
     <title>Subpage 1</title>
 </head>
 
-<body>
+<body style="margin: 0px">
     <div class="most-outter-flex">
         <!-- <div id="top" class="navbar ">
         <div class="dropdown">
@@ -27,12 +27,17 @@
             </div>
         </div>
     </div> -->
-    <!-- try out sticky sidebar https://css-tricks.com/a-dynamically-sized-sticky-sidebar-with-html-and-css/ -->
-        <div style="display: flex; flex-direction: column; align-self: start; position: sticky; flex-basis: auto;">
-            <h3>nord themed page</h3>
-            <a href="#intro">introduction</a>
-            <a href="#about">about nord theme</a>
-            <a href="#footer">contact</a>
+        <!-- try out sticky sidebar https://css-tricks.com/a-dynamically-sized-sticky-sidebar-with-html-and-css/ -->
+        <div style="display: flex; flex-direction: column; flex: start; background-color: #4C566A; ">
+            <div style="position: sticky; display: flex; top: 0; flex-direction: inherit; margin: 10px;">
+                <h3>nord themed page</h3>
+                <a href="#intro">introduction</a>
+                <a href="#about">about nord theme</a>
+                <a href="#footer">contact</a>
+            </div>
+            <div style="position: sticky; display: flex; top: 3vh;">
+
+            </div>
         </div>
         <div class="outter-flex">
             <div class="top-flex">
@@ -70,7 +75,8 @@
                     </div>
                 </div>
                 <h3 class="flexH2">Color palettes</h3>
-                <p class="text">There are a few different color palettes included the nord theme used for different types of theming
+                <p class="text">There are a few different color palettes included the nord theme used for different
+                    types of theming
                     styles
                     and special usecases like higlighting, error messages etc. Find the full guideline <a
                         href="https://www.nordtheme.com/docs/colors-and-palettes" target="_blank">here</a>.
