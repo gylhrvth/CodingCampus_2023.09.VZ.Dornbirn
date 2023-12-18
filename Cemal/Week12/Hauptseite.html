@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Russo+One&family=Silkscreen&display=swap" rel="stylesheet">
+
+
+    <style>
+        .hidden{
+            display: none;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+
+        .button{
+            color: rgb(185, 229, 229);
+            background-color: rgb(102, 102, 102);
+        }
+        .Image{
+            border-radius: 5%;
+            width: ;
+            height: fit-content;
+        }
+    </style>
+
+</head>
+<body style="background-color: rgb(217, 221, 215);">
+    <h1 style="text-align: center;font-family: 'Russo One', sans-serif;">Wilkommen auf die Seite von</h1>
+    <h2 style="text-align: center;font-family: 'Silkscreen', sans-serif; background-color: aliceblue;">CEMAL KOSAR</h2>
+
+    <button class="button" id="showImage" style="">Drück auf mich wenn du meinen Lebenslauf sehen willst!</button>
+    <div id="myCV" class="hidden">
+        <img class="Image" src="Lebenslauf.jpg" alt="Lebenslauf">
+    </div>
+
+    <script>
+       document.getElementById("showImage").onclick = function(){
+        var x = document.getElementById("myCV");
+        if (x.style.display === "none") {
+        x.style.display = "block";
+        } else {
+        x.style.display = "none";
+        }
+       }
+    </script>
+</body>
+</html>

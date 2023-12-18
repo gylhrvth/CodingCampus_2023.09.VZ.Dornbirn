@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+</head>
+
+<body>
+
+
+    <div style="text-align: center; font-size: 25px;">
+        <h1>Langweiliger Cookie Clicker</h1>
+        <div id="counter" style="font-size: larger;">0</div>
+
+        <button id="clickButton" style="font-size: larger;">Klick mich</button>
+    </div>
+
+    <script>            document.addEventListener('DOMContentLoaded', function () {
+            var clickCount = 0;
+
+            var counterElement = document.getElementById('counter');
+            var clickButton = document.getElementById('clickButton');
+
+            function incrementCounter() {
+                clickCount++;
+                counterElement.textContent = clickCount;
+            }
+
+            clickButton.addEventListener('click', function () {
+                incrementCounter();
+            });
+
+            resetCPSInterval();
+        });F</script>
+</body>
+
+</html>
