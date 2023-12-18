@@ -1,0 +1,82 @@
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    justify-content: center;
+    margin: 50px;
+    display: flex;
+     
+    animation: 1s shake infinite;
+    background-image: url(dog.jpg);
+  }
+
+h1 {
+    color: magenta;
+    text-decoration: underline;
+}
+
+p {
+    color: yellow;
+}
+
+.ugly-box {
+    border: 10px solid cyan;
+    padding: 20px;
+    margin: 20px;
+    background-color: #ff00ff;
+    border-radius: 25px;
+}
+
+.blink {
+    animation: 1s infinite animate;
+}
+
+.rotate {
+    transform: rotate(45deg);
+}
+
+#fake{
+  color:cyan;
+  border: 10px solid black;
+  display: flex;
+  height: 100px;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  width: 200px;
+  color:white;
+  font-weight: bolder;
+  background: linear-gradient(#e66465, #9198e5);
+  animation: 1s sizeChange infinite;
+}
+
+@keyframes animate{ 
+    0%{  opacity: 0; } 
+    50%{ opacity: 1; } 
+    100%{ opacity: 0; } 
+}
+
+@keyframes sizeChange{
+   0%{ height: 100px; width: 200px; font-size: 20px; color: cyan} 
+   50%{ height: 300px; width: 1000px;font-size: 100px; }
+   100%{ height: 100px; width: 200px; font-size: 20px;}
+
+   0% { border-color: cyan; color: cyan; }
+   10% { border-color: yellow; color: yellow; }
+   20% { border-color: hotpink; color: hotpink; }
+   30% { border-color: red; color: red; }
+   40% { border-color: purple; color: purple; }
+   50% { border-color: yellow; color: yellow; }
+   60% { border-color: cyan; color: cyan; }
+   70% { border-color: skyblue; color: skyblue; }
+   80% { border-color: pink; color: pink; } 
+   90% { border-color: red; color: red; }
+   100% { border-color: yellow; color: yellow; }
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { transform: translate(-10px, 0) rotate(-5deg); }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% { transform: translate(10px, 0) rotate(5deg); }
+  100% { transform: translate(0, 0); }
+}
