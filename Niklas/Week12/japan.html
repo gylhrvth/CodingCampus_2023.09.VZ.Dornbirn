@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="darkmode.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan</title>
+
+    <style>
+        .overlay3 {
+            position: absolute;
+            top: 5px;
+            left: 25%;
+            z-index: 5;
+        }
+
+        .overlay4 {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            z-index: 2;
+            color: var(--third-text-color);
+        }
+
+        .fixed-bg {
+            position: relative;
+            background-image: url("japan_wp2.jpg");
+            min-height: 700px;
+            margin: 0;
+            padding: 0;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: transparent;
+            font-size: 70px;
+            width: 100%;
+            height: auto;
+            background-size: cover;
+        }
+
+        h1 {
+            position: relative;
+            font-weight: bold;
+            font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #000;
+            background-color: white;
+            mix-blend-mode: lighten;
+            z-index: 1;
+            background-repeat: no-repeat;
+        }
+
+        h1::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--primary-text-color); 
+            z-index: -1;
+        }
+
+    </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+
+    <div class="fixed-bg">
+        <h1 data-text="Japan">Japan</h1>
+    </div>
+
+    <div class="overlay3">
+        <div class="container">
+            <h1>Toggle Darkmode</h1>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <script src="darkmode.js"></script>
+ 
+    <a href="http://127.0.0.1:5500/Niklas/Week12/erste.html" class="overlay4"
+    style="text-decoration: none; color: var(--third-text-color); outline: 2px solid; font-size: 30px; position: fixed;">Go Back to Main page</a>
+    
+    <img src="leberkäsjpg.jpg" alt="extrem long leberkäs" height="1000px" width="10px">
+
+
+    <h1 style="color: var(--third-text-color);">Hello</h1>
+</body>
+
+</html>

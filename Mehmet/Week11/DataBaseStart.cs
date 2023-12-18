@@ -35,12 +35,10 @@ namespace Mehmet.Week11
                 Console.WriteLine("Does Lustenau exist now in Mondial: " + (database.SearchCities("Lustenau").Count > 0));
                 Console.WriteLine("------------------------------------------------------------------------------------");
 
-
                 database.DeleteCity("Lustenau", "A", "Vorarlberg");
                 database.DeleteCity("Lūstenæu", "A", "Vorarlberg");
                 Console.WriteLine("Does Lustenau exist in Mondial: " + (database.SearchCities("Lustenau").Count > 0));
                 Console.WriteLine("------------------------------------------------------------------------------------");
-
 
                 City fakeLustenau = new City("Lūstenæu", "A", "Vorarlberg", 23843.0, 47.26, 9.40, 404);
                 database.CreateCity(fakeLustenau);
@@ -55,11 +53,6 @@ namespace Mehmet.Week11
 
                 Console.WriteLine("Does Lūstenæu exist: " + (database.SearchCities("Lūstenæu").Count > 0));
                 Console.WriteLine("Does Lustenau exist: " + (database.SearchCities("Lustenau").Count > 0));
-
-
-
-
-
 
             }
             catch (SqlException exq)

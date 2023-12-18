@@ -4,18 +4,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="darkmode.css">
+    <title>My First Site</title>
+    <style>
+        .overlay {
+            position: absolute;
+            top: 525px;
+            right: 0;
+            z-index: 1;
+        }
+
+        .overlay2 {
+            position: absolute;
+            text-align: center;
+            top: 650px;
+            left: 23%;
+            z-index: 1;
+        }
+
+        .overlay3 {
+            position: absolute;
+            top: 5px;
+            left: 23%;
+            z-index: 1;
+        }
+
+        body {
+            background-color: #f1f1d3;
+            transition: background-color 0.5s ease;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .no-pointer-events {
+            pointer-events: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            height: 200;
+            width: 500px;
+        }
+
+        .flex-item {
+            flex: 0 0 calc(33.33%);
+            box-sizing: border-box;
+            border: 1px solid #8d8d8d;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            display: none;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hauptkapitel1</h1>
-    <video controls loop>
+
+    <div class="overlay3">
+        <div class="container">
+            <h1>Toggle Darkmode</h1>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <script src="darkmode.js"></script>
+
+    
+
+    <h1 style="text-align:center; font-size:100px;">Welcome to my first Site</h1>
+
+    <div style="text-align: center; font-size: 25px;">
+        <h1>Langweiliger Cookie Clicker</h1>
+        <div id="counter" style="font-size: larger;">0</div>
+        <div id="cps" style="font-size: larger;">0 CPS</div>
+
+        <button id="clickButton" style="font-size: larger;">Klick mich</button>
+        <button id="reset" style="font-size: larger;"> <a style="color: black; text-decoration: none;"
+                href="http://127.0.0.1:5500/Niklas/Week12/erste.html">Reset</a></button>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var clickCount = 0;
+                var cps = 0;
+
+                var counterElement = document.getElementById('counter');
+                var cpsElement = document.getElementById('cps');
+                var clickButton = document.getElementById('clickButton');
+
+                function incrementCounter() {
+                    clickCount++;
+                    counterElement.textContent = clickCount;
+                }
+
+                function updateCPS() {
+                    cpsElement.textContent = cps + " CPS";
+                    cps = 0;
+                }
+
+                function resetCPSInterval() {
+                    setInterval(updateCPS, 1000);
+                }
+
+                clickButton.addEventListener('click', function () {
+                    incrementCounter();
+                    cps++;
+                });
+
+                resetCPSInterval();
+            });
+        </script>
+    </div>
+
+    </div>
+
+    <p style="font-size: xx-large; position: relative; left: 10px; vertical-align: middle;">
+        <a href="https://www.youtube.com/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="youtubepng.png" alt="youtube" height="95" width="100" style="vertical-align: middle;">Youtube
+        </a>
+    </p>
+
+    <p
+        style="font-size: xx-large; position: relative; left: 10px; position: relative; bottom: 8px;vertical-align: middle;">
+        <a href="https://www.twitch.tv/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="twitch.png" alt="twitch" height="100" width="100" style="vertical-align: middle;">Twitch
+        </a>
+    </p>
+
+    <p style="font-size: xx-large; vertical-align: middle; position: relative; left: 10px;">
+        <a href="https://www.twitter.com/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="twitter.png" alt="twitter" height="70" width="90" style="vertical-align: middle;">Twitter
+        </a>
+    </p>
+    <p style="font-size: xx-large; vertical-align: middle; position: relative; left: 10px;">
+        <a href="https://www.discord.gg/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="discord.png" alt="discord" height="70" width="85" style="vertical-align: middle;">Discord
+        </a>
+    </p>
+
+    <div class="overlay">
+        <a href="https://www.youtube.com/watch?v=7h4_lc6ts1k&pp=ygUSbG90dXNibHVtZSBmbGlwcGVy" target="_blank">
+            <img src="leberkäsjpg.jpg" alt="leberkäs" class="no-pointer-events" style="height: 200px; width: 300px;">
+        </a>
+    </div>
+
+    <div class="overlay2" id="japan" style="top: 60%;">
+        <h2>Link to new site design and info</h2>
+        <a href="http://127.0.0.1:5500/Niklas/Week12/japan.html"><img src="japan.jpg" alt="japan"
+                style="height: auto; width: 60%;"></a>
+    </div>
+
+    <div style="background-color: var(--primary-background-color); margin: -10px;">
+
+        <hr style="margin: 0px; width: 100%; border-width: 3px;">
+        <h3 style="margin-left: 10px; color: var(--primary-text-color);">Contact informations:</h3>
+        <div class="flex-container"
+            style="margin-left: 10px; color: var(--primary-text-color); background-color: var(--third-background-color);">
+            <div class="flex-item"><b>Email</b></div>
+            <div class="flex-item"><b>Full Name</b></div>
+            <div class="flex-item"><b>Phone Number</b></div>
+
+            <div class="flex-item">Test@gmail.com</div>
+            <div class="flex-item">Test Person</div>
+            <div class="flex-item">+43 123 45656789</div>
+        </div>
+        <h5 style="text-align: center;" ;><a
+                href="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTAxL3B4OTQxMTQ5LWltYWdlLTAyLWpvYjE1NDMucG5n.png"
+                target="_blank" style="color: var(--primary-text-color)">© Niklas Lange</a></h5>
+    </div>
+</body>
+
+</html>
+
+
+<!-- <h1 style="text-decoration: underline; color: #00ffff;">Hauptkapitel1</h1>
+    video{
+    <video object-fit: fill controls loop height="500" width="1400">
+
         <source src="washer.mp4" type="video/mp4">
     </video>
-    <p style="color:white;">Hello HTML!</p>
-    <p style="color:white;">Heutes ist Mittwoch.</p>
-    <h2 style="color:white;">Kapitel1.1</h2>
-    <p style="color:white;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque alias tempora quas quo
+    <p>Hello HTML!</p>
+    <p>Heutes ist Mittwoch.</p>
+    <h2>Kapitel1.1</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque alias tempora quas quo
         reiciendis quam excepturi recusandae sed adipisci, dolores possimus error veniam aperiam, temporibus facilis in
         minus modi molestiae?</p>
 
@@ -26,22 +245,26 @@
         body {
             background-image: url(ohne.jpg);
         }
+        video{
+            object-fit: fill;
+        }
+        
     </style>
     <a href="http://127.0.0.1:5500/Niklas/Week12/erste.html">This is a link</a>
     <img src="aaaaaaaaa.gif" alt="">
 
-    <h1 style="color:white;">Hauptkapitel2</h1>
-    <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, facere voluptas id
+    <h1 style="text-decoration: underline; color: #00ffff;">Hauptkapitel2</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, facere voluptas id
         necessitatibus nisi quasi aspernatur officia sunt possimus sed beatae veniam dolorum saepe ipsum nulla tempora.
         Saepe, dicta distinctio?</p>
-    <p style="color:white;">Error ipsam repudiandae enim in amet asperiores dolorum excepturi doloremque blanditiis
+    <p>Error ipsam repudiandae enim in amet asperiores dolorum excepturi doloremque blanditiis
         culpa! Earum, eum laudantium. Aspernatur, ad ex eius quisquam ducimus autem nobis quod eos minus odit quae
         incidunt quas.</p>
-    <p style="color:white;">Quasi fugit voluptate eligendi odio impedit aut rerum corporis voluptatem corrupti quae
+    <p>Quasi fugit voluptate eligendi odio impedit aut rerum corporis voluptatem corrupti quae
         dolorem totam dolor blanditiis enim hic, veniam error nesciunt accusamus magni facilis amet adipisci est.
         Veniam, magnam libero!</p>
 
-    <img src="ohnepixel.jpg" height="1000" width="1500" alt="">
+    <img src="ohnepixel.jpg" height="600" width="1560" alt="">
 
     <video controls loop>
         <source src="fish.mp4" type="video/mp4">
@@ -50,6 +273,8 @@
         </p>
     </video>
 
+<h1 style="font-size: 500px;"><a href="https://www.youtube.com/watch?v=8uo1d1to6mE">HMM</a></h1>
+
 </body>
 
-</html>
+</html> -->

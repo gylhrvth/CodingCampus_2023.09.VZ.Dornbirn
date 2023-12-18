@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker2</title>
+    <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.clickcount) {
+              localStorage.clickcount = Number(localStorage.clickcount)+1;
+            } else {
+              localStorage.clickcount = 1;
+            }
+            document.getElementById("result").innerHTML = localStorage.clickcount;
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+        </script>
+        
+</head>
+
+<body>
+    <div style="text-align: center; font-size: 25px;">
+    <h1 style=""><button onclick="clickCounter()" type="button">Click me!</button></h1>
+    <div id="result"></div>
+    </div>
+</body>
+
+</html>
