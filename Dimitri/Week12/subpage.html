@@ -1,20 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="subpage.css">
     <title>Subpage 1</title>
 </head>
-<body>
-    <h1>Nord themed page</h1>
-    <h2>Introduction</h2>
-    <div class="text">
-        <p>This is my 2nd HTML document. I will tryout some HTML/CSS functions using the <a href="https://www.nordtheme.com/docs/colors-and-palettes" target="_blank">nord color palette</a> as the theme.</p>
-        <p>The nord color contains A total of sixteen, carefully selected, dimmed pastel colors for a eye-comfortable, but yet colorful ambiance. To cite the creators: <br><br>
-            <flex class="quote"><q>It has been created for clear, uncluttered and elegant designs following a minimal and flat style pattern.
-            For syntax highlighting it aims to ensure an undisturbed focus on important parts of the code, a good readability and a quick visual distinction between the different syntax elements.</q></flex>      
-        </p>
+
+<body style="margin: 0px">
+    <div class="most-outter-flex">
+        <!-- <div id="top" class="navbar ">
+        <div class="dropdown">
+            <button class="dropbtn">go to
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <div class="row">
+                    <div class="column">
+                        <h3>nord themed page</h3>
+                        <a href="#intro">introduction</a>
+                        <a href="#about">about nord theme</a>
+                        <a href="#footer">contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+        <!-- try out sticky sidebar https://css-tricks.com/a-dynamically-sized-sticky-sidebar-with-html-and-css/ -->
+        <div style="display: flex; flex-direction: column; background-color: #4C566A; width: 15vw">
+            <div style="position: sticky; display: flex; top: 0; flex-direction: inherit; padding-inline: 5%;">
+                <h3>Index</h3>
+                <a href="#intro">introduction</a>
+                <a href="#about">about nord theme</a>
+                <a href="#footer">contact</a>
+            </div>
+            <div style="position: sticky; display: flex; top: 0; flex-direction: inherit; padding-inline: 5%;">
+                <div style="position: sticky; display: flex; padding-inline: 5%;">
+                    <p>find/contact me:</p>
+                </div>
+                <div style="position: sticky; display: flex; padding-inline: 5%; flex-direction: column;">
+
+                    <a href="https://github.com/dm7r33" target="_blank"><img style="height:50px;"
+                            src="github-mark-white.png" alt="github logo"></a>
+                    <a href="mailto:hello@dmtrh.eu"><img style="height:50px;" src="envelope-solid.svg"
+                            alt="github logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="outter-flex">
+            <div class="top-flex">
+                <h1>Nord themed page</h1>
+                <div class="horizontal-line">
+                </div>
+            </div>
+            <div class="content-flex">
+                <div class="flexH2">
+                    <h2 id="intro">Introduction</h2>
+                </div>
+                <p class="text">
+                    This is my 2nd HTML document. I will tryout some HTML/CSS functions using the <a
+                        href="https://www.nordtheme.com/" target="_blank">nord color palette</a> for
+                    theming.
+                </p>
+                <div class="flexH2">
+                    <h2 id="about">About nord theme</h2>
+                </div>
+                <p class="text">
+                    The nord color palette contains A total of sixteen, carefully selected, dimmed pastel colors for a
+                    eye-comfortable,
+                    but yet colorful ambiance. To cite the creators:
+                </p>
+                <div class="flex-quote">
+                    <div class="quote palette-shadow">
+                        <q>
+                            It has been created for clear, uncluttered and elegant designs following a minimal and
+                            flat style pattern.
+                            For syntax highlighting it aims to ensure an undisturbed focus on important parts of the
+                            code, a
+                            good
+                            readability and a quick visual distinction between the different syntax elements.
+                        </q>
+                    </div>
+                </div>
+                <h3 class="flexH2">Color palettes</h3>
+                <p class="text">There are a few different color palettes included the nord theme used for different
+                    types of theming
+                    styles
+                    and special usecases like higlighting, error messages etc. Find the full guideline <a
+                        href="https://www.nordtheme.com/docs/colors-and-palettes" target="_blank">here</a>.
+                </p>
+                <h4 class="flexH2">Polar Night</h4>
+                <div class="palette-center">
+                    <div class="palette palette-shadow">
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #2E3440"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#2E3440</p>
+                            </div>
+                        </div>
+
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #3B4252"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#3B4252</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #434C5E"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#434C5E</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #4C566A"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#4C566A</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="flexH2">Snow Storm</h4>
+                <div class="palette-center">
+                    <div class="palette palette-shadow">
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #D8DEE9"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#D8DEE9</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #E5E9F0"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#E5E9F0</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #ECEFF4"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#ECEFF4</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="flexH2">Frost</h4>
+                <div class="palette-center">
+                    <div class="palette palette-shadow">
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #8FBCBB"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#8FBCBB</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #88C0D0"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">88C0D0</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #81A1C1"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#81A1C1</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #5E81AC"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#5E81AC</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="flexH2">Aurora</h4>
+                <div class="palette-center">
+                    <div class="palette palette-shadow">
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #BF616A"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#BF616A</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #D08770"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#D08770</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #EBCB8B"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#EBCB8B</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #A3BE8C"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#A3BE8C</p>
+                            </div>
+                        </div>
+                        <div class="palette-quarter">
+                            <div class="palette-top" style="background-color: #B48EAD"></div>
+                            <div class="palette-text">
+                                <p class="palette-font">#B48EAD</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="footer-flex">
+                <div class="horizontal-line"></div>
+                <a href="#top">Jump top</a>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

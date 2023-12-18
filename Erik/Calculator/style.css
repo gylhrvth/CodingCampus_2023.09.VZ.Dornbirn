@@ -1,0 +1,86 @@
+.grid-container {
+    display: grid;
+    min-width: 200px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 200px;
+    height: 100%;
+    max-height: 600px;
+    font-size: 40px;
+    grid-template-rows: auto 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: inline-grid;
+    column-gap: 2px;
+    row-gap: 3px;
+    font-family: sans-serif;
+    text-align: center;
+    background: hsl(300, 2%, 20%);
+    color: hsl(255, 100%, 100%);
+    padding: 20px 10px 20px 10px;
+    border-radius: 30px;
+    overflow: hidden;
+    align-items: baseline;
+    user-select: none;
+}
+
+.grid-container-parent {
+    display: flex;
+    justify-content: center;
+}
+
+
+.grid-misc {
+    background-color: rgb(130, 129, 129);
+    height: 100%;
+}
+
+.grid-misc:hover {
+    background-color: rgb(167, 167, 167);
+    border-radius: 16%;
+    transition: 0.3s;
+}
+
+.gird-equals:hover {
+    background-color: rgb(242, 178, 87);
+    border-radius: 30%;
+    transition: 0.25s;
+}
+
+.gird-headlinerForNumbers:hover {
+    background-color: rgb(167, 167, 167);
+    border-radius: 20%;
+    transition: 0.25s;
+}
+
+.gird-headlinerForNumbers {
+    font-size: 100%;
+    background-color: rgb(130, 129, 129);
+}
+
+.grid-container>* {
+    background-color: rgb(99, 99, 99);
+    border-radius: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-default:hover {
+    background-color: rgb(167, 167, 167);
+    border-radius: 16%;
+    transition: 0.3s;
+}
+
+.display {
+    grid-column: span 4;
+    height: 130px;
+    background-color: rgb(76, 74, 76);
+    border-radius: 10px;
+    justify-content: right;
+    padding-right: 3.5%;
+}
+
+.gird-equals {
+    background-color: rgb(255, 149, 0);
+}
