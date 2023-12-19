@@ -1,0 +1,73 @@
+.caption3 {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    font-style: normal;
+}
+
+.TabHeadWhite {
+    line-height: 20px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    background-color: #eee;
+    font-weight: bold;
+}
+
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.border {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.Line1Blue {
+    line-height: 18px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background-color: #9999CC;
+}
+
+.Line1Red {
+    line-height: 18px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background-color: #CC9999;
+}
+
+.Line1Green {
+    line-height: 18px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background-color: #99CC99;
+}
+
+.Line1Yellow {
+    line-height: 18px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background-color: #FFFF40;
+}
+
+.Line1White {
+    line-height: 18px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+
+th {
+    border: 1px solid black;
+    border-collapse: collapse;
+    position: sticky;
+    top:0;
+    background-color: white;
+}

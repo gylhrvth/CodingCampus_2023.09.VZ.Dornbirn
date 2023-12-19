@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Afacad";
+}
+
+body{
+    background: #1D1E22;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+    color:white;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 5em 2em;
+    box-shadow: 0px 0px 20px black;
+    border: 1px solid black;
+}
+#container h2{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+#username, #password{
+    text-align: center;
+    width: 200px;
+    font-size: 18px;
+    color:white;
+    background-color: black;
+    border: 2px solid cyan;
+    border-radius: 20px;
+    height: 40px;
+    margin-bottom: 15px;
+}
+#username:focus, #password:focus{
+    animation: colorChange 10s infinite;
+    outline-style: solid;
+    width: 270px;
+}
+
+
+#login{
+    font-size: 18px;
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid green;
+}
+#login:hover{
+    background-color: green;
+}
+#login:active{
+    background-color: rgba(0, 128, 0, 0.722);
+}
+
+@keyframes colorChange {
+    0% { border-color: cyan; color: cyan; }
+    10% { border-color: yellow; color: yellow; }
+    20% { border-color: hotpink; color: hotpink; }
+    30% { border-color: red; color: red; }
+    40% { border-color: purple; color: purple; }
+    50% { border-color: yellow; color: yellow; }
+    60% { border-color: cyan; color: cyan; }
+    70% { border-color: skyblue; color: skyblue; }
+    80% { border-color: pink; color: pink; } 
+    90% { border-color: red; color: red; }
+    100% { border-color: yellow; color: yellow; }
+}
