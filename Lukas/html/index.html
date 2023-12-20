@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <strong class="textIsGreen">STRONG</strong>
+    <br>
+    <div class="shadow textIsGreen" style="width: fit-content">TEST</div>
+    <h1>Layouts</h1>
+    <h2>Grid layout</h2>
+    <div style="background-color: black; display: grid; grid-template-columns: 1fr 50px 3fr;">
+        <div style="height: 30px; background-color: blue"></div>
+        <div style="height: 30px; background-color: pink"></div>
+        <div style="height: 30px; background-color: orange"></div>
+        <div style="height: 30px; background-color: magenta"></div>
+        <div style="height: 30px; background-color: red"></div>
+        <div style="height: 30px; background-color: cyan"></div>
+    </div>
+    <h2>Flexbox</h2>
+    <h3>Row</h3>
+    <div style="flex-direction: row; background-color: black; display: flex">
+        <div style="flex-grow: 1; height: 30px; background-color: blue"></div>
+        <div style="flex-grow: 2; height: 30px; background-color: pink"></div>
+        <div style="flex-grow: 8; height: 30px; background-color: orange"></div>
+    </div>
+    <h3>Column</h3>
+    <div style="flex-direction: column; background-color: black; display: flex">
+        <div style="flex-grow: 1; height: 30px; background-color: blue"></div>
+        <div style="flex-grow: 2; height: 30px; background-color: pink"></div>
+        <div style="flex-grow: 8; height: 30px; background-color: orange"></div>
+    </div>
+    <h2>Only take certain amount of screen</h2>
+    <div style="background-color: yellowgreen; height: 30px; width: 50%;"></div>
+    <div style="background-color: darkgreen; height: 5vh; width: 50vw;"></div>
+
+    <h3>Row Alignment</h3>
+    <div style="height: 120px; flex-direction: row; background-color: black; display: flex">
+        <div style="flex-grow: 1; height: 30px; background-color: blue"></div>
+        <div style="margin-top: 30px; flex-grow: 2; height: 30px; background-color: pink"></div>
+        <div style="margin-top: 60px; flex-grow: 8; height: 30px; background-color: orange"></div>
+        <div style="margin-top: 90px; flex-grow: 8; height: 30px; background-color: gray"></div>
+    </div>
+    <h3>Row Alignment 2</h3>
+    <div style="height: 120px; flex-direction: row; background-color: black; display: flex">
+        <div style="flex-grow: 1; height: 30px; background-color: blue"></div>
+        <div style="margin-top: 30px; flex-grow: 2; height: 30px; background-color: pink"></div>
+        <div style="margin-top: 60px; flex-grow: 8; height: 30px; background-color: orange"></div>
+        <div style="margin-top: 90px; flex-grow: 8; height: 30px; background-color: gray"></div>
+    </div>
+
+
+</body>
+
+</html>

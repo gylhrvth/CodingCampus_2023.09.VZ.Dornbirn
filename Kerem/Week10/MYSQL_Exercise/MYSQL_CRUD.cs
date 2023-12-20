@@ -32,7 +32,7 @@ namespace Kerem.Week10.MYSQL_Exercise
             MYSQL_Land.LandLöschen(datenbank, "Wano");
 
             // Ausgabe der verbleibenden Länder in der Datenbank
-            Console.WriteLine("Verbleibende Länder in der Datenbank:");
+            Console.WriteLine("Verbleibende Länder in der Datenbank:"); 
             foreach (MYSQL_Land land in datenbank)
             {
                 Console.WriteLine($"Name: {land.Name}, Hauptstadt: {land.Hauptstadt}, Bevölkerung: {land.Bevölkerung}");

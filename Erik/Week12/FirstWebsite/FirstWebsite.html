@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTA6News</title>
+    <link rel="icon" type="image/x-icon" href="Download.png">
+</head>
+<style>
+    body { 
+        background-image: url('grand-theft-auto-vi-gta-6-sunset-trailer-4k-wallpaper-by-v0-utyo40c0bh4c1.jpeg');
+        background-size: cover;
+        background-position: 55%;
+        background-attachment: fixed;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 30% auto;
+    }
+
+    @media only screen and (max-width: 1000px)  {
+        .container {
+            grid-template-columns: 50% auto;
+        }
+    }
+
+
+    @media only screen and (max-width: 800px)  {
+        .container {
+            grid-template-columns: 100%;
+        }
+    }
+    
+</style>
+
+<body style="color: #38000f;">
+    <h1 style="text-align:center; font-family:tahoma; font-size: 350%; text-shadow: 5px 3px #e41616cd; margin-bottom: 80px;">Grand Theft Auto 6 News</h1> 
+    <div class="container">
+        <div class="left">
+            <div style="background-color:rgba(30, 143, 255, 0.293);border: 2px solid rgb(0, 0, 0); font-size: 30px;font-weight: 900;padding:10px ">Official infos from Rockstar Games
+            </div>
+        
+            <h4 style="padding-left: 130px; margin-bottom: 1px;">Klick to open the pages!</h2>
+            <div style="background-color:rgba(30, 143, 255, 0.293);color: #000000; text-decoration: none; border: 2px solid rgb(0, 0, 0); font-size: 28px;font-weight: 900;padding:10px;  "> 
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=QdBZY2fkU-0"target= "blank">Official Trailer</a></li>
+                    <li><a href="https://www.rockstargames.com/de/"target= "blank">Official Rockstar Games Page</a></li>
+                    <li><a href="https://twitter.com/RockstarGames?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"target= "blank">Official Rockstar Games Twitter</a></li>
+                    <li><a href="https://www.youtube.com/@RockstarGames" target= "blank">Official Rockstar Games Youtube</a></li>
+                </ul>
+            </div>        
+        </div>
+        <div class="right"></div>
+    </div>
+
+
+    <div id="myDiv"></div>
+    
+     
+     <style >
+     .glitch-wrapper {
+        width: 100%;
+        display:flex;
+        position: absolute ;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #222;
+     }
+     
+     .glitch {
+        position: relative;
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+        letter-spacing: 5px;
+        z-index: 1;
+     }
+     
+     .glitch:before,
+     .glitch:after {
+        display: block;
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+     }
+     
+     .glitch:before {
+        animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        color: #0ff;
+        z-index: -1;
+     }
+     
+     .glitch:after {
+        animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+        color: #ff00ff;
+        z-index: -2;
+     }
+     
+     @keyframes glitch-color {
+        0% {
+           transform: translate(0);
+        }
+     
+        20% {
+           transform: translate(-3px, 3px);
+        }
+     
+        40% {
+           transform: translate(-3px, -3px);
+        }
+     
+        60% {
+           transform: translate(3px, 3px);
+        }
+     
+        80% {
+           transform: translate(3px, -3px);
+        }
+     
+        to {
+           transform: translate(0);
+        }
+     }
+     </style>
+
+</body>
+
+<script>
+    const scam = document.querySelector("#myDiv");
+    const body = document.querySelector(".all");
+    
+    document.addEventListener("click", scamUs);
+
+    function scamUs(){
+        console.log("scanmUs")
+        let rnd = Math.random() * 360;
+
+        const wrapper = document.createElement("div");
+        wrapper.classList.add('glitch-wrapper');
+        const param = document.createElement("div");
+        param.textContent = "$$$ BUY IT NOW $$$!";
+        param.classList.add('glitch')
+        wrapper.appendChild(param)
+
+        rnd = Math.random() * 360;
+        wrapper.style.transform = `rotate(${rnd}deg)`;        
+
+        scam.appendChild(wrapper);
+
+        body.addEventListener("mouseover", 
+        wrapper.open("https://freetrial.finalfantasyxiv.com/gb/?utm_source=Google_search-desktop-squareenix&utm_medium=cpc&utm_campaign=ffxiv_alwayson_con_gas_wmpag&utm_content=cdps_287-288_text&utm_term=final%20fantasy&gclid=EAIaIQobChMI69HG3tKMgwMVzoZoCR0SAAJBEAAYASAAEgKZuPD_BwE", "_blank")
+        )
+
+
+        for (let i = 0; i < 10; i++)
+        {
+        const event = new MouseEvent("mouseover");
+        wrapper.dispatchEvent(event);
+        }
+
+
+
+
+    }
+
+    //setTimeout(function(){ console.log("hi"); scam.style.display = ""}, 3000); 
+</script>
+</html>
+
+

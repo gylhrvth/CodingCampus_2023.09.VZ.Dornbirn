@@ -15,8 +15,9 @@ using Simon.Week08.Filesystem;
 using Simon.Week08.Filesystem.Useful;
 using Simon.adventofcode;
 using Simon.Week10;
+using Simon.Week10.Create__Read__Update__Delete;
 
 Console.OutputEncoding = System.Text.Encoding.Unicode;
 
-MSSQLuserinputquery.Start();
+Main.Start();
 

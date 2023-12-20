@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/ab66c79a6e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Ugly Website</title>
+
+</head>
+<body onclick="openPopup()">
+    
+    <h1>Welcome to the Ugliest Website Ever!</h1>
+    <div class="ugly-box">
+        <p>This is some ugly content for the sake of ugliness.</p>
+        <p class="blink">Blinking text because why not?</p>
+        <p class="rotate">Rotated text just to make it more interesting.</p>
+    </div>
+    <div id="popup" class="popup">ANTIVIREN-PROGRAMM ABGELAUFEN - KLICKE HIER</div>
+    <i class="fa-solid fa-spinner fa-spin-pulse fa-2xl" style="font-size: 1000px;"></i>
+    <div id="container1">
+        <button  onclick="openPopup()" id="fake">
+            DOWNLOAD NOW
+        </button>
+        <i class="fa-solid fa-poo fa-spin fa-shake fa-2xl" style="color:brown; font-size: 250px;"></i>
+        <button onclick="openPopup()" id="fake">
+            ALTE OMA 50 METER VON DIR ENTFERNT
+        </button>
+    </div>
+    <div id="container2">
+        <button onclick="openPopup()" id="fake">
+            DU HAST 30 MILLIONEN GEWONNEN!!!! KLICKE HIER!!!!!!!
+        </button>
+        <img src="sky.png" id="beautiful" height="400" width="400">
+    </div>
+
+    <script>
+        function openPopup() {
+            var popup = document.getElementById('popup');
+            popup.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
