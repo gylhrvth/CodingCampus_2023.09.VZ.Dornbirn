@@ -1,0 +1,100 @@
+.hidden {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    position: relative;
+
+    border-width: 3px;
+    border-style: solid;
+}
+
+
+@keyframes example {
+    0% {
+        transform: rotate(calc(-0deg - 45deg * var(--index))) translateX(190px) rotate(calc(0deg + 45deg * var(--index)));
+    }
+
+    100% {
+        transform: rotate(calc(-360deg - 45deg * var(--index))) translateX(190px) rotate(calc(360deg + 45deg * var(--index)));
+    }
+}
+
+.circle>div {
+    position: absolute;
+    left: 75px;
+    top: 75px;
+    animation-name: example;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.imgCircle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.imgCircle>span {
+    font-size: 80px;
+    margin-left: 5px;
+}
+
+.imgCircle {
+    width: 80px;
+    height: 80px;
+}
+
+
+.title {
+    margin-left: 12px;
+}
+
+.circle>div:nth-child(1) {
+    --index: 0;
+}
+
+.circle>div:nth-child(2) {
+    --index: 1;
+}
+
+.circle>div:nth-child(3) {
+    --index: 2;
+}
+
+.circle>div:nth-child(4) {
+    --index: 3;
+}
+
+.circle>div:nth-child(5) {
+    --index: 4;
+}
+
+.circle>div:nth-child(6) {
+    --index: 5;
+}
+
+.circle>div:nth-child(7) {
+    --index: 6;
+}
+
+.circle>div:nth-child(8) {
+    --index: 7;
+}
