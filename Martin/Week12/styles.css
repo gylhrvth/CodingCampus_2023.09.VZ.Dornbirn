@@ -1,0 +1,71 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 20pc;
+    height: zzzpc;
+    border: 0;
+    font-size: 50px;
+    color: rgb(74, 64, 64);
+}
+
+img{
+    align-self: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+#DeleteButton 
+{
+    box-sizing:content-box;
+    background-color: red;
+}
+
+.button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(129, 132, 129); 
+    color: #ffffff;
+    font-size: large;
+    border-radius: 40px;
+    width: 50px;
+    height: 2px;
+}
+
+
+th,td{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-style:initial;
+    text-align: center;
+    color: #3a4e9e;
+    border-color: #000000;
+    background-color: #1fb7dd;
+    padding: 5px;
+    border-radius: 15px;
+    width: 10px;
+    height: 10px;
+}
+
+table{
+    border-spacing: 5px;
+}
+
+
+
+td:nth-child(even), th:nth-child(even) {
+    background-color: #1dd5ed;
+}
+
+th:nth-child(even), th:nth-child(even) {
+    background-color: #1dd5ed
+}
+
+th:hover {background-color: #646161bc;}
+
+.darkmode{
+    background-color: #000000;
+    color:white
+}
+
