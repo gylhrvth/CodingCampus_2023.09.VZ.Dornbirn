@@ -1,0 +1,25 @@
+.verySmallText {
+    font-size: 100px;
+    color: coral;
+}
+
+.veryLargeText {
+    font-size: 100px;
+    color: blueviolet;
+}
+
+h1 {
+    color: blue;
+    font-family: cursive;
+    font-size: x-large;
+}
+
+p {
+    border: 10px solid powderblue;
+    padding: 10px;
+    color: pink;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    background-color: fuchsia;
+    text-align: center;
+}

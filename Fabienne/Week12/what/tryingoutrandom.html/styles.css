@@ -1,0 +1,71 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  #app {
+    display: flex;
+  }
+  
+  #sidebar {
+    background-color: #040404;
+    padding: 20px;
+  }
+  
+  #logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1DB954;
+    margin-bottom: 20px;
+  }
+  
+  #playlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #playlist li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  #main-content {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  #now-playing {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #album-cover {
+    width: 100px;
+    height: 100px;
+    background-color: #1DB954;
+    margin-right: 20px;
+  }
+  
+  #song-info {
+    flex: 1;
+  }
+  
+  #controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  button {
+    background-color: #1DB954;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 0 10px;
+    cursor: pointer;
+  }

@@ -22,7 +22,7 @@ namespace Patrick.Week10.CountryInput
                 Console.WriteLine("Ist Lustenau in der Datenbank vorhanden? " + (database.SearchCountry("Lustenau").Count > 0));
 
                 //Create New Country
-                Country country = new Country("Austria", "A", "Wien", "Wien", 83850, 8401940);
+                Country country = new Country("Lustenau", "LUST", "Wien", "Wien", 830, 1940);
                 database.CreateCountry(country);
 
                 //Console.WriteLine("Ist Austria in der Datenbank vorhanden? " + (database.SearchCountry("Austria").Count > 0));
@@ -41,9 +41,10 @@ namespace Patrick.Week10.CountryInput
                 Console.WriteLine("Ist Lustenau NACH DEM LÖSCHEN vorhanden? " + (database.SearchCountry("Lustenau").Count > 0));
 
 
-                //Úpdate a Country
-                database.UpdateCountry("A", country);
-               
+                //Update a Country
+                Country countryUpdate = new Country("Lustenauuuu", "LUUU", "Höchst", "Höchst", 8320, 100);
+                database.UpdateCountry("LUUU", countryUpdate);
+                
           
             }
             catch(SqlException ex)
@@ -55,9 +56,6 @@ namespace Patrick.Week10.CountryInput
 
                 database.Disconnect();
             }
-
-
-
         }
 
     }
