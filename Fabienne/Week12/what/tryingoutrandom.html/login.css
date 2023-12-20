@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: 'Silkscreen';
+}
+
+
+.background{
+    position: fixed;
+    object-fit: cover;
+    /*top: 0px;
+    left: 0px;*/
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    opacity: 0.56;
+}
+
+
+.navbar {
+    background-color: black;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar span {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 10px;
+    border: 1px solid white;
+    transition: background-color 300ms;
+}
+
+.navbar a:hover {
+    background-color: #ff000080;
+}
+
+.search-bar {
+    font-family: 'Silkscreen';
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+input[type="text"] {
+    width: 150px;
+    font-family: 'Silkscreen';
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+}
+
+button {
+    background-color: black;
+    font-family: 'Silkscreen';
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.button2{
+    background-color: black;
+    font-family: 'Silkscreen';
+    color: white;
+    border: 2px solid white !important;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 300ms;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    
+}
+.login2{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+.login input{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    width: 150px;
+    font-family: 'Silkscreen';
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.544) !important;
+    border-radius: 10px;
+}
+
+#uname:hover, #pword:hover{
+    outline-style: solid;
+    border-color: rgb(140, 1, 1) !important;
+}
+
+#uname:focus, #pword:focus{
+    outline-style: solid;
+    border-color: rgb(255, 0, 0) !important;
+}
+.button2:hover{
+    background-color: #ff000080 ;
+}
+
+.login2 a{
+    color: white;
+}

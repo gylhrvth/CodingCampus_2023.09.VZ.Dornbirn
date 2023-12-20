@@ -1,0 +1,65 @@
+body{
+    display: grid;
+    justify-content: center;
+    /*margin-top: 15%;*/
+}
+
+h1{
+    display: grid;
+    justify-content: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+input,label{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serifs;
+    font-size: 30px;
+    padding: 10px;
+    width: 25pc;
+}
+
+input{
+    background-color: rgb(243, 237, 237);
+    border: none;
+}
+
+.SubmitContainer{
+    display: grid;
+    justify-content: center;
+   
+}
+
+.sumbitbutton{
+    background-color: rgb(25, 209, 144);
+    border-color: rgba(25, 209, 145, 0.55);
+    color: white;
+    width: 200px;
+    border-radius: 40px;
+}
+
+
+.RegisterForm{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 10px;
+    color: rgb(19, 199, 187);
+}
+
+.outerContainer{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    background-color: rgb(19, 199, 187);
+    
+}
+
+.innerContainer{
+    align-self: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px rgb(24, 168, 159);
+    text-shadow: -1px 0 rgb(113, 113, 113), 0 1px rgb(113, 113, 113), 1px 0 rgb(118, 118, 118), 0 -1px rgb(116, 113, 113);
+}

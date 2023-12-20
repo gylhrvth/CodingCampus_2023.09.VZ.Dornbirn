@@ -1,0 +1,15 @@
+.body {
+    margin: 0;
+}
+
+.twoCollumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: bisque;
+}
+
+.center {
+    display: grid;
+    justify-items: center;
+
+}

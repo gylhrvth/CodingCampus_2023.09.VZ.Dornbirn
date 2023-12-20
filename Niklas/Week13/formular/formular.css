@@ -1,0 +1,71 @@
+.text-mono {
+    font-family: monospace !important;
+    font-size: 16px;
+}
+
+.gitcolor {
+    background-color: #040d21;
+    color: #8193b2;
+}
+
+.nextbutton {
+    background-color: #040d21;
+    color: #8193b2;
+    margin-left: 10px;
+    border-radius: 10px;
+    border-color: #8193b2;
+    border: 1px solid;
+    padding: 5px 10px 5px 10px;
+    height: 32px;
+    cursor: pointer
+}
+
+.emailfield {
+    background-color: #040d21;
+    color: #8193b2;
+    -webkit-text-fill-color: #fff;
+    box-shadow: none;
+    border: 0;
+    width: 400px;
+    height: 25px;
+    background-color: #0c162d;
+}
+.passwordfield {
+    background-color: #040d21;
+    color: #8193b2;
+    -webkit-text-fill-color: #fff;
+    box-shadow: none;
+    border: 0;
+    width: 400px;
+    height: 25px;
+    background-color: #0c162d;
+}
+
+.rightarrow {
+    color: magenta;
+    font-weight: 100;
+    font-size: 25px;
+    display: flex;
+}
+
+.cyanheavy {
+    color: cyan;
+    font-weight: 600;
+    display: flex;
+    padding-top: 25px;
+}
+
+.githubwelcome {
+    background-color: #0c162d;
+    display: flex;
+    justify-content: start;
+    top: 125px;
+    position: relative;
+    align-items: start;
+    height: 175px;
+    width: 550px;
+    flex-direction: column;
+    padding-left: 20px;
+    left: 30%;
+    border-radius: 20px;
+}

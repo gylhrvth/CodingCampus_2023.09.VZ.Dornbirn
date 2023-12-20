@@ -1,0 +1,32 @@
+.uberklasse{
+    display: flex;
+    justify-content: center;
+}
+.rudolf{
+    height: 400px;
+    width: 400px;
+    transition: transform 2s;
+    transition-timing-function: linear;
+
+}
+
+.rudolf:hover{
+    transform: rotate(45deg);
+    transform: rotate(-45deg)
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    text-align: center;
+  }
+
+
+.santa{
+    display: flex;
+    justify-content: right;
+}
