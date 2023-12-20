@@ -1,15 +1,14 @@
-
 .headline {
     display: flex;
     justify-content: flex-end;
 }
 
-.headline > * {
+.headline>* {
     padding: 5px;
     border-left: solid black 1px;
 }
 
-.headline > *:first-child {
+.headline>*:first-child {
     border-left: none;
 }
 
@@ -26,16 +25,16 @@
     display: flex;
 }
 
-.navbar-left > * {
+.navbar-left>* {
     padding: 0px 5px 0px 5px;
 }
 
-.navbar > .navbar-left > div > img {
+.navbar>.navbar-left>div>img {
     max-height: 20px;
 }
 
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 400px) {
     .navbar {
         display: block;
     }
