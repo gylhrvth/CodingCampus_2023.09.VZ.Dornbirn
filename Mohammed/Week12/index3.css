@@ -1,0 +1,9 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: montserreat;
+    background: linear-gradient(120deg,#1a567e,#cd7ceb);
+    height: 100vh;
+    overflow: hidde;
+}
+
