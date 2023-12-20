@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .center {
+        display: grid;
+        justify-content: center;
+    }
+
+    .matrix{
+        width: 50vw;
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: auto 1fr;
+        padding-bottom: 20px;
+    }
+
+    .matrix > label{
+        margin-right: 5px;
+    }
+
+    ::placeholder{
+        color:lightgreen;
+    }
+
+    .rounded>label{
+        display: block;
+        font-size: 0.5em;
+        padding-top: 1em;
+    }
+
+    .rounded>input{
+        display: block;
+        padding: 0px 5px 0px 5px;
+        border: solid black 1px;
+        border-radius: 999px;
+    }
+
+    .onlybottom>label{
+        display: block;
+        font-size: 0.5em;
+        padding-top: 1em;
+    }
+
+    .onlybottom>input{
+        display: block;
+        padding: 0px 5px 0px 5px;
+        border: none;
+        border-bottom: 1px solid black;
+    }    
+</style>
+</head>
+<body>
+    <h1>Registrierung</h1>
+    <div class="center">
+    <form action="testSite.html">
+        <div class="matrix">
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName1" value="Joe">
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="lastName1" value="Doe">    
+
+            <label for="telephone">Tel</label>
+            <input type="text" name="telephone" id="telephone1" placeholder="+43 xxx xxxx xxxx xxxx">    
+
+
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password1">    
+
+        </div>
+        <div>
+            <input type="submit" value="Abschicken">
+        </div>
+    </form>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <div class="center">
+        <form action="">
+            <div class="oneColumn rounded">
+                <label for="firstName">First name</label>
+                <input type="text" name="firstName" id="firstName2" value="Joe">
+                <label for="lastName">Last name</label>
+                <input type="text" name="lastName" id="lastName2" value="Doe">    
+    
+                <label for="telephone">Tel</label>
+                <input type="text" name="telephone" id="telephone2" placeholder="+43 xxx xxxx xxxx xxxx">    
+    
+    
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password2">    
+    
+            </div>
+            <div>
+                <input type="submit" value="Abschicken">
+                <input type="reset" value="Reset">
+            </div>            
+        </form>
+    </div>
+
+    <div style="height: 50px;"></div>
+
+    <div class="center">
+        <form action="">
+            <div class="oneColumn onlybottom">
+                <label for="firstName">First name</label>
+                <input type="text" name="firstName" id="firstName3" value="Joe">
+                <label for="lastName">Last name</label>
+                <input type="text" name="lastName" id="lastName3" value="Doe">    
+    
+                <label for="telephone">Tel</label>
+                <input type="text" name="telephone" id="telephone3" placeholder="+43 xxx xxxx xxxx xxxx">    
+    
+    
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password3">    
+    
+            </div>
+            <div>
+                <input type="submit" value="Abschicken">
+                <input type="button" value="Zurücksetzen" onclick="resetFormContent()">
+            </div>            
+        </form>
+    </div>
+
+<script>
+    function resetFormContent(){
+        document.getElementById('firstName3').value = "";
+        document.getElementById('lastName3').value = "";
+        document.getElementById('password3').value = "";
+        document.getElementById('telephone3').value = "";
+    }
+
+</script>
+
+</body>
+</html>
