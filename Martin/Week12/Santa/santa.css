@@ -1,0 +1,25 @@
+body{
+    background-color: white
+}
+
+.present{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+
+}
+.present:hover{
+    animation-name: animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: backwards;
+    animation-timing-function:ease-in;
+}
+
+@keyframes animation {
+    0%{transform: rotate(0deg)}
+    25%{transform: rotate(45deg)}
+    50%{transform: rotate(-45deg)}
+    75%{transform: rotate(45deg)}
+    100%{transform: rotate(0deg)}
+}
