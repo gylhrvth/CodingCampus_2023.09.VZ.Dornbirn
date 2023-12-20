@@ -8,7 +8,7 @@ namespace Michael.Week10_maybe.WaveCollapseAlgorithm
 {
     internal class Main
     {
-        public static void Start()
+        public static Tile[,] Start()
         {
 
             Random rnd = new Random();
@@ -107,6 +107,8 @@ namespace Michael.Week10_maybe.WaveCollapseAlgorithm
             }
 
             Console.ReadLine();
+
+            return field;
 
 
 
