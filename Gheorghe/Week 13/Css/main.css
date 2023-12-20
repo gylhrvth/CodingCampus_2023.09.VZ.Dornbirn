@@ -1,0 +1,344 @@
+@import url('https://fonts.gooleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+ :root{
+    --light-color: #fff;
+    --light-color-alt: #afb6cd;
+    --primary-background-color: #131417;
+    --fonts-family:'Poppins';
+    --secondary-background-color: #252830;
+    --hover-light-color: var(var(--light-color));
+    --hover-dark-color: var(var(--primary-background-color));
+    --gradient-color: linear-gradient(115deg,#4fcf70,#fad648,#a767e5,#12bcfe,#44ce7b);
+    --transparent-light-color: rgba(255,255,255,.05);
+    --transparent-dark-color:  rgba(0,0,0,.75);
+    --font-family:  'Poppins', sans-serif;
+    --font-size-xsm: 1.2rem;
+    --font-size-sm: 1.6rem;
+    --font-size-md: 2.4rem;
+    --font-size-lg: 3rem;
+    --font-size-xl: 4rem;
+    --gap: 2rem;
+    --margin-sm: 2rem;
+    --margin-md: 3rem;
+    --item-min-height-sm: 20rem;
+    --item-min-height-md: 30rem;
+    
+} 
+
+
+*{
+
+    margin:  0 ;
+    padding: 0 ;
+    box-sizing: border-box;
+}
+
+
+
+
+html{
+   /* font-size: 10px;*/
+    font-size: 62,5%;
+}
+
+
+
+
+body{
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color:var(--light-color-alt);
+    background-color: var(--primary-background-color);
+    letter-spacing: 1px;
+    transition: background-color .25s, color .25s;
+}
+
+
+
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+img{
+    max-width: 100%;
+    display: block;
+
+}
+
+
+ul{
+ list-style: none; 
+
+}
+
+
+
+input,button{
+
+    font: inherit;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    outline: none;
+
+
+}
+
+
+
+
+
+
+
+
+
+i{
+    font-size: var(--font-family-md);
+
+}
+
+
+
+body.light-theme{
+
+    --light-color: #3d3d3d;
+    --light-color-alt: rgba(0,0,0,.6);
+    --primary-background-color: #f1f1f1;
+    --hover-light-color: #fff;
+    --transparent-light-color: #252830;
+    --transparent-dark-color:  rgba(0,0,0,.1);
+}
+
+
+.container{
+
+    max-width: 160rem;
+    margin: 0 auto ;
+    padding: 0 1.5rem;
+    
+}
+
+
+.place-item-center{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+
+
+.screen-sm-hidden{
+    display: none;
+}
+
+
+
+.header{
+    background-color: var(--secondary-background-color);
+    position: fixed;
+    top: 0 ;
+    left: 0 ;
+    width: 100%;
+    z-index:  999;
+
+
+}
+
+
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+
+}
+
+
+.logo{
+
+    font-size: var(--font-size-md) ;
+    color: var(--light-color);
+
+}
+
+
+
+
+.menu{
+    position: absolute;
+    top: 8.5rem;
+    right: 1.5rem;
+    width:25rem;
+    padding: 1.5rem;
+    background-color: var(--secondary-background-color);
+    opacity: 0 ;
+    transform: scale(0); 
+     transition: opacity .25s ease-in;    
+
+
+}
+
+
+
+.list{
+
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+
+
+
+}
+
+
+.menu > .list{
+    flex-direction: column;
+}
+
+
+
+
+.list-link.current{
+    color:var(--light-color);
+}
+
+
+
+
+.close-menu-icon{
+    display: none;
+}
+
+
+
+
+
+.btn{
+    cursor: pointer;
+}
+
+
+
+
+.list-link.hover,
+.btn:hover,
+.btn:hover span{
+
+    color:var(--light-color);
+}
+
+
+
+
+.moon-icon{
+
+    display: none;
+}
+
+
+
+
+
+
+.light-theme .sun-icon{
+    display: none;
+}
+
+
+
+
+
+
+.light-theme .moon-icon{
+    display: black;
+
+}
+
+
+
+
+
+
+.header.activated{
+    box-shadow: 0 1px .5rem var(--transparent-light-color);
+}
+
+
+
+
+.menu.activated{
+    box-shadow: 1px 1px 1rem var(--transparent-light-color);
+    opacity: 1 ;
+    transform: scale(1); 
+}
+
+
+
+
+.menu-toggle-icon.activated .open-menu-icon{
+    display: none;
+}
+
+
+
+.menu-toggle-icon.activated .close-menu-icon{
+    display: block;
+}
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            background: url('https://cdna.artstation.com/p/assets/images/images/039/416/290/original/kristy-glas-processs.gif?1625835350') center/cover fixed;
+        }
+
+        header {
+            background-color: #a833a2;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #b6b6b6;
+            padding: 1em;
+        }
+
+        main {
+            margin-top: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 95%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fantasy Shop</h1>
+    </header>
+
+    <nav>
+        <a href="http://127.0.0.1:5500/Sven/Week12/Main.HTML">Main</a>
+        <a href="http://127.0.0.1:5500/Sven/Week12/Shop.HTML#">Shop</a>
+        <a href="">Courses</a>
+        <a href="http://127.0.0.1:5500/Sven/Week12/Contact.HTML">Contact</a>
+        
+        
+    </nav>
+
+    <center><section style="color: #f2f2f2; ">
+        <article>
+            <h2>Dragon riding course</h2>
+            <img src="https://i.pinimg.com/originals/a5/d3/0c/a5d30cfad060d04698c213ae5db433ed.jpg" width= 400 heigth: 400>
+            <p>Improve your Dragon riding skills with this diescounted course</p>
+            <p>Price: $419.99<s style="color: red;"> $619.99</s></p>
+            <button onclick="addToCart('Dragon Egg', 319.99)">Add to Cart</button>
+        </article>
+
+        <article>
+            <h2>Potion Brewing 101</h2>
+            <img src="https://img.fruugo.com/product/6/52/1070438526_max.jpg" width= 400 heigth: 400>
+            <p>A Ball Made from Crystals or something idk.</p>
+            <p>Price: $819.99<s style="color: red;"> $919.99</s></p>
+            <button onclick="addToCart('Crystal Ball', 629.99)">Add to Cart</button>
+        </article>
+
+        <article>
+            <h2>Mythical Creature care</h2>
+            <img src="https://storage.googleapis.com/pai-images/235302d7038e47be965e7f315d356d3c.jpeg" width= 400 heigth: 400>
+            <p>A Book with a Spell maybe, i dont have enough mana to use it.</p>
+            <p>Price: $519.99<s style="color: red;"> $719.99</s></p>
+            <button onclick="addToCart('Spell Book', 779.99)">Add to Cart</button>
+        </article>
+
+        <article>
+            <h2>Magical Ring</h2>
+            <img src="https://img.freepik.com/fotos-premium/organischer-fantasy-ring_721243-2786.jpg" width= 400 heigth: 400>
+            <p>Its too big for me.</p>
+            <p>Price: $219.99<s style="color: red;"> $419.99</s></p>
+            <button onclick="addToCart('Magical Ring', 2249.99)">Add to Cart</button>
+        </article>
+
+        <article>
+            <h2>Full Armor Set</h2>
+            <img src="https://i.pinimg.com/736x/e2/94/12/e294128e8036bef35d65b98426242aaf.jpg" width= 400 heigth: 400>
+            <p>Your Level is not high enough for this.</p>
+            <p>Price: $9959.99</p>
+            <button onclick="addToCart('Full Armor Set', 9959.99)">Add to Cart</button>
+        </article>
+
+        <article>
+            <h2>Pegasus</h2>
+            <img src="https://storage.googleapis.com/pai-images/5458faebbcca4a40b6d43748c08bba98.jpeg" width= 400 heigth: 400>
+            <p>Mutated horse mount. This cant be halthy how is this thing able to fly?</p>
+            <p>Price: $5269.99</p>
+            <button onclick="addToCart('Pegasus', 5269.99)">Add to Cart</button>
+        </article>
+        <p></p>
+    </center>
+    </main>
+
+    <footer>
+        &copy; 2023 Fantasy Shop. All rights reserved.
+    </footer>
+
+    <script>
+        function addToCart(productName, price) {
+            alert('Added ' + productName + ' to cart. Total: $' + price.toFixed(2));
+        }
+    </script>
+
+</body>
+</html>

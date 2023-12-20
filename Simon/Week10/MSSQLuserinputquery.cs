@@ -13,24 +13,23 @@ namespace Simon.Week10
     {
         public static void Start()
         {
-            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=simber;Password=simon1234";
-            Console.WriteLine("Select the City you would like to add Population to:");
-            string userinput = Console.ReadLine();
+            string connectionString = "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=simber;Password=simon";
+            
 
-            int userinputint = Console_Input.Readuserinputint("By how much would you like to increace the Population?", "Please only use numbers!", int.MinValue, int.MaxValue);
-
-            addpoptoDatabase(userinput, userinputint, connectionString);
+            addpoptoDatabase(connectionString);
 
 
 
         }
 
-        public static void addpoptoDatabase(string userinput, int userinputint, string connectionString)
+        public static void addpoptoDatabase(string connectionString)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                using (SqlCommand cmd = new SqlCommand("select * from city c where c.name = @Name", conn)) 
+                using (SqlCommand cmd = new SqlCommand("select * from city c where c.name = @Name", conn))
                 {
+                    Console.WriteLine("Select the City you would like to add Population to:");
+                    string userinput = Console.ReadLine();
                     cmd.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar, 0).Value = userinput;
 
                     try
@@ -46,6 +45,7 @@ namespace Simon.Week10
 
                                 using (SqlCommand cmd1 = new SqlCommand("update city set population = population + @population where city.name = @Name", conn))
                                 {
+                                    int userinputint = Console_Input.Readuserinputint("By how much would you like to increace the Population?", "Please only use numbers! Try again:", int.MinValue, int.MaxValue);
                                     cmd1.Parameters.Add("@population", System.Data.SqlDbType.Int).Value = userinputint;
                                     cmd1.Parameters.Add("@Name", System.Data.SqlDbType.NVarChar, 0).Value = userinput;
                                     cmd1.ExecuteReader();
@@ -55,7 +55,7 @@ namespace Simon.Week10
                             else
                             {
                                 Console.WriteLine($"{userinput} was not found in the Database.");
-                                // run me again
+                                addpoptoDatabase(connectionString);
                             }
                         }
                     }
@@ -63,14 +63,8 @@ namespace Simon.Week10
                     {
                         Console.WriteLine(ex.Message);
                     }
-                }            
+                }
             }
-        }
-
-        public static void IsinDatabase(string userinput)
-        {
-            SqlString GetSqlString;
-
         }
 
         public static void test()

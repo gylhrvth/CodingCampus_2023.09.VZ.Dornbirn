@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-image: url(chipi-chapa.gif);
+            background-position: center;
+            background-size: cover;
+           ;
+        }
+    </style>
+    <h1 style="color: slateblue;">This is me btw</h1>
+    <a href="#click">This is a link</a>
+
+    <h2 style="color: slateblue;">if you even care</h2>
+    <h3 style="color: slateblue;">do you even care?</h3>
+    <button onclick="a()"> suprise </button>
+    <span style='font-size:100px;'>&#129485;</span>
+    <span style='font-size:100px;'>&#128133;</span>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <img id="drag1" src="catmeow.webp" draggable="true" ondragstart="drag(event)" width="400px" height="400px">
+
+    <a href="https://www.youtube.com/watch?v=2GgiZZhO-PA&t=34s">CLICK</a>
+
+    <p>Chipi</p>
+    <p>chipi</p>
+    <p>chapa</p>
+    <p>chapa</p>
+    <p>dubi</p>
+    <p>dubi</p>
+    <p>da</p>
+    <p>da</p>
+    <p>da</p>
+    <p>da</p>
+    <button onclick="sound()">Play sound :)</button>
+    <p id="click">what</p>
+
+    <script>
+        console.log('hello world!');
+        function a(){
+            alert("congratulations you won! 🎉")
+
+        }
+        function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function sound(){
+     var snd = new Audio('chip.mp3')
+     snd.play()
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</body>
+    </script>
+  </body>
+</html>

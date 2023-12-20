@@ -7,8 +7,49 @@ body {
     background-color: #2E3440;
     font-family: Lilex;
     color: #D8DEE9;
-    margin: 5%;
+    margin: 0;
 }
+
+
+
+.most-outter-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+    .most-outter-flex {
+        flex-direction: column;
+    }
+
+}
+
+
+.outter-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    flex: 1 1 auto;
+    overflow: auto;
+}
+
+.top-flex {
+    flex: 1;
+}
+
+.content-flex {
+    flex: 8;
+    /* width: 60vw; */
+    /* justify-content: center; */
+}
+
+.footer-flex {
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+}
+
+
 
 ::selection {
     background: #4c566a;
@@ -24,10 +65,17 @@ h1 {
 }
 
 .flexH2 {
-    width: 100%;
+    /* width: 80%; */
     display: flex;
-    justify-content: left;
     background-color: #3b4252;
+    box-shadow:
+        0px 0.9px 0.6px -8px rgba(0, 0, 0, 0.11),
+        0px 2px 1.3px -8px rgba(0, 0, 0, 0.087),
+        0px 3.3px 2.1px -8px rgba(0, 0, 0, 0.076),
+        0px 5px 3.2px -8px rgba(0, 0, 0, 0.068),
+        0px 7.3px 4.6px -8px rgba(0, 0, 0, 0.061),
+        0px 10.3px 6.6px -8px rgba(0, 0, 0, 0.055),
+        0px 14.6px 9.3px -8px rgba(0, 0, 0, 0.049);
 }
 
 h2 {
@@ -39,6 +87,7 @@ h2 {
 
 .text {
     color: #d8dee9;
+    /* width: 80%; */
 }
 
 a {
@@ -58,18 +107,20 @@ a:visited:hover {
 }
 
 
-.outterflex {
+.flex-quote {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    /* width: 80%; */
     justify-content: center;
     text-align: center;
 }
 
 .quote {
-    background-color: #434c5e;
+    background-color: #eceff4;
     padding: 10px;
-    color: #eceff4;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #434c5e;
     width: 80%;
     text-align: justify;
 }
@@ -78,12 +129,9 @@ a:visited:hover {
     color: #88c0d0;
 }
 
-.palette {
-    display: flex;
-    width: 50vw;
-    height: 12vh;
-    border-radius: 5px;
-    overflow: hidden;
+
+
+.palette-shadow {
     box-shadow:
         0px 0.9px 0.6px -8px rgba(0, 0, 0, 0.11),
         0px 2px 1.3px -8px rgba(0, 0, 0, 0.087),
@@ -94,7 +142,7 @@ a:visited:hover {
         0px 14.6px 9.3px -8px rgba(0, 0, 0, 0.049);
 }
 
-.palette:hover {
+.palette-shadow:hover {
     box-shadow:
         0px 1.1px 0.6px rgba(0, 0, 0, 0.13),
         0px 2.3px 1.3px rgba(0, 0, 0, 0.103),
@@ -105,9 +153,33 @@ a:visited:hover {
         0px 17.1px 9.3px rgba(0, 0, 0, 0.058);
 }
 
+.palette-center {
+    display: flex;
+    justify-content: center;
+}
+
+.palette {
+    display: flex;
+    width: 60%;
+    height: 12vh;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+    .palette {
+        display: flex;
+        width: 90%;
+        height: 12vh;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+}
+
 .palette-quarter {
     display: flex;
     flex-direction: column;
+    width: 25%;
     height: 100%;
     flex: 1;
 }
@@ -129,5 +201,30 @@ a:visited:hover {
 
 .palette-font {
     color: black;
-    font-size: 12px;
+    font-size: 14px;
+}
+
+.horizontal-line {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #D8DEE9;
+    width: 100%;
+    margin: 1.2rem auto;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #4C566A;
+    width: 20vw;
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+    }
+
+
 }
