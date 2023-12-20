@@ -17,10 +17,11 @@ a{
     position: sticky;
     background-color: rgb(24, 24, 24);
     top: 0;
+    height: 20px;
     display:flex;
     justify-content: space-between;
     padding: 20px;
-    font-size: 20px;
+    font-size: 13px;
     align-items: center;
     font-weight: bold;
 }
@@ -49,10 +50,10 @@ a{
 
 .inputSearch{
     color: white;
-    background-color: rgb(37, 37, 37);
-    border: 1px solid white;
+    background-color: rgb(24, 24, 24);
+    border: 1px solid lightgray;
     border-radius: 10px;
-    height: 35px;
+    height: 25px;
     width: 300px;
     padding: 5px 10px 5px 10px;
     font-size: 15px;
@@ -60,7 +61,7 @@ a{
 
 .inputSearch:focus{
     outline-style: solid;
-    border: 5px solid #8469b6;
+    border: 3px solid #8469b6;
 }
 
 .searchIcon{
@@ -74,8 +75,8 @@ a{
 .settings,
 .searchIcon{
     display: flex;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     align-items: center;
     justify-content: center;
 }
@@ -90,7 +91,7 @@ a{
 .login,
 .register{
     padding: 10px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     border-radius: 10px;
@@ -113,11 +114,19 @@ a{
 
 .suggestedChannels{
     background-color: #1f1f23;
-    position: sticky;
-    top: 90px;
-    max-height: 100vh;
-    min-width: 15%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    min-width: 20%;
+    max-width: 20%;
     padding: 15px 10px 10px 20px;
+}
+
+#suggIcon{
+    color: lightgray;
+    display: none;
 }
 
 .suggestedText{
@@ -125,6 +134,7 @@ a{
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 10px;
+    
 }
 
 #main{
@@ -133,5 +143,32 @@ a{
 
 .mainRight{
     padding: 20px;
-    font-size: 25px;
+    font-size: 20px;
+    margin-left: 22%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .mainRight{
+        margin-left: 60px;
+    }
+    .suggestedText span
+    {
+        display: none;
+    }
+    .suggestedChannels img{
+        content: url(assets/short.png);
+    }
+    .suggestedChannels{
+        width: 30px;
+        min-width: 30px;
+    }
+    #suggIcon{
+        display: inline;
+    }
+
+}
+
+
+@media only screen and (max-width: 1060px) {
+    .inputSearch{ display: none; }
 }

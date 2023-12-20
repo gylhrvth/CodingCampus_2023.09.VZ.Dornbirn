@@ -4,11 +4,15 @@ body {
     text-align: center;
     justify-content: center;
     margin: 50px;
-    display: flex;
-     
-    animation: 1s shake infinite;
+    display: flex;  
+    flex-direction: column;
+    
     background-image: url(dog.jpg);
-  }
+}
+
+body:hover{
+    animation: 1s shake infinite;
+}
 
 h1 {
     color: magenta;
@@ -19,6 +23,16 @@ p {
     color: yellow;
 }
 
+#beautiful{
+    border: 10px solid lime;
+    animation: changePicture 0.5s infinite;
+}
+
+#container1,
+#container2{
+    display: flex;
+}
+
 .ugly-box {
     border: 10px solid cyan;
     padding: 20px;
@@ -26,6 +40,8 @@ p {
     background-color: #ff00ff;
     border-radius: 25px;
 }
+
+
 
 .blink {
     animation: 1s infinite animate;
@@ -48,7 +64,23 @@ p {
   font-weight: bolder;
   background: linear-gradient(#e66465, #9198e5);
   animation: 1s sizeChange infinite;
+  cursor: pointer;
 }
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    height: 400px;
+    width: 400px;
+  }
 
 @keyframes animate{ 
     0%{  opacity: 0; } 
@@ -58,7 +90,7 @@ p {
 
 @keyframes sizeChange{
    0%{ height: 100px; width: 200px; font-size: 20px; color: cyan} 
-   50%{ height: 300px; width: 1000px;font-size: 100px; }
+   50%{ height: 300px; width: 1000px;font-size: 70px; }
    100%{ height: 100px; width: 200px; font-size: 20px;}
 
    0% { border-color: cyan; color: cyan; }
@@ -76,7 +108,29 @@ p {
 
 @keyframes shake {
   0% { transform: translate(0, 0); }
-  10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { transform: translate(-10px, 0) rotate(-5deg); }
-  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% { transform: translate(10px, 0) rotate(5deg); }
+  10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { transform: translate(-20px, 0) rotate(-10deg); }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% { transform: translate(20px, 0) rotate(10deg); }
   100% { transform: translate(0, 0); }
+}
+
+@keyframes colorChange{
+    0% { color: cyan; }
+    10% { color: yellow; }
+    20% { color: hotpink; }
+    30% { color: red; }
+    40% { color: purple; }
+    50% { olor: yellow; }
+    60% { color: cyan; }
+    70% { color: skyblue; }
+    80% { color: pink; } 
+    90% { color: red; }
+    100% { color: yellow; }
+}
+
+@keyframes changePicture{
+    0%{height: 100px; width: 100px;}
+    40%{height: 300px; width: 500px;}
+    60%{height: 400px; width: 700px;}
+    80%{height: 500px; width: 900px;}
+    100%{height: 100px; width: 100px;}
 }
