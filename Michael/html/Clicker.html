@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <button class="counterButton">
+            Click me
+        </button>
+        <br>
+        Clicked this many times:
+    <div class="showsCounter"></div>
+    </p>
+
+    <button class="resetButton">reset</button>
+
+</body>
+
+<script>
+    let counter = 0;
+
+    const btn = document.querySelector(".counterButton");
+    const cnt = document.querySelector(".showsCounter");
+    const rbt = document.querySelector(".resetButton");
+
+    cnt.textContent = counter;
+
+    function adjustCounter() {
+        counter++;
+        cnt.textContent = counter;
+    }
+
+    function resetCounter() {
+        counter = 0;
+        cnt.textContent = counter;
+    }
+
+    btn.addEventListener("click", adjustCounter);
+    rbt.addEventListener("click", resetCounter);
+</script>
+
+</html>

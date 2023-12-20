@@ -1,0 +1,31 @@
+.matrix{
+    display:grid;
+    width:100%;
+    text-align: center;
+    justify-items:center;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.einrücken{
+    margin-left:39%; 
+}
+.character {
+    width: 50px;
+    height: 50px;
+    background-color: #ffcc00;
+    position: relative;
+    animation: swingSword 1s infinite;
+  }
+
+  .sword {
+    width: 20px;
+    height: 80px;
+    background-color: #999;
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    transform-origin: bottom center;
+    animation: swingSword 1s infinite;
+  }
