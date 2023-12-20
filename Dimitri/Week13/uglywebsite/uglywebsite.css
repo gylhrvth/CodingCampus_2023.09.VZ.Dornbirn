@@ -145,8 +145,6 @@ body {
     animation-iteration-count: infinite;
 }
 
-.bottom {}
-
 
 @keyframes move-sideways-top {
     0% {
