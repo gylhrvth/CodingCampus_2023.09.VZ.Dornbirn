@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('') center/cover fixed;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #bdbdbd;
+    padding: 1% 0;
+}
+
+nav a {
+    color: black;
+}
+
+nav b {
+    color: black;
+}
+
+main {
+    font-size: xx-large;
+    font-family: Arial, sans-serif;
+    margin: 8%;
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
