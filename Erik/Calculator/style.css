@@ -21,12 +21,16 @@
     overflow: hidden;
     align-items: baseline;
     user-select: none;
+
+
 }
 
 .grid-container-parent {
     display: flex;
     justify-content: center;
+    background-image: url("mathematics-snya5mv2dogewetc-modified.jpg");
 }
+
 
 
 .grid-misc {
@@ -38,18 +42,22 @@
     background-color: rgb(167, 167, 167);
     border-radius: 16%;
     transition: 0.3s;
+
+    box-shadow: 0px 0px 10px 0.5px rgb(124, 122, 122);
 }
 
 .gird-equals:hover {
     background-color: rgb(242, 178, 87);
     border-radius: 30%;
     transition: 0.25s;
+    box-shadow: 0px 0px 20px 1px rgba(250, 162, 39, 0.795);
 }
 
 .gird-headlinerForNumbers:hover {
     background-color: rgb(167, 167, 167);
     border-radius: 20%;
     transition: 0.25s;
+    box-shadow: 0px 0px 10px 0.5px rgb(124, 122, 122);
 }
 
 .gird-headlinerForNumbers {
@@ -70,6 +78,9 @@
     background-color: rgb(167, 167, 167);
     border-radius: 16%;
     transition: 0.3s;
+
+
+
 }
 
 .display {
@@ -79,6 +90,7 @@
     border-radius: 10px;
     justify-content: right;
     padding-right: 3.5%;
+
 }
 
 .gird-equals {

@@ -1,0 +1,14 @@
+.flex1 {
+    display: flex;
+    flex-direction: row;
+
+    border: red solid 2px;
+    height: 5em;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+}
