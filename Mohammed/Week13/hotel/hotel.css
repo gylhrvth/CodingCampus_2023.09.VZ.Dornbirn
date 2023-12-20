@@ -1,0 +1,50 @@
+body {
+    display: grid;
+    background-color: rgb(54, 29, 29);
+    margin: auto;
+    justify-content: center;
+ 
+}
+
+
+.report{
+  display: grid;
+  padding: clamp(1px, 1vw, 10px);    
+}
+
+
+.registrationform{
+    width: clamp(300px, 60vw, 800px);
+    background-color: white;
+}
+
+.imageheader{
+    background-position:center;
+    background-size: cover;
+    /*height: 50%;*/
+    width: 100%;
+    min-height: 300px;
+    background-image: url('pexels-pixabay-258154.jpg');
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.maingrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(10px, 4vw, 40px);
+}
+
+form{
+    width: 100%;
+}
+
+label, input {
+    display: block;
+}
+
+input[type="text"]{
+    width: 100%;
+}

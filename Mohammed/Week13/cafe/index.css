@@ -1,0 +1,88 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1vh;
+    background-color: rgb(160, 154, 154);
+    direction: hidden;
+    margin: auto;
+    
+}
+.headline1{
+ 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(104, 98, 98);
+    cursor: pointer;
+    border: none;
+    border-style: outset;
+}
+
+.headline1 > h1:hover{
+color: #d6bd19;
+}
+.headlineH{
+    color: rgb(236, 211, 69);
+}
+.img{
+width: 70px;
+height: 70px;
+}  
+.photo {
+    height: 70vh;
+    background-image: url('pexels-pixabay-260922.jpg');
+    background-size: cover;
+   
+}
+.photo1{
+    height: 70vh;
+    background-image: url('pexels-thomas-balabaud-1579739.jpg');
+    background-size: cover;
+}
+.textOnBase{
+    display: grid;
+    height: 60vh;
+    align-content: center;
+    justify-content: center;
+    justify-items: start;
+    
+}
+.textOnPhoto {
+    text-shadow: rgb(218, 211, 211);
+    text-align: left;
+    white-space: nowrap;
+    font-size: 30px;
+    line-height: 44px;
+    font-weight: 400;
+    color: rgb(214, 209, 209);
+    letter-spacing: 0px;
+    margin: 0;
+    font-family: "work Sans";
+}
+.button1{
+    background-color: #d6bd19;
+    font-size: 19px;
+}
+.button2{
+    background-color: #d6bd19;
+    font-size: 19px;
+}
+.button1:hover{
+  display: inline-block;
+  color: black;
+  width: auto;
+  background-color: #d6bd19;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: left;
+  background: #d6bd19 rgb(223, 224, 194)
+}
+.button2:hover{
+    display: inline-block;
+    width: auto;
+    background-color: #d6bd19;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none;
+    background-color: #d6bd19 rgb(223, 224, 194)
+}
