@@ -1,0 +1,144 @@
+@media only screen and (min-width: 700px) and (min-height: 700px) {
+
+    body {
+        overflow: hidden;
+        background-color: black;
+    }
+
+    .navbar {
+        display: flex;
+        z-index: 1;
+        flex-direction: column;
+        justify-content: space-between;
+        background-image: linear-gradient(to right,
+                hsl(39, 100%, 50%),
+                hsl(0, 100%, 50%),
+                hsl(39, 100%, 50%));
+        border: solid rgba(3, 3, 3, 0.567) 5px;
+        border-radius: 40px;
+    }
+
+    .navleft,
+    .navright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navleft>* {
+        padding: 3em;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .navright>* {
+        padding: 3em;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .leftnavbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .leftnavbarcenter {
+        background-image: linear-gradient(hsl(39, 100%, 50%),
+                hsl(0, 100%, 50%),
+                hsl(39, 100%, 50%));
+        border: solid rgba(3, 3, 3, 0.567) 5px;
+        border-radius: 40px;
+    }
+
+    .leftnavbarcenter>div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btntop {
+        background-image: radial-gradient(hsl(0, 0%, 0%),
+                hsl(0, 82%, 26%),
+                hsl(0, 91%, 30%));
+        color: hsl(42, 100%, 50%);
+        border: solid hsl(0, 88%, 51%) 3px;
+        border-radius: 40px;
+        padding: 15px 40px;
+        margin: 15px;
+
+        transition: max-width 2s, color 500ms, background-color 500ms;
+        box-shadow: 5px 5px 5px hsla(240, 94%, 20%, 0.404);
+        cursor: pointer;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .btntop:hover {
+        background-image: radial-gradient(hsl(39, 100%, 50%),
+                hsl(0, 100%, 50%),
+                hsl(0, 94%, 25%));
+        color: hsl(0, 0%, 0%);
+        border: solid rgba(3, 3, 3, 0.567);
+        max-width: 300px;
+    }
+
+    .btnleft {
+        background-image: radial-gradient(hsl(0, 0%, 0%),
+                hsl(0, 82%, 26%),
+                hsl(0, 91%, 30%));
+        color: hsl(42, 100%, 50%);
+        border: solid hsl(0, 88%, 51%) 3px;
+        border-radius: 40px;
+        padding: 15px 30px 15px 30px;
+        transition: color 500ms, background-color 500ms;
+        box-shadow: 5px 5px 5px hsla(240, 94%, 20%, 0.404);
+        cursor: pointer;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .btnleft:hover {
+        background-image: radial-gradient(hsl(39, 100%, 50%),
+                hsl(0, 100%, 50%),
+                hsl(0, 94%, 25%));
+        color: hsl(0, 0%, 0%);
+        border: solid rgba(3, 3, 3, 0.567);
+    }
+
+    .navbar {
+        flex-direction: row;
+    }
+
+    .navleft,
+    .navright {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .grid1 {
+        grid-template-columns: auto auto;
+    }
+
+    .main {
+        color: hsl(45, 84%, 80%);
+        border: solid hsl(45, 84%, 80%);
+        border-radius: 5px;
+        background-color: rgba(247, 225, 161, 0.3);
+        padding-left: 10px;
+        margin: 5px 10px 0 10px;
+        font-size: 23px;
+    }
+
+    .right {
+        padding-left: 10px;
+        color: hsl(0, 81%, 6%);
+        border: solid hsl(45, 84%, 80%);
+        border-radius: 5px;
+        background-color: rgba(247, 180, 161, 0.7);
+        padding-left: 10px;
+        margin: 5px 10px 0 10px;
+        font-size: 23px;
+    }
+}
