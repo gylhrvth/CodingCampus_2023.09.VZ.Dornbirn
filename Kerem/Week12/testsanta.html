@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa's Süße Seite</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #d9534f;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        @keyframes jump {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        #animated-reindeer {
+            width: 100px;
+            position: relative;
+            animation: jump 2s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Willkommen auf Santa's Süßer Seite!</h1>
+
+    <img src="santa.jpg" alt="Santa Claus">
+
+    <p>Ho ho ho! Frohe Weihnachten! Ich bin der Weihnachtsmann und ich bringe dir süße Geschenke und Liebe in dieser festlichen Jahreszeit. Möchtest du wissen, was auf meiner Geschenkeliste steht? Sei brav und vielleicht findest du es heraus!</p>
+
+    <div id="animated-reindeer">
+        <img src="reindeer.gif" alt="Jumping Reindeer">
+    </div>
+
+    <p>Komm und feiere die Freude, das Lachen und die Magie von Weihnachten mit mir und all den kleinen Elfen, die mir helfen, die Geschenke vorzubereiten. Fröhliche Weihnachten!</p>
+
+</body>
+</html>
