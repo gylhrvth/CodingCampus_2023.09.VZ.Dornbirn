@@ -73,6 +73,7 @@ nav img{
 .text-box p{
     margin: 10px 0 40px;
     font-size: 14px;
+    color: white;
 }
 
 .hero-btn {
@@ -287,8 +288,6 @@ h3{
 }
 
 .testimonials-col img{
-    width: 200px;
-    height: 40px;
     margin-left: 5px;
     margin-right: 30px;
     border-radius: 50%;

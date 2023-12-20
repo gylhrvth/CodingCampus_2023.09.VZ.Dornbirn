@@ -43,11 +43,13 @@ body{
     border-radius: 20px;
     height: 40px;
     margin-bottom: 15px;
+    
 }
 #username:focus, #password:focus{
     animation: colorChange 10s infinite;
     outline-style: solid;
     width: 270px;
+    transition: 0.5s;
 }
 
 
@@ -59,9 +61,11 @@ body{
     background-color: transparent;
     color: white;
     border: 2px solid green;
+    
 }
 #login:hover{
     background-color: green;
+    transition: 0.5s;
 }
 #login:active{
     background-color: rgba(0, 128, 0, 0.722);
