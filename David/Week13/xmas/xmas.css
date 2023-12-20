@@ -2,111 +2,39 @@
 
 .grinch {
     position: absolute;
+    padding: 50px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     height: 500px;
   }
   
-  
-  .snowflake {
+  body {
+    margin: 0;
+    overflow: hidden;
+}
+.snowflakes {
     position: absolute;
-    background-image: url('gg.png');
-    animation: fall 3s infinite ease-in-out;
-    animation-delay: 0.5s + random(0s, 2s);
-    top: -50px;
-    left: random(0, 100%);
-    width:max-content; /* Reduced size to half */
-    height: 10px;
-    transform: scale(0.5 + random(0.2, 0.4));
-    opacity: 0.6 + random(0.2, 0.4);
-}
-
-  
-.snowflake {
-    transform: translate(-50%, -50%);
-    background-position: 50% 50%;
-}
-
-.snowflake:nth-child(1) {
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
 }
-
-.snowflake:nth-child(2) {
-    top: random(0, 100px);
-    left: random(0, 100px);
+.snowflake {
+    position: absolute;
+    background: url('gg.png') no-repeat center center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    animation: fall linear infinite;
 }
-
-.snowflake:nth-child(3) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-.snowflake:nth-child(4) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(5) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(6) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(7) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(8) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(9) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(10) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(11) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(12) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(13) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(14) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
-.snowflake:nth-child(15) {
-    top: random(0, 100px);
-    left: random(0, 100px);
-}
-
 @keyframes fall {
-    from {
-        top: 0;
-    }
     to {
-        top: 100%;
+        transform: translateY(100vh);
+        opacity: 1;
     }
 }
+
