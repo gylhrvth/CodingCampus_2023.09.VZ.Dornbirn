@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meine Webseite</title>
+    <style>
+
+        section {
+            flex: 1;
+            padding: 2em;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            opacity: 0; /* Initial opacity set to 0 */
+            transition: opacity 1s ease-in-out; /* Add a transition for a smooth effect */
+        }
+
+        /* Additional style for fade-in effect */
+        .fade-in {
+            opacity: 1 !important; /* Ensure the opacity is set to 1 */
+        }
+    </style>
+
+    <!-- Add the JavaScript code below -->
+    
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for the DOM to be fully loaded before triggering the animation
+            var gallerySection = document.querySelector('section');
+            
+            // Add the 'fade-in' class after a short delay to allow for the transition
+            setTimeout(function() {
+                gallerySection.classList.add('fade-in');
+            }, 50); // Adjust the delay as needed
+        });
+        
+    </script>
+    
+</head>
+<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meine Webseite</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+    
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 1em;
+                text-align: center;
+            }
+    
+            nav {
+                display: flex;
+                justify-content: center;
+                background-color: #555;
+                padding: 0.5em;
+            }
+    
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin: 0 1em;
+            }
+    
+            section {
+                flex: 1;
+                padding: 2em;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+
+            
+            .car {
+                text-align: center;
+                margin: 1em;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s ease-in-out;
+            }
+            
+    
+            .car:hover {
+                transform: scale(1.05);
+            }
+    
+            .car img {
+                max-width: 100%;
+                height: auto;
+                border-bottom: 2px solid #333;
+            }
+    
+            .car p {
+                padding: 1em;
+            }
+    
+            footer {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1em;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <header>
+            <h1>Willkommen auf meiner Webseite</h1>
+        </header>
+    
+        <nav>
+            <a href="#">Startseite</a>
+            <a href="#">Über uns</a>
+            <a href="#">Kontakt</a>
+        </nav>
+    
+        <section>
+            <div class="car">
+                <a href="description1.html">
+                    <img src="Herunterladen.jpg" alt="BMW E30 320i">
+                </a>
+                <p>BMW E30 320i.</p>
+            </div>
+    
+            <div class="car">
+                <a href="description2.html">
+                    <img src="CabrioE30.jpg" alt="BMW E30 318i Cabrio">
+                </a>
+                <p>BMW E30 318i Cabrio.</p>
+            </div>
+    
+            <div class="car">
+                <a href="description3.html">
+                    <img src="AUDIS3.jpg" alt="Audi S3 8L">
+                </a>
+                <p>Audi S3 8L.</p>
+            </div>
+    
+            <div class="car">
+                <a href="description4.html">
+                    <img src="AudiA4b7.jpg" alt="Audi A4 B7 Sline">
+                </a>
+                <p>Audi A4 B7 Sline.</p>
+            </div>
+    
+            <div class="car">
+                <a href="description5.html">
+                    <img src="AudiQuattro.jpg" alt="Audi A4 B8 Quattro 3xSline">
+                </a>
+                <p>Audi A4 B8 Quattro 3xSline.</p>
+            </div>
+    
+            <div class="car">
+                <a href="description6.html">
+                    <img src="AudiA4b5.jpg" alt="Audi S4 B5 Limousine">
+                </a>
+                <p>Audi S4 B5 Limousine</p>
+            </div>
+    
+            <div class="car">
+                <a href="description7.html">
+                    <img src="CRX.jpg" alt="Honda CRX">
+                </a>
+                <p>Honda CRX</p>
+            </div>
+        </section>
+    
+        <footer>
+            <p>&copy; 2023 Meine Webseite. Alle Rechte vorbehalten.</p>
+        </footer>
+    
+    </body>
+    </html>
+
+
+

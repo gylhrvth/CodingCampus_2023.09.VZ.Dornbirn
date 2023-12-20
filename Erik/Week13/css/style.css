@@ -1,0 +1,169 @@
+body {
+    background-color: #1D1C1A;
+    color: white;
+    margin: 0;
+    overflow: scroll;
+}
+
+.menu {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1vw;
+}
+
+.menuright {
+    display: flex;
+    flex-wrap: no;
+}
+
+.ig-logo {
+    width: clamp(80px, 9%, 150px);
+}
+
+.linksToNext {
+    display: flex;
+    font-size: 100%;
+}
+
+.linksToNext>a {
+
+    color: hsl(0, 0%, 80%);
+    padding-left: 20px;
+    text-decoration: none;
+    height: 50%;
+}
+
+.linksToNext>a:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+.trendingSide {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(37, 37, 43);
+    transform: skewY(2deg) translateY(100px);
+}
+
+.trendingSide>div {
+    transform: skewY(-2deg) translateY(20px);
+}
+
+.headerBackgroundBanner {
+    height: 40vh;
+    margin-bottom: 5%;
+}
+
+.bannerTop {
+    width: 100%;
+    cursor: pointer;
+}
+
+.TopShoppingIcon {
+    position: relative;
+    display: inline-block;
+}
+
+.TopShoppingIcon>img {
+    width: 38%;
+    user-select: none;
+    cursor: pointer;
+}
+
+.TopShoppingIcon .shoppingCartIconOriginal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.TopShoppingIcon:hover .shoppingCartIconOriginal {
+
+    display: inline;
+}
+
+.TopUserIcon {
+    position: relative;
+    display: inline-block;
+}
+
+.TopUserIcon>img {
+    width: 38%;
+    user-select: none;
+    cursor: pointer;
+
+}
+
+.TopUserIcon .userLoginIconOriginal {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+}
+
+
+.TopUserIcon:hover .userLoginIconOriginal {
+    display: inline;
+}
+
+
+.trendingGamesGrid {
+    position: relative;
+    max-width: 1500px;
+    margin: auto;
+    gap: 60px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+.gridImage {
+    border-radius: 5%;
+    transition-duration: 1s;
+    transition-delay: 0.1s;
+    width: clamp(28rem, 20vw, 20rem)
+}
+
+
+.gridImage:hover {
+
+    animation-name: gameZoom;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.trendingText {
+    margin-left: 5%;
+    font-size: 150%;
+    color: rgb(255, 255, 255);
+}
+
+.trendingGamesGrid>:first-child {
+    flex-basis: 100%;
+    font-size: 130%;
+    margin-bottom: 0cm;
+    padding-bottom: 0cm;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+@keyframes gameZoom {
+    40% {
+        transform: perspective(55px) translateZ(10px)
+    }
+
+    100% {
+        transform: perspective(60px) translateZ(10px)
+    }
+}
+
+.smol {
+    transition-delay: 0s;
+    transition-duration: 1s;
+    filter: blur(2px);
+    scale: 0.8;
+
+}

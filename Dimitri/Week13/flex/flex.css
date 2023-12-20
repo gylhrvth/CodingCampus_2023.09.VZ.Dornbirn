@@ -1,0 +1,44 @@
+.flex-container {
+    display: flex;
+    background-color: blue;
+    flex-flow: row wrap;
+    height: 190px;
+    align-content: flex-end;
+    overflow: hidden;
+}
+
+.flex-item1 {
+    background-color: grey;
+    margin: 10px;
+    width: 80px;
+    height: 180px;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.flex-item2 {
+    background-color: grey;
+    margin: 10px;
+    width: 80px;
+    text-align: center;
+    align-self: center;
+}
+
+.flex-item3 {
+    background-color: grey;
+    margin: 10px;
+    width: 80px;
+    height: 170px;
+    text-align: center;
+    align-self: flex-end;
+}
+
+h1 {
+    margin: 10px 0;
+    display: block;
+    font-size: 30px;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}

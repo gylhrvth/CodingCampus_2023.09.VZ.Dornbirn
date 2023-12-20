@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitschy Christmas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e29760;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #eb6909;
+            padding: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        section {
+            margin: 50px;
+            position: relative;
+        }
+
+        .imgue {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .imgue:hover {
+            animation: shake 0.5s ease infinite;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px) rotate(0.5deg);
+            }
+
+            50% {
+                transform: translateX(5px) rotate(-0.5deg);
+            }
+
+            75% {
+                transform: translateX(-5px) rotate(0.5deg);
+            }
+
+            100% {
+                transform: translateX(5px) rotate(-0.5deg);
+            }
+        }
+
+        .speech-bubble {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .speech-bubble::before {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #0022ff transparent;
+        }
+
+        footer {
+            background-color: #cc0000;
+            padding: 10px;
+            color: #fff;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes circleAnimation {
+            0% {
+                transform: translateX(-100px) translateY(-100px) scale(0.5);
+            }
+
+            50% {
+                transform: translateX(0) translateY(0) scale(1);
+            }
+
+            100% {
+                transform: translateX(-100px) translateY(-100px) scale(0.5);
+            }
+        }
+
+        .circular-animation {
+            animation: circleAnimation 3s ease infinite;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input,
+        textarea {
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .snowflake {
+            color: #fff;
+            font-size: 1em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+        }
+
+        .snowflake,
+        .snowflake .inner {
+            animation-iteration-count: infinite;
+            animation-play-state: running
+        }
+
+        @keyframes snowflakes-fall {
+            0% {
+                transform: translateY(0)
+            }
+
+            100% {
+                transform: translateY(110vh)
+            }
+        }
+
+        @keyframes snowflakes-shake {
+
+            0%,
+            100% {
+                transform: translateX(0)
+            }
+
+            50% {
+                transform: translateX(80px)
+            }
+        }
+
+        .snowflake {
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            -webkit-user-select: none;
+            user-select: none;
+            cursor: default;
+            animation-name: snowflakes-shake;
+            animation-duration: 3s;
+            animation-timing-function: ease-in-out
+        }
+
+        .snowflake .inner {
+            animation-duration: 10s;
+            animation-name: snowflakes-fall;
+            animation-timing-function: linear
+        }
+
+        .snowflake:nth-of-type(0) {
+            left: 1%;
+            animation-delay: 0s
+        }
+
+        .snowflake:nth-of-type(0) .inner {
+            animation-delay: 0s
+        }
+
+        .snowflake:first-of-type {
+            left: 10%;
+            animation-delay: 1s
+        }
+
+        .snowflake:first-of-type .inner,
+        .snowflake:nth-of-type(8) .inner {
+            animation-delay: 1s
+        }
+
+        .snowflake:nth-of-type(2) {
+            left: 20%;
+            animation-delay: .5s
+        }
+
+        .snowflake:nth-of-type(2) .inner,
+        .snowflake:nth-of-type(6) .inner {
+            animation-delay: 6s
+        }
+
+        .snowflake:nth-of-type(3) {
+            left: 30%;
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(11) .inner,
+        .snowflake:nth-of-type(3) .inner {
+            animation-delay: 4s
+        }
+
+        .snowflake:nth-of-type(4) {
+            left: 40%;
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(10) .inner,
+        .snowflake:nth-of-type(4) .inner {
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(5) {
+            left: 50%;
+            animation-delay: 3s
+        }
+
+        .snowflake:nth-of-type(5) .inner {
+            animation-delay: 8s
+        }
+
+        .snowflake:nth-of-type(6) {
+            left: 60%;
+            animation-delay: 2s
+        }
+
+        .snowflake:nth-of-type(7) {
+            left: 70%;
+            animation-delay: 1s
+        }
+
+        .snowflake:nth-of-type(7) .inner {
+            animation-delay: 2.5s
+        }
+
+        .snowflake:nth-of-type(8) {
+            left: 80%;
+            animation-delay: 0s
+        }
+
+        .snowflake:nth-of-type(9) {
+            left: 90%;
+            animation-delay: 1.5s
+        }
+
+        .snowflake:nth-of-type(9) .inner {
+            animation-delay: 3s
+        }
+
+        .snowflake:nth-of-type(10) {
+            left: 25%;
+            animation-delay: 0s
+        }
+
+        .snowflake:nth-of-type(11) {
+            left: 65%;
+            animation-delay: 2.5s
+        }
+    </style>
+</head>
+
+<body>
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+        <div class="snowflake">
+            <div class="inner">❅</div>
+        </div>
+    </div>
+
+    <header>
+        <h1>Xmas website</h1>
+        <p>Not much to see here yet besides some Rudolfs</p>
+    </header>
+
+    <section>
+        <h2>Featured Attractions Rudolf1</h2>
+        <img class="imgue" src="Rudolph-the-red-nosed-reindeer-986x1024.png" alt="Rudolf">
+    </section>
+
+    <section>
+        <h2>Flatdolf</h2>
+        <img class="circular-animation" src="d5db589e241eec0f8938da0a692b6c42.png" alt="Flatdolf">
+    </section>
+
+    <section>
+        <h2>Visit Santa</h2>
+        <img class="imgue" src="R.png" alt="Santa Claus" id="shaking-santa">
+        <div class="speech-bubble">Ho Ho Ho</div>
+        <p>Santa is waiting to hear your Christmas wishes!</p>
+    </section>
+    <section>
+        <form>
+            <label for="wishes">Your Christmas Wishes:</label>
+            <textarea id="wishes" name="wishes" rows="4" placeholder="Type your wishes here..."></textarea>
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+
+            <button type="submit">Submit Wishes</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; nobody</p>
+    </footer>
+
+    <script>
+        const shakingSanta = document.getElementById('shaking-santa');
+        const speechBubble = document.querySelector('.speech-bubble');
+
+        shakingSanta.addEventListener('mouseenter', () => {
+            speechBubble.style.display = 'block';
+        });
+
+        shakingSanta.addEventListener('mouseleave', () => {
+            speechBubble.style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>

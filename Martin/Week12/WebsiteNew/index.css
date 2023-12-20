@@ -1,0 +1,127 @@
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+}
+
+
+.navbar{
+    display: flex;
+    padding: 5px; 
+    
+    justify-content: space-between;    
+
+
+}
+
+.navbar-left > * {
+    padding: 0px 5px 0px 5px;
+}
+
+.navbar-right > * {
+    padding: 0px 5px 0px 5px;
+}
+
+.navbar-center > * {
+    padding: 0px 5px 0px 5px;
+}
+.navbar-center {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-right{
+    display: flex;
+    align-items: center;
+    
+}
+
+.TextInfo{
+  text-align: center;
+}
+
+IMG{
+    border-radius: 10px;
+}
+
+.KursAngebote> * {
+    padding: 0px 5px 0px 5px;
+}
+
+.KursAngebote{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.KursAngebote:hover{
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.content{
+    display: grid;
+    justify-items: center;
+    background-image: url(/Martin/Week12/Images/Content.jpg);
+    background-size: 20x;
+}
+
+
+.bewertungenHeader{
+    text-align: center;
+    
+    
+}
+
+.BewertugenComments{
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.First{
+    justify-content: center;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .KursAngebote{
+        display:block;
+    }
+
+    body {
+        background-color: orangered;
+    }  
+
+    .navbar-center {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    body {
+        background-color: green;
+    }  
+
+    .navbar {
+        display: block;
+    }
+
+    .navbar-left {
+        display: block;
+    }
+
+    .navbar-right {
+        display: block;
+    }
+
+    .KursAngebote{
+        display:block;
+    }
+}
