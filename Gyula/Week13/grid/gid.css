@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+}
+
+.fullscreen{
+    width: 100vw;
+    height: 100vh;
+}
+
+.center{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.center > img {
+    width: clamp(100px, 80vw, 400px);
+}
+
+.twoColumnsAuto {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.twoColumns50-50 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}
+
+.foto-title{
+    display: grid;
+    justify-items: center;
+}

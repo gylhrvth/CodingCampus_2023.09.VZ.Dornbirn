@@ -9,14 +9,22 @@
     <style>
         .overlay {
             position: absolute;
-            top: 700px;
+            top: 525px;
             right: 0;
             z-index: 1;
         }
+
         .overlay2 {
             position: absolute;
             text-align: center;
             top: 650px;
+            left: 23%;
+            z-index: 1;
+        }
+
+        .overlay3 {
+            position: absolute;
+            top: 5px;
             left: 23%;
             z-index: 1;
         }
@@ -29,7 +37,6 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         .no-pointer-events {
@@ -42,13 +49,11 @@
             flex-wrap: wrap;
             height: 200;
             width: 500px;
-            background-color: rgb(236, 255, 223);
         }
 
         .flex-item {
             flex: 0 0 calc(33.33%);
             box-sizing: border-box;
-            padding: 10px;
             border: 1px solid #8d8d8d;
         }
 
@@ -87,11 +92,11 @@
             border-radius: 50%;
         }
 
-        input:checked + .slider {
+        input:checked+.slider {
             background-color: #2196F3;
         }
 
-        input:checked + .slider:before {
+        input:checked+.slider:before {
             transform: translateX(26px);
         }
     </style>
@@ -99,14 +104,18 @@
 
 <body>
 
-    <div class="container">
-        <h1>Toggle Darkmode</h1>
-        <label class="switch">
-            <input type="checkbox" id="darkModeToggle">
-            <span class="slider round"></span>
-        </label>
+    <div class="overlay3">
+        <div class="container">
+            <h1>Toggle Darkmode</h1>
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
     </div>
     <script src="darkmode.js"></script>
+
+    
 
     <h1 style="text-align:center; font-size:100px;">Welcome to my first Site</h1>
 
@@ -151,52 +160,54 @@
         </script>
     </div>
 
+    </div>
+
     <p style="font-size: xx-large; position: relative; left: 10px; vertical-align: middle;">
-        <a href="https://www.youtube.com/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
-            <img src="youtubepng.png" alt="youtube" height="95" width="100"
-                style="vertical-align: middle;">Youtube
+        <a href="https://www.youtube.com/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="youtubepng.png" alt="youtube" height="95" width="100" style="vertical-align: middle;">Youtube
         </a>
     </p>
 
-    <p style="font-size: xx-large; position: relative; left: 10px; position: relative; bottom: 8px;vertical-align: middle;">
-        <a href="https://www.twitch.tv/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
-            <img src="twitch.png" alt="twitch" height="100" width="100"
-                style="vertical-align: middle;">Twitch
+    <p
+        style="font-size: xx-large; position: relative; left: 10px; position: relative; bottom: 8px;vertical-align: middle;">
+        <a href="https://www.twitch.tv/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="twitch.png" alt="twitch" height="100" width="100" style="vertical-align: middle;">Twitch
         </a>
     </p>
 
     <p style="font-size: xx-large; vertical-align: middle; position: relative; left: 10px;">
-        <a href="https://www.twitter.com/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
-            <img src="twitter.png" alt="twitter" height="70" width="90"
-                style="vertical-align: middle;">Twitter
+        <a href="https://www.twitter.com/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="twitter.png" alt="twitter" height="70" width="90" style="vertical-align: middle;">Twitter
         </a>
     </p>
     <p style="font-size: xx-large; vertical-align: middle; position: relative; left: 10px;">
-        <a href="https://www.discord.gg/" target="_blank" style="color: var(--primary-text-color); text-decoration: none;">
-            <img src="discord.png" alt="discord" height="70" width="85"
-                style="vertical-align: middle;">Discord
+        <a href="https://www.discord.gg/" target="_blank"
+            style="color: var(--primary-text-color); text-decoration: none;">
+            <img src="discord.png" alt="discord" height="70" width="85" style="vertical-align: middle;">Discord
         </a>
     </p>
 
     <div class="overlay">
         <a href="https://www.youtube.com/watch?v=7h4_lc6ts1k&pp=ygUSbG90dXNibHVtZSBmbGlwcGVy" target="_blank">
-            <img src="leberkäsjpg.jpg" alt="leberkäs" class="no-pointer-events"
-                style="height: 200px; width: 300px;">
+            <img src="leberkäsjpg.jpg" alt="leberkäs" class="no-pointer-events" style="height: 200px; width: 300px;">
         </a>
     </div>
 
-<a href="subdirectory/erste.html">TEST</a>   
-
-    <div class="overlay2" id="japan">
+    <div class="overlay2" id="japan" style="top: 60%;">
         <h2>Link to new site design and info</h2>
-        <a href="http://127.0.0.1:5500/Niklas/Week12/erste.html#japan"><img src="japan.jpg" alt="japan" style="height: 60%; width: 60%;"></a>
+        <a href="http://127.0.0.1:5500/Niklas/Week12/japan.html"><img src="japan.jpg" alt="japan"
+                style="height: auto; width: 60%;"></a>
     </div>
 
-    <div style="background-color: var(--secondary-background-color); margin: -10px;">
-        
+    <div style="background-color: var(--primary-background-color); margin: -10px;">
+
         <hr style="margin: 0px; width: 100%; border-width: 3px;">
         <h3 style="margin-left: 10px; color: var(--primary-text-color);">Contact informations:</h3>
-        <div class="flex-container" style="margin-left: 10px; color: var(--primary-text-color); background-color: var(--third-background-color);">
+        <div class="flex-container"
+            style="margin-left: 10px; color: var(--primary-text-color); background-color: var(--third-background-color);">
             <div class="flex-item"><b>Email</b></div>
             <div class="flex-item"><b>Full Name</b></div>
             <div class="flex-item"><b>Phone Number</b></div>

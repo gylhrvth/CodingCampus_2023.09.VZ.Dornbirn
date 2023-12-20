@@ -1,0 +1,65 @@
+.h1{
+    color: red;
+    animation-name: move;
+    position: relative;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.h2{
+    color: red;
+    animation-name: move2;
+    position: relative;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.h4{
+    text-align: center;
+    justify-content: center;
+    font-size: 150px;
+    color: red;
+}
+@keyframes move{
+    0% {color: red; left: 70px; top: 60px;}
+    20%{color: blue; left: 1700px; top: 900px;}
+    40%{color: purple; left: 3px; top: 300px;}
+    60%{color: cyan; left: 4000; top: 800px;}
+    80%{color: green; left: 200px; top: 5px;}
+    100%{color: pink; left: 1000px; top: 1000px;}
+}
+@keyframes move2{
+    0% {color: red; left: 60; top: -700;}
+    20%{color: blue; left: 1700px; top: -100px;}
+    40%{color: purple; left: 3px; top: -20;}
+    60%{color: cyan; left: 4000; top: -500;}
+    80%{color: green; left: 200px; top: -50px;}
+    100%{color: pink; left: 1000px; top: -100px;}
+}
+body{
+    height: 100vh;
+    background-image: url(Screenshot\ 2023-12-20\ 150533.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+}
+.pictureright{
+    margin-top: -300px;
+    margin-left: 1700px;
+    transform: rotate(150deg);
+}
+.picturemiddle{
+    margin-top: -1000;
+    margin-left: 100px;
+    animation-name: move3;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes move3{
+    0% {left: 60; top: 70;  transform: rotate(160deg);}
+    20%{left: 1700px; top: 10px; transform: rotate(200deg);}
+    80%{left: 200px; top: 5px;transform: rotate(250deg);}
+    100%{ eft: 1000px; top: 100px; transform: rotate(360deg);}
+}
+.pic{
+    margin-top: 3px;
+    margin-left: 1800px;
+}

@@ -12,22 +12,18 @@ namespace Patrick.Week10
     {
         public static void Start()
         {
-
-
-
             // userinput city name 
             string city = UserInputCity();
-            // check if city name exists in table
 
-            
+            // check if city name exists in table          
             CheckIfCityExists(city);
 
             // ask for number to add to population
             int populationToAdd = UserInputPopulation();
-            // update population 
 
+            // update population 
             AddInputPopulation(city, populationToAdd);
-            // console output about the amount of people added ...
+
 
 
         }
@@ -69,8 +65,6 @@ namespace Patrick.Week10
             }
 
         }
-
-
 
         public static bool ExistCity(SqlDataReader reader)
         {

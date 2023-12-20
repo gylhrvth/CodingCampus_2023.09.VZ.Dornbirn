@@ -111,7 +111,7 @@ namespace Patrick.Week10.CountryInput
 
                 command.Parameters.AddWithValue("@queryCode", code);
 
-                int result = (command.ExecuteNonQuery());
+                int result = command.ExecuteNonQuery();
 
                 if(result == 0)
                 {

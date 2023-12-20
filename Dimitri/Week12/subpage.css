@@ -7,12 +7,21 @@ body {
     background-color: #2E3440;
     font-family: Lilex;
     color: #D8DEE9;
-
+    margin: 0;
 }
+
+
 
 .most-outter-flex {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
+}
+
+@media screen and (max-width: 480px) {
+    .most-outter-flex {
+        flex-direction: column;
+    }
+
 }
 
 
@@ -20,6 +29,8 @@ body {
     display: flex;
     flex-direction: column;
     margin: 2%;
+    flex: 1 1 auto;
+    overflow: auto;
 }
 
 .top-flex {
@@ -28,8 +39,8 @@ body {
 
 .content-flex {
     flex: 8;
-    width: 60vw;
-    justify-content: center;
+    /* width: 60vw; */
+    /* justify-content: center; */
 }
 
 .footer-flex {
@@ -54,17 +65,17 @@ h1 {
 }
 
 .flexH2 {
-    width: 80%;
+    /* width: 80%; */
     display: flex;
     background-color: #3b4252;
     box-shadow:
-    0px 0.9px 0.6px -8px rgba(0, 0, 0, 0.11),
-    0px 2px 1.3px -8px rgba(0, 0, 0, 0.087),
-    0px 3.3px 2.1px -8px rgba(0, 0, 0, 0.076),
-    0px 5px 3.2px -8px rgba(0, 0, 0, 0.068),
-    0px 7.3px 4.6px -8px rgba(0, 0, 0, 0.061),
-    0px 10.3px 6.6px -8px rgba(0, 0, 0, 0.055),
-    0px 14.6px 9.3px -8px rgba(0, 0, 0, 0.049);
+        0px 0.9px 0.6px -8px rgba(0, 0, 0, 0.11),
+        0px 2px 1.3px -8px rgba(0, 0, 0, 0.087),
+        0px 3.3px 2.1px -8px rgba(0, 0, 0, 0.076),
+        0px 5px 3.2px -8px rgba(0, 0, 0, 0.068),
+        0px 7.3px 4.6px -8px rgba(0, 0, 0, 0.061),
+        0px 10.3px 6.6px -8px rgba(0, 0, 0, 0.055),
+        0px 14.6px 9.3px -8px rgba(0, 0, 0, 0.049);
 }
 
 h2 {
@@ -76,7 +87,7 @@ h2 {
 
 .text {
     color: #d8dee9;
-    width: 80%;
+    /* width: 80%; */
 }
 
 a {
@@ -99,7 +110,7 @@ a:visited:hover {
 .flex-quote {
     display: flex;
     flex-direction: row;
-    width: 80%;
+    /* width: 80%; */
     justify-content: center;
     text-align: center;
 }
@@ -200,4 +211,20 @@ a:visited:hover {
     background-color: #D8DEE9;
     width: 100%;
     margin: 1.2rem auto;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #4C566A;
+    width: 20vw;
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+    }
+
+
 }

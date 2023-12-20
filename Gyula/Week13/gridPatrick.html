@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background-color: blueviolet;
+}
+
+.left {
+    border: solid white 3px;
+}
+
+.left > img {
+    width: 100%;
+    background-color: yellow;
+    margin-bottom: -5px;
+}
+
+.nextLine{
+    background-color: red;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="https://www.digitalcampusvorarlberg.at/typo3conf/ext/local/Resources/Public/Frontend/Static/images/logo.svg" alt="" srcset="">
+        </div>
+        <div class="right">
+            <p>adipisicing elit. Impedit deserunt aspernatur assumenda quam, quidem laborum exercitationem nostrum quaerat dolore nihil non error illo. Nisi repudiandae quam, ipsum officia recusandae consequatur.</p>
+        </div>
+    </div>
+    <div class="nextLine">
+        Hello World!
+    </div>
+</body>
+</html>

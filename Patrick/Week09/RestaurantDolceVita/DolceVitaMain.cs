@@ -71,11 +71,12 @@ namespace Patrick.Week09.RestaurantDolceVita
 
             group1.AddMenuList(pasta); group1.AddMenuList(beer);
             group1.AddMenuList(salat); group1.AddMenuList(beer);
+
             group1.AddMenuList(pasta); group1.AddMenuList(orangensaft);
             group1.AddMenuList(salat); group1.AddMenuList(limo);
             group1.AddMenuList(pasta); group1.AddMenuList(water);
             group1.AddMenuList(salat); group1.AddMenuList(water);
-            group1.AddMenuList(pizza); group1.AddMenuList(tiramisu);
+            group1.AddMenuList(pizza); group1.AddMenuList(gnocci);
             group1.AddMenuList(pizza); group1.AddMenuList(tiramisu);
             group1.AddMenuList(beer); group1.AddMenuList(tiramisu);
             group1.AddMenuList(salat); group1.AddMenuList(pizza);

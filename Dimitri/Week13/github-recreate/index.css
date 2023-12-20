@@ -1,0 +1,148 @@
+body {
+    margin: 0px;
+}
+
+.nav-top {
+    display: flex;
+    border-bottom: solid 1px black;
+    justify-content: space-between;
+    height: 48px;
+}
+
+.nav-top>div>div>img {
+    height: 32px;
+    padding: 8px;
+}
+
+.start-nav-top {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    gap: 8px;
+    padding-left: 12px;
+}
+
+.start-right {
+    display: flex;
+    font-size: 24px;
+}
+
+.start-right>* {
+    padding: 8px
+}
+
+.end-nav-top {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-right: 12px
+}
+
+.end-nav-top>* {
+    display: flex;
+    gap: 12px;
+}
+
+.end-nav-top>div>* {
+    height: 24px;
+}
+
+.end-nav-top>div>div>img {
+    border-radius: 50%;
+    height: 32px;
+}
+
+.end-right>* {
+    padding: 12px 0px 0px 0px;
+    font-size: 24px;
+
+}
+
+.end-left {
+    padding: 12px 0px 0 0px;
+}
+
+.border-top {
+    border: solid 1px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+.end-left-850px {
+    display: none;
+    padding-top: 12px;
+}
+
+.nav-local {
+    display: block;
+}
+
+.repo-nav {
+    display: flex;
+}
+
+.repo-nav>nav {
+    display: flex;
+
+}
+
+.repo-nav>nav>ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.repo-nav>nav>ul>* {
+    display: flex;
+    overflow: hidden;
+}
+
+.repo-nav>nav>ul>*:hover {
+    background-color: grey;
+}
+
+.repo-nav>nav>ul>*:active {
+    border-bottom: solid 1px red;
+}
+
+
+@media only screen and (max-width:850px) {
+    body {
+        background-color: palevioletred;
+    }
+
+    .end-left {
+        display: none;
+    }
+
+    .end-left-850px {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width:650px) {
+    body {
+        background-color: blueviolet;
+    }
+
+    .start-right {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        background-color: blue;
+    }
+
+    .end-left-850px {
+        display: none;
+    }
+
+    .end-right>.separator-top-nav-end {
+        display: none;
+    }
+
+}
