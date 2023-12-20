@@ -8,10 +8,11 @@ body {
     position: fixed;
     object-fit: cover;
     /*top: 0px;
-    left: 0px;
+    left: 0px;*/
     width: 100vw;
-    height: 100vh;*/
+    height: 100vh;
     background-size: cover;
+    background-attachment: fixed;
     z-index: -1;
     opacity: 0.56;
 }
@@ -23,6 +24,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .navbar span {
@@ -38,6 +42,7 @@ body {
     margin: 0 10px;
     border-radius: 10px;
     border: 1px solid white;
+    transition: background-color 300ms;
 }
 
 .navbar a:hover {
@@ -69,14 +74,15 @@ button {
     padding: 5px 10px;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 1s;
 }
 
 .image-container {
     display: flex;
-    justify-content: center; 
+    justify-content: left; 
     flex-wrap: wrap;
     padding: 20px;
-    margin-top: 10px;
+    padding-right: 30px;
     position: relative;
 }
 
@@ -114,4 +120,11 @@ button {
 
 .play-button :hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.h1{
+    color: white;
+    margin-left: 30px;
+    margin-top: 50px;
+    padding-bottom: 10px;
 }

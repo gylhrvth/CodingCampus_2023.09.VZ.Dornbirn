@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Die Hässlichste Webseite</title>
+    <style>
+        body {
+            background: linear-gradient(to right, red, rgb(16, 140, 14), lime);
+            animation: colorChange 0.5s infinite;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        @keyframes colorChange {
+            0% { background: linear-gradient(to right, red, rgb(18, 96, 48), lime); }
+            50% { background: linear-gradient(to right, blue, rgb(209, 16, 39), rgb(53, 220, 34)); }
+            100% { background: linear-gradient(to right, orange, pink, cyan); }
+        }
+
+        h1 {
+            color: yellow;
+            font-family: Comic Sans MS;
+            animation: shake 0.5s infinite;
+            font-size: 75px;
+        }
+
+        @keyframes shake {
+            0% { transform: rotate(0); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0); }
+        }
+        
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .spin {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(120, 255, 100);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+                color-scheme: colorChange;
+            }
+        }
+
+        .blink-border {
+            border: 5px dashed yellow;
+            animation: borderBlinker 0.5s linear infinite;
+        }
+
+        @keyframes borderBlinker {
+            50% {
+                border-color: rgb(0, 255, 76);
+            }
+        }
+
+        .moving-image {
+            position: absolute;
+            top: 70%;
+            left: 0;
+            width: 50%;
+            animation: moveImage 3s linear infinite;
+        }
+
+        @keyframes moveImage {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        body:hover {
+            filter: invert(100%);
+            animation: shake 0.1s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(-2px) rotate(0deg); }
+            25% { transform: translateX(2px) rotate(-5deg); }
+            50% { transform: translateX(-2px) rotate(5deg); }
+            75% { transform: translateX(2px) rotate(0deg); }
+            100% { transform: translateX(-2px) rotate(-5deg); }
+        }
+
+        .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-100%, -100%);
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+            animation: pulse 0.5s infinite alternate; 
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, 100%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, 100%) scale(1.2);
+            }
+        }
+
+
+        .shimmer-text {
+            animation: shimmer 1s infinite;
+            color: cyan;
+            font-size: 20px;
+        }
+
+        @keyframes shimmer {
+            0% { text-shadow: 0 0 5px rgb(125, 217, 34), 0 0 10px rgb(19, 79, 14), 0 0 15px rgb(81, 216, 96); }
+            100% { text-shadow: 0 0 20px cyan, 0 0 30px cyan, 0 0 40px cyan; }
+        }
+
+        .rainbow {
+            background: linear-gradient(45deg, rgb(16, 207, 38), rgb(224, 244, 52), rgb(15, 129, 0), rgb(201, 21, 21), rgb(15, 209, 25), rgb(47, 255, 0), rgb(44, 227, 12));
+            background-size: 400% 400%;
+            animation: rainbowAnimation 10s ease infinite;
+            width: 100%;
+            height: 150px;
+        }
+
+        @keyframes rainbowAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .wobble {
+            animation: wobbleAnimation 1s ease-in-out infinite;
+            transform-origin: center bottom;
+            display: inline-block;
+        }
+
+        @keyframes wobbleAnimation {
+            0% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+            100% { transform: rotate(-5deg); }
+        }
+
+        .expanding-line {
+            width: 100%;
+            height: 1px;
+            background-color: cyan;
+            animation: expandLine 1s alternate infinite;
+        }
+
+        @keyframes expandLine {
+            0% { transform: scaleX(1); }
+            100% { transform: scaleX(1.5); }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="blink">DO NOT HOVER WITH YOUR MOUSE</h1>
+    <div class="spin">
+        <img src="skelet.png" style="height:100%; width:100%;" alt="">
+    </div>
+    <div class="blink-border" style="width: 200px; height: 150px; margin: 20px;"></div>
+    <div class="rainbow"></div>
+    <div style="background: linear-gradient(to right, green, yellow, pink); width: 300px; height: 150px; animation: gradientChange 5s infinite;"></div>
+    <img src="santa.jpg" class="moving-image" alt="Bewegendes Bild">
+    <div class="popup">
+        <p class="shimmer-text">AAAAAA!"§$%&/()=?=/&"§$%</p>
+        <img src="skelet.png" style="height:100%; width:100%;" alt="">
+    </div>
+    <div class="wobble">
+        <p>WOBBLING TEXT</p>
+    </div>
+    <div class="expanding-line"></div>
+   
+</body>
+</html>

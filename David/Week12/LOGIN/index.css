@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-style: sans-serif;
+}
+body{
+    background: linear-gradient(rgba(0,0,0,0.2)50%, rgba(0,0,0,0.2)50%), url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+.form{
+    width: 250px;
+    height: 340;
+    color: #fff;
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 40px 25px;
+}
+.form h1{
+    width: 220px;
+    text-align: center;
+    padding-left: 11px;
+    margin-bottom: 35px;
+    font-size: 35px;
+    color: whitesmoke;
+}
+.form input{
+    width: 100%;
+    height: 35px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 2px;
+    outline: none;
+    text-align: center;
+}
+.form input:focus{
+    outline: none;
+}
+::placeholder{
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btnn{
+    font-size: 18px;
+    color: lightskyblue;
+    padding: 10px 15px;
+    background: transparent;
+    border: none;
+    margin-top: 1px;
+
+    /* margin-left: 80px; */
+    cursor: pointer;
+}
+.btnn a{
+    color: lightskyblue;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.btnn a:hover{
+    color: magenta;
+    transition: 1s ease;
+}
+
+.regRe{
+    text-align: center;
+}
+
+.form .link{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    padding-top: 10px;
+    text-align: center;
+}
+.form .link a{
+    text-decoration: none;
+    color: lightskyblue;
+}
+.form .link a:hover{
+    color: magenta;
+    transition: 1s ease;
+}
+
+.liw{
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: left;
+}
+.icons a{
+    text-decoration: none;
+    color: lightskyblue;
+}
+.icons ion-icon{
+    color: lightskyblue;
+    font-size: 20px;
+    padding: 2px;
+    padding-top: 2px;
+    transition: 1s ease;
+}
+.icons ion-icon:hover{
+    color: magenta;
+}

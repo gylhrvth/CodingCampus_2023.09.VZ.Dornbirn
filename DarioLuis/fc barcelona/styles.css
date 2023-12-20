@@ -1,0 +1,334 @@
+body {
+    direction: ltr;
+    min-height: 100vh;
+    background: #181733;
+    color: #222;
+    font-size: 1.4rem;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: background .4s ease-in;
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.cXSFID_loginForm .separator {
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 2rem auto;
+    border-top: 1px solid white;
+}
+
+:root {
+    --dxp-g-root: var(--lwc-dxpGRoot,#FFFFFF);
+    --dxp-g-root-1: var(--lwc-dxpGRoot1,rgb(235, 235, 235));
+    --dxp-g-root-2: var(--lwc-dxpGRoot2,rgb(194, 194, 194));
+    --dxp-g-root-3: var(--lwc-dxpGRoot3,rgb(133, 133, 133));
+    --dxp-g-root-contrast: var(--lwc-dxpGRootContrast,#333);
+    --dxp-g-root-contrast-1: var(--lwc-dxpGRootContrast1,rgb(31, 31, 31));
+    --dxp-g-root-contrast-2: var(--lwc-dxpGRootContrast2,rgb(0, 0, 0));
+    --dxp-g-root-contrast-3: var(--lwc-dxpGRootContrast3,rgb(0, 0, 0));
+    --dxp-g-neutral: var(--lwc-dxpGNeutral,#ecebea);
+    --dxp-g-neutral-1: var(--lwc-dxpGNeutral1,rgb(217, 215, 213));
+    --dxp-g-neutral-2: var(--lwc-dxpGNeutral2,rgb(178, 174, 170));
+    --dxp-g-neutral-3: var(--lwc-dxpGNeutral3,rgb(118, 113, 107));
+    --dxp-g-neutral-contrast: var(--lwc-dxpGNeutralContrast,#000);
+    --dxp-g-neutral-contrast-1: var(--lwc-dxpGNeutralContrast1,#000);
+    --dxp-g-neutral-contrast-2: var(--lwc-dxpGNeutralContrast2,#000);
+    --dxp-g-neutral-contrast-3: var(--lwc-dxpGNeutralContrast3,#fff);
+    --dxp-g-brand: var(--lwc-dxpGBrand,#2574A9);
+    --dxp-g-brand-1: var(--lwc-dxpGBrand1,rgb(30, 93, 136));
+    --dxp-g-brand-2: var(--lwc-dxpGBrand2,rgb(15, 47, 69));
+    --dxp-g-brand-3: var(--lwc-dxpGBrand3,rgb(0, 0, 0));
+    --dxp-g-brand-contrast: var(--lwc-dxpGBrandContrast,#FFFFFF);
+    --dxp-g-brand-contrast-1: var(--lwc-dxpGBrandContrast1,rgb(255, 255, 255));
+    --dxp-g-brand-contrast-2: var(--lwc-dxpGBrandContrast2,rgb(255, 255, 255));
+    --dxp-g-brand-contrast-3: var(--lwc-dxpGBrandContrast3,rgb(255, 255, 255));
+    --dxp-g-success: #4bca81;
+    --dxp-g-success-1: #36b66c;
+    --dxp-g-success-2: #237747;
+    --dxp-g-success-3: #07190f;
+    --dxp-g-success-contrast: #000;
+    --dxp-g-success-contrast-1: #000;
+    --dxp-g-success-contrast-2: #fff;
+    --dxp-g-success-contrast-3: #fff;
+    --dxp-g-destructive: #c23934;
+    --dxp-g-destructive-1: #a2302b;
+    --dxp-g-destructive-2: #611d1a;
+    --dxp-g-destructive-3: #010000;
+    --dxp-g-destructive-contrast: #fff;
+    --dxp-g-destructive-contrast-1: #fff;
+    --dxp-g-destructive-contrast-2: #fff;
+    --dxp-g-destructive-contrast-3: #fff;
+    --dxp-g-warning: #ffb75d;
+    --dxp-g-warning-1: #ffa534;
+    --dxp-g-warning-2: #e27d00;
+    --dxp-g-warning-3: #673900;
+    --dxp-g-warning-contrast: #000;
+    --dxp-g-warning-contrast-1: #000;
+    --dxp-g-warning-contrast-2: #000;
+    --dxp-g-warning-contrast-3: #fff;
+    --dxp-g-info: #16325c;
+    --dxp-g-info-1: #0e203b;
+    --dxp-g-info-2: #000000;
+    --dxp-g-info-3: #000000;
+    --dxp-g-info-contrast: #fff;
+    --dxp-g-info-contrast-1: #fff;
+    --dxp-g-info-contrast-2: #fff;
+    --dxp-g-info-contrast-3: #fff;
+    --dxp-g-offline: #444;
+    --dxp-g-offline-1: #303030;
+    --dxp-g-offline-2: #070707;
+    --dxp-g-offline-3: #000000;
+    --dxp-g-offline-contrast: #fff;
+    --dxp-g-offline-contrast-1: #fff;
+    --dxp-g-offline-contrast-2: #fff;
+    --dxp-g-offline-contrast-3: #fff;
+    --dxp-g-spacing-none: 0!important;
+    --dxp-g-spacing-xxxsmall: .125rem;
+    --dxp-g-spacing-xxsmall: .25rem;
+    --dxp-g-spacing-xsmall: .5rem;
+    --dxp-g-spacing-small: .75rem;
+    --dxp-g-spacing-medium: 1rem;
+    --dxp-g-spacing-large: 1.5rem;
+    --dxp-g-spacing-xlarge: 2rem;
+    --dxp-g-spacing-xxlarge: 3rem;
+    --dxp-g-root-font-family: var(--lwc-fontFamily,Lato);
+    --dxp-g-heading-font-family: var(--lwc-fontFamilyHeader,Montserrat);
+    --dxp-g-font-size-1: .625rem;
+    --dxp-g-font-size-2: .75rem;
+    --dxp-g-font-size-3: .8125rem;
+    --dxp-g-font-size-4: .875rem;
+    --dxp-g-font-size-5: 1rem;
+    --dxp-g-font-size-6: 1.125rem;
+    --dxp-g-font-size-7: 1.25rem;
+    --dxp-g-font-size-8: 1.5rem;
+    --dxp-g-font-size-9: 1.75rem;
+    --dxp-g-font-size-10: 2rem;
+    --dxp-g-font-size-11: 2.625rem;
+    --dxp-s-html-font-size: 16px;
+    --dxp-s-text-heading-extra-large-font-family: var(--lwc-fontFamilyHeader,Montserrat);
+    --dxp-s-text-heading-extra-large-font-size: 2.5rem;
+    --dxp-s-text-heading-extra-large-font-style: normal;
+    --dxp-s-text-heading-extra-large-font-weight: 300;
+    --dxp-s-text-heading-extra-large-text-decoration: none;
+    --dxp-s-text-heading-extra-large-text-transform: var(--lwc-textTransform,uppercase);
+    --dxp-s-text-heading-extra-large-line-height: 1.25;
+    --dxp-s-text-heading-extra-large-letter-spacing: 0;
+    --dxp-s-text-heading-large-font-family: var(--lwc-fontFamilyHeader,Montserrat);
+    --dxp-s-text-heading-large-font-size: 1.75rem;
+    --dxp-s-text-heading-large-font-style: normal;
+    --dxp-s-text-heading-large-font-weight: 300;
+    --dxp-s-text-heading-large-text-decoration: none;
+    --dxp-s-text-heading-large-text-transform: var(--lwc-textTransform,uppercase);
+    --dxp-s-text-heading-large-line-height: 1.25;
+    --dxp-s-text-heading-large-letter-spacing: 0;
+    --dxp-s-text-heading-medium-font-family: var(--lwc-fontFamilyHeader,Montserrat);
+    --dxp-s-text-heading-medium-font-size: 1.25rem;
+    --dxp-s-text-heading-medium-font-style: normal;
+    --dxp-s-text-heading-medium-font-weight: 300;
+    --dxp-s-text-heading-medium-text-decoration: none;
+    --dxp-s-text-heading-medium-text-transform: var(--lwc-textTransform,uppercase);
+    --dxp-s-text-heading-medium-line-height: 1.25;
+    --dxp-s-text-heading-medium-letter-spacing: 0;
+    --dxp-s-text-heading-small-font-family: var(--lwc-fontFamilyHeader,Montserrat);
+    --dxp-s-text-heading-small-font-size: 1.125rem;
+    --dxp-s-text-heading-small-font-style: normal;
+    --dxp-s-text-heading-small-font-weight: 300;
+    --dxp-s-text-heading-small-text-decoration: none;
+    --dxp-s-text-heading-small-text-transform: var(--lwc-textTransform,uppercase);
+    --dxp-s-text-heading-small-line-height: 1.25;
+    --dxp-s-text-heading-small-letter-spacing: 0;
+    --dxp-s-body-font-family: var(--lwc-fontFamily,Lato);
+    --dxp-s-body-font-size: 1rem;
+    --dxp-s-body-font-style: normal;
+    --dxp-s-body-font-weight: 400;
+    --dxp-s-body-text-decoration: none;
+    --dxp-s-body-text-transform: none;
+    --dxp-s-body-line-height: 1.5;
+    --dxp-s-body-letter-spacing: 0;
+    --dxp-s-body-small-font-family: var(--lwc-fontFamily,Lato);
+    --dxp-s-body-small-font-size: .75rem;
+    --dxp-s-body-small-font-style: normal;
+    --dxp-s-body-small-font-weight: 400;
+    --dxp-s-body-small-text-decoration: none;
+    --dxp-s-body-small-text-transform: none;
+    --dxp-s-body-small-line-height: 1.25;
+    --dxp-s-body-small-letter-spacing: 0;
+    --dxp-s-button-font-family: var(--lwc-fontFamily,Lato);
+    --dxp-s-button-font-size: 1rem;
+    --dxp-s-button-font-style: normal;
+    --dxp-s-button-font-weight: 400;
+    --dxp-s-button-text-transform: var(--lwc-textTransform,uppercase);
+    --dxp-s-button-line-height: 2;
+    --dxp-s-button-letter-spacing: 0;
+    --dxp-s-link-text-decoration: none;
+    --dxp-s-link-text-decoration-focus: underline;
+    --dxp-s-link-text-decoration-hover: underline;
+    --dxp-s-site-logo-url: var(--lwc-brandLogoImage,url());
+    --dxp-s-section-columns-max-width: 1800px;
+    --dxp-s-header-content-max-width: 1rem;
+    --dxp-s-footer-content-max-width: 1rem;
+    --dxp-s-section-content-spacing-block-start: 1rem;
+    --dxp-s-section-content-spacing-block-end: 1rem;
+    --dxp-s-column-spacer-size: 1rem;
+    --dxp-s-component-wrapper-spacer-size: 1.5rem;
+    --dxp-s-section-columns-max-width-mobile: none;
+    --dxp-s-header-content-max-width-mobile: none;
+    --dxp-s-footer-content-max-width-mobile: none;
+    --dxp-s-section-content-spacing-block-start-mobile: .75rem;
+    --dxp-s-section-content-spacing-block-end-mobile: .75rem;
+    --dxp-s-column-spacer-size-mobile: .75rem;
+    --dxp-s-component-wrapper-spacer-size-mobile: 1.5rem;
+}
+:root {
+    --lwc-gridGroupingColor: #FFFFFF;
+    --lwc-colorBackground: #FFFFFF;
+    --lwc-salesforceSansRegularWoff2: url(/_slds/fonts/v2.3.0/SalesforceSans-Regular.woff2);
+    --lwc-salesforceSansBoldWoff: url(/_slds/fonts/v2.3.0/SalesforceSans-Bold.woff);
+    --lwc-salesforceSansLightItalicWoff2: ;
+    --lwc-salesforceSansLightWoff: url(/_slds/fonts/v2.3.0/SalesforceSans-Light.woff);
+    --lwc-salesforceSansRegularWoff: url(/_slds/fonts/v2.3.0/SalesforceSans-Regular.woff);
+    --lwc-salesforceSansLightItalicWoff: ;
+    --lwc-salesforceSansBoldWoff2: url(/_slds/fonts/v2.3.0/SalesforceSans-Bold.woff2);
+    --lwc-colorBackgroundAnchor: rgb(243, 243, 243);
+    --lwc-salesforceSansLightWoff2: url(/_slds/fonts/v2.3.0/SalesforceSans-Light.woff2);
+    --lwc-colorBackgroundPageHeader: rgb(255, 255, 255);
+    --lwc-gridGrandTotalBgColor: #FFFFFF;
+    --lwc-gridHeaderBgColor: #FFFFFF;
+    --lwc-salesforceSansItalicWoff2: url(/_slds/fonts/v2.3.0/SalesforceSans-Italic.woff2);
+    --lwc-salesforceSansItalicWoff: url(/_slds/fonts/v2.3.0/SalesforceSans-Italic.woff);
+    --lwc-textTransform: uppercase;
+    --lwc-colorTextIconDefaultActive: #135F90;
+    --lwc-colorTextIconDefaultHover: #135F90;
+    --lwc-mqLarge: only screen and (min-width: 64.0625em);
+    --lwc-mqSingleColumnRecordLayout: (max-width: 599px);
+    --lwc-mqMediumLandscape: only screen and (min-width: 48em) and (min-aspect-ratio: 4/3);
+    --lwc-mqMedium: only screen and (min-width: 48em);
+    --lwc-mqHighRes: only screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2),screen and (min-resolution: 192dpi),screen and (min-resolution: 2dppx);
+    --lwc-mqSmall: only screen and (max-width: 47.9375em);
+    --lwc-paletteIndigo10: rgb(32, 6, 71);
+    --lwc-popoverWalkthroughHeaderImage: ;
+    --lwc-zIndexDialog: 6000;
+    --lwc-colorPickerSelectorWidth: 14rem;
+    --lwc-nubbinSizeDefault: 1rem;
+    --lwc-navigationItemVerticalPadding: var(--lwc-spacingXSmall);
+    --lwc-paletteCloudBlue40: rgb(5, 98, 138);
+    --lwc-brandNavigationColorText: rgba(255, 255, 255, 0.99);
+    --lwc-colorBackgroundContextBarInverseItemHover: rgba(255, 255, 255, 0.2);
+    --lwc-dropZoneSlotHeight: 0.25rem;
+    --lwc-colorTextTabLabelSelected: #2574A9;
+    --lwc-colorStrokeBrandActive: rgb(3, 45, 96);
+    --lwc-paletteIndigo15: rgb(31, 9, 116);
+    --lwc-cardBodyPadding: 0 1rem;
+    --lwc-varSpacingHorizontalSmall: 0.75rem;
+    --lwc-tableColorBackgroundHeaderResizableHandle: rgb(174, 174, 174);
+    --lwc-colorBackgroundPathActiveHover: rgb(3, 45, 96);
+    --lwc-brandPrimaryTransparent: rgba(21, 137, 238, 0.1);
+    --lwc-brandPrimaryTransparent40: rgba(21, 137, 238, 0.4);
+    --lwc-colorBorderButtonDefault: #D4D4D4;
+    --lwc-paletteIndigo20: rgb(50, 29, 113);
+    --lwc-popoverColorText: rgb(201, 201, 201);
+    --lwc-paletteCloudBlue30: rgb(8, 73, 104);
+    --lwc-colorTextButtonDefaultActive: rgb(1, 118, 211);
+    --lwc-colorPickerSliderHeight: 1.5rem;
+}
+.cXSFID_loginForm {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #007bff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 320px;
+    --breakpoint-md: 767px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1200px;
+    --breakpoint-xxl: 1440px;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    font-size: 32px;
+    line-height: 100%;
+    font-weight: 800;
+    margin-bottom: 33px;
+    text-align: center!important;
+    font-family: fcbFont-Header;
+
+}
+.input.text{
+    border: none;
+    padding: 3px;
+    background: transparent;
+}
+.cXSFID_loginForm .form-control__wrap {
+    margin: 1rem 0 2rem 0;
+    position: relative;
+    border-radius: 25%;
+}
+
+div {
+    display: block;
+}
+
+.cXSFID_loginForm .title_yellow {
+    color: #fdc52c;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+nav {
+    display: block;
+}
+
+.top-slim-nav {
+    display: flex;
+    height: 1%;
+    width: 39%;
+    justify-content: space-between;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+a:-webkit-any-link {
+    color: orange;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.top-slim-message {
+    font-family: fcb-extra-bold,Arial,Helvetica ,Helvetica,sans-serif;
+    font-weight: 400;
+    background-image: linear-gradient(90deg,#154284,#181733);
+    border-radius: 1.6rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0.7rem 1.6rem;
+}

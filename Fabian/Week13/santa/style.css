@@ -1,0 +1,51 @@
+body{
+    background-image: url(assets/background.png);
+    color: green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: colorChange 2s infinite;
+    position: relative;
+    align-items: center;
+}
+
+#santa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#santa img,
+#village img,
+#parade img,
+#gifts img{
+    animation: rotate 2s infinite;
+}
+
+#twerk{
+    animation: positionChange 4s infinite;
+}
+
+@keyframes rotate{
+    0%{transform: rotate(360deg);}
+    100%{transform: rotate(0deg); }
+}
+
+@keyframes colorChange{
+    0%{color: green;}
+    25%{color: lightgreen;}
+    50%{color: rgb(173, 1, 1);}
+    75%{color: red}
+    100%{color: green;}
+}
+
+@keyframes positionChange{
+    0% {}
+    33%{ transform: translateX(600px);}
+    66% { transform: translateX(-600px); }
+    100% { transform: translateY(0); }
+}

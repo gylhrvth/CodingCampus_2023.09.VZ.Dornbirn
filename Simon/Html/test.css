@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+}
+
+.center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.twoColumns50-50 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.bg-cyan {
+    background-color: cyan;
+}
+
+.foto-title {
+    display: grid;
+    justify-items: center;
+}
