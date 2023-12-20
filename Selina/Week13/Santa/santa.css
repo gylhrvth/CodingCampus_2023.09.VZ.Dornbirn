@@ -37,6 +37,7 @@ body {
     height: 100%;
     background: url('santa.png') center/contain no-repeat;
     animation: animate 5s ease-in-out infinite;
+    z-index: 99;
 }
 
 @keyframes animate {
@@ -59,4 +60,32 @@ body {
     width: 100vw;
     height: 100vh;
     margin: 0;
+}
+
+.img {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    animation: rotateImage 9s linear infinite;
+}
+
+.imgSanta {
+    position: absolute;
+    width: 450px;
+    height: auto;
+    position: center;
+    top: 150px;
+    left: 700px;
+}
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
