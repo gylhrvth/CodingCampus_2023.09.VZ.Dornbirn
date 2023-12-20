@@ -1,0 +1,149 @@
+body {
+    background-color: #ffeeee;
+    font-family: 'Comic Sans MS', cursive; 
+  }
+  
+  header {
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: red;
+  }
+  
+  .lights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+  }
+  
+  .light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(189, 255, 33);
+    margin: 5px;
+    animation: blink 1s infinite alternate;
+  }
+  
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.5;
+    }
+  }
+  
+  .text {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ddd;
+  }
+
+  
+
+
+@keyframes blink {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.2);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .light.light3 {
+    background-color: lightblue;
+    animation: blink 1.5s infinite alternate-reverse;
+  }
+  
+  .light.light4 {
+    background-color: lightgreen;
+    animation: blink 1.2s infinite alternate-reverse;
+  }
+  
+  .light.light5 {
+    background-color: pink;
+    animation: blink 1.7s infinite alternate-reverse;
+  }
+  
+  .light.light6 {
+    background-color: rgb(12, 88, 113);
+    animation: blink 1.5s infinite alternate-reverse;
+  }
+
+  .light.light7 {
+    background-color: rgb(237, 44, 247);
+    animation: blink 1.5s infinite alternate-reverse;
+  }
+
+  .light.light8 {
+    background-color: lightblue;
+    animation: blink 1.5s infinite alternate-reverse;
+  }
+
+  .light.light9 {
+    background-color: lightblue;
+    animation: blink 1.5s infinite alternate-reverse;
+  }
+
+  .santa-background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('santa.jpg'); 
+    background-size: cover;
+    overflow: hidden;
+  }
+  
+  .santa-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .reindeer {
+    position: absolute;
+    width: 100px; /* Größe des Elchs anpassen */
+    height: 100px; /* Größe des Elchs anpassen */
+    background-image: url('elch.png'); /* Pfad zum Bild des Elchs */
+    background-size: cover;
+    animation: rotateReindeer 5s linear infinite; /* Animationsdauer und -typ */
+  }
+  
+  @keyframes rotateReindeer {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Platzierung der Elche anpassen */
+  .reindeer:nth-child(1) {
+    top: 20%;
+    left: 5%;
+  }
+  
+  .reindeer:nth-child(2) {
+    top: 70%;
+    left: 70%;
+  }
+  
+  /* Weitere Elche nach Bedarf hinzufügen und platzieren */ 

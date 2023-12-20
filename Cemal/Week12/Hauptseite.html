@@ -1,52 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=no">
     <title>Document</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Russo+One&family=Silkscreen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&family=Russo+One&family=Silkscreen&display=swap"
+        rel="stylesheet">
 
-
-    <style>
-        .hidden{
-            display: none;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-        }
-
-        .button{
-            color: rgb(185, 229, 229);
-            background-color: rgb(102, 102, 102);
-        }
-        .Image{
-            border-radius: 5%;
-            width: ;
-            height: fit-content;
-        }
-    </style>
-
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
+
 <body style="background-color: rgb(217, 221, 215);">
-    <h1 style="text-align: center;font-family: 'Russo One', sans-serif;">Wilkommen auf die Seite von</h1>
+    <h1 style="text-align: center;font-family: 'Russo One', sans-serif;">Wilkommen auf der Seite von</h1>
     <h2 style="text-align: center;font-family: 'Silkscreen', sans-serif; background-color: aliceblue;">CEMAL KOSAR</h2>
 
-    <button class="button" id="showImage" style="">Drück auf mich wenn du meinen Lebenslauf sehen willst!</button>
+    <button class="button" id="showImage" style=>Drück auf mich wenn du meinen Lebenslauf sehen willst!</button>
     <div id="myCV" class="hidden">
         <img class="Image" src="Lebenslauf.jpg" alt="Lebenslauf">
     </div>
 
-    <script>
-       document.getElementById("showImage").onclick = function(){
-        var x = document.getElementById("myCV");
-        if (x.style.display === "none") {
-        x.style.display = "block";
-        } else {
-        x.style.display = "none";
-        }
-       }
-    </script>
+
+    <br><br><br>
+    <!-- <a href="https://i.pinimg.com/736x/5d/e7/04/5de70452e9b565bcab850ba8f60ac889.jpg">Nicht klicken!</a> -->
+
+    <br><br><br><br>
+    <div class="container">
+        <div class="circle" style="background-image: url('cemal.jpg');">
+            <div>
+                <div class="imgCircle">
+                    <span class="material-symbols-outlined">
+                        description
+                    </span>
+                </div>
+                <div class="title">Lebenslauf</div>
+            </div>
+
+            <div>
+                <div class="imgCircle"
+                    style="background-image: url('https://static-00.iconduck.com/assets.00/discord-icon-2048x2048-nnt62s2u.png');">
+                </div>
+                <div class="title">Discord</div>
+            </div>
+
+            <div>
+                <div class="imgCircle"
+                    style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/512px-Steam_icon_logo.svg.png'); margin-left: -6px;">
+                </div>
+                <div class="title">Steam</div>
+            </div>
+
+            <div>
+                <div class="imgCircle">
+                    <span class="material-symbols-outlined">
+                        extension
+                    </span>
+                </div>
+                <div class="title">Projekte</div>
+            </div>
+
+            <div>
+                <div class="imgCircle"
+                    style="background-image: url('https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png');">
+                </div>
+                <div class="title">LinkedIn</div>
+            </div>
+
+            <div>
+                <div class="imgCircle"
+                    style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Instagram-Icon.png/768px-Instagram-Icon.png');">
+                </div>
+                <div class="title">Instagram</div>
+            </div>
+
+
+            <div>
+                <div class="imgCircle"
+                    style="background-image: url('https://cdn-icons-png.flaticon.com/512/25/25231.png');">
+                </div>
+                <div class="title">GitHub</div>
+            </div>
+
+            <div>
+                <div class="imgCircle"
+                    style="background-image: url('https://static.vecteezy.com/system/resources/previews/018/930/604/original/discord-logo-discord-icon-transparent-free-png.png');">
+                </div>
+                <div class="title"></div>
+            </div>
+
+        </div>
+    </div>
+
 </body>
+
 </html>

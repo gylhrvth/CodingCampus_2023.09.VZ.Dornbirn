@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Meine kitschige Weihnachtsseite</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff; /* Hintergrundfarbe */
+    }
+    .content {
+      text-align: center;
+      padding: 100px 20px;
+    }
+    h1 {
+      font-family: 'Comic Sans MS', cursive;
+      color: red;
+      font-size: 3em; 
+      margin-bottom: 20px;
+    }
+    p {
+      color: green; 
+      font-size: 1.2em;
+    }
+    .background-gif {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    #geschenk-bild {
+      width: 300px; 
+      height: auto; 
+      align-self: center;
+    }
+
+    .gift-button {
+      background-color: red;
+      color: white; 
+      padding: 15px 30px; 
+      font-size: 1.2em; 
+      border: none;
+      border-radius: 8px;
+      cursor: pointer; 
+      transition: background-color 0.3s ease;
+    }
+    .gift-button:hover {
+      background-color: #ff6666
+    }
+  </style>
+</head>
+<body>
+  <img src="giph.webp" alt="Weihnachtliches GIF" class="background-gif">
+
+
+  <audio autoplay loop>
+    <source src="We Wish You a Merry Christmas with Lyrics  Christmas Carol & Song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <div class="content">
+    <h1 style="color: red; text-shadow: 2px 2px 4px #ffffff;">Frohe Weihnachten!</h1>
+    <p style="color: rgb(244, 33, 71); font-weight: bold;">Willkommen auf meiner zuckersüßen Weihnachtsseite!</p>
+
+    
+    <button class="gift-button" onclick="toggleGeschenk()">Klicke für Geschenk</button>
+
+
+    <img src="geld.jpg" alt="Geschenk" id="geschenk-bild" style="display: none;">
+
+
+  </div>
+
+  <script>
+    
+    let bildAngezeigt = false;
+
+    function toggleGeschenk() {
+      const geschenkBild = document.getElementById('geschenk-bild');
+
+   
+      if (bildAngezeigt) {
+        geschenkBild.style.display = 'none';
+        bildAngezeigt = false;
+      } else {
+       
+        geschenkBild.style.display = 'block';
+        bildAngezeigt = true;
+      }
+    }
+  </script>
+</body>
+</html>
