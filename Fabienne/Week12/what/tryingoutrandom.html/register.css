@@ -24,9 +24,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 2;
 }
 
 .navbar span {
@@ -50,9 +47,7 @@ body {
 }
 
 .search-bar {
-
     font-family: 'Silkscreen';
-    
     border: 1px solid white;
     border-radius: 10px;
     padding: 5px;
@@ -74,57 +69,56 @@ button {
     padding: 5px 10px;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 1s;
+    transition: background-color 300ms;
 }
 
-.image-container {
-    display: flex;
-    justify-content: left; 
-    flex-wrap: wrap;
-    padding: 20px;
-    padding-right: 30px;
-    position: relative;
-}
-
-.round-image {
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 10px;
-    position: relative;
-    text-align: center;
-}
-
-.round-image img {
-    width: 264px;
-    height: 264px;
-    object-fit: cover;
-    display: block;
-}
-
-.text {
+.button2{
     background-color: black;
     font-family: 'Silkscreen';
     color: white;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 14px;
-    width: 100%;
-    border-radius: 0 0 15px 15px;
+    border: 2px solid white !important;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 300ms;
 }
 
-.play-button {
-    font-size: 24px;
-    margin-top: 10px;
-    text-align: center;
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    
 }
-
-.play-button :hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.h1{
+.login2{
     color: white;
-    margin-left: 30px;
-    margin-top: 50px;
-    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+}
+
+.login input{
+    margin-bottom: 20px;
+    margin-top: 5px;
+    width: 150px;
+    font-family: 'Silkscreen';
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.359) !important;
+    border-radius: 10px;
+}
+
+#uname:hover, #pword:hover{
+    outline-style: solid;
+    border-color: rgba(13, 0, 255, 0.363);
+}
+.button2:hover{
+    background-color: #ffffff5e ;
 }
