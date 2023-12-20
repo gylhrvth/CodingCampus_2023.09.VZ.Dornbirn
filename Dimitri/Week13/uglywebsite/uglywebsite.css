@@ -155,7 +155,7 @@ body {
     }
 
     50% {
-        left: 100vw;
+        left: 50vw;
         top: calc(0vh + 24px);
     }
 
@@ -174,7 +174,7 @@ body {
     }
 
     50% {
-        right: 100vw;
+        right: 50vw;
         top: calc(100vh - 100px);
     }
 
