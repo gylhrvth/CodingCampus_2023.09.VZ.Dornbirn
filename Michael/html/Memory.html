@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+.field {
+    display: grid;
+    height: 90vh;
+    width: 90vw;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: white;
+    padding-left: 4vw;
+}
+.cell {
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    font-family: "arial";
+    font-size: 8vw;
+    text-align: center;
+    height: 20vw;
+    width: 15vw;
+    border-radius: 5vw;
+    background-color: white;
+    border: 10px solid black;
+    padding: 0px;
+}
+.revealed{
+    border-color: rgb(58, 58, 58);
+    color: rgb(58, 58, 58);
+}
+.upper{
+    flex-grow: 1;
+    margin: 0px;
+}
+.lower{
+    flex-grow: 1;
+    margin: 0px;
+    transform: rotate(180deg);
+}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+
+    <p>
+        <input type="text" class="inputField"> current guesses: <span class="guessCount">0</span>
+    </p>
+
+    <div class="field">
+    </div>
+
+</body>
+
+<script>
+
+    const field = document.querySelector(".field");
+    const inputField = document.querySelector(".inputField");
+    inputField.addEventListener("input", printCards);
+
+
+
+    function glowUp(){
+        if(!this.classList.contains("revealed")){
+            this.style.transition = "0.3s";
+            this.style.backgroundColor = `rgb(${getRandomNumber(255)}, ${getRandomNumber(255)}, ${getRandomNumber(255)})`;
+        }
+    }
+
+
+    function getRandomNumber(max){
+        return Math.floor(Math.random() * max);
+    }
+
+
+    function printCards(){
+        const cardNumber = this.value;
+
+        while(field.firstChild){
+            field.removeChild(field.firstChild);
+            cards = [];
+        }
+
+        for(let i = 0; i < cardNumber; i++){
+            addCard(i+1);
+        }
+    }
+
+
+    function setColor(){
+        this.classList.toggle("revealed");
+    }
+
+
+    function glowDown(){
+        if(!this.classList.contains("revealed")){
+            this.style.backgroundColor = "inherit";
+        }
+    }
+
+
+    function addCard(count){
+        const param = document.createElement("div");
+        param.classList.add("cell");
+
+        let rnd = Math.random() * 180;
+        rnd = -90 + rnd;
+        param.style.transform = `rotate(${rnd}deg)`;
+        const upper = document.createElement("div");
+        const lower = document.createElement("div");
+        upper.textContent = count;
+        upper.classList.add("upper");
+        param.appendChild(upper);
+        lower.textContent = count;
+        lower.classList.add("lower");
+        param.appendChild(lower);
+
+        field.append(param);
+        param.addEventListener("mouseover", glowUp);
+        param.addEventListener("mouseleave", glowDown);
+        param.addEventListener("click", setColor);
+
+    }
+
+</script>
+
+</html>

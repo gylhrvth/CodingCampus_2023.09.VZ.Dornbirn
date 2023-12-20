@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signupstyle.css">
+</head>
+
+<body>
+
+    <div class="formOuter">
+        <form class="signUp" action="whatever">
+
+            <div class="inputSection">
+                <label for="Nickname">Nickname</label>
+                <input id="nicknameInput" type="text" placeholder="10 characters or less">
+            </div>
+
+            <div class="inputSection">
+                <label for="Email address">Email address</label>
+                <input id="emailInput" type="email" placeholder="Email address">
+            </div>
+
+            <div class="inputSection">
+                <label for="Password">Password</label>
+                <input id="passwordInput" type="password" placeholder="At least 8 characters">
+            </div>
+
+            <div class="inputSection">
+                <label for="Confirm Password">Confirm Password</label>
+                <input id="passwordCheckInput" type="password" placeholder="At least 8 characters">
+            </div>
+
+            <div class="inputSection">
+                <label for="Date of Birth">Date of Birth</label>
+                <input id="dateInput" type="date">
+            </div>
+
+            <div class="inputSection">
+                <label for="Gender">Gender</label>
+                <select id="genderInput" name="Gender" id="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+            </div>
+
+            <div class="inputSection">
+                <label for="Country/region">Country/region</label>
+                <select id="countryInput" name="Country/region" id="Country/region">
+                    <option value="Austria">Austria</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                </select>
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+</body>
+
+<script src="signupjs.js"></script>
+
+</html>

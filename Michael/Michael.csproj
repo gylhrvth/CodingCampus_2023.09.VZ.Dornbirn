@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Week11\" />
     <Folder Include="Week03\" />
   </ItemGroup>
 

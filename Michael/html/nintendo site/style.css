@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.header {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: auto 80px 80px 80px;
+    width: 100vw;
+    height: 80px;
+    background-color: red;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.icon,
+.nintendoLogo {
+    height: 40px;
+}
+
+
+.logo,
+.headerIcon {
+    align-self: center;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 80px 2fr 1fr;
+}
+
+.contentList {
+    background-color: red;
+
+}
+
+.contentList {
+    height: 100vh;
+    grid-template-rows: repeat(6, 100px);
+    list-style-type: none;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.pictures {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.pictures div {
+    background-color: grey;
+    margin: 5px;
+}
+
+.news {
+    list-style: none;
+}
+
+.news li {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.news li .newsContent .newsInfo {
+    color: lightgray;
+    margin: 0;
+}
+
+.news>* {
+    margin: 0;
+    padding: 0;
+}

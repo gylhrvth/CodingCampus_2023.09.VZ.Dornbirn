@@ -323,8 +323,8 @@ namespace Michael.Week10_maybe
 
         public static string GetConnectionString()
         {
-            //return "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.0.77,1433;User=Michael;Password=Michael";
-            return "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Michael Hämmerle;Password=Kyan2003*";
+            return "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:192.168.0.77,1433;User=Michael;Password=Michael";
+            //return "Persist Security Info=False;Initial Catalog=Mondial;server=tcp:localhost,1433;User=Michael Hämmerle;Password=Kyan2003*";
         }
     }
 }
