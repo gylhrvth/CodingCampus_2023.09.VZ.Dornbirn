@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        background: linear-gradient(130deg,#3ace1962,#6E6F24);
+    }
+
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        position: absolute;
+        animation-name: example;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        }
+
+      @keyframes example {
+        0%{background-color: lightblue; rotate: 0deg; left:0px;}
+        25%{background-color: lightseagreen; rotate: 90deg; left:0px; top: 90vh;}
+        50%{background-color: lightcoral; rotate: 180deg; left: 90vw; top:90vh}
+        75%{background-color: blue; rotate: 2700deg; left: 90vw; top: 0vh;}
+        100%{background-color: lightblue;rotate: 0deg; left: 0px;}
+      }
+
+
+</style>
+</head>
+<body>
+    <div></div>
+
+</body>
+</html>
