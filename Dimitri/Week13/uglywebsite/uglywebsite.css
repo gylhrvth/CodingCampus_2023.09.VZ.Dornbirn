@@ -98,7 +98,7 @@ body {
     font-family: 'Candy Cane';
     font-size: 50px;
     color: goldenrod;
-    animation: move-sideways-top 2s;
+    animation: move-sideways-top 10s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     position: relative;
@@ -108,7 +108,7 @@ body {
     font-family: 'Candy Cane';
     font-size: 50px;
     color: goldenrod;
-    animation: move-sideways-bottom 2s;
+    animation: move-sideways-bottom 10s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     position: absolute;
