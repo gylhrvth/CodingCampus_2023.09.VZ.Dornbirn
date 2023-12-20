@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.twoColumnsAuto {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.twoColumns50-50 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.menue {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.menuenew {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.colourforpic {
+    background-color: aqua;
+}

@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+nav {
+    display: flex;
+    color: white;
+}
+
+.left-box {
+    flex: 69%;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 12px;
+    justify-content: flex-end;
+}
+
+.left-box a {
+    margin-right: 20px;
+    letter-spacing: 1px;
+    color: #001e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.left-box a:hover {
+    color: #28a745;
+}
+
+.center-box {
+    flex: 21%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #001e50;
+    white-space: pre;
+}
+
+.right-box {
+    flex: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00b46e;
+}
+
+.center-box a,
+.right-box a {
+    font-weight: bold;
+}
+
+.navbar-link {
+    color: inherit;
+}
+
+.gridx2 {
+    display: grid;
+    grid-template-columns: 4fr 8fr 1fr;
+}
+
+.gridx3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.imgsetting {
+    width: 280px;
+    margin-right: 80px;
+}
+
+.EINRICHTUNGEN {
+    display: grid;
+}
+
+.LEISTUNGEN {
+    display: grid;
+
+}
+
+.LEBEN {
+    display: grid;
+}
+
+.Search {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}

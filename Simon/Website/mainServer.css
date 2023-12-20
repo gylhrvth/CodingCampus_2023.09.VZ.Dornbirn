@@ -1,0 +1,71 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.backgroundimg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.maintext {
+    position: relative;
+    top: 100px;
+}
+
+.topnav {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: black;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.topnav li {
+    float: left;
+}
+
+.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.topnav li a.active {
+    background-color: rgb(0, 136, 255);
+}
+
+.topnav li.right {
+    float: right;
+}
+
+@media screen and (max-width: 450px) {
+
+    .topnav li.right,
+    .topnav li {
+        float: none;
+    }
+}
+
+.footerElement {
+    padding: 10px;
+    background-color: rgb(125, 53, 53);
+    margin-left: 8px;
+}

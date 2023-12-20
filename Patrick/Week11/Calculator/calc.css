@@ -1,0 +1,93 @@
+.container {
+    box-shadow: 5px 5px 10px 5px rgb(58, 57, 57);
+    border: solid;
+    border-color: rgb(90, 88, 88);
+    border-radius: 15px;
+    border-width: 2px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    height: 80vh;
+    width: 30vw;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+.NumberBottoms {
+    width: 10vh;
+    height: 8vh;
+    background-color: rgb(77, 76, 76);
+    padding: 1em;
+    font-weight: 700;
+    border: solid;
+    border-radius: 5px;
+    border-color: gray;
+    justify-content: center;
+    align-content: center;
+}
+
+.rightBottoms {
+    width: 15%;
+    height: 10%;
+    background-color: orange;
+    padding: 1em;
+    font-weight: 700;
+    border: solid;
+    border-radius: 5px;
+    border-color: grey;
+    text-align: center;
+    align-items: center;
+}
+
+.display {
+    width: 100%;
+    height: 11%;
+    background-color: darkgray;
+    padding: 1em;
+    font-weight: 700;
+    border: solid;
+    border-radius: 15px;
+    flex-grow: 10px;
+    border-color: grey;
+    text-align: center;
+    align-items: center;
+}
+
+.Bottom0 {
+    width: 40%;
+    height: 10%;
+    background-color: rgb(77, 76, 76);
+    padding: 1em;
+    font-weight: 700;
+    text-align: center;
+    border: solid;
+    border-radius: 5px;
+    flex-grow: 8px;
+    border-color: gray;
+    text-align: center;
+}
+
+.DarkGrayBottoms {
+    width: 10vh;
+    height: 8vh;
+    background-color: rgb(48, 47, 47);
+    padding: 1em;
+    font-weight: 700;
+    border: solid;
+    border-radius: 5px;
+    border-color: gray;
+    text-align: center;
+    justify-content: center;
+}
