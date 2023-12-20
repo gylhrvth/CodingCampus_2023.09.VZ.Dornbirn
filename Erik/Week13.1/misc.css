@@ -1,0 +1,25 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow: hidden;
+
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.data {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    text-align: centre;
+    letter-spacing: .5rem;
+    font-size: 31px;
+}
