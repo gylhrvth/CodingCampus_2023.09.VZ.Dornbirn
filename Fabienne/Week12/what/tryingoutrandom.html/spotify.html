@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Spotify</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <div id="sidebar">
+      <div id="logo">My Spotify</div>
+      <ul id="playlist">
+        <li>Song 1</li>
+        <li>Song 2</li>
+        <li>Song 3</li>
+        <!-- Add more playlist items -->
+      </ul>
+    </div>
+    <div id="main-content">
+      <div id="now-playing">
+        <div id="album-cover"></div>
+        <div id="song-info">
+          <h2 id="song-title">Song Title</h2>
+          <p id="artist">Artist Name</p>
+        </div>
+      </div>
+      <div id="controls">
+        <button onclick="previousTrack()">⏮</button>
+        <button onclick="togglePlayPause()">▶️</button>
+        <button onclick="nextTrack()">⏭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

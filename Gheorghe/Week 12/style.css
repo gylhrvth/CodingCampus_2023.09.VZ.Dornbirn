@@ -1,0 +1,23 @@
+p {
+  border: 2px solid rgb(17, 131, 65);
+  padding: 30px;
+}
+
+p {
+  border: 2px solid rgb(125, 26, 212);
+  margin: 50px;
+}
+
+h1{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center	;
+  color: aqua;
+}
+.london{
+  text-decoration: none;
+  -ms-text-underline-position: auto;
+  text-align: center;
+  color: magenta;
+}

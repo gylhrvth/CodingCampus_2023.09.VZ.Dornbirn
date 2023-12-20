@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+    <title>Günter's Music!</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Silkscreen';
+            background-image: url(image.png);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: black;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 15px;
+            z-index: 1000;
+        }
+
+        .navbar span {
+            color: white;
+            font-size: 1.5em;
+            margin-right: 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.847);
+        }
+
+        .search-bar {
+            display: inline-block;
+            font-family: 'Silkscreen';
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 5px;
+        }
+
+        input[type="text"] {
+            width: 150px;
+            font-family: 'Silkscreen';
+            padding: 5px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: black;
+            font-family: 'Silkscreen';
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center; 
+            flex-wrap: wrap;
+            padding: 20px;
+            margin-top: 70px;
+        }
+
+        .round-image {
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        .round-image img {
+            width: 264px;
+            height: 264px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .text {
+            background-color: black;
+            font-family: 'Silkscreen';
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            width: 100%;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .play-button {
+            font-size: 24px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <audio id="myAudio">
+        <source src="youretooslow.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio1">
+        <source src="hayloft2.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio2">
+        <source src="logo.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio3">
+        <source src="wilby.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio4">
+        <source src="jesus.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio5">
+        <source src="berndd.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio6">
+        <source src="galaxyy.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio7">
+        <source src="saint.mp3" type="audio/ogg">
+      </audio>
+      <audio id="myAudio8">
+        <source src="totied.mp3" type="audio/ogg">
+      </audio>
+      
+      <script>
+      var x = document.getElementById("myAudio");
+      var x1 = document.getElementById("myAudio1"); 
+      var x2 = document.getElementById("myAudio2");
+      var x3 = document.getElementById("myAudio3");
+      var x4 = document.getElementById("myAudio4");
+      var x5 = document.getElementById("myAudio5");
+      var x6 = document.getElementById("myAudio6");
+      var x7 = document.getElementById("myAudio7");
+      var x8 = document.getElementById("myAudio8");
+      
+      function playAudio() { 
+        x.play(); 
+      } 
+      
+      function pauseAudio() { 
+        x.pause(); 
+      } 
+
+      function playAudio1() {
+        x1.play(); 
+            } 
+
+        function pauseAudio1() { 
+        x1.pause(); 
+        } 
+
+        function playAudio2() { 
+        x2.play(); 
+      } 
+      
+      function pauseAudio2() { 
+        x2.pause(); 
+      } 
+      function playAudio3() { 
+        x3.play(); 
+      } 
+      
+      function pauseAudio3() { 
+        x3.pause(); 
+      }
+      function playAudio4() { 
+        x4.play(); 
+      } 
+      
+      function pauseAudio4() { 
+        x4.pause(); 
+      } 
+      function playAudio5() { 
+        x5.play(); 
+      } 
+      
+      function pauseAudio5() { 
+        x5.pause(); 
+      } 
+      function playAudio6() { 
+        x6.play(); 
+      } 
+      
+      function pauseAudio6() { 
+        x6.pause(); 
+      } 
+      function playAudio7() { 
+        x7.play(); 
+      } 
+      
+      function pauseAudio7() { 
+        x7.pause(); 
+      } 
+      function playAudio8() { 
+        x8.play(); 
+      } 
+      
+      function pauseAudio8() { 
+        x8.pause(); 
+      } 
+      </script>
+
+    <div class="navbar">
+        <span>Günter's Musik!</span>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <div class="search-bar">
+          <input type="text" placeholder="Search...">
+          <button type="submit">Search</button>
+        </div>
+    </div>
+    <div class="image-container">
+        <div class="round-image">
+            <img src="oditari.jpg" alt="odetari">
+            <div class="text">
+                Odetari <br>
+                You're too slow! <br> <br>
+                <button onclick="playAudio()" type="button">▶</button>
+                <button onclick="pauseAudio()" type="button">| |</button> 
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="hayloft.jpg" alt="mother mother">
+            <div class="text">
+                Mother Mother <br>
+                Hayloft 2 <br> <br>
+                <button onclick="playAudio1()">▶</button>
+                <button onclick="pauseAudio1()">| |</button>
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="logoo.jpg" alt="lemon demon">
+            <div class="text">
+                Lemon Demon <br>
+                Redesign Your Logo <br> <br>
+                <button onclick="playAudio2()" type="button">▶</button>
+                <button onclick="pauseAudio2()" type="button">| |</button> 
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="wilbah.jpg" alt="wilbur soot">
+            <div class="text">
+                 Wilbur Soot <br>
+                 Around The Pomegranate<br> <br>
+                <button onclick="playAudio3()" type="button">▶</button>
+                <button onclick="pauseAudio3()" type="button">| |</button> 
+            </div>
+        </div>
+        
+        <div class="round-image">
+            <img src="jesussus.jpg" alt="portugal. the man">
+            <div class="text">
+                 Portugal. The Man <br>
+                 Modern Jesus<br> <br>
+                <button onclick="playAudio4()" type="button">▶</button>
+                <button onclick="pauseAudio4()" type="button">| |</button> 
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="bernd.jpg" alt="iamx">
+            <div class="text">
+                 IAMX <br>
+                 Bernadette<br> <br>
+                <button onclick="playAudio5()" type="button">▶</button>
+                <button onclick="pauseAudio5()" type="button">| |</button> 
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="galaxy.jpg" alt="crywank">
+            <div class="text">
+                Crywank <br>
+                Privately Owned Spiral <br> Galaxy <br>
+                <button onclick="playAudio6()" type="button">▶</button>
+                <button onclick="pauseAudio6()" type="button">| |</button> 
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="bernddd.jpg" alt="lincoln">
+            <div class="text">
+                Lincoln <br>
+                Saint Bernard <br> <br>
+                <button onclick="playAudio7()" type="button">▶</button>
+                <button onclick="pauseAudio7()" type="button">| |</button> 
+            </div>
+        </div>
+        <div class="round-image">
+            <img src="toti.jpg" alt="grouplove">
+            <div class="text">
+                GROUPLOVE <br>
+                tongue tied <br> <br>
+                <button onclick="playAudio8()" type="button">▶</button>
+                <button onclick="pauseAudio8()" type="button">| |</button> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            var input, filter, container, images, text, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            container = document.getElementById("imageContainer");
+            images = container.getElementsByClassName("round-image");
+
+            for (i = 0; i < images.length; i++) {
+                text = images[i].getElementsByClassName("text")[0];
+                txtValue = text.textContent || text.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    images[i].style.display = "";
+                } else {
+                    images[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
+
+
+<!--Hardstyle is fast. Techno goes untz untz. It has the all important kick drum, without which there is no techno . 
+    Dubstep goes [sound of fine china running through a blender, coupled with air raid sirens and VCR tape being spun far too fast]-->

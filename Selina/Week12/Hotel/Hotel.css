@@ -1,0 +1,95 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Century;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Meer.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    min-height: 100px;
+}
+
+.logo img {
+    float: left;
+    width: 150px;
+    height: auto;
+}
+
+.main {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title h1 {
+    color: #fff;
+    font-size: 70px;
+}
+
+.button {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    border: 1px solid #fff;
+    padding: 5px 20px;
+    color: #fff;
+    transition: 18px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    color: black;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 18px;
+    outline: none;
+    color: black;
+    /* border: 1px solid #fff; */
+    padding: 5px 20px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(238, 233, 233, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #000;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

@@ -1,0 +1,91 @@
+.headline {
+    display: flex;
+    justify-content: space-between;
+    font-family: Arial;
+    color: grey;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.headline2 {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.headline-left {
+    display: flex;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.headline-left>div {
+    margin-right: 10px;
+}
+
+.headline-right {
+    display: flex;
+    font-family: Arial;
+    color: grey;
+    font-size: 20px;
+}
+
+.headline-right2 {
+    display: flex;
+    font-family: Arial;
+    color: grey;
+    font-size: 20px;
+}
+
+.headline-right2>* {
+    margin-left: 10px;
+}
+
+.headline-right2>*:hover {
+    border-bottom: 2px gray solid;
+}
+
+.headline-right>* {
+    margin-left: 10px;
+}
+
+.headline-right>*:hover {
+    border-bottom: 2px gray solid;
+}
+
+.headline-left>*:hover {
+    border-bottom: 2px gray solid;
+}
+
+.headline-right>div>a {
+    text-decoration: none;
+}
+
+.link {
+    list-style: none;
+    text-decoration: none;
+    color: grey;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.link2 {
+    list-style: none;
+    text-decoration-line: none;
+    color: grey;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+.language {
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: Arial;
+    color: grey;
+}
