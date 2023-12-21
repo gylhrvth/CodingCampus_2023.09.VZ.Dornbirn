@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <div id="screen">0</div>
+        <div class="buttons">
+            <button class="mathFuncs1" onclick="clearScreen()">AC</button>
+            <button class="mathFuncs1" onclick="changeSign()">+/-</button>
+            <button class="mathFuncs1" onclick="addToScreen('%')">%</button>
+            <button class="mathFuncs2" onclick="addToScreen('/')">÷</button>
+        </div>
+        <div class="buttons">
+            <button class="nums" onclick="addToScreen(7)">7</button>
+            <button class="nums" onclick="addToScreen(8)">8</button>
+            <button class="nums" onclick="addToScreen(9)">9</button>
+            <button class="mathFuncs2" onclick="addToScreen('*')">×</button>
+        </div>
+        <div class="buttons">
+            <button class="nums" onclick="addToScreen(4)">4</button>
+            <button class="nums" onclick="addToScreen(5)">5</button>
+            <button class="nums" onclick="addToScreen(6)">6</button>
+            <button class="mathFuncs2" onclick="addToScreen('-')">-</button>
+        </div>
+        <div class="buttons">
+            <button class="nums" onclick="addToScreen(1)">1</button>
+            <button class="nums" onclick="addToScreen(2)">2</button>
+            <button class="nums" onclick="addToScreen(3)">3</button>
+            <button class="mathFuncs2" onclick="addToScreen('+')">+</button>
+        </div>
+        <div class="buttons">
+            <button class="numsZero" onclick="addToScreen(0)">0</button>
+            <button class="nums" onclick="addToScreen('.')">.</button>
+            <button class="mathFuncs2" onclick="calc()">=</button>
+        </div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

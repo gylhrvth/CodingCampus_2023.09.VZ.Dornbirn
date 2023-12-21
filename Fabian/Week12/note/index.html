@@ -10,8 +10,12 @@
     <div id="container">
         <h1 style="margin-bottom: 5px;">Notes</h1>
         <p>Enter text and click on the submit button to add it to the list!</p>
-        <input type="text" name="noteInput" id="noteInput">
-        <button id="submit" onclick="submit()">Submit</button>
+        <input type="text" name="noteInput" id="noteInput" style="margin-bottom: 5px;">
+        <div>
+            <button id="submit" onclick="submit()">Submit</button>
+            <button id="submit" onclick="removeAll()">Remove All</button>
+        </div>
+        
         <ul id="notes"></ul>
     </div>
     

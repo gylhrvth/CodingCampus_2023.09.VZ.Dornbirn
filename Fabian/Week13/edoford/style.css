@@ -5,7 +5,14 @@
     overflow-x: hidden;
 }
 
-.header{
+*::selection{
+    background-color:#f44336;
+    color: white;
+}
+
+/* HOME */
+
+.home .header{
     min-height: 100vh;
     width: 100vw;
     background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(assets/banner.png);
@@ -128,7 +135,7 @@ nav .fa-xmark{
     }
 
     .nav-links ul li::after {
-        background: white;      
+        background: white;           
     }
 
     nav .fa-solid,
@@ -263,6 +270,8 @@ h3{
     text-align: left;
 }
 
+
+
 .facilitiesCol img{
     width: 100%;
     border-radius: 10px;
@@ -293,6 +302,11 @@ h3{
     background-color: #fff3f3;
     padding: 15px;
     display: flex;
+    transition: box-shadow 0.5s;
+}
+
+.testimonials-col:hover{
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
 }
 
 .testimonials-col img{
@@ -374,5 +388,194 @@ h3{
 
 .icons .fa-brands:hover{
     font-size: 25px;
+}
+
+
+/* ABOUT */
+
+.about .header{
+    min-height: 50vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(assets/background.jpg);
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.aboutus .row{
+    justify-content: center;
+}
+
+.aboutus-col{
+    flex-basis: 33%;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 15px;
+
+}
+
+.aboutus-col p{
+    line-height: 1.8;
+    padding-left: 5px;
+    
+}
+
+.aboutus-col img{
+    width: 100%;
+    max-width: 500px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.hero-btn2{
+    display: inline-block;
+    text-decoration: none;
+    color: #f44336;
+    border: 1px solid #f44336;
+    padding: 12px 34px;
+    font-size: 13px;
+    background-color: transparent;
+    position: relative;
+    transition: border 1s, background-color 1s, color 1s;
+}
+
+.hero-btn2:hover{
+    background-color: #f44336;
+    color: white
+}
+
+/* COURSE */
+
+
+.courses .header{
+    min-height: 50vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(assets/background.jpg);
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+/* BLOG */
+
+.blog .header{
+    min-height: 50vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(assets/background.jpg);
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.posts .row{
+    justify-content: center;
+}
+
+.posts-col{
+    flex-basis: 44%;
+    margin-right: 30px;
+}
+
+.posts-col2{
+    flex-basis: 20%;
+}
+
+
+.postsRed{
+    padding: 10px 20px;
+    background-color: #f44336;
+    max-width: 200px;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+}
+.posts img{
+    width: 100%;
+
+}
+
+.posts-categorie{
+    display: flex;
+    margin-top: 15px;
+    color: gray;
+    font-size: 14px;
+    justify-content: space-between;
+    max-width: 230px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@media only screen and (max-width: 700px){
+    .hidden{
+        display: none;
+    }
+}
+
+form{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f44336;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(194, 194, 194);
+    padding: 10px;
+}
+
+form > *{
+    padding: 10px;
+    margin: 10px;
+}
+
+form input,
+form textarea{
+    background-color: #f0f0f0;
+    border: none;
+    resize: none;
+}
+
+form input:focus,
+form textarea:focus{
+    outline: none;
+    border: 1px solid #f44336;
+}
+
+/* CONTACT */
+
+.contact .header{
+    min-height: 50vh;
+    width: 100vw;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(assets/background.jpg);
+    background-position: 50% 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+
+.contact .row{
+    justify-content: center;
+}
+
+
+.contact-col{
+    flex-basis: 33%;
+
+}
+
+.contactDetails .fa-solid,
+.contactDetails .fa-regular{
+    color:#f44336;
+    font-size: 20px;
 }
 
