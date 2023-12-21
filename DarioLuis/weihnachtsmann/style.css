@@ -1,0 +1,49 @@
+body{
+    background-color: red;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: url('hintergrund.gif');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.bild{
+    width: auto;
+    height: 100%;
+}
+
+h1{
+    color: white;
+}
+
+.box-align{
+    box-align: center;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .blinking-text {
+    animation: blink 500ms infinite;
+  }
+
+  @keyframes colorChange {
+    0% { color: cyan; }
+    25% { color: blue; }
+    50% { color: green; }
+    75% { color: orange; }
+    100% { color: purple; }
+}
+
+
+h2{
+    animation: colorChange 5s infinite;
+}
+
+h3{
+    color:chartreuse;
+}

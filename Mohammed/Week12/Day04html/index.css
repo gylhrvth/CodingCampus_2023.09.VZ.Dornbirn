@@ -1,0 +1,29 @@
+body fo2 fo3{
+    margin: 0;
+    background-color: rgb(213, 190, 160);
+    font-family: monospace;
+    height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-image: none;
+}
+.name{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+    color: blanchedalmond;
+}
+.meet{
+    text-align: center;
+    padding: 0 0 20px 0;
+    color: rgb(203, 200, 200);
+}
+.menu{
+    color: whitesmoke;
+    text-align: left;
+}
+
+
+

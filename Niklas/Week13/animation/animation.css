@@ -1,0 +1,83 @@
+.cube {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+
+    position: relative;
+    animation-name: first;
+    animation-duration: 0.1ms;
+    animation-iteration-count: infinite;
+}
+
+/* .cube:hover {
+    position: absolute;
+    animation-name: first;
+    animation-duration: 3s;
+    animation-iteration-count: 2;
+} */
+
+@keyframes first {
+    0% {
+        background-color: blue
+    }
+
+    10% {
+        background-color: purple;
+        /* width: 1000px;
+        height: 1000px; */
+    }
+
+    20% {
+        background-color: magenta;
+        /* width: 200px;
+        height: 200px; */
+    }
+
+    30% {
+        background-color: red;
+        /* width: 1000px;
+        height: 1000px; */
+    }
+
+    40% {
+        background-color: orange;
+        /* width: 200px;
+        height: 200px; */
+    }
+
+    50% {
+        background-color: yellow;
+        /* width: 1000px;
+        height: 1000px; */
+    }
+
+    60% {
+        background-color: yellowgreen;
+        /* width: 200px;
+        height: 200px; */
+    }
+
+    70% {
+        background-color: green;
+        /* width: 1000px;
+        height: 1000px; */
+    }
+
+    80% {
+        background-color: cyan;
+        /* width: 200px;
+        height: 200px; */
+    }
+
+    90% {
+        background-color: lightblue;
+        /* width: 1000px;
+        height: 1000px; */
+    }
+
+    100% {
+        background-color: blue;
+        /* width: 200px;
+        height: 200px; */
+    }
+}

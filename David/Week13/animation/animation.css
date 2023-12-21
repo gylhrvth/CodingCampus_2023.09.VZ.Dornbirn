@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: linear-gradient(130deg,#3ace1962,#6E6F24);
+    
+    background-size: cover;
+}

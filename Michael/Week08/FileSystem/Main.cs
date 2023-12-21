@@ -30,7 +30,7 @@ namespace Michael.Week08.FileSystem
             */
 
 
-
+           
             Console.ReadLine();
 
             Random rnd = new Random();
@@ -48,10 +48,13 @@ namespace Michael.Week08.FileSystem
             PrintLabyrinth(field, solution, startNode, endNode);
 
             Console.Read();
+            
 
         }
 
 
+
+         
 
         public static void PrintLabyrinth(bool[,] field, List<Node> solution, Node startNode, Node endNode)
         {

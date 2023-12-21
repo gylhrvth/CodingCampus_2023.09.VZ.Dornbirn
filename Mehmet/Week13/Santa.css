@@ -1,0 +1,59 @@
+.container {
+    display: grid;
+    justify-content: space-around;
+    padding-top: 200px;
+}
+
+.pill {
+
+    display: grid;
+    justify-content: space-around;
+    padding-top: 200px;
+}
+
+.leftpill {
+    position: absolute;
+    bottom: 130px;
+    left: 610px;
+}
+
+.rightpill {
+    position: absolute;
+    bottom: 130px;
+    right: 600px;
+}
+
+.righttree {
+    position: absolute;
+    bottom: 50px;
+    right: 80px;
+}
+
+.lefttree {
+    position: absolute;
+    bottom: 50px;
+    left: 80px;
+}
+
+.snow {
+    position: absolute;
+    bottom: 0px;
+}
+
+.text {
+    background-color: lightgrey;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+
+}
+
+
+.snowfall {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+}

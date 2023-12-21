@@ -1,0 +1,17 @@
+.back {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, black, red);
+  }
+
+.penis{
+    min-width: 10%;
+    min-height: none;
+    background-color: rgb(255, 102, 31);
+    display: flex;
+    justify-content: center;
+}
+
+h1{
+    font-family: sans-serif;
+}
