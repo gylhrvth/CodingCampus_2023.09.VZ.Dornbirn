@@ -1,0 +1,55 @@
+.welcome img {
+    animation: zoomIn 10s ease-in-out;
+  }
+  
+  .activities img {
+    animation: zoomIn 10s ease-in-out;
+  }
+  
+  .accommodation img {
+    animation: zoomIn 10s ease-in-out;
+  }
+  
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  body{
+    background-color: rgb(121, 224, 24);
+
+    background-image: url('https://i.pinimg.com/originals/88/30/47/8830478c796bcf4a980241c3b83639e6.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+
+  .activities.animated.zoomIn {
+    color: white;
+    
+  }
+
+
+  .accommodation.animated.fadeIn {
+
+    color: aqua;
+  }
+
+
+
+  .packages .animated .fadeIn{
+    color: aqua;
+  }
+
+  .welcome.animated.zoomIn{
+
+    color: aqua;
+    
+  }
+
+
+ 
