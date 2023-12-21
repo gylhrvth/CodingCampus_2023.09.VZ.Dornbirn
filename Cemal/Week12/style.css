@@ -32,7 +32,7 @@
     }
 }
 
-.circle>div {
+.circle>* {
     position: absolute;
     left: 75px;
     top: 75px;
