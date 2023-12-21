@@ -1,0 +1,44 @@
+body{
+    background: linear-gradient(130deg,#3ace1962,#6e6f24);
+
+}
+
+
+div{
+    width: 100px;
+    height: 100px;
+    background-color:(120deg,#1a3a50,#a342cc);
+    position: absolute;
+    animation-duration: 15s;
+    animation-iteration-count: 2;
+
+
+}
+
+@keyframes animname{
+  0%   {background-color:rgb(153, 206, 155); left:0px; top:0px;}
+  25%  {background-color:rgb(80, 82, 168); left:200px; top:200px;}
+  50%  {background-color:rgb(35, 35, 68); left:100px; top:100px;}
+  75%  {background-color:green; left:100px; top:100px;}
+  100% {background-color:rgb(39, 59, 27); left:200px; top:200px;}
+}
+
+.anim{
+   text-align: center;
+    position: relative;
+    animation-name: animname;
+    animation-duration: 2s;
+    animation-iteration-count: 4;
+
+}
+
+.square{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    transition: width 2s, height 2s;
+}
+.square:hover{
+    width: 500px;
+    height: 500px;
+}

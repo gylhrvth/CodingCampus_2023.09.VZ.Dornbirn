@@ -1,0 +1,33 @@
+.car {
+    display: grid;
+    width: 400px;
+    height: 400px;
+    grid-template-columns: auto auto;
+    align-items: right;
+}
+
+.carLeft {
+    height: 200px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 50px 0 0 50px;
+}
+
+.carRight {
+    height: 200px;
+    width: 100%;
+    background-color: gray;
+    border-radius: 0 50px 50px 0;
+}
+
+.tireLeft {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+}
+
+.tireRight {
+    height: 100%;
+    width: 50%;
+    background-color: black;
+}

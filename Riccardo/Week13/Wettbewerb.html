@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weihnachtsseite</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #0c0c0c;
+        }
+
+        #snowfall {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .snowflake {
+            position: absolute;
+            background: #fff;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        #santa {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: santamove linear infinite alternate;
+        }
+
+        @keyframes santamove {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        #reindeer {
+            position: absolute;
+            bottom: 0;
+            left: -100px;
+            animation: run-reindeer linear 5s infinite;
+        }
+
+        @keyframes run-reindeer {
+            0% {
+                transform: translateX(-100px);
+            }
+            100% {
+                transform: translateX(110vw);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="snowfall"></div>
+    <img id="santa" src="santa1.jpg" alt="Santa Claus" width="1200px" height="auto">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const snowfallContainer = document.getElementById('snowfall');
+
+            for (let i = 0; i < 100; i++) {
+                createSnowflake();
+            }
+
+            function createSnowflake() {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = `${Math.random() * 100}vw`;
+                snowflake.style.animationDuration = `${Math.random() * 3 + 1}s`;
+                snowfallContainer.appendChild(snowflake);
+            }
+        });
+    </script>
+</body>
+</html>

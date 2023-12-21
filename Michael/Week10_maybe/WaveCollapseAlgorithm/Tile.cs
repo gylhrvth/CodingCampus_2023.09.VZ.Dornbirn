@@ -30,7 +30,7 @@ namespace Michael.Week10_maybe.WaveCollapseAlgorithm
             { ("  ", Direction.Up), false }, { ("  ", Direction.Right), false }, { ("  ", Direction.Down), false }, { ("  ", Direction.Left), false }
         };
 
-        public static List<string> Options = new List<string> { "╚═", "╔═", "╩═", "╦═", "╠═", "══", "╬═", "╣ ", "║ ", "╗ ", "╝ ", "  " };
+        public static List<string> Options = new List<string> { "╚═", "╔═", /*"╩═",*/ /*"╦═",*/ /*"╠═",*/ "══", "╬═", /*"╣ ",*/ "║ ", "╗ ", "╝ ", "  " };
 
         public static Direction Opposite(Direction direction)
         {

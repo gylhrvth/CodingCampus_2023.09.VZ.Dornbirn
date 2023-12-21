@@ -1,0 +1,33 @@
+.center {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+
+.center input {
+    margin-block: 5px;
+    border-radius: 3px;
+}
+
+h1 {
+    width: 80vw;
+    text-align: center;
+}
+
+form span {
+    font-size: 14px;
+}
+
+input:invalid {
+    border: red solid 3px;
+}
+
+input:focus {
+    border: solid 0.5px black;
+    border-radius: 3px;
+    outline: none;
+    border-bottom: green 2px solid;
+
+
+}

@@ -1,0 +1,29 @@
+.headline {
+    display: grid;
+    grid-template-columns: 0.2fr 0.3fr 0.3fr 0.2fr 0.5fr 2fr 0.2fr 0.2fr;
+    padding:5px;
+    margin:auto;
+}
+
+
+.navbar-right{
+    display:flex;
+    grid-template-columns:1fr 1fr;
+    justify-content: end;
+  
+   
+}
+.navbar{
+    display:flex;
+    justify-content: space-between;
+}
+
+.h1{
+
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.body{
+    background-color:beige;
+}

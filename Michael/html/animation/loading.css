@@ -1,0 +1,110 @@
+body {
+    overflow: hidden;
+    animation-name: blackNwhite;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.entity {
+    position: relative;
+    left: -300px;
+    height: 180px;
+    width: 180px;
+    border-radius: 20px;
+    margin: 40px;
+
+    animation-name: moveRight, rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    font-size: 180%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border: 5px solid white;
+}
+
+.entity:nth-child(1) {
+    background-color: white;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.entity:nth-child(2) {
+    animation-duration: 5s;
+    animation-delay: 0s;
+}
+
+.entity:nth-child(3) {
+    animation-duration: 2.5s;
+    animation-delay: 0s;
+}
+
+
+
+@keyframes moveRight {
+    0% {
+        background-color: red;
+        left: -300px;
+    }
+
+    100% {
+        background-color: blue;
+        left: 100%;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    0% {
+        transform: rotate(-720deg);
+    }
+}
+
+@keyframes rbgEffect {
+    0% {
+        background-color: red;
+    }
+
+    16% {
+        background-color: orange;
+    }
+
+    32% {
+        background-color: yellow;
+    }
+
+    48% {
+        background-color: green;
+    }
+
+    64% {
+        background-color: blue;
+    }
+
+    80% {
+        background-color: purple;
+    }
+
+    100% {
+        background-color: red;
+    }
+}
+
+@keyframes blackNwhite {
+    0% {
+        background-color: white;
+    }
+
+    50% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: white;
+    }
+}
+}

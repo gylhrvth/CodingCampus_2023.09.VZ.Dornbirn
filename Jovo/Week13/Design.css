@@ -1,0 +1,38 @@
+body {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+
+}
+
+
+.center {
+    display: grid;
+    border: red;
+    text-align: center;
+    grid-gap: 8px;
+    grid-auto-rows: 50px;
+}
+
+.Border {
+    padding-left: 10%;
+}
+
+.forms>* input {
+    background-color: grey;
+    border-radius: 5px;
+
+}
+
+.forms>* input {
+    margin-top: 7px;
+
+}
+
+
+
+
+
+#gname {
+    margin-top: 7px;
+}

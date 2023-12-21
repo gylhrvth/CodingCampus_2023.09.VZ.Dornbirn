@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="https://www.dictionary.com/e/wp-content/uploads/2018/09/moai-emoji.png">
+<body class="shouldChange">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/KQ-qaLtTUoY?si=2F8RKdcdwIMINK4q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <h1 style="background-color: green; font-size: 300%">Hauptkapitel 1</h1>
+    <div style="color:green">
+        <p title="first paragraph">Hello HTML!</p>
+        <h2>Unterkapitel 1</h2>
+    </div>
+
+    <p>change color here: <br>
+        <input class="colorChanger" type="text">
+    </p>
+    
+
+    <p style="color: red">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+
+    <h1>Hauptkapitel 2</h1>
+    <br><br><br><br><br><br><br><br><br><br>
+    <p>erik</p>
+    <blockquote cite="https://www.youtube.com/embed/KQ-qaLtTUoY?si=2F8RKdcdwIMINK4q"">vier</blockquote>
+    <abbr title="Grand Theft Auto 6">GTAVI</abbr>
+
+    <a href="https://www.youtube.com/@Erik-jx2gt" target="_blank" title="erik's youtube channel">
+        <img src="https://cdn.discordapp.com/attachments/261611273458810883/1174699014734757928/SPOILER_image.png?ex=65843a35&is=6571c535&hm=7ca6b6fb2c3ebe07de44cdf799f2f38595ec573ba17170245757adbbf02393db&" width="1700px" height="400px" style="border: 20px solid green">  
+    </a>
+</body>
+
+<script>
+    const inputField = document.querySelector(".colorChanger");
+    const bodyAll = document.querySelector(".shouldChange");
+
+    inputField.addEventListener("input", adjustColor);
+
+    function adjustColor(){
+        bodyAll.style.backgroundColor = "";
+        const testColor = this.value;
+        console.log(testColor);
+        bodyAll.style.backgroundColor = testColor;
+    }
+</script>
+
+</html>

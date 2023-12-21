@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="mainContent"></div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form onsubmit="event.preventDefault(); onAddClicked();">
+        <input type="text" id="number1" />
+        <input type="text" id="number2" />
+        <input type="submit" value="Add" />
+        <div id="result"></div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <input type="button" onclick="onAddLineClicked()" value="Add new line" />
+    <input type="button" onclick="onResetLineClicked()" value="Reset lines" />
+    <div id="lineContainer" style="background-color: navajowhite; min-height: 100px;">
+
+    </div>
+</body>
+
+</html>

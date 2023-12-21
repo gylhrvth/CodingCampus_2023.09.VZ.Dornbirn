@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #050000;
+    /* Hintergrundfarbe der Seite */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Schatten für die gesamte Seite */
+    position: relative;
+    z-index: 1;
+    /* Stelle sicher, dass die Schneeflocken im Hintergrund sind */
+}
+
+header,
+main,
+footer {
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    /* Stelle sicher, dass die Schneeflocken im Hintergrund sind */
+}
+
+.snowflake {
+    position: absolute;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: snowfall linear infinite;
+}
+
+@keyframes snowfall {
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+
+@keyframes weihnachtsmannmove {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    10% {
+        left: 100px;
+        top: 100px;
+    }
+
+    20% {
+        left: 250px;
+        top: 250px;
+    }
+
+    30% {
+        left: 300px;
+        top: 200px;
+    }
+
+    40% {
+        left: 550px;
+        top: 550px;
+    }
+
+    50% {
+        left: 550px;
+        top: 400px;
+    }
+
+    60% {
+        left: 400px;
+        top: 500px;
+    }
+
+    70% {
+        left: 800px;
+        top: 20px;
+    }
+
+    80% {
+        left: 1200px;
+        top: 400px;
+    }
+
+    90% {
+        left: 1800px;
+        top: 800px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.img1 {
+    position: relative;
+    animation-name: weihnachtsmannmove;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    height: 200px;
+    width: 400px;
+}
+
+footer {
+    background-color: #f800e3;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: xx-large;
+    animation: changeColor 2s infinite alternate;
+    /* CSS-Animation hinzugefügt */
+}
+
+header {
+    animation: changeColor 2s infinite alternate;
+}
+
+@keyframes changeColor {
+    0% {
+        background-color: #ff0000;
+    }
+
+    25% {
+        background-color: #5503ec;
+        /* Ändere dies zu deiner zweiten Farbe */
+    }
+
+    50% {
+        background-color: #0ab112;
+        /* Ändere dies zu deiner zweiten Farbe */
+    }
+
+    75% {
+        background-color: #ec0faa;
+        /* Ändere dies zu deiner zweiten Farbe */
+    }
+
+    100% {
+        background-color: #00f5f5;
+    }
+}
