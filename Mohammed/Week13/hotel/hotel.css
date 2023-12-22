@@ -15,7 +15,7 @@ body {
 
 .registrationform{
     width: clamp(300px, 60vw, 800px);
-    background-color: white;
+    background-color: rgb(218, 201, 201);
 }
 
 .imageheader{

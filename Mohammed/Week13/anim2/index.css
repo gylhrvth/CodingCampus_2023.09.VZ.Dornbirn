@@ -1,0 +1,72 @@
+body{
+    background-color: black;
+    background: rgb(84, 58, 110);
+    animation: example infinite;
+   }
+
+
+
+.div1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: example;
+    animation-duration: 2s;
+   
+   
+    
+    
+}
+  
+@keyframes example {
+   
+    0%   {background-color:rgb(97, 185, 73); left:0px; right:150px;}
+    50%  {background-color:rgb(255, 17, 0); left:30px; right:200px;}
+    75%  {background-color:rgb(255, 0, 98); left:100px; top:250px;}
+    90%  {background-color:rgb(249, 249, 249); left:20px; right:400px;}
+    100% {background-color:rgb(255, 255, 255); left:100px; top:100px;}
+    
+    
+}
+h1{
+    color: rgb(109, 73, 73);
+}
+.div2{
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    position: relative;
+    animation-name: exam;
+    animation-duration: 2s;
+    animation: infinite;
+}
+
+@keyframes exam{
+    0%{background-color: rgb(red, green, blue); right: 150px; left: 0px;}
+    50%{background-color: rgb(red, green, blue); right: 200px; left: 30px;}
+    75%{background-color: rgb(red, green, blue); top: 250px; left: 100px;}
+    90%{background-color: rgb(red, green, blue); right: 400px; left: 20px;}
+    100%{background-color: rgb(red, green, blue); top: 0px; left:0px;}
+}
+
+div {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 5s;
+    animation-fill-mode: forwards;
+  }
+  
+  #div1 {animation-timing-function: linear;}
+  #div2 {animation-timing-function: ease;}
+  #div3 {animation-timing-function: ease-in;}
+  #div4 {animation-timing-function: ease-out;}
+  #div5 {animation-timing-function: ease-in-out;}
+  
+  @keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+  }
