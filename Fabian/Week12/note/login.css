@@ -35,7 +35,7 @@ body{
     margin-bottom: 30px;
 }
 
-#username, #password{
+#username, #password, #email{
     text-align: center;
     width: 200px;
     font-size: 18px;
@@ -47,7 +47,7 @@ body{
     margin-bottom: 15px;
     
 }
-#username:focus, #password:focus{
+#username:focus, #password:focus, #email:focus{
     animation: colorChange 10s infinite;
     outline-style: solid;
     width: 270px;
@@ -64,13 +64,29 @@ body{
     color: white;
     border: 2px solid green;
     transition: background-color 0.5s;
-    
+    margin-bottom: 30px;  
 }
 #login:hover{
     background-color: green; 
 }
 #login:active{
     background-color: rgba(0, 128, 0, 0.722);
+}
+
+.sign-in span{
+    margin-right: 10px;
+}
+
+.sign-in a{
+    color: white;
+}
+
+.sign-inHTML #container h2{
+    margin-bottom: 30px;
+}
+
+.sign-inHTML #container{
+    padding: 2em 2em;
 }
 
 @keyframes colorChange {

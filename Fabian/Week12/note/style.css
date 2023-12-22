@@ -4,7 +4,7 @@ body{
 }
 
 #container{
-    height: 100vh;
+    height: 90vh;
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -20,10 +20,12 @@ body{
     background-color: aqua;
     font-weight: bold;
 }
-#submit:hover{
+#submit:hover,
+#login:hover{
     background-color: rgba(0, 255, 255, 0.753);
 }
-#submit:active{
+#submit:active,
+#login:active{
     background-color: rgba(0, 255, 255, 0.479);
 }
 
@@ -38,4 +40,12 @@ body{
 }
 .newButton:active{
     background-color: rgba(240, 128, 128, 0.397);
+}
+
+#login{
+    margin: 10px;
+    height: 30px;
+    width: 60px;
+    background-color: cyan;
+    font-weight: bold;
 }
