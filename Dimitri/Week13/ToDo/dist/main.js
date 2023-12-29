@@ -11,12 +11,24 @@ function getTextFromField() {
         form.appendChild(warningText);
         formContainer === null || formContainer === void 0 ? void 0 : formContainer.appendChild(form);
     }
-    else if (!(input == "")) {
+    else if (input != "" && input != null) {
         let container = document.getElementById("container");
         let div = document.createElement("div");
+        let ToDoContainer = document.createElement("span");
+        div.appendChild(ToDoContainer);
         let text = document.createTextNode(input);
-        div.appendChild(text);
+        ToDoContainer.appendChild(text);
+        let doneButton = createButton("done");
+        div.appendChild(doneButton);
+        let deleteButton = createButton("delete");
+        div.appendChild(deleteButton);
         container === null || container === void 0 ? void 0 : container.appendChild(div);
     }
+}
+function createButton(name) {
+    let inputElement = document.createElement("input");
+    inputElement.setAttribute("type", "button");
+    inputElement.setAttribute("value", name);
+    return inputElement;
 }
 //# sourceMappingURL=main.js.map
