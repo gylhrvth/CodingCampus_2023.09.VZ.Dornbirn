@@ -24,13 +24,16 @@ function getTextFromField(): void {
 
         let div: HTMLDivElement = document.createElement("div")
 
-        let TodoConatiner: HTMLParagraphElement =
+        let ToDoContainer: HTMLParagraphElement = document.createElement("p")
 
-            let text: Text = document.createTextNode(input)
+        div.appendChild(ToDoContainer)
 
-        div.appendChild(text)
+        let text: Text = document.createTextNode(input)
+
+        ToDoContainer.appendChild(text)
 
         container?.appendChild(div)
+
     }
 }
 
