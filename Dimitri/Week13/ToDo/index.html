@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="./dist/main.js"></script>
+    <title>ToDo</title>
+</head>
+
+<body>
+    <header></header>
+    <main>
+        <h1>TODO</h1>
+        <form id="inputForm">
+            <input id="toDoInput" type="text">
+            <input type="button" onclick="getTextFromField()" value="Submit Todo">
+        </form>
+        <div id="container">
+            <div>
+                <span>ToDo</span>
+                <input type="button" value="done">
+                <input type="button" value="delete">
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

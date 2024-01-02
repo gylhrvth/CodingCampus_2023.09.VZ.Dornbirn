@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.hidden {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h1 {
+    color: red;
+}
+
+button {
+    font-size: 20px;
+}
