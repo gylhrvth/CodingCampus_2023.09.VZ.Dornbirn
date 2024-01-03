@@ -15,13 +15,13 @@
         <h1>TODO</h1>
         <form id="inputForm">
             <input id="toDoInput" type="text">
-            <input type="button" onclick="getTextFromField()" value="Submit Todo">
+            <input type="button" onclick="event.preventDefault(); addElementToDocument()" value="Submit Todo">
         </form>
         <div id="container">
-            <div>
+            <div id="toDoItem">
                 <span>ToDo</span>
                 <input type="button" value="done">
-                <input type="button" value="delete">
+                <input type="button" onclick="removeToDo()" value="delete">
             </div>
         </div>
     </main>
