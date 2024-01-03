@@ -14,8 +14,8 @@
 
 //Kerem.Week06.ExerciseZoo.ZooMain.Start();
 
-//Kerem.Week08.Museum.MuseumStart.Start();
+Kerem.Week08.Museum.MuseumStart.Start();
 
 //Kerem.Week09.FileStream.FileStreamRead.Start();
 
-Kerem.Week10.MYSQL_Exercise.MYSQL_CRUD.Start();
+//Kerem.Week10.MYSQL_Exercise.MYSQL_CRUD.Start();

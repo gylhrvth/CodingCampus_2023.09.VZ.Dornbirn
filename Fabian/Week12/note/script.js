@@ -1,8 +1,3 @@
-
-
-
-
-
 let notes = document.getElementById("notes");
 
 function submit(){
