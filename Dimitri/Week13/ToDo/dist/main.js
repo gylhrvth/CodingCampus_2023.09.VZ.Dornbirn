@@ -7,6 +7,11 @@ function addElementToDocument() {
     else if (input != "" && input != null) {
         addToDoItem(input);
     }
+    clearFormText("toDoInput");
+}
+function clearFormText(elementId) {
+    let inputElement = document.getElementById(elementId);
+    inputElement.value = '';
 }
 function createButton(name) {
     let inputElement = document.createElement("input");
@@ -27,6 +32,11 @@ function addErrorMessage() {
     form.appendChild(warningText);
     formContainer === null || formContainer === void 0 ? void 0 : formContainer.appendChild(form);
 }
+function removeErrorMessage() {
+    var _a;
+    let errorMessageDiv = document.getElementById("emptyStringWarning");
+    (_a = errorMessageDiv === null || errorMessageDiv === void 0 ? void 0 : errorMessageDiv.parentElement) === null || _a === void 0 ? void 0 : _a.removeChild(errorMessageDiv);
+}
 function addToDoItem(input) {
     let container = document.getElementById("container");
     let div = document.createElement("div");
@@ -39,10 +49,12 @@ function addToDoItem(input) {
     let deleteButton = createButton("delete");
     div.appendChild(deleteButton);
     container === null || container === void 0 ? void 0 : container.appendChild(div);
-}
-function removeToDo() {
-    var _a;
-    let toDoItem = document.getElementById("toDoItem");
-    (_a = toDoItem.parentNode) === null || _a === void 0 ? void 0 : _a.removeChild(toDoItem);
+    div.setAttribute("class", "toDoItem");
+    deleteButton.addEventListener("click", () => {
+        container === null || container === void 0 ? void 0 : container.removeChild(div);
+    });
+    doneButton.addEventListener("click", () => {
+        ToDoContainer.style.textDecoration = "line-through";
+    });
 }
 //# sourceMappingURL=main.js.map

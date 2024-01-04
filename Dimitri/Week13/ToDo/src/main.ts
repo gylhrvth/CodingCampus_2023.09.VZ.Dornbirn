@@ -9,6 +9,14 @@ function addElementToDocument() {
     } else if (input != "" && input != null) {
         addToDoItem(input);
     }
+
+    clearFormText("toDoInput")
+
+}
+
+function clearFormText(elementId: string) {
+    let inputElement = document.getElementById(elementId) as HTMLInputElement;
+    inputElement.value = '';
 }
 
 function createButton(name: string): HTMLInputElement {
@@ -35,23 +43,34 @@ function addErrorMessage() {
     formContainer?.appendChild(form)
 }
 
+function removeErrorMessage() {
+    let errorMessageDiv = document.getElementById("emptyStringWarning");
+    errorMessageDiv?.parentElement?.removeChild(errorMessageDiv);
+}
+
 function addToDoItem(input: string) {
-    let container: HTMLElement | null = document.getElementById("container")
-    let div: HTMLDivElement = document.createElement("div")
-    let ToDoContainer: HTMLSpanElement = document.createElement("span")
-    div.appendChild(ToDoContainer)
+    let container = document.getElementById("container");
+    let div = document.createElement("div");
+    let ToDoContainer: HTMLSpanElement = document.createElement("span");
+    div.appendChild(ToDoContainer);
     let text: Text = document.createTextNode(input);
     ToDoContainer.appendChild(text);
     let doneButton: HTMLInputElement = createButton("done");
     div.appendChild(doneButton);
     let deleteButton: HTMLInputElement = createButton("delete");
     div.appendChild(deleteButton);
+    // todo edit button
+    // let editButton = createButton("edit")
+    // div.appendChild(editButton)
     container?.appendChild(div);
-}
+    div.setAttribute("class", "toDoItem");
+    deleteButton.addEventListener("click", () => {
+        container?.removeChild(div);
+    })
+    doneButton.addEventListener("click", () => {
+        ToDoContainer.style.textDecoration = "line-through";
+    })
 
-function removeToDo() {
-    let toDoItem: HTMLDivElement = document.getElementById("toDoItem") as HTMLDivElement;
-    toDoItem.parentNode?.removeChild(toDoItem)
 }
 
 

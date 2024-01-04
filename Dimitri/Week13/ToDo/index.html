@@ -13,16 +13,11 @@
     <header></header>
     <main>
         <h1>TODO</h1>
-        <form id="inputForm">
-            <input id="toDoInput" type="text">
-            <input type="button" onclick="event.preventDefault(); addElementToDocument()" value="Submit Todo">
+        <form id="inputForm" onSubmit="return false;">
+            <input id="toDoInput" type="text" onclick="removeErrorMessage();">
+            <input type="submit" onclick="addElementToDocument();" value="Submit Todo">
         </form>
         <div id="container">
-            <div id="toDoItem">
-                <span>ToDo</span>
-                <input type="button" value="done">
-                <input type="button" onclick="removeToDo()" value="delete">
-            </div>
         </div>
     </main>
     <footer></footer>
