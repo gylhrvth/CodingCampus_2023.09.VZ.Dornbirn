@@ -10,14 +10,17 @@
 </head>
 
 <body>
-    <header></header>
-    <main>
+    <header>
         <h1>TODO</h1>
-        <form id="inputForm" onSubmit="return false;">
-            <input id="toDoInput" type="text" onclick="removeErrorMessage();">
-            <input type="submit" onclick="addElementToDocument();" value="Submit Todo">
-        </form>
-        <div id="container">
+    </header>
+    <main>
+        <div>
+            <form id="inputForm" onSubmit="return false;">
+                <input id="toDoInput" type="text" onkeydown="removeErrorMessage();">
+                <input type="submit" onclick="addElementToDocument();" value="Submit Todo">
+            </form>
+        </div>
+        <ol id="toDoContainer"></ol>
         </div>
     </main>
     <footer></footer>
