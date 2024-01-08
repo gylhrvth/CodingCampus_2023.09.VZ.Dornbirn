@@ -43,7 +43,9 @@ function addToDoItem(userInput) {
     let listItem = document.createElement("input");
     listItem.setAttribute("value", userInput);
     listItem.setAttribute("readonly", "true");
+    listItemElement.appendChild(listItem);
     addButtonsWithEvents(container, listItemElement, listItem);
+    container === null || container === void 0 ? void 0 : container.appendChild(listItemElement);
 }
 function makeButtonVerySmall(button) {
     button.style.display = 'none';
@@ -57,11 +59,9 @@ function addButtonsWithEvents(container, listItemElement, listItem) {
     let doneButton = createButton("done");
     let deleteButton = createButton("delete");
     let editButton = createButton("edit");
-    listItemElement.appendChild(listItem);
     listItemElement.appendChild(doneButton);
     listItemElement.appendChild(deleteButton);
     listItemElement.appendChild(editButton);
-    container === null || container === void 0 ? void 0 : container.appendChild(listItemElement);
     listItemElement.setAttribute("class", "toDoItem");
     deleteButton.addEventListener("click", () => {
         container === null || container === void 0 ? void 0 : container.removeChild(listItemElement);

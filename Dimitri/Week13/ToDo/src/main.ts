@@ -55,8 +55,10 @@ function addToDoItem(userInput: string) {
     let listItem = document.createElement("input");
     listItem.setAttribute("value", userInput)
     listItem.setAttribute("readonly", "true")
-
-    addButtonsWithEvents(container, listItemElement, listItem);
+    listItemElement.setAttribute("class", "toDoItem");
+    listItemElement.appendChild(listItem);
+    addButtonsAndEventlisteners(container, listItemElement, listItem);
+    container?.appendChild(listItemElement);
 }
 
 function makeButtonVerySmall(button: HTMLInputElement) {
@@ -69,18 +71,15 @@ function makeButtonNormal(button: HTMLInputElement) {
     button.removeAttribute('speak');
 }
 
-function addButtonsWithEvents(container: HTMLElement | null, listItemElement: HTMLElement, listItem: HTMLInputElement) {
+function addButtonsAndEventlisteners(container: HTMLElement | null, listItemElement: HTMLElement, listItem: HTMLInputElement) {
     let doneButton = createButton("done");
     let deleteButton = createButton("delete");
     let editButton = createButton("edit");
 
     //append buttons to list item element
-    listItemElement.appendChild(listItem);
     listItemElement.appendChild(doneButton);
     listItemElement.appendChild(deleteButton);
     listItemElement.appendChild(editButton)
-    container?.appendChild(listItemElement);
-    listItemElement.setAttribute("class", "toDoItem");
 
     deleteButton.addEventListener("click", () => {
         container?.removeChild(listItemElement);
