@@ -51,15 +51,33 @@ function removeErrorMessage() {
 function addToDoItem(userInput: string) {
     let container = document.getElementById("toDoContainer");
     let listItemElement = document.createElement("li");
-    let listItem: HTMLInputElement = document.createElement("input");
-    listItemElement.appendChild(listItem);
+
+    let listItem = document.createElement("input");
     listItem.setAttribute("value", userInput)
     listItem.setAttribute("readonly", "true")
-    let doneButton: HTMLInputElement = createButton("done");
+
+    addButtonsWithEvents(container, listItemElement, listItem);
+}
+
+function makeButtonVerySmall(button: HTMLInputElement) {
+    button.style.display = 'none';
+    button.setAttribute('speak', 'none');
+}
+
+function makeButtonNormal(button: HTMLInputElement) {
+    button.style.display = 'revert';
+    button.removeAttribute('speak');
+}
+
+function addButtonsWithEvents(container: HTMLElement | null, listItemElement: HTMLElement, listItem: HTMLInputElement) {
+    let doneButton = createButton("done");
+    let deleteButton = createButton("delete");
+    let editButton = createButton("edit");
+
+    //append buttons to list item element
+    listItemElement.appendChild(listItem);
     listItemElement.appendChild(doneButton);
-    let deleteButton: HTMLInputElement = createButton("delete");
     listItemElement.appendChild(deleteButton);
-    let editButton = createButton("edit")
     listItemElement.appendChild(editButton)
     container?.appendChild(listItemElement);
     listItemElement.setAttribute("class", "toDoItem");
@@ -69,17 +87,18 @@ function addToDoItem(userInput: string) {
     })
 
     doneButton.addEventListener("click", () => {
-        listItem.style.textDecoration = "line-through";
 
-        // let undoneButton = createButton('undone');
-        // doneButton.replaceWith(undoneButton);
-        doneButton.removeAttribute('value');
-        doneButton.setAttribute('value', 'undone');
-        doneButton.addEventListener("click", () => {
+        if (doneButton.value === "done") {
+            listItem.style.textDecoration = "line-through";
+            doneButton.removeAttribute('value');
+            doneButton.setAttribute('value', 'undone');
+            makeButtonVerySmall(editButton);
+        } else if (doneButton.value === "undone") {
             listItem.style.textDecoration = 'revert';
             doneButton.removeAttribute('value');
             doneButton.setAttribute('value', 'done');
-        })
+            makeButtonNormal(editButton);
+        }
     })
 
     editButton.addEventListener("click", () => {
@@ -94,6 +113,7 @@ function addToDoItem(userInput: string) {
         const end = listItem.value.length;
         listItem.setSelectionRange(end, end);
         listItem.focus();
+        let currentText = listItem.value;
 
         confirmEditButton.addEventListener("click", () => {
             let newText = listItem.value;
@@ -104,6 +124,7 @@ function addToDoItem(userInput: string) {
             makeButtonNormal(editButton);
             makeButtonNormal(doneButton);
             listItemElement.removeChild(confirmEditButton);
+            currentText = listItem.value;
 
         })
 
@@ -111,27 +132,16 @@ function addToDoItem(userInput: string) {
             if (event.key === "Enter") {
                 event.preventDefault();
                 confirmEditButton.click();
+            }
 
+            if (event.key === "Escape") {
+                listItem.value = currentText;
+                listItem.setAttribute('readonly', 'true');
+                makeButtonNormal(deleteButton);
+                makeButtonNormal(editButton);
+                makeButtonNormal(doneButton);
+                listItemElement.removeChild(confirmEditButton);
             }
         })
-
-
-
-
-
     })
 }
-
-function makeButtonVerySmall(button: HTMLInputElement) {
-    button.style.display = 'none';
-    button.setAttribute('speak', 'none');
-}
-
-function makeButtonNormal(button: HTMLInputElement) {
-    button.style.display = 'revert';
-    button.removeAttribute('speak');
-}
-
-
-
-
