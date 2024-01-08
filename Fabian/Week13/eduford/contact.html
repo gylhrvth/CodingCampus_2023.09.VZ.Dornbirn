@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ab66c79a6e.js" crossorigin="anonymous"></script>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="stylesheet" href="style.css">
+    <title>Eduford</title>
+</head>
+<body class="contact">
+    <section class="header">
+        <nav>
+            <a href="home.html"><img src="assets/logo.png" alt=""></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa-solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="course.html">COURSE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
+                    <li class="current"><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa-solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Contact Us</h1>
+        </div>
+    </section>
+
+    <section class="contactDetails">
+        <div class="row">
+            <div class="contact-col" style="margin-left: 15px;">
+                <div>
+                    <i class="fa-solid fa-house"></i>
+                    <h4>Digital Campus</h4>
+                    <p>Dornbirn, Austria</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>+43 676 7108772</h4>
+                    <p>Monday to Saturday, 10AM to 6PM</p>
+                </div>
+                <div>
+                    <i class="fa-regular fa-envelope"></i>
+                    <h4>krsticfabian@gmail.com</h4>
+                    <p>Email us your queries</p>
+                </div>
+            </div>
+            <div class="contact-col">
+                <form action="contact.html">
+                    <label>Leave a comment</label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+                    <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+                    <textarea name="comment" id="comment" cols="30" rows="10" placeholder="Your Comment" required></textarea>
+                    <input type="submit" value="Comment" class="hero-btn2">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>We're a leading research university with a heart. Founded in the decade that the U.S. Constitution was signed, we're the nation's oldest Catholic and Jesuit university.<br> We're a community of people who bridge our disparate experiences and identities. Meet the people and places that make Eduford home.</p>
+        <div class="icons">
+            <a href="https:\\www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com/BesterFabian"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.instagram.com/_fabiiiiiiiiiiiiiiiiiiii_/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>Made with <i class="fa-regular fa-heart"></i> by Fabian</p>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>

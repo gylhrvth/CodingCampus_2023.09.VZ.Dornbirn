@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="Htmlform.js"></script>
   <link rel="stylesheet" href="registration.css">
   <title>Open House Guest Registration</title>
+  
+  
+
 </head>
 <body>
   <h1>Open House Guest Registration</h1>
 
-  <form action="submit.php" method="POST">
+  <form action="submit.php" onsubmit="event.preventDefault(); validateInput();" method="POST">
     <div class="twoColumn">
       <div class="form-group">
         <label for="fname">First Name:</label>

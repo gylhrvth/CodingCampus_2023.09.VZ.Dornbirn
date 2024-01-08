@@ -4,11 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="todolist.js" defer></script>
 </head>
 
 <body>
-    <div clas=""></div>
+    <div id="TodoContainer" class="todoTop">
+        <header class="headline">My To Do List</header>
+        <input onkeypress="inputLengthCheck()" type="text" id="userInput" placeholder="Add to List...">
+        <div class="buttons">
+            <span onclick="addInput()" class="addButton">Add</span>
+            <span onclick="removeAll()" class="daButton">Delete All</span>
+        </div>
+    </div>
+    <div id="TodoTasks" class="todoTasks">
+    </div>
+
+
 </body>
 
 </html>

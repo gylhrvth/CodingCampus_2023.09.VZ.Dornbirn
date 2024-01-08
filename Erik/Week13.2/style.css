@@ -1,0 +1,52 @@
+.todoTop {
+    display: flex;
+    margin-top: 5vh;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 0% 20% 0% 20%;
+}
+
+.todoTop>* {
+    padding: 10px;
+    flex: 1 100%;
+}
+
+.buttons span {
+    border: 0.3vh solid;
+    background: #aea9a9;
+    color: #2a2828;
+    font-size: 2vh;
+    cursor: pointer;
+    align-items: center;
+    text-align: start;
+    justify-content: space-evenly;
+    margin-right: 20px;
+    padding: 0px 5px 0px 5px;
+    user-select: none;
+}
+
+
+.todoTop>.buttons {
+    display: flex;
+    padding: 10px 0 0 0;
+}
+
+
+.headline {
+    font-size: 5vh;
+    font-style: italic;
+    user-select: none;
+}
+
+
+input {
+
+    margin-top: 3vh;
+    border: 0.3vh solid;
+    width: 50%;
+    float: left;
+    font-size: 2vh;
+    user-select: none;
+
+}

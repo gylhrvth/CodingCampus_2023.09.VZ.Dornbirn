@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function ButtonClick(event) {
         const buttonValue = event.target.textContent;
+        console.log("buttonvalue =" + buttonValue)
 
         switch (buttonValue) {
             case 'AC':
@@ -49,6 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
             currentInput = value;
         } else {
             currentInput += value;
+            if(currentInput.includes(",")){
+                currentInput = currentInput.replace("," , ".")
+            }
+
+            console.log("currentinput "+currentInput)
         }
     }
 

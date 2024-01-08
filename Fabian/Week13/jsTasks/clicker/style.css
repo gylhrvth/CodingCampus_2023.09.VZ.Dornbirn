@@ -1,0 +1,71 @@
+body{
+    background: linear-gradient(to left, blue, red);
+    color: white;
+    margin: 0;
+    user-select: none;
+    height:100vh;
+    overflow: hidden;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    animation: 4s linear infinite clickme;
+}
+
+button{
+    background-color: blueviolet;
+    width: 50%;
+    height: 100px;
+    border-radius: 40px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: rgba(137, 43, 226, 0.733);
+}
+button:active{
+    background-color: rgba(137, 43, 226, 0.521);
+}
+
+#text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#counter{
+    font-size: 200px;
+    text-align: center;
+    color: cyan;
+    font-weight: bold;
+    animation: colorChange 5s infinite;
+}
+
+@keyframes clickme{
+    0%{margin-left: -13%; margin-right: 60%;}
+    25%{margin-top: 13%;}
+    50%{margin-bottom: 10%; margin-left: 60%; margin-right: -10%;}
+    75%{margin-top: -10%}
+    100%{margin-left: -13%; margin-right: 60%;}
+}
+
+@keyframes colorChange {
+    0% { color: cyan; }
+    10% { color: yellow; }
+    20% { color: hotpink; }
+    30% { color: darkred; }
+    40% { color: purple; }
+    50% { color: yellow; }
+    60% { color: cyan; }
+    70% { color: skyblue; }
+    80% { color: pink; } 
+    90% { color: darkred; }
+    100% { color: yellow; }
+}
