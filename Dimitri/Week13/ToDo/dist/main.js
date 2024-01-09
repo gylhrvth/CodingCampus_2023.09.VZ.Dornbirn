@@ -43,8 +43,9 @@ function addToDoItem(userInput) {
     let listItem = document.createElement("input");
     listItem.setAttribute("value", userInput);
     listItem.setAttribute("readonly", "true");
+    listItemElement.setAttribute("class", "toDoItem");
     listItemElement.appendChild(listItem);
-    addButtonsWithEvents(container, listItemElement, listItem);
+    addButtonsAndEventlisteners(container, listItemElement, listItem);
     container === null || container === void 0 ? void 0 : container.appendChild(listItemElement);
 }
 function makeButtonVerySmall(button) {
@@ -55,14 +56,13 @@ function makeButtonNormal(button) {
     button.style.display = 'revert';
     button.removeAttribute('speak');
 }
-function addButtonsWithEvents(container, listItemElement, listItem) {
+function addButtonsAndEventlisteners(container, listItemElement, listItem) {
     let doneButton = createButton("done");
     let deleteButton = createButton("delete");
     let editButton = createButton("edit");
     listItemElement.appendChild(doneButton);
     listItemElement.appendChild(deleteButton);
     listItemElement.appendChild(editButton);
-    listItemElement.setAttribute("class", "toDoItem");
     deleteButton.addEventListener("click", () => {
         container === null || container === void 0 ? void 0 : container.removeChild(listItemElement);
     });
@@ -71,13 +71,11 @@ function addButtonsWithEvents(container, listItemElement, listItem) {
             listItem.style.textDecoration = "line-through";
             doneButton.removeAttribute('value');
             doneButton.setAttribute('value', 'undone');
-            makeButtonVerySmall(editButton);
         }
         else if (doneButton.value === "undone") {
             listItem.style.textDecoration = 'revert';
             doneButton.removeAttribute('value');
             doneButton.setAttribute('value', 'done');
-            makeButtonNormal(editButton);
         }
     });
     editButton.addEventListener("click", () => {

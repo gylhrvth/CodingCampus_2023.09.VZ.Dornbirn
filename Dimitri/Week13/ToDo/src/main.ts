@@ -91,12 +91,10 @@ function addButtonsAndEventlisteners(container: HTMLElement | null, listItemElem
             listItem.style.textDecoration = "line-through";
             doneButton.removeAttribute('value');
             doneButton.setAttribute('value', 'undone');
-            makeButtonVerySmall(editButton);
         } else if (doneButton.value === "undone") {
             listItem.style.textDecoration = 'revert';
             doneButton.removeAttribute('value');
             doneButton.setAttribute('value', 'done');
-            makeButtonNormal(editButton);
         }
     })
 
