@@ -9,6 +9,14 @@ function addElementToDocument() {
     } else if (input != "" && input != null) {
         addToDoItem(input);
     }
+
+    clearFormText("toDoInput")
+
+}
+
+function clearFormText(elementId: string) {
+    let inputElement = document.getElementById(elementId) as HTMLInputElement;
+    inputElement.value = '';
 }
 
 function createButton(name: string): HTMLInputElement {
@@ -35,25 +43,102 @@ function addErrorMessage() {
     formContainer?.appendChild(form)
 }
 
-function addToDoItem(input: string) {
-    let container: HTMLElement | null = document.getElementById("container")
-    let div: HTMLDivElement = document.createElement("div")
-    let ToDoContainer: HTMLSpanElement = document.createElement("span")
-    div.appendChild(ToDoContainer)
-    let text: Text = document.createTextNode(input);
-    ToDoContainer.appendChild(text);
-    let doneButton: HTMLInputElement = createButton("done");
-    div.appendChild(doneButton);
-    let deleteButton: HTMLInputElement = createButton("delete");
-    div.appendChild(deleteButton);
-    container?.appendChild(div);
+function removeErrorMessage() {
+    let errorMessageDiv = document.getElementById("emptyStringWarning");
+    errorMessageDiv?.parentElement?.removeChild(errorMessageDiv);
 }
 
-function removeToDo() {
-    let toDoItem: HTMLDivElement = document.getElementById("toDoItem") as HTMLDivElement;
-    toDoItem.parentNode?.removeChild(toDoItem)
+function addToDoItem(userInput: string) {
+    let container = document.getElementById("toDoContainer");
+    let listItemElement = document.createElement("li");
+
+    let listItem = document.createElement("input");
+    listItem.setAttribute("value", userInput)
+    listItem.setAttribute("readonly", "true")
+    listItemElement.setAttribute("class", "toDoItem");
+    listItemElement.appendChild(listItem);
+    addButtonsAndEventlisteners(container, listItemElement, listItem);
+    container?.appendChild(listItemElement);
 }
 
+function makeButtonVerySmall(button: HTMLInputElement) {
+    button.style.display = 'none';
+    button.setAttribute('speak', 'none');
+}
 
+function makeButtonNormal(button: HTMLInputElement) {
+    button.style.display = 'revert';
+    button.removeAttribute('speak');
+}
 
+function addButtonsAndEventlisteners(container: HTMLElement | null, listItemElement: HTMLElement, listItem: HTMLInputElement) {
+    let doneButton = createButton("done");
+    let deleteButton = createButton("delete");
+    let editButton = createButton("edit");
 
+    //append buttons to list item element
+    listItemElement.appendChild(doneButton);
+    listItemElement.appendChild(deleteButton);
+    listItemElement.appendChild(editButton)
+
+    deleteButton.addEventListener("click", () => {
+        container?.removeChild(listItemElement);
+    })
+
+    doneButton.addEventListener("click", () => {
+
+        if (doneButton.value === "done") {
+            listItem.style.textDecoration = "line-through";
+            doneButton.removeAttribute('value');
+            doneButton.setAttribute('value', 'undone');
+        } else if (doneButton.value === "undone") {
+            listItem.style.textDecoration = 'revert';
+            doneButton.removeAttribute('value');
+            doneButton.setAttribute('value', 'done');
+        }
+    })
+
+    editButton.addEventListener("click", () => {
+        makeButtonVerySmall(deleteButton);
+        makeButtonVerySmall(editButton);
+        makeButtonVerySmall(doneButton);
+        let confirmEditButton = createButton("confirm");
+        listItemElement.appendChild(confirmEditButton);
+        confirmEditButton.setAttribute("id", "newEditField");
+        listItem.removeAttribute('readonly');
+
+        const end = listItem.value.length;
+        listItem.setSelectionRange(end, end);
+        listItem.focus();
+        let currentText = listItem.value;
+
+        confirmEditButton.addEventListener("click", () => {
+            let newText = listItem.value;
+            listItem.removeAttribute('value');
+            listItem.setAttribute("value", newText);
+            listItem.setAttribute('readonly', 'true');
+            makeButtonNormal(deleteButton);
+            makeButtonNormal(editButton);
+            makeButtonNormal(doneButton);
+            listItemElement.removeChild(confirmEditButton);
+            currentText = listItem.value;
+
+        })
+
+        listItem.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                confirmEditButton.click();
+            }
+
+            if (event.key === "Escape") {
+                listItem.value = currentText;
+                listItem.setAttribute('readonly', 'true');
+                makeButtonNormal(deleteButton);
+                makeButtonNormal(editButton);
+                makeButtonNormal(doneButton);
+                listItemElement.removeChild(confirmEditButton);
+            }
+        })
+    })
+}
