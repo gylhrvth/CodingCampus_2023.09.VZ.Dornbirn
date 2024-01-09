@@ -36,8 +36,9 @@ function getTextFromInput(elementId: string): string {
 
 function addErrorMessage() {
     let formContainer: HTMLElement | null = document.getElementById("inputForm")
-    let form: HTMLDivElement = document.createElement("div")
+    let form: HTMLDivElement = document.createElement("p")
     form.setAttribute("id", "emptyStringWarning")
+    form.setAttribute("class", "warning")
     let warningText: Text = document.createTextNode("Please provide an input!")
     form.appendChild(warningText)
     formContainer?.appendChild(form)

@@ -11,17 +11,27 @@
 
 <body>
     <header>
-        <h1>TODO</h1>
+        <section class="content-width">
+            <h1 class="height-100px border-radius-10px">ToDo List</h1>
+        </section>
     </header>
     <main>
-        <div>
+        <section class="inputArea content-width height-100px border-radius-top-10px">
             <form id="inputForm" onSubmit="return false;">
                 <input id="toDoInput" type="text" onkeydown="removeErrorMessage();">
                 <input type="submit" onclick="addElementToDocument();" value="Submit Todo">
             </form>
-        </div>
-        <ul id="toDoContainer"></ul>
-        </div>
+        </section>
+        <section class="toDoArea content-width border-radius-bottom-10px">
+            <ul id="toDoContainer" class="padding-left-0px">
+                <li class="toDoItem">
+                    <!-- <input type="text" value="das ist ein todo" readonly="true"> -->
+                    <!-- <input type="button" value="done">
+                    <input type="button" value="delete">
+                    <input type="button" value="edit"> -->
+                </li>
+            </ul>
+        </section>
     </main>
     <footer></footer>
 </body>

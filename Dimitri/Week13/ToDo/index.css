@@ -1,0 +1,84 @@
+@font-face {
+    font-family: Lilex;
+    src: url(font/Lilex-Regular.ttf)
+}
+
+body {
+    background-color: #2E3440;
+    display: flex;
+    font-family: Lilex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    margin: 0px
+}
+
+h1 {
+    display: flex;
+    background: #3B4252;
+    color: #E5E9F0;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+
+}
+
+.inputArea {
+    display: flex;
+    background-color: #3B4252;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.toDoArea {
+    display: flex;
+    background-color: #434C5E;
+    justify-content: center;
+    height: 50vh;
+}
+
+.warning {
+    color: #BF616A;
+    font-weight: bold;
+    margin: 0px, 5px, 0px, 0px;
+    font-size: 14px;
+}
+
+ul {
+    list-style: none;
+}
+
+.content-width {
+    width: 400px;
+}
+
+.height-100px {
+    height: 100px;
+}
+
+.border-radius-10px {
+    border-radius: 10px;
+}
+
+.border-radius-top-10px {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.border-radius-bottom-10px {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.padding-left-0px {
+    padding-left: 0px;
+}

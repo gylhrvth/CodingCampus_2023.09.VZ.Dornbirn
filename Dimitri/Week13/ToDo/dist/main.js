@@ -26,8 +26,9 @@ function getTextFromInput(elementId) {
 }
 function addErrorMessage() {
     let formContainer = document.getElementById("inputForm");
-    let form = document.createElement("div");
+    let form = document.createElement("p");
     form.setAttribute("id", "emptyStringWarning");
+    form.setAttribute("class", "warning");
     let warningText = document.createTextNode("Please provide an input!");
     form.appendChild(warningText);
     formContainer === null || formContainer === void 0 ? void 0 : formContainer.appendChild(form);
