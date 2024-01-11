@@ -30,4 +30,7 @@
     <PackageReference Include="MySql.Data" Version="8.2.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
+  <ItemGroup>
+  	<EmbeddedResource Include = "configuration.properties" />
+  </ItemGroup >
 </Project>
