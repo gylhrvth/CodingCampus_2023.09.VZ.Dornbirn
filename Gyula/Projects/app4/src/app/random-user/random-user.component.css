@@ -1,0 +1,22 @@
+.randomUser {
+    text-align: center;
+    color: darkblue;
+}
+
+.randomUser > .image > img {
+    border: 3px solid darkblue;
+    border-radius: 999px;
+    width: 150px;
+}
+
+
+.randomUser > .name {
+    font-size: 2em;
+}
+.randomUser > .email {
+    font-size: 0.8em;
+    color: gray;
+}
+.randomUser > .cell {
+    font-size: 1em;
+}
