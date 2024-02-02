@@ -1,0 +1,150 @@
+/* Your existing Biserica.css styles go here */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/*'https://cdn.pixabay.com/photo/2016/11/21/16/09/bible-1846174_1280.jpg'*/);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #333;
+  }
+  
+  header, nav {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 15px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Add this CSS for styling */
+  .custom-dropdown .dropdown-menu {
+    width: 300px;
+  }
+  
+  .custom-dropdown .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* Adjust padding/margin as needed */
+  .custom-dropdown .col {
+    padding: 10px;
+  }
+  
+  .custom {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+  }
+  
+  #video-container {
+    margin-top: 20px;
+  }
+  
+  a {
+    color: white;
+  }
+  
+  #slider {
+    width: auto;
+  }
+  
+  .carousel-caption {
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: initial !important;
+  }
+  
+  .carousel-caption h5 {
+    color: #fff;
+    font-size: 42px;
+  }
+  
+  #Despre {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: #555;
+  }
+  
+  #Despre .btn {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .despre-content {
+    padding-top: 20px;
+  }
+  
+  #contact {
+    background: #ff9292;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    color: #777;
+  }
+  
+  .contact-form {
+    padding: 15px;
+  }
+  
+  .form-control {
+    border-radius: 0 !important;
+    border: none !important;
+  }
+  
+  ::placeholder {
+    color: #999 !important;
+  }
+  
+  .Cauta {
+    background: #fff;
+    padding: 10px;
+    margin: 15px;
+  }
+  
+  .contact-info .fa {
+    margin: 10px;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  /* Add the missing CSS for social media icons */
+  .fa {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #007bff;
+  }
+  
+  /* Additional styles for photo and video gallery */
+  #photoGallery img,
+  #videoGallery iframe {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  #photoGallery button,
+  #videoGallery button {
+    margin-right: 10px;
+  }
+  
+  #ArhivaSection h2 {
+    margin-top: 20px;
+  }
+  

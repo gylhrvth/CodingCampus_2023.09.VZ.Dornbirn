@@ -1,0 +1,15 @@
+
+.Foto
+{
+display: grid;
+grid-template-columns: auto auto auto auto;
+justify-content: space-evenly
+
+ }
+
+ .Foto>*{
+    max-width: 15vw;
+    max-height: 15vw;
+    min-width: 15vw;
+    min-height: 15vw	;
+ }
