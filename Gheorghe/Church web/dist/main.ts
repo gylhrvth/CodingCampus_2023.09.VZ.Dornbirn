@@ -1,4 +1,3 @@
-// src/scripts/main.ts
 class PhotoCarousel {
     private photos: string[];
 
@@ -19,6 +18,11 @@ class PhotoCarousel {
 }
 
 // Example usage
-const photoUrls: string[] = ["url1.jpg", "url2.jpg", "url3.jpg"];
-const carousel = new PhotoCarousel(photoUrls);
-carousel.displayPhotos();
+const initializeCarousel = () => {
+    const photoUrls: string[] = ["url1.jpg", "url2.jpg", "url3.jpg"];
+    const carousel = new PhotoCarousel(photoUrls);
+    carousel.displayPhotos();
+};
+
+// Call the function to initialize the carousel
+initializeCarousel();
